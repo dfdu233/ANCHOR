@@ -1,0 +1,3131 @@
+{
+  "version": "rule-source-robust-margin-eval-v1",
+  "fingerprint": "922b189aedb8d9a2d9042167766764a7c539af8ab15fc63e792bacf0c77eedb6",
+  "target_labels_used": false,
+  "threshold": 1.2462263107299805,
+  "interface": "complete-sequence margin with explicit answer-prefix generation",
+  "summary": {
+    "source_dro": {
+      "per_domain": {
+        "rule_iuxray": {
+          "n": 96,
+          "identity_accuracy": 0.5416666666666666,
+          "accuracy": 0.5833333333333334,
+          "delta_pp": 4.166666666666674,
+          "rescues": 11,
+          "harms": 7
+        },
+        "vqa_rad_train": {
+          "n": 96,
+          "identity_accuracy": 0.5416666666666666,
+          "accuracy": 0.59375,
+          "delta_pp": 5.2083333333333375,
+          "rescues": 10,
+          "harms": 5
+        }
+      },
+      "micro": {
+        "n": 192,
+        "identity_accuracy": 0.5416666666666666,
+        "accuracy": 0.5885416666666666,
+        "delta_pp": 4.6875,
+        "rescues": 21,
+        "harms": 12
+      },
+      "macro_delta_pp": 4.687500000000005,
+      "minimum_domain_delta_pp": 4.166666666666674
+    }
+  },
+  "paired_bootstrap_ci95_pp": [
+    -1.0416666666666665,
+    10.416666666666668
+  ],
+  "gate": {
+    "status": "failed",
+    "target_pilot_allowed": false,
+    "checks": {
+      "delta_at_least_3pp": true,
+      "mcnemar_p_below_005": false,
+      "rescue_harm_ratio_at_least_2": false
+    },
+    "mcnemar_exact_p": 0.16275565745308995
+  },
+  "records": {
+    "rule_iuxray": [
+      {
+        "id": "rule_iuxray-01c561bcec7f629023b606ae",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3887_IM-1972/0.png",
+        "ground_truth": "No.",
+        "margin": 3.6899032592773438,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.291630744934082,
+          "No.": -15.981534004211426
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-0599a2df775061bdadacd36d",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2065_IM-0701/0.png",
+        "ground_truth": "No.",
+        "margin": 0.1869659423828125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.553544998168945,
+          "No.": -12.740510940551758
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-05e2b6910bf39366a7a3e636",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1411_IM-0261-0001/0.png",
+        "ground_truth": "No.",
+        "margin": 2.582180976867676,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.204154968261719,
+          "No.": -14.786335945129395
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-0a27ff4d1c193dc0f683e06f",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2644_IM-1130/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.9193439483642578,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.652254104614258,
+          "No.": -11.571598052978516
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-0aed148e90e43c844d40dcf4",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR975_IM-2464/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.5725831985473633,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.049539566040039,
+          "No.": -12.622122764587402
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-0b422270cd70380142742280",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1345_IM-0223/0.png",
+        "ground_truth": "No.",
+        "margin": 3.3377904891967773,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.377108573913574,
+          "No.": -15.714899063110352
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-0c90b026c813f8f18c6cc6e0",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR750_IM-2304/0.png",
+        "ground_truth": "No.",
+        "margin": 0.868077278137207,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.46249008178711,
+          "No.": -13.330567359924316
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-0d0a6efc3e843ecfdd8c6bf3",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2957_IM-1354/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.5822010040283203,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.872260093688965,
+          "No.": -12.454461097717285
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-1157460feb1c173fda774448",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1518_IM-0335/0.png",
+        "ground_truth": "No.",
+        "margin": -0.5283708572387695,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "No.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.463956832885742,
+          "No.": -11.935585975646973
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-11c10b9b611d70e7dc37ce66",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2795_IM-1227/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.4214229583740234,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.576751708984375,
+          "No.": -12.998174667358398
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-12f50a14e40bf72c4226a4e5",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1946_IM-0615/0.png",
+        "ground_truth": "No.",
+        "margin": 2.1855459213256836,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.619579315185547,
+          "No.": -12.80512523651123
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-1407866250b9f08d2ee76355",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3480_IM-1691/0.png",
+        "ground_truth": "Yes.",
+        "margin": 0.7992000579833984,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.638228416442871,
+          "No.": -12.43742847442627
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-151aef49b126d92cfe917c7b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1555_IM-0362/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.643789291381836,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.661870956420898,
+          "No.": -12.305660247802734
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-1a71f1efd4722b66f81d9474",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3656_IM-1817/0.png",
+        "ground_truth": "No.",
+        "margin": 3.089726448059082,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.937812805175781,
+          "No.": -15.027539253234863
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-200c04895776b013509071c3",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2974_IM-1364/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.4071273803710938,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.711909294128418,
+          "No.": -12.119036674499512
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-206f5afa7ea77d4660928b90",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2315_IM-0889/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.5352983474731445,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.451550483703613,
+          "No.": -12.986848831176758
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-2360c88de81ee6ca1bd6e65a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1416_IM-0265/0.png",
+        "ground_truth": "No.",
+        "margin": 1.1526498794555664,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.027746200561523,
+          "No.": -13.18039608001709
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-24a42e0ea619ffea7983616a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1967_IM-0629/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.250311851501465,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.75717830657959,
+          "No.": -13.007490158081055
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-275a457c85313ba94a5ceee0",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3762_IM-1883/0.png",
+        "ground_truth": "Yes.",
+        "margin": 0.9411458969116211,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.552875518798828,
+          "No.": -12.49402141571045
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-3013c57062eb7569319bb044",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR463_IM-2091/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.0553960800170898,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.582832336425781,
+          "No.": -11.638228416442871
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-305c7037d45fa1929a297da5",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3877_IM-1967/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.695866584777832,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.156585693359375,
+          "No.": -11.852452278137207
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-309041ae4a15ef7c9941c63e",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3856_IM-1951/0.png",
+        "ground_truth": "No.",
+        "margin": -0.16507720947265625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "No.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.759584426879883,
+          "No.": -12.594507217407227
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-3127ad2873906785376b16b4",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1363_IM-0236-0001/0.png",
+        "ground_truth": "No.",
+        "margin": 2.623171806335449,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.766790390014648,
+          "No.": -15.389962196350098
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-3232dbb6dcf98653d6d5c3cd",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2036_IM-0680/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.949899673461914,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.385051727294922,
+          "No.": -13.334951400756836
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-334837dc2f5615e45a0491c9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3861_IM-1955/0.png",
+        "ground_truth": "No.",
+        "margin": 0.4576425552368164,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.582682609558105,
+          "No.": -13.040325164794922
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-3821128117e8837bb7bd4fcb",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2720_IM-1182/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.657087326049805,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.863960266113281,
+          "No.": -15.521047592163086
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-3985eb78a82cdb6ba89704a3",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3011_IM-1390/0.png",
+        "ground_truth": "No.",
+        "margin": 3.3885087966918945,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.49048900604248,
+          "No.": -15.878997802734375
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-3b8deda0e5e7fd67e554345d",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR411_IM-2056/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.0043325424194336,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.600802421569824,
+          "No.": -11.605134963989258
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-3bcce5d006b297516e4b4931",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR784_IM-2325-1001/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.204496383666992,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.27090835571289,
+          "No.": -13.475404739379883
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-3c84ce14539d1e1cdbadb7be",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3110_IM-1460/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.128983497619629,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.26692008972168,
+          "No.": -12.395903587341309
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-43f17f3358cf0fdcf4550627",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1568_IM-0371/0.png",
+        "ground_truth": "No.",
+        "margin": 0.15925121307373047,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.18604850769043,
+          "No.": -12.34529972076416
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-49b2b3669021d283e131aab9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR806_IM-2340-0001/0.png",
+        "ground_truth": "Yes.",
+        "margin": 6.125713348388672,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.428901672363281,
+          "No.": -16.554615020751953
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-49ea860a384ebf5f48dcb77a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3327_IM-1593/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.6197586059570312,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.52507495880127,
+          "No.": -13.1448335647583
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-4ba3d06c9ba566310f7a6e4e",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2774_IM-1215/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.96585750579834,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.377324104309082,
+          "No.": -13.343181610107422
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-515d310e787ccba0502b6c06",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1500_IM-0326/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.3360652923583984,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.906072616577148,
+          "No.": -13.242137908935547
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-5428e8e4d6f3535792271a14",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2580_IM-1078/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.34055233001709,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.191332817077637,
+          "No.": -12.531885147094727
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-5f3c11373ab6b0ee04db2c2a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3258_IM-1544/0.png",
+        "ground_truth": "No.",
+        "margin": 2.0039024353027344,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.066810607910156,
+          "No.": -12.07071304321289
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-606b81380445c3a4311c6af3",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1525_IM-0340/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.1899309158325195,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.127214431762695,
+          "No.": -12.317145347595215
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-609793242dbf1d71f29fb11a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1456_IM-0294/0.png",
+        "ground_truth": "No.",
+        "margin": 0.26522254943847656,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.3597412109375,
+          "No.": -12.624963760375977
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-6437ce6825940fc9259911bc",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3394_IM-1638/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.416306495666504,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.30280876159668,
+          "No.": -13.719115257263184
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-6529cc200bc58e029a49e06c",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1184_IM-0124/0.png",
+        "ground_truth": "Yes.",
+        "margin": 3.110218048095703,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.86837387084961,
+          "No.": -13.978591918945312
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-6a8bbc8d1e7ad26492be1190",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2465_IM-0997/0.png",
+        "ground_truth": "Yes.",
+        "margin": 4.800098419189453,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.798103332519531,
+          "No.": -15.598201751708984
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-70d962a8f19407e9ac84574c",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2361_IM-0926/0.png",
+        "ground_truth": "No.",
+        "margin": 1.2561511993408203,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.28101921081543,
+          "No.": -14.53717041015625
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-72d5d59493dc37579c647c12",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1383_IM-0245/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.5924015045166016,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.110086441040039,
+          "No.": -12.70248794555664
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-72e6809a593b60fe4f9d0bac",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR653_IM-2230/0.png",
+        "ground_truth": "Yes.",
+        "margin": 4.983242988586426,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.030625343322754,
+          "No.": -15.01386833190918
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-7a3675354c7255db53fdaef9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR225_IM-0844/0.png",
+        "ground_truth": "No.",
+        "margin": 1.8749732971191406,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.971322059631348,
+          "No.": -13.846295356750488
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-7e8536c05cf55cc69032dbb7",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2684_IM-1157/0.png",
+        "ground_truth": "Yes.",
+        "margin": 3.508131980895996,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.13340950012207,
+          "No.": -13.641541481018066
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-82a62b9ab4df16abcfd328bd",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR969_IM-2459/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.057461738586426,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.050010681152344,
+          "No.": -13.10747241973877
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-88dc00a52dcc260f411ce601",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1266_IM-0179/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.6373281478881836,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.022773742675781,
+          "No.": -12.660101890563965
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-88ed7f37927617632a0b4698",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3070_IM-1432/0.png",
+        "ground_truth": "No.",
+        "margin": 2.276900291442871,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.463971138000488,
+          "No.": -13.74087142944336
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-8cb656d2cbed1115787bec06",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3456_IM-1678/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.149465560913086,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.882905960083008,
+          "No.": -13.032371520996094
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-94dd88964e8b81f3bc8f7f86",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1585_IM-0380/0.png",
+        "ground_truth": "No.",
+        "margin": 3.483297348022461,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.572588920593262,
+          "No.": -15.055886268615723
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-9aa9d69cf580f7fccadcf5a0",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR504_IM-2122/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.6379194259643555,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.651764869689941,
+          "No.": -13.289684295654297
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-9d11f6853bc0591363058f40",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3573_IM-1756/0.png",
+        "ground_truth": "No.",
+        "margin": 3.755162239074707,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.74758529663086,
+          "No.": -15.502747535705566
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-9d776572a69746fba33d4347",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3568_IM-1753/0.png",
+        "ground_truth": "No.",
+        "margin": 1.8185882568359375,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.079225540161133,
+          "No.": -13.89781379699707
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-9e13768e538dc7ec625b6af1",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2473_IM-1003/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.3239288330078125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.7022705078125,
+          "No.": -15.026199340820312
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-a4d091b8a5c46b024b3dd8b0",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR616_IM-2200/0.png",
+        "ground_truth": "No.",
+        "margin": 1.5254497528076172,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.752569198608398,
+          "No.": -13.278018951416016
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-a67627ad27a100169a409075",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1402_IM-0257/0.png",
+        "ground_truth": "No.",
+        "margin": 2.28505802154541,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.468149185180664,
+          "No.": -13.753207206726074
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-a6ab67f57e7cf8ef18fe6450",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2699_IM-1167/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.096829414367676,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.8965425491333,
+          "No.": -14.993371963500977
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-a8636d0b266b3caa54dcf790",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1267_IM-0179/0.png",
+        "ground_truth": "No.",
+        "margin": 1.0065736770629883,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.408811569213867,
+          "No.": -14.415385246276855
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-b1db1b41f992186a815d752a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3128_IM-1471/0.png",
+        "ground_truth": "No.",
+        "margin": 0.0742044448852539,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.783047676086426,
+          "No.": -12.85725212097168
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-b25cf25e2ff37be7311d693b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3233_IM-1530/0.png",
+        "ground_truth": "Yes.",
+        "margin": 3.341554641723633,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.219841003417969,
+          "No.": -13.561395645141602
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-b53119799c09e46251192715",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3179_IM-1499/0.png",
+        "ground_truth": "No.",
+        "margin": 2.7580013275146484,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.700775146484375,
+          "No.": -14.458776473999023
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-bbd8d10a3884be1d650e89e9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR254_IM-1051/0.png",
+        "ground_truth": "No.",
+        "margin": 0.8222036361694336,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.550490379333496,
+          "No.": -14.37269401550293
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-bd2d4595186c1d3ef1e27783",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR778_IM-2321/0.png",
+        "ground_truth": "No.",
+        "margin": 3.0695533752441406,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.488794326782227,
+          "No.": -15.558347702026367
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-beeee667fde6352aaa2a6395",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2638_IM-1123/0.png",
+        "ground_truth": "Yes.",
+        "margin": 4.97105598449707,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.758275985717773,
+          "No.": -15.729331970214844
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c0189b854e76e6368de62948",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1222_IM-0150/0.png",
+        "ground_truth": "Yes.",
+        "margin": 4.279097557067871,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.692290306091309,
+          "No.": -15.97138786315918
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c12ba2c3819a4726cc5de932",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1556_IM-0363/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.4462556838989258,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.855169296264648,
+          "No.": -12.301424980163574
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c17c991c9a3847f57f3cd55e",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2215_IM-0820/0.png",
+        "ground_truth": "No.",
+        "margin": 1.3230667114257812,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.638143539428711,
+          "No.": -12.961210250854492
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c4718a986674ee2e76841aa4",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2075_IM-0708/0.png",
+        "ground_truth": "No.",
+        "margin": 3.931232452392578,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.722124099731445,
+          "No.": -15.653356552124023
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c6691244f8e54186f2ff9a68",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR706_IM-2269/0.png",
+        "ground_truth": "No.",
+        "margin": 3.1756420135498047,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.406183242797852,
+          "No.": -14.581825256347656
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-c724264864598feccf85e304",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR688_IM-2256/0.png",
+        "ground_truth": "Yes.",
+        "margin": 0.8694038391113281,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.6163969039917,
+          "No.": -10.485800743103027
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-c95ca673db98d09575fb8f8a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2464_IM-0997/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.254539489746094,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.423883438110352,
+          "No.": -15.678422927856445
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-cfdc201f34885fa4135df3d9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1881_IM-0570/0.png",
+        "ground_truth": "No.",
+        "margin": 1.5921106338500977,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.258258819580078,
+          "No.": -12.850369453430176
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-d023312d5a53a16efaa2758b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3168_IM-1492/0.png",
+        "ground_truth": "No.",
+        "margin": 3.519205093383789,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.072732925415039,
+          "No.": -15.591938018798828
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-d0283ebf2908917e369d8058",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2593_IM-1084/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.2531862258911133,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.596628189086914,
+          "No.": -12.849814414978027
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-d0f40484aaf72a37ff7f65eb",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1647_IM-0424/0.png",
+        "ground_truth": "No.",
+        "margin": 2.173980712890625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.90694522857666,
+          "No.": -14.080925941467285
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-dbd17270d60ebe1941d7953b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1836_IM-0540/0.png",
+        "ground_truth": "No.",
+        "margin": 4.839674949645996,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.666905403137207,
+          "No.": -15.506580352783203
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-ddf581426e4d115eaac8ddb6",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3216_IM-1520/0.png",
+        "ground_truth": "No.",
+        "margin": 2.9965343475341797,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.2095947265625,
+          "No.": -15.20612907409668
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-de2559b4c523b5f12cc7faf9",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3069_IM-1432/0.png",
+        "ground_truth": "Yes.",
+        "margin": 3.623523712158203,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.28514575958252,
+          "No.": -15.908669471740723
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-e2058664d8902b77d2babdf8",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR682_IM-2253/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.729856491088867,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.413820266723633,
+          "No.": -16.1436767578125
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-e691de179724a3d9832929e2",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR513_IM-2128/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.131124496459961,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.470425605773926,
+          "No.": -12.601550102233887
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-e6ef695b3ac2b6eb8e48e86b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2047_IM-0688/0.png",
+        "ground_truth": "No.",
+        "margin": 1.3968238830566406,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.764970779418945,
+          "No.": -14.161794662475586
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-e870e16b343a46e996860207",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR440_IM-2078/0.png",
+        "ground_truth": "No.",
+        "margin": 0.3370542526245117,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.54672908782959,
+          "No.": -11.883783340454102
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-eb5919ffa4de41243e54888e",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR410_IM-2056/0.png",
+        "ground_truth": "No.",
+        "margin": 1.3787345886230469,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.271492004394531,
+          "No.": -12.650226593017578
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-eba836331ae82e26cf70373a",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1441_IM-0285/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.8674087524414062,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.895620346069336,
+          "No.": -12.763029098510742
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-eca23533b08e80913d57a990",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR552_IM-2155/0.png",
+        "ground_truth": "No.",
+        "margin": 3.283893585205078,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.323814392089844,
+          "No.": -14.607707977294922
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-ee0947f2bb96cddf4728b5de",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1900_IM-0584/0.png",
+        "ground_truth": "No.",
+        "margin": 0.8969593048095703,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.066473960876465,
+          "No.": -13.963433265686035
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-f02ddb57bb286cb4b6ab58ce",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3226_IM-1525/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.2135143280029297,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.725143432617188,
+          "No.": -12.938657760620117
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "rule_iuxray-f2ce45d70a82b7d8a54e503b",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR668_IM-2242/0.png",
+        "ground_truth": "Yes.",
+        "margin": 5.777050018310547,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.316425323486328,
+          "No.": -17.093475341796875
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-f7f50bef30aaf02aabc9feae",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2789_IM-1223/0.png",
+        "ground_truth": "Yes.",
+        "margin": 2.903243064880371,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.86801528930664,
+          "No.": -12.771258354187012
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-f8b5d8ce1cfb540570bcf759",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3620_IM-1791-1001/0.png",
+        "ground_truth": "No.",
+        "margin": 1.7642221450805664,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.643576622009277,
+          "No.": -13.407798767089844
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-f9ba87a0d5f24b4c5309e78f",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR3158_IM-1487/0.png",
+        "ground_truth": "No.",
+        "margin": 1.5231552124023438,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.154576301574707,
+          "No.": -12.67773151397705
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-fac9af1d8e2276ee2c33aac6",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR1232_IM-0156/0.png",
+        "ground_truth": "No.",
+        "margin": 1.3760414123535156,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.148382186889648,
+          "No.": -14.524423599243164
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-fd613b1e2fb8f3e6ef020ffc",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR59_IM-2184/0.png",
+        "ground_truth": "Yes.",
+        "margin": 1.5550460815429688,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.798979759216309,
+          "No.": -12.354025840759277
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "rule_iuxray-fee48777f842caa7953281cb",
+        "image": "/root/autodl-tmp/MedHEval/images/IU-Xray/CXR2288_IM-0872/0.png",
+        "ground_truth": "No.",
+        "margin": 2.177006721496582,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.329156875610352,
+          "No.": -13.506163597106934
+        },
+        "generated_answer_prefix": "Yes."
+      }
+    ],
+    "vqa_rad_train": [
+      {
+        "id": "vqa_rad_train-00ae3e2c1635f7811c910792",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/53e68e8a3e60a4783223adcbb9286744d2f61108c4d6cac7e4d3925cca02fb32.jpg",
+        "ground_truth": "No.",
+        "margin": 1.5434637069702148,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.589949607849121,
+          "No.": -12.133413314819336
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-00b7cab79b6ddf7e2ab0a1ae",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/9889e27f00b402cb05239206a9e0d465e9326081c09d30a75d6fc904b5bdd80c.jpg",
+        "ground_truth": "No.",
+        "margin": 0.5037994384765625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.119884490966797,
+          "No.": -11.62368392944336
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-0559dd7162bd6d8cf90c7b79",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/927f4b5c7932e0dfc31538b47745b9c128f36d985b47c12267421dc208e78c31.jpg",
+        "ground_truth": "No.",
+        "margin": 0.8888483047485352,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.36989688873291,
+          "No.": -13.258745193481445
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-05b81a516f56c9d140aae1da",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/213ceeb47d54cf813d9f6c450384c09071e04fdea18b744084c87a73da6047a9.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.3051910400390625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.612543106079102,
+          "No.": -12.917734146118164
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-09af233fe83feb4ab33ee037",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d7dbe6d2742cf7195e594e5ea804362f50e3fd360fd78fdd1c0c7a60d9b61c70.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.2136735916137695,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.712660789489746,
+          "No.": -13.926334381103516
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-0ddebea1a2fae796d89e1079",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e6d67080851fe670627b8df9b8e5c315d08981080b9d9fdb730ca95eef1cc5e2.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.825343132019043,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -14.003400802612305,
+          "No.": -15.828743934631348
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-0ee774a2881a0968f9cc43cc",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/609d044ed77f1f51511729796b838229e8f6ad8b4637efbfc4ff7a8de3a7f08e.jpg",
+        "ground_truth": "No.",
+        "margin": 1.8154525756835938,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.956247329711914,
+          "No.": -12.771699905395508
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-1165b9ed506ecd14ce01570d",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5e768966855368301d1489bac977ef782137840ca6f95fddc9df9b4d87673293.jpg",
+        "ground_truth": "No.",
+        "margin": 2.2263193130493164,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.894289016723633,
+          "No.": -13.12060832977295
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-126fec69fb2d26e52cbac57e",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7df5d2323d2611b5bd6a09b34ed6bff4e74cfcd192e2bae12f61972a12ecefb6.jpg",
+        "ground_truth": "No.",
+        "margin": 1.7328729629516602,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.050872802734375,
+          "No.": -12.783745765686035
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-1d9b1f63c24efa193bb25037",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/67c0a4c0450a3cb5dce8515f6dd210320e0894127d8b3315d2ba7df2957095a7.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.098353385925293,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.77867317199707,
+          "No.": -12.877026557922363
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-1e1d93c6feeeb34e1b7af8a9",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/64518cbf98b3bdd6942c12b03b38b849471e185da15d7b1dcae77980d8a8b6b4.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.7575149536132812,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.837966918945312,
+          "No.": -14.595481872558594
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-1f66020f73cfe4d5e8eb02b0",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4585885e70bd5652419f4727540ba689fcd4f5de12fc6a30974858e35950771a.jpg",
+        "ground_truth": "Yes.",
+        "margin": 4.0732221603393555,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.939867973327637,
+          "No.": -15.013090133666992
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-207bcc3f22180606e328248f",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3083bff6f954b5d33f8febe302b89e62cceeafec9f8d45226d9be78aefecc237.jpg",
+        "ground_truth": "No.",
+        "margin": 1.4741296768188477,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.504729270935059,
+          "No.": -13.978858947753906
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-20c270d7a3cf8db072e89af0",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0c73d4e72cd51d37753b34c53f78ba7c8e81c5792df9031ef31fce595277656d.jpg",
+        "ground_truth": "No.",
+        "margin": 2.366107940673828,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -14.302968978881836,
+          "No.": -16.669076919555664
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-21016b9e199c3c768f781dc1",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7b3f70e68bf1f1a4cd46161f62a52fe294d6402cba59ddd331c767643392c261.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.1142492294311523,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.805850982666016,
+          "No.": -12.920100212097168
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-251113491d71124cab8f8db7",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/72568c462eda507dccefd6919927a5f411c3271be6db7f5aae62cab91a96aa43.jpg",
+        "ground_truth": "No.",
+        "margin": 0.9923677444458008,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.11400032043457,
+          "No.": -14.106368064880371
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-269162220638ef513992fbcc",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e450abdc1cbc37ff89d54e6252494552e70344b8c74c988d72053a336e9648dd.jpg",
+        "ground_truth": "Yes.",
+        "margin": 0.9332485198974609,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -14.9636869430542,
+          "No.": -15.89693546295166
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-2d4106337c3324c6968c1851",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f6b61bda304352b1bd52b2c9f99b5fff4adc845480e81c9dbdda60e523515989.jpg",
+        "ground_truth": "No.",
+        "margin": 3.2733278274536133,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.65994930267334,
+          "No.": -15.933277130126953
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-2d6fe5907220b9d0994e12bc",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/beaa55661ee8099f6c997e47fbfc8d453a3ccaf8ed83127ba6da3cf018e5f1fd.jpg",
+        "ground_truth": "No.",
+        "margin": 4.250293731689453,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.663801193237305,
+          "No.": -15.914094924926758
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-2d81c68020004e5b467d9669",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6c2bb72fc82f8ff668db535182f3d338bbf39f1b18361ce2bc8f84aef7fc1eac.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.5115041732788086,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.842074394226074,
+          "No.": -14.353578567504883
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-2e465f57a2647f6142aa5845",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1f4adc34e6f705b8ddaac7eff89e060c407ddee7eaaa0466d17f07f7b969d375.jpg",
+        "ground_truth": "Yes.",
+        "margin": 5.516304016113281,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.618856430053711,
+          "No.": -16.135160446166992
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-2fcb0efe0e15dd062243b1fb",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/ce8d34ec377ec2d1e552b85df95e2fd0eecb1ed2da4ac918d6990383697920c0.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.5119714736938477,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.098873138427734,
+          "No.": -14.610844612121582
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-32364fc7dd80d50382fae909",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f09ff662d23abf20ba7186e42a5530fa35f17edd8511aecafb401cd4ffd29f2b.jpg",
+        "ground_truth": "No.",
+        "margin": 2.7669239044189453,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.817726135253906,
+          "No.": -14.584650039672852
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-32c5c50ac3dc4eaa03af51e0",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/09b82d2339d23b231fceb32fb2770170ce589890c76bcbdf47c611122329a931.jpg",
+        "ground_truth": "No.",
+        "margin": 0.7652912139892578,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.985044479370117,
+          "No.": -12.750335693359375
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-3328252270812ccdf52c0708",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/be75e2e6ab061343abbfee54b79bc90ae8a802d6c058475040a6a4395cb11fa1.jpg",
+        "ground_truth": "No.",
+        "margin": 3.3913612365722656,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.17918586730957,
+          "No.": -14.570547103881836
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-3544b15146da1958a69235f3",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/31a2e99537a6799b533d4bd804af149c946dde9bdd19cd496bca01d93150319f.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.55777645111084,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.406785011291504,
+          "No.": -14.964561462402344
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-36616767695a5464e12e3c68",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6fd1b5213f79379ead5ea4765496d80a53cec21cc5817f032c5feab73e629e8a.jpg",
+        "ground_truth": "No.",
+        "margin": 2.7281360626220703,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.3968505859375,
+          "No.": -14.12498664855957
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-38d14173238852f30fc3cec6",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/cde37921b76a29d26220c74854e6234a48d24fd84f6a44576eb8c92bedba828d.jpg",
+        "ground_truth": "No.",
+        "margin": 0.18661117553710938,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.271566390991211,
+          "No.": -13.45817756652832
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-3a2f90ab19bcaa49aa845929",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/75f3d88dc61cc4ff9e8c719e01973c0747243094783dd81654ca721c2cb8fe81.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.3902368545532227,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.886778831481934,
+          "No.": -14.277015686035156
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-4074291026a4bdfb4b65f585",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c7363b32b9b8230c7128aaca42b69e29f9ffca198eb49413f72cc641f0994f6d.jpg",
+        "ground_truth": "No.",
+        "margin": 1.355072021484375,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.137369155883789,
+          "No.": -13.492441177368164
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-478dca03b91e2024b9221476",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a87f16c9bcf1f58f2b56f47293fa7ddce74ab1fb217d1a12142cac062c88b093.jpg",
+        "ground_truth": "No.",
+        "margin": 2.593240737915039,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.516737937927246,
+          "No.": -13.109978675842285
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-47a59117abb4a6fe0a6ad76a",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d7d7d582f58b11161552324de2936215a4223ee0ebd0b10b5496a22ca8bd8242.jpg",
+        "ground_truth": "No.",
+        "margin": 1.5130939483642578,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.361259460449219,
+          "No.": -12.874353408813477
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-4b068ec032a1a5869d762cd2",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f5351ebfd2467d411ef579a21f7fc4bfcc2f3ec9602131bff2dd5404ea9830ec.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.2877721786499023,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.3385648727417,
+          "No.": -13.626337051391602
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-4db14fe175d57d342615d912",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a2fdb16c891fb197679ba1521bd9927aa7a242b39948497ea134fea1418ede5b.jpg",
+        "ground_truth": "No.",
+        "margin": 0.953801155090332,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.117277145385742,
+          "No.": -12.071078300476074
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-5073d5d350020a5047087a97",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/23a9af674cbfa5a5ea39e7964cd5eb150b629a8a5d6c8ea2054a8e70410a03d1.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.428598403930664,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.79478645324707,
+          "No.": -13.223384857177734
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-5320138d819a6660fcf0da24",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/987dc8cc63b60b28c785002e0f64c90d129735b2161c6a4938d8034cf4115a39.jpg",
+        "ground_truth": "No.",
+        "margin": 5.04680061340332,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.14344596862793,
+          "No.": -16.19024658203125
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-550bea1e8dcaff2dbdbe1495",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/573bccfa49eed5ebe623dacf7a3b51e69a8fd14c5326e1e81e8b537c580395d1.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.5902843475341797,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.1362943649292,
+          "No.": -14.726578712463379
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-57ce2420dce42a54046b9a9b",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a87f9059f72b5205cc48f43f63541ab23283702df0ebb1d49750a496c45aa236.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.7794189453125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.00806999206543,
+          "No.": -15.78748893737793
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-59355a5ddc39791c4f0d58ce",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/985e40bf275a4f0a3bf2f28139a78d01cc1ec011f87ed6c23807188741f96fa8.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.502732276916504,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.906744003295898,
+          "No.": -13.409476280212402
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-59c61e22a307996bd634305a",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4638e2a1dfe20b6cf795eaa5fc7d32486980e92c87efc8f511d43d87d9354f91.jpg",
+        "ground_truth": "No.",
+        "margin": 4.405572891235352,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.226457595825195,
+          "No.": -15.632030487060547
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-5a32ea167af9f55c73e8219d",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f6f38b60ccddc401352e94b491dbce21edb0b28f8c6b7e305060617aaa69a2aa.jpg",
+        "ground_truth": "No.",
+        "margin": 1.6609010696411133,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.36341667175293,
+          "No.": -13.024317741394043
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-5d7509799ff3d9b7dac06c2f",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6a26027370c0ccb2d53817b1bf4d9eeaee6dccea825d33bb2eb7a7fc9c4c799e.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.475560188293457,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.603004455566406,
+          "No.": -13.078564643859863
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-69b5006513d9e22771049a58",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/146d04dd3160c7ca5c7ac61215368b8ae6254735ac7c40f9d0cea114d08b1096.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.4823055267333984,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.814895629882812,
+          "No.": -14.297201156616211
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-6a427881c83db4f1936d0ff1",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/cf6f84e67df2178fa2afcddd4b8d55fec9751aaa3e1db8a8c76389274e4ca98e.jpg",
+        "ground_truth": "Yes.",
+        "margin": 4.660346031188965,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.924919128417969,
+          "No.": -15.585265159606934
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-78e88b0b199cf5e45794cb49",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5fba95a3daf214a26d3fd00615411d1c4846d6b3369051241db182c55e61d933.jpg",
+        "ground_truth": "No.",
+        "margin": 1.2653064727783203,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.209772109985352,
+          "No.": -13.475078582763672
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-7fa0acfca407551f771a2d03",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8bebbcb8854ad6e05b02375cdeea008eec7ab69a207af7f280f92c03cedbb50.jpg",
+        "ground_truth": "No.",
+        "margin": 2.1905412673950195,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -14.119757652282715,
+          "No.": -16.310298919677734
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-877fca9cb78c6a0b1a014b9c",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d8646636342078013954baaa0a114c841d7879aae3cdce7600f133994601b12f.jpg",
+        "ground_truth": "No.",
+        "margin": 1.4216203689575195,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.39700698852539,
+          "No.": -12.81862735748291
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-8c8269ed7f6bfa6952f50148",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0ec76d527e879fc6862f5ed54a7a2b74732d0e31b976ec933e1e456585fa434a.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.6001548767089844,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.347892761230469,
+          "No.": -14.948047637939453
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-8cd2122734e7601ea7696d77",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/69a52fc084daa115ae4e55c738343c0f3cf829cf8c12ff530fd923842a9b4bc4.jpg",
+        "ground_truth": "No.",
+        "margin": 1.1330862045288086,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.129617691040039,
+          "No.": -13.262703895568848
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-8ebd5b8fb3447c5435c571cf",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b3ed1fa67e86bc28e002f8eedd7894c96e017907ae941b22c93dea706556621c.jpg",
+        "ground_truth": "No.",
+        "margin": 2.345179557800293,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.693050384521484,
+          "No.": -13.038229942321777
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-932bd2913b74f910f287e707",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/2e07cce1d47327b5efaef002df7f9484f4f2a627d0a09970b92290259191d4e2.jpg",
+        "ground_truth": "Yes.",
+        "margin": 5.1090192794799805,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.283097267150879,
+          "No.": -16.39211654663086
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-97d6359b9ae9fb96c2774018",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3063bd51b3717d7ac6fff1c9888223292cee0be3ec227597eb92997f835484cd.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.066460609436035,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.79885482788086,
+          "No.": -14.865315437316895
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-996d322e503bcdb44fb083c6",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/58e24e3dd5b5ab845fadc9782181d0f20406ee73f93cfa67c809839cb9a2fcca.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.9704113006591797,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.147865295410156,
+          "No.": -14.118276596069336
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-9b1ebb53adc2bf071e05193d",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3c2399fcfcf31b7df5c78815c06240e572e9df9ae4d3415535aff734433acbc6.jpg",
+        "ground_truth": "Yes.",
+        "margin": 0.6948347091674805,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.872014999389648,
+          "No.": -12.566849708557129
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-9b8c4db70d568322d9611844",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/486a6e8e5f815a714489807aac6e8acbd8e764bc5de983e3a01113156680bfc9.jpg",
+        "ground_truth": "No.",
+        "margin": 2.8770952224731445,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.324954986572266,
+          "No.": -14.20205020904541
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-9df1533c058b71930ad62761",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5ac27a6f130ab18022a046f744169767dac7a386a60df6ae1fc9822fadb896f1.jpg",
+        "ground_truth": "No.",
+        "margin": 1.4567041397094727,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.807518005371094,
+          "No.": -14.264222145080566
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-a0976a0c43f3605452dfc3c6",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/9d6706eb2b8b03c4e9f60bd9a497d0e46491ad7293aa4dd8092c9cf14fe891ac.jpg",
+        "ground_truth": "No.",
+        "margin": -0.10267925262451172,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "No.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.583111763000488,
+          "No.": -12.480432510375977
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-a24bbbb814e84cbbdabff487",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7514f34be0d2400cee2e4b8310f7d5377e0fa50979c3d6af875b8b1845e67da1.jpg",
+        "ground_truth": "No.",
+        "margin": 1.9918336868286133,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.697429656982422,
+          "No.": -14.689263343811035
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-a3b44350bee522797ffe025a",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a6cd2895bfa134ef1891372fe1d15a6b9710f22a119de9a545138666ff20e486.jpg",
+        "ground_truth": "No.",
+        "margin": 1.5456953048706055,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.83965015411377,
+          "No.": -12.385345458984375
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-aa4933342359fac348412596",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a8869ffd6569e79a8c0298ed020cbba07a2e809eb2ee7da5ee736df68798c9d0.jpg",
+        "ground_truth": "No.",
+        "margin": 3.0387001037597656,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.485461235046387,
+          "No.": -14.524161338806152
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-b10bae94a7086d52bdff44ad",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/db3ee4dd062dc955c3c8a93ddbce101e0106ea824da3adb53959db90fa911351.jpg",
+        "ground_truth": "No.",
+        "margin": -0.28751468658447266,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "No.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.290762901306152,
+          "No.": -12.00324821472168
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-b304e31b286af37e6f9d2cd9",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6b69b7e857829f2af52e6f8b026ca1f79392067979ef58e1c700ee3516ef5ebb.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.29921817779541,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.66783332824707,
+          "No.": -12.96705150604248
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-b4200078e815e98ab7b41acc",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6e9e1a4b828c0d1eee246262425f43d90cf642e40e8777bbdd10e6447b7a506c.jpg",
+        "ground_truth": "Yes.",
+        "margin": 0.9395017623901367,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.970626831054688,
+          "No.": -12.910128593444824
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-b85a0fcdc02d1a4e8c5f3523",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b1c0187c0b9739d12c3cf09846011c5066412ca858add8c51a20e248bc238c41.jpg",
+        "ground_truth": "No.",
+        "margin": 2.1016387939453125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.018033027648926,
+          "No.": -13.119671821594238
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-b9544fc7f81cbe04cd676845",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/22543673e03e442516a0822ffa8423e454dba937fea72c3a15c726785a26247f.jpg",
+        "ground_truth": "Yes.",
+        "margin": 5.441632270812988,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.555875778198242,
+          "No.": -15.99750804901123
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-bc215150b66c7af80592c7b6",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8b11580d8f46a79a87192d5a13409ea5e85c63cf8ad15375e45d9d747df5847.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.272184371948242,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.601197242736816,
+          "No.": -13.873381614685059
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-bc5090e3eec53e00a8f69b8e",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c2351a4c43efe00434886cb877b58ea12b4a91f71f28188e4618c07ba8cff374.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.8506994247436523,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.901351928710938,
+          "No.": -11.75205135345459
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-bf0bc259ffa0d9cc42537672",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3f97a989d52319fe8860ff23b2e5ed7566554371025b865266d38358a05a2c2f.jpg",
+        "ground_truth": "Yes.",
+        "margin": 4.014198303222656,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.878870010375977,
+          "No.": -14.893068313598633
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-bf46ad6ea681d1cba54a82b8",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1fea3f2293f189a6985d4d5107a3322d91c2d0f6523e8041538ea7429badee96.jpg",
+        "ground_truth": "No.",
+        "margin": 0.36110591888427734,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -13.094828605651855,
+          "No.": -13.455934524536133
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-c41c8dc9b602371a9db12562",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/eb88334429aef2081c615800621aeaa2ec31a92163312066ca47884bf7545e57.jpg",
+        "ground_truth": "Yes.",
+        "margin": 5.140460968017578,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.986351013183594,
+          "No.": -16.126811981201172
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-c7253ee2f9f3ae25f394c3ba",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/05e0337d320e11bda5a8e50c7aa131e88075306750b323e8b712be918000a086.jpg",
+        "ground_truth": "No.",
+        "margin": 2.1195268630981445,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.608550071716309,
+          "No.": -12.728076934814453
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-cb94d9716834e48a9b094cd5",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b770a72427d340c557d479f7ae1d9d208c2132c22dbc3c7114dbf004a2929a11.jpg",
+        "ground_truth": "Yes.",
+        "margin": 4.628902435302734,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.219244003295898,
+          "No.": -14.848146438598633
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-cd5ad9d9b84e3a275613831c",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/30dec8413d905325e71ff3f32aae20207c8e4d8f7e22b4413ac4c12551da71f7.jpg",
+        "ground_truth": "No.",
+        "margin": 1.8722686767578125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.282327651977539,
+          "No.": -14.154596328735352
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-d040f9f53e76d62e7d2a0044",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/481d20d56b43b20f0dc7242db8e78c0534e6925be95b26af5c7990f50b75e519.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.337874412536621,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.566069602966309,
+          "No.": -14.90394401550293
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-d1907a63d4dc826e2a3a7671",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/335dbc444d743e52c370b1f6797b995f6f28e34035726f083a6a083f4e514ffb.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.163336753845215,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.850950241088867,
+          "No.": -15.014286994934082
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-d30343c7ee18a6326d21c307",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a74629fe3ec00553b050e7d219098983ea1a864feec2d9f0e7fe7425e74f3d6a.jpg",
+        "ground_truth": "No.",
+        "margin": 0.5276641845703125,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.622360229492188,
+          "No.": -12.1500244140625
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-d3a8fbd155c1559d5ac8f602",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e920dc74b69617f2bc55e63e68eeae0432ae8a55c6db6dfa755ea5387a4add67.jpg",
+        "ground_truth": "Yes.",
+        "margin": 6.301651954650879,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.606858253479004,
+          "No.": -17.908510208129883
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-d6b19d2e3910089a70668a57",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/883aba43db4d4cea6408290aed45798024ddd5877cfd580f367670c36d1606c2.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.7585411071777344,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.257506370544434,
+          "No.": -14.016047477722168
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-d73049f681eac66e32c5f250",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0781b207825b23383e360b0eff857ab9ba2d7827ffb1e13ab503f2beddece5b5.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.091977119445801,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.669458389282227,
+          "No.": -13.761435508728027
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-dcc37dc33baa69fa7045e3ba",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8d2172a6ff158b8d592c65206968ac755ee25929ab836e046ca25aac11bb13c.jpg",
+        "ground_truth": "No.",
+        "margin": -0.5392341613769531,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "No.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.261240005493164,
+          "No.": -11.722005844116211
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-e0a8c4efe4d529cf5cf15217",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e9e764ff19196e9c54f4649d1ad938f1a0565f859d6458524c577e66c09b6ad5.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.142868995666504,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.087471008300781,
+          "No.": -13.230340003967285
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-e22c754a2b410a7199b10529",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/52d1c47a6469080eef668faad51cbfc59f49883e093037e5b98532244ed82344.jpg",
+        "ground_truth": "No.",
+        "margin": 1.2518653869628906,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.819854736328125,
+          "No.": -13.071720123291016
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-e4bf776044ed28911bb23596",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5329b97cb90176007e8e00744bc38d41410872b984e9802f2e09846849db3cc6.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.6947669982910156,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.442336082458496,
+          "No.": -14.137103080749512
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-e513d91bcb846dfa1a52d876",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b9175c4759a848b4716c5c3d7bdac269f1994ea3246a23f51f8880d6c023a7d6.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.6246185302734375,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.868060111999512,
+          "No.": -13.49267864227295
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-eab0298560d9b681f1a8d87e",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c6ed8fe71b81446efbf603637077214fd6ab3583d46a82b437bc760760862275.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.20074462890625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.330596923828125,
+          "No.": -13.531341552734375
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-ecaf33e7f40a72699cae663d",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b9a8e5f9a0ed2228ae57ae209d54020d61d854f26fdb8ed516792448424dc3a4.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.7157087326049805,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.937935829162598,
+          "No.": -12.653644561767578
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-ed4b9a3e4578179f4d585f29",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/15936d91fec305f32de50bda986c60d08aac0f48188b9e1dabd7d8e027f1955a.jpg",
+        "ground_truth": "No.",
+        "margin": 0.653925895690918,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "No."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.834051132202148,
+          "No.": -13.487977027893066
+        },
+        "generated_answer_prefix": "No."
+      },
+      {
+        "id": "vqa_rad_train-eef81a5b0e6173f466e53951",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/054d0510d10ad5e8b9d87ce2b628e493261ac7847cf447e8bb5bf61fb4c9b1cd.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.935792922973633,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.419191360473633,
+          "No.": -15.354984283447266
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-f674e3ebfcd6864b28ad23fc",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/bd1f1eaefa3866f009de05769cc5881344e28fb6adeda7594283c5ca5b898f6b.jpg",
+        "ground_truth": "Yes.",
+        "margin": 4.102749824523926,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -9.812397003173828,
+          "No.": -13.915146827697754
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-f7be9522b12df14238397887",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e0d561395d09d3e8f8371d37ce60205279e8fc2bdfc49d0e30f7e568b35110e0.jpg",
+        "ground_truth": "No.",
+        "margin": 4.449066162109375,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.53277587890625,
+          "No.": -14.981842041015625
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-fa29377ce6bc9b53f97a727d",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6ac87bc30a7ff98ce678990b742e393f1af890b9c6f1a05f66b4ff9e08b2245e.jpg",
+        "ground_truth": "No.",
+        "margin": 2.062445640563965,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.206902503967285,
+          "No.": -13.26934814453125
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-fa4736bcc2e599e71b3ce11b",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c143dc22717e2591da6d3676954e9820b10cfae9466832d95825fcd98c9394e5.jpg",
+        "ground_truth": "Yes.",
+        "margin": 1.254359245300293,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.929600715637207,
+          "No.": -14.1839599609375
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-fdab35ee3433288d4a1e839a",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1bb53e4434470b608a145c79aef33e4889111447acd375705e3a203853713138.jpg",
+        "ground_truth": "No.",
+        "margin": 1.38824462890625,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.384373664855957,
+          "No.": -13.772618293762207
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-fe6da1c3f1c3af7af0e5fa6a",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/03377b8d3a1a12aa131c21f30671aa7ac511a9a9ec5fc69b31621dab2c752506.jpg",
+        "ground_truth": "No.",
+        "margin": 2.920879364013672,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -11.412020683288574,
+          "No.": -14.332900047302246
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-fed26084d2abacd2aac268b3",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4ffa5156f111b6cc5a500267fc68dd2285f66b6b28167dae115c2cd923ae0f76.jpg",
+        "ground_truth": "Yes.",
+        "margin": 3.178439140319824,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -10.923821449279785,
+          "No.": -14.10226058959961
+        },
+        "generated_answer_prefix": "Yes."
+      },
+      {
+        "id": "vqa_rad_train-ff2da11e77f8957c269c8c79",
+        "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0df5748310b6f30841552d64bd023b2c077c0f1d332917577ccc17aca3dce4c5.jpg",
+        "ground_truth": "Yes.",
+        "margin": 2.572072982788086,
+        "threshold": 1.2462263107299805,
+        "predictions": {
+          "identity": "Yes.",
+          "source_dro": "Yes."
+        },
+        "sequence_log_probabilities": {
+          "Yes.": -12.477811813354492,
+          "No.": -15.049884796142578
+        },
+        "generated_answer_prefix": "Yes."
+      }
+    ]
+  }
+}

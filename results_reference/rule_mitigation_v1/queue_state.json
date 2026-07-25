@@ -1,0 +1,16 @@
+[
+  {
+    "dataset": "mimic",
+    "method": "greedy",
+    "chunk": 0,
+    "status": "complete",
+    "fingerprint": "67676c7087766b5ce701c622f27f68a8b05a6d2d90a2d317c291ddda7456d185"
+  },
+  {
+    "dataset": "harvard",
+    "method": "greedy",
+    "chunk": 0,
+    "status": "complete",
+    "fingerprint": "3e712050ec3dea3cb0122e2f5b6560fe4d5ba5235221bcb834fef1617291ef1a"
+  }
+]

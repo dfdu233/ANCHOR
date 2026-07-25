@@ -1,0 +1,183 @@
+{
+  "version": "rule-source-energy-anchor-mechanism-audit-v1",
+  "target_result_sha256": "5019d81252be8a7f08475d2ea9a11c8508bbc200e0480f6d476a3269f83bdaee",
+  "questions_sha256": "076eb64d38ff9f0150c45625d71bc378d88a3fb2d9252d13bf5cb102fe1425ff",
+  "frozen_threshold": 1.2462263107299805,
+  "changed_identity_constrained": 796,
+  "flip_direction": {
+    "Yes_to_No": 796,
+    "No_to_Yes": 0
+  },
+  "rescues": 545,
+  "harms": 251,
+  "changed_margin_quantiles": [
+    0.0012617111206054688,
+    0.3785278797149658,
+    0.675631046295166,
+    0.9719724655151367,
+    1.243295669555664
+  ],
+  "category_counts_first_match": {
+    "normal_or_clear": {
+      "rescues": 60,
+      "harms": 2
+    },
+    "change_or_stability": {
+      "rescues": 47,
+      "harms": 28
+    },
+    "device_or_line": {
+      "rescues": 9,
+      "harms": 19
+    },
+    "effusion": {
+      "rescues": 130,
+      "harms": 7
+    },
+    "opacity_or_infiltrate": {
+      "rescues": 100,
+      "harms": 14
+    },
+    "cardiac": {
+      "rescues": 13,
+      "harms": 63
+    },
+    "other": {
+      "rescues": 186,
+      "harms": 118
+    }
+  },
+  "deterministic_low_qid_rescue_examples": [
+    {
+      "question_id": "10",
+      "question": "Is there any evidence of lobar consolidation on the chest X-ray?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.1391305923461914
+    },
+    {
+      "question_id": "12",
+      "question": "Is there evidence of acute consolidation on the chest X-ray?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.6441431045532227
+    },
+    {
+      "question_id": "22",
+      "question": "Is there new focal consolidation present?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.11555767059326172
+    },
+    {
+      "question_id": "33",
+      "question": "Is there any pleural effusion noted on the X-ray?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.1904926300048828
+    },
+    {
+      "question_id": "34",
+      "question": "Is there evidence of pneumothorax on the chest X-ray?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.6868858337402344
+    },
+    {
+      "question_id": "42",
+      "question": "Are the cardiac, mediastinal, and hilar contours showing any changes?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.5672454833984375
+    },
+    {
+      "question_id": "48",
+      "question": "Is there any pleural effusion present?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.9631471633911133
+    },
+    {
+      "question_id": "65",
+      "question": "Is there any evidence of pneumothorax on the chest X-ray?",
+      "ground_truth": "No.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.1113271713256836
+    }
+  ],
+  "deterministic_low_qid_harm_examples": [
+    {
+      "question_id": "7",
+      "question": "Is there evidence of central pulmonary vascular congestion?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.9370012283325195
+    },
+    {
+      "question_id": "14",
+      "question": "Is the cardiac silhouette enlarged?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 1.1020002365112305
+    },
+    {
+      "question_id": "72",
+      "question": "Is the mediastinum considered wide on the chest X-ray?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.8607368469238281
+    },
+    {
+      "question_id": "76",
+      "question": "Is there evidence of cardiomegaly on the chest X-ray?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 1.241328239440918
+    },
+    {
+      "question_id": "90",
+      "question": "Are there orthopedic screws projecting over the right glenoid?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.6104421615600586
+    },
+    {
+      "question_id": "111",
+      "question": "Are there new bilateral hazy opacities present on the chest X-ray?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.01862335205078125
+    },
+    {
+      "question_id": "127",
+      "question": "Is there evidence of a new bibasilar airspace process on the chest X-ray?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 0.02930736541748047
+    },
+    {
+      "question_id": "138",
+      "question": "Are there signs of emphysema, such as apical bullous changes?",
+      "ground_truth": "Yes.",
+      "identity": "Yes.",
+      "calibrated": "No.",
+      "margin": 1.0194272994995117
+    }
+  ],
+  "scope_note": "Post-hoc mechanism audit only; no parameters were selected from target labels."
+}

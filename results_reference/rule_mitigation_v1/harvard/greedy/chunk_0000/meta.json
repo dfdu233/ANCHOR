@@ -1,0 +1,117 @@
+{
+  "protocol_version": "rule-vqa-mitigation-runner-v2",
+  "fingerprint": "3e712050ec3dea3cb0122e2f5b6560fe4d5ba5235221bcb834fef1617291ef1a",
+  "status": "complete",
+  "payload": {
+    "dataset": "harvard",
+    "method": "greedy",
+    "method_provenance": {
+      "enabled": true,
+      "backend": "rule_native",
+      "implementation": "RULE dataset-specific model_vqa_*.py",
+      "upstream": "https://github.com/richard-peng-xia/RULE",
+      "temperature": 0.0,
+      "num_beams": 1,
+      "paper_protocol_exact": false,
+      "note": "Frozen deterministic local reconstruction; RULE did not publish its table evaluator."
+    },
+    "decoding": {
+      "conv_mode": "vicuna_v1",
+      "do_sample": false,
+      "temperature": 0.0,
+      "num_beams": 1,
+      "max_new_tokens": 1024,
+      "configuration_source": "fixed in RULE entrypoint"
+    },
+    "chunk_id": 0,
+    "expected_qids": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "questions_sha256": "5ba7f317a64712dd317882c36bc10e5a9ad03ce766b208facab420d0da44df82",
+    "annotation_sha256": "afb37fefbc50d2ed009d4e6312785551512cf86440c5730d82af74731b2c1031",
+    "image_identity": {
+      "root": "/root/autodl-tmp/source_data/FairVLMed/extracted/Test",
+      "unique_images": 6,
+      "sha256": "4c996323381cf3092bb60f9dd5a8f2b4c2e602e54397a9c23ea9ef289f48f47e"
+    },
+    "entrypoint": "/root/autodl-tmp/RULE/llava/eval/model_vqa_harvard.py",
+    "entrypoint_sha256": "313bad74057c63fbe0e72814c8a51f1a9eb390dbd9a9b4f8376c33c886796c19",
+    "mitigation_backend_protocol": null,
+    "ordered_prompt_sha256": "45dbfe50fead756294f450fb2571e41a6d5302b7f3743322f9cad7eadda16b83",
+    "rule_commit": "f1bf7f7020918faab49e2dff12e01e7de41821bb",
+    "model_tree_sha256": "8248e485baf1179a7488b8a269475eb8840293b75195e1e204556be3f9e0bd27",
+    "runtime_versions": {
+      "pillow": "12.3.0",
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "torch": "2.12.1+cu130",
+      "transformers": "4.36.2"
+    },
+    "runner_sha256": "685de892ffc45354bd3c9f93101b7a2c24169df76a14be4f24b437c2e1f43f7d",
+    "evaluator_sha256": "286670cbe12fe1fad48216be26a3428ba98621372907d18478982d24fcb45321"
+  },
+  "command": [
+    "/root/autodl-tmp/envs/medheval-mitigation/bin/python",
+    "/root/autodl-tmp/RULE/llava/eval/model_vqa_harvard.py",
+    "--model-path",
+    "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b",
+    "--image-folder",
+    "/root/autodl-tmp/source_data/FairVLMed/extracted/Test",
+    "--question-file",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/harvard/greedy/chunk_0000/questions.jsonl",
+    "--answers-file",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/harvard/greedy/chunk_0000/answers.raw.jsonl",
+    "--conv-mode",
+    "vicuna_v1",
+    "--temperature",
+    "0.0",
+    "--num_beams",
+    "1"
+  ],
+  "elapsed_seconds": 26.667487144470215,
+  "finished_at": "2026-07-24T21:42:54Z",
+  "artifacts": {
+    "answers": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/harvard/greedy/chunk_0000/answers.raw.jsonl",
+      "sha256": "2fb7007334843810adb0df2237719eb5547f6051c066008634e7bd55bf22b1b6"
+    },
+    "records": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/harvard/greedy/chunk_0000/records.jsonl",
+      "sha256": "495a29d2a6710a9c3ede01fa036a7151edd8ede3d9b30241c7a5768adcd13227"
+    },
+    "metrics": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/harvard/greedy/chunk_0000/metrics.json",
+      "sha256": "7603a977d088032b2d2289906538a38c6f73c92fb1db4a5fcf512a7236bea428"
+    }
+  }
+}

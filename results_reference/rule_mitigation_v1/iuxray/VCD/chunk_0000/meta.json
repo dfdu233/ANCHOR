@@ -1,0 +1,130 @@
+{
+  "protocol_version": "rule-vqa-mitigation-runner-v2",
+  "fingerprint": "e975e41dbb65d455ed60379d9df5ec811da02b023102dc457a3b21e3cdd4358a",
+  "status": "complete",
+  "payload": {
+    "dataset": "iuxray",
+    "method": "VCD",
+    "method_provenance": {
+      "enabled": true,
+      "backend": "rule_protocol_medheval_port",
+      "implementation": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_sgta/rule_mitigation_backend.py",
+      "upstream": "https://github.com/DAMO-NLP-SG/VCD",
+      "temperature": 1.0,
+      "num_beams": 1,
+      "paper_protocol_exact": false,
+      "note": "RULE-exact prompt frontend with the MedHEval LLaVA-Med VCD generation port; requires activation-sidecar validation."
+    },
+    "decoding": {
+      "conv_mode": "vicuna_v1",
+      "do_sample": true,
+      "temperature": 1.0,
+      "num_beams": 1,
+      "max_new_tokens": 1024,
+      "noise_step": 500,
+      "cd_alpha": 1.0,
+      "cd_beta": 0.1,
+      "configuration_source": "frozen RULE-compatible mitigation backend"
+    },
+    "chunk_id": 0,
+    "expected_qids": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "questions_sha256": "b83feb2c8324284a6a10a54ddbbb88487e8a272cfc853fff300981f1fd8ffaca",
+    "annotation_sha256": "54edbdf54c1c2b1c6cdf55b98921a2d10f8c5092912291662827a7cdcfc4b666",
+    "image_identity": {
+      "root": "/root/autodl-tmp/MedHEval/images/IU-Xray",
+      "unique_images": 8,
+      "sha256": "af9a9fe1aae2e40673a8c4dab83dabd9dee94673c836503fe348dded04d54b21"
+    },
+    "entrypoint": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_sgta/rule_mitigation_backend.py",
+    "entrypoint_sha256": "9f43cd5651e99c60f6d46cd2e3f747116c803ff0871d05e0f2925f7e91773fed",
+    "mitigation_backend_protocol": "rule-vqa-mitigation-backend-v1",
+    "ordered_prompt_sha256": "049b98365c83581d0abe6762a893216fcfa1e7775ccd003edf8398660d35d46f",
+    "rule_commit": "f1bf7f7020918faab49e2dff12e01e7de41821bb",
+    "model_tree_sha256": "8248e485baf1179a7488b8a269475eb8840293b75195e1e204556be3f9e0bd27",
+    "runtime_versions": {
+      "pillow": "12.3.0",
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "torch": "2.12.1+cu130",
+      "transformers": "4.36.2"
+    },
+    "runner_sha256": "853491a4317634957071c327c8b596cb4786192f21521f3a99395159e104d680",
+    "evaluator_sha256": "286670cbe12fe1fad48216be26a3428ba98621372907d18478982d24fcb45321"
+  },
+  "command": [
+    "/root/autodl-tmp/envs/medheval-mitigation/bin/python",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_sgta/rule_mitigation_backend.py",
+    "--dataset",
+    "iuxray",
+    "--method",
+    "VCD",
+    "--model-path",
+    "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b",
+    "--image-folder",
+    "/root/autodl-tmp/MedHEval/images/IU-Xray",
+    "--question-file",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/questions.jsonl",
+    "--answers-file",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/answers.raw.jsonl",
+    "--activation-file",
+    "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/activation.json",
+    "--conv-mode",
+    "vicuna_v1",
+    "--max-new-tokens",
+    "1024",
+    "--seed",
+    "0"
+  ],
+  "elapsed_seconds": 51.576223611831665,
+  "finished_at": "2026-07-24T21:33:42Z",
+  "artifacts": {
+    "answers": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/answers.raw.jsonl",
+      "sha256": "1bbcbf98afaa86fe670923c40594d50f5d1874a80d30ccd255209002e0e49690"
+    },
+    "records": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/records.jsonl",
+      "sha256": "470b6f500f3f9f0058886cc5fa4b6a579fdc202883c5e2a2d79da016ac10fb5d"
+    },
+    "metrics": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/metrics.json",
+      "sha256": "db2e7af04292311d6673e264bf4e74ca52bef79ef28afa8df593fbe0222b82d9"
+    },
+    "activation": {
+      "path": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_mitigation_v1/iuxray/VCD/chunk_0000/activation.json",
+      "sha256": "7b9c091b1601bd498974bcb4677cc5739e16beab03eacc13b9c8049c041c8c53"
+    }
+  }
+}

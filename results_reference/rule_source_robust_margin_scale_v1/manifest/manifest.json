@@ -1,0 +1,1968 @@
+{
+  "version": "rule-source-scale-manifest-v1",
+  "base_manifest_fingerprint": "5cdfd44f77d6ac06c56e490f5f1b657d1d320720fce9ad6cd897c0934247b5ed",
+  "previous_confirm_fingerprint": "4f564fbdbc38857636fced8f9cd350a018e6d47979dfd8431e03386c072724fe",
+  "previous_reconfirm_fingerprint": "69556680bf7de2f0cb9152352e81c8b3e2610ce9db4eaa38d7780c6cdb70a206",
+  "seed": 20260727,
+  "images_per_domain": 384,
+  "domains": [
+    "rule_iuxray"
+  ],
+  "sequential_alpha": 0.025,
+  "records": [
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-009317272f7540a653c0973e",
+      "image_sha256": "13a54be1ff35d26ca3de9e7a6e2470f8c9c71789756fc4a63b6c51c73de80dc6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-018888b31db983cce8be806d",
+      "image_sha256": "293d16c4c4ceef140469fe48d7ab5acc167d8fdf46b99d0efcf731d2f662507d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-02c1247643bf9fa296ec15f5",
+      "image_sha256": "d441154fffa8a26718fcbc32786a83304a794f79a209768e9fb89b56ec1e5e2a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0303e6220511050e69d34679",
+      "image_sha256": "c2e115db7835d6a28a60dc234f95eb8a88d6bba769752e77f4e4813853959ae6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-03353c95e7c336ab1dd0a05e",
+      "image_sha256": "68595e764dd3997a4ab457f83884626be0f33bbbf21bbb47ec10a68ba0f1e629"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-038e35add540c4d0ae07e915",
+      "image_sha256": "4f25a1a70245aa1dec4d4a12b41b990446caa8999d667c86a0268d722532bc68"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-03e0db10f4653ebc169a34df",
+      "image_sha256": "3ca2ea3e065c9b98b09e9a97e7ea05018e6ab74b3519d47650324ca4da1b8423"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0413da3ae530e331c23b8d05",
+      "image_sha256": "1a9601cd7e7f159453fc9abe2382975b5117417f6f89fecac279a947aad7c89b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-042f0f5d50bbc4b6285871ed",
+      "image_sha256": "340637d480a556f889c30e879f0171ac5e04f0aadfaca9026dab1bc4cd250a54"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-04c717f3cf9ebfdf06e8aeab",
+      "image_sha256": "145b8b70c9ffa690965d83d0690af196756f7967fd981fbd3ac6a00fcf470302"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-053634a71bafbb8ee4a5be7b",
+      "image_sha256": "1477e6ff91c29b298cc8918972f3b2e0fda8537274ef0cba094a3796123ca23a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-05646f840fd031e0998dc9c4",
+      "image_sha256": "ef223222b5bd2b2a5cf3baf052a2908c16944aab1e6bebac248a7eda6538e37c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-05a5447fac1dc9e82141e1e2",
+      "image_sha256": "090ca6e2b82c359f70170809ebcff0f7428b43559cfee0bd29a24664b297b5ae"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-06446e456e82c1efe03f7517",
+      "image_sha256": "7ac068b8ea7b58a8ca79d8744580c14846ffaae42ddd843e11e9a8875513a985"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-06ce7b9d150fead3fd688bc7",
+      "image_sha256": "0a177b7aaa63ba4410ff9bb6086e1531eab25132afda302115b57f55f49718b5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-06fedd551c4c15e9c480407b",
+      "image_sha256": "6ae0e1a70de7fe8b78967603e015f6e6ad7409f428ee19f236832e194f886fc4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-070b5ec142cda1ef47811b37",
+      "image_sha256": "43afa17e1d3dbf40bcc872dbc2ede6ff0c16316abb2013500a1cd59ae4ecb39d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-071d870d110f6c2a05b05edc",
+      "image_sha256": "0c0ebe090659ce0ec56869d6a90cb7d2ec7646d986b69c018ac9cdfff9d8159d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-079a8f20456ec9203e7117ec",
+      "image_sha256": "a4f877c20e940db4aa6c2148ba3d734afae29c8079f8601ab179b9631c1600a5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-07ad95803a8bbf9875708880",
+      "image_sha256": "22e82fa8f2cd9d51bc4cf1ba43dec4cc4b0d8f1ebd834d8b97e0afb82329371d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-08b553c37ae02c2a7d7883ea",
+      "image_sha256": "b6c5f71f4ea3d76eb4dbbc741544abe7a3fda599ac091763f363c74cefd9811e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0a656441629918931a33e921",
+      "image_sha256": "8013be8b3d2f2143ccf4623bcd75bd5fe6625772dfde328fbe47426ad054d631"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0b3c5df66cdcc7c53a8fe583",
+      "image_sha256": "5ee00081a2ab73f4c195254ab788d5e0064267e7c5db35826fee367d419e5c3d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0b96e34b8fbf67fbf3e69f57",
+      "image_sha256": "2c3f9c91a658c12b3461a2a3bb6052844f80bf87ff1799f535f6f422bfab3bad"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0c36bf31b36241c77965207b",
+      "image_sha256": "2dbe36f729bbd0085abb2fe705168fbbce799716cd5e6f778928d6de72a68e1f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0e810cca53449aedd0b58a34",
+      "image_sha256": "18340a7b86607322dffe5843d238fc16ffc8eb72ec4d1d042441fade397034c3"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0ed14f42866d09c9adb92f63",
+      "image_sha256": "cb88d14f0d3957c624e8bf833eb04622ddcc9a4f9b0979a29354f9840cd35804"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0ed470f4a9ee01a0f219c274",
+      "image_sha256": "0e2bedb4c7d416491e61b39f0628f596db8c6229c72dfcdb41029e1a60209217"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0f50fa1bd250972e022a2ac4",
+      "image_sha256": "c17e8508bf8de7308c2661cc433a525d1051e0379d1d90bc0e8b1cd93efd134f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-0f8a5d8f4e1ae526b1c3f24a",
+      "image_sha256": "43aa10a75edc6962ce6626fcfc0d2e37c4261731f6ba07bb0a60771634e2403e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1137ea022aaf7ceb96ac8245",
+      "image_sha256": "1a8c26468d281106172e6d87033b9aac43cee0f2103f9d5cd82e47fbf270694b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-11c84ca9029ff981b3ce8727",
+      "image_sha256": "f3466b260c14aa92a7ea366dda0b875a8f842fc298db40f2def3a4ecaf4c1c60"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-13265544fa53e3e7fbe013ce",
+      "image_sha256": "2e94ecff7979db57dcffa1be00f34ef74f58e3b850b4dedf98ca667e3c7fa963"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1355d301b046abcc78768cd3",
+      "image_sha256": "6a503e8907cfdc009574641b919eb57ac0062a3f4c685ea79c4052e4bf66f351"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-13d26278803647ad0dd07d7d",
+      "image_sha256": "01d734cb39963fe6737a2a19058aa2572761b3fe4d05587c8113079f6a70f890"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-147ab44bdb645d6812adfa57",
+      "image_sha256": "053e236adea1eb187761048026975a3e8be5c176b1d96a04f9e620c99f2af688"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-158d74e80de8fc204b407415",
+      "image_sha256": "b5a015e966b15541b3e432226b660dac09ca336c0cfe558f5c9ff761f5cad87c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-17467c1194280b83e4c7ee21",
+      "image_sha256": "730e64969c241b776f8d785540abce8e8252fa09c03286ecf0a538f6e7eb8914"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-196299885a37dac5a66b16fd",
+      "image_sha256": "cc0d11d5b90854314a2871a1e404b75e869fa57b50d1b8830a369cf44854c1ed"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-19e083053245d029e829ce53",
+      "image_sha256": "3530a343ee1d7be5373e5d193ec25063e91c503e62a77209a399756752976bb5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1a8814145660f9488c7ab54e",
+      "image_sha256": "69a62bce8ea7868f8f2fc637698010d63ba985bc35b7ef89bb7c9cb9a1bb59e0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1b6660d5d28cc989b78fc924",
+      "image_sha256": "bc64605498c100edf2343968eb0309b7b0940909e826d4984d01243ecbdf5c79"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1c27a34119fab848bff882b4",
+      "image_sha256": "a437985aba0076d23a75b633ffeb864d64528b6d8768e8eb62862754c03d7809"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1ce857ad1b9cac03d8273303",
+      "image_sha256": "e15c2f42c964aea50fbbba944de2c7738214589fc13bd7ce18b6179363466e1a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1d13019518a753513c281d73",
+      "image_sha256": "9182ad4fef66385904e028537932cb0844e2ba7a2463175d222c7df9e6177f99"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1d4cec5f164d5180833bc6f5",
+      "image_sha256": "7692e94013ab4b8088dc2adb19c48478868e6907ccf3b4b38fd346292648fbee"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1d94cf79e91f3076381dfb02",
+      "image_sha256": "4926454a821007bc995eb4878fd4b8522aedc28bd35e41f05a9d56562aaf92f6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1deb0e887eb09653eacbe416",
+      "image_sha256": "c9120023728099c4f041ddd60e84c665faa6dbc7624cce2c809e7e14b7a7b0cc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1e81e6cf933b0bddfdf68539",
+      "image_sha256": "f256f72940f7b147232114c4cfa2a70fe94da8cb99a034f54c5197b2b8bd6e1b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-1fcc94ad1057030b918797cc",
+      "image_sha256": "aa1414135d2cc0503433b52331201e5990da174b724af275d8c1e4a939240edb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2132b5e56006d35db33edb5c",
+      "image_sha256": "93b5965faddaa2d2a33258099fa2ca2e82ef187c879ba6a56b1e9ef2255423eb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-223a388a540bf18759cdfa2b",
+      "image_sha256": "9352084d2e7fb7dea3ab02c0b8baaec5d6410befd7afefa5dee1257ccf21a847"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-232ef1e2806dff2ca3e91988",
+      "image_sha256": "3b520a8f8f781ff7b7d037fbfd951323d5f656cd68b48372955c13c252dc5c8b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-235481b507642d61dcebd9c2",
+      "image_sha256": "3d1c8c4bcc7a1ea61d2bcc83b85d440ea36d2d443fbfd7beb5d3bd99f75287fd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-23d357ee53d386bdcc3d0d8c",
+      "image_sha256": "ca8c2f5a09fc72451b164847af9361e1245bd9743a76b0ffcf04e4348587e57a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-25973c6c64ba82762b81c026",
+      "image_sha256": "35c1b24af59a299cd520a9161beff64e44d8fb0c6b02908351e41122f382b2ea"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-25eced81f72d47c5b2a61071",
+      "image_sha256": "1e3831687b39c95eca98a3b213166e1765671cbda0059fb63536d43880e24a92"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-26573e6277d91634a8761dce",
+      "image_sha256": "624ca2fd755fcc5c65eb04b66267649a06225704e4ee8c723224befaf5df566e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-26ce194e32ff693201190562",
+      "image_sha256": "96cfbe706a65addc23453468552d76fac3d2c098baee6d3ba690e3aa86802ed6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-28184071c0a880b22eef563a",
+      "image_sha256": "92541996339da11521ef9fc009c55c23a0f3526b47a0dddf3a720482220ccfe6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-284bd1bb1347d173a3104e30",
+      "image_sha256": "9adbf4879708854012a9297f59d9db128ddb1bfd085867db37e9da3162e086ca"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2978217e6ebd8c60175f2828",
+      "image_sha256": "373da904644828fabd590191b168ef3964c3f82c676a011d9f4e21aa95113088"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2a2dc162f9d8457b0d3fab6f",
+      "image_sha256": "74a1305733bcc6a64ab8dc738cf85de33fac878c5d7419a76d839991e506907e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2af9d61d2bf160ad226298cf",
+      "image_sha256": "b7883fe0550fe3ad207be462b00ee0b022edf968e4b94c921ee00667b72c4acf"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2c87c13cc136b665805ea7d0",
+      "image_sha256": "3b6f0ad63757159aabd480b5e98f1e99115f465cfa7874a6ddda1e5a2aa47992"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2e629a25a0dffceecf6011e3",
+      "image_sha256": "9ac1d063ce5e629f58b267e2da504f00b9bf1cdffc6d7fc46c8ac77a31cd90d2"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2e693dadab22b40a1befde25",
+      "image_sha256": "ceaed939508d5b13b10581ce245dd349b54bb60d74c48a4631515e8839446b29"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2e74df51a8bf3a3740ed41c5",
+      "image_sha256": "53c80e250628faa349d164402e7dabc82921b6b5391d5eac4ebef4df292c9cab"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-2f1e39c14195bda52c3fd0ae",
+      "image_sha256": "82eae8ad0d6492dd712ffe9ca9324cd47b0ae971219f9e3999dc173e9100a53a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3158a64549899a86ae02e798",
+      "image_sha256": "1725d9ab0ab78006672965cc958680778a01df6c0d45ccbfa128305fbba088cd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-333b313efc4b9b83987ab0ed",
+      "image_sha256": "2c82653a95aabbcc180fdd079ea3a7da7db62e8a9eb27b2b0f9d6dd52ef56794"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-334db5b1733c5b3ec3516c9b",
+      "image_sha256": "c98b878d07cb0ec621f9123fcb0021b0d0dd8d2cb5558980354ac98afdae277f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-33aceda35c88ff48ffcb96ea",
+      "image_sha256": "e7de8db072dd3f6465f2d63982c5f47cebbabdcdbe82f82e3abdfbc3c7ba2218"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3517c04412a90b7dfe850ac0",
+      "image_sha256": "17a85e8648bdd8ef164023d27dc6d094ae487e72be4b297c4293ec6aff2493fe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-35a340efbcbe2896fc7347a3",
+      "image_sha256": "caa6de2aab49d087abbfe3a64c7c42dd143374835184824dbea70bd2b8d5ccfb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-35efd098f1aba5f9658a4863",
+      "image_sha256": "e8d51d6768aba601291dd970d92cbc51e93f8d066e2584fa31d0be38fdfb63bd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-368ee1149a715786c39f96da",
+      "image_sha256": "d4fcc057c426ffc3743ab076e8558dbde0122355b413f63a32bb8d8329cc96f4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3751723bb5a60bab7a70a571",
+      "image_sha256": "0b2d245d4d50fc82bd68154682068a74c58ea73389fc157a72e5e4b75673db6c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3755e6c69149a07a35e1af8f",
+      "image_sha256": "11bcbe53eea2f8437817ef13f4302cf30eb623ea045077904ea28c161ef235ae"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-384f6ced5eafd1766bc0a17f",
+      "image_sha256": "6285ed7cfd8f7e7d722c9e8fa6d4ed59018c6caaf6cf57202da672f444ee9c66"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3860b2f44073676f1c68b61b",
+      "image_sha256": "be90f42598ea3bca4955c8eeeeda39ddd6967670ee4dc0db533b6701f41c17c4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-39989cb96f8b5820f16697ee",
+      "image_sha256": "f18d2b3a97654376c48e629b83dad10090f80db6e854142aacc57ec341675be0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3be6e36906e01a55d2a1d245",
+      "image_sha256": "0514b2b95aada3be32148bc493b30cafefd114f13d61c34d516dd191b5011562"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3c40e6472dbcd7d1325ede35",
+      "image_sha256": "806fc4d65a5b80d6f5c6a21115cb433afb1ef1bdbc613af737d0dffeb9f0e9c1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3c6cd4a61dcb288b40477344",
+      "image_sha256": "b5d9acf4896eb06114b78be97b105fd4170bf4f9aa9e245619faaf7eaba9ad67"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3cbb245443f594301a6fd58e",
+      "image_sha256": "8d1e2d414a42b4eeb76bae6430bba051f3aa968e01606fb6bd2951c5fa29b744"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3d43d9a14d080689f1252f2f",
+      "image_sha256": "01f858e7c091a2517df333fb06984cf1e28e646f0ea693204063c835026cfcfe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3d883e394408c2314e1450cb",
+      "image_sha256": "d061b40eed78b1918a5eaf5027b01d0dbb280119bc531e6c5b1a02978b599df5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3e4b6faac162fd7714334741",
+      "image_sha256": "5d7f2494554750a7fd3c6059fb8acea78ac46ce12de7332b5b4c1c3ec0a1174f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3e860ea0a4b75289af900451",
+      "image_sha256": "1b26ab6012306541a0ad8cb83be732eaa4660c39dfe2d3fb55124b706bf52fe0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3e9c0eae45a48e7e19c8f7bd",
+      "image_sha256": "35494919f4160ebfa276aeb2d2d332a36f79f9a00fb23a1e48d0d4db0d30cafc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-3e9d50e9c4dd4a56e264f86c",
+      "image_sha256": "6d0a600a4d8a146c42a73bfe5cef7dbbf15e6506a0a05a1d00ebe400158e4080"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4111a489d948b3789d6563a9",
+      "image_sha256": "e806c284fc8c1bf7c719c7bc782e4ec20bce34193e823ffaa8fdd705a0bb7e0c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4270cd9b062c00fa98617849",
+      "image_sha256": "92f9ce8cfb735ce4169e1d044405479a61cdfa005480d3e8d0e4ff35837cf237"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4365996cd1e09c57380a49d1",
+      "image_sha256": "cdac0503062faaea4cb45484611c89f2d334713b42d01ef827c564b18b71effe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-43e25bc1903c6171efb673ce",
+      "image_sha256": "4e18f21f87ca6a65b092e12028f9bbe210eb7cce250ee1e0346674ddd3a3c6d0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-44d40fa6efc5b75fadc829dd",
+      "image_sha256": "4c6f58f16248249f3aa72512cb94717b44eedf6ee3af7bd1e4ccb2195ea60694"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-46010380a4415d0ca2ede201",
+      "image_sha256": "836bf8695fed0fea1fb0db9357e4fd49a0316e6dddbd52f04bcc36ec2c6cb84e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-47416fda3b8a8a4d0fdac5aa",
+      "image_sha256": "2ed83090efe3064095c834a1208ce19efdc8f13242efa19b8daf91be902f7398"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-47574cd9a4385cc926246bd2",
+      "image_sha256": "3b68b55650e1d2982dc81c438c58fb1253ea09f0b65de9ff63efb5fdbc7fc332"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-483b4f61b575d723e7d6bec5",
+      "image_sha256": "b1554d8fdfa2d27d6d0edb3058d85de9eb8c4025cfad767269c5a7169aa84e5b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-48bf1e7d7fd3ca8d9e471ea8",
+      "image_sha256": "d8a8501cd64da14a50f0fdfa20b2d9c99590c04b6c372923ae55f8c22fdf89ed"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-48bfba5ae9e3206e3cdf0eb9",
+      "image_sha256": "9101799c7d3551f70215584251626f90033295d148bdef1395801981ded9a250"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4afc4f19b273bd6d7fbc7c46",
+      "image_sha256": "af1b8e9e88aa3b14774ae756008d7b561af5474ad2dd6688b1c45d36caca5545"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4b75eeed6e526a8c89a5727c",
+      "image_sha256": "310f254eba609d2a163e90234f44ad100251d3f9040ec3b11309a94279369161"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4cb1845f08f68b69f34fb0d3",
+      "image_sha256": "b32702c6ac0a88fdaf7dc22192447aa243502e313b70c4df4e936003411a2848"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4cefd36d3055eecc55421917",
+      "image_sha256": "42f92ad8a096c51d9b308318ba41a06901302b172fa5d6ff2cf7063fff5c1dc3"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4d6d8a674d0700c42213543a",
+      "image_sha256": "3dd97b7d5686535ecdacf99b27d3e79825df9037efe176e9493b50c8e9d7ed87"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4d8bb839be7d72b5bb937049",
+      "image_sha256": "005a0b5a4e307b462425b510d524c43d308b049d17aa60fd5443325c86a52008"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4dd91deafc7f7a9a3dfc14ab",
+      "image_sha256": "29e15eed9c1d0a2ce9b059bc778242befefdfb9f95992969e18552c79f18ae1f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-4ff6c97b5641b55954afe9fb",
+      "image_sha256": "9da507784bebc3cc7896f7f601c012091766c891e3d7a6805ce1853bcdaa85fe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-506ab821e188003f5e9ddb13",
+      "image_sha256": "846b762c698d856e8e299c26e1b3d32fd2dcd889e28eb83f2880026062fd7dd7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5161b24ca876b5501e0d41a9",
+      "image_sha256": "2373fbebbb95bf706cc6f827df96d456f7245ca56681e26258192b8c7ee8a922"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-51a2876eca888f54d2ae8c22",
+      "image_sha256": "0772df85cfaede6ba6f4d0c1afc49d0953bb9cad76d27bb719c98e26be84b9e4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-520f21c7585494810969f38e",
+      "image_sha256": "584efb031d55f8d871677f603ae72a28cd5b0a8863065799dcc77c13154065f0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-52432d9c98dacaf258c4135a",
+      "image_sha256": "863db3b46e746be1f6e8ed38150eccb6f29c42d9bd8e7f85421f89d3e00645e2"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-52a8e0f75991e38e0381a1b4",
+      "image_sha256": "5f49e960a3c8530798a7b0183a3a8a4613f7acb1f8d7077cd8cb11d6c9d67356"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-53372894ff86047c8020c96c",
+      "image_sha256": "c9e93ca7e03bdfb22406c985f50c6492169fe640985f632bee1cdc901748ca40"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-53a569141786a09c311a83cf",
+      "image_sha256": "a97fe1eed4ce7bcdcca4af00121adc74f4f48c11e8a7018dfa335a647b891400"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-546b4bd13300f27312735a0d",
+      "image_sha256": "fb144ae31001d91f22b4d1f9b293252a3c88db4b742069080023a282c0d75ea8"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-580fe2b8eed4e795f34b71c4",
+      "image_sha256": "2f34ce5be6d8d5df43b0ad72e6950ea5b974221052b1cc2ccc43b4f8cec04a11"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5a8489b082f4bc96d049aabc",
+      "image_sha256": "e1d2269069fa8a1c4a2fa80ab755c6307d13a33e09373ba602ee81e45fa5069c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5abc47f6fd3477fc23d92381",
+      "image_sha256": "ca2e405fb8c4aa1291ab77ff914ec0a08df64041d1882c1a23ad2192db7d6d07"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5ad63bfebc5aa7a42d86e9b5",
+      "image_sha256": "cc9b7469d417d333a97e0d56dee8443d9a7ed1972b2087fc96431943ad439b64"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5b1b93b16a7e2ad6119c070a",
+      "image_sha256": "002c760ae5cf05254ba16325d77a0e4128691e4b1e024c83b5e7891d3775d82a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5bc4fadf43b8cd3b8c649088",
+      "image_sha256": "5dcd0ced1777770a4bfdd30b3a21a5e2482809aeb5844ec1e3231869f8c24f32"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5c594aab3f61582e1075c5ce",
+      "image_sha256": "6d813a009e002a5c35c6763aff63ca309239507713ca7aea7f88f8191813b22e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5c8c1aa0779f7845d692588a",
+      "image_sha256": "9b4387ac065bb5aeb1b06ec2b58fdc1288b033dd3177123e29b40e444a2c7761"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5cac1840a712cc85a0f35ab2",
+      "image_sha256": "686ffab7227d3e0694e9b4d385164b84038c98613e1764fbacc53b55ce14a394"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5cae015d1400d51cae446c41",
+      "image_sha256": "e75cacd6a65c4929bd4c2e21cd3dedd3ed3df6db52790af8db6cda090ec2d3dc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5cb4142b4925edd6395292ed",
+      "image_sha256": "011b265dd775156bdd3068e3d5435c5c25dcc120644493670e710fbbc46765b5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5ce83e477daf4404ac5c1ffb",
+      "image_sha256": "f4443ab488ab42aa3c5a436f8481cbd7544fb6a5f52d89b1e42162ee131cf1cb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5d08ff3291ae39b66d3d5e69",
+      "image_sha256": "156b4f0038292ca365ea0894c0c3211f47b4446404ce61185306526162f1e541"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5f0360727785776b43e15c90",
+      "image_sha256": "e5b37b900dca5d6cbc3c333cf55e02cbce717ae2b03466537bb3e8a03b08ad28"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5f25e8d07c9a25c6825ef96c",
+      "image_sha256": "40a034a4843f277537b0969c284430f6632e5bce15529cfd5ec39ef88bd35ca1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5f40e29c57a970172680ee0f",
+      "image_sha256": "fce9fc0ed9b7176acc93a6065d9514a7332e18aca5a777a927aded70519a7c8a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5f47bae5480e971866c46c5e",
+      "image_sha256": "5ac4ab3cb1e2233b27c25bb1063e7e441cc96b3be4ddc8a9a8dd94e878bd352f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5fc33d5640ee2a6c19cdb62e",
+      "image_sha256": "e073ba64c6a02324ac4eaeb71f26fd1a2bdc0bdae567daf29ce3f430d4e731fe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-5fd0c5a913ff7515f2f91dbe",
+      "image_sha256": "bf42f4550ec6fb86b575efb7b7c7753a7c2f69cb3749bf72fe4b7fe9a40d10b3"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-60712f159c5d9cbce760375e",
+      "image_sha256": "8326b8171f214380834b4831fe9ab265e8af70808218217eb8e5159206f7dac4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-60b8efe6fd566f3d4d1c80f5",
+      "image_sha256": "f465cbfd13dacf898ae0e1d4b8796beb148cfefa7a8640f5fd4d1f49aae54766"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-60c355d3b6bbe756dc058b79",
+      "image_sha256": "938814abea34ab5f787a8f2a05dfae36fe7b9e37beaad65db3bdc7810f21eaeb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-62a8cd02e505ff5e17b8096e",
+      "image_sha256": "c410fe57f6d169b9f8e57fe58f5070e5ec21318212a7869e4a89d0260e8b4f1e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-645cb2370ecb5062a5a5849f",
+      "image_sha256": "3f833b23034127e35302b82ecf97111be20ec6745a500e6f49b8a308efc61bd6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-659e59c2c5459a263d2359d5",
+      "image_sha256": "7c9459fa3de7fc969c9eb7dba827e21c8c102884edff6d7dacb8db6fe301189d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-66b43d08e18d5a46e4487e62",
+      "image_sha256": "62701e01bd85700b7ad690ffa4e0ee636558793515c206e46ea7598fc9949dd9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-66d7f904e984ec20b3b7e60e",
+      "image_sha256": "faecdf59ec920eaebd2faac93f735248833db9302a273e8ad7590ae2b18289da"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-66dbcabfd4754006a53d30f4",
+      "image_sha256": "0981998170b88d1165b185814a11fbbced1a26e29a3f5981ff142c8035bffd00"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-693c5fd8926dc6320043298e",
+      "image_sha256": "797449488382d253b24c0ea717dc9a812d9e05d3ba821c50229d06b291f758f9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6ae2a0a0900542db2cc65406",
+      "image_sha256": "914bee7a9f17e3efdd04c7b2ba6bf141ae537c92bd0ae16ff43028fb5fdbc814"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6aece6741bb77735aa7cea9a",
+      "image_sha256": "9d0c892fadba3ad5574ed6f17ea086b39e295c4a584f4906c005bcddd569182a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6b7c05d7ca6794cc6fd322c8",
+      "image_sha256": "bbe06d7a1db22a5381bff353d17f59d0d3e9f64f2b9283c8f6d5f2ac2afd0b4c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6c3f946f62aeabd457f3f214",
+      "image_sha256": "7cf36d6b698a033e649ad7e15ebb4a6c9d3a263d7cda35400d3c129336d41599"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6cfa2c3731cb3cc0f284ca80",
+      "image_sha256": "3bdf8ab8f0d830e5b13e1b0a4948d2228a9e8a9fcd3ca45b7faf38d0e7d4009e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6e53d9f64f0cd0231b816983",
+      "image_sha256": "276cd546c48cd322445d8bb5ee45221c3a18763c7435b7b689b7c8b55c2e8e2f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6e5ea31596abc0c0dd437e84",
+      "image_sha256": "6425ee086ce30cdc39cf313c484b7bc345cd8a12c8d9d350a5821bf39beffc2d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6e79b4dfe3bd314bc8dc5a68",
+      "image_sha256": "26ad6fa32ab878e02fdfe7966e118e796dcc6acb2597e2599853e244485a3200"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6ef92e59d7c540d0450dd903",
+      "image_sha256": "90451812396c3d9a60e4f95969be74217f667f171a0c3af47db07d2574086cdf"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6f02d96fb2632908f76834ad",
+      "image_sha256": "41ce58a5b2fec08e574483f19adac5c612a75a1c42f34884bf841ff6867da06c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6f17fc0498be78dd0f503a5d",
+      "image_sha256": "512eda88a36195c03e8a016c7447d41669278af347904723a9a5a07153df981f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6f7ce702631518a8b49f0b6a",
+      "image_sha256": "360c2465071bf2bf46a442798fea486d66a04abe16a3c048eea6bf4d44285b1e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-6fe070f40606b380b3d90826",
+      "image_sha256": "a87e054e067ea806dc4a06e8e594bbbf34a389cc0ee02628bffd802b1f8fc94e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-70c37783a098713137be845a",
+      "image_sha256": "8d1460bcdc36b74d54ae89d2bd59a18a0134efd34d5eeff2828744d3cb2d2990"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-70de36f2c704025309917b67",
+      "image_sha256": "d5c87efb8e23e9c536bf78696055b9b9f0773df99f7af751414de63b5c86bca7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-71bec87575231a67efcd57c5",
+      "image_sha256": "ee6c658db91cd6e4d613d4f204b088e545a655defffe07c918d18685fc458736"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-71c8ff7a9d424e4f86099103",
+      "image_sha256": "393d49547046a3e7edaa71c4f92a082f951bfce053ae28cbcc897113e2d89359"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-71cfb5b5954f66749525b9b4",
+      "image_sha256": "b8ecdc016abdca591f89fb551afa27733cd1e61c0b3e6a2528a75460e3d9bab6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-721748aa7ea97762e4afdea4",
+      "image_sha256": "087f74222b2b678efb495aa85ea064c13f28988b40ba102e47d0d190bdc4b8e9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-72d133b25b17b95b713b200f",
+      "image_sha256": "45431bfdbfda64a8ee495b54655088b72d1129bcea9cff6e9661753d3c54c90c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7396eaa7e4082672b093ed37",
+      "image_sha256": "0e40d06d3a30c59a68f89491e6e13890d839f751003942b811ac6ca0bc427f65"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-73fb863a2bb4cfa0b078a84a",
+      "image_sha256": "ae33e4e997b6eed99f0f8b440897824b7c4dbe73034065d899626e87e13a2f61"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7490e0b76d19a0f4e6f4d918",
+      "image_sha256": "90d8949e6b169a5a65b22896ae6b33a3d62b6374335dc78fc6c4d4569358eac8"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-74d3903c067c4eab1fa426b2",
+      "image_sha256": "deedf954dc4dd6651222b7c497cf340182fec0b1dad475d7422d012243157f24"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-74de8ceb3e88df9bebe435e0",
+      "image_sha256": "4cdeac5b1894e5935ca230c4df5a424741721e68bbe36666098d54f28911889d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-76914d58ee01374c7c968292",
+      "image_sha256": "822bc205ffa19ca119a031729acb9ccca2dba250f639f65f413f9c621ea73b3d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-76b7b63c5d2526b6afce569d",
+      "image_sha256": "9561762b2be507e170562b7e846faf4fe13c2a83dafa1bcb4d940f16cc93d3d0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-77abbb13f91f51a717b7bc94",
+      "image_sha256": "bdb058989cee754684a3fcaf98cf1ce7770ab6e25aa18e6e0be7c5efe905ecf5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-77f6ab5283b232172046b117",
+      "image_sha256": "984b52b87af7a1ab1897aeb176132c89eddd3c848135aeccf5e89e0d4e95b67b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-786f8050cbf6dab7381897ad",
+      "image_sha256": "7b275247fa75296b1cade75ec51d7dc5fc351b5b6cdf2d5ada202a17d852ba0d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-78b7912af8ca3a19b4924dd2",
+      "image_sha256": "33fd4644f1244dc91060bb80ee5651de67fe7245cf2a71617aac32f0abf83ab7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-78de43237b35fb06a9ee1bf0",
+      "image_sha256": "99e41048997d41617550e772257314b20a3c25f424027ea29385d7fd21c7589e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-790abd01d0b13e45da5a41f8",
+      "image_sha256": "886c01846ad0c0555b2c8e743cb168f6c2ddbbd5fe5c968a3d5353ea9cf6477c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-792dfa71888ae18781a74e80",
+      "image_sha256": "5084c534880e0181e21e0d98ac566a6c5e67f23541320eefac4cf8bb40f0f4bb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-794d4069401e87e2b522121b",
+      "image_sha256": "28bc18f73895ac8a8009fab90a9c7b4ab01ed8e19a90c3d6c1359527be93d126"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7a1ce35495153ce0ec5a54dd",
+      "image_sha256": "6c1e04e761382317c313b8f4092fa2bbdf27128fc228d30fe09388eb556b0cdc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7b30238a0951a083d90f14bb",
+      "image_sha256": "adb000fe69d1859096fe206aea5b16d1f5af71176a471e28464f65e6e93dd7ae"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7c144710353ee9c57c6ce301",
+      "image_sha256": "7946a3a5235b5a48131eb0ab7d7284dce45fe1d7e04f88e7ecd7c00257cd5e32"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7c48646ddc52413d3d51d2a6",
+      "image_sha256": "e9a7a35193ec1b4bb3cfc7734f764e4c0244f51541631105c0a1d0fe659d66e0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-7d7dca8b6e37cf07c73410e9",
+      "image_sha256": "0107110299390bd3aa798e7e455c80aa84208b47bac5db6475fc1bb36bf0793f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-808c5d6c0cafda23a35d13d2",
+      "image_sha256": "13282df890209111b9b33aec7dab009ee4e0289c8c1ec5ac39d20ba898f14855"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-81313d1b0770adc6728b373e",
+      "image_sha256": "5cce074d435f372f9187e225e79131c733f775c5ab2b8c973b4aca0f831524a8"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8162f9b2ee23f2f9460e2fda",
+      "image_sha256": "7e20b2225a3b69eedd613ae373f7940f945a27a38062cc8c82eb4da4391c83fb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-81c322e6209067b194169ffd",
+      "image_sha256": "3398a22ec8d0622a2419cba15a0eb8fe8aae6f682e6bf86c0008c6997da2ee10"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8288bd37919a86c3919ec55f",
+      "image_sha256": "12a3785c42fe4226cc3f36e75057d21573b7f145b0514c5d0a96a13c1aa30c5f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-82d0b24d58838d4f8b251299",
+      "image_sha256": "152558e9558b3cab6e9cce405a61edda7ec6df7d48ed8298b6c251bde9a708e4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8365e8577b9d4e0960ae6e09",
+      "image_sha256": "79666cf1e8cec1cedbeca59750a37fbbedca32451f477032a53ea36aef2bc35e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8392f77ef8cc898427420055",
+      "image_sha256": "1482da0b3092d5b39fcc30be8fedfbfb1e5fa8330c8b847136b8b7d00172581e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-84b9c9d74221557fab192d34",
+      "image_sha256": "5f03824dad70462545883b7bca2ed0af6d3e6780a7afae145b76c199fb797b18"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-84f32977b42155d6886439ac",
+      "image_sha256": "8d3a36135a85af69319fa77df0f83e14e2d6586653e12db3e92915bac977122d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-857b1702cd2f6b394161cec9",
+      "image_sha256": "7e247fd74ee826ccd79756584863d4b0b29b74ed31ee849cc9a1c30bfcd4af91"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-86a87ed00de2d20b1e3b5aee",
+      "image_sha256": "0108222bf0f9949725462dddfd130fc956ad922f6f0db8607b3b502501f1048a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-872cef5b19fb8a88d363ef37",
+      "image_sha256": "188d4a12a0186cbd3dc0b1b6a05bcf6d761e5eafb310ff33f9e7e0e05719d757"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-87373bacf7f7776187ca269c",
+      "image_sha256": "e64eeff254ef7237c4c943432b417c030c9458a16bc5e1a2cdc63a3a54fcd78d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-87f62554ba2a52d7fd168e4a",
+      "image_sha256": "d42138b3ce0f83d48ac60bc1710579077c32f8905ba615814295a2dff2b4f6f7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8841810a1cec2492eed9f523",
+      "image_sha256": "7515c6c52b4206ff0e114ecdf63eb3b890c8adf0cd93d0bb8efad6f45d95ca65"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-88c6c90fc73d3445cfb96186",
+      "image_sha256": "e0bd98f50dae9a5166de6da93c1bcb0e2bd915ef33a6090bb27ba517a9fbcffb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-88d5eb46641c2e108c9f9b99",
+      "image_sha256": "60e5256fe7c05d9806a5e171606f0c8e7e83b789076c43592ba2b7ee771d5c09"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-893bb7d27cdbe93b33d3c8b5",
+      "image_sha256": "75c655bb2b114a46b119f1305ea4f681480b668cc411ea6ed731ed51b3fb82ec"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-89b20d08d5c134216ae40692",
+      "image_sha256": "7f80b57336eb66e547e23094d170d91cc91f6d0a69695ee4677ee1db93016ec5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8a73ae79ffd01b5c9c5ea7fb",
+      "image_sha256": "9c21eff1e4d7375e8343a827f689772d0d4ded0f8cb2c80c6720b01a07f1c789"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8a7fe8660f3a51f88f0caa77",
+      "image_sha256": "32e53cc717b477bfdba649cad7a899a96f6d3d622185b78b74657f87ab96e7d3"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8ba30dcae8e608496c6b25dc",
+      "image_sha256": "59174f3542268e624d28a483b9affaad1a7fd53d3afab1acebec570b71b59c15"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8bdc0dc889f8723fa70560ed",
+      "image_sha256": "d1406c57e1878b79eb10b052f3595d316e98d0670720b9aba71f31bb8526cf3d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8c0deda09c2bab81667403ea",
+      "image_sha256": "fc163bd2397a80a34fb2c1be9c9ea6c7514161d3b4080702096db693dc2f1b54"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8c1183707dcec7e81c78616f",
+      "image_sha256": "a88adf0c7ed123c46ba2a244be96138621d9ca0e14cb4b26867a9fbcaf179e2b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8d00c6c3e5ba0e9ab6e3929f",
+      "image_sha256": "da2207d7c659e7dbfefd761c1940e86f96f2295871b35e30c2d8bfa7e7a179ae"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8d4a0234feacb0f54bc9be45",
+      "image_sha256": "6d8dc9fbd7202adf2325e8193ee87ba9dcf695379d19e407f523c7f43f4a7203"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8dc93bd3aa79284c32f82d88",
+      "image_sha256": "9940f6dbd348e0a7eafae31094bf970f68b87a2bbb98d05cf7a2378e5de3724b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8e247f7fce4add000fcaee28",
+      "image_sha256": "24f1af43ce3c68e52b09f059ebac42714a1d939d4c1fdda7eb6e2f328389e4ef"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8e88d122996a2669d3519e82",
+      "image_sha256": "0f17ecf5879981e34f9a93cf33bb9fdcbcf71d87a9372162c21747d60019710b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8f246f09169a37f0a544b160",
+      "image_sha256": "0f98b776531d017be6c1407352db324925da1d6b501b810d87d698cdf6119f49"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-8fd957757403f6b1268f4841",
+      "image_sha256": "a3635cefce57dd3c79f25e410a9a0c6a0c03f77f081739b8ff5a407d9000bb84"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-919e0457c23aa133de45f582",
+      "image_sha256": "a3d0d78f8153d57ac25dd5aadb45ceb7c8c4cbd077811ed4cc691eb3cf1f5a47"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-92157f642ce243da245be2b2",
+      "image_sha256": "60717e9987770d644fc953292954696a1d574426448d971771a29f47e3291765"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9325de48b6f7b40c9592210b",
+      "image_sha256": "4fa6a4d1b85b0518632a54e817a2b5ae8ab37c7a33071b5caaa17eb6c8a8d7e6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-95d5581da826cec88e7a6197",
+      "image_sha256": "827413f932c2cc13b24c0fd8a74a097c868eb6148cabbdfbd5b9f3fd098af7a0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-96c71c5ebe0422bcc9b133bc",
+      "image_sha256": "83ddec4a7a91573a420891d64bf892a9a9d6deb992c9d92aef1b2fb17a8240bb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-97cf9d9d6955b027fa8acddc",
+      "image_sha256": "93f3ad35e22f26d2fb2db81eb1c66614e74d603a414626ceb236e4c21c123c40"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-97dcafdf60e33b73ad16d131",
+      "image_sha256": "dd057b31001a26527fdfb60415cc105393680ce6c0cfc5c16a7e15be2509488b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9807835e808d57426b0e62c0",
+      "image_sha256": "158dee7e09f3db18aa77f302b55c1ef0608cd8f19fbcdf68ab0fbd301887c9fe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9896b4a3c0f568f36e656032",
+      "image_sha256": "8f09442251a1511b617b27a1254b1ec9bd996880991872b24ed70d56025a611c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9902b5f5522204fd2ba0b51f",
+      "image_sha256": "a7f3752e1c8a35dd60118e9e074c35e0f85ad78d67cfb5cf39ee3c184519559e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9a4462a0fef5f03ef8449869",
+      "image_sha256": "baa2d58852f887bd8f4f02119a14a361c8d3c37039de3cd7f4883f57e9574108"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9bc2c1e0fcbd5541bd253673",
+      "image_sha256": "080728d689af3a2d8d7b82e43bfd13a2bd44b3cd9c9dc4ce1bdfeb0bc4063fdd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9bcaef73f12fa0ecb50a4342",
+      "image_sha256": "d3f97a742233172c559e52690a66e3348f4e3bc5e045f645a82658f62faf4654"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9bea8dca392cda5d16a8d62f",
+      "image_sha256": "5e8359fbe91281d112cbe6554103901b1de3d7393e04e2b5327feca5e3e85f51"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9bf1a8ecef2b2c4a0a2ecac4",
+      "image_sha256": "063644f1f78394a201754b8154cac5e48c58cc43ea572831ff188fd037f17daa"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9cd5175a82c0bc233407acb9",
+      "image_sha256": "d2520c8764cc59c1c91e4688d1c6820825ce3b3401bc104c0b9f87244b648a6b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9d9d4ab5d06fb6f46f1b85ff",
+      "image_sha256": "ebcc62267649d95859436a8afe7a6bced853233bda4b9fbe289c010579dbbc16"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9dfb387744b693e3d61e88f4",
+      "image_sha256": "99dade2fb9f50fe8b5b15287d19fc2a2d1859788eecc9108e40d017aa0d7a10d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9fa046c7c3aceb870127d41f",
+      "image_sha256": "d721faee32a5c1c7fd86a18dfe53ae8655b7dcd97a1294d34cad31c07bc58080"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-9faffbae81c9a0792ce5fc83",
+      "image_sha256": "0010496bc81d4e5fcbf15d5dedaa4c319eaa6317c0280ce613bc8b0d2b8af1ff"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a1b83591aed5371d36868285",
+      "image_sha256": "fa4a62df4484a4722db610661cf989a2d9f6f296de4008cc08ea6b9bba2680e5"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a1de5ea48c1348c25d93e6ae",
+      "image_sha256": "33b3e61eccd61fe1a6442b61ad3098fc0185753dc60f656713c184e3fab77876"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a1fc4966aa679bf7e07040e2",
+      "image_sha256": "a596232047366f59dec86bfd5aa6702c1a185e01b30ac60baa2663999b0375fd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a22a3a5b6647797530d5cf44",
+      "image_sha256": "c3b257041b7059a06df47cecfca8f674b1049ff1a7eb98aa14684aeacbac949a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a23baa691571dae2d15bdae4",
+      "image_sha256": "fa53071fcbc34ebd1589dd388a32b8137cd80083e6685a3c104c4c0332ad51db"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a26ad587e6f1b660fab4af13",
+      "image_sha256": "fc7d2c15fd4b68eae7903af953ca506dcbf0e7eb77e264d29cb154555eee256f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a2cb6b9f46128b8a39fe955b",
+      "image_sha256": "d0836a37162532bdbe41447b5f38e2028795dbcfa8746a9e9d3c3e3c4918a3dd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a2f99ca8924ea5b0872eecd8",
+      "image_sha256": "f903faec1b29ae18b16164b4180c60c6c2833ad8a37e0e1a288bc9eaddbc04e2"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a38b876e91b35ee376cc473e",
+      "image_sha256": "7bea0d66702bcef4b36a28788b5d37042d64009d8c4693592f6647b9357cd8f0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a3a453fc89426cea8ec4c9bd",
+      "image_sha256": "20303a42dfc9b42138bb480b560702fbc4a18a6480bd8b3de11030038376f4cc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a5af601b760b26099b3ec0ea",
+      "image_sha256": "d7972f63b2fa610ac6a3da46843c2ebe9791bb640730eb7472f17795241cadc0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a72cd09da1b04b9387376a33",
+      "image_sha256": "715e67ca5e74bb871993b5143514799c4069405d116e3f841e5aa5939187c482"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a740f1c5478a28e00561a060",
+      "image_sha256": "13d6d44e22c2aa7662dd696f9440522735723291f875f1292f119814d13a69e4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a79cf3a70bbb401992b556db",
+      "image_sha256": "43aca4d60d8dae2f25877b0f890c025d95ad90c72c07b02d6c2381f85cba2b5b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-a9306dba7c82c2d102a9eba0",
+      "image_sha256": "37f390a20d3a1d94cfa36d517283fe4604983fe78e15e16cc6bb4242dbf991fe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-abbc80ddb0ef41b83c48e15c",
+      "image_sha256": "6b22986547db92626f5d77a354433adb23a33025e229c3759ea7d0da5eb6cb95"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ac4cdea82460667038f6c896",
+      "image_sha256": "c60a03c9eb2e72445139d146eca815813344cab437035a952ac6c76adc968859"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ac55e79fa35db50010480435",
+      "image_sha256": "f23a25acc38e46effa9c20292e9dd4cca2b98eb15cbdd6df5e19805c72c1119a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ad3bf40f3f079d27a0e4ea33",
+      "image_sha256": "8335006ebf63320c771c75d6c3689825cfc5cf2bb2851c840e74d3373724c509"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ad760029c98abc0ad8ef2fd0",
+      "image_sha256": "cfd0f2e5ee8798d4a1874877d3538acc7ea90e1ae13abe7297e09ca35badb12b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ad910f1de2f2194c5b5cd752",
+      "image_sha256": "cbc7a9ebbafe017f8af13a702b64aaad34e841c463f71c28a83f00ab5b5314d7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-adf144ed1cd76222d4ac5a06",
+      "image_sha256": "95831b6262f20d2393b32afff3194e8364aadfaae5facd86b7fd02260a4ec6b0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b072200c2c5c29d83cb9ccc5",
+      "image_sha256": "b8a373f307d87f78885635126f57eaf6e6ff497ec3d479cf616f7f72d376d1b7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b18a6d7ef52ac3dcf887f152",
+      "image_sha256": "933c853c201c496f861ff2be0927eb7318de4b7dfc6bae8390355a670c0ee44b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b4843a7185cc74c2baa32430",
+      "image_sha256": "5d98c688fa6778765074d4f79aa342afd2d64963822ca3732f55ceb2abf03b8e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b51ac7b0642e0424b4783ea4",
+      "image_sha256": "0e24aa068ba1665c8b1112716ce5def6415d10db4c33ff2b11ecdde74a08a5cb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b546522663d5ed0bbbe0df06",
+      "image_sha256": "d6e8335980daa605f35b002df319a6b760c329ce2ed49b402960c6e69716e2cd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b59e3c0adf6ef47b42aab837",
+      "image_sha256": "0619ee2e102f59ed09cdb5ec1636863041cb6a73aa29e7c12c3a458c8ba07171"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b6e7b044bdc08f1daa9ccef7",
+      "image_sha256": "8d79d4322a068df34247eb133eac0048c53b9f5deb1f33f3978ff79c7a4ec1a0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b6ee82ae869fc0e67bc9a784",
+      "image_sha256": "edede638992e6938bc70da46134fadac9c4021036420dc7100d75d7c73279154"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b71b49c4ea2be5361c64b1b8",
+      "image_sha256": "30a65749f3da2a4caa43ca99873c327ad63297cb6cfaf62deb86a3ff3e8ea726"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b750765ac7006c5b6a8b8708",
+      "image_sha256": "59c79dd49fb0211d7f8a50a2dfbcbbe04183c1f09c0766602f456d80c7817ef9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b81dcb7adfa1c47a27f78df4",
+      "image_sha256": "6653afc3bcedd99f4672c245e40db3051f804cb0a7e6d72ec27b24dd6c95f99d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b82e0f3589c9d190b94136af",
+      "image_sha256": "d44daf9ebd4115d18a4cf44bfaf19f4166b6ceacbeeda761c05e54d31af6c6fd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b865722bb34417c8f4000620",
+      "image_sha256": "06b9373fc432020d7b9512cc34190ee01113d5f70c8866884020dce8ffba77f9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b99473c8577b4f02f93ff84c",
+      "image_sha256": "6faecfa5557c8561da30ba8a1340b725a93c93dee37d9c5894649f36e6d0a219"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b9a0832ed6f7584755d2b72b",
+      "image_sha256": "4b959573e9ad4d24b47256919bdf3a36c3f40b0ac37ef42296bc2dbce1952599"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-b9a1097fa343452947d0a186",
+      "image_sha256": "28763a5315ca4f95a07fd0306e02f77179211017c2387986a4a765ddd8aacc16"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ba9887e7dbef0c2891b6ee80",
+      "image_sha256": "4de8398bfbce50772f9c6f839c4be8e898875011bac41d144a26aa5032bbf7da"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bc8fb46e9b6fd4b8a2ebd3b9",
+      "image_sha256": "a145101b6cb2a62d33355c4dc593e8c57aaf8e39033857fce89ac3d3711b7e1b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bcbb24b3df463c522de247f4",
+      "image_sha256": "d51945ea21bcbdded6e871f17c19a2bd59826b34cffa07c9d08a5d6a8fd97c7b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bd1a036debf4f1f3ba65bed0",
+      "image_sha256": "0f0b9059cea1eb937eb5e45c4b34f0d9e791c6fdfe55336f48b45cb377cb9992"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bd47190b26e1c44fbb62aadb",
+      "image_sha256": "767f0d0884133f91593764d5e4aa198f578927e56d8a02c40337cb53b62497d6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-becf6650f3661641233f4a88",
+      "image_sha256": "14d77082f9b34c70646ff5d3f664583fb9fe816b68266731a2a87127ee42512d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bf3874c2b56bdef1395ce6c8",
+      "image_sha256": "90396ee6bd0d2cc2cfb8690db8f7d3aa474e1d254d92c1a9ab79058bd42a47c6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-bf3ef577a83a52be3a71b1c5",
+      "image_sha256": "68ee10470b1cbd4fbdf311ac61e09836874242c7e4af745508fdf7b8d378a1fd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c064b265d551203a2bf8619a",
+      "image_sha256": "e74bd226e4fec1effcf82861fb14c49d3406ee8a2b2d526ae253f77202274c43"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c07347b9609c11c3a7a76c74",
+      "image_sha256": "517568df6410d30471c568631af7e94a5fce518e8c445af52f0aa47b5c161abd"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c1afa6f0bfbab62d7e1148b8",
+      "image_sha256": "fbcb02add7fdf6067812d92e994355713cdede307bce69318da01fef389c9aac"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c29f4ee2ff77a8e285d9a784",
+      "image_sha256": "cc4f474fb8d5547138feb0fdf39bb7edddc496a90f5ac5150d5003403fcdbc22"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c2afcc18f466f41cdbdf80b6",
+      "image_sha256": "424a1e1b5c8e28ac14771f61015fa7d7a87d7228c24f994b6fcdb934ea484763"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c33bd9ddb559ae99a1ba2a3d",
+      "image_sha256": "93319fbe05fa1342d7dfedd39ed5a2f284c71a84ac7a780f778de8c4b595605b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c41a358556e9e04cf0c151ec",
+      "image_sha256": "338a3936f3711b3197cf2abed8922f1e67170c61e5cfb4f249cceeb197492b0e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c5e7f14c688944eed4d377f8",
+      "image_sha256": "16fd822d9b7acddfc802a7bc9d848d1a5556f8da905b12eb32a968f34022d376"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c60258497ae7239d1c7ec979",
+      "image_sha256": "3ae637391e6344e6f050db2b2b66a3a2789dac7948ef24e1c35fdf309a01ae8e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c630f052a4bd53ec64fcd5a8",
+      "image_sha256": "5df696dc59e0345bef1675fdad9356c62d22a3b5243af893f383a97ed576ed1e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c769ea69068a4f7d735ddbd2",
+      "image_sha256": "d81f4f2b2d97c655e8dbd63a7eaf8f08535f55d92b250812c934dcee85b04c53"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c791ba4522e736676cc13645",
+      "image_sha256": "3ff9943eb150a61bd560a2c33127d5c7e96b0bf6f9c0f6b251cc1a6a2391ef49"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c7d6d3a17db917a60684467b",
+      "image_sha256": "41da3369adba2385c860320dc7cb07cafa64a4a25dc6e4235d093d21128331fa"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c8c9ee7a20a77febfd3005c6",
+      "image_sha256": "93c07354764c03d14f1bc56a7f4955076e13083b5e30c4d43ed02f55d3f8caa6"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c92c93f3d7185535d0bb7f12",
+      "image_sha256": "5dfb5bcd87a842b203446846353170e9defc671a1f99cdfd89ee93da4d387700"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-c9eb0180f220f31cb06f87ce",
+      "image_sha256": "fc26406c3a9b7966514b39d2a8e89418ea8d7c550648daa712860cc2526e5297"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ca04a51307f4b4e3c026a066",
+      "image_sha256": "c2b803f57cbef3c955387098e24bdb2fd4cf6346a3fa72cdc459c939b78fbeaa"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ca1304bb9aec7efc0efa5b81",
+      "image_sha256": "4ff02514f7ee77062bff8d12addd295e8b4ea71d49e2be1adf9cd224984d568e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-cb18fd62009031630e865241",
+      "image_sha256": "b8729eb3c19b9fc32eca4701c30eb5c25e050125f5ec225f780d0d1e064e2bf4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-cb5f85bbc29ee9310630688d",
+      "image_sha256": "97326007e56bb8911b43d27d2e44bf44df079bea4aaf7bcf1e057346b050e8ae"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-cb7432f459ab0d70061ec062",
+      "image_sha256": "e4b22ea854f8e5cd44b90d5997da4225f93b304bcbfa6810a077f2d85b3c56ea"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-cbeabb7254d2327b75be4361",
+      "image_sha256": "2c55ab7cb7865ed2c6c377b10b41884006c72e3fb944d887076fc9808b199b69"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-cf1fc6cee9a99f11f7450743",
+      "image_sha256": "2e1fbce096e15dc30e6359af4e231992760936f0ecd0f84aa1bf3dccb80ba40a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d0739e426f256b9a19761a41",
+      "image_sha256": "d8f2fb6507f3569b5d3391acb2c25287e350a6cc2867fdfecc2cd82bcf591781"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d0f18f87d1d997c3226483e5",
+      "image_sha256": "2abc9a2a36d5b8ab1c8bb004c402e1927bfbf76554149d6a9622d6168f916f88"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d3bf6dbfe342bf2c3c2248e8",
+      "image_sha256": "534bfd64bbea05977c3794387b3417001443a3db27ad755c5f3decf706a16dbc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d40e17c87e2be2ebb48f0347",
+      "image_sha256": "fd421173bdcfa57f19e5796582cf5d3799061a5a50dc3a5b7fab248f2b90d570"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d50d760ce8d97556042701a0",
+      "image_sha256": "4ceef057b2bae50ff76a3dd76f88da67c69cb0f66105ca41652541ad4ccdd655"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d52d3ae28b14dde65feaa61a",
+      "image_sha256": "94c5e68c85ed6a7c1fd3e3a1fb65aa5f33f1ba5340eec757e9226cba0dab1d84"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d58966863feb64576ac31fc3",
+      "image_sha256": "9148e98d67bb4b0dfd7d2774be2ee36e590f675075d690750507c9116989dd39"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d5c64a7e6d52cf8f1b540147",
+      "image_sha256": "4060309102f81e85da1549bb700bc17d4296082f96fe68acb312f1d1ea62ca81"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d6c7a906da0d8b73c274af63",
+      "image_sha256": "1aae64b80ff30ffb957ffb9f8350cec3d227305e2330d9301b5a6862f10ed16f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d8cdabd0701971c81b82f549",
+      "image_sha256": "bee13761193429040dc5fef62022c421394ba0c59e84ec34bdc845c6390575fa"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d94f93a0d5916b34f3861ea5",
+      "image_sha256": "8ab9d44a3df4a446c51aa3c0da152fefd9559e1509f761bfd0abcb915df843c0"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d97d70db971648cd297fe9be",
+      "image_sha256": "3ca108130f9b098248bd074a41992a03ba26a1969ce441dbd113fc68c0a55b7f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-d9c9ddec760bccfe9a0d7b4d",
+      "image_sha256": "a1b8eafc5b11b0a1ed5171b7d3a6cd44f496bba052d3d5208f2963fbb19b70e1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-da16de5e1580d6fdec9757ec",
+      "image_sha256": "8e3f8e57496b294bf5339adf6646138760c20f99b1013c6fe3e01585bb6afd35"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-da9283b92bfe1f42b1662a2c",
+      "image_sha256": "569f9bcaa25cfd016c31c4a9240dfc0aea4f909a6348a24f9ad6f843605cc4ec"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-dad3a87a49feb522c80837ec",
+      "image_sha256": "27d22de189baaaee38ecea573c85eaec6ceb1b6928397e102650e7764f6bfa7b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-db1f790efaf56de55f88cec2",
+      "image_sha256": "a3ade4a2fa21ce6d492684a32e6d29ce27c4d0090cf0641bb4910523c97ca43f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-db6361239b254f2f2be1d552",
+      "image_sha256": "8b3b2c075a2c313843ec41f797eb172e6563fccb373cb9457348b8703894fcd4"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-dc64088cc3059d705e65b7ce",
+      "image_sha256": "5c66b9b236d431a2ec6f59a3911c5e620d7ae274051c925251ef299c8da42bed"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-dce67972948ee9110ba0c209",
+      "image_sha256": "5f7b98686c25a38f16e0573c2de7391c7fa36fbf136eb6644020f7690664746b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-de8e70fec48ecb35c2ea6837",
+      "image_sha256": "204e539ea307798a4b92d762901095109e5b6ed6b5aedf0348d79eb07e67b0c9"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-deb0d80b6717f5bd73e923f0",
+      "image_sha256": "5c8c9166407305fa6f377d2269aa080939f79a0c649e181d91791ca0aadfa06d"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-dfb0ddc2a1a8e5f6ee12faf9",
+      "image_sha256": "ee151020bc6b87add5479ada69e0ac46692a71a23420fe12d7bdc623400b9f8e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-dfcdcdf2c4180fb1344f9f28",
+      "image_sha256": "cd8bf8970969d12c182afb6ad03fec45b54150b3141f04ed261befc1fb8f9b58"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e0b87bb8187c9ba20848c9b5",
+      "image_sha256": "bd1a04962ac286d4043f51316c87c494549ec8a4a170762d65d058466cff2507"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e0d91d210544c75de9a343c8",
+      "image_sha256": "c6bc0afbdeb8001545e52c6630e7a5832bc86c87df15057272cc4fe2ca28f75a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e313d026d225cb9a9d28b126",
+      "image_sha256": "035d0272f10801bd35844837490a28caa9132dbfc4288af7219d74c6b92ae9bc"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e31f9557c24f86ac371452cf",
+      "image_sha256": "dca18fdfcb7b1443535423a09714d0c0a54224397da213155525ac5c0825c6bf"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e4938b263e25435c8bb2c0df",
+      "image_sha256": "e695d317bb8a8b97f7148f01215ee907c973b6c8b0082fe9a1216047501505ab"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e4c2651883d679cab6e8765b",
+      "image_sha256": "238a56fe98ff8ef781534fb10e36da9a93939975daa52cae0ace8a4434fcb630"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e4ed0d6b757d1bb19fb711bb",
+      "image_sha256": "72c4af57b78faeb1404306367e19ae2b5007c7ec870fcc577c957747187fc262"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e5238f798d76f82e86733f34",
+      "image_sha256": "9259e8387ac491e24dc6bc3b447e11ed06c3003ba79b8fe6f24445aa2407aadf"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e666b46702d7f6f56b7962fa",
+      "image_sha256": "cd89426417fa38611be670dfc59c056a0438708050df0697a046669497825610"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e6f2b9cff126b163a0c58ef9",
+      "image_sha256": "50eb500f9d5ed9d7067b4a5c7986e695e405c5783168cdeea8fa31e679c0c531"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e6f56b9df3f1fa3b540ec8bc",
+      "image_sha256": "b35198e943a7da134b2eb03cb026d072ec1d939aa3e588d40fbce8b8c65cc399"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e74f8297a841783a663dcd4e",
+      "image_sha256": "1865acd1463ef1e57db4cc73ff487df258de6ee892f320dc8009cca7f27b307f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e7ad003ed2a8efb2746fa638",
+      "image_sha256": "9cef1955eecea6f4b2c2f1344f298976b7c549762e43cdea907c0921aaf8415b"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-e821c29fc7b01344a1ab3e27",
+      "image_sha256": "97f26bf3383d827551cc5aad515a8a74979d76b451035a3b92d221963628e940"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ea3e8e99aa97f08324e3f9cd",
+      "image_sha256": "b149983d195b10b63ba2cb28764b89f00704a8aced95b7e2f7f34bca2c7c00ec"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ea5c6cf9bb9d7e75f06e9477",
+      "image_sha256": "62f8eaa61a4ac7369eb227551d1da5b599b638491a74d491dff9a5013e2e714f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ec0186758da03accc4313185",
+      "image_sha256": "195f7de37e69d0229a784c3fc5bf7a2f6790fcf6b4e038cbac0213a0784790a7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ecdb063b4808439af0ee9651",
+      "image_sha256": "0652e50946c2b16fb6df77017f9595cb56597d241a1be98ff2be17fcc9603fe1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ecfb992fb466389771c09eb7",
+      "image_sha256": "bd7e081c1cefdfe176dddb8f9773188f8e9e74ba0327a978cf66e8a7a4d8fdbe"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ed0ff0f0c52c26d5bd96c969",
+      "image_sha256": "b8269a3dfdff811c4e6e853d14f8910362232615ba002b497af0d114961bf9e7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ed3099121d820ebd95ef659f",
+      "image_sha256": "eae480a7731df1af6c7221fca4979889134b7659d8d815fde1b243b4cacb7f9c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ee5b4df36bd2999ebb80f129",
+      "image_sha256": "52c6f445353c6712bbc4b1f8723c9d8cccd6dbbba13f6648d53f8bc8e81c9f06"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ef18a09922c1559ac2bf91a3",
+      "image_sha256": "e1738620e652f16abd15ef0aa61aa500c0542093c507262b01293639048ad384"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ef937f880708771a1bc2e1a1",
+      "image_sha256": "d51751c8da3d5fc8f469847819f9070e996e1ce8ba689513e7c0323ab5ac8721"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f0894838f43e7d94e7c18341",
+      "image_sha256": "90495bef870412cd6a4890be8231bd0959d4a5f4ccd1c0343a62a951e30e5acb"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f161645d667b74ad8696d703",
+      "image_sha256": "e5935b6796cb22e9846d42318c37bbbeb2084dcf9948b31acfa9eec76975953c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f184eccc07aecac5bb47b61e",
+      "image_sha256": "3566c78adcc2a63c47ee0f7b4ec6b5f55eff7f265e3e99802d59cb8012fdfa96"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f1a2e818d7976b73a1ab4028",
+      "image_sha256": "5848655504992d87d50d198bf7417a915ba4e67a6a26edf0250ae319ac9f2181"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f236326a7eca49ae268ba2fb",
+      "image_sha256": "80e9868815b6961d5e47c70d715fb9d7458a304b545e0ecdba18ee60c97298ac"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f2451a0e8e9947412343b201",
+      "image_sha256": "119a5b828af47b43b5949c416eb26125dd1194353f2f2e7167de66734150b046"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f24e7acea9820045a13e5359",
+      "image_sha256": "c31ceafb7151ec0415a598856c652f523b468b2ddba0d97182150b9bdbb74a55"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f26c204428b95c5e4a59f04e",
+      "image_sha256": "142ee664a49b6346d7e520fad5ebe4dc25745cf8eb120f8cc63c666419282452"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f358ff741234de1227011a69",
+      "image_sha256": "28e51e3bd94a530f82374f1fe68475f4877c729e08f10a9ee3ba7c3f6d69e8c1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f38a6eeaa7db90cf39c67220",
+      "image_sha256": "d4e0a43de179b8ae2108a896356831204afbce6aef9326b50d8e92f29fd1b564"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f3e59b80a5d862261c11bbec",
+      "image_sha256": "62e19479fb6c222fa7a613e0bec1171f546ad02edeaac5a7e960d033451c7b4c"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f40af2c1c531e05d6528ae48",
+      "image_sha256": "6305d4eab702937795ff413fa8e08208737749ffb19d3abba88d29b012476a9a"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f43b9993a71ed26ca4f197ca",
+      "image_sha256": "ade33fbc62e59c0616dab560078b02f20f8f52485312b5c724edbe7c96f59bf7"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f4d8d666682f387afe6b4ce6",
+      "image_sha256": "96afaa30ed3b5b5a807ffc2f9d65711f6093f8381ebc5dc122e93c387606c386"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f62f0994631cba0c3e32460f",
+      "image_sha256": "08070307f4b213e33a86dd8ff1101b0978e352f803c84c5c4339ba629d1e3b94"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f8b044d8d2a39ffe20b64983",
+      "image_sha256": "69727d3d52c393938673016cdb5c252ebc1414009dd5172f902101195327e2e1"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f9c0fb4892cf15ac5e8dac74",
+      "image_sha256": "5f9b29f147e8f58e9e36b2b71834d38b64f64f080fbf1bf1baeeb019d613b287"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-f9cf37d5a1cab2462695e6a8",
+      "image_sha256": "c061840572087137da6436b4965a3b8df28996afd32430ae1e03f0571c07393f"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-fb74a8aba40ac5438caa362e",
+      "image_sha256": "c7640a180a4d53966f8b4fcc6ea80463fd14bb370575a1f52a901c6e5879e155"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-fbc00264f6b8e5d2e6680714",
+      "image_sha256": "9b9451b803aee25077f953f42550e05d077f9bc820bb9c42a553bca0b0cb7185"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-fca1e3b366c6f228f3af7558",
+      "image_sha256": "cf50285900adbd6831a104966daa81883fae2c0abc0e2218070afa476237ed9e"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-fe536069672bc410b68df3c6",
+      "image_sha256": "dadb85aff82204a5431db5222553cedc1977dc84b9e816e1e5658c27d25588d8"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-fe5a07f4b313b3a8317e3b59",
+      "image_sha256": "b995f9406d990aa282034cd0086b0a1421572062f5eedd1afd54f43f58506362"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ff5d83620d5f0fdfafd4211b",
+      "image_sha256": "ad002533c68af933491aefff9c1e00f485bf35c59868660e94a891128e5cdda2"
+    },
+    {
+      "domain": "rule_iuxray",
+      "id": "rule_iuxray-ffaaa80afc4a6d1a99f16521",
+      "image_sha256": "b2e4f28f45f6af42a4ca580520d1c0bb3b9d8fc4e3047fa21588486d2dc08024"
+    }
+  ],
+  "fingerprint": "e10c901675705a8ac35006466927366d5dc9cd7c8f5cdc7947fd5bc286452fe0",
+  "base_manifest_sha256": "2c5af1fa981353cbe402e21ab94ed57dd70d8a444ab0dc2c2ec1771bf9ff4054",
+  "exclude_confirm_sha256": "64143b902955bb0cd5f1f381e21f5afb1b0e74adf2547a91a7ffb014fafbe78a",
+  "exclude_reconfirm_sha256": "925da16d694d3e4bd47abe48f6cbdf0f5dec014eaba020f2377f940f845e5393",
+  "target_file_opened": false,
+  "excluded_images": 720,
+  "selected": {
+    "total": {
+      "qas": 384,
+      "images": 384,
+      "labels": {
+        "No.": 186,
+        "Yes.": 198
+      }
+    },
+    "domains": {
+      "rule_iuxray": {
+        "qas": 384,
+        "images": 384,
+        "labels": {
+          "No.": 186,
+          "Yes.": 198
+        }
+      }
+    }
+  },
+  "outputs": {
+    "rule_iuxray": {
+      "json": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_scale_v1/manifest/scale.rule_iuxray.json",
+      "json_sha256": "64e18e889becd607e8038cbe9d5685c199f08bf2b368ed5f9a78c803c0ef0e5c",
+      "jsonl": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_scale_v1/manifest/scale.rule_iuxray.jsonl",
+      "jsonl_sha256": "7fec5e7819c72f0f4cd722443380f7270d039070120053a10a0cccf0b2b520ff"
+    }
+  }
+}

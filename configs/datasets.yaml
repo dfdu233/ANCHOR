@@ -1,0 +1,37 @@
+default:
+  - mimic_cxr_rule
+  - chexpert_subset_report
+
+datasets:
+  mimic_cxr_rule:
+    task: vqa_binary
+    source: RULE
+    data_root: data/mimic_cxr_rule
+    questions: data/mimic_cxr_rule/questions.target.jsonl
+    image_root: data/medheval/images
+    image_manifest: data/mimic_cxr_rule/image_manifest.jsonl
+    default: true
+
+  chexpert_subset_report:
+    task: report_generation
+    source: ayyuce/chexpert-subset
+    data_root: data/chexpert_subset_report
+    manifest: data/chexpert_subset_report/processed-v1/anchor_report_manifest.json
+    image_manifest: data/chexpert_subset_report/image_manifest.jsonl
+    default: true
+    claim_note: chexpert_subset_unverified
+
+  medheval:
+    task: mixed
+    source: MedHEval
+    data_root: data/medheval
+
+  mmedrag:
+    task: vqa_and_report
+    source: MMed-RAG
+    data_root: data/mmedrag
+
+  rule_all:
+    task: vqa_and_report
+    source: RULE
+    data_root: data/rule

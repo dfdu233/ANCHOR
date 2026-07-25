@@ -1,0 +1,272 @@
+{
+  "protocol_version": "rule-vqa-mitigation-runner-v2",
+  "scope": "RULE binary VQA only; not report generation",
+  "paper_exact_reproduction": false,
+  "rule_source": {
+    "path": "/root/autodl-tmp/RULE",
+    "commit": "f1bf7f7020918faab49e2dff12e01e7de41821bb",
+    "tracked_clean": true
+  },
+  "model": {
+    "path": "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b",
+    "tree_sha256": "8248e485baf1179a7488b8a269475eb8840293b75195e1e204556be3f9e0bd27",
+    "files": [
+      {
+        "path": ".cache/huggingface/.gitignore",
+        "bytes": 1,
+        "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+      },
+      {
+        "path": ".cache/huggingface/download/.gitattributes.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/.gitattributes.metadata",
+        "bytes": 101,
+        "sha256": "fccf62b43f1f2d33246112f1beb6f001fa2404ca9615e80afe7b7b515fc3cc97"
+      },
+      {
+        "path": ".cache/huggingface/download/README.md.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/README.md.metadata",
+        "bytes": 100,
+        "sha256": "3f824e0c7abb6693da917647decdc55ff4dec7446948481550c9a643190c30d2"
+      },
+      {
+        "path": ".cache/huggingface/download/config.json.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/config.json.metadata",
+        "bytes": 100,
+        "sha256": "fc5dfa695d9e06f1181fbcc9dd73962dee597a3321bec7c86112717bba5acc06"
+      },
+      {
+        "path": ".cache/huggingface/download/data_summary_card.md.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/data_summary_card.md.metadata",
+        "bytes": 101,
+        "sha256": "07d0bf5caac4da59fe52abc3272c0bdef165c76789d392f178bf834fa30b0dd1"
+      },
+      {
+        "path": ".cache/huggingface/download/generation_config.json.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/generation_config.json.metadata",
+        "bytes": 101,
+        "sha256": "78b51e62a66f714d0bd1d576e71bbe952774c9bc8dbe6512a1a3d6becea1a6f4"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00001-of-00004.safetensors.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00001-of-00004.safetensors.metadata",
+        "bytes": 125,
+        "sha256": "0b997a46506bc80d6aa02c61f52fe5954f4cfb2c58f5a026518075a91c32bdbd"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00002-of-00004.safetensors.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00002-of-00004.safetensors.metadata",
+        "bytes": 125,
+        "sha256": "9d83a450ed5bae1a7a4ade8c4f581d77b72b9c2bfac00dbb987017fbc97a71a8"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00003-of-00004.safetensors.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00003-of-00004.safetensors.metadata",
+        "bytes": 125,
+        "sha256": "86e6d6de5ba571102d8ffc0bd13b14e9b3b6e19f1e18bc39cfe95e01de13a686"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00004-of-00004.safetensors.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/model-00004-of-00004.safetensors.metadata",
+        "bytes": 125,
+        "sha256": "4ef20fc3929c6446e19f27b5a1dcb059e6e01776cc15ca53cb80b412e565f722"
+      },
+      {
+        "path": ".cache/huggingface/download/model.safetensors.index.json.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/model.safetensors.index.json.metadata",
+        "bytes": 100,
+        "sha256": "4dcd37d3c2d8875b2359014969cfc34d41819131e03cebf2ddfc721e34d88a97"
+      },
+      {
+        "path": ".cache/huggingface/download/special_tokens_map.json.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/special_tokens_map.json.metadata",
+        "bytes": 101,
+        "sha256": "cd8a1670dda89790b9cd12d94be1e2d213a20ac61754e03e65b484e6270d0b77"
+      },
+      {
+        "path": ".cache/huggingface/download/tokenizer.model.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/tokenizer.model.metadata",
+        "bytes": 125,
+        "sha256": "4bea35c71fdacebe3a19612a30fcd4923660bbb99c1b6d6173a8a0da751ee7f4"
+      },
+      {
+        "path": ".cache/huggingface/download/tokenizer_config.json.lock",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".cache/huggingface/download/tokenizer_config.json.metadata",
+        "bytes": 101,
+        "sha256": "9b3362d984e5f36599c0dc06cd3c608f47cbedb81f38135891553dc2757f636c"
+      },
+      {
+        "path": ".gitattributes",
+        "bytes": 1519,
+        "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+      },
+      {
+        "path": "README.md",
+        "bytes": 4612,
+        "sha256": "24716f1c3f8ec9a5079001d742fb7acf01b0a59e5e3d15410d9f873b7969aac7"
+      },
+      {
+        "path": "config.json",
+        "bytes": 1407,
+        "sha256": "f6ae889c5488ef86895e78f641339062962dd6b434666019fa119ab09d2bd8b3"
+      },
+      {
+        "path": "data_summary_card.md",
+        "bytes": 4163,
+        "sha256": "e3f3ce67a9baeee1559f1bd5033ceb388fae48aa5ad46d9d4245bf35d52ac899"
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 111,
+        "sha256": "741acba7f5e235dac0e6865ecc212bbadb1ab1d6d853de7d759268cb62aaf2b4"
+      },
+      {
+        "path": "model-00001-of-00004.safetensors",
+        "bytes": 4943162336,
+        "sha256": "ef2190dc6c2a940e60f03f5fdb4dddb2320eb87801aeca5c40b0a28ce8aa420e"
+      },
+      {
+        "path": "model-00002-of-00004.safetensors",
+        "bytes": 4999819336,
+        "sha256": "2b229607fecd98b8111320178e5bf3e2c527b05a942c85d65b5b507c76c1ed00"
+      },
+      {
+        "path": "model-00003-of-00004.safetensors",
+        "bytes": 4927408360,
+        "sha256": "12b18ecdf8924d5fe28ada797fe6697fa60e62cba630759fbeb52975b261c4e2"
+      },
+      {
+        "path": "model-00004-of-00004.safetensors",
+        "bytes": 262144128,
+        "sha256": "1d2063fcd429d3f0f0a8a091b0522f0e02f2d85fe0e5b0eeb4ae168183a603bc"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "bytes": 73152,
+        "sha256": "d5ecec60dba218c6621cfa524d739de942b4552bcbb25efe63848c18a731b2f6"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "bytes": 438,
+        "sha256": "719833ff26ac897a3ec8ed946028a135de2a351470af59b4008744ab1f0ee9b7"
+      },
+      {
+        "path": "tokenizer.model",
+        "bytes": 493443,
+        "sha256": "dadfd56d766715c61d2ef780a525ab43b8e6da4de6865bda3d95fdef5e134055"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 1463,
+        "sha256": "5b219f9212f7263269898c799cc9d9be2326e853bf1e497f1c412f3a274d0597"
+      }
+    ]
+  },
+  "python": "/root/autodl-tmp/miniconda3/envs/llava-med/bin/python3.10",
+  "runtime_versions": {
+    "pillow": "12.3.0",
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "torch": "2.12.1+cu130",
+    "transformers": "4.36.2"
+  },
+  "runner_sha256": "685de892ffc45354bd3c9f93101b7a2c24169df76a14be4f24b437c2e1f43f7d",
+  "evaluator_sha256": "286670cbe12fe1fad48216be26a3428ba98621372907d18478982d24fcb45321",
+  "reserved_backend_audit": {
+    "medalign_path": "/root/autodl-tmp/Hulu-Med/MedUniEval/external_baselines/MedAlign",
+    "medalign_commit": "fbefd179018a495407caa89ecbe64eb575da7663",
+    "medalign_backend_sha256": "8052225676e36fe8450a98b6a1b9174b68d2afa15afe5059c18f48354df6e350",
+    "license": "No LICENSE file found; local audit/execution only, do not copy or redistribute.",
+    "report_status": "Not exact: MEDALIGN shell commands reference report_eval files outside the repository."
+  },
+  "methods": {
+    "greedy": {
+      "enabled": true,
+      "backend": "rule_native",
+      "implementation": "RULE dataset-specific model_vqa_*.py",
+      "upstream": "https://github.com/richard-peng-xia/RULE",
+      "temperature": 0.0,
+      "num_beams": 1,
+      "paper_protocol_exact": false,
+      "note": "Frozen deterministic local reconstruction; RULE did not publish its table evaluator."
+    }
+  },
+  "datasets": {
+    "mimic": {
+      "annotation": "/root/autodl-tmp/RULE/data/test/mimic_test.jsonl",
+      "annotation_sha256": "076eb64d38ff9f0150c45625d71bc378d88a3fb2d9252d13bf5cb102fe1425ff",
+      "entrypoint": "/root/autodl-tmp/RULE/llava/eval/model_vqa_mimic.py",
+      "entrypoint_sha256": "526d97fe5c89408ebabd65bb329834b41ed8feecbc8dee89f25e7ad2b8a254d7",
+      "selected_questions": 32,
+      "images": {
+        "root": "/root/autodl-tmp/MedHEval/images",
+        "unique_images": 7,
+        "sha256": "aaa486dff5aa6c97e67bcc203ce93138b542e6180a6838000559b34431a2047b"
+      }
+    },
+    "harvard": {
+      "annotation": "/root/autodl-tmp/RULE/data/test/harvard_test.jsonl",
+      "annotation_sha256": "afb37fefbc50d2ed009d4e6312785551512cf86440c5730d82af74731b2c1031",
+      "entrypoint": "/root/autodl-tmp/RULE/llava/eval/model_vqa_harvard.py",
+      "entrypoint_sha256": "313bad74057c63fbe0e72814c8a51f1a9eb390dbd9a9b4f8376c33c886796c19",
+      "selected_questions": 32,
+      "images": {
+        "root": "/root/autodl-tmp/source_data/FairVLMed/extracted/Test",
+        "unique_images": 6,
+        "sha256": "4c996323381cf3092bb60f9dd5a8f2b4c2e602e54397a9c23ea9ef289f48f47e"
+      }
+    }
+  },
+  "chunk_size": 32,
+  "limit": 32
+}

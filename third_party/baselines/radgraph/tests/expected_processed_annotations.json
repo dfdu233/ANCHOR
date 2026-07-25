@@ -1,0 +1,954 @@
+[
+  {
+    "report_id": 1,
+    "report_text": "The lungs are clear and the costophrenic angles are sharp. There is no pneumonia, pulmonary edema, pleural effusion, or pneumothorax.",
+    "processed_annotations": {
+      "processed_annotations": [
+        {
+          "observation": "clear",
+          "observation_start_ix": [
+            3
+          ],
+          "located_at": [
+            "lungs"
+          ],
+          "located_at_start_ix": [
+            [
+              1
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            3
+          ]
+        },
+        {
+          "observation": "sharp",
+          "observation_start_ix": [
+            9
+          ],
+          "located_at": [
+            "costophrenic angles"
+          ],
+          "located_at_start_ix": [
+            [
+              6,
+              7
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            9
+          ]
+        },
+        {
+          "observation": "pneumonia",
+          "observation_start_ix": [
+            14
+          ],
+          "located_at": [],
+          "located_at_start_ix": [],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            14
+          ]
+        },
+        {
+          "observation": "edema",
+          "observation_start_ix": [
+            17
+          ],
+          "located_at": [
+            "pulmonary"
+          ],
+          "located_at_start_ix": [
+            [
+              16
+            ]
+          ],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            17
+          ]
+        },
+        {
+          "observation": "effusion",
+          "observation_start_ix": [
+            20
+          ],
+          "located_at": [
+            "pleural"
+          ],
+          "located_at_start_ix": [
+            [
+              19
+            ]
+          ],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            20
+          ]
+        },
+        {
+          "observation": "pneumothorax",
+          "observation_start_ix": [
+            23
+          ],
+          "located_at": [],
+          "located_at_start_ix": [],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            23
+          ]
+        }
+      ],
+      "radgraph_annotations": {
+        "0": {
+          "text": "The lungs are clear and the costophrenic angles are sharp . There is no pneumonia , pulmonary edema , pleural effusion , or pneumothorax .",
+          "entities": {
+            "1": {
+              "tokens": "lungs",
+              "label": "Anatomy::definitely present",
+              "start_ix": 1,
+              "end_ix": 1,
+              "relations": []
+            },
+            "2": {
+              "tokens": "clear",
+              "label": "Observation::definitely present",
+              "start_ix": 3,
+              "end_ix": 3,
+              "relations": [
+                [
+                  "located_at",
+                  "1"
+                ]
+              ]
+            },
+            "3": {
+              "tokens": "costophrenic",
+              "label": "Anatomy::definitely present",
+              "start_ix": 6,
+              "end_ix": 6,
+              "relations": []
+            },
+            "4": {
+              "tokens": "angles",
+              "label": "Anatomy::definitely present",
+              "start_ix": 7,
+              "end_ix": 7,
+              "relations": [
+                [
+                  "modify",
+                  "3"
+                ]
+              ]
+            },
+            "5": {
+              "tokens": "sharp",
+              "label": "Observation::definitely present",
+              "start_ix": 9,
+              "end_ix": 9,
+              "relations": [
+                [
+                  "located_at",
+                  "3"
+                ]
+              ]
+            },
+            "6": {
+              "tokens": "pneumonia",
+              "label": "Observation::definitely absent",
+              "start_ix": 14,
+              "end_ix": 14,
+              "relations": []
+            },
+            "7": {
+              "tokens": "pulmonary",
+              "label": "Anatomy::definitely present",
+              "start_ix": 16,
+              "end_ix": 16,
+              "relations": []
+            },
+            "8": {
+              "tokens": "edema",
+              "label": "Observation::definitely absent",
+              "start_ix": 17,
+              "end_ix": 17,
+              "relations": [
+                [
+                  "located_at",
+                  "7"
+                ]
+              ]
+            },
+            "9": {
+              "tokens": "pleural",
+              "label": "Anatomy::definitely present",
+              "start_ix": 19,
+              "end_ix": 19,
+              "relations": []
+            },
+            "10": {
+              "tokens": "effusion",
+              "label": "Observation::definitely absent",
+              "start_ix": 20,
+              "end_ix": 20,
+              "relations": [
+                [
+                  "located_at",
+                  "9"
+                ]
+              ]
+            },
+            "11": {
+              "tokens": "pneumothorax",
+              "label": "Observation::definitely absent",
+              "start_ix": 23,
+              "end_ix": 23,
+              "relations": []
+            }
+          },
+          "data_source": null,
+          "data_split": "inference"
+        }
+      },
+      "start_ix_to_label": {
+        "1": "Anatomy::definitely present",
+        "3": "Observation::definitely present",
+        "6": "Anatomy::definitely present",
+        "7": "Anatomy::definitely present",
+        "9": "Observation::definitely present",
+        "14": "Observation::definitely absent",
+        "16": "Anatomy::definitely present",
+        "17": "Observation::definitely absent",
+        "19": "Anatomy::definitely present",
+        "20": "Observation::definitely absent",
+        "23": "Observation::definitely absent"
+      },
+      "radgraph_text": "The lungs are clear and the costophrenic angles are sharp . There is no pneumonia , pulmonary edema , pleural effusion , or pneumothorax ."
+    }
+  },
+  {
+    "report_id": 2,
+    "report_text": "Mild dextrocurvature of the midthoracic spine.",
+    "processed_annotations": {
+      "processed_annotations": [
+        {
+          "observation": "mild dextrocurvature",
+          "observation_start_ix": [
+            0,
+            1
+          ],
+          "located_at": [
+            "midthoracic spine"
+          ],
+          "located_at_start_ix": [
+            [
+              4
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            0,
+            1
+          ]
+        }
+      ],
+      "radgraph_annotations": {
+        "0": {
+          "text": "Mild dextrocurvature of the midthoracic spine .",
+          "entities": {
+            "1": {
+              "tokens": "Mild",
+              "label": "Observation::definitely present",
+              "start_ix": 0,
+              "end_ix": 0,
+              "relations": [
+                [
+                  "modify",
+                  "2"
+                ]
+              ]
+            },
+            "2": {
+              "tokens": "dextrocurvature",
+              "label": "Observation::definitely present",
+              "start_ix": 1,
+              "end_ix": 1,
+              "relations": [
+                [
+                  "located_at",
+                  "3"
+                ]
+              ]
+            },
+            "3": {
+              "tokens": "midthoracic spine",
+              "label": "Anatomy::definitely present",
+              "start_ix": 4,
+              "end_ix": 5,
+              "relations": []
+            }
+          },
+          "data_source": null,
+          "data_split": "inference"
+        }
+      },
+      "start_ix_to_label": {
+        "0": "Observation::definitely present",
+        "1": "Observation::definitely present",
+        "4": "Anatomy::definitely present"
+      },
+      "radgraph_text": "Mild dextrocurvature of the midthoracic spine ."
+    }
+  },
+  {
+    "report_id": 3,
+    "report_text": "The lungs are clear, without evidence of focal consolidation or pleural effusion. Cardiomediastinal silhouette is within normal limits. Visualized osseous and soft tissue structures are unremarkable.",
+    "processed_annotations": {
+      "processed_annotations": [
+        {
+          "observation": "clear",
+          "observation_start_ix": [
+            3
+          ],
+          "located_at": [
+            "lungs"
+          ],
+          "located_at_start_ix": [
+            [
+              1
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            3
+          ]
+        },
+        {
+          "observation": "focal consolidation",
+          "observation_start_ix": [
+            8,
+            9
+          ],
+          "located_at": [
+            "lungs"
+          ],
+          "located_at_start_ix": [
+            [
+              1
+            ]
+          ],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            8,
+            9
+          ]
+        },
+        {
+          "observation": "effusion",
+          "observation_start_ix": [
+            12
+          ],
+          "located_at": [
+            "pleural"
+          ],
+          "located_at_start_ix": [
+            [
+              11
+            ]
+          ],
+          "tags": [
+            "definitely absent"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            12
+          ]
+        },
+        {
+          "observation": "within normal limits",
+          "observation_start_ix": [
+            17,
+            18,
+            19
+          ],
+          "located_at": [
+            "cardiomediastinal silhouette"
+          ],
+          "located_at_start_ix": [
+            [
+              14,
+              15
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "observation": "unremarkable",
+          "observation_start_ix": [
+            28
+          ],
+          "located_at": [
+            "osseous",
+            "soft tissue"
+          ],
+          "located_at_start_ix": [
+            [
+              22
+            ],
+            [
+              24
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            28
+          ]
+        }
+      ],
+      "radgraph_annotations": {
+        "0": {
+          "text": "The lungs are clear , without evidence of focal consolidation or pleural effusion . Cardiomediastinal silhouette is within normal limits . Visualized osseous and soft tissue structures are unremarkable .",
+          "entities": {
+            "1": {
+              "tokens": "lungs",
+              "label": "Anatomy::definitely present",
+              "start_ix": 1,
+              "end_ix": 1,
+              "relations": []
+            },
+            "2": {
+              "tokens": "clear",
+              "label": "Observation::definitely present",
+              "start_ix": 3,
+              "end_ix": 3,
+              "relations": [
+                [
+                  "located_at",
+                  "1"
+                ]
+              ]
+            },
+            "3": {
+              "tokens": "focal",
+              "label": "Observation::definitely absent",
+              "start_ix": 8,
+              "end_ix": 8,
+              "relations": [
+                [
+                  "modify",
+                  "4"
+                ]
+              ]
+            },
+            "4": {
+              "tokens": "consolidation",
+              "label": "Observation::definitely absent",
+              "start_ix": 9,
+              "end_ix": 9,
+              "relations": [
+                [
+                  "located_at",
+                  "1"
+                ]
+              ]
+            },
+            "5": {
+              "tokens": "pleural",
+              "label": "Anatomy::definitely present",
+              "start_ix": 11,
+              "end_ix": 11,
+              "relations": []
+            },
+            "6": {
+              "tokens": "effusion",
+              "label": "Observation::definitely absent",
+              "start_ix": 12,
+              "end_ix": 12,
+              "relations": [
+                [
+                  "located_at",
+                  "5"
+                ]
+              ]
+            },
+            "7": {
+              "tokens": "Cardiomediastinal",
+              "label": "Anatomy::definitely present",
+              "start_ix": 14,
+              "end_ix": 14,
+              "relations": []
+            },
+            "8": {
+              "tokens": "silhouette",
+              "label": "Anatomy::definitely present",
+              "start_ix": 15,
+              "end_ix": 15,
+              "relations": [
+                [
+                  "modify",
+                  "7"
+                ]
+              ]
+            },
+            "9": {
+              "tokens": "within",
+              "label": "Observation::definitely present",
+              "start_ix": 17,
+              "end_ix": 17,
+              "relations": [
+                [
+                  "modify",
+                  "10"
+                ],
+                [
+                  "modify",
+                  "11"
+                ]
+              ]
+            },
+            "10": {
+              "tokens": "normal",
+              "label": "Observation::definitely present",
+              "start_ix": 18,
+              "end_ix": 18,
+              "relations": [
+                [
+                  "located_at",
+                  "7"
+                ]
+              ]
+            },
+            "11": {
+              "tokens": "limits",
+              "label": "Observation::definitely present",
+              "start_ix": 19,
+              "end_ix": 19,
+              "relations": [
+                [
+                  "modify",
+                  "10"
+                ]
+              ]
+            },
+            "12": {
+              "tokens": "osseous",
+              "label": "Anatomy::definitely present",
+              "start_ix": 22,
+              "end_ix": 22,
+              "relations": []
+            },
+            "13": {
+              "tokens": "soft tissue",
+              "label": "Anatomy::definitely present",
+              "start_ix": 24,
+              "end_ix": 25,
+              "relations": []
+            },
+            "14": {
+              "tokens": "unremarkable",
+              "label": "Observation::definitely present",
+              "start_ix": 28,
+              "end_ix": 28,
+              "relations": [
+                [
+                  "located_at",
+                  "12"
+                ],
+                [
+                  "located_at",
+                  "13"
+                ]
+              ]
+            }
+          },
+          "data_source": null,
+          "data_split": "inference"
+        }
+      },
+      "start_ix_to_label": {
+        "1": "Anatomy::definitely present",
+        "3": "Observation::definitely present",
+        "8": "Observation::definitely absent",
+        "9": "Observation::definitely absent",
+        "11": "Anatomy::definitely present",
+        "12": "Observation::definitely absent",
+        "14": "Anatomy::definitely present",
+        "15": "Anatomy::definitely present",
+        "17": "Observation::definitely present",
+        "18": "Observation::definitely present",
+        "19": "Observation::definitely present",
+        "22": "Anatomy::definitely present",
+        "24": "Anatomy::definitely present",
+        "28": "Observation::definitely present"
+      },
+      "radgraph_text": "The lungs are clear , without evidence of focal consolidation or pleural effusion . Cardiomediastinal silhouette is within normal limits . Visualized osseous and soft tissue structures are unremarkable ."
+    }
+  },
+  {
+    "report_id": 4,
+    "report_text": "There are scattered areas of fibroglandular density.",
+    "processed_annotations": {
+      "processed_annotations": [
+        {
+          "observation": "scattered fibroglandular density",
+          "observation_start_ix": [
+            2,
+            5
+          ],
+          "located_at": [],
+          "located_at_start_ix": [],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            2,
+            6
+          ]
+        }
+      ],
+      "radgraph_annotations": {
+        "0": {
+          "text": "There are scattered areas of fibroglandular density .",
+          "entities": {
+            "1": {
+              "tokens": "scattered",
+              "label": "Observation::definitely present",
+              "start_ix": 2,
+              "end_ix": 2,
+              "relations": [
+                [
+                  "modify",
+                  "2"
+                ]
+              ]
+            },
+            "2": {
+              "tokens": "fibroglandular density",
+              "label": "Observation::definitely present",
+              "start_ix": 5,
+              "end_ix": 6,
+              "relations": []
+            }
+          },
+          "data_source": null,
+          "data_split": "inference"
+        }
+      },
+      "start_ix_to_label": {
+        "2": "Observation::definitely present",
+        "5": "Observation::definitely present"
+      },
+      "radgraph_text": "There are scattered areas of fibroglandular density ."
+    }
+  },
+  {
+    "report_id": 5,
+    "report_text": "The trachea is in the midline. The bony thorax is normal for the patient's age. The cardiomediastinal silhouette is unremarkable and the lung zones are clear. The diaphragm has a normal contour.",
+    "processed_annotations": {
+      "processed_annotations": [
+        {
+          "observation": "normal",
+          "observation_start_ix": [
+            11
+          ],
+          "located_at": [
+            "thorax"
+          ],
+          "located_at_start_ix": [
+            [
+              9
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            11
+          ]
+        },
+        {
+          "observation": "unremarkable",
+          "observation_start_ix": [
+            23
+          ],
+          "located_at": [
+            "cardiomediastinal silhouette"
+          ],
+          "located_at_start_ix": [
+            [
+              20,
+              21
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            23
+          ]
+        },
+        {
+          "observation": "clear",
+          "observation_start_ix": [
+            29
+          ],
+          "located_at": [
+            "lung zones"
+          ],
+          "located_at_start_ix": [
+            [
+              26,
+              27
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            29
+          ]
+        },
+        {
+          "observation": "normal",
+          "observation_start_ix": [
+            35
+          ],
+          "located_at": [
+            "diaphragm contour"
+          ],
+          "located_at_start_ix": [
+            [
+              32,
+              36
+            ]
+          ],
+          "tags": [
+            "definitely present"
+          ],
+          "suggestive_of": null,
+          "observation_end_ix": [
+            35
+          ]
+        }
+      ],
+      "radgraph_annotations": {
+        "0": {
+          "text": "The trachea is in the midline . The bony thorax is normal for the patient ' s age . The cardiomediastinal silhouette is unremarkable and the lung zones are clear . The diaphragm has a normal contour .",
+          "entities": {
+            "1": {
+              "tokens": "trachea",
+              "label": "Anatomy::definitely present",
+              "start_ix": 1,
+              "end_ix": 1,
+              "relations": []
+            },
+            "2": {
+              "tokens": "midline",
+              "label": "Anatomy::definitely present",
+              "start_ix": 5,
+              "end_ix": 5,
+              "relations": [
+                [
+                  "modify",
+                  "1"
+                ]
+              ]
+            },
+            "3": {
+              "tokens": "bony",
+              "label": "Anatomy::definitely present",
+              "start_ix": 8,
+              "end_ix": 8,
+              "relations": []
+            },
+            "4": {
+              "tokens": "thorax",
+              "label": "Anatomy::definitely present",
+              "start_ix": 9,
+              "end_ix": 9,
+              "relations": [
+                [
+                  "modify",
+                  "3"
+                ]
+              ]
+            },
+            "5": {
+              "tokens": "normal",
+              "label": "Observation::definitely present",
+              "start_ix": 11,
+              "end_ix": 11,
+              "relations": [
+                [
+                  "located_at",
+                  "4"
+                ]
+              ]
+            },
+            "6": {
+              "tokens": "cardiomediastinal",
+              "label": "Anatomy::definitely present",
+              "start_ix": 20,
+              "end_ix": 20,
+              "relations": []
+            },
+            "7": {
+              "tokens": "silhouette",
+              "label": "Anatomy::definitely present",
+              "start_ix": 21,
+              "end_ix": 21,
+              "relations": [
+                [
+                  "modify",
+                  "6"
+                ]
+              ]
+            },
+            "8": {
+              "tokens": "unremarkable",
+              "label": "Observation::definitely present",
+              "start_ix": 23,
+              "end_ix": 23,
+              "relations": [
+                [
+                  "located_at",
+                  "6"
+                ]
+              ]
+            },
+            "9": {
+              "tokens": "lung",
+              "label": "Anatomy::definitely present",
+              "start_ix": 26,
+              "end_ix": 26,
+              "relations": []
+            },
+            "10": {
+              "tokens": "zones",
+              "label": "Anatomy::definitely present",
+              "start_ix": 27,
+              "end_ix": 27,
+              "relations": [
+                [
+                  "modify",
+                  "9"
+                ]
+              ]
+            },
+            "11": {
+              "tokens": "clear",
+              "label": "Observation::definitely present",
+              "start_ix": 29,
+              "end_ix": 29,
+              "relations": [
+                [
+                  "located_at",
+                  "9"
+                ]
+              ]
+            },
+            "12": {
+              "tokens": "diaphragm",
+              "label": "Anatomy::definitely present",
+              "start_ix": 32,
+              "end_ix": 32,
+              "relations": []
+            },
+            "13": {
+              "tokens": "normal",
+              "label": "Observation::definitely present",
+              "start_ix": 35,
+              "end_ix": 35,
+              "relations": [
+                [
+                  "located_at",
+                  "12"
+                ],
+                [
+                  "located_at",
+                  "14"
+                ]
+              ]
+            },
+            "14": {
+              "tokens": "contour",
+              "label": "Anatomy::definitely present",
+              "start_ix": 36,
+              "end_ix": 36,
+              "relations": [
+                [
+                  "modify",
+                  "12"
+                ]
+              ]
+            }
+          },
+          "data_source": null,
+          "data_split": "inference"
+        }
+      },
+      "start_ix_to_label": {
+        "1": "Anatomy::definitely present",
+        "5": "Anatomy::definitely present",
+        "8": "Anatomy::definitely present",
+        "9": "Anatomy::definitely present",
+        "11": "Observation::definitely present",
+        "20": "Anatomy::definitely present",
+        "21": "Anatomy::definitely present",
+        "23": "Observation::definitely present",
+        "26": "Anatomy::definitely present",
+        "27": "Anatomy::definitely present",
+        "29": "Observation::definitely present",
+        "32": "Anatomy::definitely present",
+        "35": "Observation::definitely present",
+        "36": "Anatomy::definitely present"
+      },
+      "radgraph_text": "The trachea is in the midline . The bony thorax is normal for the patient ' s age . The cardiomediastinal silhouette is unremarkable and the lung zones are clear . The diaphragm has a normal contour ."
+    }
+  }
+]

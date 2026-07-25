@@ -1,0 +1,55 @@
+baseline:
+  greedy:
+    tasks: [vqa_binary, report_generation, multi_choice, open_vqa]
+  beam:
+    tasks: [vqa_binary, report_generation]
+  complete_sequence_yes_no:
+    tasks: [vqa_binary]
+
+anchor:
+  source_margin:
+    tasks: [vqa_binary]
+  source_word_center:
+    tasks: [report_generation]
+  feature_sgta:
+    tasks: [vqa_binary, multi_choice]
+  sgta_confgen:
+    tasks: [open_vqa, report_generation]
+
+ce_methods:
+  sca_t_tim:
+    tasks: [vqa_binary]
+  sca_t_tim_kl:
+    tasks: [vqa_binary]
+  lame:
+    tasks: [vqa_binary]
+  lata:
+    tasks: [vqa_binary]
+
+mitigation:
+  vcd:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  dola:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  opera:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  avisc:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  m3id:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  damro:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  pai:
+    tasks: [vqa_binary, report_generation, open_vqa]
+  vista:
+    tasks: [vqa_binary, report_generation, open_vqa]
+
+judges:
+  rule_parser:
+    tasks: [vqa_binary]
+  matching:
+    tasks: [vqa_binary, multi_choice, open_vqa]
+  rouge:
+    tasks: [report_generation, open_vqa]
+  opencode:
+    tasks: [open_vqa, report_generation, vqa_binary]

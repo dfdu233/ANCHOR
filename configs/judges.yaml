@@ -1,0 +1,22 @@
+default:
+  - rule_parser
+  - rouge
+
+judges:
+  rule_parser:
+    kind: deterministic
+    module: anchor.eval.rule_parser
+
+  matching:
+    kind: deterministic
+    module: anchor.eval.matching
+
+  rouge:
+    kind: deterministic
+    module: anchor.eval.rouge
+
+  opencode:
+    kind: llm
+    command: opencode
+    mode_env: OPENCODE_MODE
+    default_mode: mock

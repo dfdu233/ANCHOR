@@ -1,0 +1,1826 @@
+[
+  {
+    "id": "vqa_rad_train-00ae3e2c1635f7811c910792",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/53e68e8a3e60a4783223adcbb9286744d2f61108c4d6cac7e4d3925cca02fb32.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1014",
+    "image_sha256": "dbc5ad54b33e40dcc41ff119035ecb02108fbded7f3b3472869c6da68241c452",
+    "image_blob_sha256": "53e68e8a3e60a4783223adcbb9286744d2f61108c4d6cac7e4d3925cca02fb32",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "was contrast applied?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-00b7cab79b6ddf7e2ab0a1ae",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/9889e27f00b402cb05239206a9e0d465e9326081c09d30a75d6fc904b5bdd80c.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "299",
+    "image_sha256": "6233d2ef5e1a5478bbcd24430337fc3f45a387433b1ab89eb4802759fb1f1f2c",
+    "image_blob_sha256": "9889e27f00b402cb05239206a9e0d465e9326081c09d30a75d6fc904b5bdd80c",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there free air under the diaphragm?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-0559dd7162bd6d8cf90c7b79",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/927f4b5c7932e0dfc31538b47745b9c128f36d985b47c12267421dc208e78c31.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "292",
+    "image_sha256": "12fcc91e4a9e848ffc6582e447a1fd569e88f3a26f0998ce669bbf587b37cc7b",
+    "image_blob_sha256": "927f4b5c7932e0dfc31538b47745b9c128f36d985b47c12267421dc208e78c31",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are there rib fractures present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-05b81a516f56c9d140aae1da",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/213ceeb47d54cf813d9f6c450384c09071e04fdea18b744084c87a73da6047a9.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "174",
+    "image_sha256": "9f9c5a047511ec6dac80c35ddef0137b8e9a0a0709d5f0b6aa426a00900c3404",
+    "image_blob_sha256": "213ceeb47d54cf813d9f6c450384c09071e04fdea18b744084c87a73da6047a9",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there ring-enhancement?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-09af233fe83feb4ab33ee037",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d7dbe6d2742cf7195e594e5ea804362f50e3fd360fd78fdd1c0c7a60d9b61c70.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "410",
+    "image_sha256": "666dbb42308da87a4ccbf3576cd55d5f8ff9065a4dd1995c3b303776b5e103a6",
+    "image_blob_sha256": "d7dbe6d2742cf7195e594e5ea804362f50e3fd360fd78fdd1c0c7a60d9b61c70",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the jejunal wall enlarged?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-0ddebea1a2fae796d89e1079",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e6d67080851fe670627b8df9b8e5c315d08981080b9d9fdb730ca95eef1cc5e2.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "262",
+    "image_sha256": "04969e46f39ec572f49618f39b113f37a27611a64eb1e00c0f45d21a46594ac1",
+    "image_blob_sha256": "e6d67080851fe670627b8df9b8e5c315d08981080b9d9fdb730ca95eef1cc5e2",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this image abnormal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-0ee774a2881a0968f9cc43cc",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/609d044ed77f1f51511729796b838229e8f6ad8b4637efbfc4ff7a8de3a7f08e.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "355",
+    "image_sha256": "48a1cd90accd85a3f88666298cebeeaece6bc98fe5721e7a5c6eaf4283e250d8",
+    "image_blob_sha256": "609d044ed77f1f51511729796b838229e8f6ad8b4637efbfc4ff7a8de3a7f08e",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there contrast used?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-1165b9ed506ecd14ce01570d",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5e768966855368301d1489bac977ef782137840ca6f95fddc9df9b4d87673293.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1107",
+    "image_sha256": "6e6174776e95018cc7b3e37fc66412c32de9e2253ff4b7b859eaec8c818307e9",
+    "image_blob_sha256": "5e768966855368301d1489bac977ef782137840ca6f95fddc9df9b4d87673293",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there ascites?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-126fec69fb2d26e52cbac57e",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7df5d2323d2611b5bd6a09b34ed6bff4e74cfcd192e2bae12f61972a12ecefb6.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1114",
+    "image_sha256": "d98895722902234a6e55f21dc77f84135afc7a928e8e35b64895b662220674e7",
+    "image_blob_sha256": "7df5d2323d2611b5bd6a09b34ed6bff4e74cfcd192e2bae12f61972a12ecefb6",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there fluid in the anterior abdominal wall?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-1d9b1f63c24efa193bb25037",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/67c0a4c0450a3cb5dce8515f6dd210320e0894127d8b3315d2ba7df2957095a7.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "860",
+    "image_sha256": "063f689310d203cab9d4a8d20a61c1182de21571e7403bd46bc479d740979b56",
+    "image_blob_sha256": "67c0a4c0450a3cb5dce8515f6dd210320e0894127d8b3315d2ba7df2957095a7",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is cardiomegaly present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-1e1d93c6feeeb34e1b7af8a9",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/64518cbf98b3bdd6942c12b03b38b849471e185da15d7b1dcae77980d8a8b6b4.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "171",
+    "image_sha256": "cceb3be9db3183c28ba715d993e89db5d693cb326b9b89b2a144e89577beebf5",
+    "image_blob_sha256": "64518cbf98b3bdd6942c12b03b38b849471e185da15d7b1dcae77980d8a8b6b4",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the sigmoid colon visualized at this axial section?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-1f66020f73cfe4d5e8eb02b0",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4585885e70bd5652419f4727540ba689fcd4f5de12fc6a30974858e35950771a.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1327",
+    "image_sha256": "df449473c9bc5f4287477917bb0b35d8562263842336e0f86118ccd3762c16ce",
+    "image_blob_sha256": "4585885e70bd5652419f4727540ba689fcd4f5de12fc6a30974858e35950771a",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the descending aortic silhouette of normal contour?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-207bcc3f22180606e328248f",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3083bff6f954b5d33f8febe302b89e62cceeafec9f8d45226d9be78aefecc237.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1711",
+    "image_sha256": "77880dd8ba00788b4e2cd5638a90e1c30f555202f10430757e2a679cd50d8325",
+    "image_blob_sha256": "3083bff6f954b5d33f8febe302b89e62cceeafec9f8d45226d9be78aefecc237",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the cardiac silhouette enlarged?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-20c270d7a3cf8db072e89af0",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0c73d4e72cd51d37753b34c53f78ba7c8e81c5792df9031ef31fce595277656d.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "237",
+    "image_sha256": "3690f7a4f759e05c6cc16350ccd25f4f895f91b9adbce7a3dab2cebbd2fb2738",
+    "image_blob_sha256": "0c73d4e72cd51d37753b34c53f78ba7c8e81c5792df9031ef31fce595277656d",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the liver abnormal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-21016b9e199c3c768f781dc1",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7b3f70e68bf1f1a4cd46161f62a52fe294d6402cba59ddd331c767643392c261.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1115",
+    "image_sha256": "ec5526a63c22d4dbf904425affa8b0908f98f7936ee913228d0e8aa4294ff548",
+    "image_blob_sha256": "7b3f70e68bf1f1a4cd46161f62a52fe294d6402cba59ddd331c767643392c261",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the lateral ventricles compressed?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-251113491d71124cab8f8db7",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/72568c462eda507dccefd6919927a5f411c3271be6db7f5aae62cab91a96aa43.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1409",
+    "image_sha256": "57c467221e82becdc24f159278427e66eacae8ee9fe745a36fac09c42c482fe0",
+    "image_blob_sha256": "72568c462eda507dccefd6919927a5f411c3271be6db7f5aae62cab91a96aa43",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the appendix seen in this image ruptured?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-269162220638ef513992fbcc",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e450abdc1cbc37ff89d54e6252494552e70344b8c74c988d72053a336e9648dd.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1183",
+    "image_sha256": "062eb9440e8347e857ef7c46189b8f81354b9ee6c5e372dbeb316315b1bc9cce",
+    "image_blob_sha256": "e450abdc1cbc37ff89d54e6252494552e70344b8c74c988d72053a336e9648dd",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the patient's vertebral body indicative of normal aging?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-2d4106337c3324c6968c1851",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f6b61bda304352b1bd52b2c9f99b5fff4adc845480e81c9dbdda60e523515989.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1084",
+    "image_sha256": "fff5a102a676b14dfc1c38aae2979a588b0d9349156b0f47188bdfa8f0958aef",
+    "image_blob_sha256": "f6b61bda304352b1bd52b2c9f99b5fff4adc845480e81c9dbdda60e523515989",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is it possible to see the cerebellum in this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-2d6fe5907220b9d0994e12bc",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/beaa55661ee8099f6c997e47fbfc8d453a3ccaf8ed83127ba6da3cf018e5f1fd.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "332",
+    "image_sha256": "3f7e5736ff1c64229ec0922c4f882f98ee9c8a19788ec259f58895e6b949f670",
+    "image_blob_sha256": "beaa55661ee8099f6c997e47fbfc8d453a3ccaf8ed83127ba6da3cf018e5f1fd",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the mass enhancing?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-2d81c68020004e5b467d9669",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6c2bb72fc82f8ff668db535182f3d338bbf39f1b18361ce2bc8f84aef7fc1eac.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1457",
+    "image_sha256": "e983a5fa1f18364ee020ea35e2bd720adf53cd00e0140f3b0dff7cb59ce98e21",
+    "image_blob_sha256": "6c2bb72fc82f8ff668db535182f3d338bbf39f1b18361ce2bc8f84aef7fc1eac",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "do the lungs appear hyperinflated?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-2e465f57a2647f6142aa5845",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1f4adc34e6f705b8ddaac7eff89e060c407ddee7eaaa0466d17f07f7b969d375.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "394",
+    "image_sha256": "1cef91b7d7fc678fa5041f78068937035c592e35c2e7b018fb9540bff82488de",
+    "image_blob_sha256": "1f4adc34e6f705b8ddaac7eff89e060c407ddee7eaaa0466d17f07f7b969d375",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the air fluid levels located in colon?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-2fcb0efe0e15dd062243b1fb",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/ce8d34ec377ec2d1e552b85df95e2fd0eecb1ed2da4ac918d6990383697920c0.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "376",
+    "image_sha256": "cab5ed2283db0ea627b6b837a4fd0e13dd2f0cef3dc7e33cf124dbf93b1469b8",
+    "image_blob_sha256": "ce8d34ec377ec2d1e552b85df95e2fd0eecb1ed2da4ac918d6990383697920c0",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the ventricles larger than normal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-32364fc7dd80d50382fae909",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f09ff662d23abf20ba7186e42a5530fa35f17edd8511aecafb401cd4ffd29f2b.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "380",
+    "image_sha256": "f16d69330934261a548b316629e85f3d40176dd3244b05b9eadfc0586365cf35",
+    "image_blob_sha256": "f09ff662d23abf20ba7186e42a5530fa35f17edd8511aecafb401cd4ffd29f2b",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the abdominal aorta large in size?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-32c5c50ac3dc4eaa03af51e0",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/09b82d2339d23b231fceb32fb2770170ce589890c76bcbdf47c611122329a931.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1019",
+    "image_sha256": "09b5537609345b4b68d5cd1944847b5c99889c1e785718da004c1710efb9046e",
+    "image_blob_sha256": "09b82d2339d23b231fceb32fb2770170ce589890c76bcbdf47c611122329a931",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there evidence of large calcified lesions in the lung fields?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-3328252270812ccdf52c0708",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/be75e2e6ab061343abbfee54b79bc90ae8a802d6c058475040a6a4395cb11fa1.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "814",
+    "image_sha256": "289a2a5019139d63f22d682d5ed5429ec4dc3ceb5a1b76a2e355f67f1b888780",
+    "image_blob_sha256": "be75e2e6ab061343abbfee54b79bc90ae8a802d6c058475040a6a4395cb11fa1",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the occipital lobe present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-3544b15146da1958a69235f3",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/31a2e99537a6799b533d4bd804af149c946dde9bdd19cd496bca01d93150319f.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1389",
+    "image_sha256": "a22f79e4995cd09b7aa65048df9accb029c564d9b1de4a8d39750bc010a9bdb4",
+    "image_blob_sha256": "31a2e99537a6799b533d4bd804af149c946dde9bdd19cd496bca01d93150319f",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this a contrast enhanced image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-36616767695a5464e12e3c68",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6fd1b5213f79379ead5ea4765496d80a53cec21cc5817f032c5feab73e629e8a.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1655",
+    "image_sha256": "9b2972f68d0fb9a818e9b0e1ca390d6b5c128daf31c525d088da3c0c8f411685",
+    "image_blob_sha256": "6fd1b5213f79379ead5ea4765496d80a53cec21cc5817f032c5feab73e629e8a",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the left renal pelvis dilated?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-38d14173238852f30fc3cec6",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/cde37921b76a29d26220c74854e6234a48d24fd84f6a44576eb8c92bedba828d.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1177",
+    "image_sha256": "518744f1c1b04ea61da32dc2da89cb1ebc0df12998b9645959b4b5fdf250652f",
+    "image_blob_sha256": "cde37921b76a29d26220c74854e6234a48d24fd84f6a44576eb8c92bedba828d",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the image enough to diagnose?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-3a2f90ab19bcaa49aa845929",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/75f3d88dc61cc4ff9e8c719e01973c0747243094783dd81654ca721c2cb8fe81.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1394",
+    "image_sha256": "ac5563ac3aab5de6e39bd8c478fbd2fb63f94d57c795ad9db17c5d97929c2f3c",
+    "image_blob_sha256": "75f3d88dc61cc4ff9e8c719e01973c0747243094783dd81654ca721c2cb8fe81",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the vertebro-basilar arterial network viewed in this section?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-4074291026a4bdfb4b65f585",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c7363b32b9b8230c7128aaca42b69e29f9ffca198eb49413f72cc641f0994f6d.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "266",
+    "image_sha256": "c9e39c4097110fc0de502467b9083e65025083d647b1dfc3f1bdd8e98e5c9a58",
+    "image_blob_sha256": "c7363b32b9b8230c7128aaca42b69e29f9ffca198eb49413f72cc641f0994f6d",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a fracture of the skull?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-478dca03b91e2024b9221476",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a87f16c9bcf1f58f2b56f47293fa7ddce74ab1fb217d1a12142cac062c88b093.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1632",
+    "image_sha256": "ba3589105ccbf897be93c27a3002d062d34241f9a3a893e1d998e12df2185d96",
+    "image_blob_sha256": "a87f16c9bcf1f58f2b56f47293fa7ddce74ab1fb217d1a12142cac062c88b093",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this an axial image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-47a59117abb4a6fe0a6ad76a",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d7d7d582f58b11161552324de2936215a4223ee0ebd0b10b5496a22ca8bd8242.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1058",
+    "image_sha256": "462a5b723e0674a1a1f1c6ffc7518a8f140f45e96aa77b3bed0f4b137d55b5de",
+    "image_blob_sha256": "d7d7d582f58b11161552324de2936215a4223ee0ebd0b10b5496a22ca8bd8242",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a fracture on the left 5th rib?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-4b068ec032a1a5869d762cd2",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f5351ebfd2467d411ef579a21f7fc4bfcc2f3ec9602131bff2dd5404ea9830ec.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "668",
+    "image_sha256": "22faf4ad5c371f605c3599ce2882364d9b20c3227c1f9d9ff88ed0c0cfd83679",
+    "image_blob_sha256": "f5351ebfd2467d411ef579a21f7fc4bfcc2f3ec9602131bff2dd5404ea9830ec",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there swelling of the grey matter?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-4db14fe175d57d342615d912",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a2fdb16c891fb197679ba1521bd9927aa7a242b39948497ea134fea1418ede5b.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1057",
+    "image_sha256": "5c60256c04827d139cc339c16e91a8ffe8097cbad552535c630d54b9f72c3ead",
+    "image_blob_sha256": "a2fdb16c891fb197679ba1521bd9927aa7a242b39948497ea134fea1418ede5b",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there evidence of a mass lesion at the right hilum?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-5073d5d350020a5047087a97",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/23a9af674cbfa5a5ea39e7964cd5eb150b629a8a5d6c8ea2054a8e70410a03d1.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1198",
+    "image_sha256": "e2047e69a5924824ace21ee8551b459dab72628e68e2beca9e1a1ea477ccbf04",
+    "image_blob_sha256": "23a9af674cbfa5a5ea39e7964cd5eb150b629a8a5d6c8ea2054a8e70410a03d1",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "can you appreciate a shift of the midline?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-5320138d819a6660fcf0da24",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/987dc8cc63b60b28c785002e0f64c90d129735b2161c6a4938d8034cf4115a39.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "421",
+    "image_sha256": "628db9d983aae7cd33a7bf7d04163bfe97399662e6dadd72c2a85c7f51d19c01",
+    "image_blob_sha256": "987dc8cc63b60b28c785002e0f64c90d129735b2161c6a4938d8034cf4115a39",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "does the left temporal lobe appear normal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-550bea1e8dcaff2dbdbe1495",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/573bccfa49eed5ebe623dacf7a3b51e69a8fd14c5326e1e81e8b537c580395d1.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1393",
+    "image_sha256": "7fc8df7eadf70dc6ea18eec5f7ef196790a14222433e86c0824de27feee82863",
+    "image_blob_sha256": "573bccfa49eed5ebe623dacf7a3b51e69a8fd14c5326e1e81e8b537c580395d1",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this image enhanced by contrast?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-57ce2420dce42a54046b9a9b",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a87f9059f72b5205cc48f43f63541ab23283702df0ebb1d49750a496c45aa236.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "212",
+    "image_sha256": "8ec1395194c0b273e66ced43dfb44746129790e1f78a6e3e54ce0e0b3633f0ba",
+    "image_blob_sha256": "a87f9059f72b5205cc48f43f63541ab23283702df0ebb1d49750a496c45aa236",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the aorta visualized?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-59355a5ddc39791c4f0d58ce",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/985e40bf275a4f0a3bf2f28139a78d01cc1ec011f87ed6c23807188741f96fa8.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1313",
+    "image_sha256": "a146d9de93867620b7c689fab6c0e958407f9efd18e67026bbe8a23eccbeb9f7",
+    "image_blob_sha256": "985e40bf275a4f0a3bf2f28139a78d01cc1ec011f87ed6c23807188741f96fa8",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there an interstitial lung process?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-59c61e22a307996bd634305a",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4638e2a1dfe20b6cf795eaa5fc7d32486980e92c87efc8f511d43d87d9354f91.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1397",
+    "image_sha256": "8ddc5718f099d23a5d43e59c55a7181a0514e89330f3cef8a07defcb89ca44bd",
+    "image_blob_sha256": "4638e2a1dfe20b6cf795eaa5fc7d32486980e92c87efc8f511d43d87d9354f91",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "does the appendix appear normal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-5a32ea167af9f55c73e8219d",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f6f38b60ccddc401352e94b491dbce21edb0b28f8c6b7e305060617aaa69a2aa.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "359",
+    "image_sha256": "99574e7c3cc0b2eaecb926579595cdadc6a9c38b5f8348c823edb1bf13ba2675",
+    "image_blob_sha256": "f6f38b60ccddc401352e94b491dbce21edb0b28f8c6b7e305060617aaa69a2aa",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there mass effect?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-5d7509799ff3d9b7dac06c2f",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6a26027370c0ccb2d53817b1bf4d9eeaee6dccea825d33bb2eb7a7fc9c4c799e.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1558",
+    "image_sha256": "8420ee16e4569229510929f94ef905ea21b0f57d5323e8163599864fe59de220",
+    "image_blob_sha256": "6a26027370c0ccb2d53817b1bf4d9eeaee6dccea825d33bb2eb7a7fc9c4c799e",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "did the patient ingest contrast prior to taking this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-69b5006513d9e22771049a58",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/146d04dd3160c7ca5c7ac61215368b8ae6254735ac7c40f9d0cea114d08b1096.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "32",
+    "image_sha256": "f7b1724cfc107a903f58fcb7a4fb718c16206e04df5d890d0b4fec880e973d63",
+    "image_blob_sha256": "146d04dd3160c7ca5c7ac61215368b8ae6254735ac7c40f9d0cea114d08b1096",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there evidence of inflammation?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-6a427881c83db4f1936d0ff1",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/cf6f84e67df2178fa2afcddd4b8d55fec9751aaa3e1db8a8c76389274e4ca98e.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "371",
+    "image_sha256": "cffe97e1e76bb51359a15df7bf9d5b1d4af631405fa25b0a477b4303b6074db2",
+    "image_blob_sha256": "cf6f84e67df2178fa2afcddd4b8d55fec9751aaa3e1db8a8c76389274e4ca98e",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the trachea midline?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-78e88b0b199cf5e45794cb49",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5fba95a3daf214a26d3fd00615411d1c4846d6b3369051241db182c55e61d933.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "254",
+    "image_sha256": "e30bd8b828b07fd5cbf7b815967265d3404b19bacf0d22ab5deb401e270368ea",
+    "image_blob_sha256": "5fba95a3daf214a26d3fd00615411d1c4846d6b3369051241db182c55e61d933",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the clavicles broken?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-7fa0acfca407551f771a2d03",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8bebbcb8854ad6e05b02375cdeea008eec7ab69a207af7f280f92c03cedbb50.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "944",
+    "image_sha256": "1928135dfba20dbf9be4ea5e97a8427c78ae30d1b49e62355c0402a1b6c20ffc",
+    "image_blob_sha256": "f8bebbcb8854ad6e05b02375cdeea008eec7ab69a207af7f280f92c03cedbb50",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this image normal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-877fca9cb78c6a0b1a014b9c",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/d8646636342078013954baaa0a114c841d7879aae3cdce7600f133994601b12f.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1218",
+    "image_sha256": "e0e7eb4db21aa258d66ab55feefc44b4334202dbcc149200211e657eb73697e9",
+    "image_blob_sha256": "d8646636342078013954baaa0a114c841d7879aae3cdce7600f133994601b12f",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "did the problem originate in the brain?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-8c8269ed7f6bfa6952f50148",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0ec76d527e879fc6862f5ed54a7a2b74732d0e31b976ec933e1e456585fa434a.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1545",
+    "image_sha256": "59bc001fc667dec6a843d87a44916678f53ed3a5617664164640f29e91126223",
+    "image_blob_sha256": "0ec76d527e879fc6862f5ed54a7a2b74732d0e31b976ec933e1e456585fa434a",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this taken in the axial plane?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-8cd2122734e7601ea7696d77",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/69a52fc084daa115ae4e55c738343c0f3cf829cf8c12ff530fd923842a9b4bc4.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1566",
+    "image_sha256": "1b26f7c4f360980dedb3825a4d7c94979d5c64ffadaef24e7d789f7acc471ba2",
+    "image_blob_sha256": "69a52fc084daa115ae4e55c738343c0f3cf829cf8c12ff530fd923842a9b4bc4",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a pneumothorax present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-8ebd5b8fb3447c5435c571cf",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b3ed1fa67e86bc28e002f8eedd7894c96e017907ae941b22c93dea706556621c.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "246",
+    "image_sha256": "b6fbd37f42c04fbc99efc1e804468baf0f7451212041b8150bd301ed2638aa4c",
+    "image_blob_sha256": "b3ed1fa67e86bc28e002f8eedd7894c96e017907ae941b22c93dea706556621c",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a calcification on the upper left lobe?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-932bd2913b74f910f287e707",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/2e07cce1d47327b5efaef002df7f9484f4f2a627d0a09970b92290259191d4e2.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "535",
+    "image_sha256": "15b9b44f298f34136e876b041d5e0dde22b0813db9fee60272ebbbfb5ad33d11",
+    "image_blob_sha256": "2e07cce1d47327b5efaef002df7f9484f4f2a627d0a09970b92290259191d4e2",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the left hemidiaphragm normal?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-97d6359b9ae9fb96c2774018",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3063bd51b3717d7ac6fff1c9888223292cee0be3ec227597eb92997f835484cd.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "114",
+    "image_sha256": "d2763868df7620d54cce7166c70e99c36f362cf2143bf6d4a91f18756c5b90c0",
+    "image_blob_sha256": "3063bd51b3717d7ac6fff1c9888223292cee0be3ec227597eb92997f835484cd",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this image plane taken inferior to the liver?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-996d322e503bcdb44fb083c6",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/58e24e3dd5b5ab845fadc9782181d0f20406ee73f93cfa67c809839cb9a2fcca.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1252",
+    "image_sha256": "b34d1ae412206233b9a4b3ebd0dd5110d3056debb033fad5652c4fa103d5779a",
+    "image_blob_sha256": "58e24e3dd5b5ab845fadc9782181d0f20406ee73f93cfa67c809839cb9a2fcca",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a lung mass?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-9b1ebb53adc2bf071e05193d",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3c2399fcfcf31b7df5c78815c06240e572e9df9ae4d3415535aff734433acbc6.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1244",
+    "image_sha256": "85119053759da45e4dd000eb12cf7720b535cfa7955407fa131da2491f786483",
+    "image_blob_sha256": "3c2399fcfcf31b7df5c78815c06240e572e9df9ae4d3415535aff734433acbc6",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there cardiomegaly?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-9b8c4db70d568322d9611844",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/486a6e8e5f815a714489807aac6e8acbd8e764bc5de983e3a01113156680bfc9.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1725",
+    "image_sha256": "61e8b1ca7f8a60288290c2a71bf5b422e9d83f2b33bbe5559e2f1153581374d5",
+    "image_blob_sha256": "486a6e8e5f815a714489807aac6e8acbd8e764bc5de983e3a01113156680bfc9",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is cortical atrophy present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-9df1533c058b71930ad62761",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5ac27a6f130ab18022a046f744169767dac7a386a60df6ae1fc9822fadb896f1.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "701",
+    "image_sha256": "73fd9d49109d665d7ae4ffbd1f6428419ae4f94abd4950d517722f38f1f1afc2",
+    "image_blob_sha256": "5ac27a6f130ab18022a046f744169767dac7a386a60df6ae1fc9822fadb896f1",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the vertebra fractured?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-a0976a0c43f3605452dfc3c6",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/9d6706eb2b8b03c4e9f60bd9a497d0e46491ad7293aa4dd8092c9cf14fe891ac.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1384",
+    "image_sha256": "436387c8588e24b0806c57ce00103f18f5d0c363af5aab6220cf845b7cbed58a",
+    "image_blob_sha256": "9d6706eb2b8b03c4e9f60bd9a497d0e46491ad7293aa4dd8092c9cf14fe891ac",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "does this patient have any fractured ribs?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-a24bbbb814e84cbbdabff487",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/7514f34be0d2400cee2e4b8310f7d5377e0fa50979c3d6af875b8b1845e67da1.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "655",
+    "image_sha256": "f2848b94471be24d855197dfb617c58c5f804a637def23818e3b32fb4c9eb8ac",
+    "image_blob_sha256": "7514f34be0d2400cee2e4b8310f7d5377e0fa50979c3d6af875b8b1845e67da1",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the pancreas calcified?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-a3b44350bee522797ffe025a",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a6cd2895bfa134ef1891372fe1d15a6b9710f22a119de9a545138666ff20e486.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "240",
+    "image_sha256": "73552b24c376c5c633edb775c21b47cdff96c0195beb09af35bb3c969cc3b27d",
+    "image_blob_sha256": "a6cd2895bfa134ef1891372fe1d15a6b9710f22a119de9a545138666ff20e486",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there bone in the top of the image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-aa4933342359fac348412596",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a8869ffd6569e79a8c0298ed020cbba07a2e809eb2ee7da5ee736df68798c9d0.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "808",
+    "image_sha256": "345cdaeea36644580e528013a64dba54779fbc60467578bf24ba0c05eefa368b",
+    "image_blob_sha256": "a8869ffd6569e79a8c0298ed020cbba07a2e809eb2ee7da5ee736df68798c9d0",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "can gray-white differentiation be well assessed with this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-b10bae94a7086d52bdff44ad",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/db3ee4dd062dc955c3c8a93ddbce101e0106ea824da3adb53959db90fa911351.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "458",
+    "image_sha256": "fe319034d0b8be503139aa7f8770483bebf6c61bafbf14a0482a2a96b1b97bac",
+    "image_blob_sha256": "db3ee4dd062dc955c3c8a93ddbce101e0106ea824da3adb53959db90fa911351",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "any abnormal findings in the lower lung fields?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-b304e31b286af37e6f9d2cd9",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6b69b7e857829f2af52e6f8b026ca1f79392067979ef58e1c700ee3516ef5ebb.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "201",
+    "image_sha256": "dd4aae2321d0128f678418527c0d332441e24d56b785d4f5475ff5d21424d2c4",
+    "image_blob_sha256": "6b69b7e857829f2af52e6f8b026ca1f79392067979ef58e1c700ee3516ef5ebb",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there grey-white matter differentiation?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-b4200078e815e98ab7b41acc",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6e9e1a4b828c0d1eee246262425f43d90cf642e40e8777bbdd10e6447b7a506c.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "205",
+    "image_sha256": "073bfc0f5f3bb6d722a947af18a63e2c6426077f69c0985bce4b9a88fb720bc1",
+    "image_blob_sha256": "6e9e1a4b828c0d1eee246262425f43d90cf642e40e8777bbdd10e6447b7a506c",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there cardiac enlargement?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-b85a0fcdc02d1a4e8c5f3523",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b1c0187c0b9739d12c3cf09846011c5066412ca858add8c51a20e248bc238c41.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "618",
+    "image_sha256": "c74c53f1771db88fb360a1cd888402d1a21fdb32f43da5cbbed7293db5c89eb7",
+    "image_blob_sha256": "b1c0187c0b9739d12c3cf09846011c5066412ca858add8c51a20e248bc238c41",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there blurring of the grey-white matter junction?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-b9544fc7f81cbe04cd676845",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/22543673e03e442516a0822ffa8423e454dba937fea72c3a15c726785a26247f.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "447",
+    "image_sha256": "b8867824798326eeabda59eb2c6b3c9d51cc6f0c0e83e20e0debc46cd7c5a6e9",
+    "image_blob_sha256": "22543673e03e442516a0822ffa8423e454dba937fea72c3a15c726785a26247f",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the heart and lungs displayed well in this film\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-bc215150b66c7af80592c7b6",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8b11580d8f46a79a87192d5a13409ea5e85c63cf8ad15375e45d9d747df5847.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "473",
+    "image_sha256": "54e8915d5b66fcbffe4c95e5c69ce963b40608e9a8fbeece9673cdd4275c7ef4",
+    "image_blob_sha256": "f8b11580d8f46a79a87192d5a13409ea5e85c63cf8ad15375e45d9d747df5847",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "does the csf have high signal intensity?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-bc5090e3eec53e00a8f69b8e",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c2351a4c43efe00434886cb877b58ea12b4a91f71f28188e4618c07ba8cff374.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "402",
+    "image_sha256": "1c69407e64483d5775abc1770cf9466cc16f39d1f8e372f6e2f4cddc4ba6879f",
+    "image_blob_sha256": "c2351a4c43efe00434886cb877b58ea12b4a91f71f28188e4618c07ba8cff374",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there no evidence of blunting of the costophrenic angles?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-bf0bc259ffa0d9cc42537672",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/3f97a989d52319fe8860ff23b2e5ed7566554371025b865266d38358a05a2c2f.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "480",
+    "image_sha256": "5ff5f81ab53104480502118d36aed2c176d51c30255d89955f1a3181e6494067",
+    "image_blob_sha256": "3f97a989d52319fe8860ff23b2e5ed7566554371025b865266d38358a05a2c2f",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is the mass loculated?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-bf46ad6ea681d1cba54a82b8",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1fea3f2293f189a6985d4d5107a3322d91c2d0f6523e8041538ea7429badee96.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1730",
+    "image_sha256": "6e7a6dbc9e53cbf64396b1b6b6d1926161a7d9989a375b5b4fab5b2831863c2a",
+    "image_blob_sha256": "1fea3f2293f189a6985d4d5107a3322d91c2d0f6523e8041538ea7429badee96",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a skull fracture?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-c41c8dc9b602371a9db12562",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/eb88334429aef2081c615800621aeaa2ec31a92163312066ca47884bf7545e57.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "404",
+    "image_sha256": "310d8976ae39b6e97ceb1c6d8b9e0c717551c77023ea664c583d9ae51c1c67fc",
+    "image_blob_sha256": "eb88334429aef2081c615800621aeaa2ec31a92163312066ca47884bf7545e57",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this mri taken with flair protocol?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-c7253ee2f9f3ae25f394c3ba",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/05e0337d320e11bda5a8e50c7aa131e88075306750b323e8b712be918000a086.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "769",
+    "image_sha256": "2257e338f53caec19fb24e0a0c267d60b8e72509cb0458f239d82d5a29a4c817",
+    "image_blob_sha256": "05e0337d320e11bda5a8e50c7aa131e88075306750b323e8b712be918000a086",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a unified process?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-cb94d9716834e48a9b094cd5",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b770a72427d340c557d479f7ae1d9d208c2132c22dbc3c7114dbf004a2929a11.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "442",
+    "image_sha256": "464e80c6100e857be93566778eb3ca9bde457c8fd115ea1e55867f587a4461f6",
+    "image_blob_sha256": "b770a72427d340c557d479f7ae1d9d208c2132c22dbc3c7114dbf004a2929a11",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a normal contour of the heart?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-cd5ad9d9b84e3a275613831c",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/30dec8413d905325e71ff3f32aae20207c8e4d8f7e22b4413ac4c12551da71f7.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "564",
+    "image_sha256": "c0cdccce3076efcd1b33ce80fca224273c017929b4595687334688e5bdcc7afa",
+    "image_blob_sha256": "30dec8413d905325e71ff3f32aae20207c8e4d8f7e22b4413ac4c12551da71f7",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are there any abnormalities seen in the spleen?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d040f9f53e76d62e7d2a0044",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/481d20d56b43b20f0dc7242db8e78c0534e6925be95b26af5c7990f50b75e519.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1790",
+    "image_sha256": "1e95ef7d22273e539a02f3ac0c6f08a759498faabd649be441639247e296ed27",
+    "image_blob_sha256": "481d20d56b43b20f0dc7242db8e78c0534e6925be95b26af5c7990f50b75e519",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there an abnormality?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d1907a63d4dc826e2a3a7671",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/335dbc444d743e52c370b1f6797b995f6f28e34035726f083a6a083f4e514ffb.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "295",
+    "image_sha256": "27ddfc75ace8864da7db46ec579568e4b3e6e805aaab0b5de7bff8e2f9aa6d9d",
+    "image_blob_sha256": "335dbc444d743e52c370b1f6797b995f6f28e34035726f083a6a083f4e514ffb",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a blood clot?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d30343c7ee18a6326d21c307",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/a74629fe3ec00553b050e7d219098983ea1a864feec2d9f0e7fe7425e74f3d6a.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "498",
+    "image_sha256": "4745a394f305994a1f384cd63900b9cddec29f25f4d5007d916bf610c6c101ed",
+    "image_blob_sha256": "a74629fe3ec00553b050e7d219098983ea1a864feec2d9f0e7fe7425e74f3d6a",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there any costophrenic angle blunting present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d3a8fbd155c1559d5ac8f602",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e920dc74b69617f2bc55e63e68eeae0432ae8a55c6db6dfa755ea5387a4add67.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1082",
+    "image_sha256": "e9633fcabfd2ee7d90548d01933d347cc47a3add0ab169168189a4c6df0cf462",
+    "image_blob_sha256": "e920dc74b69617f2bc55e63e68eeae0432ae8a55c6db6dfa755ea5387a4add67",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this film properly exposed?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d6b19d2e3910089a70668a57",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/883aba43db4d4cea6408290aed45798024ddd5877cfd580f367670c36d1606c2.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1501",
+    "image_sha256": "52c0dbdd174d6b88195caaf2121005221b63aa8c7084664126f819f10058ebb5",
+    "image_blob_sha256": "883aba43db4d4cea6408290aed45798024ddd5877cfd580f367670c36d1606c2",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "do you see fluid in the left lung?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-d73049f681eac66e32c5f250",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0781b207825b23383e360b0eff857ab9ba2d7827ffb1e13ab503f2beddece5b5.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "76",
+    "image_sha256": "5d110894a4367bdee4985119c769741c532d947db77ca2a633bfa04aea7bd1a5",
+    "image_blob_sha256": "0781b207825b23383e360b0eff857ab9ba2d7827ffb1e13ab503f2beddece5b5",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is intrahepatic ductal dilatation present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-dcc37dc33baa69fa7045e3ba",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/f8d2172a6ff158b8d592c65206968ac755ee25929ab836e046ca25aac11bb13c.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1362",
+    "image_sha256": "e9733c9de98af3894e4af9d5159b254b7ff7e351cb0970d941aec73166121cef",
+    "image_blob_sha256": "f8d2172a6ff158b8d592c65206968ac755ee25929ab836e046ca25aac11bb13c",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there acute blood present on this head ct?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-e0a8c4efe4d529cf5cf15217",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e9e764ff19196e9c54f4649d1ad938f1a0565f859d6458524c577e66c09b6ad5.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "333",
+    "image_sha256": "f9216bf5cf6a2e1e3cf7ca61119997cbc9aa8d9f2fc25fb27d1142ab75778583",
+    "image_blob_sha256": "e9e764ff19196e9c54f4649d1ad938f1a0565f859d6458524c577e66c09b6ad5",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a shift of midline structures?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-e22c754a2b410a7199b10529",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/52d1c47a6469080eef668faad51cbfc59f49883e093037e5b98532244ed82344.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1257",
+    "image_sha256": "113c967dc44fa8a66e240977a744dcf92e11d9b048696b4b51e448f7b281030f",
+    "image_blob_sha256": "52d1c47a6469080eef668faad51cbfc59f49883e093037e5b98532244ed82344",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is hemorrhage seen?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-e4bf776044ed28911bb23596",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/5329b97cb90176007e8e00744bc38d41410872b984e9802f2e09846849db3cc6.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1649",
+    "image_sha256": "b9c6d7dbe973b61de0c3ff49345ec2dc4aa04abb481a648f0bc4349c38b701f0",
+    "image_blob_sha256": "5329b97cb90176007e8e00744bc38d41410872b984e9802f2e09846849db3cc6",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the branches of the superior mesenteric arteries hyper attenuated?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-e513d91bcb846dfa1a52d876",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b9175c4759a848b4716c5c3d7bdac269f1994ea3246a23f51f8880d6c023a7d6.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "93",
+    "image_sha256": "0c4fd433ddebf83c40066c4e20d14dfdd0af3b431908ae9ce627dcf93f174d72",
+    "image_blob_sha256": "b9175c4759a848b4716c5c3d7bdac269f1994ea3246a23f51f8880d6c023a7d6",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is cardiomegaly shown?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-eab0298560d9b681f1a8d87e",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c6ed8fe71b81446efbf603637077214fd6ab3583d46a82b437bc760760862275.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "285",
+    "image_sha256": "ef0388a52b1d5ec9e79ac071db265c24c083bb8d1ffb39ea1763a473f76c0020",
+    "image_blob_sha256": "c6ed8fe71b81446efbf603637077214fd6ab3583d46a82b437bc760760862275",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there a pneumothorax present?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-ecaf33e7f40a72699cae663d",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/b9a8e5f9a0ed2228ae57ae209d54020d61d854f26fdb8ed516792448424dc3a4.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "645",
+    "image_sha256": "7c116041096251de5d43719d17d21b19e744f123f17a94d3f43a01317bb8e096",
+    "image_blob_sha256": "b9a8e5f9a0ed2228ae57ae209d54020d61d854f26fdb8ed516792448424dc3a4",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are any ventricles visualized on this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-ed4b9a3e4578179f4d585f29",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/15936d91fec305f32de50bda986c60d08aac0f48188b9e1dabd7d8e027f1955a.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "27",
+    "image_sha256": "c610763c9fcdad50129a557a5063060a17d61ea619e6914f68c517c3960502b6",
+    "image_blob_sha256": "15936d91fec305f32de50bda986c60d08aac0f48188b9e1dabd7d8e027f1955a",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this an mri?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-eef81a5b0e6173f466e53951",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/054d0510d10ad5e8b9d87ce2b628e493261ac7847cf447e8bb5bf61fb4c9b1cd.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1602",
+    "image_sha256": "e1a2b1a6af52340c683b031850914e537b4175ba481b58cb18708ef3a4d8996c",
+    "image_blob_sha256": "054d0510d10ad5e8b9d87ce2b628e493261ac7847cf447e8bb5bf61fb4c9b1cd",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is this a pa film?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-f674e3ebfcd6864b28ad23fc",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/bd1f1eaefa3866f009de05769cc5881344e28fb6adeda7594283c5ca5b898f6b.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "842",
+    "image_sha256": "9c384bf37d0765aeb8eb7324bd6091c79a5bbb087f1004b4e41d374e45a7440e",
+    "image_blob_sha256": "bd1f1eaefa3866f009de05769cc5881344e28fb6adeda7594283c5ca5b898f6b",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are there lungs free of consolidation?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-f7be9522b12df14238397887",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/e0d561395d09d3e8f8371d37ce60205279e8fc2bdfc49d0e30f7e568b35110e0.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "161",
+    "image_sha256": "63dcc56b5d652d7e4fed15e48a5bf911b71c99e220614de1a5b609ccac51809c",
+    "image_blob_sha256": "e0d561395d09d3e8f8371d37ce60205279e8fc2bdfc49d0e30f7e568b35110e0",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the sulci visible in this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-fa29377ce6bc9b53f97a727d",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/6ac87bc30a7ff98ce678990b742e393f1af890b9c6f1a05f66b4ff9e08b2245e.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "175",
+    "image_sha256": "5d2253cfd8ea4a6f3dbfe019dbcd38e19a98bb7874ef0b498cb35a69e17af909",
+    "image_blob_sha256": "6ac87bc30a7ff98ce678990b742e393f1af890b9c6f1a05f66b4ff9e08b2245e",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there air in the lesion?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-fa4736bcc2e599e71b3ce11b",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/c143dc22717e2591da6d3676954e9820b10cfae9466832d95825fcd98c9394e5.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1768",
+    "image_sha256": "3839e54d126a3b6a25daf4dd0d63f09261f60fd5e6793dec917b9fb7d8f208ef",
+    "image_blob_sha256": "c143dc22717e2591da6d3676954e9820b10cfae9466832d95825fcd98c9394e5",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are there abnormal findings?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-fdab35ee3433288d4a1e839a",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/1bb53e4434470b608a145c79aef33e4889111447acd375705e3a203853713138.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1095",
+    "image_sha256": "9fd286ef6c27b2fb1decc4bc46a654c4a96708ab6278d3091a5ab12ce6bfe179",
+    "image_blob_sha256": "1bb53e4434470b608a145c79aef33e4889111447acd375705e3a203853713138",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are the basal ganglia enlarged?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-fe6da1c3f1c3af7af0e5fa6a",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/03377b8d3a1a12aa131c21f30671aa7ac511a9a9ec5fc69b31621dab2c752506.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "684",
+    "image_sha256": "c2d3f46a74f859000aba872c5429c29d9d3d3ed6f19a5b35c29b66713b3763a1",
+    "image_blob_sha256": "03377b8d3a1a12aa131c21f30671aa7ac511a9a9ec5fc69b31621dab2c752506",
+    "original_answer": "no",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "is there hyperinflation of the lung(s)?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "No."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-fed26084d2abacd2aac268b3",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/4ffa5156f111b6cc5a500267fc68dd2285f66b6b28167dae115c2cd923ae0f76.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "1557",
+    "image_sha256": "8b693e5788752d29ab191a9816a0b72cf99571e1a69a51f27527d75269682a72",
+    "image_blob_sha256": "4ffa5156f111b6cc5a500267fc68dd2285f66b6b28167dae115c2cd923ae0f76",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "was contrast used to take this image?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "vqa_rad_train-ff2da11e77f8957c269c8c79",
+    "image": "/root/autodl-tmp/Hulu-Med/MedUniEval/corrected_runs/rule_source_robust_margin_reconfirm_v1/manifest/images/vqa_rad/0df5748310b6f30841552d64bd023b2c077c0f1d332917577ccc17aca3dce4c5.jpg",
+    "source_domain": "vqa_rad_train",
+    "source_id": "0",
+    "image_sha256": "3c8ea7ed8e8e0d37f0cf9a87be7d406fd41eb5b80e09e91ae3e79e8b863a7e1c",
+    "image_blob_sha256": "0df5748310b6f30841552d64bd023b2c077c0f1d332917577ccc17aca3dce4c5",
+    "original_answer": "yes",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "are regions of the brain infarcted?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "Yes."
+      }
+    ]
+  }
+]

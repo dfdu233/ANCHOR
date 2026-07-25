@@ -1,0 +1,15 @@
+default: llava_med
+
+models:
+  llava_med:
+    hf_id: microsoft/llava-med-v1.5-mistral-7b
+    backend: llava_med
+    conversation: vicuna_v1
+
+  hulu_med:
+    local_or_hf_id: Hulu-Med
+    backend: hulu_med
+
+download:
+  hf_endpoint: https://hf-mirror.com
+  cache_dir: hf_cache

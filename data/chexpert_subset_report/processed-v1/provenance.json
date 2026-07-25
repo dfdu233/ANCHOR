@@ -1,0 +1,40 @@
+{
+  "version": "chexpert-subset-report-adapter-v1",
+  "dataset_id": "ayyuce/chexpert-subset",
+  "dataset_name": "chexpert_subset_unverified",
+  "dataset_revision": "372166fb5f5004176fd0642f2290574958034629",
+  "parquet_sha256": "107e99f83b148a6e053509545841bb4655c551ef70db17cb20af987032c97c88",
+  "dataset_readme_sha256": "60aefe276d60c12d2232363dd1c5b00cff60ec42d5fcc81c532eeb7bc29dc07a",
+  "code_sha256": "adc5b0554b13f06ea531a1ad68c281c4550a125d9ac4812d33b70919ff31688d",
+  "seed": 20260726,
+  "max_samples": 0,
+  "selection": "sha256(seed, sha256(image_bytes):sha256(stripped_report))",
+  "audit": {
+    "parquet_rows": 5000,
+    "empty_reports": 0,
+    "unique_valid_images": 5000,
+    "selected_rows": 5000
+  },
+  "provenance_verified": false,
+  "patient_split_verified": false,
+  "institution_verified": false,
+  "eligible_as_unknown_institution": false,
+  "official_disease_labels_available": false,
+  "derived_vqa_labels_created": false,
+  "reference_used_for_generation_or_selection": false,
+  "fingerprint": "4cd52468b6cf3d4b80a48e0669469bf5321cfaa2f90733db460d92be947af512",
+  "outputs": {
+    "mmedrag": {
+      "path": "/root/autodl-tmp/datasets/chexpert-subset/processed-v1/mmedrag_report.json",
+      "sha256": "88bc67da094b02889a1bea730822fd2d023d33f9cd7d4b5beb6caedacc6ce808"
+    },
+    "rule": {
+      "path": "/root/autodl-tmp/datasets/chexpert-subset/processed-v1/rule_report.jsonl",
+      "sha256": "c8645317b257c363beee446e7fb237185b78d3730b44919105154d0380b36d59"
+    },
+    "normalized": {
+      "path": "/root/autodl-tmp/datasets/chexpert-subset/processed-v1/anchor_report_manifest.json",
+      "sha256": "4021d04f9655159bb4d5281d9ba1655be92fed336cc46df4b0642eeb70dc7f7d"
+    }
+  }
+}

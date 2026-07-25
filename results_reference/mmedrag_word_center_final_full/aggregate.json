@@ -1,0 +1,26 @@
+{
+  "all_scores_finite": true,
+  "checkpoint_sha256": {
+    "BioLORD-2023-C": "6164f3a7476eaaeee4b7fa2d4dea655f8ca1927853b867d59fb9d66507f5d36f",
+    "RaTE-NER-Deberta": "b380aae68a26fc608cbb568994006910d0fc7156c63fd05308b3bbaf77ed53f2",
+    "chexbert.pth": "6550703c92d640e1e04d8105a7a185d76ece0f25fcbf033d292785bf22c0fde1",
+    "modern-radgraph-xl": "dfc715608d0f1bfc15168f80cd1953ea63bd7960a5506401848858f8dbdea5ff"
+  },
+  "direction_validation": null,
+  "fingerprint": "b5c40cc5b1bab79cf2d3fa477fb17c1b324fd144ce505de36b41321dbfdfccf0",
+  "input": "corrected_runs/mmedrag_word_center_final_full/clinical_source_word_center.jsonl",
+  "input_sha256": "2e9bf6eac32c07162e8001edd1eb05cd2d8a8b0424cdb5d51bfb9334de229c3f",
+  "metric_manifest_sha256": "08958077a34cc1ce715f61276423cb084b21f9a52d746e32c2d17a07db19e025",
+  "metrics": {
+    "chexbert_exact_match_5": 0.5202492211838006,
+    "chexbert_example_f1_14": 0.27027889037234826,
+    "chexbert_macro_f1_14": 0.04571159430343062,
+    "chexbert_micro_f1_14": 0.18505516549648948,
+    "n": 1284,
+    "radgraph_complete": 0.030203906232138766,
+    "radgraph_partial": 0.04163965619914088,
+    "radgraph_simple": 0.042842067717679594,
+    "ratescore": 0.4047958302865356
+  },
+  "version": "medheval-report-clinical-runner-v1"
+}

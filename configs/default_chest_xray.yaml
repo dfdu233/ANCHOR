@@ -1,0 +1,12 @@
+datasets:
+  - mimic_cxr_rule
+  - chexpert_subset_report
+methods:
+  - greedy
+  - source_margin
+  - source_word_center
+judges:
+  - rule_parser
+  - rouge
+  - opencode
+model: llava_med

@@ -1,0 +1,30 @@
+name: anchor
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - git
+  - git-lfs
+  - numpy
+  - pandas
+  - pillow
+  - pyyaml
+  - tqdm
+  - scikit-learn
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  - pip:
+      - transformers
+      - accelerate
+      - sentencepiece
+      - protobuf
+      - rouge
+      - nltk
+      - huggingface_hub
+      - openai
+      - pytest

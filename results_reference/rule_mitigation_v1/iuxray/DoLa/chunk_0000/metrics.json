@@ -1,0 +1,40 @@
+{
+  "protocol_version": "rule-vqa-dual-parser-v1",
+  "n": 32,
+  "qid_order_exact": true,
+  "pope_compatible": {
+    "correct": 26,
+    "accuracy": 0.8125,
+    "tp": 4,
+    "tn": 22,
+    "fp": 6,
+    "fn": 0,
+    "precision": 0.4,
+    "recall": 1.0,
+    "f1": 0.5714285714285715,
+    "confusion": {
+      "no->no": 22,
+      "no->yes": 6,
+      "yes->yes": 4
+    },
+    "note": "Diagnostic reconstruction of RULE/LLaVA eval_pope: first period, then no/not; empty and otherwise unparsed text becomes yes."
+  },
+  "strict_explicit": {
+    "correct": 6,
+    "parseable": 9,
+    "parse_rate": 0.28125,
+    "accuracy_invalid_as_error": 0.1875,
+    "accuracy_parseable_only": 0.6666666666666666,
+    "parse_status": {
+      "parsed": 9,
+      "unparsed": 23
+    },
+    "confusion": {
+      "no->invalid": 23,
+      "no->no": 2,
+      "no->yes": 3,
+      "yes->yes": 4
+    },
+    "note": "Empty, ambiguous, unfinished, and unparseable outputs are errors."
+  }
+}

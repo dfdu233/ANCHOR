@@ -1,0 +1,388 @@
+consolidation_prompt: |
+   You condense a multi-turn passage (alternating lines starting with "User:" and "Assistant:") into a single, fully specified question that reflects the user's final clarified intent.
+   Rules:
+   - Integrate all details; prioritize the latest user clarifications.
+   - Resolve pronouns from earlier context when obvious (e.g., “his” → “Michael Jordan”).
+   - Output ONLY the consolidated question as one sentence, no preamble or extra text.
+   - Be concise (≤ 25 words) and specific.
+   
+
+consolidation_examples: |
+   Example Passages:
+   Passage:
+   User: How do I bake a cake?  
+   Assistant: What type of cake are you interested in?  
+   User: A chocolate cake with minimal sugar.  
+
+   Consolidated Question:
+   How do I bake a low-sugar chocolate cake?
+   ---
+
+   Passage:
+   User: Can you tell me about the latest iPhone?  
+   Assistant: Do you want specifications, price, or features?  
+   User: Just the new features and improvements.  
+
+   Consolidated Question:
+   What are the new features and improvements in the latest iPhone?
+   ---
+
+   Passage:
+   User: I want to plan a vacation.  
+   Assistant: Where are you thinking of going?  
+   User: Somewhere in Europe, ideally with historical landmarks.  
+
+   Consolidated Question:
+   How can I plan a European vacation focused on historical landmarks?
+   ---
+
+   Passage:
+   User: Explain machine learning.  
+   Assistant: Do you want a general overview or examples of applications?  
+   User: Focus on real-world applications in healthcare.  
+
+   Consolidated Question:
+   What are real-world applications of machine learning in healthcare?
+   ---
+
+   Passage:
+   User: I need help with my laptop.  
+   Assistant: What problem are you experiencing?  
+   User: It keeps overheating when I run multiple programs.  
+
+   Consolidated Question:
+   How can I prevent my laptop from overheating when running multiple programs?
+   ---
+
+   Passage:
+   User: I like Italian food.  
+   Assistant: Are you looking for recipes or restaurants?  
+   User: Recipes, preferably easy ones I can make at home.  
+
+   Consolidated Question:
+   What are easy Italian recipes I can prepare at home?
+   ---
+
+   Passage:
+   User: I want to learn photography.  
+   Assistant: Do you mean digital or film photography?  
+   User: Digital, with tips for beginners on portraits.  
+
+   Consolidated Question:
+   How can a beginner learn digital portrait photography effectively?
+   ---
+
+   Passage:
+   User: I'm interested in running a marathon.  
+   Assistant: Do you need training plans or diet advice?  
+   User: Both, especially training for a first marathon.  
+
+   Consolidated Question:
+   What training plan and diet advice are recommended for someone running their first marathon?
+ 
+
+generation_prompt: |
+   You are a concise evaluator and answer generator.
+   Your task is to decide whether the user's question is clear enough to answer directly, and then respond appropriately.
+   ---
+   Decision rules (in order):
+   1. If the question is truly vague, open-ended, or underspecified, respond exactly:
+      "I cannot answer because the question is not clear enough."
+   2. If the question is reasonably specific and factual — even if it asks for multiple related details (e.g., biography + contributions, or recipes for a specific dish) — treat it as clear and answer concisely (1-2 sentences).  
+      Only refuse if the intent or essential details are genuinely ambiguous.
+   3. If the question is clear but requires real-time data, private information, or external access, respond exactly:
+      "The question is specific and clear, but I cannot answer due to information or access limitations."
+   ---
+   Output rules:
+   - Respond with only the answer text — no commentary, explanations, or code formatting.
+   - Keep answers short (1-2 sentences), factual, and strictly on-topic.
+   - Consider multi-part factual questions as clear if the meaning is specific and understandable.
+
+
+generation_examples: |
+   **Examples:**
+
+   Q: "Tell me about animals."  
+   A: "I cannot answer because the question is not clear enough."
+   ---
+
+   Q: "What are some good ways to train a dog?"  
+   A: "Positive reinforcement, consistency, and short daily sessions are effective ways to train a dog."
+   ---
+
+   Q: "What are some effective exercises to strengthen core muscles and improve posture for office workers?"  
+   A: "Planks, bridges, and seated stretches help strengthen core muscles and improve posture for office workers."
+   ---
+
+   Q: "Who won the FIFA World Cup in 2023?"  
+   A: "The question is specific and clear, but I cannot answer due to information or access limitations."
+   ---
+
+   Q: "Can you tell me about Leonardo da Vinci?"  
+   A: "Leonardo da Vinci was a Renaissance artist, inventor, and scientist, known for works like the Mona Lisa and The Last Supper."
+   ---
+
+   Q: "What are some quick, healthy recipes for dinner under 30 minutes?"  
+   A: "Grilled salmon with vegetables or stir-fried chicken with broccoli are quick, healthy dinner options under 30 minutes."
+   ---
+
+   Q: "Explain AI."  
+   A: "I cannot answer because the question is not clear enough."
+   ---
+
+   Q: "What is the current price of Bitcoin?"  
+   A: "The question is specific and clear, but I cannot answer due to information or access limitations."
+   ---
+
+   Q: "What did Marie Curie contribute to science, and what is her biography?"  
+   A: "Marie Curie discovered radium and polonium, conducted pioneering research on radioactivity, and was the first woman to win a Nobel Prize; she was born in 1867 and died in 1934."
+   ---
+
+   Q: "Give me travel tips."  
+   A: "I cannot answer because the question is not clear enough."
+   ---
+
+   Q: "What are some recommended beginner-friendly books to learn Python programming?"  
+   A: "'Automate the Boring Stuff with Python' and 'Python Crash Course' are beginner-friendly books to learn Python programming."
+   ---
+
+   Q: "Who is the current president of France?"  
+   A: "The question is specific and clear, but I cannot answer due to information or access limitations."
+
+
+scoring_prompt: |
+   You are evaluating a question-answer pair produced by a separate generation step.  
+   The question has already been consolidated into a single, clear form.
+
+   Your primary goal is to assign a **continuous clarity and specificity score between 0.0 and 1.0** that reflects **how specific, detailed, and well-defined** the question is.
+
+   ### Scoring Philosophy:
+   - The score must vary smoothly and **not be limited to round multiples of 0.1.**
+   - Use the full numerical continuum — fine-grained differences (e.g., 0.33 vs. 0.37) are encouraged.
+   - Imagine the score as a “clarity percentage”: 0.00 = completely unclear, 1.00 = perfectly precise.
+
+   ### Main Criteria:
+   1. **Clarity & Specificity:**  
+      - Questions with more explicit context, constraints, or detail score higher.
+      - Ambiguous or open-ended questions score lower.
+
+   2. **Answer as Evidence:**  
+      - The answer serves only as indirect evidence of how clear the question is.
+      - A clear question tends to produce a short, precise answer.  
+         A vague question tends to produce refusal or generalities.
+      - However, never inflate the score if the question itself is vague.
+
+   3. **Refusals & Access Limits:**
+      - Refusal because of *vagueness* → low score.  
+      - Refusal because of *access limitation* → high score if question itself is specific.
+
+   ### Interpretation Range:
+   | Range | Meaning |
+   |--------|----------|
+   | 0.00-0.20 | Extremely vague or incoherent |
+   | 0.21-0.40 | Somewhat vague, lacks focus |
+   | 0.41-0.60 | Moderately clear but missing key details |
+   | 0.61-0.80 | Mostly clear and specific, minor ambiguity |
+   | 0.81-1.00 | Very clear, precise, and narrowly scoped |
+
+   ### Output format (strict):
+   Respond with a single JSON object containing exactly two keys:
+   - "score": a continuous float between 0.0 and 1.0 (number, not string).
+   - "rationale": one concise sentence explaining why the score was chosen.
+
+   **Rules:**
+   - Use precise decimal values (e.g., 0.37, 0.64, 0.82) — avoid rounding to tenths.
+   - Output only the JSON object (no code fences, labels, or commentary).
+   - Strings inside the JSON must escape all internal quotes (\\").
+   - The score must reflect the question's clarity, not how "good" the answer is.
+
+
+scoring_examples: |
+   **Examples:**
+
+   # ====== Very Low Clarity (0.0-0.2) ======
+   Q: "Tell me something interesting."
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.05
+   Rationale: No topic or constraint; completely open-ended and vague.
+
+   Q: "Explain."
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.02
+   Rationale: Incoherent and contextless; provides no subject to address.
+
+   Q: "Talk about AI."
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.12
+   Rationale: Mentions a topic but lacks any direction, focus, or goal.
+
+   Q: "Tell me about history."
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.15
+   Rationale: Very broad; no timeframe, region, or event specified.
+
+   Q: "How are things?"
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.08
+   Rationale: Conversational but meaningless as a factual query.
+
+   # ====== Low-Moderate Clarity (0.21-0.4) ======
+   Q: "What are some technologies used today?"
+   A: "Computers, smartphones, and the internet are common technologies today."
+   Score: 0.27
+   Rationale: Some topical relevance but extremely broad; lacks domain or purpose.
+
+   Q: "Tell me about AI in healthcare."
+   A: "AI in healthcare includes diagnosis support and predictive analytics."
+   Score: 0.34
+   Rationale: Slightly more focused but still too general and undefined in scope.
+
+   Q: "What are ways to improve health?"
+   A: "Exercise, balanced diet, and adequate sleep improve health."
+   Score: 0.31
+   Rationale: Basic but non-specific; does not define population or goal.
+
+   Q: "Why is the sky blue?"
+   A: "Because of Rayleigh scattering of sunlight in the atmosphere."
+   Score: 0.39
+   Rationale: Simple but specific physical question; focused yet shallow in scope.
+
+   # ====== Moderate Clarity (0.41-0.6) ======
+   Q: "What are some ways to reduce carbon emissions?"
+   A: "Renewable energy, energy efficiency, and carbon taxes can reduce emissions."
+   Score: 0.57
+   Rationale: Moderately specific; identifies a theme but lacks timeframe or region.
+
+   Q: "How does machine learning work?"
+   A: "It learns patterns from data to make predictions or decisions."
+   Score: 0.45
+   Rationale: Clear topic but broad and missing key context or examples.
+
+   Q: "What are the causes of climate change?"
+   A: "Main causes include burning fossil fuels, deforestation, and agriculture."
+   Score: 0.53
+   Rationale: Understandable but still general; no particular framing or focus.
+
+   Q: "What are benefits of meditation?"
+   A: "It reduces stress and improves focus and emotional well-being."
+   Score: 0.49
+   Rationale: Clear but not specific; lacks context such as duration or demographic.
+
+   Q: "Explain the difference between a virus and bacteria."
+   A: "Viruses need a host to reproduce, while bacteria can live independently."
+   Score: 0.58
+   Rationale: Narrow topic but not framed in detail (e.g., structure, examples).
+
+   # ====== Fair-High Clarity (0.61-0.8) ======
+   Q: "What are common side effects of taking antibiotics?"
+   A: "Nausea, diarrhea, and allergic reactions are common side effects."
+   Score: 0.69
+   Rationale: Fairly clear and focused but lacks mention of drug type or duration.
+
+   Q: "How can students improve concentration while studying?"
+   A: "Taking breaks, avoiding distractions, and maintaining good sleep can help."
+   Score: 0.64
+   Rationale: Clear practical goal but lacks specificity (e.g., age group or context).
+
+   Q: "What are the main causes of inflation in developed economies?"
+   A: "Supply chain issues, monetary policy, and demand surges are main causes."
+   Score: 0.77
+   Rationale: Clear economic scope and focus; moderately well-framed.
+
+   Q: "What are key differences between renewable and non-renewable energy sources?"
+   A: "Renewables are replenishable (solar, wind), while non-renewables are finite (coal, oil)."
+   Score: 0.73
+   Rationale: Well-scoped and comparative but lacks application context.
+
+   Q: "What are early symptoms of diabetes in adults?"
+   A: "Frequent urination, increased thirst, and fatigue are early symptoms."
+   Score: 0.81
+   Rationale: Highly focused medical question with clear population definition.
+
+   # ====== High Clarity (0.81-0.95) ======
+   Q: "What are the top three renewable energy strategies for reducing carbon emissions in urban areas by 2030?"
+   A: "Solar rooftops, electric public transport, and building efficiency improvements."
+   Score: 0.92
+   Rationale: Very specific — defined goal, context, timeframe, and scope.
+
+   Q: "How can a beginner learn Python for data analysis within three months?"
+   A: "Take structured courses, practice datasets, and complete small projects."
+   Score: 0.87
+   Rationale: Clear, focused, and practical; specifies skill level, purpose, and timeframe.
+
+   Q: "What exercises are recommended for improving cardiovascular health in adults over 50?"
+   A: "Brisk walking, cycling, and swimming are recommended."
+   Score: 0.93
+   Rationale: Clear, medically targeted, and demographically scoped.
+
+   Q: "What are the differences between supervised and unsupervised learning, with examples for each?"
+   A: "Supervised learning uses labeled data (classification); unsupervised finds clusters."
+   Score: 0.96
+   Rationale: Exceptionally precise; question explicitly defines scope and deliverables.
+
+   Q: "What were the economic effects of the 2008 financial crisis on European employment between 2009 and 2012?"
+   A: "Unemployment rates rose significantly, especially among young workers."
+   Score: 0.94
+   Rationale: Detailed timeframe, region, and economic focus yield very high clarity.
+
+   # ====== Perfect Clarity (≈1.0) ======
+   Q: "What is the acceleration due to gravity on Earth at sea level, in meters per second squared?"
+   A: "Approximately 9.81 m/s²."
+   Score: 1.0
+   Rationale: Fully specific, measurable, and unambiguous; perfect clarity.
+
+   Q: "In what year did the Apollo 11 mission land on the Moon?"
+   A: "1969."
+   Score: 0.99
+   Rationale: Exact factual target, zero ambiguity.
+
+   Q: "Which programming language introduced the concept of object-oriented programming first?"
+   A: "Simula, introduced in the 1960s, was the first object-oriented language."
+   Score: 0.98
+   Rationale: Clear, historical, and narrowly defined.
+
+   Q: "What is the melting point of pure gold in degrees Celsius?"
+   A: "1064°C."
+   Score: 0.99
+   Rationale: Precise scientific measurement with no ambiguity.
+
+   # ====== Calibration (fine granularity guidance) ======
+   The following examples illustrate subtle scoring differences between similar questions, to encourage non-round, continuous scoring behavior.
+
+   # ====== Fine-grained calibration examples ======
+   Q: "Tell me about renewable energy."
+   A: "I cannot answer because the question is not clear enough."
+   Score: 0.25
+   Rationale: Broad topic without context or goal; only slightly better than incoherent because it names a concept.
+
+   Q: "What are types of renewable energy sources?"
+   A: "Solar, wind, hydro, and geothermal are main renewable energy types."
+   Score: 0.37
+   Rationale: Slightly clearer; enumerative but still lacks focus, timeframe, or purpose.
+
+   Q: "What are the main advantages of renewable energy?"
+   A: "It’s sustainable, reduces emissions, and lowers long-term costs."
+   Score: 0.44
+   Rationale: Defines direction (“advantages”), improving specificity, though still broad in scope.
+
+   Q: "What are the main advantages of solar energy in residential use?"
+   A: "It reduces electricity bills and reliance on the grid."
+   Score: 0.68
+   Rationale: Sharply more focused; defines technology (solar) and context (residential).
+
+   Q: "What are the main advantages of rooftop solar systems in reducing household electricity costs in Canada?"
+   A: "They provide stable long-term savings and reduce grid dependency."
+   Score: 0.79
+   Rationale: Very specific geographic and functional framing; near high clarity but still not numerical or time-bounded.
+
+   Q: "What is the estimated average payback period, in years, for a 5kW rooftop solar system in Ontario under current energy prices?"
+   A: "Around 8 to 10 years, depending on usage and incentives."
+   Score: 0.93
+   Rationale: Fully concrete parameters (location, system size, metric) make this almost perfectly precise.
+
+
+
+
+
+
+

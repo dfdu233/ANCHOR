@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conformal_generation"
+version = "0.1.0"
+description = "A package implementing conformal generation."
+authors = [
+    { name = "Gabriel Loaiza-Ganem", email = "gabriel@layer6.ai" },
+    { name = "Kin Kwan Leung", email = "kk@layer6.ai" },
+    { name = "Wei Cui", email = "wei@layer6.ai" },
+    { name = "Kevin Zhang", email = "kevinz@layer6.ai" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["conformal", "generation", "admissibility", "control", "statistics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    # Add your package dependencies here
+    "numpy",
+    "scipy",
+    "matplotlib"
+]
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "pylint", "mock"]
+lint = ["pylint", "black", "isort"]
+llm = ["openai"]
+memorization = ["pandas"]
+webvoyager = ["matplotlib"]
+tree = ["openml", "pandas", "matplotlib", "scikit-learn"]
+
+[project.urls]
+"Homepage" = "https://github.com/layer6ai-labs/conformal_generation"
+"Repository" = "https://github.com/layer6ai-labs/conformal_generation"
+
+[tool.setuptools]
+packages = ["conformal_generation"]
+package-dir = {"conformal_generation" = "src"}
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring", 
+    "missing-function-docstring",
+    "too-few-public-methods"
+]
+
+[tool.pylint.format]
+max-line-length = 150
+
+[tool.pylint.design]
+max-args = 20
+max-locals = 20
+max-branches = 15
+max-statements = 60
+max-positional-arguments = 10
+max-attributes = 20
+
+[tool.pylint.similarities]
+min-similarity-lines = 10
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*"
+]
+
+[tool.coverage.report]
+fail_under = 85
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError"
+]
+show_missing = true
