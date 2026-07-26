@@ -1,0 +1,25 @@
+{
+  "name": "anchor-project-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "check": "vinext check"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-server-dom-webpack": "^19.2.6",
+    "vinext": "1.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@rolldown/binding-linux-x64-gnu": "^1.1.5",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-rsc": "^0.5.26",
+    "vite": "^8.0.0"
+  }
+}
