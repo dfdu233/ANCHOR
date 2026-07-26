@@ -26,3 +26,7 @@ bash scripts/run_all.sh --datasets medheval --methods vcd,dola,opera,pai
 ```
 
 Models are not committed. Use `HF_ENDPOINT=https://hf-mirror.com` or the proxy variables documented in `docs/REPRODUCIBILITY.md`.
+
+## Upload Handoff
+
+See `docs/UPLOAD_HANDOFF.md` for the uploaded commit, Git LFS status, clean-clone verification, known exclusions, and fresh-server reproduction notes.
