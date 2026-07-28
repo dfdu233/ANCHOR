@@ -30,3 +30,7 @@ Models are not committed. Use `HF_ENDPOINT=https://hf-mirror.com` or the proxy v
 ## Upload Handoff
 
 See `docs/UPLOAD_HANDOFF.md` for the uploaded commit, Git LFS status, clean-clone verification, known exclusions, and fresh-server reproduction notes.
+
+## Method Inventory
+
+See `docs/METHOD_ZOO.md` for the current method zoo, including LET, VISTA/SLA, source-guided DG variants, OE/report protocol, official mitigation baselines, and stopped directions for migration.

@@ -73,3 +73,9 @@ Use `HF_ENDPOINT=https://hf-mirror.com` for Hugging Face downloads when needed.
 ## Local Source Tree Notes
 
 The source working tree may contain untracked website/project-page files such as `.openai/`, `app/`, `public/`, `package.json`, `package-lock.json`, and `vite.config.ts`. These were not part of commit `a5c4b06e` and were not uploaded as part of the reproducibility package. Review their claims before publishing them.
+
+## 2026-07-28 Method-Documentation Addendum
+
+Before the next data migration, method documentation was expanded to include `docs/METHOD_ZOO.md` plus the newly created method/protocol notes under `docs/`. The most important current direction is LET, with VISTA/SLA as the closest comparator and source-guided DG methods retained as motivation/diagnostics unless later gates pass.
+
+Current local workspace also contains uncommitted business-code changes for LET/report/OE/parser and several new experimental scripts under `anchor/corrected_sgta/`. These are valuable but should be migrated in a separate audited code commit, not mixed into documentation-only updates.

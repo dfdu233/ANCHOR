@@ -27,3 +27,7 @@ Heavy GPU inference implementations are preserved under `anchor/corrected_sgta/`
 
 
 Note: `third_party/baselines/VISTA/MMHal-Bench/` is intentionally excluded because the local source contained unresolved Git LFS pointer files rather than recoverable image objects. VISTA method code remains packaged; reacquire MMHal assets from the upstream source if needed.
+
+## Extended Method Inventory
+
+The compact YAML registry is intentionally conservative. For the full migration-level inventory of newly added and historically valuable methods, see `docs/METHOD_ZOO.md`. That document records LET, VISTA/SLA, source-margin, source-word-center, ANCHOR-Flow, Riemann/NBP gates, VAF, SGTA/ConfGen, official mitigation baselines, and stopped directions.
