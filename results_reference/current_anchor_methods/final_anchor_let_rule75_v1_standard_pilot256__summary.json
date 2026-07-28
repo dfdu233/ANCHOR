@@ -1,0 +1,47 @@
+{
+  "version": "anchor-let-rule75-v1",
+  "n": 256,
+  "patients": 10,
+  "baseline": {
+    "n": 256,
+    "correct": 194,
+    "accuracy": 0.7578125,
+    "balanced_accuracy": 0.7473898650369238,
+    "tp": 123,
+    "tn": 71,
+    "fp": 31,
+    "fn": 31,
+    "precision": 0.7987012987012987,
+    "recall": 0.7987012987012987,
+    "f1": 0.7987012987012987,
+    "strict_accuracy_invalid_as_error": 0.4296875,
+    "strict_parse_rate": 0.51953125
+  },
+  "let": {
+    "n": 256,
+    "correct": 204,
+    "accuracy": 0.796875,
+    "balanced_accuracy": 0.7599949070537306,
+    "tp": 145,
+    "tn": 59,
+    "fp": 43,
+    "fn": 9,
+    "precision": 0.7712765957446809,
+    "recall": 0.9415584415584416,
+    "f1": 0.847953216374269,
+    "strict_accuracy_invalid_as_error": 0.74609375,
+    "strict_parse_rate": 0.94140625
+  },
+  "delta_accuracy": 0.0390625,
+  "delta_balanced_accuracy": 0.012605042016806789,
+  "rescue": 27,
+  "harm": 17,
+  "mcnemar_exact_p": 0.17417114727072658,
+  "patient_cluster_bootstrap_delta_95ci": [
+    0.0,
+    0.09524844720496889
+  ],
+  "fingerprint": "13f0227fa89880c9a3968be6b8dca76f3c1ee72086dc61e89c38f1510fdfa29c",
+  "status": "complete",
+  "raw": "corrected_runs/final_anchor_let_rule75_v1_standard_pilot256/let.raw.jsonl"
+}

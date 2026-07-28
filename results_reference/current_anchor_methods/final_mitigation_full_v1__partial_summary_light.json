@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-07-26T03:46:35Z",
+  "driver_pid_file": "390139",
+  "completed_eval_chunks": 5,
+  "rows": [
+    {
+      "dataset": "knowledge_ce",
+      "method": "VCD",
+      "source": "root",
+      "chunks_done": 1,
+      "n": 256,
+      "strict_acc": 0.5078125,
+      "parse_rate": 0.73046875,
+      "rule_diag_acc": 0.5849802371541502
+    },
+    {
+      "dataset": "knowledge_ce",
+      "method": "greedy",
+      "source": "root",
+      "chunks_done": 4,
+      "n": 1024,
+      "strict_acc": 0.59375,
+      "parse_rate": 0.8623046875,
+      "rule_diag_acc": 0.6304878982843137
+    }
+  ]
+}

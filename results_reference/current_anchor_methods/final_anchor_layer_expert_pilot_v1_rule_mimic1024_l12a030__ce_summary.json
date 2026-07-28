@@ -1,0 +1,26 @@
+{
+  "version": "anchor-layer-expert-pilot-v1",
+  "n": 3470,
+  "methods": {
+    "alpha_0.0_layer_-1": {
+      "accuracy": 0.8011527377521613,
+      "parse_rate": 1.0,
+      "delta_vs_greedy": 0.0,
+      "rescue": 0,
+      "harm": 0,
+      "mean_words": 14.589913544668589
+    },
+    "alpha_0.3_layer_-12": {
+      "accuracy": 0.8253602305475505,
+      "parse_rate": 1.0,
+      "delta_vs_greedy": 0.02420749279538914,
+      "rescue": 223,
+      "harm": 139,
+      "mean_words": 17.181844380403458
+    }
+  },
+  "best_method": "alpha_0.3_layer_-12",
+  "continue_gate": false,
+  "fingerprint": "0691c4fea7a63c70e73b3f078b8d5686939f4887f505fb23529cdaa8291d45e1",
+  "raw": "corrected_runs/final_anchor_layer_expert_pilot_v1_rule_mimic1024_l12a030/ce_raw.jsonl"
+}

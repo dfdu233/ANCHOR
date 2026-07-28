@@ -1,0 +1,60 @@
+{
+  "version": "current-anchor-methods-reference-v1",
+  "records": [
+    {
+      "source": "corrected_runs/final_anchor_let_rule75_v1_standard_full/summary.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_let_rule75_v1_standard_full__summary.json",
+      "bytes": 1330
+    },
+    {
+      "source": "corrected_runs/final_anchor_let_rule75_v1_standard_pilot256/summary.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_let_rule75_v1_standard_pilot256__summary.json",
+      "bytes": 1238
+    },
+    {
+      "source": "corrected_runs/final_anchor_layer_expert_pilot_v1_rule_mimic1024_l12a030/ce_summary.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_layer_expert_pilot_v1_rule_mimic1024_l12a030__ce_summary.json",
+      "bytes": 756
+    },
+    {
+      "source": "corrected_runs/final_let_vista_mechanism_pilot_v1_n128_combined_analysis.json",
+      "stored_as": "results_reference/current_anchor_methods/final_let_vista_mechanism_pilot_v1_n128_combined_analysis.json",
+      "bytes": 3766
+    },
+    {
+      "source": "corrected_runs/final_anchor_flow_sgta_gate_v1/gate_analysis.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_flow_sgta_gate_v1__gate_analysis.json",
+      "bytes": 3710
+    },
+    {
+      "source": "corrected_runs/final_anchor_riemann_gate_v1/ce128_t160.analysis.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_riemann_gate_v1__ce128_t160.analysis.json",
+      "bytes": 209004
+    },
+    {
+      "source": "corrected_runs/final_anchor_riemann_gate_v1/oe64_t160.analysis.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_riemann_gate_v1__oe64_t160.analysis.json",
+      "bytes": 134257
+    },
+    {
+      "source": "corrected_runs/final_anchor_nbp_pilot_v1_minicheck/summary.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_nbp_pilot_v1_minicheck__summary.json",
+      "bytes": 19833
+    },
+    {
+      "source": "corrected_runs/final_anchor_let_report_v1_pilot32/analysis.json",
+      "stored_as": "results_reference/current_anchor_methods/final_anchor_let_report_v1_pilot32__analysis.json",
+      "bytes": 14034
+    },
+    {
+      "source": "corrected_runs/final_mitigation_full_v1/partial_summary_light.json",
+      "stored_as": "results_reference/current_anchor_methods/final_mitigation_full_v1__partial_summary_light.json",
+      "bytes": 598
+    },
+    {
+      "source": "corrected_runs/final_mitigation_full_v1/summary.json",
+      "stored_as": "results_reference/current_anchor_methods/final_mitigation_full_v1__summary.json",
+      "bytes": 101975
+    }
+  ]
+}

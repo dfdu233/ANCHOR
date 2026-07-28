@@ -2,9 +2,9 @@
 """Strict, auditable evaluation of RULE VQA generations.
 
 RULE does not publish the evaluator used for its paper tables. We therefore
-use an independent explicit-leading yes/no ground-truth parser for the primary
-local metric and retain the repository's POPE-compatible reconstruction only as
-a diagnostic.
+use a punctuation-normalized reconstruction of its first-sentence negative-word
+convention for the primary local metric. The repository's POPE-compatible
+reconstruction and a stricter semantic parser are retained as diagnostics.
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from corrected_sgta.evaluate_medheval_answers import (
     rule_pope_prediction,
 )
 
-PROTOCOL_VERSION = "rule-vqa-explicit-ground-truth-v2"
+PROTOCOL_VERSION = "rule-vqa-normalized-generated-sentence-v3"
 
 
 class RuleEvaluationError(ValueError):
@@ -48,6 +48,24 @@ def parse_rule_ground_truth(text: object) -> tuple[str | None, str]:
     if match is None:
         return None, "ambiguous"
     return match.group(1).lower(), "explicit"
+
+
+def rule_normalized_prediction(text: object) -> str:
+    """Apply RULE's first-sentence convention after punctuation normalization.
+
+    RULE's vendored POPE evaluator tokenizes only on spaces after deleting
+    commas. Consequently, semantically identical outputs such as ``No.`` and
+    ``[no].`` receive different labels. This parser preserves the published
+    convention (a first-sentence ``no`` or ``not`` token means negative) while
+    using word boundaries so surrounding punctuation cannot change the score.
+    """
+    first_sentence = ("" if text is None else str(text)).split(".", 1)[0]
+    has_negative_word = re.search(
+        r"(?<![A-Za-z])(no|not)(?![A-Za-z])",
+        first_sentence,
+        flags=re.IGNORECASE,
+    )
+    return "no" if has_negative_word else "yes"
 
 
 def _safe_div(numerator: int, denominator: int) -> float:
@@ -94,12 +112,14 @@ def evaluate_rule_rows(
         )
 
     pope_correct = 0
+    normalized_correct = 0
     explicit_gt_count = 0
     explicit_gt_correct = 0
     ambiguous_gt_count = 0
     strict_correct = 0
     strict_parseable = 0
     pope_confusion: Counter[str] = Counter()
+    normalized_confusion: Counter[str] = Counter()
     explicit_gt_confusion: Counter[str] = Counter()
     strict_confusion: Counter[str] = Counter()
     parse_status: Counter[str] = Counter()
@@ -110,6 +130,7 @@ def evaluate_rule_rows(
         gt_explicit, gt_status = parse_rule_ground_truth(raw_gt)
         gt_pope = rule_pope_prediction(raw_gt)
         pred_pope = rule_pope_prediction(raw_text)
+        pred_normalized = rule_normalized_prediction(raw_text)
         strict = parse_answer(raw_text, answer_type="binary")
         strict_label = strict.labels[0] if strict.labels else None
 
@@ -128,10 +149,13 @@ def evaluate_rule_rows(
                 strict_label is not None and strict_label == gt_explicit
             )
             explicit_gt_correct += int(explicit_is_correct)
+            normalized_is_correct = pred_normalized == gt_explicit
+            normalized_correct += int(normalized_is_correct)
             strict_correct += int(strict_is_correct)
             strict_parseable += int(strict_label is not None)
             parse_status[strict.status] += 1
             explicit_gt_confusion[f"{gt_explicit}->{pred_pope}"] += 1
+            normalized_confusion[f"{gt_explicit}->{pred_normalized}"] += 1
             strict_value = strict_label if strict_label is not None else "invalid"
             strict_confusion[f"{gt_explicit}->{strict_value}"] += 1
 
@@ -146,6 +170,12 @@ def evaluate_rule_rows(
                 "ground_truth_pope_diagnostic": gt_pope,
                 "raw_text": raw_text,
                 "pope_prediction": pred_pope,
+                "rule_normalized_prediction": pred_normalized,
+                "rule_normalized_correct": (
+                    None
+                    if gt_explicit is None
+                    else pred_normalized == gt_explicit
+                ),
                 "explicit_ground_truth_correct": explicit_is_correct,
                 "pope_diagnostic_correct": pope_is_correct,
                 "strict_prediction": strict_label,
@@ -157,9 +187,27 @@ def evaluate_rule_rows(
     n = len(records)
     metrics = {
         "protocol_version": PROTOCOL_VERSION,
-        "primary_metric": "explicit_ground_truth.accuracy",
+        "primary_metric": "rule_normalized.accuracy",
         "n": n,
         "qid_order_exact": True,
+        "rule_normalized": {
+            "n": explicit_gt_count,
+            "ambiguous_excluded": ambiguous_gt_count,
+            "coverage": _safe_div(explicit_gt_count, n),
+            "correct": normalized_correct,
+            "accuracy": _safe_div(normalized_correct, explicit_gt_count),
+            **_binary_metrics(normalized_confusion),
+            "confusion": dict(sorted(normalized_confusion.items())),
+            "prediction_parser": (
+                "RULE first-sentence no/not convention with punctuation "
+                "normalization"
+            ),
+            "note": (
+                "Primary generated-sentence metric. It preserves RULE's "
+                "first-sentence negative-word semantics but prevents brackets "
+                "or punctuation from changing the predicted label."
+            ),
+        },
         "explicit_ground_truth": {
             "n": explicit_gt_count,
             "ambiguous_excluded": ambiguous_gt_count,
@@ -170,7 +218,7 @@ def evaluate_rule_rows(
             "confusion": dict(sorted(explicit_gt_confusion.items())),
             "prediction_parser": "RULE/LLaVA POPE response convention",
             "note": (
-                "Primary local metric. Only ground truths beginning with an "
+                "Legacy POPE-parser diagnostic. Only ground truths beginning with an "
                 "explicit yes/no label are included; ambiguous ground truths "
                 "are excluded and counted."
             ),

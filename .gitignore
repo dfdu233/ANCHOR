@@ -20,3 +20,12 @@ node_modules/
 dist/
 .next/
 next-env.d.ts
+.paper_edit/
+anchor/corrected_sgta/_paper_edit/
+corrected_runs/
+figures/
+public/results/
+third_party/AGLA/
+third_party/ClearSight/
+third_party/VHR/
+third_party/VISTA/

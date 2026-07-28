@@ -1,0 +1,128 @@
+{
+  "version": "anchor-flow-sgta-gate-analysis-v1",
+  "analyses": [
+    {
+      "version": "anchor-flow-sgta-gate-analysis-v1",
+      "raw": "corrected_runs/final_anchor_flow_sgta_gate_v1_ce8_strong_v2/ce_raw.jsonl",
+      "task": "ce",
+      "n": 8,
+      "greedy": {
+        "mean_score": 0.75,
+        "delta_vs_greedy": 0.0,
+        "accuracy": 0.75
+      },
+      "nll": {
+        "mean_score": 0.75,
+        "delta_vs_greedy": 0.0,
+        "accuracy": 0.75
+      },
+      "random": {
+        "mean_score": 0.75,
+        "delta_vs_greedy": 0.0,
+        "accuracy": 0.75
+      },
+      "anchor_flow": {
+        "mean_score": 0.75,
+        "delta_vs_greedy": 0.0,
+        "accuracy": 0.75
+      },
+      "oracle": {
+        "mean_score": 0.75,
+        "delta_vs_greedy": 0.0,
+        "accuracy": 0.75
+      },
+      "diversity": {
+        "mean_unique_text_rate": 0.25,
+        "view_disagreement_rate": 0.0,
+        "oracle_headroom": 0.0
+      },
+      "anchor_flow_rescue_harm": {
+        "rescue": 0,
+        "harm": 0,
+        "unchanged": 8
+      },
+      "oracle_rescue_harm": {
+        "rescue": 0,
+        "harm": 0,
+        "unchanged": 8
+      },
+      "gate": {
+        "style_candidate_oracle_pass": false,
+        "anchor_flow_beats_nll": false,
+        "anchor_flow_beats_random": false,
+        "continue": false
+      },
+      "interesting_cases": [],
+      "harm_cases": []
+    },
+    {
+      "version": "anchor-flow-sgta-gate-analysis-v1",
+      "raw": "corrected_runs/final_anchor_flow_sgta_gate_v1_oe4/oe_raw.jsonl",
+      "task": "oe",
+      "n": 4,
+      "greedy": {
+        "mean_score": 0.07617044012555935,
+        "delta_vs_greedy": 0.0
+      },
+      "nll": {
+        "mean_score": 0.07617044012555935,
+        "delta_vs_greedy": 0.0
+      },
+      "random": {
+        "mean_score": 0.07617044012555935,
+        "delta_vs_greedy": 0.0
+      },
+      "anchor_flow": {
+        "mean_score": 0.07617044012555935,
+        "delta_vs_greedy": 0.0
+      },
+      "oracle": {
+        "mean_score": 0.07617044012555935,
+        "delta_vs_greedy": 0.0
+      },
+      "diversity": {
+        "mean_unique_text_rate": 0.3125,
+        "view_disagreement_rate": 0.25,
+        "oracle_headroom": 0.0
+      },
+      "anchor_flow_rescue_harm": {
+        "rescue": 0,
+        "harm": 0,
+        "unchanged": 4
+      },
+      "oracle_rescue_harm": {
+        "rescue": 0,
+        "harm": 0,
+        "unchanged": 4
+      },
+      "normal_template_rate": {
+        "greedy": 1.0,
+        "anchor_flow": 1.0
+      },
+      "gate": {
+        "style_candidate_oracle_pass": false,
+        "anchor_flow_beats_nll": false,
+        "anchor_flow_beats_random": false,
+        "continue": false
+      },
+      "interesting_cases": [
+        {
+          "id": "fb341e59c8bdb40821b3cdda565637d0c47ec8ee6b9fd3d6e839a2e7497847f5",
+          "greedy_score": 0.0,
+          "anchor_flow_score": 0.0,
+          "oracle_score": 0.0,
+          "selected_view": "sgta_low_frequency",
+          "unique_text_count": 2,
+          "texts_by_view": {
+            "original": "The chest X-ray shows no significant abnormalities.",
+            "sgta_source_spectrum": "The chest X-ray shows no significant abnormalities.",
+            "sgta_low_frequency": "The chest X-ray shows no acute cardiopulmonary pathology. This means that there are no visible signs of immediate or severe issues affecting the heart or lungs in the image.",
+            "gamma": "The chest X-ray shows no acute cardiopulmonary pathology. This means that there are no visible signs of immediate or severe issues affecting the heart or lungs in the image."
+          }
+        }
+      ],
+      "harm_cases": []
+    }
+  ],
+  "overall_continue": false
+}

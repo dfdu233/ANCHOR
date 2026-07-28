@@ -22,6 +22,11 @@ from unittest.mock import patch
 import numpy as np
 from sklearn.metrics import precision_recall_fscore_support
 
+from corrected_sgta.report_protocol import (
+    has_unnegated_abnormal_finding,
+    is_normal_template,
+)
+
 
 VERSION = "medheval-report-clinical-runner-v1"
 DEFAULT_CACHE = Path("/root/autodl-tmp/model_cache/report_metrics")
@@ -133,20 +138,8 @@ def example_binary_f1(reference: Sequence[int], hypothesis: Sequence[int]) -> fl
 
 
 def is_normal_report(report: str) -> bool:
-    lowered = " ".join(report.lower().split())
-    normal = any(re.search(pattern, lowered) for pattern in NORMAL_PATTERNS)
-    # An explicit summary-level no-acute statement is authoritative even if
-    # the report mentions negated findings or stable support devices.
-    explicit_no_acute = bool(
-        re.search(
-            r"\bno acute (?:cardiopulmonary )?(?:abnormalit(?:y|ies)|disease|process)\b",
-            lowered,
-        )
-    )
-    abnormal = any(
-        re.search(pattern, lowered) for pattern in STRONG_ABNORMAL_PATTERNS
-    )
-    return bool(explicit_no_acute or (normal and not abnormal))
+    """Return a conservative normal-template flag for metric sanity checks."""
+    return is_normal_template(report) and not has_unnegated_abnormal_finding(report)
 
 
 def contradiction_for(reference: str) -> tuple[str, str]:

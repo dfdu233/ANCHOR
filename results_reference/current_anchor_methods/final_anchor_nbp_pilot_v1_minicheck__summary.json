@@ -1,0 +1,795 @@
+{
+  "version": "anchor-nbp-pilot-analysis-v1",
+  "raw": "corrected_runs/final_anchor_nbp_pilot_v1_minicheck/raw_outputs.jsonl",
+  "groups": {
+    "ce|S-test|clean|global_pca|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24926737540213467,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|greedy|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      }
+    },
+    "ce|S-test|clean|local_isotropic|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.40247158881406664,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|nbp|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24413697224374686,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|nn_interpolation|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.40209978687879133,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|random_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24413697224374686,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|random_matched|1": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24413697224374686,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|S-test|clean|tangent_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.2441369722437469,
+        "mean_e_perp": 0.9703433298924153,
+        "mean_tangent_energy": 1.8887184038904408
+      }
+    },
+    "ce|Shift-D1|blur_resample|global_pca|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24538112100407897,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|greedy|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      }
+    },
+    "ce|Shift-D1|blur_resample|local_isotropic|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.7681517543374872,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|nbp|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.3054529543060226,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|nn_interpolation|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.6080120939593988,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|random_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.3054529543060226,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|random_matched|1": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.3054529543060226,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|blur_resample|tangent_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.3054529543060226,
+        "mean_e_perp": 1.5459495370291592,
+        "mean_tangent_energy": 8.980247430579091
+      }
+    },
+    "ce|Shift-D1|compression_noise|global_pca|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24915814118088778,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|greedy|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      }
+    },
+    "ce|Shift-D1|compression_noise|local_isotropic|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.43291288903970354,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|nbp|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24906392374279357,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|nn_interpolation|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.43525095451078344,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|random_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24906392374279357,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|random_matched|1": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24906392374279354,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|compression_noise|tangent_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.24906392374279357,
+        "mean_e_perp": 1.0110094148169475,
+        "mean_tangent_energy": 2.32939584028961
+      }
+    },
+    "ce|Shift-D1|gamma_window|global_pca|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.2578508219364419,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|greedy|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      }
+    },
+    "ce|Shift-D1|gamma_window|local_isotropic|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.4779079369523014,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|nbp|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.258339258844826,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|nn_interpolation|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.4387280238683781,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|random_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.258339258844826,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|random_matched|1": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.258339258844826,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "ce|Shift-D1|gamma_window|tangent_matched|0": {
+      "n": 4,
+      "ok": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.75,
+      "parse_rate": 1.0,
+      "positive_rate": 0.5,
+      "confusion": {
+        "no->no": 1,
+        "yes->yes": 2,
+        "no->yes": 1
+      },
+      "geometry": {
+        "mean_delta_norm": 0.25833925884482606,
+        "mean_e_perp": 1.0842297934564329,
+        "mean_tangent_energy": 2.6181557564429427
+      }
+    },
+    "oe|S-test|clean|global_pca|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.23766936891474716,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|greedy|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null
+    },
+    "oe|S-test|clean|local_isotropic|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.6497983047575122,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|nbp|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.36320879754978275,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|nn_interpolation|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.8740083565092338,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|random_matched|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.36320879754978275,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|random_matched|1": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.36320879754978275,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    },
+    "oe|S-test|clean|tangent_matched|0": {
+      "n": 2,
+      "ok": 2,
+      "errors": 0,
+      "rouge_l": 0.03333333333333333,
+      "avg_length_words": 4.5,
+      "radgraph_f1": null,
+      "ratescore": null,
+      "chexbert_f1": null,
+      "geometry": {
+        "mean_delta_norm": 0.3632087975497827,
+        "mean_e_perp": 2.14193126696923,
+        "mean_tangent_energy": 4.661030739144835
+      }
+    }
+  },
+  "rescue_break_vs_greedy": {
+    "global_pca": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    },
+    "local_isotropic": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    },
+    "nbp": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    },
+    "nn_interpolation": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    },
+    "random_matched": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    },
+    "tangent_matched": {
+      "n_pairs": 16,
+      "rescue": 0,
+      "break": 0,
+      "same_correct": 12,
+      "same_wrong": 4,
+      "net": 0
+    }
+  },
+  "eperp_analysis": {
+    "local_isotropic": {
+      "corr_eperp_correct": 0.6000513756619884,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    },
+    "nn_interpolation": {
+      "corr_eperp_correct": 0.6000513756619884,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    },
+    "tangent_matched": {
+      "corr_eperp_correct": 0.6000513756619884,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    },
+    "random_matched": {
+      "corr_eperp_correct": 0.6000513756619882,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    },
+    "nbp": {
+      "corr_eperp_correct": 0.6000513756619884,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    },
+    "global_pca": {
+      "corr_eperp_correct": 0.6000513756619884,
+      "low_eperp_accuracy": 0.5,
+      "high_eperp_accuracy": 1.0
+    }
+  },
+  "notes": {
+    "primary": "Shift-D1 CE patient-level deterministic parser balanced accuracy.",
+    "clinical_oe_metrics": "RadGraph/RaTEScore/CheXbert are placeholders unless external metric caches are merged."
+  }
+}

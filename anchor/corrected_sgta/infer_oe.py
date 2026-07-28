@@ -26,6 +26,10 @@ from tqdm import tqdm
 from corrected_sgta.cache import load_successful_qids, repair_truncated_jsonl_tail
 from corrected_sgta.infer_ce import make_styles_with_metadata, resize_image
 from corrected_sgta.models_oe import Generation, load_oe_adapter
+from corrected_sgta.report_protocol import (
+    is_report_generation_row as protocol_is_report_generation_row,
+    report_prompt as protocol_report_prompt,
+)
 from corrected_sgta.protocol_v2 import (
     CACHE_SCHEMA_VERSION,
     PROTOCOL_VERSION,
@@ -52,6 +56,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-p", type=float, default=0.9)
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--llava-conv-mode",
+        default="mistral_instruct",
+        help="Conversation template for LLaVA-Med OE generation; official LLaVA-Med v1.5 uses mistral_instruct.",
+    )
+    parser.add_argument(
+        "--report-prompt-mode",
+        choices=(
+            "dataset", "official_zero_shot", "official_rag", "mmedrag", "structured", "impression", "abnormality_focused",
+        ),
+        default="official_zero_shot",
+        help="Released RULE/MMed-RAG report wording without retrieval leakage.",
+    )
     parser.add_argument("--style-augmentation", action="store_true")
     parser.add_argument("--gammas", type=float, nargs="*", default=(0.8, 1.2))
     parser.add_argument(
@@ -185,6 +202,16 @@ def original_quota_rows(raw_original_rows: list[dict], quota: int) -> list[dict]
     return [dict(row) for row in raw_original_rows[:quota]]
 
 
+def is_report_generation_row(sample: dict) -> bool:
+    """Return whether the row should use report-generation protocol logic."""
+    return protocol_is_report_generation_row(sample)
+
+
+def report_prompt(sample: dict, mode: str) -> str:
+    """Return a report prompt without using target references or labels."""
+    return protocol_report_prompt(sample, mode)
+
+
 def risk_order(candidates: list[dict]) -> list[dict]:
     """Reference-independent acquisition order: confident, stable candidates first."""
 
@@ -272,6 +299,8 @@ def main() -> None:
         "top_p": args.top_p,
         "max_new_tokens": args.max_new_tokens,
         "seed": args.seed,
+        "llava_conv_mode": args.llava_conv_mode,
+        "report_prompt_mode": args.report_prompt_mode,
         "style_augmentation": args.style_augmentation,
         "style_family": (
             "domain_center_bank" if args.center_policy == "all" else "modality_matched_center"
@@ -345,7 +374,7 @@ def main() -> None:
     if not eligible:
         return
 
-    adapter = load_oe_adapter(args.model)
+    adapter = load_oe_adapter(args.model, llava_conv_mode=args.llava_conv_mode)
     print(f"Loaded {adapter.name}", flush=True)
     style_args = argparse.Namespace(
         no_feddg=False,
@@ -366,7 +395,7 @@ def main() -> None:
                 assert image_path is not None
                 with Image.open(image_path) as source:
                     image = resize_image(source, args.max_image_side)
-                prompt = str(sample["question"]).strip()
+                prompt = report_prompt(sample, args.report_prompt_mode)
                 seed = qid_seed(args.seed, sample["qid"])
                 greedy, original = adapter.generate_oe(
                     image,
@@ -460,6 +489,9 @@ def main() -> None:
                     "qid": sample["qid"],
                     "img_name": sample.get("img_name", ""),
                     "question": sample["question"],
+                    "prompt_used": prompt,
+                    "report_prompt_mode": args.report_prompt_mode,
+                    "llava_conv_mode": args.llava_conv_mode if args.model.lower().replace("_", "-").startswith("llava") else None,
                     "answer": sample["answer"],
                     "structured_answer": sample.get("structured_answer"),
                     "greedy": as_dict(

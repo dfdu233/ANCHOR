@@ -1,0 +1,3228 @@
+{
+  "version": "anchor-riemann-gate-analysis-v1",
+  "input_fingerprint": "a3566e7aff1735039cc3486c3fee0438d139a1014453c514aa799b87a6f14405",
+  "task": "oe",
+  "n": 64,
+  "compact_metrics": {
+    "greedy": {
+      "bleu4": 0.0012130129689659284,
+      "rouge_1": 0.09878476047785834,
+      "rouge_2": 0.007663024325975466,
+      "rouge_l": 0.07771400628464434,
+      "token_f1": 0.09878476047785834,
+      "length": 12.0
+    },
+    "nll": {
+      "bleu4": 0.00707939564409115,
+      "rouge_1": 0.14890672843904038,
+      "rouge_2": 0.018351789717513486,
+      "rouge_l": 0.10160509069784557,
+      "token_f1": 0.14890672843904038,
+      "length": 26.359375
+    },
+    "random": {
+      "bleu4": 0.0035470247582913986,
+      "rouge_1": 0.12493881621846015,
+      "rouge_2": 0.012301267725166577,
+      "rouge_l": 0.08951613155555325,
+      "token_f1": 0.12493881621846015,
+      "length": 18.53125
+    },
+    "riemann": {
+      "bleu4": 0.004532347359241368,
+      "rouge_1": 0.13162561944658413,
+      "rouge_2": 0.014053375119121445,
+      "rouge_l": 0.09232230081395235,
+      "token_f1": 0.13162561944658413,
+      "length": 20.953125
+    }
+  },
+  "candidate_oracle": {
+    "n": 64,
+    "greedy_mean": {
+      "rouge_l": 0.07771400628464434,
+      "token_f1": 0.09878476047785834
+    },
+    "candidate_oracle_mean": {
+      "rouge_l": 0.11385191351854063,
+      "token_f1": 0.16747931508569158
+    },
+    "oracle_headroom": {
+      "rouge_l": 0.03613790723389629,
+      "token_f1": 0.06869455460783325
+    },
+    "candidate_level_auc_lower_is_better_weak_rouge_oracle": {
+      "sequence_nll": 0.6534571723426212,
+      "source_manifold_distance": 0.4790505675954592,
+      "dirichlet_energy": 0.3738562091503268,
+      "riemann_energy": 0.6115583075335397,
+      "random_manifold_energy": 0.5427588579291366
+    },
+    "candidate_level_spearman_score_vs_weak_correct": {
+      "sequence_nll": -0.2503551022178473,
+      "source_manifold_distance": 0.034177596335052456,
+      "dirichlet_energy": 0.20579514903224527,
+      "riemann_energy": -0.18200199251344704,
+      "random_manifold_energy": -0.06975901223996753
+    }
+  },
+  "rescue_harm": {
+    "nll": {
+      "available": false,
+      "reason": "OE uses continuous metrics"
+    },
+    "random": {
+      "available": false,
+      "reason": "OE uses continuous metrics"
+    },
+    "riemann": {
+      "available": false,
+      "reason": "OE uses continuous metrics"
+    }
+  },
+  "gate": {
+    "pass": false,
+    "primary_geometry_auc": 0.6115583075335397,
+    "sequence_nll_auc": 0.6534571723426212,
+    "decision": "stop_or_demote_riemann",
+    "notes": [
+      "CE/OE use complete generated sentences; canonical label logits are not final predictions.",
+      "OE gate uses lexical metrics unless clinical metric caches are supplied.",
+      "Target labels/references are used only for post-hoc gate evaluation, not generation or selection."
+    ]
+  },
+  "full_metrics": {
+    "greedy": {
+      "n": 64,
+      "mean": {
+        "bleu4": 0.0012130129689659284,
+        "rouge_1": 0.09878476047785834,
+        "rouge_2": 0.007663024325975466,
+        "rouge_l": 0.07771400628464434,
+        "token_f1": 0.09878476047785834,
+        "length": 12.0
+      },
+      "details": [
+        {
+          "id": "0c5f56c2-3d707105-b36af285-88d0ae60-48ef3fda",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.005154539678791519,
+            "rouge_1": 0.20833333333333331,
+            "rouge_2": 0.0,
+            "rouge_l": 0.20833333333333331,
+            "token_f1": 0.20833333333333331
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "62e28fc5-93fe9a0b-36f25627-e72bcdc7-fddf5f6e",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0016689111561487284,
+            "rouge_1": 0.09836065573770492,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06557377049180328,
+            "token_f1": 0.09836065573770492
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c89c0bac-453ca322-9aec3b3a-af1073e8-833e0ccd",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001783396009476901,
+            "rouge_1": 0.11428571428571428,
+            "rouge_2": 0.029411764705882353,
+            "rouge_l": 0.11428571428571428,
+            "token_f1": 0.11428571428571428
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fe5ade20-832e5f10-2fcedcb6-4c3c8557-e8bfb513",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0011360485156906553,
+            "rouge_1": 0.09090909090909091,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06060606060606061,
+            "token_f1": 0.09090909090909091
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a67e2e2b-c5902ccf-adf291f3-51b417af-5b71eeaa",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00019745706689626522,
+            "rouge_1": 0.13186813186813184,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10989010989010987,
+            "token_f1": 0.13186813186813184
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "686a2b90-af0e2b68-75f6acc2-ea6fecdc-a69f5c88",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0037957501432755053,
+            "rouge_1": 0.0816326530612245,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0816326530612245,
+            "token_f1": 0.0816326530612245
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e9683fa3-283e5f0c-c05c217c-b320d070-4a8e9fc0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0011360485156906553,
+            "rouge_1": 0.09090909090909091,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06060606060606061,
+            "token_f1": 0.09090909090909091
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "63f854b9-c24c2a15-3c4ee54e-72c08c57-5b8bcf18",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0022701904330109245,
+            "rouge_1": 0.10526315789473682,
+            "rouge_2": 0.0,
+            "rouge_l": 0.03508771929824561,
+            "token_f1": 0.10526315789473682
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "962a470a-df0275b5-6b8e2125-e3cc9c90-bf7e0a66",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0020904265368668407,
+            "rouge_1": 0.08955223880597016,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.08955223880597016
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "7a238738-8c621632-91033197-65bce15b-74461a6c",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.006972665753109168,
+            "rouge_1": 0.18867924528301888,
+            "rouge_2": 0.039215686274509796,
+            "rouge_l": 0.15094339622641512,
+            "token_f1": 0.18867924528301888
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "b9850dc4-c0036cbc-c577eb21-c259db2c-2d9368a6",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001220763576053943,
+            "rouge_1": 0.12121212121212122,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09090909090909091,
+            "token_f1": 0.12121212121212122
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "58081a4f-fb575b5b-d178ec1c-b8b6a415-24868cdf",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00013109111811348686,
+            "rouge_1": 0.05825242718446602,
+            "rouge_2": 0.019801980198019802,
+            "rouge_l": 0.05825242718446602,
+            "token_f1": 0.05825242718446602
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f2795cb8-461db7d5-3a023168-8b1300eb-d418d99f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0006630495791345701,
+            "rouge_1": 0.08219178082191782,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08219178082191782,
+            "token_f1": 0.08219178082191782
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f0e11656-d359330e-8e7c2e5d-09c9d0d0-583da81f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.000659740917408449,
+            "rouge_1": 0.10810810810810811,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08108108108108109,
+            "token_f1": 0.10810810810810811
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a6aacacb-72188cab-113e38f7-dc63b7cb-e0b3cd1a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0026477490740115413,
+            "rouge_1": 0.10909090909090909,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07272727272727272,
+            "token_f1": 0.10909090909090909
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "93795e56-ef882771-fa23c36d-bf8cf35b-fc41aadc",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0007160663600534505,
+            "rouge_1": 0.08333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05555555555555555,
+            "token_f1": 0.08333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "bc25fa99-0d3766cc-7704edb7-5c7a4a63-dc65480a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.495319601726404e-05,
+            "rouge_1": 0.0970873786407767,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07766990291262137,
+            "token_f1": 0.0970873786407767
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "dda9463c-13653db6-03e65f74-74ef0b98-4cceb8c9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.801723235145958e-06,
+            "rouge_1": 0.08860759493670886,
+            "rouge_2": 0.02564102564102564,
+            "rouge_l": 0.08860759493670886,
+            "token_f1": 0.08860759493670886
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "2ae8ec41-067f24d2-3f3ea6b7-113cb63b-aa3cc9e0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00044909382216117607,
+            "rouge_1": 0.10126582278481013,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0759493670886076,
+            "token_f1": 0.10126582278481013
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "9ffe4a2c-7cf9a8f6-c97f630e-4618ae86-c49236fd",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.004427026817176499,
+            "rouge_1": 0.0851063829787234,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0851063829787234,
+            "token_f1": 0.0851063829787234
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "992ca7aa-bc9d75c5-cab8f375-a649cfc4-2472eda9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 8.546682131903672e-06,
+            "rouge_1": 0.08391608391608393,
+            "rouge_2": 0.028368794326241134,
+            "rouge_l": 0.05594405594405595,
+            "token_f1": 0.08391608391608393
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "255f4674-83241c13-0d166114-1542f2fc-016ce9ee",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.002859460440706412,
+            "rouge_1": 0.1111111111111111,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07407407407407408,
+            "token_f1": 0.1111111111111111
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "8ce5b932-2d8ffc38-cb498d1d-80d458cd-cec8ac86",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07692307692307693,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "47168ca2-46fb63bc-f859ecb2-d1a48369-fbc2f3cf",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00024270512001415493,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137932,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "8a2ac87e-67bd3fae-31632688-1d6dbc89-594ca350",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00020913994339944383,
+            "rouge_1": 0.06818181818181819,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.06818181818181819
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "702ea80d-45e751b9-f310cea5-80c50417-c80de945",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0008090872316664085,
+            "rouge_1": 0.1234567901234568,
+            "rouge_2": 0.02531645569620253,
+            "rouge_l": 0.09876543209876543,
+            "token_f1": 0.1234567901234568
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "08da513d-5325ee2d-d57746d8-762cf929-bf1c0fa4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 6.4265164018803e-05,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0761904761904762,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f95e2c77-d318c10b-c5113c5d-455b870e-eb3878e8",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.6077633106013203e-05,
+            "rouge_1": 0.06896551724137931,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137931,
+            "token_f1": 0.06896551724137931
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "5f860da1-0df267dd-71c297f8-f5833732-c79b751d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0022701904330109245,
+            "rouge_1": 0.10526315789473682,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10526315789473682,
+            "token_f1": 0.10526315789473682
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "3433048d-a6c5dc75-1a99a0b6-1f89a734-ef0b39b8",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0009740524497095696,
+            "rouge_1": 0.08823529411764705,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.08823529411764705
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c7bb0e40-1f6e7506-544a2f87-79320653-743f3351",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0015376353905922496,
+            "rouge_1": 0.126984126984127,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09523809523809523,
+            "token_f1": 0.126984126984127
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0ebfea17-388d6e3e-19b4850d-4da084f8-0088c1c3",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 5.5101203495210245e-05,
+            "rouge_1": 0.09345794392523364,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07476635514018691,
+            "token_f1": 0.09345794392523364
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e38221a2-36d9eedb-5a9af804-2eba7cb0-ea8d7ffd",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0005947935854150708,
+            "rouge_1": 0.11764705882352941,
+            "rouge_2": 0.024096385542168676,
+            "rouge_l": 0.11764705882352941,
+            "token_f1": 0.11764705882352941
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f2166859-f4629ed4-014033b5-930fc410-8a9f51c9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004048833680352581,
+            "rouge_1": 0.1111111111111111,
+            "rouge_2": 0.022727272727272728,
+            "rouge_l": 0.1111111111111111,
+            "token_f1": 0.1111111111111111
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1d1bc795-245a8bf2-267d7b91-209d78ab-a1e3f52f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.012996125678280554,
+            "rouge_1": 0.12121212121212123,
+            "rouge_2": 0.0,
+            "rouge_l": 0.060606060606060615,
+            "token_f1": 0.12121212121212123
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "7c90c07b-1bc26a56-953fb718-22a14ecc-13cba6ed",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 1.738009184059925e-05,
+            "rouge_1": 0.08196721311475409,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06557377049180328,
+            "token_f1": 0.08196721311475409
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fb85016a-bff648ee-d64f0e6d-8bf72ac1-ce274815",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0001521301241521147,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.02,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "29a9ca2f-50292418-e78e2999-12755e18-3103a476",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001197260348402928,
+            "rouge_1": 0.0625,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0625,
+            "token_f1": 0.0625
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1e7e7b71-9afe22dc-51aaf15b-79809a2a-bd5d192d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00018897927189058693,
+            "rouge_1": 0.04545454545454546,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.04545454545454546
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1ed95e47-83a54489-79ebd823-db934045-acd7ca23",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 1.1710613766119553e-07,
+            "rouge_1": 0.053475935828877004,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04278074866310161,
+            "token_f1": 0.053475935828877004
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "9cc3281f-64ff9f26-d2f759b1-ee26296f-50d416d4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0014509135411946612,
+            "rouge_1": 0.16216216216216217,
+            "rouge_2": 0.027777777777777776,
+            "rouge_l": 0.13513513513513514,
+            "token_f1": 0.16216216216216217
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "6d864779-3ef443ae-59264dbd-d63f8a20-cf4aa1e5",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 1.27768264485176e-05,
+            "rouge_1": 0.07936507936507936,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06349206349206349,
+            "token_f1": 0.07936507936507936
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fc2dd069-a9848695-2c9cc70c-cf06c0f6-38694917",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00025662941939286085,
+            "rouge_1": 0.11494252873563218,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.11494252873563218
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0c0e3903-2f744a5c-3750bad4-6d772736-6bf1c8a2",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 9.392775112626218e-06,
+            "rouge_1": 0.07692307692307691,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06153846153846155,
+            "token_f1": 0.07692307692307691
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a160eb01-5f36fb58-b0a04a57-1773448e-934b5036",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004942421545682612,
+            "rouge_1": 0.13636363636363638,
+            "rouge_2": 0.023255813953488372,
+            "rouge_l": 0.11363636363636365,
+            "token_f1": 0.13636363636363638
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "02ed59f0-43d0aa6f-4bf3340b-c891b4b8-42ea5f9b",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004158433999799628,
+            "rouge_1": 0.09999999999999999,
+            "rouge_2": 0.0,
+            "rouge_l": 0.075,
+            "token_f1": 0.09999999999999999
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fae734b5-cdbcad8f-13e2fcaf-8e2731ff-ca43dfa9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00027761984702504076,
+            "rouge_1": 0.048192771084337345,
+            "rouge_2": 0.0,
+            "rouge_l": 0.048192771084337345,
+            "token_f1": 0.048192771084337345
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4639cd47-e73a89d3-48315552-a87979a8-7dd4f191",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.655435831626354e-05,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "84ffb901-893b00a7-7f2090be-d5cf6a4e-c34ab763",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004874352493106809,
+            "rouge_1": 0.07792207792207792,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05194805194805195,
+            "token_f1": 0.07792207792207792
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "146e8390-fd657795-492c6a0b-7aaa1bef-06c08c00",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 3.453801439445685e-05,
+            "rouge_1": 0.08196721311475409,
+            "rouge_2": 0.016666666666666666,
+            "rouge_l": 0.08196721311475409,
+            "token_f1": 0.08196721311475409
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "ac58123d-32acfa38-3c734ace-8ef59986-fcca19ef",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00044909382216117607,
+            "rouge_1": 0.10126582278481013,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05063291139240506,
+            "token_f1": 0.10126582278481013
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "ed9e09e7-e22ee204-4a73ca03-dc121d89-5ca5a446",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0009019346569872636,
+            "rouge_1": 0.08695652173913043,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08695652173913043,
+            "token_f1": 0.08695652173913043
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c768ecd2-dec91075-b6e6d204-6a9d0da8-e1ce939a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00016521238433020056,
+            "rouge_1": 0.08695652173913043,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08695652173913043,
+            "token_f1": 0.08695652173913043
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a2958de9-3f5b2b3e-0f868adb-1bfb09df-e2f90c3e",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4146873279282562e-05,
+            "rouge_1": 0.06837606837606838,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.06837606837606838
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c375e421-68a1e118-133cd727-71b1be6f-8d62fa58",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00282938077038508,
+            "rouge_1": 0.125,
+            "rouge_2": 0.03225806451612903,
+            "rouge_l": 0.09375,
+            "token_f1": 0.125
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "cfc2ef1b-a194024a-6147d0d3-6d42379a-575c395f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.002671327241328969,
+            "rouge_1": 0.11940298507462686,
+            "rouge_2": 0.06153846153846154,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.11940298507462686
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "9189763d-c3b6ee12-d0d89f14-29a0cb1f-e3dee331",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4834946650878e-07,
+            "rouge_1": 0.06349206349206349,
+            "rouge_2": 0.021390374331550804,
+            "rouge_l": 0.04232804232804233,
+            "token_f1": 0.06349206349206349
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "5dfffffd-68cbd012-f3428c65-ebd2ffd8-57793a0c",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 5.648428435570295e-07,
+            "rouge_1": 0.0903954802259887,
+            "rouge_2": 0.011428571428571427,
+            "rouge_l": 0.06779661016949153,
+            "token_f1": 0.0903954802259887
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c9fff184-4c819069-e151edf5-6591caae-9a76e8f0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4dd16b7e-2f2d14a6-589fa0e3-f24d8230-874d3c21",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00021324553639531503,
+            "rouge_1": 0.13333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0888888888888889,
+            "token_f1": 0.13333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4a834d65-3c7a5557-474061e3-4903563c-7ac8bfb4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0014309309660125028,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0634920634920635,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "469b6bc3-cd9c3a49-238f4c5d-38cce895-b225e937",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00016604093971958234,
+            "rouge_1": 0.06593406593406592,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06593406593406592,
+            "token_f1": 0.06593406593406592
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e4e0e4ff-71138eac-7cef38bd-ce820887-d59037ff",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0024859501110325454,
+            "rouge_1": 0.17910447761194032,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.17910447761194032
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "cbe3bc41-e94a672f-5fdd94a6-aa2446b0-e821a444",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 3.100846144420793e-06,
+            "rouge_1": 0.08275862068965517,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05517241379310345,
+            "token_f1": 0.08275862068965517
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        }
+      ],
+      "clinical_metrics_available": false,
+      "clinical_metrics_note": "Gate uses lexical OE metrics only unless RadGraph/CheXbert/RaTEScore caches are supplied."
+    },
+    "nll": {
+      "n": 64,
+      "mean": {
+        "bleu4": 0.00707939564409115,
+        "rouge_1": 0.14890672843904038,
+        "rouge_2": 0.018351789717513486,
+        "rouge_l": 0.10160509069784557,
+        "token_f1": 0.14890672843904038,
+        "length": 26.359375
+      },
+      "details": [
+        {
+          "id": "0c5f56c2-3d707105-b36af285-88d0ae60-48ef3fda",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.005154539678791519,
+            "rouge_1": 0.20833333333333331,
+            "rouge_2": 0.0,
+            "rouge_l": 0.20833333333333331,
+            "token_f1": 0.20833333333333331
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "62e28fc5-93fe9a0b-36f25627-e72bcdc7-fddf5f6e",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.018154759408086033,
+            "rouge_1": 0.15053763440860213,
+            "rouge_2": 0.02197802197802198,
+            "rouge_l": 0.12903225806451615,
+            "token_f1": 0.15053763440860213
+          },
+          "text": "The chest X-ray image shows a normal cardiac silhouette, which means that the heart appears to be within normal size and shape. Additionally, the lung fields appear to be clear, indicating that there are no visible signs of abnormalities or disease in the lungs."
+        },
+        {
+          "id": "c89c0bac-453ca322-9aec3b3a-af1073e8-833e0ccd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.008840901290828262,
+            "rouge_1": 0.23076923076923078,
+            "rouge_2": 0.05263157894736841,
+            "rouge_l": 0.1282051282051282,
+            "token_f1": 0.23076923076923078
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "fe5ade20-832e5f10-2fcedcb6-4c3c8557-e8bfb513",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0011360485156906553,
+            "rouge_1": 0.09090909090909091,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06060606060606061,
+            "token_f1": 0.09090909090909091
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a67e2e2b-c5902ccf-adf291f3-51b417af-5b71eeaa",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.006686876465922173,
+            "rouge_1": 0.19999999999999996,
+            "rouge_2": 0.061224489795918366,
+            "rouge_l": 0.14,
+            "token_f1": 0.19999999999999996
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "686a2b90-af0e2b68-75f6acc2-ea6fecdc-a69f5c88",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0037957501432755053,
+            "rouge_1": 0.0816326530612245,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0816326530612245,
+            "token_f1": 0.0816326530612245
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e9683fa3-283e5f0c-c05c217c-b320d070-4a8e9fc0",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.018741184819455053,
+            "rouge_1": 0.20754716981132076,
+            "rouge_2": 0.019230769230769232,
+            "rouge_l": 0.1320754716981132,
+            "token_f1": 0.20754716981132076
+          },
+          "text": "The chest X-ray image shows no acute findings. This means that there are no apparent signs of an immediate or severe issue in the patient's chest. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "63f854b9-c24c2a15-3c4ee54e-72c08c57-5b8bcf18",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0022701904330109245,
+            "rouge_1": 0.10526315789473682,
+            "rouge_2": 0.0,
+            "rouge_l": 0.03508771929824561,
+            "token_f1": 0.10526315789473682
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "962a470a-df0275b5-6b8e2125-e3cc9c90-bf7e0a66",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.022798528995413833,
+            "rouge_1": 0.25641025641025644,
+            "rouge_2": 0.052173913043478265,
+            "rouge_l": 0.17094017094017092,
+            "token_f1": 0.25641025641025644
+          },
+          "text": "The chest X-ray shows cardiomegaly, which is an enlargement of the heart. Additionally, there is pulmonary edema, which is a condition where fluid accumulates in the lungs. These findings suggest that the patient may be experiencing heart-related issues and lung complications. Further evaluation and consultation with a healthcare professional are necessary to determine the cause and appropriate treatment for these conditions."
+        },
+        {
+          "id": "7a238738-8c621632-91033197-65bce15b-74461a6c",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.016505073983692536,
+            "rouge_1": 0.21782178217821785,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.15841584158415845,
+            "token_f1": 0.21782178217821785
+          },
+          "text": "The chest X-ray image appears to be normal, which means that there are no visible abnormalities or issues detected in the image. However, it is important to note that a normal chest X-ray does not necessarily rule out all possible conditions or diseases. Further evaluation and clinical correlation may be needed depending on the patient's symptoms and medical history."
+        },
+        {
+          "id": "b9850dc4-c0036cbc-c577eb21-c259db2c-2d9368a6",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001220763576053943,
+            "rouge_1": 0.12121212121212122,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09090909090909091,
+            "token_f1": 0.12121212121212122
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "58081a4f-fb575b5b-d178ec1c-b8b6a415-24868cdf",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.01055569883579639,
+            "rouge_1": 0.15714285714285714,
+            "rouge_2": 0.028985507246376812,
+            "rouge_l": 0.1142857142857143,
+            "token_f1": 0.15714285714285714
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected. However, it is important to remember that a radiologist's report should always be interpreted in the context of the patient's clinical history and symptoms, as well as any additional imaging or diagnostic tests that may be available."
+        },
+        {
+          "id": "f2795cb8-461db7d5-3a023168-8b1300eb-d418d99f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0006630495791345701,
+            "rouge_1": 0.08219178082191782,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08219178082191782,
+            "token_f1": 0.08219178082191782
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f0e11656-d359330e-8e7c2e5d-09c9d0d0-583da81f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.000659740917408449,
+            "rouge_1": 0.10810810810810811,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08108108108108109,
+            "token_f1": 0.10810810810810811
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a6aacacb-72188cab-113e38f7-dc63b7cb-e0b3cd1a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0026477490740115413,
+            "rouge_1": 0.10909090909090909,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07272727272727272,
+            "token_f1": 0.10909090909090909
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "93795e56-ef882771-fa23c36d-bf8cf35b-fc41aadc",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.03130169594471148,
+            "rouge_1": 0.22222222222222224,
+            "rouge_2": 0.04838709677419355,
+            "rouge_l": 0.11111111111111112,
+            "token_f1": 0.22222222222222224
+          },
+          "text": "The chest X-ray appears to be normal. This means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures. However, it is important to remember that a normal chest X-ray does not necessarily rule out all possible health issues. Further evaluation and consultation with a healthcare professional may be necessary depending on the patient's symptoms and medical history."
+        },
+        {
+          "id": "bc25fa99-0d3766cc-7704edb7-5c7a4a63-dc65480a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.495319601726404e-05,
+            "rouge_1": 0.0970873786407767,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07766990291262137,
+            "token_f1": 0.0970873786407767
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "dda9463c-13653db6-03e65f74-74ef0b98-4cceb8c9",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.00026123119990750614,
+            "rouge_1": 0.13095238095238093,
+            "rouge_2": 0.03614457831325301,
+            "rouge_l": 0.10714285714285714,
+            "token_f1": 0.13095238095238093
+          },
+          "text": "The chest X-ray appears to be normal. This means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "2ae8ec41-067f24d2-3f3ea6b7-113cb63b-aa3cc9e0",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.005500196479929063,
+            "rouge_1": 0.15730337078651685,
+            "rouge_2": 0.02298850574712644,
+            "rouge_l": 0.08988764044943821,
+            "token_f1": 0.15730337078651685
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "9ffe4a2c-7cf9a8f6-c97f630e-4618ae86-c49236fd",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.004427026817176499,
+            "rouge_1": 0.0851063829787234,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0851063829787234,
+            "token_f1": 0.0851063829787234
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "992ca7aa-bc9d75c5-cab8f375-a649cfc4-2472eda9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 8.546682131903672e-06,
+            "rouge_1": 0.08391608391608393,
+            "rouge_2": 0.028368794326241134,
+            "rouge_l": 0.05594405594405595,
+            "token_f1": 0.08391608391608393
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "255f4674-83241c13-0d166114-1542f2fc-016ce9ee",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.011212080189815263,
+            "rouge_1": 0.14634146341463414,
+            "rouge_2": 0.0,
+            "rouge_l": 0.12195121951219512,
+            "token_f1": 0.14634146341463414
+          },
+          "text": "The chest X-ray shows a normal cardiac silhouette, which means that the size and shape of the heart appear to be within normal limits. Additionally, the lung fields appear to be clear, indicating no visible abnormalities or signs of disease."
+        },
+        {
+          "id": "8ce5b932-2d8ffc38-cb498d1d-80d458cd-cec8ac86",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.008034051672175633,
+            "rouge_1": 0.1956521739130435,
+            "rouge_2": 0.022222222222222223,
+            "rouge_l": 0.13043478260869565,
+            "token_f1": 0.1956521739130435
+          },
+          "text": "The chest X-ray appears to be normal. This means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures."
+        },
+        {
+          "id": "47168ca2-46fb63bc-f859ecb2-d1a48369-fbc2f3cf",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00024270512001415493,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137932,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "8a2ac87e-67bd3fae-31632688-1d6dbc89-594ca350",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0018206121894628609,
+            "rouge_1": 0.16494845360824745,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10309278350515463,
+            "token_f1": 0.16494845360824745
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "702ea80d-45e751b9-f310cea5-80c50417-c80de945",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.012265956700071063,
+            "rouge_1": 0.22222222222222224,
+            "rouge_2": 0.018867924528301883,
+            "rouge_l": 0.14814814814814817,
+            "token_f1": 0.22222222222222224
+          },
+          "text": "The chest X-ray shows a right-sided pleural effusion. A pleural effusion is an abnormal accumulation of fluid in the pleural space, which is the area between the layers of tissue that line the lungs and the chest cavity."
+        },
+        {
+          "id": "08da513d-5325ee2d-d57746d8-762cf929-bf1c0fa4",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.009571828140671243,
+            "rouge_1": 0.14705882352941177,
+            "rouge_2": 0.04477611940298507,
+            "rouge_l": 0.10294117647058824,
+            "token_f1": 0.14705882352941177
+          },
+          "text": "The chest X-ray image shows cardiomegaly, which is an enlargement of the heart. Additionally, there is evidence of pulmonary venous congestion, which is a condition where blood flow through the pulmonary veins is obstructed, leading to a buildup of fluid in the lungs."
+        },
+        {
+          "id": "f95e2c77-d318c10b-c5113c5d-455b870e-eb3878e8",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.6077633106013203e-05,
+            "rouge_1": 0.06896551724137931,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137931,
+            "token_f1": 0.06896551724137931
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "5f860da1-0df267dd-71c297f8-f5833732-c79b751d",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.015243210052194072,
+            "rouge_1": 0.2686567164179105,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.1492537313432836,
+            "token_f1": 0.2686567164179105
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "3433048d-a6c5dc75-1a99a0b6-1f89a734-ef0b39b8",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.01918861188221031,
+            "rouge_1": 0.20512820512820512,
+            "rouge_2": 0.07894736842105263,
+            "rouge_l": 0.12820512820512822,
+            "token_f1": 0.20512820512820512
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "c7bb0e40-1f6e7506-544a2f87-79320653-743f3351",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.01915332525573355,
+            "rouge_1": 0.23300970873786409,
+            "rouge_2": 0.019801980198019802,
+            "rouge_l": 0.13592233009708737,
+            "token_f1": 0.23300970873786409
+          },
+          "text": "The chest X-ray appears to be unremarkable, meaning that there are no significant abnormalities or findings detected in the image. However, it is important to remember that a radiologist should always consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "0ebfea17-388d6e3e-19b4850d-4da084f8-0088c1c3",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 5.5101203495210245e-05,
+            "rouge_1": 0.09345794392523364,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07476635514018691,
+            "token_f1": 0.09345794392523364
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e38221a2-36d9eedb-5a9af804-2eba7cb0-ea8d7ffd",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.003957566091178284,
+            "rouge_1": 0.1702127659574468,
+            "rouge_2": 0.021739130434782608,
+            "rouge_l": 0.10638297872340427,
+            "token_f1": 0.1702127659574468
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "f2166859-f4629ed4-014033b5-930fc410-8a9f51c9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004048833680352581,
+            "rouge_1": 0.1111111111111111,
+            "rouge_2": 0.022727272727272728,
+            "rouge_l": 0.1111111111111111,
+            "token_f1": 0.1111111111111111
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1d1bc795-245a8bf2-267d7b91-209d78ab-a1e3f52f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.012996125678280554,
+            "rouge_1": 0.12121212121212123,
+            "rouge_2": 0.0,
+            "rouge_l": 0.060606060606060615,
+            "token_f1": 0.12121212121212123
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "7c90c07b-1bc26a56-953fb718-22a14ecc-13cba6ed",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 1.738009184059925e-05,
+            "rouge_1": 0.08196721311475409,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06557377049180328,
+            "token_f1": 0.08196721311475409
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fb85016a-bff648ee-d64f0e6d-8bf72ac1-ce274815",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0001521301241521147,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.02,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "29a9ca2f-50292418-e78e2999-12755e18-3103a476",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001197260348402928,
+            "rouge_1": 0.0625,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0625,
+            "token_f1": 0.0625
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1e7e7b71-9afe22dc-51aaf15b-79809a2a-bd5d192d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00018897927189058693,
+            "rouge_1": 0.04545454545454546,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.04545454545454546
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1ed95e47-83a54489-79ebd823-db934045-acd7ca23",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0027147782086010953,
+            "rouge_1": 0.1724137931034483,
+            "rouge_2": 0.008695652173913044,
+            "rouge_l": 0.10344827586206896,
+            "token_f1": 0.1724137931034483
+          },
+          "text": "The chest X-ray shows no active lesions. This means that there are no visible signs of any abnormalities or issues in the chest area at the time the image was taken. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "9cc3281f-64ff9f26-d2f759b1-ee26296f-50d416d4",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.020248516289932808,
+            "rouge_1": 0.2258064516129032,
+            "rouge_2": 0.03278688524590164,
+            "rouge_l": 0.1129032258064516,
+            "token_f1": 0.2258064516129032
+          },
+          "text": "The chest X-ray appears to be normal. This means that there are no visible abnormalities or signs of disease in the image. However, it is important to remember that a normal chest X-ray does not necessarily rule out all possible health issues. Further evaluation and clinical correlation may be needed to assess the patient's overall health and identify any potential concerns."
+        },
+        {
+          "id": "6d864779-3ef443ae-59264dbd-d63f8a20-cf4aa1e5",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.00041228151603785103,
+            "rouge_1": 0.14705882352941177,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08823529411764705,
+            "token_f1": 0.14705882352941177
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "fc2dd069-a9848695-2c9cc70c-cf06c0f6-38694917",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00025662941939286085,
+            "rouge_1": 0.11494252873563218,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.11494252873563218
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0c0e3903-2f744a5c-3750bad4-6d772736-6bf1c8a2",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.008607166914971971,
+            "rouge_1": 0.17977528089887643,
+            "rouge_2": 0.022727272727272728,
+            "rouge_l": 0.10112359550561799,
+            "token_f1": 0.17977528089887643
+          },
+          "text": "The chest X-ray image appears to be normal. This means that there are no visible abnormalities or signs of disease in the image. However, it is important to remember that a normal chest X-ray does not necessarily rule out all possible conditions, and further evaluation or additional tests may be needed depending on the patient's symptoms and clinical history."
+        },
+        {
+          "id": "a160eb01-5f36fb58-b0a04a57-1773448e-934b5036",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.031501966464237155,
+            "rouge_1": 0.2992125984251969,
+            "rouge_2": 0.07999999999999999,
+            "rouge_l": 0.18897637795275593,
+            "token_f1": 0.2992125984251969
+          },
+          "text": "The chest X-ray image shows cardiomegaly, which is an enlargement of the heart. Additionally, there are small bilateral pleural effusions present. A pleural effusion is an abnormal accumulation of fluid in the pleural space, which is the area between the layers of tissue that line the lungs and the chest cavity."
+        },
+        {
+          "id": "02ed59f0-43d0aa6f-4bf3340b-c891b4b8-42ea5f9b",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004158433999799628,
+            "rouge_1": 0.09999999999999999,
+            "rouge_2": 0.0,
+            "rouge_l": 0.075,
+            "token_f1": 0.09999999999999999
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fae734b5-cdbcad8f-13e2fcaf-8e2731ff-ca43dfa9",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.011147857064627124,
+            "rouge_1": 0.18181818181818182,
+            "rouge_2": 0.018518518518518517,
+            "rouge_l": 0.12727272727272726,
+            "token_f1": 0.18181818181818182
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings in the image. This is a positive sign, as it suggests that the patient's lungs and surrounding structures are within normal limits."
+        },
+        {
+          "id": "4639cd47-e73a89d3-48315552-a87979a8-7dd4f191",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.655435831626354e-05,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "84ffb901-893b00a7-7f2090be-d5cf6a4e-c34ab763",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.00654806458965617,
+            "rouge_1": 0.1627906976744186,
+            "rouge_2": 0.047619047619047616,
+            "rouge_l": 0.13953488372093023,
+            "token_f1": 0.1627906976744186
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or pathologies detected in the image."
+        },
+        {
+          "id": "146e8390-fd657795-492c6a0b-7aaa1bef-06c08c00",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.008409295344262019,
+            "rouge_1": 0.189873417721519,
+            "rouge_2": 0.03846153846153846,
+            "rouge_l": 0.12658227848101267,
+            "token_f1": 0.189873417721519
+          },
+          "text": "The chest X-ray image appears to be normal. This means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures. A normal chest X-ray typically shows clear lung fields, a normal heart size, and no signs of fluid or masses."
+        },
+        {
+          "id": "ac58123d-32acfa38-3c734ace-8ef59986-fcca19ef",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00859405352612611,
+            "rouge_1": 0.2340425531914893,
+            "rouge_2": 0.021739130434782608,
+            "rouge_l": 0.1276595744680851,
+            "token_f1": 0.2340425531914893
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the patient's lungs, heart, or surrounding structures."
+        },
+        {
+          "id": "ed9e09e7-e22ee204-4a73ca03-dc121d89-5ca5a446",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0057127375915459015,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray image shows no abnormalities. This means that the lungs, heart, and surrounding structures appear to be within normal limits, without any visible signs of disease or injury."
+        },
+        {
+          "id": "c768ecd2-dec91075-b6e6d204-6a9d0da8-e1ce939a",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.0031175917459267395,
+            "rouge_1": 0.21782178217821782,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.1188118811881188,
+            "token_f1": 0.21782178217821782
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "a2958de9-3f5b2b3e-0f868adb-1bfb09df-e2f90c3e",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4146873279282562e-05,
+            "rouge_1": 0.06837606837606838,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.06837606837606838
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c375e421-68a1e118-133cd727-71b1be6f-8d62fa58",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.021309597517669844,
+            "rouge_1": 0.1568627450980392,
+            "rouge_2": 0.04,
+            "rouge_l": 0.11764705882352941,
+            "token_f1": 0.1568627450980392
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected. However, it is important to remember that I am an AI language model and not a medical professional. For a comprehensive evaluation and interpretation of the X-ray, it is always best to consult with a healthcare professional."
+        },
+        {
+          "id": "cfc2ef1b-a194024a-6147d0d3-6d42379a-575c395f",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.020543532215722284,
+            "rouge_1": 0.24137931034482757,
+            "rouge_2": 0.03508771929824562,
+            "rouge_l": 0.17241379310344826,
+            "token_f1": 0.24137931034482757
+          },
+          "text": "The chest X-ray image shows no acute pulmonary lesions. This means that there are no visible signs of abnormalities or issues in the lungs at the time the image was taken. However, it is important to remember that a chest X-ray is just one diagnostic tool, and further evaluation may be needed depending on the patient's clinical history and symptoms."
+        },
+        {
+          "id": "9189763d-c3b6ee12-d0d89f14-29a0cb1f-e3dee331",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 4.609778203216256e-05,
+            "rouge_1": 0.0808080808080808,
+            "rouge_2": 0.030612244897959183,
+            "rouge_l": 0.0505050505050505,
+            "token_f1": 0.0808080808080808
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "5dfffffd-68cbd012-f3428c65-ebd2ffd8-57793a0c",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 5.648428435570295e-07,
+            "rouge_1": 0.0903954802259887,
+            "rouge_2": 0.011428571428571427,
+            "rouge_l": 0.06779661016949153,
+            "token_f1": 0.0903954802259887
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c9fff184-4c819069-e151edf5-6591caae-9a76e8f0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4dd16b7e-2f2d14a6-589fa0e3-f24d8230-874d3c21",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00021324553639531503,
+            "rouge_1": 0.13333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0888888888888889,
+            "token_f1": 0.13333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4a834d65-3c7a5557-474061e3-4903563c-7ac8bfb4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0014309309660125028,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0634920634920635,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "469b6bc3-cd9c3a49-238f4c5d-38cce895-b225e937",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.019571879357123737,
+            "rouge_1": 0.22033898305084745,
+            "rouge_2": 0.05172413793103448,
+            "rouge_l": 0.13559322033898302,
+            "token_f1": 0.22033898305084745
+          },
+          "text": "The chest X-ray image is unremarkable, which means that there are no significant abnormalities or findings in the image. This suggests that the patient's lungs and other structures in the chest appear to be normal in this particular image."
+        },
+        {
+          "id": "e4e0e4ff-71138eac-7cef38bd-ce820887-d59037ff",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0024859501110325454,
+            "rouge_1": 0.17910447761194032,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.17910447761194032
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "cbe3bc41-e94a672f-5fdd94a6-aa2446b0-e821a444",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0020746456221029655,
+            "rouge_1": 0.15384615384615385,
+            "rouge_2": 0.011976047904191616,
+            "rouge_l": 0.10650887573964496,
+            "token_f1": 0.15384615384615385
+          },
+          "text": "The chest X-ray image shows no active disease. This means that there are no visible signs of any abnormalities or issues in the patient's lungs or chest area at the time the X-ray was taken."
+        }
+      ],
+      "clinical_metrics_available": false,
+      "clinical_metrics_note": "Gate uses lexical OE metrics only unless RadGraph/CheXbert/RaTEScore caches are supplied."
+    },
+    "random": {
+      "n": 64,
+      "mean": {
+        "bleu4": 0.0035470247582913986,
+        "rouge_1": 0.12493881621846015,
+        "rouge_2": 0.012301267725166577,
+        "rouge_l": 0.08951613155555325,
+        "token_f1": 0.12493881621846015,
+        "length": 18.53125
+      },
+      "details": [
+        {
+          "id": "0c5f56c2-3d707105-b36af285-88d0ae60-48ef3fda",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.001884255116048999,
+            "rouge_1": 0.13636363636363638,
+            "rouge_2": 0.0,
+            "rouge_l": 0.13636363636363638,
+            "token_f1": 0.13636363636363638
+          },
+          "text": "The chest X-ray image shows no significant abnormalities."
+        },
+        {
+          "id": "62e28fc5-93fe9a0b-36f25627-e72bcdc7-fddf5f6e",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.018154759408086033,
+            "rouge_1": 0.15053763440860213,
+            "rouge_2": 0.02197802197802198,
+            "rouge_l": 0.12903225806451615,
+            "token_f1": 0.15053763440860213
+          },
+          "text": "The chest X-ray image shows a normal cardiac silhouette, which means that the heart appears to be within normal size and shape. Additionally, the lung fields appear to be clear, indicating that there are no visible signs of abnormalities or disease in the lungs."
+        },
+        {
+          "id": "c89c0bac-453ca322-9aec3b3a-af1073e8-833e0ccd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.008840901290828262,
+            "rouge_1": 0.23076923076923078,
+            "rouge_2": 0.05263157894736841,
+            "rouge_l": 0.1282051282051282,
+            "token_f1": 0.23076923076923078
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "fe5ade20-832e5f10-2fcedcb6-4c3c8557-e8bfb513",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0014276204593359576,
+            "rouge_1": 0.08955223880597014,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05970149253731343,
+            "token_f1": 0.08955223880597014
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities or findings."
+        },
+        {
+          "id": "a67e2e2b-c5902ccf-adf291f3-51b417af-5b71eeaa",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00019745706689626522,
+            "rouge_1": 0.13186813186813184,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10989010989010987,
+            "token_f1": 0.13186813186813184
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "686a2b90-af0e2b68-75f6acc2-ea6fecdc-a69f5c88",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0037957501432755053,
+            "rouge_1": 0.0816326530612245,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0816326530612245,
+            "token_f1": 0.0816326530612245
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e9683fa3-283e5f0c-c05c217c-b320d070-4a8e9fc0",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.018741184819455053,
+            "rouge_1": 0.20754716981132076,
+            "rouge_2": 0.019230769230769232,
+            "rouge_l": 0.1320754716981132,
+            "token_f1": 0.20754716981132076
+          },
+          "text": "The chest X-ray image shows no acute findings. This means that there are no apparent signs of an immediate or severe issue in the patient's chest. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "63f854b9-c24c2a15-3c4ee54e-72c08c57-5b8bcf18",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00037782661726376104,
+            "rouge_1": 0.07692307692307693,
+            "rouge_2": 0.0,
+            "rouge_l": 0.038461538461538464,
+            "token_f1": 0.07692307692307693
+          },
+          "text": "The chest X-ray appears to be normal."
+        },
+        {
+          "id": "962a470a-df0275b5-6b8e2125-e3cc9c90-bf7e0a66",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.011395204271530216,
+            "rouge_1": 0.20779220779220778,
+            "rouge_2": 0.05333333333333334,
+            "rouge_l": 0.12987012987012986,
+            "token_f1": 0.20779220779220778
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible signs of abnormalities or pathologies in the image."
+        },
+        {
+          "id": "7a238738-8c621632-91033197-65bce15b-74461a6c",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.016505073983692536,
+            "rouge_1": 0.21782178217821785,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.15841584158415845,
+            "token_f1": 0.21782178217821785
+          },
+          "text": "The chest X-ray image appears to be normal, which means that there are no visible abnormalities or issues detected in the image. However, it is important to note that a normal chest X-ray does not necessarily rule out all possible conditions or diseases. Further evaluation and clinical correlation may be needed depending on the patient's symptoms and medical history."
+        },
+        {
+          "id": "b9850dc4-c0036cbc-c577eb21-c259db2c-2d9368a6",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.001220763576053943,
+            "rouge_1": 0.12121212121212122,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09090909090909091,
+            "token_f1": 0.12121212121212122
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "58081a4f-fb575b5b-d178ec1c-b8b6a415-24868cdf",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.002003084820486768,
+            "rouge_1": 0.1415929203539823,
+            "rouge_2": 0.018018018018018018,
+            "rouge_l": 0.10619469026548674,
+            "token_f1": 0.1415929203539823
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the image."
+        },
+        {
+          "id": "f2795cb8-461db7d5-3a023168-8b1300eb-d418d99f",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.013942018012281584,
+            "rouge_1": 0.18000000000000002,
+            "rouge_2": 0.02040816326530612,
+            "rouge_l": 0.1,
+            "token_f1": 0.18000000000000002
+          },
+          "text": "The chest X-ray image is a normal posteroanterior (PA) view. This means that the lungs, heart, and other structures in the image appear to be within normal limits. The image does not show any significant abnormalities or pathological findings."
+        },
+        {
+          "id": "f0e11656-d359330e-8e7c2e5d-09c9d0d0-583da81f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.000659740917408449,
+            "rouge_1": 0.10810810810810811,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08108108108108109,
+            "token_f1": 0.10810810810810811
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a6aacacb-72188cab-113e38f7-dc63b7cb-e0b3cd1a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0026477490740115413,
+            "rouge_1": 0.10909090909090909,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07272727272727272,
+            "token_f1": 0.10909090909090909
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "93795e56-ef882771-fa23c36d-bf8cf35b-fc41aadc",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0007160663600534505,
+            "rouge_1": 0.08333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05555555555555555,
+            "token_f1": 0.08333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "bc25fa99-0d3766cc-7704edb7-5c7a4a63-dc65480a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.495319601726404e-05,
+            "rouge_1": 0.0970873786407767,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07766990291262137,
+            "token_f1": 0.0970873786407767
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "dda9463c-13653db6-03e65f74-74ef0b98-4cceb8c9",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00019946556873970744,
+            "rouge_1": 0.11976047904191617,
+            "rouge_2": 0.03636363636363636,
+            "rouge_l": 0.08383233532934131,
+            "token_f1": 0.11976047904191617
+          },
+          "text": "The chest X-ray image shows normal findings, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "2ae8ec41-067f24d2-3f3ea6b7-113cb63b-aa3cc9e0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00044909382216117607,
+            "rouge_1": 0.10126582278481013,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0759493670886076,
+            "token_f1": 0.10126582278481013
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "9ffe4a2c-7cf9a8f6-c97f630e-4618ae86-c49236fd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.005546415709137174,
+            "rouge_1": 0.125,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08333333333333333,
+            "token_f1": 0.125
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities or findings."
+        },
+        {
+          "id": "992ca7aa-bc9d75c5-cab8f375-a649cfc4-2472eda9",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 6.629111139272034e-06,
+            "rouge_1": 0.06944444444444445,
+            "rouge_2": 0.0,
+            "rouge_l": 0.041666666666666664,
+            "token_f1": 0.06944444444444445
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities or findings."
+        },
+        {
+          "id": "255f4674-83241c13-0d166114-1542f2fc-016ce9ee",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.011212080189815263,
+            "rouge_1": 0.14634146341463414,
+            "rouge_2": 0.0,
+            "rouge_l": 0.12195121951219512,
+            "token_f1": 0.14634146341463414
+          },
+          "text": "The chest X-ray shows a normal cardiac silhouette, which means that the size and shape of the heart appear to be within normal limits. Additionally, the lung fields appear to be clear, indicating no visible abnormalities or signs of disease."
+        },
+        {
+          "id": "8ce5b932-2d8ffc38-cb498d1d-80d458cd-cec8ac86",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07692307692307693,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "47168ca2-46fb63bc-f859ecb2-d1a48369-fbc2f3cf",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00024270512001415493,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137932,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "8a2ac87e-67bd3fae-31632688-1d6dbc89-594ca350",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00020913994339944383,
+            "rouge_1": 0.06818181818181819,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.06818181818181819
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "702ea80d-45e751b9-f310cea5-80c50417-c80de945",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.012265956700071063,
+            "rouge_1": 0.22222222222222224,
+            "rouge_2": 0.018867924528301883,
+            "rouge_l": 0.14814814814814817,
+            "token_f1": 0.22222222222222224
+          },
+          "text": "The chest X-ray shows a right-sided pleural effusion. A pleural effusion is an abnormal accumulation of fluid in the pleural space, which is the area between the layers of tissue that line the lungs and the chest cavity."
+        },
+        {
+          "id": "08da513d-5325ee2d-d57746d8-762cf929-bf1c0fa4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 6.4265164018803e-05,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0761904761904762,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f95e2c77-d318c10b-c5113c5d-455b870e-eb3878e8",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0003823305008380465,
+            "rouge_1": 0.09917355371900825,
+            "rouge_2": 0.01680672268907563,
+            "rouge_l": 0.08264462809917356,
+            "token_f1": 0.09917355371900825
+          },
+          "text": "The chest X-ray appears to be normal. No significant abnormalities or findings were detected in the image."
+        },
+        {
+          "id": "5f860da1-0df267dd-71c297f8-f5833732-c79b751d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0022701904330109245,
+            "rouge_1": 0.10526315789473682,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10526315789473682,
+            "token_f1": 0.10526315789473682
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "3433048d-a6c5dc75-1a99a0b6-1f89a734-ef0b39b8",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0009740524497095696,
+            "rouge_1": 0.08823529411764705,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.08823529411764705
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c7bb0e40-1f6e7506-544a2f87-79320653-743f3351",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0015376353905922496,
+            "rouge_1": 0.126984126984127,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09523809523809523,
+            "token_f1": 0.126984126984127
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0ebfea17-388d6e3e-19b4850d-4da084f8-0088c1c3",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.0016000850662716889,
+            "rouge_1": 0.16071428571428573,
+            "rouge_2": 0.07272727272727272,
+            "rouge_l": 0.10714285714285714,
+            "token_f1": 0.16071428571428573
+          },
+          "text": "The chest X-ray appears to be normal. There are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "e38221a2-36d9eedb-5a9af804-2eba7cb0-ea8d7ffd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0031133259258090563,
+            "rouge_1": 0.1739130434782609,
+            "rouge_2": 0.022222222222222223,
+            "rouge_l": 0.10869565217391305,
+            "token_f1": 0.1739130434782609
+          },
+          "text": "The chest X-ray appears to be normal, which means there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "f2166859-f4629ed4-014033b5-930fc410-8a9f51c9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004048833680352581,
+            "rouge_1": 0.1111111111111111,
+            "rouge_2": 0.022727272727272728,
+            "rouge_l": 0.1111111111111111,
+            "token_f1": 0.1111111111111111
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1d1bc795-245a8bf2-267d7b91-209d78ab-a1e3f52f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.012996125678280554,
+            "rouge_1": 0.12121212121212123,
+            "rouge_2": 0.0,
+            "rouge_l": 0.060606060606060615,
+            "token_f1": 0.12121212121212123
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "7c90c07b-1bc26a56-953fb718-22a14ecc-13cba6ed",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0024588911834122315,
+            "rouge_1": 0.15714285714285714,
+            "rouge_2": 0.014492753623188406,
+            "rouge_l": 0.10000000000000002,
+            "token_f1": 0.15714285714285714
+          },
+          "text": "The chest X-ray shows no acute cardiopulmonary process. This means that there are no visible signs of any urgent or severe issues affecting the heart or lungs in the image."
+        },
+        {
+          "id": "fb85016a-bff648ee-d64f0e6d-8bf72ac1-ce274815",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.004284850521543335,
+            "rouge_1": 0.1680672268907563,
+            "rouge_2": 0.017094017094017092,
+            "rouge_l": 0.13445378151260504,
+            "token_f1": 0.1680672268907563
+          },
+          "text": "The chest X-ray shows no signs of acute cardiopulmonary disease. This means that there are no visible abnormalities or issues in the heart or lungs based on the image."
+        },
+        {
+          "id": "29a9ca2f-50292418-e78e2999-12755e18-3103a476",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.004241320205594977,
+            "rouge_1": 0.0821917808219178,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05479452054794521,
+            "token_f1": 0.0821917808219178
+          },
+          "text": "The chest X-ray shows no acute abnormalities. This means that there are no immediate or severe issues detected in the image."
+        },
+        {
+          "id": "1e7e7b71-9afe22dc-51aaf15b-79809a2a-bd5d192d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00018897927189058693,
+            "rouge_1": 0.04545454545454546,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.04545454545454546
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1ed95e47-83a54489-79ebd823-db934045-acd7ca23",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.0001726929671892257,
+            "rouge_1": 0.0891089108910891,
+            "rouge_2": 0.01,
+            "rouge_l": 0.04950495049504951,
+            "token_f1": 0.0891089108910891
+          },
+          "text": "The chest X-ray shows no acute cardiopulmonary processes, which means that there are no visible signs of immediate or severe issues related to the heart and lungs."
+        },
+        {
+          "id": "9cc3281f-64ff9f26-d2f759b1-ee26296f-50d416d4",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.007991366463915135,
+            "rouge_1": 0.21686746987951805,
+            "rouge_2": 0.04938271604938271,
+            "rouge_l": 0.14457831325301204,
+            "token_f1": 0.21686746987951805
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "6d864779-3ef443ae-59264dbd-d63f8a20-cf4aa1e5",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.000323647630594324,
+            "rouge_1": 0.11851851851851852,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08888888888888889,
+            "token_f1": 0.11851851851851852
+          },
+          "text": "The chest X-ray image shows normal findings, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "fc2dd069-a9848695-2c9cc70c-cf06c0f6-38694917",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00025662941939286085,
+            "rouge_1": 0.11494252873563218,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.11494252873563218
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0c0e3903-2f744a5c-3750bad4-6d772736-6bf1c8a2",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 1.6777557953887237e-05,
+            "rouge_1": 0.07633587786259542,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06106870229007634,
+            "token_f1": 0.07633587786259542
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities or findings."
+        },
+        {
+          "id": "a160eb01-5f36fb58-b0a04a57-1773448e-934b5036",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.000747816392168218,
+            "rouge_1": 0.1797752808988764,
+            "rouge_2": 0.022988505747126436,
+            "rouge_l": 0.1348314606741573,
+            "token_f1": 0.1797752808988764
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities or findings."
+        },
+        {
+          "id": "02ed59f0-43d0aa6f-4bf3340b-c891b4b8-42ea5f9b",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004158433999799628,
+            "rouge_1": 0.09999999999999999,
+            "rouge_2": 0.0,
+            "rouge_l": 0.075,
+            "token_f1": 0.09999999999999999
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fae734b5-cdbcad8f-13e2fcaf-8e2731ff-ca43dfa9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00027761984702504076,
+            "rouge_1": 0.048192771084337345,
+            "rouge_2": 0.0,
+            "rouge_l": 0.048192771084337345,
+            "token_f1": 0.048192771084337345
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4639cd47-e73a89d3-48315552-a87979a8-7dd4f191",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.655435831626354e-05,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "84ffb901-893b00a7-7f2090be-d5cf6a4e-c34ab763",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.00654806458965617,
+            "rouge_1": 0.1627906976744186,
+            "rouge_2": 0.047619047619047616,
+            "rouge_l": 0.13953488372093023,
+            "token_f1": 0.1627906976744186
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or pathologies detected in the image."
+        },
+        {
+          "id": "146e8390-fd657795-492c6a0b-7aaa1bef-06c08c00",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 3.453801439445685e-05,
+            "rouge_1": 0.08196721311475409,
+            "rouge_2": 0.016666666666666666,
+            "rouge_l": 0.08196721311475409,
+            "token_f1": 0.08196721311475409
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "ac58123d-32acfa38-3c734ace-8ef59986-fcca19ef",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00044909382216117607,
+            "rouge_1": 0.10126582278481013,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05063291139240506,
+            "token_f1": 0.10126582278481013
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "ed9e09e7-e22ee204-4a73ca03-dc121d89-5ca5a446",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0057127375915459015,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray image shows no abnormalities. This means that the lungs, heart, and surrounding structures appear to be within normal limits, without any visible signs of disease or injury."
+        },
+        {
+          "id": "c768ecd2-dec91075-b6e6d204-6a9d0da8-e1ce939a",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.0031175917459267395,
+            "rouge_1": 0.21782178217821782,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.1188118811881188,
+            "token_f1": 0.21782178217821782
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "a2958de9-3f5b2b3e-0f868adb-1bfb09df-e2f90c3e",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4146873279282562e-05,
+            "rouge_1": 0.06837606837606838,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.06837606837606838
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c375e421-68a1e118-133cd727-71b1be6f-8d62fa58",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.002201665624777537,
+            "rouge_1": 0.12698412698412698,
+            "rouge_2": 0.032786885245901634,
+            "rouge_l": 0.09523809523809523,
+            "token_f1": 0.12698412698412698
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities."
+        },
+        {
+          "id": "cfc2ef1b-a194024a-6147d0d3-6d42379a-575c395f",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.020543532215722284,
+            "rouge_1": 0.24137931034482757,
+            "rouge_2": 0.03508771929824562,
+            "rouge_l": 0.17241379310344826,
+            "token_f1": 0.24137931034482757
+          },
+          "text": "The chest X-ray image shows no acute pulmonary lesions. This means that there are no visible signs of abnormalities or issues in the lungs at the time the image was taken. However, it is important to remember that a chest X-ray is just one diagnostic tool, and further evaluation may be needed depending on the patient's clinical history and symptoms."
+        },
+        {
+          "id": "9189763d-c3b6ee12-d0d89f14-29a0cb1f-e3dee331",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4834946650878e-07,
+            "rouge_1": 0.06349206349206349,
+            "rouge_2": 0.021390374331550804,
+            "rouge_l": 0.04232804232804233,
+            "token_f1": 0.06349206349206349
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "5dfffffd-68cbd012-f3428c65-ebd2ffd8-57793a0c",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 5.648428435570295e-07,
+            "rouge_1": 0.0903954802259887,
+            "rouge_2": 0.011428571428571427,
+            "rouge_l": 0.06779661016949153,
+            "token_f1": 0.0903954802259887
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c9fff184-4c819069-e151edf5-6591caae-9a76e8f0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4dd16b7e-2f2d14a6-589fa0e3-f24d8230-874d3c21",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00021324553639531503,
+            "rouge_1": 0.13333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0888888888888889,
+            "token_f1": 0.13333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4a834d65-3c7a5557-474061e3-4903563c-7ac8bfb4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0014309309660125028,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0634920634920635,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "469b6bc3-cd9c3a49-238f4c5d-38cce895-b225e937",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.005762389078884957,
+            "rouge_1": 0.18181818181818182,
+            "rouge_2": 0.061855670103092786,
+            "rouge_l": 0.1414141414141414,
+            "token_f1": 0.18181818181818182
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "e4e0e4ff-71138eac-7cef38bd-ce820887-d59037ff",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0024859501110325454,
+            "rouge_1": 0.17910447761194032,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.17910447761194032
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "cbe3bc41-e94a672f-5fdd94a6-aa2446b0-e821a444",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 3.100846144420793e-06,
+            "rouge_1": 0.08275862068965517,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05517241379310345,
+            "token_f1": 0.08275862068965517
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        }
+      ],
+      "clinical_metrics_available": false,
+      "clinical_metrics_note": "Gate uses lexical OE metrics only unless RadGraph/CheXbert/RaTEScore caches are supplied."
+    },
+    "riemann": {
+      "n": 64,
+      "mean": {
+        "bleu4": 0.004532347359241368,
+        "rouge_1": 0.13162561944658413,
+        "rouge_2": 0.014053375119121445,
+        "rouge_l": 0.09232230081395235,
+        "token_f1": 0.13162561944658413,
+        "length": 20.953125
+      },
+      "details": [
+        {
+          "id": "0c5f56c2-3d707105-b36af285-88d0ae60-48ef3fda",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.001884255116048999,
+            "rouge_1": 0.13636363636363638,
+            "rouge_2": 0.0,
+            "rouge_l": 0.13636363636363638,
+            "token_f1": 0.13636363636363638
+          },
+          "text": "The chest X-ray image shows no significant abnormalities."
+        },
+        {
+          "id": "62e28fc5-93fe9a0b-36f25627-e72bcdc7-fddf5f6e",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.018154759408086033,
+            "rouge_1": 0.15053763440860213,
+            "rouge_2": 0.02197802197802198,
+            "rouge_l": 0.12903225806451615,
+            "token_f1": 0.15053763440860213
+          },
+          "text": "The chest X-ray image shows a normal cardiac silhouette, which means that the heart appears to be within normal size and shape. Additionally, the lung fields appear to be clear, indicating that there are no visible signs of abnormalities or disease in the lungs."
+        },
+        {
+          "id": "c89c0bac-453ca322-9aec3b3a-af1073e8-833e0ccd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.008840901290828262,
+            "rouge_1": 0.23076923076923078,
+            "rouge_2": 0.05263157894736841,
+            "rouge_l": 0.1282051282051282,
+            "token_f1": 0.23076923076923078
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "fe5ade20-832e5f10-2fcedcb6-4c3c8557-e8bfb513",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0014276204593359576,
+            "rouge_1": 0.08955223880597014,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05970149253731343,
+            "token_f1": 0.08955223880597014
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities or findings."
+        },
+        {
+          "id": "a67e2e2b-c5902ccf-adf291f3-51b417af-5b71eeaa",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00019745706689626522,
+            "rouge_1": 0.13186813186813184,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10989010989010987,
+            "token_f1": 0.13186813186813184
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "686a2b90-af0e2b68-75f6acc2-ea6fecdc-a69f5c88",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0037957501432755053,
+            "rouge_1": 0.0816326530612245,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0816326530612245,
+            "token_f1": 0.0816326530612245
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e9683fa3-283e5f0c-c05c217c-b320d070-4a8e9fc0",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.018741184819455053,
+            "rouge_1": 0.20754716981132076,
+            "rouge_2": 0.019230769230769232,
+            "rouge_l": 0.1320754716981132,
+            "token_f1": 0.20754716981132076
+          },
+          "text": "The chest X-ray image shows no acute findings. This means that there are no apparent signs of an immediate or severe issue in the patient's chest. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "63f854b9-c24c2a15-3c4ee54e-72c08c57-5b8bcf18",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00037782661726376104,
+            "rouge_1": 0.07692307692307693,
+            "rouge_2": 0.0,
+            "rouge_l": 0.038461538461538464,
+            "token_f1": 0.07692307692307693
+          },
+          "text": "The chest X-ray appears to be normal."
+        },
+        {
+          "id": "962a470a-df0275b5-6b8e2125-e3cc9c90-bf7e0a66",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0015956699158037751,
+            "rouge_1": 0.0909090909090909,
+            "rouge_2": 0.03125,
+            "rouge_l": 0.0909090909090909,
+            "token_f1": 0.0909090909090909
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities."
+        },
+        {
+          "id": "7a238738-8c621632-91033197-65bce15b-74461a6c",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.016505073983692536,
+            "rouge_1": 0.21782178217821785,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.15841584158415845,
+            "token_f1": 0.21782178217821785
+          },
+          "text": "The chest X-ray image appears to be normal, which means that there are no visible abnormalities or issues detected in the image. However, it is important to note that a normal chest X-ray does not necessarily rule out all possible conditions or diseases. Further evaluation and clinical correlation may be needed depending on the patient's symptoms and medical history."
+        },
+        {
+          "id": "b9850dc4-c0036cbc-c577eb21-c259db2c-2d9368a6",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.003046075218960611,
+            "rouge_1": 0.14084507042253522,
+            "rouge_2": 0.0,
+            "rouge_l": 0.11267605633802816,
+            "token_f1": 0.14084507042253522
+          },
+          "text": "The chest X-ray appears to be normal. There are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "58081a4f-fb575b5b-d178ec1c-b8b6a415-24868cdf",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.002003084820486768,
+            "rouge_1": 0.1415929203539823,
+            "rouge_2": 0.018018018018018018,
+            "rouge_l": 0.10619469026548674,
+            "token_f1": 0.1415929203539823
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the image."
+        },
+        {
+          "id": "f2795cb8-461db7d5-3a023168-8b1300eb-d418d99f",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.030733935368453653,
+            "rouge_1": 0.22413793103448276,
+            "rouge_2": 0.03508771929824561,
+            "rouge_l": 0.15517241379310345,
+            "token_f1": 0.22413793103448276
+          },
+          "text": "The chest X-ray shows a large mass in the left breast. This finding is consistent with a condition called left breast adenocarcinoma. Adenocarcinoma is a type of cancer that originates in the glandular tissue of the breast. Further evaluation and tests would be needed to confirm the diagnosis and determine the appropriate course of treatment."
+        },
+        {
+          "id": "f0e11656-d359330e-8e7c2e5d-09c9d0d0-583da81f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.000659740917408449,
+            "rouge_1": 0.10810810810810811,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08108108108108109,
+            "token_f1": 0.10810810810810811
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "a6aacacb-72188cab-113e38f7-dc63b7cb-e0b3cd1a",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0026477490740115413,
+            "rouge_1": 0.10909090909090909,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07272727272727272,
+            "token_f1": 0.10909090909090909
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "93795e56-ef882771-fa23c36d-bf8cf35b-fc41aadc",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0038958260602491605,
+            "rouge_1": 0.12048192771084336,
+            "rouge_2": 0.0,
+            "rouge_l": 0.07228915662650602,
+            "token_f1": 0.12048192771084336
+          },
+          "text": "The chest X-ray shows normal bilateral lung fields, which means that both lungs appear to be healthy and free of any significant abnormalities."
+        },
+        {
+          "id": "bc25fa99-0d3766cc-7704edb7-5c7a4a63-dc65480a",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.01041327903993439,
+            "rouge_1": 0.19548872180451127,
+            "rouge_2": 0.04580152671755725,
+            "rouge_l": 0.09022556390977443,
+            "token_f1": 0.19548872180451127
+          },
+          "text": "The chest X-ray shows bilateral airspace opacities, which means there are areas of increased density or cloudiness in both lungs. Additionally, there is subsegmental atelectasis in the right lung. Atelectasis refers to the partial collapse or incomplete expansion of a lung unit."
+        },
+        {
+          "id": "dda9463c-13653db6-03e65f74-74ef0b98-4cceb8c9",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00019946556873970744,
+            "rouge_1": 0.11976047904191617,
+            "rouge_2": 0.03636363636363636,
+            "rouge_l": 0.08383233532934131,
+            "token_f1": 0.11976047904191617
+          },
+          "text": "The chest X-ray image shows normal findings, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "2ae8ec41-067f24d2-3f3ea6b7-113cb63b-aa3cc9e0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00044909382216117607,
+            "rouge_1": 0.10126582278481013,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0759493670886076,
+            "token_f1": 0.10126582278481013
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "9ffe4a2c-7cf9a8f6-c97f630e-4618ae86-c49236fd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.005546415709137174,
+            "rouge_1": 0.125,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08333333333333333,
+            "token_f1": 0.125
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities or findings."
+        },
+        {
+          "id": "992ca7aa-bc9d75c5-cab8f375-a649cfc4-2472eda9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 8.546682131903672e-06,
+            "rouge_1": 0.08391608391608393,
+            "rouge_2": 0.028368794326241134,
+            "rouge_l": 0.05594405594405595,
+            "token_f1": 0.08391608391608393
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "255f4674-83241c13-0d166114-1542f2fc-016ce9ee",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.011212080189815263,
+            "rouge_1": 0.14634146341463414,
+            "rouge_2": 0.0,
+            "rouge_l": 0.12195121951219512,
+            "token_f1": 0.14634146341463414
+          },
+          "text": "The chest X-ray shows a normal cardiac silhouette, which means that the size and shape of the heart appear to be within normal limits. Additionally, the lung fields appear to be clear, indicating no visible abnormalities or signs of disease."
+        },
+        {
+          "id": "8ce5b932-2d8ffc38-cb498d1d-80d458cd-cec8ac86",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.008034051672175633,
+            "rouge_1": 0.1956521739130435,
+            "rouge_2": 0.022222222222222223,
+            "rouge_l": 0.13043478260869565,
+            "token_f1": 0.1956521739130435
+          },
+          "text": "The chest X-ray appears to be normal. This means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures."
+        },
+        {
+          "id": "47168ca2-46fb63bc-f859ecb2-d1a48369-fbc2f3cf",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00024270512001415493,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06896551724137932,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "8a2ac87e-67bd3fae-31632688-1d6dbc89-594ca350",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00020913994339944383,
+            "rouge_1": 0.06818181818181819,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.06818181818181819
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "702ea80d-45e751b9-f310cea5-80c50417-c80de945",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.01118097948824991,
+            "rouge_1": 0.16822429906542055,
+            "rouge_2": 0.019047619047619046,
+            "rouge_l": 0.09345794392523364,
+            "token_f1": 0.16822429906542055
+          },
+          "text": "The chest X-ray appears to be normal, with no acute pathology detected. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "08da513d-5325ee2d-d57746d8-762cf929-bf1c0fa4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 6.4265164018803e-05,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0761904761904762,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "f95e2c77-d318c10b-c5113c5d-455b870e-eb3878e8",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 4.2581274785263345e-08,
+            "rouge_1": 0.03636363636363636,
+            "rouge_2": 0.0,
+            "rouge_l": 0.03636363636363636,
+            "token_f1": 0.03636363636363636
+          },
+          "text": "The chest X-ray shows no abnormalities."
+        },
+        {
+          "id": "5f860da1-0df267dd-71c297f8-f5833732-c79b751d",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.001969710187975136,
+            "rouge_1": 0.14285714285714288,
+            "rouge_2": 0.0,
+            "rouge_l": 0.10714285714285714,
+            "token_f1": 0.14285714285714288
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities."
+        },
+        {
+          "id": "3433048d-a6c5dc75-1a99a0b6-1f89a734-ef0b39b8",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.01918861188221031,
+            "rouge_1": 0.20512820512820512,
+            "rouge_2": 0.07894736842105263,
+            "rouge_l": 0.12820512820512822,
+            "token_f1": 0.20512820512820512
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or signs of disease in the image."
+        },
+        {
+          "id": "c7bb0e40-1f6e7506-544a2f87-79320653-743f3351",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0015376353905922496,
+            "rouge_1": 0.126984126984127,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09523809523809523,
+            "token_f1": 0.126984126984127
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0ebfea17-388d6e3e-19b4850d-4da084f8-0088c1c3",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0030559431061493074,
+            "rouge_1": 0.13793103448275862,
+            "rouge_2": 0.052631578947368425,
+            "rouge_l": 0.08620689655172413,
+            "token_f1": 0.13793103448275862
+          },
+          "text": "The chest X-ray shows an unremarkable appearance, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "e38221a2-36d9eedb-5a9af804-2eba7cb0-ea8d7ffd",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0031133259258090563,
+            "rouge_1": 0.1739130434782609,
+            "rouge_2": 0.022222222222222223,
+            "rouge_l": 0.10869565217391305,
+            "token_f1": 0.1739130434782609
+          },
+          "text": "The chest X-ray appears to be normal, which means there are no significant abnormalities or findings in the image."
+        },
+        {
+          "id": "f2166859-f4629ed4-014033b5-930fc410-8a9f51c9",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004048833680352581,
+            "rouge_1": 0.1111111111111111,
+            "rouge_2": 0.022727272727272728,
+            "rouge_l": 0.1111111111111111,
+            "token_f1": 0.1111111111111111
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1d1bc795-245a8bf2-267d7b91-209d78ab-a1e3f52f",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.012996125678280554,
+            "rouge_1": 0.12121212121212123,
+            "rouge_2": 0.0,
+            "rouge_l": 0.060606060606060615,
+            "token_f1": 0.12121212121212123
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "7c90c07b-1bc26a56-953fb718-22a14ecc-13cba6ed",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.0024588911834122315,
+            "rouge_1": 0.15714285714285714,
+            "rouge_2": 0.014492753623188406,
+            "rouge_l": 0.10000000000000002,
+            "token_f1": 0.15714285714285714
+          },
+          "text": "The chest X-ray shows no acute cardiopulmonary process. This means that there are no visible signs of any urgent or severe issues affecting the heart or lungs in the image."
+        },
+        {
+          "id": "fb85016a-bff648ee-d64f0e6d-8bf72ac1-ce274815",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.004284850521543335,
+            "rouge_1": 0.1680672268907563,
+            "rouge_2": 0.017094017094017092,
+            "rouge_l": 0.13445378151260504,
+            "token_f1": 0.1680672268907563
+          },
+          "text": "The chest X-ray shows no signs of acute cardiopulmonary disease. This means that there are no visible abnormalities or issues in the heart or lungs based on the image."
+        },
+        {
+          "id": "29a9ca2f-50292418-e78e2999-12755e18-3103a476",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.004241320205594977,
+            "rouge_1": 0.0821917808219178,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05479452054794521,
+            "token_f1": 0.0821917808219178
+          },
+          "text": "The chest X-ray shows no acute abnormalities. This means that there are no immediate or severe issues detected in the image."
+        },
+        {
+          "id": "1e7e7b71-9afe22dc-51aaf15b-79809a2a-bd5d192d",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00018897927189058693,
+            "rouge_1": 0.04545454545454546,
+            "rouge_2": 0.0,
+            "rouge_l": 0.04545454545454546,
+            "token_f1": 0.04545454545454546
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "1ed95e47-83a54489-79ebd823-db934045-acd7ca23",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0027147782086010953,
+            "rouge_1": 0.1724137931034483,
+            "rouge_2": 0.008695652173913044,
+            "rouge_l": 0.10344827586206896,
+            "token_f1": 0.1724137931034483
+          },
+          "text": "The chest X-ray shows no active lesions. This means that there are no visible signs of any abnormalities or issues in the chest area at the time the image was taken. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis."
+        },
+        {
+          "id": "9cc3281f-64ff9f26-d2f759b1-ee26296f-50d416d4",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.007991366463915135,
+            "rouge_1": 0.21686746987951805,
+            "rouge_2": 0.04938271604938271,
+            "rouge_l": 0.14457831325301204,
+            "token_f1": 0.21686746987951805
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "6d864779-3ef443ae-59264dbd-d63f8a20-cf4aa1e5",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.000323647630594324,
+            "rouge_1": 0.11851851851851852,
+            "rouge_2": 0.0,
+            "rouge_l": 0.08888888888888889,
+            "token_f1": 0.11851851851851852
+          },
+          "text": "The chest X-ray image shows normal findings, which means that there are no visible abnormalities or issues detected in the image."
+        },
+        {
+          "id": "fc2dd069-a9848695-2c9cc70c-cf06c0f6-38694917",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00025662941939286085,
+            "rouge_1": 0.11494252873563218,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.11494252873563218
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "0c0e3903-2f744a5c-3750bad4-6d772736-6bf1c8a2",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 1.6777557953887237e-05,
+            "rouge_1": 0.07633587786259542,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06106870229007634,
+            "token_f1": 0.07633587786259542
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities or findings."
+        },
+        {
+          "id": "a160eb01-5f36fb58-b0a04a57-1773448e-934b5036",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.000747816392168218,
+            "rouge_1": 0.1797752808988764,
+            "rouge_2": 0.022988505747126436,
+            "rouge_l": 0.1348314606741573,
+            "token_f1": 0.1797752808988764
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities or findings."
+        },
+        {
+          "id": "02ed59f0-43d0aa6f-4bf3340b-c891b4b8-42ea5f9b",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004158433999799628,
+            "rouge_1": 0.09999999999999999,
+            "rouge_2": 0.0,
+            "rouge_l": 0.075,
+            "token_f1": 0.09999999999999999
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "fae734b5-cdbcad8f-13e2fcaf-8e2731ff-ca43dfa9",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 1.2319071755728638e-05,
+            "rouge_1": 0.02564102564102564,
+            "rouge_2": 0.0,
+            "rouge_l": 0.02564102564102564,
+            "token_f1": 0.02564102564102564
+          },
+          "text": "The chest X-ray appears to be normal."
+        },
+        {
+          "id": "4639cd47-e73a89d3-48315552-a87979a8-7dd4f191",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 7.655435831626354e-05,
+            "rouge_1": 0.0784313725490196,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0588235294117647,
+            "token_f1": 0.0784313725490196
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "84ffb901-893b00a7-7f2090be-d5cf6a4e-c34ab763",
+          "selected_index": 1,
+          "metrics": {
+            "bleu4": 0.00654806458965617,
+            "rouge_1": 0.1627906976744186,
+            "rouge_2": 0.047619047619047616,
+            "rouge_l": 0.13953488372093023,
+            "token_f1": 0.1627906976744186
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no significant abnormalities or pathologies detected in the image."
+        },
+        {
+          "id": "146e8390-fd657795-492c6a0b-7aaa1bef-06c08c00",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.008409295344262019,
+            "rouge_1": 0.189873417721519,
+            "rouge_2": 0.03846153846153846,
+            "rouge_l": 0.12658227848101267,
+            "token_f1": 0.189873417721519
+          },
+          "text": "The chest X-ray image appears to be normal. This means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures. A normal chest X-ray typically shows clear lung fields, a normal heart size, and no signs of fluid or masses."
+        },
+        {
+          "id": "ac58123d-32acfa38-3c734ace-8ef59986-fcca19ef",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.00859405352612611,
+            "rouge_1": 0.2340425531914893,
+            "rouge_2": 0.021739130434782608,
+            "rouge_l": 0.1276595744680851,
+            "token_f1": 0.2340425531914893
+          },
+          "text": "The chest X-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the patient's lungs, heart, or surrounding structures."
+        },
+        {
+          "id": "ed9e09e7-e22ee204-4a73ca03-dc121d89-5ca5a446",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0057127375915459015,
+            "rouge_1": 0.09195402298850575,
+            "rouge_2": 0.0,
+            "rouge_l": 0.09195402298850575,
+            "token_f1": 0.09195402298850575
+          },
+          "text": "The chest X-ray image shows no abnormalities. This means that the lungs, heart, and surrounding structures appear to be within normal limits, without any visible signs of disease or injury."
+        },
+        {
+          "id": "c768ecd2-dec91075-b6e6d204-6a9d0da8-e1ce939a",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.0031175917459267395,
+            "rouge_1": 0.21782178217821782,
+            "rouge_2": 0.0202020202020202,
+            "rouge_l": 0.1188118811881188,
+            "token_f1": 0.21782178217821782
+          },
+          "text": "The chest X-ray appears to be unremarkable, which means that there are no significant abnormalities or findings detected in the image."
+        },
+        {
+          "id": "a2958de9-3f5b2b3e-0f868adb-1bfb09df-e2f90c3e",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4146873279282562e-05,
+            "rouge_1": 0.06837606837606838,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.06837606837606838
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "c375e421-68a1e118-133cd727-71b1be6f-8d62fa58",
+          "selected_index": 3,
+          "metrics": {
+            "bleu4": 0.002201665624777537,
+            "rouge_1": 0.12698412698412698,
+            "rouge_2": 0.032786885245901634,
+            "rouge_l": 0.09523809523809523,
+            "token_f1": 0.12698412698412698
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities."
+        },
+        {
+          "id": "cfc2ef1b-a194024a-6147d0d3-6d42379a-575c395f",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.020543532215722284,
+            "rouge_1": 0.24137931034482757,
+            "rouge_2": 0.03508771929824562,
+            "rouge_l": 0.17241379310344826,
+            "token_f1": 0.24137931034482757
+          },
+          "text": "The chest X-ray image shows no acute pulmonary lesions. This means that there are no visible signs of abnormalities or issues in the lungs at the time the image was taken. However, it is important to remember that a chest X-ray is just one diagnostic tool, and further evaluation may be needed depending on the patient's clinical history and symptoms."
+        },
+        {
+          "id": "9189763d-c3b6ee12-d0d89f14-29a0cb1f-e3dee331",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 2.4834946650878e-07,
+            "rouge_1": 0.06349206349206349,
+            "rouge_2": 0.021390374331550804,
+            "rouge_l": 0.04232804232804233,
+            "token_f1": 0.06349206349206349
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "5dfffffd-68cbd012-f3428c65-ebd2ffd8-57793a0c",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 9.455511244850153e-08,
+            "rouge_1": 0.056818181818181816,
+            "rouge_2": 0.0,
+            "rouge_l": 0.03409090909090909,
+            "token_f1": 0.056818181818181816
+          },
+          "text": "The chest X-ray appears to be normal, without any significant abnormalities."
+        },
+        {
+          "id": "c9fff184-4c819069-e151edf5-6591caae-9a76e8f0",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0004850029148305635,
+            "rouge_1": 0.10256410256410257,
+            "rouge_2": 0.0,
+            "rouge_l": 0.05128205128205129,
+            "token_f1": 0.10256410256410257
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4dd16b7e-2f2d14a6-589fa0e3-f24d8230-874d3c21",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00021324553639531503,
+            "rouge_1": 0.13333333333333333,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0888888888888889,
+            "token_f1": 0.13333333333333333
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "4a834d65-3c7a5557-474061e3-4903563c-7ac8bfb4",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0014309309660125028,
+            "rouge_1": 0.09523809523809523,
+            "rouge_2": 0.0,
+            "rouge_l": 0.0634920634920635,
+            "token_f1": 0.09523809523809523
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "469b6bc3-cd9c3a49-238f4c5d-38cce895-b225e937",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.00016604093971958234,
+            "rouge_1": 0.06593406593406592,
+            "rouge_2": 0.0,
+            "rouge_l": 0.06593406593406592,
+            "token_f1": 0.06593406593406592
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "e4e0e4ff-71138eac-7cef38bd-ce820887-d59037ff",
+          "selected_index": 0,
+          "metrics": {
+            "bleu4": 0.0024859501110325454,
+            "rouge_1": 0.17910447761194032,
+            "rouge_2": 0.03076923076923077,
+            "rouge_l": 0.08955223880597016,
+            "token_f1": 0.17910447761194032
+          },
+          "text": "The chest X-ray appears to be normal, with no significant abnormalities detected."
+        },
+        {
+          "id": "cbe3bc41-e94a672f-5fdd94a6-aa2446b0-e821a444",
+          "selected_index": 2,
+          "metrics": {
+            "bleu4": 0.0020746456221029655,
+            "rouge_1": 0.15384615384615385,
+            "rouge_2": 0.011976047904191616,
+            "rouge_l": 0.10650887573964496,
+            "token_f1": 0.15384615384615385
+          },
+          "text": "The chest X-ray image shows no active disease. This means that there are no visible signs of any abnormalities or issues in the patient's lungs or chest area at the time the X-ray was taken."
+        }
+      ],
+      "clinical_metrics_available": false,
+      "clinical_metrics_note": "Gate uses lexical OE metrics only unless RadGraph/CheXbert/RaTEScore caches are supplied."
+    }
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "version": "anchor-let-report-analysis-v1",
+  "source_fingerprint": "6e87a67f880ef2af3bc6adfb7cf5d955ec1a2408bd3729c43d495684b0a6c616",
+  "primary_metric": "radgraph_simple",
+  "primary_endpoint_pre_registered_before_scoring": true,
+  "ground_truth_used_for_generation_or_selection": false,
+  "ce_parser_used": false,
+  "label_logits_used": false,
+  "bootstrap": 10000,
+  "seed": 20260728,
+  "metric_direction_validation": {
+    "direction_checks": {
+      "abnormal_finding_direction": true,
+      "critical_contradiction_direction": true,
+      "normal_no_finding_direction": true
+    },
+    "groups": {
+      "abnormal": {
+        "metrics": {
+          "chexbert_exact_match_5": {
+            "contradicted_mean": 0.2631578947368421,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.7368421052631579,
+            "passed": true
+          },
+          "chexbert_example_f1_14": {
+            "contradicted_mean": 0.0,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 1.0,
+            "passed": true
+          },
+          "radgraph_complete": {
+            "contradicted_mean": 0.15440122273454726,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.8455987772654529,
+            "passed": true
+          },
+          "radgraph_partial": {
+            "contradicted_mean": 0.20941601977585153,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.7905839802241484,
+            "passed": true
+          },
+          "radgraph_simple": {
+            "contradicted_mean": 0.2160449082395334,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.7839550917604666,
+            "passed": true
+          },
+          "ratescore": {
+            "contradicted_mean": 0.46962622551352556,
+            "finite": true,
+            "matched_mean": 0.9996598743726605,
+            "mean_delta": 0.5300336488591348,
+            "passed": true
+          }
+        },
+        "n": 19,
+        "passed": true
+      },
+      "all": {
+        "metrics": {
+          "chexbert_exact_match_5": {
+            "contradicted_mean": 0.15625,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.84375,
+            "passed": true
+          },
+          "chexbert_example_f1_14": {
+            "contradicted_mean": 0.0125,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.9875,
+            "passed": true
+          },
+          "radgraph_complete": {
+            "contradicted_mean": 0.1197908053637168,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.8802091946362831,
+            "passed": true
+          },
+          "radgraph_partial": {
+            "contradicted_mean": 0.15256906574467238,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.8474309342553277,
+            "passed": true
+          },
+          "radgraph_simple": {
+            "contradicted_mean": 0.15922235957433134,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.8407776404256686,
+            "passed": true
+          },
+          "ratescore": {
+            "contradicted_mean": 0.4119769110071877,
+            "finite": true,
+            "matched_mean": 0.9997980466559582,
+            "mean_delta": 0.5878211356487704,
+            "passed": true
+          }
+        },
+        "n": 32,
+        "passed": true
+      },
+      "normal": {
+        "metrics": {
+          "chexbert_exact_match_5": {
+            "contradicted_mean": 0.0,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 1.0,
+            "passed": true
+          },
+          "chexbert_example_f1_14": {
+            "contradicted_mean": 0.03076923076923077,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.9692307692307692,
+            "passed": true
+          },
+          "radgraph_complete": {
+            "contradicted_mean": 0.06920634920634922,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.9307936507936507,
+            "passed": true
+          },
+          "radgraph_partial": {
+            "contradicted_mean": 0.06948505600679515,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.9305149439932048,
+            "passed": true
+          },
+          "radgraph_simple": {
+            "contradicted_mean": 0.07617401921749749,
+            "finite": true,
+            "matched_mean": 1.0,
+            "mean_delta": 0.9238259807825024,
+            "passed": true
+          },
+          "ratescore": {
+            "contradicted_mean": 0.327720220574848,
+            "finite": true,
+            "matched_mean": 0.9999999907623162,
+            "mean_delta": 0.6722797701874684,
+            "passed": true
+          }
+        },
+        "n": 13,
+        "passed": true
+      }
+    },
+    "n_validation": 32,
+    "passed": true
+  },
+  "clinical_scorer_fingerprints": {
+    "baseline": "1313801266f706089ec08e51f3737b7c3364d3635864884485988e1838212822",
+    "let": "ea3e58f85275c16d60e15d02adce59b14fb8fa74f029683da5059b705a0055c3"
+  },
+  "overall": {
+    "n": 32,
+    "metrics": {
+      "radgraph_simple": {
+        "baseline": 0.009665146546423448,
+        "let": 0.09896405679536378,
+        "delta": 0.08929891024894034,
+        "paired_bootstrap_95ci": [
+          0.06581652129029476,
+          0.11535219081828553
+        ],
+        "win_tie_loss": [
+          24,
+          8,
+          0
+        ]
+      },
+      "radgraph_partial": {
+        "baseline": 0.003676470588235294,
+        "let": 0.08539419642072184,
+        "delta": 0.08171772583248654,
+        "paired_bootstrap_95ci": [
+          0.05985952597229308,
+          0.10439539981793364
+        ],
+        "win_tie_loss": [
+          24,
+          8,
+          0
+        ]
+      },
+      "radgraph_complete": {
+        "baseline": 0.003676470588235294,
+        "let": 0.04470544500065429,
+        "delta": 0.041028974412419,
+        "paired_bootstrap_95ci": [
+          0.026516841876667634,
+          0.05719631858826123
+        ],
+        "win_tie_loss": [
+          18,
+          14,
+          0
+        ]
+      },
+      "ratescore": {
+        "baseline": 0.3304413525119305,
+        "let": 0.3885871572576492,
+        "delta": 0.05814580474571868,
+        "paired_bootstrap_95ci": [
+          0.03032155459791214,
+          0.08815560339297024
+        ],
+        "win_tie_loss": [
+          23,
+          0,
+          9
+        ]
+      },
+      "chexbert_example_f1_14": {
+        "baseline": 0.3125,
+        "let": 0.3125,
+        "delta": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "win_tie_loss": [
+          0,
+          32,
+          0
+        ]
+      },
+      "chexbert_exact_match_5": {
+        "baseline": 0.53125,
+        "let": 0.53125,
+        "delta": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "win_tie_loss": [
+          0,
+          32,
+          0
+        ]
+      },
+      "rouge_l": {
+        "baseline": 0.10093592274277051,
+        "let": 0.1722698862516664,
+        "delta": 0.0713339635088959,
+        "paired_bootstrap_95ci": [
+          0.05627012366703936,
+          0.08653951956313818
+        ],
+        "win_tie_loss": [
+          29,
+          0,
+          3
+        ]
+      },
+      "word_count": {
+        "baseline": 12.375,
+        "let": 57.65625,
+        "delta": 45.28125,
+        "paired_bootstrap_95ci": [
+          41.0625,
+          48.875
+        ],
+        "win_tie_loss": [
+          32,
+          0,
+          0
+        ]
+      }
+    },
+    "normal_template_rate": {
+      "baseline": 0.96875,
+      "let": 0.0625
+    },
+    "unique_output_count": {
+      "baseline": 2,
+      "let": 7
+    },
+    "text_change_rate": 1.0
+  },
+  "by_dataset": {
+    "iuxray": {
+      "n": 16,
+      "metrics": {
+        "radgraph_simple": {
+          "baseline": 0.007352941176470588,
+          "let": 0.1392547503513934,
+          "delta": 0.1319018091749228,
+          "paired_bootstrap_95ci": [
+            0.10448918813004138,
+            0.1644145771849158
+          ],
+          "win_tie_loss": [
+            16,
+            0,
+            0
+          ]
+        },
+        "radgraph_partial": {
+          "baseline": 0.007352941176470588,
+          "let": 0.12220311581704753,
+          "delta": 0.11485017464057694,
+          "paired_bootstrap_95ci": [
+            0.0927892194973251,
+            0.13860791893001972
+          ],
+          "win_tie_loss": [
+            16,
+            0,
+            0
+          ]
+        },
+        "radgraph_complete": {
+          "baseline": 0.007352941176470588,
+          "let": 0.06562285328683379,
+          "delta": 0.05826991211036321,
+          "paired_bootstrap_95ci": [
+            0.034275231440952354,
+            0.08427986907820059
+          ],
+          "win_tie_loss": [
+            11,
+            5,
+            0
+          ]
+        },
+        "ratescore": {
+          "baseline": 0.36477089933310014,
+          "let": 0.42890375445391865,
+          "delta": 0.06413285512081854,
+          "paired_bootstrap_95ci": [
+            0.022320083005187535,
+            0.11188332030983368
+          ],
+          "win_tie_loss": [
+            11,
+            0,
+            5
+          ]
+        },
+        "chexbert_example_f1_14": {
+          "baseline": 0.5625,
+          "let": 0.5625,
+          "delta": 0.0,
+          "paired_bootstrap_95ci": [
+            0.0,
+            0.0
+          ],
+          "win_tie_loss": [
+            0,
+            16,
+            0
+          ]
+        },
+        "chexbert_exact_match_5": {
+          "baseline": 0.8125,
+          "let": 0.8125,
+          "delta": 0.0,
+          "paired_bootstrap_95ci": [
+            0.0,
+            0.0
+          ],
+          "win_tie_loss": [
+            0,
+            16,
+            0
+          ]
+        },
+        "rouge_l": {
+          "baseline": 0.09392895078015931,
+          "let": 0.16833566611604045,
+          "delta": 0.07440671533588114,
+          "paired_bootstrap_95ci": [
+            0.05283418387100219,
+            0.095501114337902
+          ],
+          "win_tie_loss": [
+            15,
+            0,
+            1
+          ]
+        },
+        "word_count": {
+          "baseline": 12.0,
+          "let": 58.9375,
+          "delta": 46.9375,
+          "paired_bootstrap_95ci": [
+            41.8125,
+            50.375
+          ],
+          "win_tie_loss": [
+            16,
+            0,
+            0
+          ]
+        }
+      },
+      "normal_template_rate": {
+        "baseline": 1.0,
+        "let": 0.0625
+      },
+      "unique_output_count": {
+        "baseline": 1,
+        "let": 5
+      },
+      "text_change_rate": 1.0
+    },
+    "mimic": {
+      "n": 16,
+      "metrics": {
+        "radgraph_simple": {
+          "baseline": 0.011977351916376309,
+          "let": 0.058673363239334156,
+          "delta": 0.046696011322957844,
+          "paired_bootstrap_95ci": [
+            0.021535354805992033,
+            0.07394958054259579
+          ],
+          "win_tie_loss": [
+            8,
+            8,
+            0
+          ]
+        },
+        "radgraph_partial": {
+          "baseline": 0.0,
+          "let": 0.04858527702439613,
+          "delta": 0.04858527702439613,
+          "paired_bootstrap_95ci": [
+            0.020724090597117363,
+            0.07973800665910082
+          ],
+          "win_tie_loss": [
+            8,
+            8,
+            0
+          ]
+        },
+        "radgraph_complete": {
+          "baseline": 0.0,
+          "let": 0.02378803671447479,
+          "delta": 0.02378803671447479,
+          "paired_bootstrap_95ci": [
+            0.01033655309950067,
+            0.03765122277519867
+          ],
+          "win_tie_loss": [
+            7,
+            9,
+            0
+          ]
+        },
+        "ratescore": {
+          "baseline": 0.2961118056907609,
+          "let": 0.34827056006137974,
+          "delta": 0.05215875437061882,
+          "paired_bootstrap_95ci": [
+            0.02083337079687642,
+            0.08937040953939257
+          ],
+          "win_tie_loss": [
+            12,
+            0,
+            4
+          ]
+        },
+        "chexbert_example_f1_14": {
+          "baseline": 0.0625,
+          "let": 0.0625,
+          "delta": 0.0,
+          "paired_bootstrap_95ci": [
+            0.0,
+            0.0
+          ],
+          "win_tie_loss": [
+            0,
+            16,
+            0
+          ]
+        },
+        "chexbert_exact_match_5": {
+          "baseline": 0.25,
+          "let": 0.25,
+          "delta": 0.0,
+          "paired_bootstrap_95ci": [
+            0.0,
+            0.0
+          ],
+          "win_tie_loss": [
+            0,
+            16,
+            0
+          ]
+        },
+        "rouge_l": {
+          "baseline": 0.10794289470538171,
+          "let": 0.17620410638729234,
+          "delta": 0.06826121168191066,
+          "paired_bootstrap_95ci": [
+            0.046560108527620846,
+            0.08991533938085852
+          ],
+          "win_tie_loss": [
+            14,
+            0,
+            2
+          ]
+        },
+        "word_count": {
+          "baseline": 12.75,
+          "let": 56.375,
+          "delta": 43.625,
+          "paired_bootstrap_95ci": [
+            37.0,
+            49.5
+          ],
+          "win_tie_loss": [
+            16,
+            0,
+            0
+          ]
+        }
+      },
+      "normal_template_rate": {
+        "baseline": 0.9375,
+        "let": 0.0625
+      },
+      "unique_output_count": {
+        "baseline": 2,
+        "let": 5
+      },
+      "text_change_rate": 1.0
+    }
+  },
+  "interpretation_guard": "Pilot evidence only. A longer or less templated report is not necessarily more factual; clinical metric deltas and confidence intervals govern the claim."
+}

@@ -15,6 +15,18 @@ anchor:
     tasks: [vqa_binary, multi_choice]
   sgta_confgen:
     tasks: [open_vqa, report_generation]
+  layer_evidence_transport:
+    tasks: [vqa_binary, open_vqa, report_generation]
+  anchor_flow_sgta:
+    tasks: [vqa_binary, open_vqa, report_generation]
+  anchor_riemann_gate:
+    tasks: [vqa_binary, open_vqa, report_generation]
+  anchor_nbp:
+    tasks: [vqa_binary, multi_choice]
+  visual_odds_amplification:
+    tasks: [vqa_binary]
+  orbit_current_steering:
+    tasks: [open_vqa, report_generation]
 
 ce_methods:
   sca_t_tim:
@@ -43,6 +55,12 @@ mitigation:
     tasks: [vqa_binary, report_generation, open_vqa]
   vista:
     tasks: [vqa_binary, report_generation, open_vqa]
+  agla:
+    tasks: [vqa_binary, open_vqa]
+  clearsight:
+    tasks: [vqa_binary, open_vqa]
+  vhr:
+    tasks: [vqa_binary, open_vqa]
 
 judges:
   rule_parser:

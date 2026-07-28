@@ -191,13 +191,10 @@ class AnchorAdapterMixin:
         output = []
         for index, generation in enumerate(generations):
             text = generation.text.strip()
-            if generation.token_count >= max_new_tokens:
-                raise RuntimeError(
-                    f"candidate {index} reached max_new_tokens without EOS; "
-                    "increase the fixed generation limit"
-                )
-            if not text:
-                raise RuntimeError(f"empty generated candidate at index {index}")
+            hit_max_new_tokens = generation.token_count >= max_new_tokens
+            empty_response = not text
+            if empty_response:
+                text = "[EMPTY_RESPONSE]"
             output.append(
                 {
                     "candidate_id": f"candidate-{index}",
@@ -210,6 +207,8 @@ class AnchorAdapterMixin:
                     "text": text,
                     "generation_mean_nll": float(generation.uncertainty),
                     "generation_token_count": int(generation.token_count),
+                    "hit_max_new_tokens": bool(hit_max_new_tokens),
+                    "empty_response": bool(empty_response),
                 }
             )
         return output
