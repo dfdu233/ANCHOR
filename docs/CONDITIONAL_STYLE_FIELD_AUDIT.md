@@ -208,3 +208,63 @@ generic evidence contraction. The centroid uses other clean target-development
 cases and is therefore transductive; it is not a source-only deployment
 operator. Evidence:
 `corrected_runs/clinical_evidence_attractor_v1/`.
+
+## Residual clinical style signature
+
+The generic centroid component does not exhaust the complete-sentence
+clinical evidence displacement. For each case \(i\) and fixed style \(s\), we
+first remove the projection onto the patient-LOO clean-centroid direction:
+
+\[
+\rho_{i,s}
+=
+\Delta_{i,s}
+-
+\frac{\langle\Delta_{i,s},r_i\rangle}{\|r_i\|^2}r_i,
+\qquad
+r_i=\mu_{-p(i)}-e_i.
+\]
+
+Before testing style identity, we additionally subtract each case's mean
+residual over the six styles. This prevents a case-common residual or grand
+effect from being counted as a reusable style signature. In this
+case-centered field, the exact style effect accounts for only 1.02% of
+residual energy in the Qwen base model and 1.12% in Huatuo; case effects still
+account for 76.65% and 69.46%.
+
+Despite its small magnitude, the signature is reproducible across patients.
+A leave-one-patient style prototype identifies the six fixed styles at 27.08%
+for Qwen and 21.61% for Huatuo, versus chance \(16.67\%\). Patient-blocked
+style permutations give \(p=.001\) and \(p=.034\), respectively. Prototype
+error reduction over the zero predictor is only 2.33% and 0.97%, but exceeds
+its corresponding permutation null in both models (\(p=.001\)).
+
+The matched Huatuo/base style directions have mean cosine 0.579. Only eight
+of all \(6!=720\) cross-checkpoint style assignments match or exceed this
+value (exact \(p=.0111\)). Disease-wise whitening preserves the result:
+matched mean cosine 0.582 and exact \(p=.0069\). Raw-coordinate Huatuo
+signature norms are 24.5%--52.1% of the base norms, but this ordering does not
+hold under all reasonable scalings. It therefore cannot identify a causal
+attenuation effect of medical tuning.
+
+The supported conclusion is narrow:
+
+> After generic centroid contraction and each case's common residual are
+> removed, the six fixed spectral transformations retain a weak,
+> cross-patient disease-evidence signature shared by exact base and medical
+> checkpoints.
+
+This supplies aggregate alignment across the two paired checkpoints, not
+proof that every style direction transfers or that an architecture-wide
+mechanism has been independently reproduced. It explains about 1% of
+residual energy and is not itself a useful decoder. The tests are exploratory
+and unadjusted; Huatuo style-identification \(p=.034\) does not survive a
+two-endpoint Bonferroni correction.
+The independent content-removed \(2\times2\) experiment now has a frozen
+directional prediction: its style-only evidence drift should align with the
+exported raw or whitened \(6\times6\) signature vectors. Failure to reproduce
+that direction falsifies the prior-switching interpretation; reproduction
+without generated utility still does not justify a mitigation method.
+
+Evidence and exported vectors:
+`corrected_runs/residual_style_signature_v1/`.

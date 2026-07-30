@@ -338,3 +338,40 @@ Evidence:
   development data, a target-transductive patient-LOO centroid, no generated
   accuracy/factuality, source-only inference, or natural-scanner claim.
 - **Evidence:** `corrected_runs/clinical_evidence_attractor_v1/`.
+
+## 2026-07-31: Residual clinical style signature
+
+- **Question:** after removing generic clean-centroid contraction, do fixed
+  source-spectrum styles retain reproducible disease-evidence directions?
+- **Estimator:** each style displacement is residualized against its
+  patient-LOO clean-centroid direction and then centered within case across
+  styles. Style prototypes are trained on other patients only; the null
+  independently permutes the six fixed style labels within patient.
+- **Magnitude:** the residual style term explains 1.02% of Qwen-base and
+  1.12% of Huatuo residual energy. Case terms remain dominant at 76.65% and
+  69.46%.
+- **Cross-patient signal:** held-patient six-way style identification is
+  27.08% for base and 21.61% for Huatuo, against chance 16.67%;
+  patient-blocked permutation \(p=.001\) and \(p=.034\). Prototype
+  \(R^2_0\) is only 2.33% and 0.97%, although both exceed permutation
+  (\(p=.001\)).
+- **Cross-checkpoint signal:** matched style directions have mean cosine
+  0.579 and exact \(6!\)-assignment \(p=.0111\). Disease-wise whitening gives
+  cosine 0.582 and \(p=.0069\).
+- **Interpretation:** a weak cohort-conditional spectral signature survives
+  generic contraction and shows aggregate alignment across two paired
+  checkpoints; this is not evidence that every style direction transfers,
+  of an independently replicated architecture-wide mechanism, of a
+  medical-training-specific clinical prior, or of an effective decoder. Raw
+  Huatuo signatures are smaller for all six styles, but that ordering is
+  scaling-sensitive and cannot support a causal tuning claim.
+- **Decisive handoff:** the independent content-removed \(2\times2\)
+  experiment must reproduce the frozen exported disease directions. If it
+  does not, style-conditioned prior switching is falsified; if it does but
+  generated utility is absent, no mitigation claim follows.
+- **Limits:** exploratory multiple metrics, teacher forcing, six findings,
+  six synthetic styles, 64 exposed MIMIC development images/58 patients,
+  target-transductive centroid, two checkpoints, no natural scanner or
+  generated-accuracy result. Huatuo style-ID \(p=.034\) is nominal and does
+  not survive a two-endpoint Bonferroni correction.
+- **Evidence:** `corrected_runs/residual_style_signature_v1/`.
