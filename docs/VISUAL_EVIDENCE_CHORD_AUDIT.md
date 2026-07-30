@@ -138,6 +138,26 @@ evidence geometry. It explains why one global source center, NBP, and
 source-level offset corrections repeatedly fail: most of the induced change
 is not a reusable style main effect.
 
+### The bank is heterogeneous
+
+The small aggregate style term does not mean every source style is pure
+noise. In 2,000 random patient split-halves, the mean drift direction was
+reproducible for three of six clusters:
+
+| Style | Median split-half cosine | 95% interval |
+|---|---:|---:|
+| 0 | .366 | [-.257, .852] |
+| 1 | .283 | [-.330, .815] |
+| 2 | .732 | [.255, .949] |
+| 3 | .779 | [.404, .960] |
+| 4 | .017 | [-.575, .760] |
+| 5 | .839 | [.546, .972] |
+
+This supports a narrower hypothesis: a subset of discrete source styles may
+induce a stable but small prior displacement, while averaging all source
+styles into one center destroys that structure. It does not yet show that
+subtracting such a direction improves generated answers.
+
 ## Refuted alternative explanation
 
 The per-image chord-orthogonal fraction was not significantly associated with

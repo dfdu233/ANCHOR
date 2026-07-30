@@ -234,6 +234,63 @@ def susceptibility_correlations(
     }
 
 
+def split_half_style_reproducibility(
+    evidence: dict[str, dict[str, np.ndarray]],
+    styles: list[str],
+    draws: int = 2000,
+    seed: int = 2027,
+) -> dict:
+    """Measure whether each style has a cross-patient reproducible direction."""
+
+    cases = np.asarray(sorted(evidence))
+    rng = np.random.default_rng(seed)
+    values = {style: [] for style in styles}
+    midpoint = len(cases) // 2
+    for _ in range(draws):
+        shuffled = rng.permutation(cases)
+        first, second = shuffled[:midpoint], shuffled[midpoint:]
+        for style in styles:
+            first_mean = np.mean(
+                [
+                    evidence[case][style] - evidence[case]["real"]
+                    for case in first
+                ],
+                axis=0,
+            )
+            second_mean = np.mean(
+                [
+                    evidence[case][style] - evidence[case]["real"]
+                    for case in second
+                ],
+                axis=0,
+            )
+            values[style].append(cosine(first_mean, second_mean))
+    return {
+        "definition": (
+            "cosine between mean complete-sentence evidence drifts in two "
+            "random disjoint patient halves"
+        ),
+        "draws": draws,
+        "seed": seed,
+        "by_style": {
+            style: {
+                "median_cosine": float(np.median(cosines)),
+                "ci95": [
+                    float(value)
+                    for value in np.quantile(cosines, [0.025, 0.975])
+                ],
+                "fraction_positive": float(
+                    np.mean(np.asarray(cosines) > 0)
+                ),
+                "direction_certified": bool(
+                    np.quantile(cosines, 0.025) > 0
+                ),
+            }
+            for style, cosines in values.items()
+        },
+    }
+
+
 def cross_validated_mse(
     evidence: dict[str, dict[str, np.ndarray]],
     styles: list[str],
@@ -449,6 +506,7 @@ def main() -> None:
     susceptibility = susceptibility_correlations(
         evidence, packed["image_metrics"], styles
     )
+    split_half = split_half_style_reproducibility(evidence, styles)
     case_order = sorted(evidence)
     chord_minus_style = np.asarray(
         [
@@ -563,6 +621,7 @@ def main() -> None:
         },
         "style_case_variance_decomposition": variance_decomposition,
         "patient_style_susceptibility": susceptibility,
+        "split_half_style_direction": split_half,
         "decision": {
             "intervention_nontrivial": bool(
                 np.median(relative_values) >= 0.05

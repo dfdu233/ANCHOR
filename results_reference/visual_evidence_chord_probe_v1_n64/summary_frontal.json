@@ -152,6 +152,67 @@
       }
     }
   },
+  "split_half_style_direction": {
+    "definition": "cosine between mean complete-sentence evidence drifts in two random disjoint patient halves",
+    "draws": 2000,
+    "seed": 2027,
+    "by_style": {
+      "style_0": {
+        "median_cosine": 0.3656778934455785,
+        "ci95": [
+          -0.2572288667347999,
+          0.8518075821137374
+        ],
+        "fraction_positive": 0.8675,
+        "direction_certified": false
+      },
+      "style_1": {
+        "median_cosine": 0.25014027988117243,
+        "ci95": [
+          -0.3475405601504827,
+          0.785876482057975
+        ],
+        "fraction_positive": 0.7665,
+        "direction_certified": false
+      },
+      "style_2": {
+        "median_cosine": 0.7227417409076826,
+        "ci95": [
+          0.23619132835293036,
+          0.9462632816459747
+        ],
+        "fraction_positive": 0.9975,
+        "direction_certified": true
+      },
+      "style_3": {
+        "median_cosine": 0.7741424472745039,
+        "ci95": [
+          0.36763392855060384,
+          0.9529840499299708
+        ],
+        "fraction_positive": 1.0,
+        "direction_certified": true
+      },
+      "style_4": {
+        "median_cosine": 0.015987146393652063,
+        "ci95": [
+          -0.5847040250634732,
+          0.7472900316896405
+        ],
+        "fraction_positive": 0.518,
+        "direction_certified": false
+      },
+      "style_5": {
+        "median_cosine": 0.837151096962416,
+        "ci95": [
+          0.5240979228994365,
+          0.9707806378690023
+        ],
+        "fraction_positive": 1.0,
+        "direction_certified": true
+      }
+    }
+  },
   "decision": {
     "intervention_nontrivial": true,
     "content_preserved": true,

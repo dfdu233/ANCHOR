@@ -3,6 +3,7 @@ import numpy as np
 from anchor.corrected_sgta.analyze_visual_evidence_chord_probe import (
     chord_projection,
     cross_validated_mse,
+    split_half_style_reproducibility,
     style_case_variance_decomposition,
     susceptibility_correlations,
 )
@@ -111,3 +112,19 @@ def test_susceptibility_detects_monotone_pixel_change():
         result["correlations"]["mean_pixel_change"]["spearman_rho"],
         1.0,
     )
+
+
+def test_split_half_certifies_shared_style_direction():
+    evidence = {}
+    for index in range(8):
+        real = np.asarray([0.1 * index, -0.05 * index])
+        evidence[str(index)] = {
+            "real": real,
+            "style_0": real + np.asarray([1.0, -0.5]),
+        }
+    result = split_half_style_reproducibility(
+        evidence, ["style_0"], draws=100
+    )
+    style = result["by_style"]["style_0"]
+    assert np.isclose(style["median_cosine"], 1.0)
+    assert style["direction_certified"]
