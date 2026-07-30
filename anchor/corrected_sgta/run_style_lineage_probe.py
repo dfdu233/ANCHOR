@@ -27,6 +27,14 @@ QUESTIONS = {
     "edema": "Is there evidence of pulmonary edema in this chest radiograph? Answer in one complete sentence.",
     "device": "Is there an indwelling medical device in this chest radiograph? Answer in one complete sentence.",
 }
+CONDITION_NAMES = {
+    "pneumothorax": "pneumothorax",
+    "effusion": "pleural effusion",
+    "opacity": "pulmonary opacity or consolidation",
+    "cardiomegaly": "cardiomegaly",
+    "edema": "pulmonary edema",
+    "device": "an indwelling medical device",
+}
 REPORT_PROMPT = (
     "Write a complete radiology report for this chest radiograph, including "
     "findings and impression. Do not invent details not supported by the image."
@@ -53,6 +61,11 @@ def main() -> None:
     parser.add_argument(
         "--task", choices=("binary", "report"), default="binary"
     )
+    parser.add_argument(
+        "--binary-frame",
+        choices=("positive", "neutral", "negative", "contrast"),
+        default="positive",
+    )
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     prototypes = read_jsonl(args.manifest)
@@ -71,18 +84,52 @@ def main() -> None:
     ).to("cuda").eval()
     processor.tokenizer.padding_side = "left"
     config_sha = sha256(args.model / "config.json")
-    questions = (
-        QUESTIONS
-        if args.task == "binary"
-        else {"report": REPORT_PROMPT}
-    )
+    if args.task == "report":
+        question_items = [("report", "report", REPORT_PROMPT)]
+    elif args.binary_frame == "positive":
+        question_items = [
+            (disease, "positive", question)
+            for disease, question in QUESTIONS.items()
+        ]
+    else:
+        neutral_questions = [
+            (
+                disease,
+                "neutral",
+                "Determine from this chest radiograph whether "
+                f"{condition} is present or absent, and state the conclusion "
+                "in one complete sentence.",
+            )
+            for disease, condition in CONDITION_NAMES.items()
+        ]
+        negative_questions = [
+            (
+                disease,
+                "negative",
+                f"This chest radiograph does not show {condition}, correct? "
+                "Answer in one complete sentence.",
+            )
+            for disease, condition in CONDITION_NAMES.items()
+        ]
+        question_items = (
+            neutral_questions
+            if args.binary_frame == "neutral"
+            else negative_questions
+            if args.binary_frame == "negative"
+            else neutral_questions + negative_questions
+        )
     for prototype in prototypes:
         with Image.open(prototype["image"]) as handle:
             image = handle.convert("RGB")
         pending = [
-            (disease, question)
-            for disease, question in questions.items()
-            if f"{prototype['id']}::{disease}" not in done
+            (disease, frame, question)
+            for disease, frame, question in question_items
+            if (
+                f"{prototype['id']}::{disease}"
+                if len({item[1] for item in question_items}) == 1
+                else f"{prototype['id']}::{disease}::{frame}"
+            )
+            not in done
         ]
         for start in range(0, len(pending), args.batch_size):
             batch = pending[start : start + args.batch_size]
@@ -92,7 +139,7 @@ def main() -> None:
                     tokenize=False,
                     add_generation_prompt=True,
                 )
-                for _, question in batch
+                for _, _, question in batch
             ]
             inputs = processor(
                 text=prompts,
@@ -111,9 +158,15 @@ def main() -> None:
             texts = processor.batch_decode(
                 generated, skip_special_tokens=True
             )
-            for (disease, question), text in zip(batch, texts, strict=True):
+            for (disease, frame, question), text in zip(
+                batch, texts, strict=True
+            ):
                 text = text.strip()
-                identifier = f"{prototype['id']}::{disease}"
+                identifier = (
+                    f"{prototype['id']}::{disease}"
+                    if len({item[1] for item in question_items}) == 1
+                    else f"{prototype['id']}::{disease}::{frame}"
+                )
                 explicit = (
                     parse_answer(text, answer_type="binary")
                     if args.task == "binary"
@@ -128,6 +181,7 @@ def main() -> None:
                     "replicate": prototype["replicate"],
                     "disease": disease,
                     "task": args.task,
+                    "prompt_frame": frame,
                     "question": question,
                     "text": text,
                     "rule_prediction": (

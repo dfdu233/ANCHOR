@@ -22,34 +22,34 @@
       "passes": false
     },
     "effusion": {
-      "positive_rate": 0.5555555555555556,
+      "positive_rate": 0.5,
       "cluster_positive_rates": [
         0.6666666666666666,
         0.3333333333333333,
-        1.0,
+        0.6666666666666666,
         0.6666666666666666,
         0.3333333333333333,
         0.3333333333333333
       ],
-      "cluster_eta_squared": 0.24999999999999994,
-      "permutation_p": 0.7557244275572442,
-      "rate_range": 0.6666666666666667,
+      "cluster_eta_squared": 0.1111111111111111,
+      "permutation_p": 0.926907309269073,
+      "rate_range": 0.3333333333333333,
       "passes": false
     },
     "opacity": {
-      "positive_rate": 0.7777777777777778,
+      "positive_rate": 0.5,
       "cluster_positive_rates": [
-        0.6666666666666666,
-        0.6666666666666666,
-        0.6666666666666666,
+        0.0,
+        0.3333333333333333,
+        0.0,
         1.0,
         0.6666666666666666,
         1.0
       ],
-      "cluster_eta_squared": 0.14285714285714288,
-      "permutation_p": 0.9741025897410259,
-      "rate_range": 0.33333333333333337,
-      "passes": false
+      "cluster_eta_squared": 0.7037037037037037,
+      "permutation_p": 0.0336966303369663,
+      "rate_range": 1.0,
+      "passes": true
     },
     "cardiomegaly": {
       "positive_rate": 0.5,
@@ -99,7 +99,7 @@
   },
   "decision": {
     "criterion": "at least two clinical concepts have cluster mention-rate range >=2/3 and cluster-label permutation p<.05",
-    "supported_concepts": 0,
+    "supported_concepts": 1,
     "gate_passed": false
   },
   "claim_ceiling": "style-conditioned clinical mention prior on synthetic shared-content source prototypes; not diagnostic accuracy"

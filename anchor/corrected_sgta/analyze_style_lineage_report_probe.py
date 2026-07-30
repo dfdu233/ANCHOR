@@ -18,10 +18,10 @@ CONCEPTS = {
     "opacity": r"\b(?:opacity|opacities|consolidation|infiltrate)",
     "cardiomegaly": r"\b(?:cardiomegaly|enlarged cardiac|enlarged heart)",
     "edema": r"\b(?:pulmonary )?edema",
-    "device": r"\b(?:catheter|tube|pacemaker|line|device)\b",
+    "device": r"\b(?:catheter|tube|pacemaker|line|devices?)\b",
 }
 NEGATION = re.compile(
-    r"\b(?:no|without|absent|negative for|not seen|not identified)\b",
+    r"\b(?:no|without|absent|negative for|not|neither)\b",
     re.IGNORECASE,
 )
 
@@ -35,11 +35,27 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def positive_mention(text: str, pattern: str) -> int:
-    match = re.search(pattern, text, re.IGNORECASE)
-    if match is None:
-        return 0
-    prefix = text[max(0, match.start() - 40) : match.start()]
-    return int(NEGATION.search(prefix) is None)
+    matches = list(re.finditer(pattern, text, re.IGNORECASE))
+    for match in matches:
+        sentence_start = max(
+            text.rfind(".", 0, match.start()),
+            text.rfind(";", 0, match.start()),
+            text.rfind("\n", 0, match.start()),
+        )
+        endings = [
+            index
+            for index in (
+                text.find(".", match.end()),
+                text.find(";", match.end()),
+                text.find("\n", match.end()),
+            )
+            if index >= 0
+        ]
+        sentence_end = min(endings) if endings else len(text)
+        sentence = text[sentence_start + 1 : sentence_end]
+        if NEGATION.search(sentence) is None:
+            return 1
+    return 0
 
 
 def cluster_effect(labels: np.ndarray, clusters: np.ndarray) -> float:

@@ -1,0 +1,121 @@
+{
+  "version": "pubmed-question-prior-audit-v1",
+  "manifest": "/autodl-fs/data/data/dbw/anchor_center_native_v1/prepared_pubmed_full_cxr/instruction_train.jsonl",
+  "manifest_sha256": "c0a3238052ef6a34779f37d3339b67f985bcd23955e97c23e84b92c647e4a095",
+  "n_unique_strict_cxr": 5549,
+  "unique_groups": 4894,
+  "target_data_accessed": false,
+  "definition": "Question cue is a frozen concept regex; positive answer is a non-negated mention in the complete reference answer.",
+  "metrics": [
+    {
+      "concept": "pneumothorax",
+      "question_cue_n": 41,
+      "question_no_cue_n": 5508,
+      "answer_positive_given_cue": 0.7560975609756098,
+      "answer_positive_without_cue": 0.05029048656499637,
+      "difference": 0.7058070744106134,
+      "group_bootstrap_ci95": [
+        0.5609871873828236,
+        0.8270000190717316
+      ],
+      "passes": true
+    },
+    {
+      "concept": "effusion",
+      "question_cue_n": 62,
+      "question_no_cue_n": 5487,
+      "answer_positive_given_cue": 0.7903225806451613,
+      "answer_positive_without_cue": 0.10133041735010023,
+      "difference": 0.6889921632950611,
+      "group_bootstrap_ci95": [
+        0.5789094397347967,
+        0.7882893800734394
+      ],
+      "passes": true
+    },
+    {
+      "concept": "opacity",
+      "question_cue_n": 285,
+      "question_no_cue_n": 5264,
+      "answer_positive_given_cue": 0.9614035087719298,
+      "answer_positive_without_cue": 0.3620820668693009,
+      "difference": 0.5993214419026289,
+      "group_bootstrap_ci95": [
+        0.571997932025135,
+        0.6241070974297274
+      ],
+      "passes": true
+    },
+    {
+      "concept": "cardiomegaly",
+      "question_cue_n": 45,
+      "question_no_cue_n": 5504,
+      "answer_positive_given_cue": 0.9111111111111111,
+      "answer_positive_without_cue": 0.05723110465116279,
+      "difference": 0.8538800064599483,
+      "group_bootstrap_ci95": [
+        0.7677602371667828,
+        0.9238289454448921
+      ],
+      "passes": true
+    },
+    {
+      "concept": "edema",
+      "question_cue_n": 15,
+      "question_no_cue_n": 5534,
+      "answer_positive_given_cue": 0.7333333333333333,
+      "answer_positive_without_cue": 0.09794000722804481,
+      "difference": 0.6353933261052884,
+      "group_bootstrap_ci95": [
+        0.39904231368285714,
+        0.8412344989330434
+      ],
+      "passes": false
+    },
+    {
+      "concept": "fracture",
+      "question_cue_n": 11,
+      "question_no_cue_n": 5538,
+      "answer_positive_given_cue": 0.7272727272727273,
+      "answer_positive_without_cue": 0.010111953773925604,
+      "difference": 0.7171607734988017,
+      "group_bootstrap_ci95": [
+        0.4351869211803672,
+        0.9901724860377872
+      ],
+      "passes": false
+    },
+    {
+      "concept": "device",
+      "question_cue_n": 134,
+      "question_no_cue_n": 5415,
+      "answer_positive_given_cue": 0.9328358208955224,
+      "answer_positive_without_cue": 0.07663896583564174,
+      "difference": 0.8561968550598806,
+      "group_bootstrap_ci95": [
+        0.8078312212751949,
+        0.8958798809713846
+      ],
+      "passes": true
+    },
+    {
+      "concept": "normal",
+      "question_cue_n": 3,
+      "question_no_cue_n": 5546,
+      "answer_positive_given_cue": 0.6666666666666666,
+      "answer_positive_without_cue": 0.020915975477821855,
+      "difference": 0.6457506911888448,
+      "group_bootstrap_ci95": [
+        -0.02266402118565039,
+        0.9815823056214198
+      ],
+      "passes": false
+    }
+  ],
+  "decision": {
+    "criterion": "at least four non-normal concepts with >=20 cue examples and group-bootstrap difference CI lower >.25",
+    "supported_concepts": 5,
+    "gate_passed": true
+  },
+  "claim_ceiling": "PubMedVision CXR questions carry a strong lexical prior for reference clinical content; this does not show model causality"
+}

@@ -1,0 +1,256 @@
+{
+  "version": "prompt-style-factorial-analysis-v1",
+  "inputs": {
+    "positive": {
+      "path": "/root/autodl-tmp/ANCHOR/corrected_runs/pubmed_style_lineage_probe_v1/huatuo.jsonl",
+      "sha256": "e98eb6d2ecd1b64f1719543c604eb7049fdea982434197e76b9d91e2a22f67a3"
+    },
+    "neutral": {
+      "path": "/root/autodl-tmp/ANCHOR/corrected_runs/pubmed_style_lineage_probe_v1/huatuo_prompt_contrast.jsonl",
+      "sha256": "b9c5ea5b21095fcf515acbb857c90d4184ef77d5cf4f65849e3ef0c389b69aa3"
+    },
+    "negative": {
+      "path": "/root/autodl-tmp/ANCHOR/corrected_runs/pubmed_style_lineage_probe_v1/huatuo_prompt_contrast.jsonl",
+      "sha256": "b9c5ea5b21095fcf515acbb857c90d4184ef77d5cf4f65849e3ef0c389b69aa3"
+    }
+  },
+  "n": 324,
+  "parse_rate": 1.0,
+  "frame_positive_finding_rates": {
+    "positive": 1.0,
+    "neutral": 0.0,
+    "negative": 0.0
+  },
+  "disease_frame_positive_finding_rates": {
+    "cardiomegaly::positive": 1.0,
+    "device::positive": 1.0,
+    "edema::positive": 1.0,
+    "effusion::positive": 1.0,
+    "opacity::positive": 1.0,
+    "pneumothorax::positive": 1.0,
+    "cardiomegaly::neutral": 0.0,
+    "device::neutral": 0.0,
+    "edema::neutral": 0.0,
+    "effusion::neutral": 0.0,
+    "opacity::neutral": 0.0,
+    "pneumothorax::neutral": 0.0,
+    "cardiomegaly::negative": 0.0,
+    "device::negative": 0.0,
+    "edema::negative": 0.0,
+    "effusion::negative": 0.0,
+    "opacity::negative": 0.0,
+    "pneumothorax::negative": 0.0
+  },
+  "mean_paired_prompt_range": 1.0,
+  "mean_style_cluster_range": 0.0,
+  "prompt_minus_style_range": 1.0,
+  "prompt_minus_style_ci95": [
+    1.0,
+    1.0
+  ],
+  "style_details": {
+    "negative::cardiomegaly": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "negative::device": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "negative::edema": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "negative::effusion": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "negative::opacity": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "negative::pneumothorax": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::cardiomegaly": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::device": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::edema": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::effusion": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::opacity": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "neutral::pneumothorax": {
+      "cluster_positive_finding_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "range": 0.0
+    },
+    "positive::cardiomegaly": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "positive::device": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "positive::edema": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "positive::effusion": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "positive::opacity": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "positive::pneumothorax": {
+      "cluster_positive_finding_rates": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    }
+  },
+  "decision": {
+    "criterion": "prompt range >=.20, prompt-style CI lower >0, parse rate >=.90",
+    "gate_passed": true
+  },
+  "claim_ceiling": "question-framing effect exceeds source-style-cluster effect on shared-content synthetic probes; not target accuracy"
+}

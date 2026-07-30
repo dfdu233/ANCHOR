@@ -119,11 +119,11 @@ failed before an unadapted Qwen control could affect the conclusion.
 
 The same prototypes were evaluated using an open radiology-report prompt to
 avoid binary-answer saturation. The model produced 14 unique reports from 18
-inputs (mean 68.8 words). It frequently hallucinated opacity (77.8%),
-effusion (55.6%), and cardiomegaly (50.0%), but these mentions were not
-reproducibly indexed by source style. No clinical concept passed the frozen
-cluster-label permutation test; for example, effusion and edema had
-permutation \(p=.756\) and \(p=.345\), respectively.
+inputs (mean 68.8 words). Effusion and cardiomegaly were each positively
+asserted in 50.0% of reports. Opacity alone showed a cluster association
+(\(p=.034\)); the other five concepts did not, so the frozen requirement of
+two supported clinical concepts failed. Effusion and edema had permutation
+\(p=.927\) and \(p=.345\), respectively.
 
 ![Training-lineage style probe](../results_reference/pubmed_style_lineage_probe_v1/style_lineage_probe.png)
 
@@ -136,6 +136,47 @@ zero medical dispersion into the preregistered positive lineage effect.
 These synthetic prototypes are diagnostic rather than natural target images,
 so the independent content/style \(2\times2\) experiment remains the decisive
 test on real images.
+
+### Competing mechanism: question-conditioned prior
+
+The affirmative saturation suggested an alternative explanation. On the same
+18 prototypes and six diseases, we crossed style with three complete-sentence
+question frames: positive inquiry (“is there evidence of ...”), neutral
+presence/absence adjudication, and negative confirmation. Clinical presence
+was parsed from the meaning of the complete sentence; a leading “yes” in
+“yes, the image does not show ...” was correctly treated as absence.
+
+The model asserted the queried disease on 100% of positive inquiries and 0%
+of neutral or negative frames. The mean paired prompt range was 1.00, whereas
+the mean source-style-cluster range was 0.00 (cluster-bootstrap difference
+95% CI \([1.00,1.00]\)); semantic parse rate was 100%. Thus, under
+content-weak probes, question wording completely determined the clinical
+claim while the tested source style did not.
+
+![Prompt-style factorial](../results_reference/pubmed_style_lineage_probe_v1/prompt_style_factorial.png)
+
+This model behavior has a matching source-distribution property. Across 5,549
+unique strict-CXR PubMedVision instruction examples (4,894 PMC groups), a
+clinical concept named in the question was much more likely to be positively
+asserted in the reference answer:
+
+| Concept | Cue in question | No cue | Difference |
+|---|---:|---:|---:|
+| Pneumothorax | .756 | .050 | +.706 |
+| Effusion | .790 | .101 | +.689 |
+| Opacity | .961 | .362 | +.599 |
+| Cardiomegaly | .911 | .057 | +.854 |
+| Device | .933 | .077 | +.856 |
+
+All five met the frozen PMC-group-bootstrap criterion (difference CI lower
+bound \(>.25\)). This is expected semantic alignment in a generated VQA
+corpus, not proof of annotation leakage. Together with the controlled model
+probe, however, it identifies a stronger competing mechanism: when image
+content is weak, HuatuoGPT-Vision follows a question-conditioned clinical
+prior consistent with the source instructions rather than selecting a prior
+from the tested CXR presentation style.
+
+![PubMedVision question prior](../results_reference/pubmed_question_prior_audit_v1/question_prior.png)
 
 The finding is consistent with independent evidence that hidden data
 acquisition biases can become medical shortcuts, but it is not a replication
@@ -161,10 +202,13 @@ A fresh same-family result-to-claim review returned
 supports weak marginal confounding, but not clinical-prior information beyond
 the question, causal prior switching, or VLM shortcut use.
 
-Across the source audit, bilinear audit, binary lineage probe, and open-report
-probe, the evidence now favors **generic language-prior dominance under
-content-weak inputs**, not a discrete prior selected by the tested style
-clusters. The frozen \(2\times2\) real-image experiment is the remaining
-decisive test. If content-preserving and content-removed style drifts do not
-align after controls, the prior-switching mechanism is falsified despite the
-marginal source-data association.
+Across the source audit, bilinear audit, binary lineage probe, open-report
+probe, and prompt factorial, the evidence now favors **question-conditioned
+language-prior dominance under content-weak inputs**, not a discrete prior
+selected by the tested style clusters. This is still C-level diagnostic
+evidence: it does not identify the causal contribution of PubMedVision
+training without an exact base-model comparison. The frozen \(2\times2\)
+real-image experiment is the remaining decisive test. If content-preserving
+and content-removed style drifts do not align after controls, the
+style-conditioned prior-switching mechanism is falsified despite the marginal
+source-data association.
