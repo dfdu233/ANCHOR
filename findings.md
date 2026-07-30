@@ -222,3 +222,25 @@ Evidence:
   diagnostic. This result does not test or refute the separate
   style-conditioned clinical-prior-switching hypothesis.
 - **Evidence:** `corrected_runs/multiseed_style_orbit_confirmation_v1/`.
+
+## 2026-07-31: Acquisition-style field factorization
+
+- **Verdict:** stable support for an image-conditioned, non-global style
+  displacement field under the controlled Fourier probe.
+- **Exact estimand:** for
+  \(\Delta_{i,s}=h(T_sx_i)-h(x_i)\), the case mean
+  \(\bar\Delta_{\cdot,s}\) is the orthogonal projection onto all additive
+  image-independent per-style corrections. Its explained squared norm is
+  therefore the finite-sample optimum for this entire correction class.
+- **Result:** across 11 Qwen2.5-VL-7B lineages, per-style offsets explain only
+  7.45%--8.35% of final prompt-token displacement; 91.65%--92.55% remains.
+  Per-image offsets explain 74.61%--75.60%. At final image tokens,
+  style-only offsets explain 13.27%--14.09%.
+- **Implication:** an image-independent additive source-center displacement
+  or global style direction is too restrictive for these observed fields.
+  This is a more stable explanation of previous additive center-method
+  failures than the non-replicated seed-42 contraction.
+- **Limit:** stored float16 activations, synthetic styles, exposed MIMIC
+  development images, one prompt/model family, Euclidean squared
+  displacement, correlated checkpoints, and no downstream utility claim.
+- **Evidence:** `corrected_runs/style_field_factorization_v1/`.

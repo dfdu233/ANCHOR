@@ -1,0 +1,225 @@
+{
+  "version": "style-field-factorization-v1",
+  "sources": [
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.npz",
+      "features_sha256": "e7be14489e9f1d86549ec7b4c6748a451a923f5364891ac3b84f1561750a07ef",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.json",
+      "metadata_fingerprint": "45d318c29724fcb8fa1758843ecf4efdf29b841e5c683520194db794dade8dec"
+    },
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a"
+    }
+  ],
+  "lineages": {
+    "base": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12090191402645623,
+        "style_specific_offsets_explained": 0.13336298364013915,
+        "case_specific_offsets_explained": 0.7295349472835356,
+        "residual_after_optimal_style_offsets": 0.8666370163598609
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.06182560791177454,
+        "style_specific_offsets_explained": 0.07627452374722737,
+        "case_specific_offsets_explained": 0.751207475457658,
+        "residual_after_optimal_style_offsets": 0.9237254762527726
+      }
+    },
+    "matched": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12287289041717062,
+        "style_specific_offsets_explained": 0.13418914231108986,
+        "case_specific_offsets_explained": 0.7232592148328915,
+        "residual_after_optimal_style_offsets": 0.8658108576889101
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.0597021533670367,
+        "style_specific_offsets_explained": 0.07451987363591549,
+        "case_specific_offsets_explained": 0.7460779098899158,
+        "residual_after_optimal_style_offsets": 0.9254801263640849
+      }
+    },
+    "permuted": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12821053776579966,
+        "style_specific_offsets_explained": 0.1398878537654542,
+        "case_specific_offsets_explained": 0.7291860381497489,
+        "residual_after_optimal_style_offsets": 0.8601121462345456
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.06283083694445644,
+        "style_specific_offsets_explained": 0.0771934975643938,
+        "case_specific_offsets_explained": 0.7559683916346283,
+        "residual_after_optimal_style_offsets": 0.9228065024356062
+      }
+    },
+    "matched7": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12113008968741024,
+        "style_specific_offsets_explained": 0.13265933995984056,
+        "case_specific_offsets_explained": 0.7277832633270763,
+        "residual_after_optimal_style_offsets": 0.8673406600401599
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.061153384063785995,
+        "style_specific_offsets_explained": 0.07535858704465577,
+        "case_specific_offsets_explained": 0.7478838900553048,
+        "residual_after_optimal_style_offsets": 0.924641412955344
+      }
+    },
+    "permuted7": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12320279835903272,
+        "style_specific_offsets_explained": 0.13457732927490038,
+        "case_specific_offsets_explained": 0.7296104072109678,
+        "residual_after_optimal_style_offsets": 0.8654226707250999
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.06503555921737865,
+        "style_specific_offsets_explained": 0.07955203403170737,
+        "case_specific_offsets_explained": 0.7525756201940902,
+        "residual_after_optimal_style_offsets": 0.9204479659682928
+      }
+    },
+    "matched19": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12945859929792228,
+        "style_specific_offsets_explained": 0.1408577262858392,
+        "case_specific_offsets_explained": 0.7285811602733142,
+        "residual_after_optimal_style_offsets": 0.8591422737141611
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.0690154139143441,
+        "style_specific_offsets_explained": 0.08348138175656751,
+        "case_specific_offsets_explained": 0.7510356927557204,
+        "residual_after_optimal_style_offsets": 0.9165186182434323
+      }
+    },
+    "permuted19": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12499467216985911,
+        "style_specific_offsets_explained": 0.1367121108840318,
+        "case_specific_offsets_explained": 0.7264588750925914,
+        "residual_after_optimal_style_offsets": 0.8632878891159678
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.061312251025391354,
+        "style_specific_offsets_explained": 0.0757730127300854,
+        "case_specific_offsets_explained": 0.7485915518332333,
+        "residual_after_optimal_style_offsets": 0.9242269872699147
+      }
+    },
+    "matched123": {
+      "llm_27_image": {
+        "global_offset_explained": 0.1287777370478187,
+        "style_specific_offsets_explained": 0.14032594606188387,
+        "case_specific_offsets_explained": 0.7232758042945113,
+        "residual_after_optimal_style_offsets": 0.8596740539381164
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.06391319392455744,
+        "style_specific_offsets_explained": 0.07841290180921963,
+        "case_specific_offsets_explained": 0.7511610207090269,
+        "residual_after_optimal_style_offsets": 0.9215870981907804
+      }
+    },
+    "permuted123": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12158398664702033,
+        "style_specific_offsets_explained": 0.13300267905993413,
+        "case_specific_offsets_explained": 0.72762003101651,
+        "residual_after_optimal_style_offsets": 0.8669973209400654
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.060142931678724844,
+        "style_specific_offsets_explained": 0.07482892608007802,
+        "case_specific_offsets_explained": 0.7525205852478792,
+        "residual_after_optimal_style_offsets": 0.9251710739199219
+      }
+    },
+    "matched2027": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12389715709021182,
+        "style_specific_offsets_explained": 0.13604854080776538,
+        "case_specific_offsets_explained": 0.7257867782409123,
+        "residual_after_optimal_style_offsets": 0.8639514591922349
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.060239924439794076,
+        "style_specific_offsets_explained": 0.075516122065393,
+        "case_specific_offsets_explained": 0.7467068377146275,
+        "residual_after_optimal_style_offsets": 0.9244838779346068
+      }
+    },
+    "permuted2027": {
+      "llm_27_image": {
+        "global_offset_explained": 0.12067513456173519,
+        "style_specific_offsets_explained": 0.1326590941413523,
+        "case_specific_offsets_explained": 0.7202626340907469,
+        "residual_after_optimal_style_offsets": 0.8673409058586474
+      },
+      "llm_27_prompt": {
+        "global_offset_explained": 0.06336101430921556,
+        "style_specific_offsets_explained": 0.0779198926914563,
+        "case_specific_offsets_explained": 0.7496024188607935,
+        "residual_after_optimal_style_offsets": 0.9220801073085438
+      }
+    }
+  },
+  "layers": {
+    "llm_27_image": {
+      "global_offset_explained": {
+        "median": 0.12320279835903272,
+        "minimum": 0.12067513456173519,
+        "maximum": 0.12945859929792228
+      },
+      "style_specific_offsets_explained": {
+        "median": 0.13457732927490038,
+        "minimum": 0.1326590941413523,
+        "maximum": 0.1408577262858392
+      },
+      "case_specific_offsets_explained": {
+        "median": 0.72762003101651,
+        "minimum": 0.7202626340907469,
+        "maximum": 0.7296104072109678
+      },
+      "residual_after_optimal_style_offsets": {
+        "median": 0.8654226707250999,
+        "minimum": 0.8591422737141611,
+        "maximum": 0.8673409058586474
+      }
+    },
+    "llm_27_prompt": {
+      "global_offset_explained": {
+        "median": 0.06182560791177454,
+        "minimum": 0.0597021533670367,
+        "maximum": 0.0690154139143441
+      },
+      "style_specific_offsets_explained": {
+        "median": 0.07627452374722737,
+        "minimum": 0.07451987363591549,
+        "maximum": 0.08348138175656751
+      },
+      "case_specific_offsets_explained": {
+        "median": 0.7510356927557204,
+        "minimum": 0.7460779098899158,
+        "maximum": 0.7559683916346283
+      },
+      "residual_after_optimal_style_offsets": {
+        "median": 0.9237254762527726,
+        "minimum": 0.9165186182434323,
+        "maximum": 0.9254801263640849
+      }
+    }
+  },
+  "decision": {
+    "style_only_explains_below_10pct_in_every_lineage": true,
+    "over_90pct_remains_after_style_only_correction": true
+  },
+  "interpretation": "On these paired synthetic views, a global per-style additive correction cannot represent most late-fusion displacement; the field is predominantly image-conditioned.",
+  "claim_ceiling": "exact finite-sample least-squares statement for fixed Fourier views on exposed MIMIC development images; not a natural-domain or clinical-utility claim"
+}
