@@ -110,7 +110,11 @@ def output_tensor(output: Any) -> torch.Tensor:
 class LayerCapture:
     """Pool selected hook outputs without retaining full activation tensors."""
 
-    def __init__(self, model: Qwen2_5_VLForConditionalGeneration) -> None:
+    def __init__(
+        self,
+        model: Qwen2_5_VLForConditionalGeneration,
+        primary_only: bool = False,
+    ) -> None:
         self.model = model
         self.batch_size = 0
         self.input_ids: torch.Tensor | None = None
@@ -118,17 +122,21 @@ class LayerCapture:
         self.features: dict[str, torch.Tensor] = {}
         self.handles: list[Any] = []
 
-        visual = model.model.visual
-        for index in VISION_BLOCKS:
-            self.handles.append(
-                visual.blocks[index].register_forward_hook(
-                    self._vision_hook(f"vision_block_{index}")
+        if not primary_only:
+            visual = model.model.visual
+            for index in VISION_BLOCKS:
+                self.handles.append(
+                    visual.blocks[index].register_forward_hook(
+                        self._vision_hook(f"vision_block_{index}")
+                    )
                 )
+            self.handles.append(
+                visual.merger.register_forward_hook(self._vision_hook("merger"))
             )
-        self.handles.append(
-            visual.merger.register_forward_hook(self._vision_hook("merger"))
-        )
-        for index in LANGUAGE_BLOCKS:
+            language_blocks = LANGUAGE_BLOCKS
+        else:
+            language_blocks = (LANGUAGE_BLOCKS[-1],)
+        for index in language_blocks:
             self.handles.append(
                 model.model.language_model.layers[index].register_forward_hook(
                     self._language_hook(index)
@@ -205,6 +213,11 @@ def main() -> None:
     parser.add_argument("--radius", type=float, default=0.12)
     parser.add_argument("--strength", type=float, default=0.65)
     parser.add_argument("--prompt", default=DEFAULT_PROMPT)
+    parser.add_argument(
+        "--primary-only",
+        action="store_true",
+        help="Capture only the prespecified final prompt-layer endpoint.",
+    )
     args = parser.parse_args()
 
     variants = [parse_variant(specification) for specification in args.variant]
@@ -232,7 +245,7 @@ def main() -> None:
         local_files_only=True,
     ).to("cuda").eval()
     base_merger = state_dict_cpu(model)
-    capture = LayerCapture(model)
+    capture = LayerCapture(model, primary_only=args.primary_only)
 
     feature_rows: dict[str, list[np.ndarray]] = {}
     row_metadata: list[dict[str, Any]] = []
@@ -338,6 +351,7 @@ def main() -> None:
         "radius": args.radius,
         "strength": args.strength,
         "prompt": args.prompt,
+        "primary_only": args.primary_only,
         "variants": variant_metadata,
     }
     metadata = {

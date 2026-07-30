@@ -126,7 +126,23 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=2048)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--selection-seed",
+        type=int,
+        help="Optional source-record selection seed; defaults to --seed.",
+    )
+    parser.add_argument(
+        "--derangement-seed",
+        type=int,
+        help="Optional image derangement seed; defaults to --seed.",
+    )
     args = parser.parse_args()
+    selection_seed = (
+        args.seed if args.selection_seed is None else args.selection_seed
+    )
+    derangement_seed = (
+        args.seed if args.derangement_seed is None else args.derangement_seed
+    )
     if args.output.exists() and any(args.output.iterdir()):
         raise FileExistsError(
             f"refusing to overwrite non-empty output: {args.output}"
@@ -134,7 +150,7 @@ def main() -> None:
     args.output.mkdir(parents=True, exist_ok=True)
 
     selected = select_strict_cxr(
-        read_jsonl(args.input), args.limit, args.seed
+        read_jsonl(args.input), args.limit, selection_seed
     )
     matched = []
     for row in selected:
@@ -144,7 +160,7 @@ def main() -> None:
         copied["image_record_id"] = str(row["id"])
         copied["image_group_id"] = str(row.get("group_id", row["id"]))
         matched.append(copied)
-    permuted, permutation = image_permuted_rows(selected, args.seed)
+    permuted, permutation = image_permuted_rows(selected, derangement_seed)
 
     matched_path = args.output / "matched.jsonl"
     permuted_path = args.output / "image_permuted.jsonl"
@@ -160,6 +176,8 @@ def main() -> None:
         "input": str(args.input.resolve()),
         "input_sha256": sha256(args.input),
         "seed": args.seed,
+        "selection_seed": selection_seed,
+        "derangement_seed": derangement_seed,
         "limit": args.limit,
         "permutation_sha256": hashlib.sha256(
             json.dumps(permutation).encode()

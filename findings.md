@@ -198,3 +198,27 @@ Evidence:
 - **Next decisive experiment:** prespecify layer-27 prompt \(\kappa\), replicate
   matched versus multiple eligible derangements across at least five training
   seeds, and add generated clinical factuality as a key secondary endpoint.
+
+## 2026-07-31: Multi-lineage style-orbit confirmation
+
+- **Verdict:** the prespecified seed-42 late-fusion contraction did not
+  replicate.
+- **Design:** one exploratory plus four confirmatory paired
+  matched/image-permuted visual-merger lineages; the new lineages use four
+  training seeds and four distinct eligible derangements;
+  the source selection, 250-step budget, 40-image/38-patient MIMIC development
+  probe, six Fourier styles, prompt, and primary layer were fixed.
+- **Primary result:** after excluding discovery seed 42, 2/4 new lineages had
+  negative relative \(\kappa_{27}\) effects. Their mean was +0.33%; crossed
+  seed-by-patient bootstrap 95% CI [-1.09%, +1.67%], seed-level t CI
+  [-1.65%, +2.31%], and one-sided sign-test \(p=0.6875\).
+- **Interpretation:** seed 42 (-5.48%) was a lineage-specific outlier relative
+  to the four new estimates (-0.60%, +1.92%, -0.72%, +0.72%). Neither style
+  drift nor real-null leverage was stable across lineages.
+- **Audit note:** the discovery-inclusive estimate is -0.83%, but it must not
+  be reported as confirmatory because seed 42 selected the layer and metric.
+- **Decision:** do not implement an explicit late-fusion orbit-contraction
+  objective from this observation. It would optimize a non-replicated
+  diagnostic. This result does not test or refute the separate
+  style-conditioned clinical-prior-switching hypothesis.
+- **Evidence:** `corrected_runs/multiseed_style_orbit_confirmation_v1/`.

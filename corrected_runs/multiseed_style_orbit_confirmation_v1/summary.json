@@ -1,0 +1,349 @@
+{
+  "version": "multiseed-style-orbit-confirmation-v1",
+  "primary_endpoint": "llm_27_prompt",
+  "primary_metric": "style RMS displacement divided by real-null RMS displacement",
+  "discovery_labels_excluded_from_confirmation": [
+    "seed42"
+  ],
+  "runs": [
+    {
+      "label": "seed42",
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.npz",
+      "features_sha256": "e7be14489e9f1d86549ec7b4c6748a451a923f5364891ac3b84f1561750a07ef",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.json",
+      "metadata_fingerprint": "45d318c29724fcb8fa1758843ecf4efdf29b841e5c683520194db794dade8dec",
+      "matched_variant": "matched",
+      "permuted_variant": "permuted"
+    },
+    {
+      "label": "seed7",
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a",
+      "matched_variant": "matched7",
+      "permuted_variant": "permuted7"
+    },
+    {
+      "label": "seed19",
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a",
+      "matched_variant": "matched19",
+      "permuted_variant": "permuted19"
+    },
+    {
+      "label": "seed123",
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a",
+      "matched_variant": "matched123",
+      "permuted_variant": "permuted123"
+    },
+    {
+      "label": "seed2027",
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a",
+      "matched_variant": "matched2027",
+      "permuted_variant": "permuted2027"
+    }
+  ],
+  "cases": 40,
+  "patients": 38,
+  "metrics_all_lineages": {
+    "kappa": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": -0.008323444658890367,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.03623889186419547,
+        0.012922877289820457
+      ],
+      "lineages_negative": 3,
+      "lineages_total": 5,
+      "seed_point_mean": -0.008323444658890367,
+      "seed_point_sd": 0.02814129295023417,
+      "seed_t_ci95": [
+        -0.04326547497810152,
+        0.02661858566032079
+      ],
+      "one_sided_exact_sign_test_p": 0.5,
+      "bootstrap_probability_negative": 0.7386,
+      "per_seed": {
+        "seed42": {
+          "patient_median_relative_effect": -0.05482507310807705,
+          "matched_median": 0.19285276532173157,
+          "permuted_median": 0.20941048860549927,
+          "patients": 38
+        },
+        "seed7": {
+          "patient_median_relative_effect": -0.005964984884485602,
+          "matched_median": 0.20391076803207397,
+          "permuted_median": 0.20216059684753418,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": 0.01918039657175541,
+          "matched_median": 0.20245090126991272,
+          "permuted_median": 0.20593276619911194,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": -0.007245010230690241,
+          "matched_median": 0.20910198986530304,
+          "permuted_median": 0.20785954594612122,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": 0.0072374483570456505,
+          "matched_median": 0.20504683256149292,
+          "permuted_median": 0.20365357398986816,
+          "patients": 38
+        }
+      }
+    },
+    "style_drift": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": -0.0026596210605930536,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.013932524910196663,
+        0.010740788231632874
+      ],
+      "lineages_negative": 4,
+      "lineages_total": 5,
+      "seed_point_mean": -0.0026596210605930536,
+      "seed_point_sd": 0.01085305978234332,
+      "seed_t_ci95": [
+        -0.016135474662681934,
+        0.010816232541495826
+      ],
+      "one_sided_exact_sign_test_p": 0.1875,
+      "bootstrap_probability_negative": 0.6259,
+      "per_seed": {
+        "seed42": {
+          "patient_median_relative_effect": -0.019092989154160023,
+          "matched_median": 0.5126412510871887,
+          "permuted_median": 0.5134106278419495,
+          "patients": 38
+        },
+        "seed7": {
+          "patient_median_relative_effect": -0.00019649715977720916,
+          "matched_median": 0.5140717625617981,
+          "permuted_median": 0.5124744772911072,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": 0.01113167405128479,
+          "matched_median": 0.5100533962249756,
+          "permuted_median": 0.5148483514785767,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": -0.0010181755060330033,
+          "matched_median": 0.5147322416305542,
+          "permuted_median": 0.513698935508728,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": -0.004122117534279823,
+          "matched_median": 0.5141493082046509,
+          "permuted_median": 0.5117082595825195,
+          "patients": 38
+        }
+      }
+    },
+    "real_null_leverage": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": 0.007015146967023611,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.0061379175560432485,
+        0.024869270597700922
+      ],
+      "lineages_negative": 2,
+      "lineages_total": 5,
+      "seed_point_mean": 0.007015146967023611,
+      "seed_point_sd": 0.019690537473409844,
+      "seed_t_ci95": [
+        -0.0174338845189915,
+        0.03146417845303872
+      ],
+      "one_sided_exact_sign_test_p": 0.8125,
+      "bootstrap_probability_negative": 0.21495,
+      "per_seed": {
+        "seed42": {
+          "patient_median_relative_effect": 0.03976837545633316,
+          "matched_median": 2.5879688262939453,
+          "permuted_median": 2.4772658348083496,
+          "patients": 38
+        },
+        "seed7": {
+          "patient_median_relative_effect": 0.003979746950790286,
+          "matched_median": 2.5002458095550537,
+          "permuted_median": 2.494131088256836,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": -0.011606454383581877,
+          "matched_median": 2.477889060974121,
+          "permuted_median": 2.5088493824005127,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": 0.006969499634578824,
+          "matched_median": 2.5010628700256348,
+          "permuted_median": 2.4587268829345703,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": -0.004035432823002338,
+          "matched_median": 2.4924588203430176,
+          "permuted_median": 2.4860968589782715,
+          "patients": 38
+        }
+      }
+    }
+  },
+  "metrics_confirmation_only": {
+    "kappa": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": 0.003301962453406304,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.010930282564368099,
+        0.016738141994574105
+      ],
+      "lineages_negative": 2,
+      "lineages_total": 4,
+      "seed_point_mean": 0.003301962453406304,
+      "seed_point_sd": 0.012446253319919715,
+      "seed_t_ci95": [
+        -0.016502803992895484,
+        0.023106728899708093
+      ],
+      "one_sided_exact_sign_test_p": 0.6875,
+      "bootstrap_probability_negative": 0.30125,
+      "per_seed": {
+        "seed7": {
+          "patient_median_relative_effect": -0.005964984884485602,
+          "matched_median": 0.20391076803207397,
+          "permuted_median": 0.20216059684753418,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": 0.01918039657175541,
+          "matched_median": 0.20245090126991272,
+          "permuted_median": 0.20593276619911194,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": -0.007245010230690241,
+          "matched_median": 0.20910198986530304,
+          "permuted_median": 0.20785954594612122,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": 0.0072374483570456505,
+          "matched_median": 0.20504683256149292,
+          "permuted_median": 0.20365357398986816,
+          "patients": 38
+        }
+      }
+    },
+    "style_drift": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": 0.0014487209627986886,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.00844400350270007,
+        0.014502631398499924
+      ],
+      "lineages_negative": 3,
+      "lineages_total": 4,
+      "seed_point_mean": 0.0014487209627986886,
+      "seed_point_sd": 0.006672983913591204,
+      "seed_t_ci95": [
+        -0.009169485537714283,
+        0.01206692746331166
+      ],
+      "one_sided_exact_sign_test_p": 0.3125,
+      "bootstrap_probability_negative": 0.34175,
+      "per_seed": {
+        "seed7": {
+          "patient_median_relative_effect": -0.00019649715977720916,
+          "matched_median": 0.5140717625617981,
+          "permuted_median": 0.5124744772911072,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": 0.01113167405128479,
+          "matched_median": 0.5100533962249756,
+          "permuted_median": 0.5148483514785767,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": -0.0010181755060330033,
+          "matched_median": 0.5147322416305542,
+          "permuted_median": 0.513698935508728,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": -0.004122117534279823,
+          "matched_median": 0.5141493082046509,
+          "permuted_median": 0.5117082595825195,
+          "patients": 38
+        }
+      }
+    },
+    "real_null_leverage": {
+      "estimand": "mean across training lineages of the within-lineage median patient relative effect (matched - permuted) / |permuted|",
+      "point": -0.0011731601553037763,
+      "crossed_seed_patient_bootstrap_ci95": [
+        -0.008512619388056919,
+        0.005823865073034532
+      ],
+      "lineages_negative": 2,
+      "lineages_total": 4,
+      "seed_point_mean": -0.0011731601553037763,
+      "seed_point_sd": 0.008364639728760608,
+      "seed_t_ci95": [
+        -0.014483168555215531,
+        0.012136848244607978
+      ],
+      "one_sided_exact_sign_test_p": 0.6875,
+      "bootstrap_probability_negative": 0.62445,
+      "per_seed": {
+        "seed7": {
+          "patient_median_relative_effect": 0.003979746950790286,
+          "matched_median": 2.5002458095550537,
+          "permuted_median": 2.494131088256836,
+          "patients": 38
+        },
+        "seed19": {
+          "patient_median_relative_effect": -0.011606454383581877,
+          "matched_median": 2.477889060974121,
+          "permuted_median": 2.5088493824005127,
+          "patients": 38
+        },
+        "seed123": {
+          "patient_median_relative_effect": 0.006969499634578824,
+          "matched_median": 2.5010628700256348,
+          "permuted_median": 2.4587268829345703,
+          "patients": 38
+        },
+        "seed2027": {
+          "patient_median_relative_effect": -0.004035432823002338,
+          "matched_median": 2.4924588203430176,
+          "permuted_median": 2.4860968589782715,
+          "patients": 38
+        }
+      }
+    }
+  },
+  "decision": {
+    "all_confirmation_lineages_contract": false,
+    "crossed_ci_excludes_zero": false,
+    "prespecified_effect_replicated": false
+  },
+  "claim_ceiling": "multi-lineage representation mechanism confirmation on exposed MIMIC development images; no generated-answer utility or external domain-generalization claim"
+}

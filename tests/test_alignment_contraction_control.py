@@ -41,3 +41,34 @@ def test_image_permutation_preserves_marginal_and_deranges_groups():
         target["group_id"] != donor["image_group_id"]
         for target, donor in zip(selected, permuted, strict=True)
     )
+
+
+def test_derangement_seed_changes_pairing_without_changing_sources():
+    selected = select_strict_cxr(
+        [
+            {
+                "id": f"id-{index}",
+                "group_id": f"group-{index // 2}",
+                "is_strict_cxr": True,
+                "source_parquet": "/tmp/source.parquet",
+                "parquet_row_index": index,
+                "image_sha256": f"sha-{index}",
+                "dhash64": f"{index:016x}",
+            }
+            for index in range(12)
+        ],
+        12,
+        42,
+    )
+    first, first_permutation = image_permuted_rows(selected, seed=7)
+    second, second_permutation = image_permuted_rows(selected, seed=19)
+    assert first_permutation != second_permutation
+    assert [row["id"] for row in first] == [row["id"] for row in second]
+    assert all(
+        target["id"] != donor["image_record_id"]
+        for target, donor in zip(selected, first, strict=True)
+    )
+    assert all(
+        target["id"] != donor["image_record_id"]
+        for target, donor in zip(selected, second, strict=True)
+    )

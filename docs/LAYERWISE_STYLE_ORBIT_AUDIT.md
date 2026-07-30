@@ -101,3 +101,39 @@ MIMIC development images and designed Fourier styles. It does **not** establish:
 
 The source arrays, model checkpoints, and raw evidence traces remain outside
 Git. The compact summary stores all paired statistics and fingerprints.
+
+## Prespecified multi-lineage replication
+
+The final prompt-layer result was subsequently frozen as the sole primary
+endpoint and tested across four new matched/image-permuted lineage pairs. The
+exploratory seed 42 is displayed but excluded from confirmatory inference. The new
+lineages used training/derangement seeds 7, 19, 123, and 2027 while preserving
+the exact 2,048-record source selection. Each matched/permuted pair had equal
+initialization, data marginals, optimizer, ordering, parameter count, and
+250-step budget. The evaluation images, prompt, null control, and six Fourier
+styles were unchanged.
+
+The relative \(\kappa_{27}\) effects were:
+
+| Lineage | Matched vs permuted |
+|---|---:|
+| seed 42 | -5.48% |
+| seed 7 | -0.60% |
+| seed 19 | +1.92% |
+| seed 123 | -0.72% |
+| seed 2027 | +0.72% |
+
+Among the four new lineages, only 2/4 effects were negative. Their mean was
+**+0.33%** with crossed seed-by-patient bootstrap 95% CI
+**[-1.09%, +1.67%]**, seed-level t interval **[-1.65%, +2.31%]**, and
+one-sided exact sign-test \(p=0.6875\). The component effects were also
+unstable: style drift was +0.14% [-0.84%, +1.45%], while real-null leverage
+was -0.12% [-0.85%, +0.58%]. Including the discovery seed yields -0.83%, but
+that estimate is selection-contaminated and is not used for confirmation.
+
+This rejects the training-stability interpretation of the seed-42 result.
+Correct image--text pairing may alter a particular trained representation,
+but this experiment provides no evidence that it systematically contracts the
+late-fusion acquisition-style orbit. An explicit orbit objective would
+therefore be story-first rather than mechanism-led and is not justified by
+these data.
