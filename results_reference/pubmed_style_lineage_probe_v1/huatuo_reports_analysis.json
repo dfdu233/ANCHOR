@@ -1,0 +1,106 @@
+{
+  "version": "style-lineage-report-analysis-v1",
+  "input": "/root/autodl-tmp/ANCHOR/corrected_runs/pubmed_style_lineage_probe_v1/huatuo_reports.jsonl",
+  "input_sha256": "0a9aee2c03d553c2931ed56a8ad1414141914bd0b40cab3c3cd134af3d396619",
+  "n": 18,
+  "unique_texts": 14,
+  "mean_words": 68.83333333333333,
+  "concepts": {
+    "pneumothorax": {
+      "positive_rate": 0.0,
+      "cluster_positive_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cluster_eta_squared": 0.0,
+      "permutation_p": 1.0,
+      "rate_range": 0.0,
+      "passes": false
+    },
+    "effusion": {
+      "positive_rate": 0.5555555555555556,
+      "cluster_positive_rates": [
+        0.6666666666666666,
+        0.3333333333333333,
+        1.0,
+        0.6666666666666666,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "cluster_eta_squared": 0.24999999999999994,
+      "permutation_p": 0.7557244275572442,
+      "rate_range": 0.6666666666666667,
+      "passes": false
+    },
+    "opacity": {
+      "positive_rate": 0.7777777777777778,
+      "cluster_positive_rates": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        1.0,
+        0.6666666666666666,
+        1.0
+      ],
+      "cluster_eta_squared": 0.14285714285714288,
+      "permutation_p": 0.9741025897410259,
+      "rate_range": 0.33333333333333337,
+      "passes": false
+    },
+    "cardiomegaly": {
+      "positive_rate": 0.5,
+      "cluster_positive_rates": [
+        0.6666666666666666,
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "cluster_eta_squared": 0.1111111111111111,
+      "permutation_p": 0.926907309269073,
+      "rate_range": 0.3333333333333333,
+      "passes": false
+    },
+    "edema": {
+      "positive_rate": 0.16666666666666666,
+      "cluster_positive_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.3333333333333333,
+        0.0
+      ],
+      "cluster_eta_squared": 0.4666666666666666,
+      "permutation_p": 0.3448655134486551,
+      "rate_range": 0.6666666666666666,
+      "passes": false
+    },
+    "device": {
+      "positive_rate": 0.0,
+      "cluster_positive_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cluster_eta_squared": 0.0,
+      "permutation_p": 1.0,
+      "rate_range": 0.0,
+      "passes": false
+    }
+  },
+  "decision": {
+    "criterion": "at least two clinical concepts have cluster mention-rate range >=2/3 and cluster-label permutation p<.05",
+    "supported_concepts": 0,
+    "gate_passed": false
+  },
+  "claim_ceiling": "style-conditioned clinical mention prior on synthetic shared-content source prototypes; not diagnostic accuracy"
+}

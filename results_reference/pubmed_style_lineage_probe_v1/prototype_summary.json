@@ -1,0 +1,14 @@
+{
+  "version": "pubmed-shared-content-style-prototypes-v1",
+  "manifest": "/autodl-fs/data/data/dbw/anchor_center_native_v1/prepared_pubmed_full_cxr/instruction_train.jsonl",
+  "manifest_sha256": "c0a3238052ef6a34779f37d3339b67f985bcd23955e97c23e84b92c647e4a095",
+  "n_source_images": 2048,
+  "clusters": 6,
+  "replicates": 3,
+  "normal_base_count": 64,
+  "radius": 0.12,
+  "shared_phase_and_high_frequency": true,
+  "target_data_accessed": false,
+  "mean_base_correlation": 0.9506740785211937,
+  "mean_absolute_change": 0.10209098789427015
+}

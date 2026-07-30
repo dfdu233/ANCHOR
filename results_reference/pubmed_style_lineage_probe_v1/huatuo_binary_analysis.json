@@ -1,0 +1,92 @@
+{
+  "version": "style-lineage-analysis-v1",
+  "inputs": {
+    "medical": "/root/autodl-tmp/ANCHOR/corrected_runs/pubmed_style_lineage_probe_v1/huatuo.jsonl",
+    "medical_sha256": "e98eb6d2ecd1b64f1719543c604eb7049fdea982434197e76b9d91e2a22f67a3"
+  },
+  "n_base": 0,
+  "n_medical": 108,
+  "base_parse_rate": null,
+  "medical_parse_rate": 1.0,
+  "base_mean_cluster_range": null,
+  "medical_mean_cluster_range": 0.0,
+  "medical_minus_base_dispersion": null,
+  "paired_permutation_p_one_sided": null,
+  "base_by_disease": null,
+  "medical_by_disease": {
+    "cardiomegaly": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "device": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "edema": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "effusion": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "opacity": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    },
+    "pneumothorax": {
+      "cluster_yes_rate": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "range": 0.0
+    }
+  },
+  "decision": {
+    "medical_style_switch_observed": false,
+    "criterion": "medical-base mean cluster range >=0.10, p<.05, at least two medical disease flips, both parse rates >=.90",
+    "diseases_with_medical_style_flips": 0,
+    "gate_passed": false,
+    "status": "base_control_missing"
+  },
+  "claim_ceiling": "training-lineage-specific style prior on synthetic shared-content source prototypes; not target-domain accuracy"
+}
