@@ -1,0 +1,203 @@
+{
+  "version": "visual-evidence-chord-lineage-comparison-v3",
+  "first": {
+    "name": "Matched",
+    "path": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/probe64_matched/raw.jsonl",
+    "sha256": "d9154d96e7acb0b2bbce23b9afe93b69168eff4a544c9b6de793564ab769fd17"
+  },
+  "second": {
+    "name": "Image-permuted",
+    "path": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/probe64_permuted/raw.jsonl",
+    "sha256": "5261571189c01c6f03d06edfd6de2967bc02a8d4df4fb70f997838af6addb862"
+  },
+  "n_paired_cases": 40,
+  "n_paired_patients": 38,
+  "styles": [
+    "style_0",
+    "style_1",
+    "style_2",
+    "style_3",
+    "style_4",
+    "style_5"
+  ],
+  "diseases": [
+    "cardiomegaly",
+    "device",
+    "edema",
+    "effusion",
+    "opacity",
+    "pneumothorax"
+  ],
+  "view_category": "a frontal chest radiograph",
+  "comparison": {
+    "first_fraction": {
+      "case": 0.7981780264032244,
+      "style": 0.021290476387523627,
+      "case_by_style": 0.1805314972092519
+    },
+    "second_fraction": {
+      "case": 0.7949940349269999,
+      "style": 0.02220564807543995,
+      "case_by_style": 0.18280031699756014
+    },
+    "first_minus_second": {
+      "case": {
+        "point": 0.0031839914762245014,
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.005271314639374014,
+          0.010403559179643035
+        ]
+      },
+      "style": {
+        "point": -0.0009151716879163239,
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.003935989254000838,
+          0.0014951412463089012
+        ]
+      },
+      "case_by_style": {
+        "point": -0.0022688197883082295,
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.008635876560560323,
+          0.005919405670856288
+        ]
+      }
+    },
+    "style_offset_alignment": {
+      "style_0": {
+        "first_offset_norm": 0.04422270052021535,
+        "second_offset_norm": 0.04293701525992888,
+        "cross_model_cosine": 0.9809893735447761
+      },
+      "style_1": {
+        "first_offset_norm": 0.034274909308876896,
+        "second_offset_norm": 0.03590650755692282,
+        "cross_model_cosine": 0.9813239376784211
+      },
+      "style_2": {
+        "first_offset_norm": 0.028816683690156126,
+        "second_offset_norm": 0.028819421715988135,
+        "cross_model_cosine": 0.996053280012642
+      },
+      "style_3": {
+        "first_offset_norm": 0.05545600830732439,
+        "second_offset_norm": 0.056980205458327264,
+        "cross_model_cosine": 0.988131674600235
+      },
+      "style_4": {
+        "first_offset_norm": 0.039498764550041705,
+        "second_offset_norm": 0.03808662609303253,
+        "cross_model_cosine": 0.9735163209254727
+      },
+      "style_5": {
+        "first_offset_norm": 0.05933029544239315,
+        "second_offset_norm": 0.061529301782553995,
+        "cross_model_cosine": 0.9940929389964308
+      }
+    },
+    "normalized_style_susceptibility": {
+      "definition": "per-case RMS style evidence drift divided by the real-null evidence norm",
+      "first_median": 0.3175429993432485,
+      "second_median": 0.32110243599217886,
+      "first_minus_second": -0.003559436648930381,
+      "paired_patient_cluster_bootstrap_ci95": [
+        -0.03011367435735174,
+        0.011312329055033599
+      ],
+      "first_per_case": [
+        0.18537668058730186,
+        0.3676560734565018,
+        0.18858539734559,
+        0.2545783996856757,
+        0.35764874748265796,
+        0.14814498876068416,
+        0.34569614739005855,
+        0.30241088678428524,
+        0.2150666093670733,
+        0.18860394226774813,
+        0.2747563770717138,
+        0.2720890080367699,
+        0.17983928705120392,
+        0.21504855523303051,
+        0.16242945805625641,
+        1.080899234925142,
+        0.3556390560043773,
+        0.31747664276978005,
+        0.3706927087686812,
+        0.22100745536480335,
+        0.10833635216582817,
+        0.38107094729851615,
+        0.2808144046751354,
+        0.5634388786039106,
+        0.25710364748564035,
+        0.17824632343403982,
+        0.594196836074807,
+        0.3176093559167169,
+        0.785788715949618,
+        0.32752090185661537,
+        0.43221910872901864,
+        0.3081058102721609,
+        1.738062316772229,
+        0.7831390291401468,
+        0.5510881451620264,
+        0.6650106431213006,
+        0.4870606956176802,
+        0.3577977195730315,
+        0.5064305691740361,
+        0.20744797077326818
+      ],
+      "second_per_case": [
+        0.18083131257950386,
+        0.37918694427121213,
+        0.1692916699125577,
+        0.2408439457128355,
+        0.3571584735530547,
+        0.16076085794261571,
+        0.33438381833502495,
+        0.30487005142906554,
+        0.22647216489998717,
+        0.2134281413815368,
+        0.3125370690926469,
+        0.29833961946660664,
+        0.17491199422805181,
+        0.2159346195458162,
+        0.15730329252955588,
+        1.0076843212820599,
+        0.35704594964117436,
+        0.31318576065953374,
+        0.3898557744204396,
+        0.23642764026595506,
+        0.12660155322820268,
+        0.3930951723502821,
+        0.29173777461715,
+        0.5429662123844692,
+        0.24807909708229062,
+        0.17986201884782116,
+        0.5669421414327009,
+        0.329019111324824,
+        0.7216916265430127,
+        0.34834669033248533,
+        0.3446579191887001,
+        0.30614141894953295,
+        1.6420140725675199,
+        0.7444236345567281,
+        0.5294357333274214,
+        0.6725249521442082,
+        0.4862491636913131,
+        0.3640993198505945,
+        0.5073498554110686,
+        0.20923012065311805
+      ]
+    },
+    "bootstrap_unit": "patient_cluster",
+    "n_clusters": 38,
+    "bootstrap_draws": 10000,
+    "seed": 2027
+  },
+  "decision_rule": "A directional lineage effect requires the corresponding paired patient-cluster bootstrap interval to exclude zero.",
+  "decision": {
+    "first_has_larger_style_fraction": false,
+    "first_has_lower_normalized_style_susceptibility": false
+  },
+  "claim_ceiling": "paired mechanism diagnostic on exposed MIMIC development images"
+}

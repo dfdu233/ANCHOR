@@ -1,0 +1,2380 @@
+{
+  "version": "alignment-contraction-heldout-nll-v1",
+  "definition": "mean teacher-forced NLL over every supervised answer token",
+  "model": "/autodl-fs/data/data/dbw/models/Qwen2.5-VL-7B-Instruct-fast",
+  "manifest": "/autodl-fs/data/data/dbw/anchor_center_native_v1/prepared_pubmed_full_cxr/instruction_source_heldout.jsonl",
+  "manifest_sha256": "faa2fcc171d5e22a92a198079dd78ca288436dd4fffbb4f7aa22adcfe8875e25",
+  "strict_cxr_only": true,
+  "limit": 128,
+  "n": 128,
+  "conditions": {
+    "base": {
+      "checkpoint": null,
+      "checkpoint_sha256": null
+    },
+    "matched": {
+      "checkpoint": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/matched_merger_seed42_steps250/merger-final.pt",
+      "checkpoint_sha256": "387f599191784ad20090ae8f9db642fd6b205516b8ae0a40023f9511c3ad917b"
+    },
+    "permuted": {
+      "checkpoint": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/permuted_merger_seed42_steps250/merger-final.pt",
+      "checkpoint_sha256": "d5995700be73a6079799354eb862a87ab3cba31a1ecf1f66abe6094a9a757466"
+    }
+  },
+  "summary": {
+    "base": {
+      "n": 128,
+      "mean_sequence_nll": 1.2163593606092036,
+      "median_sequence_nll": 1.3975774645805359,
+      "mean_supervised_tokens": 70.421875
+    },
+    "matched": {
+      "n": 128,
+      "mean_sequence_nll": 1.2137787793762982,
+      "median_sequence_nll": 1.3916734457015991,
+      "mean_supervised_tokens": 70.421875
+    },
+    "permuted": {
+      "n": 128,
+      "mean_sequence_nll": 1.2131158206611872,
+      "median_sequence_nll": 1.3969471454620361,
+      "mean_supervised_tokens": 70.421875
+    }
+  },
+  "paired_comparisons": {
+    "base_minus_matched": {
+      "mean_sequence_nll_difference": 0.002580581232905388,
+      "source_group_cluster_bootstrap_ci95": [
+        0.0014624344881823857,
+        0.0038061640112986538
+      ]
+    },
+    "base_minus_permuted": {
+      "mean_sequence_nll_difference": 0.003243539948016405,
+      "source_group_cluster_bootstrap_ci95": [
+        0.0021567658790520258,
+        0.0044118834866417765
+      ]
+    },
+    "matched_minus_permuted": {
+      "mean_sequence_nll_difference": 0.0006629587151110172,
+      "source_group_cluster_bootstrap_ci95": [
+        -0.00019722484119396753,
+        0.001536796539681254
+      ]
+    }
+  },
+  "records": {
+    "base": [
+      {
+        "id": "Instruction-Tuning_201326",
+        "group_id": "pmc:201326",
+        "sequence_nll": 1.7254292964935303,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_412168",
+        "group_id": "pmc:412168",
+        "sequence_nll": 1.3513284921646118,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_278840",
+        "group_id": "pmc:278840",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_404370",
+        "group_id": "pmc:404370",
+        "sequence_nll": 1.2176542282104492,
+        "supervised_tokens": 85
+      },
+      {
+        "id": "Instruction-Tuning_62789",
+        "group_id": "pmc:62789",
+        "sequence_nll": 1.534485936164856,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_198552",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.098555564880371,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_554863",
+        "group_id": "pmc:554863",
+        "sequence_nll": 1.4345251321792603,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_486470",
+        "group_id": "pmc:486470",
+        "sequence_nll": 1.5876725912094116,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_591260",
+        "group_id": "pmc:591260",
+        "sequence_nll": 1.2344491481781006,
+        "supervised_tokens": 92
+      },
+      {
+        "id": "Instruction-Tuning_117754",
+        "group_id": "pmc:117754",
+        "sequence_nll": 1.519362211227417,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_486874",
+        "group_id": "pmc:486874",
+        "sequence_nll": 1.7626429796218872,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_358608",
+        "group_id": "pmc:358608",
+        "sequence_nll": 1.4302507638931274,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_252030",
+        "group_id": "pmc:252030",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_341084",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_396136",
+        "group_id": "pmc:396136",
+        "sequence_nll": 1.3134746551513672,
+        "supervised_tokens": 148
+      },
+      {
+        "id": "Instruction-Tuning_38943",
+        "group_id": "pmc:38943",
+        "sequence_nll": 1.4193705320358276,
+        "supervised_tokens": 12
+      },
+      {
+        "id": "Instruction-Tuning_414602",
+        "group_id": "pmc:414602",
+        "sequence_nll": 1.7533515691757202,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_532248",
+        "group_id": "pmc:532248",
+        "sequence_nll": 2.191549301147461,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_63921",
+        "group_id": "pmc:63921",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_225077",
+        "group_id": "pmc:225077",
+        "sequence_nll": 1.300865650177002,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_216369",
+        "group_id": "pmc:201416",
+        "sequence_nll": 1.101433277130127,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_341601",
+        "group_id": "pmc:341601",
+        "sequence_nll": 1.4440948963165283,
+        "supervised_tokens": 151
+      },
+      {
+        "id": "Instruction-Tuning_622312",
+        "group_id": "pmc:622312",
+        "sequence_nll": 1.3281444311141968,
+        "supervised_tokens": 39
+      },
+      {
+        "id": "Instruction-Tuning_306591",
+        "group_id": "pmc:176457",
+        "sequence_nll": 2.1677558422088623,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_491819",
+        "group_id": "pmc:112338",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2107",
+        "group_id": "pmc:2107",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_466140",
+        "group_id": "pmc:466140",
+        "sequence_nll": 1.561425805091858,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_286489",
+        "group_id": "pmc:286489",
+        "sequence_nll": 2.2373411655426025,
+        "supervised_tokens": 123
+      },
+      {
+        "id": "Instruction-Tuning_175233",
+        "group_id": "pmc:175233",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_183234",
+        "group_id": "pmc:183234",
+        "sequence_nll": 2.1835780143737793,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_634755",
+        "group_id": "pmc:273788",
+        "sequence_nll": 1.7332648038864136,
+        "supervised_tokens": 48
+      },
+      {
+        "id": "Instruction-Tuning_593209",
+        "group_id": "pmc:593209",
+        "sequence_nll": 1.5853216648101807,
+        "supervised_tokens": 150
+      },
+      {
+        "id": "Instruction-Tuning_355641",
+        "group_id": "pmc:355641",
+        "sequence_nll": 1.63027024269104,
+        "supervised_tokens": 61
+      },
+      {
+        "id": "Instruction-Tuning_525132",
+        "group_id": "pmc:481404",
+        "sequence_nll": 2.1256353855133057,
+        "supervised_tokens": 58
+      },
+      {
+        "id": "Instruction-Tuning_199044",
+        "group_id": "pmc:199044",
+        "sequence_nll": 1.8470860719680786,
+        "supervised_tokens": 152
+      },
+      {
+        "id": "Instruction-Tuning_441277",
+        "group_id": "pmc:441277",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_210512",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.526820182800293,
+        "supervised_tokens": 71
+      },
+      {
+        "id": "Instruction-Tuning_198319",
+        "group_id": "pmc:198319",
+        "sequence_nll": 1.8092318773269653,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_600118",
+        "group_id": "pmc:252710",
+        "sequence_nll": 1.4016094207763672,
+        "supervised_tokens": 21
+      },
+      {
+        "id": "Instruction-Tuning_51012",
+        "group_id": "pmc:51012",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_24065",
+        "group_id": "pmc:24065",
+        "sequence_nll": 1.481239914894104,
+        "supervised_tokens": 81
+      },
+      {
+        "id": "Instruction-Tuning_412746",
+        "group_id": "pmc:412746",
+        "sequence_nll": 2.0674993991851807,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_80429",
+        "group_id": "pmc:80429",
+        "sequence_nll": 1.3468735218048096,
+        "supervised_tokens": 49
+      },
+      {
+        "id": "Instruction-Tuning_616980",
+        "group_id": "pmc:616980",
+        "sequence_nll": 1.5155589580535889,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_558892",
+        "group_id": "pmc:558892",
+        "sequence_nll": 1.383887529373169,
+        "supervised_tokens": 52
+      },
+      {
+        "id": "Instruction-Tuning_78739",
+        "group_id": "pmc:78739",
+        "sequence_nll": 0.842231273651123,
+        "supervised_tokens": 19
+      },
+      {
+        "id": "Instruction-Tuning_423308",
+        "group_id": "pmc:423308",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281845",
+        "group_id": "pmc:281845",
+        "sequence_nll": 1.8613109588623047,
+        "supervised_tokens": 136
+      },
+      {
+        "id": "Instruction-Tuning_621234",
+        "group_id": "pmc:621234",
+        "sequence_nll": 0.9875057935714722,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_549791",
+        "group_id": "pmc:549791",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_456297",
+        "group_id": "pmc:456297",
+        "sequence_nll": 1.5857664346694946,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_403794",
+        "group_id": "pmc:403794",
+        "sequence_nll": 1.3277807235717773,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_56117",
+        "group_id": "pmc:56117",
+        "sequence_nll": 2.251856803894043,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_101937",
+        "group_id": "pmc:101937",
+        "sequence_nll": 1.2684900760650635,
+        "supervised_tokens": 104
+      },
+      {
+        "id": "Instruction-Tuning_341157",
+        "group_id": "pmc:341157",
+        "sequence_nll": 1.0412827730178833,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_341719",
+        "group_id": "pmc:341719",
+        "sequence_nll": 1.9679036140441895,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_342918",
+        "group_id": "pmc:342918",
+        "sequence_nll": 1.5612736940383911,
+        "supervised_tokens": 35
+      },
+      {
+        "id": "Instruction-Tuning_47329",
+        "group_id": "pmc:47329",
+        "sequence_nll": 2.1712167263031006,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_198762",
+        "group_id": "pmc:198762",
+        "sequence_nll": 1.601943850517273,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_293703",
+        "group_id": "pmc:293703",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_301786",
+        "group_id": "pmc:301786",
+        "sequence_nll": 1.301012635231018,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_91252",
+        "group_id": "pmc:91252",
+        "sequence_nll": 1.598537802696228,
+        "supervised_tokens": 141
+      },
+      {
+        "id": "Instruction-Tuning_242466",
+        "group_id": "pmc:242466",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_501460",
+        "group_id": "pmc:501460",
+        "sequence_nll": 1.43429434299469,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_179456",
+        "group_id": "pmc:179456",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_128766",
+        "group_id": "pmc:128766",
+        "sequence_nll": 0.9034822583198547,
+        "supervised_tokens": 14
+      },
+      {
+        "id": "Instruction-Tuning_473971",
+        "group_id": "pmc:473971",
+        "sequence_nll": 1.3935455083847046,
+        "supervised_tokens": 142
+      },
+      {
+        "id": "Instruction-Tuning_446873",
+        "group_id": "pmc:446873",
+        "sequence_nll": 2.374706268310547,
+        "supervised_tokens": 53
+      },
+      {
+        "id": "Instruction-Tuning_11300",
+        "group_id": "pmc:11300",
+        "sequence_nll": 2.065593957901001,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_217741",
+        "group_id": "pmc:217741",
+        "sequence_nll": 1.9823423624038696,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_165821",
+        "group_id": "pmc:165821",
+        "sequence_nll": 1.4402530193328857,
+        "supervised_tokens": 94
+      },
+      {
+        "id": "Instruction-Tuning_30129",
+        "group_id": "pmc:30129",
+        "sequence_nll": 1.6669694185256958,
+        "supervised_tokens": 77
+      },
+      {
+        "id": "Instruction-Tuning_106492",
+        "group_id": "pmc:106492",
+        "sequence_nll": 1.0255979299545288,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_362346",
+        "group_id": "pmc:362346",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_379149",
+        "group_id": "pmc:379149",
+        "sequence_nll": 1.4337701797485352,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_417490",
+        "group_id": "pmc:417490",
+        "sequence_nll": 1.3794957399368286,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_194856",
+        "group_id": "pmc:194856",
+        "sequence_nll": 1.309391975402832,
+        "supervised_tokens": 95
+      },
+      {
+        "id": "Instruction-Tuning_205965",
+        "group_id": "pmc:205965",
+        "sequence_nll": 1.5060783624649048,
+        "supervised_tokens": 67
+      },
+      {
+        "id": "Instruction-Tuning_604484",
+        "group_id": "pmc:604484",
+        "sequence_nll": 1.1299909353256226,
+        "supervised_tokens": 118
+      },
+      {
+        "id": "Instruction-Tuning_538920",
+        "group_id": "pmc:538920",
+        "sequence_nll": 2.3766331672668457,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_277323",
+        "group_id": "pmc:277323",
+        "sequence_nll": 1.4719676971435547,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_285019",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_523996",
+        "group_id": "pmc:523996",
+        "sequence_nll": 1.4429328441619873,
+        "supervised_tokens": 149
+      },
+      {
+        "id": "Instruction-Tuning_333778",
+        "group_id": "pmc:333778",
+        "sequence_nll": 1.9271838665008545,
+        "supervised_tokens": 65
+      },
+      {
+        "id": "Instruction-Tuning_122626",
+        "group_id": "pmc:122626",
+        "sequence_nll": 1.4570372104644775,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_158944",
+        "group_id": "pmc:158944",
+        "sequence_nll": 1.9094964265823364,
+        "supervised_tokens": 11
+      },
+      {
+        "id": "Instruction-Tuning_92828",
+        "group_id": "pmc:92828",
+        "sequence_nll": 1.36461341381073,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_9987",
+        "group_id": "pmc:565219",
+        "sequence_nll": 1.6062642335891724,
+        "supervised_tokens": 121
+      },
+      {
+        "id": "Instruction-Tuning_140254",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.8137414455413818,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_42317",
+        "group_id": "pmc:42317",
+        "sequence_nll": 2.0094449520111084,
+        "supervised_tokens": 115
+      },
+      {
+        "id": "Instruction-Tuning_559793",
+        "group_id": "pmc:559793",
+        "sequence_nll": 1.0131946802139282,
+        "supervised_tokens": 120
+      },
+      {
+        "id": "Instruction-Tuning_94817",
+        "group_id": "pmc:94817",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_213975",
+        "group_id": "pmc:213975",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_193098",
+        "group_id": "pmc:193098",
+        "sequence_nll": 1.4457238912582397,
+        "supervised_tokens": 154
+      },
+      {
+        "id": "Instruction-Tuning_447934",
+        "group_id": "pmc:447934",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2401",
+        "group_id": "pmc:2401",
+        "sequence_nll": 1.2209891080856323,
+        "supervised_tokens": 13
+      },
+      {
+        "id": "Instruction-Tuning_259194",
+        "group_id": "pmc:259194",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_34298",
+        "group_id": "pmc:34298",
+        "sequence_nll": 1.3871392011642456,
+        "supervised_tokens": 189
+      },
+      {
+        "id": "Instruction-Tuning_375032",
+        "group_id": "pmc:375032",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_481404",
+        "group_id": "pmc:481404",
+        "sequence_nll": 1.2866899967193604,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_554394",
+        "group_id": "pmc:554394",
+        "sequence_nll": 2.056778907775879,
+        "supervised_tokens": 159
+      },
+      {
+        "id": "Instruction-Tuning_526920",
+        "group_id": "pmc:526920",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_258481",
+        "group_id": "pmc:258481",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_253948",
+        "group_id": "pmc:253948",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_22792",
+        "group_id": "pmc:22792",
+        "sequence_nll": 1.7294820547103882,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_301115",
+        "group_id": "pmc:301115",
+        "sequence_nll": 1.7235493659973145,
+        "supervised_tokens": 116
+      },
+      {
+        "id": "Instruction-Tuning_37986",
+        "group_id": "pmc:37986",
+        "sequence_nll": 1.2638624906539917,
+        "supervised_tokens": 88
+      },
+      {
+        "id": "Instruction-Tuning_114903",
+        "group_id": "pmc:114903",
+        "sequence_nll": 1.274316430091858,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_450288",
+        "group_id": "pmc:450288",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_125744",
+        "group_id": "pmc:125744",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_44401",
+        "group_id": "pmc:44401",
+        "sequence_nll": 1.7371020317077637,
+        "supervised_tokens": 176
+      },
+      {
+        "id": "Instruction-Tuning_472173",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.112574815750122,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_511093",
+        "group_id": "pmc:511093",
+        "sequence_nll": 1.322502613067627,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_212461",
+        "group_id": "pmc:212461",
+        "sequence_nll": 1.8749773502349854,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_192792",
+        "group_id": "pmc:192792",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_477829",
+        "group_id": "pmc:477829",
+        "sequence_nll": 1.702588677406311,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_627684",
+        "group_id": "pmc:627684",
+        "sequence_nll": 1.4567539691925049,
+        "supervised_tokens": 69
+      },
+      {
+        "id": "Instruction-Tuning_322806",
+        "group_id": "pmc:322806",
+        "sequence_nll": 1.1705950498580933,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_438836",
+        "group_id": "pmc:438836",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281015",
+        "group_id": "pmc:110749",
+        "sequence_nll": 2.2194879055023193,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_567029",
+        "group_id": "pmc:567029",
+        "sequence_nll": 1.5317431688308716,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_155024",
+        "group_id": "pmc:155024",
+        "sequence_nll": 1.4571067094802856,
+        "supervised_tokens": 29
+      },
+      {
+        "id": "Instruction-Tuning_198910",
+        "group_id": "pmc:198910",
+        "sequence_nll": 1.1607517004013062,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_257543",
+        "group_id": "pmc:257543",
+        "sequence_nll": 2.02530574798584,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_379448",
+        "group_id": "pmc:379448",
+        "sequence_nll": 1.5832632780075073,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_376170",
+        "group_id": "pmc:376170",
+        "sequence_nll": 1.3327659368515015,
+        "supervised_tokens": 50
+      },
+      {
+        "id": "Instruction-Tuning_577970",
+        "group_id": "pmc:577970",
+        "sequence_nll": 1.2942497730255127,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_445018",
+        "group_id": "pmc:445018",
+        "sequence_nll": 1.1645221710205078,
+        "supervised_tokens": 86
+      }
+    ],
+    "matched": [
+      {
+        "id": "Instruction-Tuning_201326",
+        "group_id": "pmc:201326",
+        "sequence_nll": 1.7214020490646362,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_412168",
+        "group_id": "pmc:412168",
+        "sequence_nll": 1.3501172065734863,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_278840",
+        "group_id": "pmc:278840",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_404370",
+        "group_id": "pmc:404370",
+        "sequence_nll": 1.214035987854004,
+        "supervised_tokens": 85
+      },
+      {
+        "id": "Instruction-Tuning_62789",
+        "group_id": "pmc:62789",
+        "sequence_nll": 1.5177083015441895,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_198552",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.0978319644927979,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_554863",
+        "group_id": "pmc:554863",
+        "sequence_nll": 1.42549729347229,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_486470",
+        "group_id": "pmc:486470",
+        "sequence_nll": 1.5924972295761108,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_591260",
+        "group_id": "pmc:591260",
+        "sequence_nll": 1.2337294816970825,
+        "supervised_tokens": 92
+      },
+      {
+        "id": "Instruction-Tuning_117754",
+        "group_id": "pmc:117754",
+        "sequence_nll": 1.5197358131408691,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_486874",
+        "group_id": "pmc:486874",
+        "sequence_nll": 1.7580000162124634,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_358608",
+        "group_id": "pmc:358608",
+        "sequence_nll": 1.428234338760376,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_252030",
+        "group_id": "pmc:252030",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_341084",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_396136",
+        "group_id": "pmc:396136",
+        "sequence_nll": 1.3192774057388306,
+        "supervised_tokens": 148
+      },
+      {
+        "id": "Instruction-Tuning_38943",
+        "group_id": "pmc:38943",
+        "sequence_nll": 1.3941588401794434,
+        "supervised_tokens": 12
+      },
+      {
+        "id": "Instruction-Tuning_414602",
+        "group_id": "pmc:414602",
+        "sequence_nll": 1.7464139461517334,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_532248",
+        "group_id": "pmc:532248",
+        "sequence_nll": 2.2027344703674316,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_63921",
+        "group_id": "pmc:63921",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_225077",
+        "group_id": "pmc:225077",
+        "sequence_nll": 1.306384801864624,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_216369",
+        "group_id": "pmc:201416",
+        "sequence_nll": 1.0878585577011108,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_341601",
+        "group_id": "pmc:341601",
+        "sequence_nll": 1.4426512718200684,
+        "supervised_tokens": 151
+      },
+      {
+        "id": "Instruction-Tuning_622312",
+        "group_id": "pmc:622312",
+        "sequence_nll": 1.3421605825424194,
+        "supervised_tokens": 39
+      },
+      {
+        "id": "Instruction-Tuning_306591",
+        "group_id": "pmc:176457",
+        "sequence_nll": 2.1613612174987793,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_491819",
+        "group_id": "pmc:112338",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2107",
+        "group_id": "pmc:2107",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_466140",
+        "group_id": "pmc:466140",
+        "sequence_nll": 1.5435782670974731,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_286489",
+        "group_id": "pmc:286489",
+        "sequence_nll": 2.2397806644439697,
+        "supervised_tokens": 123
+      },
+      {
+        "id": "Instruction-Tuning_175233",
+        "group_id": "pmc:175233",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_183234",
+        "group_id": "pmc:183234",
+        "sequence_nll": 2.1775078773498535,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_634755",
+        "group_id": "pmc:273788",
+        "sequence_nll": 1.7377327680587769,
+        "supervised_tokens": 48
+      },
+      {
+        "id": "Instruction-Tuning_593209",
+        "group_id": "pmc:593209",
+        "sequence_nll": 1.572109341621399,
+        "supervised_tokens": 150
+      },
+      {
+        "id": "Instruction-Tuning_355641",
+        "group_id": "pmc:355641",
+        "sequence_nll": 1.6167871952056885,
+        "supervised_tokens": 61
+      },
+      {
+        "id": "Instruction-Tuning_525132",
+        "group_id": "pmc:481404",
+        "sequence_nll": 2.108825445175171,
+        "supervised_tokens": 58
+      },
+      {
+        "id": "Instruction-Tuning_199044",
+        "group_id": "pmc:199044",
+        "sequence_nll": 1.8383524417877197,
+        "supervised_tokens": 152
+      },
+      {
+        "id": "Instruction-Tuning_441277",
+        "group_id": "pmc:441277",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_210512",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.5233711004257202,
+        "supervised_tokens": 71
+      },
+      {
+        "id": "Instruction-Tuning_198319",
+        "group_id": "pmc:198319",
+        "sequence_nll": 1.8022018671035767,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_600118",
+        "group_id": "pmc:252710",
+        "sequence_nll": 1.4021180868148804,
+        "supervised_tokens": 21
+      },
+      {
+        "id": "Instruction-Tuning_51012",
+        "group_id": "pmc:51012",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_24065",
+        "group_id": "pmc:24065",
+        "sequence_nll": 1.4694427251815796,
+        "supervised_tokens": 81
+      },
+      {
+        "id": "Instruction-Tuning_412746",
+        "group_id": "pmc:412746",
+        "sequence_nll": 2.0586671829223633,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_80429",
+        "group_id": "pmc:80429",
+        "sequence_nll": 1.3457973003387451,
+        "supervised_tokens": 49
+      },
+      {
+        "id": "Instruction-Tuning_616980",
+        "group_id": "pmc:616980",
+        "sequence_nll": 1.4930921792984009,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_558892",
+        "group_id": "pmc:558892",
+        "sequence_nll": 1.375411868095398,
+        "supervised_tokens": 52
+      },
+      {
+        "id": "Instruction-Tuning_78739",
+        "group_id": "pmc:78739",
+        "sequence_nll": 0.8458630442619324,
+        "supervised_tokens": 19
+      },
+      {
+        "id": "Instruction-Tuning_423308",
+        "group_id": "pmc:423308",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281845",
+        "group_id": "pmc:281845",
+        "sequence_nll": 1.8563145399093628,
+        "supervised_tokens": 136
+      },
+      {
+        "id": "Instruction-Tuning_621234",
+        "group_id": "pmc:621234",
+        "sequence_nll": 0.9785750508308411,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_549791",
+        "group_id": "pmc:549791",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_456297",
+        "group_id": "pmc:456297",
+        "sequence_nll": 1.5826776027679443,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_403794",
+        "group_id": "pmc:403794",
+        "sequence_nll": 1.3241307735443115,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_56117",
+        "group_id": "pmc:56117",
+        "sequence_nll": 2.2316129207611084,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_101937",
+        "group_id": "pmc:101937",
+        "sequence_nll": 1.2731963396072388,
+        "supervised_tokens": 104
+      },
+      {
+        "id": "Instruction-Tuning_341157",
+        "group_id": "pmc:341157",
+        "sequence_nll": 1.0373543500900269,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_341719",
+        "group_id": "pmc:341719",
+        "sequence_nll": 1.968049168586731,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_342918",
+        "group_id": "pmc:342918",
+        "sequence_nll": 1.5672029256820679,
+        "supervised_tokens": 35
+      },
+      {
+        "id": "Instruction-Tuning_47329",
+        "group_id": "pmc:47329",
+        "sequence_nll": 2.1708335876464844,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_198762",
+        "group_id": "pmc:198762",
+        "sequence_nll": 1.6092734336853027,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_293703",
+        "group_id": "pmc:293703",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_301786",
+        "group_id": "pmc:301786",
+        "sequence_nll": 1.2964842319488525,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_91252",
+        "group_id": "pmc:91252",
+        "sequence_nll": 1.595875859260559,
+        "supervised_tokens": 141
+      },
+      {
+        "id": "Instruction-Tuning_242466",
+        "group_id": "pmc:242466",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_501460",
+        "group_id": "pmc:501460",
+        "sequence_nll": 1.4394385814666748,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_179456",
+        "group_id": "pmc:179456",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_128766",
+        "group_id": "pmc:128766",
+        "sequence_nll": 0.8942050337791443,
+        "supervised_tokens": 14
+      },
+      {
+        "id": "Instruction-Tuning_473971",
+        "group_id": "pmc:473971",
+        "sequence_nll": 1.3891880512237549,
+        "supervised_tokens": 142
+      },
+      {
+        "id": "Instruction-Tuning_446873",
+        "group_id": "pmc:446873",
+        "sequence_nll": 2.377730369567871,
+        "supervised_tokens": 53
+      },
+      {
+        "id": "Instruction-Tuning_11300",
+        "group_id": "pmc:11300",
+        "sequence_nll": 2.069830894470215,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_217741",
+        "group_id": "pmc:217741",
+        "sequence_nll": 1.974364161491394,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_165821",
+        "group_id": "pmc:165821",
+        "sequence_nll": 1.4375431537628174,
+        "supervised_tokens": 94
+      },
+      {
+        "id": "Instruction-Tuning_30129",
+        "group_id": "pmc:30129",
+        "sequence_nll": 1.6740061044692993,
+        "supervised_tokens": 77
+      },
+      {
+        "id": "Instruction-Tuning_106492",
+        "group_id": "pmc:106492",
+        "sequence_nll": 1.0207734107971191,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_362346",
+        "group_id": "pmc:362346",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_379149",
+        "group_id": "pmc:379149",
+        "sequence_nll": 1.4312580823898315,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_417490",
+        "group_id": "pmc:417490",
+        "sequence_nll": 1.3782166242599487,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_194856",
+        "group_id": "pmc:194856",
+        "sequence_nll": 1.3045259714126587,
+        "supervised_tokens": 95
+      },
+      {
+        "id": "Instruction-Tuning_205965",
+        "group_id": "pmc:205965",
+        "sequence_nll": 1.5118130445480347,
+        "supervised_tokens": 67
+      },
+      {
+        "id": "Instruction-Tuning_604484",
+        "group_id": "pmc:604484",
+        "sequence_nll": 1.1322052478790283,
+        "supervised_tokens": 118
+      },
+      {
+        "id": "Instruction-Tuning_538920",
+        "group_id": "pmc:538920",
+        "sequence_nll": 2.3660621643066406,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_277323",
+        "group_id": "pmc:277323",
+        "sequence_nll": 1.4682338237762451,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_285019",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_523996",
+        "group_id": "pmc:523996",
+        "sequence_nll": 1.440487027168274,
+        "supervised_tokens": 149
+      },
+      {
+        "id": "Instruction-Tuning_333778",
+        "group_id": "pmc:333778",
+        "sequence_nll": 1.9062594175338745,
+        "supervised_tokens": 65
+      },
+      {
+        "id": "Instruction-Tuning_122626",
+        "group_id": "pmc:122626",
+        "sequence_nll": 1.4589415788650513,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_158944",
+        "group_id": "pmc:158944",
+        "sequence_nll": 1.8862143754959106,
+        "supervised_tokens": 11
+      },
+      {
+        "id": "Instruction-Tuning_92828",
+        "group_id": "pmc:92828",
+        "sequence_nll": 1.3628486394882202,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_9987",
+        "group_id": "pmc:565219",
+        "sequence_nll": 1.609480857849121,
+        "supervised_tokens": 121
+      },
+      {
+        "id": "Instruction-Tuning_140254",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.8182916641235352,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_42317",
+        "group_id": "pmc:42317",
+        "sequence_nll": 2.007218837738037,
+        "supervised_tokens": 115
+      },
+      {
+        "id": "Instruction-Tuning_559793",
+        "group_id": "pmc:559793",
+        "sequence_nll": 1.0070894956588745,
+        "supervised_tokens": 120
+      },
+      {
+        "id": "Instruction-Tuning_94817",
+        "group_id": "pmc:94817",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_213975",
+        "group_id": "pmc:213975",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_193098",
+        "group_id": "pmc:193098",
+        "sequence_nll": 1.4489632844924927,
+        "supervised_tokens": 154
+      },
+      {
+        "id": "Instruction-Tuning_447934",
+        "group_id": "pmc:447934",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2401",
+        "group_id": "pmc:2401",
+        "sequence_nll": 1.2327145338058472,
+        "supervised_tokens": 13
+      },
+      {
+        "id": "Instruction-Tuning_259194",
+        "group_id": "pmc:259194",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_34298",
+        "group_id": "pmc:34298",
+        "sequence_nll": 1.3877086639404297,
+        "supervised_tokens": 189
+      },
+      {
+        "id": "Instruction-Tuning_375032",
+        "group_id": "pmc:375032",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_481404",
+        "group_id": "pmc:481404",
+        "sequence_nll": 1.3019566535949707,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_554394",
+        "group_id": "pmc:554394",
+        "sequence_nll": 2.0593814849853516,
+        "supervised_tokens": 159
+      },
+      {
+        "id": "Instruction-Tuning_526920",
+        "group_id": "pmc:526920",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_258481",
+        "group_id": "pmc:258481",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_253948",
+        "group_id": "pmc:253948",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_22792",
+        "group_id": "pmc:22792",
+        "sequence_nll": 1.7169716358184814,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_301115",
+        "group_id": "pmc:301115",
+        "sequence_nll": 1.7226585149765015,
+        "supervised_tokens": 116
+      },
+      {
+        "id": "Instruction-Tuning_37986",
+        "group_id": "pmc:37986",
+        "sequence_nll": 1.2655736207962036,
+        "supervised_tokens": 88
+      },
+      {
+        "id": "Instruction-Tuning_114903",
+        "group_id": "pmc:114903",
+        "sequence_nll": 1.2753146886825562,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_450288",
+        "group_id": "pmc:450288",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_125744",
+        "group_id": "pmc:125744",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_44401",
+        "group_id": "pmc:44401",
+        "sequence_nll": 1.7312976121902466,
+        "supervised_tokens": 176
+      },
+      {
+        "id": "Instruction-Tuning_472173",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.106465220451355,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_511093",
+        "group_id": "pmc:511093",
+        "sequence_nll": 1.3196598291397095,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_212461",
+        "group_id": "pmc:212461",
+        "sequence_nll": 1.8716354370117188,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_192792",
+        "group_id": "pmc:192792",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_477829",
+        "group_id": "pmc:477829",
+        "sequence_nll": 1.6998811960220337,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_627684",
+        "group_id": "pmc:627684",
+        "sequence_nll": 1.4506341218948364,
+        "supervised_tokens": 69
+      },
+      {
+        "id": "Instruction-Tuning_322806",
+        "group_id": "pmc:322806",
+        "sequence_nll": 1.1754831075668335,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_438836",
+        "group_id": "pmc:438836",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281015",
+        "group_id": "pmc:110749",
+        "sequence_nll": 2.2182278633117676,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_567029",
+        "group_id": "pmc:567029",
+        "sequence_nll": 1.5301395654678345,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_155024",
+        "group_id": "pmc:155024",
+        "sequence_nll": 1.448950171470642,
+        "supervised_tokens": 29
+      },
+      {
+        "id": "Instruction-Tuning_198910",
+        "group_id": "pmc:198910",
+        "sequence_nll": 1.1557437181472778,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_257543",
+        "group_id": "pmc:257543",
+        "sequence_nll": 2.0225281715393066,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_379448",
+        "group_id": "pmc:379448",
+        "sequence_nll": 1.5698800086975098,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_376170",
+        "group_id": "pmc:376170",
+        "sequence_nll": 1.3369485139846802,
+        "supervised_tokens": 50
+      },
+      {
+        "id": "Instruction-Tuning_577970",
+        "group_id": "pmc:577970",
+        "sequence_nll": 1.2929855585098267,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_445018",
+        "group_id": "pmc:445018",
+        "sequence_nll": 1.1517430543899536,
+        "supervised_tokens": 86
+      }
+    ],
+    "permuted": [
+      {
+        "id": "Instruction-Tuning_201326",
+        "group_id": "pmc:201326",
+        "sequence_nll": 1.7263683080673218,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_412168",
+        "group_id": "pmc:412168",
+        "sequence_nll": 1.347638487815857,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_278840",
+        "group_id": "pmc:278840",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_404370",
+        "group_id": "pmc:404370",
+        "sequence_nll": 1.21566903591156,
+        "supervised_tokens": 85
+      },
+      {
+        "id": "Instruction-Tuning_62789",
+        "group_id": "pmc:62789",
+        "sequence_nll": 1.5097380876541138,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_198552",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.0960161685943604,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_554863",
+        "group_id": "pmc:554863",
+        "sequence_nll": 1.421479344367981,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_486470",
+        "group_id": "pmc:486470",
+        "sequence_nll": 1.5914490222930908,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_591260",
+        "group_id": "pmc:591260",
+        "sequence_nll": 1.2333824634552002,
+        "supervised_tokens": 92
+      },
+      {
+        "id": "Instruction-Tuning_117754",
+        "group_id": "pmc:117754",
+        "sequence_nll": 1.5203758478164673,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_486874",
+        "group_id": "pmc:486874",
+        "sequence_nll": 1.7571415901184082,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_358608",
+        "group_id": "pmc:358608",
+        "sequence_nll": 1.431474208831787,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_252030",
+        "group_id": "pmc:252030",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_341084",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_396136",
+        "group_id": "pmc:396136",
+        "sequence_nll": 1.3089678287506104,
+        "supervised_tokens": 148
+      },
+      {
+        "id": "Instruction-Tuning_38943",
+        "group_id": "pmc:38943",
+        "sequence_nll": 1.3987003564834595,
+        "supervised_tokens": 12
+      },
+      {
+        "id": "Instruction-Tuning_414602",
+        "group_id": "pmc:414602",
+        "sequence_nll": 1.7513195276260376,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_532248",
+        "group_id": "pmc:532248",
+        "sequence_nll": 2.2009568214416504,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_63921",
+        "group_id": "pmc:63921",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_225077",
+        "group_id": "pmc:225077",
+        "sequence_nll": 1.302374243736267,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_216369",
+        "group_id": "pmc:201416",
+        "sequence_nll": 1.0897928476333618,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_341601",
+        "group_id": "pmc:341601",
+        "sequence_nll": 1.439101219177246,
+        "supervised_tokens": 151
+      },
+      {
+        "id": "Instruction-Tuning_622312",
+        "group_id": "pmc:622312",
+        "sequence_nll": 1.3322198390960693,
+        "supervised_tokens": 39
+      },
+      {
+        "id": "Instruction-Tuning_306591",
+        "group_id": "pmc:176457",
+        "sequence_nll": 2.1633176803588867,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_491819",
+        "group_id": "pmc:112338",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2107",
+        "group_id": "pmc:2107",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_466140",
+        "group_id": "pmc:466140",
+        "sequence_nll": 1.544586420059204,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_286489",
+        "group_id": "pmc:286489",
+        "sequence_nll": 2.2370495796203613,
+        "supervised_tokens": 123
+      },
+      {
+        "id": "Instruction-Tuning_175233",
+        "group_id": "pmc:175233",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_183234",
+        "group_id": "pmc:183234",
+        "sequence_nll": 2.1782209873199463,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_634755",
+        "group_id": "pmc:273788",
+        "sequence_nll": 1.7272263765335083,
+        "supervised_tokens": 48
+      },
+      {
+        "id": "Instruction-Tuning_593209",
+        "group_id": "pmc:593209",
+        "sequence_nll": 1.570973515510559,
+        "supervised_tokens": 150
+      },
+      {
+        "id": "Instruction-Tuning_355641",
+        "group_id": "pmc:355641",
+        "sequence_nll": 1.618198037147522,
+        "supervised_tokens": 61
+      },
+      {
+        "id": "Instruction-Tuning_525132",
+        "group_id": "pmc:481404",
+        "sequence_nll": 2.1072096824645996,
+        "supervised_tokens": 58
+      },
+      {
+        "id": "Instruction-Tuning_199044",
+        "group_id": "pmc:199044",
+        "sequence_nll": 1.8421313762664795,
+        "supervised_tokens": 152
+      },
+      {
+        "id": "Instruction-Tuning_441277",
+        "group_id": "pmc:441277",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_210512",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.5292538404464722,
+        "supervised_tokens": 71
+      },
+      {
+        "id": "Instruction-Tuning_198319",
+        "group_id": "pmc:198319",
+        "sequence_nll": 1.797491192817688,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_600118",
+        "group_id": "pmc:252710",
+        "sequence_nll": 1.409099817276001,
+        "supervised_tokens": 21
+      },
+      {
+        "id": "Instruction-Tuning_51012",
+        "group_id": "pmc:51012",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_24065",
+        "group_id": "pmc:24065",
+        "sequence_nll": 1.4702792167663574,
+        "supervised_tokens": 81
+      },
+      {
+        "id": "Instruction-Tuning_412746",
+        "group_id": "pmc:412746",
+        "sequence_nll": 2.064296007156372,
+        "supervised_tokens": 132
+      },
+      {
+        "id": "Instruction-Tuning_80429",
+        "group_id": "pmc:80429",
+        "sequence_nll": 1.344818115234375,
+        "supervised_tokens": 49
+      },
+      {
+        "id": "Instruction-Tuning_616980",
+        "group_id": "pmc:616980",
+        "sequence_nll": 1.50411856174469,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_558892",
+        "group_id": "pmc:558892",
+        "sequence_nll": 1.3951939344406128,
+        "supervised_tokens": 52
+      },
+      {
+        "id": "Instruction-Tuning_78739",
+        "group_id": "pmc:78739",
+        "sequence_nll": 0.8455279469490051,
+        "supervised_tokens": 19
+      },
+      {
+        "id": "Instruction-Tuning_423308",
+        "group_id": "pmc:423308",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281845",
+        "group_id": "pmc:281845",
+        "sequence_nll": 1.855103611946106,
+        "supervised_tokens": 136
+      },
+      {
+        "id": "Instruction-Tuning_621234",
+        "group_id": "pmc:621234",
+        "sequence_nll": 0.9782846570014954,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_549791",
+        "group_id": "pmc:549791",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_456297",
+        "group_id": "pmc:456297",
+        "sequence_nll": 1.5764434337615967,
+        "supervised_tokens": 60
+      },
+      {
+        "id": "Instruction-Tuning_403794",
+        "group_id": "pmc:403794",
+        "sequence_nll": 1.3225234746932983,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_56117",
+        "group_id": "pmc:56117",
+        "sequence_nll": 2.2365925312042236,
+        "supervised_tokens": 43
+      },
+      {
+        "id": "Instruction-Tuning_101937",
+        "group_id": "pmc:101937",
+        "sequence_nll": 1.265372633934021,
+        "supervised_tokens": 104
+      },
+      {
+        "id": "Instruction-Tuning_341157",
+        "group_id": "pmc:341157",
+        "sequence_nll": 1.0409331321716309,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_341719",
+        "group_id": "pmc:341719",
+        "sequence_nll": 1.9671255350112915,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_342918",
+        "group_id": "pmc:342918",
+        "sequence_nll": 1.5562983751296997,
+        "supervised_tokens": 35
+      },
+      {
+        "id": "Instruction-Tuning_47329",
+        "group_id": "pmc:47329",
+        "sequence_nll": 2.1647744178771973,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_198762",
+        "group_id": "pmc:198762",
+        "sequence_nll": 1.601877212524414,
+        "supervised_tokens": 55
+      },
+      {
+        "id": "Instruction-Tuning_293703",
+        "group_id": "pmc:293703",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_301786",
+        "group_id": "pmc:301786",
+        "sequence_nll": 1.2968783378601074,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_91252",
+        "group_id": "pmc:91252",
+        "sequence_nll": 1.5958771705627441,
+        "supervised_tokens": 141
+      },
+      {
+        "id": "Instruction-Tuning_242466",
+        "group_id": "pmc:242466",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_501460",
+        "group_id": "pmc:501460",
+        "sequence_nll": 1.431779384613037,
+        "supervised_tokens": 10
+      },
+      {
+        "id": "Instruction-Tuning_179456",
+        "group_id": "pmc:179456",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_128766",
+        "group_id": "pmc:128766",
+        "sequence_nll": 0.8870974779129028,
+        "supervised_tokens": 14
+      },
+      {
+        "id": "Instruction-Tuning_473971",
+        "group_id": "pmc:473971",
+        "sequence_nll": 1.3890135288238525,
+        "supervised_tokens": 142
+      },
+      {
+        "id": "Instruction-Tuning_446873",
+        "group_id": "pmc:446873",
+        "sequence_nll": 2.370347023010254,
+        "supervised_tokens": 53
+      },
+      {
+        "id": "Instruction-Tuning_11300",
+        "group_id": "pmc:11300",
+        "sequence_nll": 2.07173752784729,
+        "supervised_tokens": 86
+      },
+      {
+        "id": "Instruction-Tuning_217741",
+        "group_id": "pmc:217741",
+        "sequence_nll": 1.979486346244812,
+        "supervised_tokens": 127
+      },
+      {
+        "id": "Instruction-Tuning_165821",
+        "group_id": "pmc:165821",
+        "sequence_nll": 1.4409130811691284,
+        "supervised_tokens": 94
+      },
+      {
+        "id": "Instruction-Tuning_30129",
+        "group_id": "pmc:30129",
+        "sequence_nll": 1.6737538576126099,
+        "supervised_tokens": 77
+      },
+      {
+        "id": "Instruction-Tuning_106492",
+        "group_id": "pmc:106492",
+        "sequence_nll": 1.0227265357971191,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_362346",
+        "group_id": "pmc:362346",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_379149",
+        "group_id": "pmc:379149",
+        "sequence_nll": 1.4225064516067505,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_417490",
+        "group_id": "pmc:417490",
+        "sequence_nll": 1.3827790021896362,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_194856",
+        "group_id": "pmc:194856",
+        "sequence_nll": 1.2973788976669312,
+        "supervised_tokens": 95
+      },
+      {
+        "id": "Instruction-Tuning_205965",
+        "group_id": "pmc:205965",
+        "sequence_nll": 1.5047457218170166,
+        "supervised_tokens": 67
+      },
+      {
+        "id": "Instruction-Tuning_604484",
+        "group_id": "pmc:604484",
+        "sequence_nll": 1.1374975442886353,
+        "supervised_tokens": 118
+      },
+      {
+        "id": "Instruction-Tuning_538920",
+        "group_id": "pmc:538920",
+        "sequence_nll": 2.363565444946289,
+        "supervised_tokens": 87
+      },
+      {
+        "id": "Instruction-Tuning_277323",
+        "group_id": "pmc:277323",
+        "sequence_nll": 1.4750853776931763,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_285019",
+        "group_id": "pmc:285019",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_523996",
+        "group_id": "pmc:523996",
+        "sequence_nll": 1.43889319896698,
+        "supervised_tokens": 149
+      },
+      {
+        "id": "Instruction-Tuning_333778",
+        "group_id": "pmc:333778",
+        "sequence_nll": 1.9062941074371338,
+        "supervised_tokens": 65
+      },
+      {
+        "id": "Instruction-Tuning_122626",
+        "group_id": "pmc:122626",
+        "sequence_nll": 1.4509705305099487,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_158944",
+        "group_id": "pmc:158944",
+        "sequence_nll": 1.890925645828247,
+        "supervised_tokens": 11
+      },
+      {
+        "id": "Instruction-Tuning_92828",
+        "group_id": "pmc:92828",
+        "sequence_nll": 1.363381266593933,
+        "supervised_tokens": 91
+      },
+      {
+        "id": "Instruction-Tuning_9987",
+        "group_id": "pmc:565219",
+        "sequence_nll": 1.606164813041687,
+        "supervised_tokens": 121
+      },
+      {
+        "id": "Instruction-Tuning_140254",
+        "group_id": "pmc:110749",
+        "sequence_nll": 1.8122878074645996,
+        "supervised_tokens": 128
+      },
+      {
+        "id": "Instruction-Tuning_42317",
+        "group_id": "pmc:42317",
+        "sequence_nll": 2.0093836784362793,
+        "supervised_tokens": 115
+      },
+      {
+        "id": "Instruction-Tuning_559793",
+        "group_id": "pmc:559793",
+        "sequence_nll": 1.010006070137024,
+        "supervised_tokens": 120
+      },
+      {
+        "id": "Instruction-Tuning_94817",
+        "group_id": "pmc:94817",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_213975",
+        "group_id": "pmc:213975",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_193098",
+        "group_id": "pmc:193098",
+        "sequence_nll": 1.4446595907211304,
+        "supervised_tokens": 154
+      },
+      {
+        "id": "Instruction-Tuning_447934",
+        "group_id": "pmc:447934",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_2401",
+        "group_id": "pmc:2401",
+        "sequence_nll": 1.2245413064956665,
+        "supervised_tokens": 13
+      },
+      {
+        "id": "Instruction-Tuning_259194",
+        "group_id": "pmc:259194",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_34298",
+        "group_id": "pmc:34298",
+        "sequence_nll": 1.3817178010940552,
+        "supervised_tokens": 189
+      },
+      {
+        "id": "Instruction-Tuning_375032",
+        "group_id": "pmc:375032",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_481404",
+        "group_id": "pmc:481404",
+        "sequence_nll": 1.2924119234085083,
+        "supervised_tokens": 57
+      },
+      {
+        "id": "Instruction-Tuning_554394",
+        "group_id": "pmc:554394",
+        "sequence_nll": 2.0551843643188477,
+        "supervised_tokens": 159
+      },
+      {
+        "id": "Instruction-Tuning_526920",
+        "group_id": "pmc:526920",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_258481",
+        "group_id": "pmc:258481",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_253948",
+        "group_id": "pmc:253948",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_22792",
+        "group_id": "pmc:22792",
+        "sequence_nll": 1.7114875316619873,
+        "supervised_tokens": 108
+      },
+      {
+        "id": "Instruction-Tuning_301115",
+        "group_id": "pmc:301115",
+        "sequence_nll": 1.7261075973510742,
+        "supervised_tokens": 116
+      },
+      {
+        "id": "Instruction-Tuning_37986",
+        "group_id": "pmc:37986",
+        "sequence_nll": 1.2650389671325684,
+        "supervised_tokens": 88
+      },
+      {
+        "id": "Instruction-Tuning_114903",
+        "group_id": "pmc:114903",
+        "sequence_nll": 1.2816524505615234,
+        "supervised_tokens": 37
+      },
+      {
+        "id": "Instruction-Tuning_450288",
+        "group_id": "pmc:450288",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_125744",
+        "group_id": "pmc:125744",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_44401",
+        "group_id": "pmc:44401",
+        "sequence_nll": 1.7373936176300049,
+        "supervised_tokens": 176
+      },
+      {
+        "id": "Instruction-Tuning_472173",
+        "group_id": "pmc:198552",
+        "sequence_nll": 1.1092135906219482,
+        "supervised_tokens": 101
+      },
+      {
+        "id": "Instruction-Tuning_511093",
+        "group_id": "pmc:511093",
+        "sequence_nll": 1.314311146736145,
+        "supervised_tokens": 106
+      },
+      {
+        "id": "Instruction-Tuning_212461",
+        "group_id": "pmc:212461",
+        "sequence_nll": 1.8792266845703125,
+        "supervised_tokens": 140
+      },
+      {
+        "id": "Instruction-Tuning_192792",
+        "group_id": "pmc:192792",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_477829",
+        "group_id": "pmc:477829",
+        "sequence_nll": 1.7068250179290771,
+        "supervised_tokens": 68
+      },
+      {
+        "id": "Instruction-Tuning_627684",
+        "group_id": "pmc:627684",
+        "sequence_nll": 1.4549447298049927,
+        "supervised_tokens": 69
+      },
+      {
+        "id": "Instruction-Tuning_322806",
+        "group_id": "pmc:322806",
+        "sequence_nll": 1.1752920150756836,
+        "supervised_tokens": 153
+      },
+      {
+        "id": "Instruction-Tuning_438836",
+        "group_id": "pmc:438836",
+        "sequence_nll": 0.0,
+        "supervised_tokens": 0
+      },
+      {
+        "id": "Instruction-Tuning_281015",
+        "group_id": "pmc:110749",
+        "sequence_nll": 2.2176074981689453,
+        "supervised_tokens": 119
+      },
+      {
+        "id": "Instruction-Tuning_567029",
+        "group_id": "pmc:567029",
+        "sequence_nll": 1.5101609230041504,
+        "supervised_tokens": 22
+      },
+      {
+        "id": "Instruction-Tuning_155024",
+        "group_id": "pmc:155024",
+        "sequence_nll": 1.4436650276184082,
+        "supervised_tokens": 29
+      },
+      {
+        "id": "Instruction-Tuning_198910",
+        "group_id": "pmc:198910",
+        "sequence_nll": 1.156104326248169,
+        "supervised_tokens": 117
+      },
+      {
+        "id": "Instruction-Tuning_257543",
+        "group_id": "pmc:257543",
+        "sequence_nll": 2.016249179840088,
+        "supervised_tokens": 138
+      },
+      {
+        "id": "Instruction-Tuning_379448",
+        "group_id": "pmc:379448",
+        "sequence_nll": 1.5793839693069458,
+        "supervised_tokens": 113
+      },
+      {
+        "id": "Instruction-Tuning_376170",
+        "group_id": "pmc:376170",
+        "sequence_nll": 1.330899715423584,
+        "supervised_tokens": 50
+      },
+      {
+        "id": "Instruction-Tuning_577970",
+        "group_id": "pmc:577970",
+        "sequence_nll": 1.2921746969223022,
+        "supervised_tokens": 45
+      },
+      {
+        "id": "Instruction-Tuning_445018",
+        "group_id": "pmc:445018",
+        "sequence_nll": 1.1526089906692505,
+        "supervised_tokens": 86
+      }
+    ]
+  },
+  "claim_ceiling": "source-held-out conditional-information diagnostic; not target-domain generation accuracy"
+}

@@ -1,0 +1,224 @@
+{
+  "version": "visual-evidence-chord-analysis-v2",
+  "input": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/probe64_permuted/raw.jsonl",
+  "input_sha256": "5261571189c01c6f03d06edfd6de2967bc02a8d4df4fb70f997838af6addb862",
+  "n_cases": 40,
+  "n_styles": 6,
+  "diseases": [
+    "cardiomegaly",
+    "device",
+    "edema",
+    "effusion",
+    "opacity",
+    "pneumothorax"
+  ],
+  "styles": [
+    "style_0",
+    "style_1",
+    "style_2",
+    "style_3",
+    "style_4",
+    "style_5"
+  ],
+  "view_audit": {
+    "path": "/root/autodl-tmp/ANCHOR/corrected_runs/visual_evidence_chord_probe_v1_n64/view_position.jsonl",
+    "sha256": "d10406d3008b061d889d7e9aaccc9f90fb1877e9fc912b4095e47af2375be74a",
+    "selected_category": "a frontal chest radiograph",
+    "selected_cases": 40,
+    "total_cases": 64
+  },
+  "definition": "evidence = mean log p(positive complete sentence) - mean log p(negative complete sentence)",
+  "content_preservation": {
+    "median_pixel_correlation": 0.9708696878934511,
+    "median_edge_correlation": 0.9762480703925346,
+    "median_mean_absolute_change": 0.08952846378087997
+  },
+  "direct_geometry": {
+    "median_attenuation_cosine": 0.26496808526375304,
+    "attenuation_cosine_ci95": [
+      0.14033987554109875,
+      0.26741069371824533
+    ],
+    "median_relative_style_shift": 0.3055380780335163,
+    "median_orthogonal_fraction": 0.24261873204958112
+  },
+  "leave_one_image_out_mse": {
+    "identity": 0.007590220003479219,
+    "chord": 0.007318718960059731,
+    "style_offset": 0.0069530088312143214,
+    "diagonal_filter": 0.007234206768810175,
+    "full_linear_filter": 0.007832294563175754
+  },
+  "style_offset_over_chord": {
+    "mse_improvement": 0.00036571012884540797,
+    "relative_improvement": 0.04996914498851358,
+    "image_bootstrap_ci95": [
+      -0.0002549651115683088,
+      0.0009802630886253784
+    ],
+    "style_label_permutation_p": 0.004975124378109453,
+    "permutation_draws": 200,
+    "permutation_mean": 0.00026843476378824214
+  },
+  "concept_filter_over_chord": {
+    "mse_improvement": 8.451219124955504e-05,
+    "relative_improvement": 0.011547402176632467,
+    "image_bootstrap_ci95": [
+      -6.618745222377699e-05,
+      0.00023241963248617063
+    ],
+    "style_label_permutation_p": 0.03482587064676617,
+    "permutation_draws": 200,
+    "permutation_mean": 4.589512385109996e-05
+  },
+  "style_case_variance_decomposition": {
+    "definition": "Delta[i,s] = evidence[i,s] - evidence[i,real]; balanced two-way Euclidean ANOVA over the complete-sentence evidence vectors",
+    "sums_of_squares": {
+      "case": 8.481762352217409,
+      "style": 0.23691124911415226,
+      "case_by_style": 1.9502899123333486,
+      "total": 10.66896351366491
+    },
+    "fraction_of_centered_variance": {
+      "case": 0.7949940349269999,
+      "style": 0.02220564807543995,
+      "case_by_style": 0.18280031699756014
+    },
+    "maximum_global_additive_correction_by_style": {
+      "style_0": {
+        "shared_offset_norm_squared": 0.0018435872794313657,
+        "mean_drift_energy": 0.05273321162918876,
+        "maximum_reducible_fraction": 0.034960648564232484
+      },
+      "style_1": {
+        "shared_offset_norm_squared": 0.0012892772849353556,
+        "mean_drift_energy": 0.041937282077705286,
+        "maximum_reducible_fraction": 0.030742986218001995
+      },
+      "style_2": {
+        "shared_offset_norm_squared": 0.0008305590680439684,
+        "mean_drift_energy": 0.04094749370372941,
+        "maximum_reducible_fraction": 0.020283514152377117
+      },
+      "style_3": {
+        "shared_offset_norm_squared": 0.0032467438140731885,
+        "mean_drift_energy": 0.04536210862716259,
+        "maximum_reducible_fraction": 0.07157391735817711
+      },
+      "style_4": {
+        "shared_offset_norm_squared": 0.0014505910871504667,
+        "mean_drift_energy": 0.04522087644663362,
+        "maximum_reducible_fraction": 0.03207790739886142
+      },
+      "style_5": {
+        "shared_offset_norm_squared": 0.003785854977848602,
+        "mean_drift_energy": 0.04704694764083221,
+        "maximum_reducible_fraction": 0.08046972583111524
+      }
+    },
+    "theorem": "For a fixed style s, the least-squares global additive correction is E_i[Delta[i,s]], and its maximum reducible fraction is ||E_i Delta||^2 / E_i||Delta||^2."
+  },
+  "patient_style_susceptibility": {
+    "definition": "patient susceptibility = RMS complete-sentence evidence drift over source styles and clinical concepts",
+    "median_susceptibility": 0.06765517028401435,
+    "correlations": {
+      "real_null_evidence_norm": {
+        "spearman_rho": -0.028517823639774863,
+        "p_value": 0.8613321431498369
+      },
+      "mean_absolute_visual_evidence": {
+        "spearman_rho": 0.03170731707317074,
+        "p_value": 0.8460001510219892
+      },
+      "mean_absolute_clinical_evidence": {
+        "spearman_rho": 0.05478424015009382,
+        "p_value": 0.7370584969232156
+      },
+      "minimum_absolute_clinical_evidence": {
+        "spearman_rho": 0.0926829268292683,
+        "p_value": 0.569480161664326
+      },
+      "clinical_evidence_std": {
+        "spearman_rho": 0.12439024390243905,
+        "p_value": 0.44442419515579346
+      },
+      "mean_pixel_change": {
+        "spearman_rho": 0.23602251407129457,
+        "p_value": 0.1425915045747822
+      },
+      "mean_edge_change": {
+        "spearman_rho": -0.08742964352720452,
+        "p_value": 0.5916485886591231
+      }
+    }
+  },
+  "split_half_style_direction": {
+    "definition": "cosine between mean complete-sentence evidence drifts in two random disjoint patient halves",
+    "draws": 2000,
+    "seed": 2027,
+    "by_style": {
+      "style_0": {
+        "median_cosine": 0.3305227311544707,
+        "ci95": [
+          -0.41094188212171967,
+          0.8744371200300158
+        ],
+        "fraction_positive": 0.7755,
+        "direction_certified": false
+      },
+      "style_1": {
+        "median_cosine": 0.2606438686746838,
+        "ci95": [
+          -0.5314432064135753,
+          0.8518253398969456
+        ],
+        "fraction_positive": 0.717,
+        "direction_certified": false
+      },
+      "style_2": {
+        "median_cosine": 0.028494466054857816,
+        "ci95": [
+          -0.5794563551172491,
+          0.7708910151855384
+        ],
+        "fraction_positive": 0.5255,
+        "direction_certified": false
+      },
+      "style_3": {
+        "median_cosine": 0.6759891078480096,
+        "ci95": [
+          0.009930520475091643,
+          0.9501179405206132
+        ],
+        "fraction_positive": 0.9755,
+        "direction_certified": true
+      },
+      "style_4": {
+        "median_cosine": 0.3103228885559355,
+        "ci95": [
+          -0.49781804729386964,
+          0.8718777675294259
+        ],
+        "fraction_positive": 0.7365,
+        "direction_certified": false
+      },
+      "style_5": {
+        "median_cosine": 0.6950157276710309,
+        "ci95": [
+          0.12785166077395985,
+          0.9491654815343664
+        ],
+        "fraction_positive": 0.9915,
+        "direction_certified": true
+      }
+    }
+  },
+  "decision": {
+    "intervention_nontrivial": true,
+    "content_preserved": true,
+    "scalar_attenuation_supported": false,
+    "style_prior_rotation_supported": false,
+    "concept_selective_filter_supported": false
+  },
+  "claim_ceiling": "mechanism diagnostic on fixed MIMIC development images; teacher-forced sentence likelihoods are not predictions"
+}

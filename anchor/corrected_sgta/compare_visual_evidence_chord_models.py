@@ -18,7 +18,7 @@ from anchor.corrected_sgta.analyze_visual_evidence_chord_probe import (
 )
 
 
-VERSION = "visual-evidence-chord-lineage-comparison-v2"
+VERSION = "visual-evidence-chord-lineage-comparison-v3"
 
 
 def sha256(path: Path) -> str:
@@ -297,20 +297,18 @@ def main() -> None:
         "view_category": args.view_category if selected is not None else None,
         "comparison": comparison,
         "decision_rule": (
-            "A medical-training lineage effect requires a positive paired "
-            "bootstrap lower bound for the style variance fraction; matching "
-            "fractions indicate an architectural or transform-level effect."
+            "A directional lineage effect requires the corresponding paired "
+            "patient-cluster bootstrap interval to exclude zero."
         ),
         "decision": {
-            "medical_checkpoint_has_larger_style_fraction": bool(
+            "first_has_larger_style_fraction": bool(
                 comparison["first_minus_second"]["style"][
                     "paired_patient_cluster_bootstrap_ci95"
                 ][0]
                 > 0
             ),
             (
-                "medical_checkpoint_has_lower_normalized_"
-                "style_susceptibility"
+                "first_has_lower_normalized_style_susceptibility"
             ): bool(
                 comparison["normalized_style_susceptibility"][
                     "paired_patient_cluster_bootstrap_ci95"
@@ -390,7 +388,7 @@ def main() -> None:
         [0, 1], [args.first_name, args.second_name], rotation=8
     )
     axes[1].set_ylabel("Normalized style susceptibility $\\kappa$")
-    axes[1].set_title("Medical checkpoint is less style-sensitive")
+    axes[1].set_title("Normalized acquisition-style susceptibility")
     figure.savefig(args.figure, dpi=220)
     plt.close(figure)
     print(json.dumps(result, indent=2))

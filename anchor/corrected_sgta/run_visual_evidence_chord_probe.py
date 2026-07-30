@@ -24,7 +24,7 @@ from anchor.corrected_sgta.build_pubmed_style_prototypes import (
 from anchor.corrected_sgta.run_center_native_qwen import messages_for, pad_392
 
 
-VERSION = "visual-evidence-chord-probe-v1"
+VERSION = "visual-evidence-chord-probe-v2"
 CONDITIONS = {
     "pneumothorax": "pneumothorax",
     "effusion": "pleural effusion",
@@ -251,6 +251,8 @@ def build_views(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=Path, required=True)
+    parser.add_argument("--merger-checkpoint", type=Path)
+    parser.add_argument("--variant-name")
     parser.add_argument("--questions", type=Path, required=True)
     parser.add_argument("--image-manifest", type=Path, required=True)
     parser.add_argument("--style-manifest", type=Path, required=True)
@@ -272,6 +274,9 @@ def main() -> None:
         raise RuntimeError("style manifest must contain at least three clusters")
 
     config_sha = sha256(args.model / "config.json")
+    merger_sha = (
+        sha256(args.merger_checkpoint) if args.merger_checkpoint else None
+    )
     pending: list[dict] = []
     metadata: dict[tuple[str, str], dict] = {}
     for case in cases:
@@ -304,6 +309,7 @@ def main() -> None:
         existing = read_jsonl(args.output)
         expected = {
             "model_config_sha256": config_sha,
+            "merger_checkpoint_sha256": merger_sha,
             "questions_sha256": sha256(args.questions),
             "image_manifest_sha256": sha256(args.image_manifest),
             "style_manifest_sha256": sha256(args.style_manifest),
@@ -312,10 +318,10 @@ def main() -> None:
         }
         for record in existing:
             for field, value in expected.items():
-                if record[field] != value:
+                if record.get(field) != value:
                     raise RuntimeError(
                         f"resume fingerprint mismatch for {field}: "
-                        f"{record[field]!r} != {value!r}"
+                        f"{record.get(field)!r} != {value!r}"
                     )
             existing_keys.add(
                 (
@@ -358,6 +364,10 @@ def main() -> None:
         attn_implementation="flash_attention_2",
         local_files_only=True,
     ).to("cuda").eval()
+    if args.merger_checkpoint:
+        from anchor.corrected_sgta.run_center_native_qwen import load_merger
+
+        load_merger(model, args.merger_checkpoint)
     mode = "a" if args.resume and existing_keys else "w"
     with args.output.open(mode) as handle:
         for start in range(0, len(pending), args.batch_size):
@@ -381,6 +391,13 @@ def main() -> None:
                     ],
                     "model": str(args.model.resolve()),
                     "model_config_sha256": config_sha,
+                    "merger_checkpoint": (
+                        str(args.merger_checkpoint.resolve())
+                        if args.merger_checkpoint
+                        else None
+                    ),
+                    "merger_checkpoint_sha256": merger_sha,
+                    "variant_name": args.variant_name,
                     "questions_sha256": sha256(args.questions),
                     "image_manifest_sha256": sha256(args.image_manifest),
                     "style_manifest_sha256": sha256(args.style_manifest),
