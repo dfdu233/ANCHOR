@@ -1,6 +1,7 @@
 import numpy as np
 
 from anchor.corrected_sgta.compare_visual_evidence_chord_models import (
+    patient_id_by_case,
     paired_lineage_comparison,
     variance_fractions,
 )
@@ -23,6 +24,7 @@ def test_paired_comparison_detects_medical_style_component():
         medical,
         base,
         ["style_0", "style_1"],
+        cluster_ids=[f"p{index // 2}" for index in range(40)],
         first_visual_scale=np.ones(40),
         second_visual_scale=np.ones(40),
         draws=500,
@@ -30,7 +32,7 @@ def test_paired_comparison_detects_medical_style_component():
     assert result["first_minus_second"]["style"]["point"] > 0
     assert (
         result["first_minus_second"]["style"][
-            "paired_case_bootstrap_ci95"
+            "paired_patient_cluster_bootstrap_ci95"
         ][0]
         > 0
     )
@@ -40,3 +42,24 @@ def test_paired_comparison_detects_medical_style_component():
         ]
         > 0
     )
+
+
+def test_patient_id_by_case_uses_mimic_path():
+    rows = [
+        {
+            "case_id": "mimic-000",
+            "image_relative": (
+                "p15/p15518538/s53078789/example.jpg"
+            ),
+        },
+        {
+            "case_id": "mimic-001",
+            "image_relative": (
+                "p15/p15518538/s99999999/example.jpg"
+            ),
+        },
+    ]
+    assert patient_id_by_case(rows) == {
+        "mimic-000": "p15518538",
+        "mimic-001": "p15518538",
+    }

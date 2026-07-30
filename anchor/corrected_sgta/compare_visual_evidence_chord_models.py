@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -17,7 +18,7 @@ from anchor.corrected_sgta.analyze_visual_evidence_chord_probe import (
 )
 
 
-VERSION = "visual-evidence-chord-lineage-comparison-v1"
+VERSION = "visual-evidence-chord-lineage-comparison-v2"
 
 
 def sha256(path: Path) -> str:
@@ -42,7 +43,7 @@ def drift_tensor(
 
 
 def variance_fractions(drift: np.ndarray) -> np.ndarray:
-    """Return patient, style, and patient-by-style variance fractions."""
+    """Return case, style, and case-by-style variance fractions."""
 
     grand = drift.mean(axis=(0, 1), keepdims=True)
     case = drift.mean(axis=1, keepdims=True) - grand
@@ -63,6 +64,7 @@ def paired_lineage_comparison(
     first: np.ndarray,
     second: np.ndarray,
     styles: list[str],
+    cluster_ids: list[str] | None = None,
     first_visual_scale: np.ndarray | None = None,
     second_visual_scale: np.ndarray | None = None,
     draws: int = 5000,
@@ -74,12 +76,37 @@ def paired_lineage_comparison(
         raise ValueError(
             f"paired drift tensors differ: {first.shape} != {second.shape}"
         )
+    if cluster_ids is None:
+        cluster_ids = [str(index) for index in range(first.shape[0])]
+    if len(cluster_ids) != first.shape[0]:
+        raise ValueError("cluster_ids must match the paired case dimension")
+    unique_clusters = sorted(set(cluster_ids))
+    cluster_indices = {
+        cluster: np.asarray(
+            [
+                index
+                for index, value in enumerate(cluster_ids)
+                if value == cluster
+            ],
+            dtype=np.int64,
+        )
+        for cluster in unique_clusters
+    }
+
+    def sample_clusters(rng: np.random.Generator) -> np.ndarray:
+        sampled = rng.choice(
+            unique_clusters, size=len(unique_clusters), replace=True
+        )
+        return np.concatenate(
+            [cluster_indices[cluster] for cluster in sampled]
+        )
+
     first_fraction = variance_fractions(first)
     second_fraction = variance_fractions(second)
     rng = np.random.default_rng(seed)
     bootstrap = []
     for _ in range(draws):
-        indices = rng.integers(0, first.shape[0], size=first.shape[0])
+        indices = sample_clusters(rng)
         bootstrap.append(
             variance_fractions(first[indices])
             - variance_fractions(second[indices])
@@ -107,7 +134,7 @@ def paired_lineage_comparison(
         observed = float(np.median(first_case) - np.median(second_case))
         differences = []
         for _ in range(draws):
-            indices = rng.integers(0, first.shape[0], size=first.shape[0])
+            indices = sample_clusters(rng)
             differences.append(
                 float(
                     np.median(first_case[indices])
@@ -116,27 +143,27 @@ def paired_lineage_comparison(
             )
         susceptibility = {
             "definition": (
-                "per-patient RMS style evidence drift divided by the "
+                "per-case RMS style evidence drift divided by the "
                 "real-null evidence norm"
             ),
             "first_median": float(np.median(first_case)),
             "second_median": float(np.median(second_case)),
             "first_minus_second": observed,
-            "paired_case_bootstrap_ci95": [
+            "paired_patient_cluster_bootstrap_ci95": [
                 float(value)
                 for value in np.quantile(differences, [0.025, 0.975])
             ],
             "first_per_case": [float(value) for value in first_case],
             "second_per_case": [float(value) for value in second_case],
         }
-    names = ["patient", "style", "patient_by_style"]
+    names = ["case", "style", "case_by_style"]
     return {
         "first_fraction": dict(zip(names, first_fraction, strict=True)),
         "second_fraction": dict(zip(names, second_fraction, strict=True)),
         "first_minus_second": {
             name: {
                 "point": float(first_fraction[index] - second_fraction[index]),
-                "paired_case_bootstrap_ci95": [
+                "paired_patient_cluster_bootstrap_ci95": [
                     float(value)
                     for value in np.quantile(
                         bootstrap_array[:, index], [0.025, 0.975]
@@ -147,9 +174,29 @@ def paired_lineage_comparison(
         },
         "style_offset_alignment": style_directions,
         "normalized_style_susceptibility": susceptibility,
+        "bootstrap_unit": "patient_cluster",
+        "n_clusters": len(unique_clusters),
         "bootstrap_draws": draws,
         "seed": seed,
     }
+
+
+def patient_id_by_case(rows: list[dict]) -> dict[str, str]:
+    """Recover the MIMIC patient cluster from the canonical image path."""
+
+    result: dict[str, str] = {}
+    for row in rows:
+        case_id = str(row["case_id"])
+        relative = str(row.get("image_relative", ""))
+        match = re.search(r"(?:^|/)(p\d{8})(?:/|$)", relative)
+        patient_id = match.group(1) if match else case_id
+        previous = result.setdefault(case_id, patient_id)
+        if previous != patient_id:
+            raise ValueError(
+                f"case {case_id} maps to multiple patients: "
+                f"{previous}, {patient_id}"
+            )
+    return result
 
 
 def main() -> None:
@@ -188,6 +235,13 @@ def main() -> None:
     first_evidence = first_pack["evidence"]
     second_evidence = second_pack["evidence"]
     cases = sorted(set(first_evidence) & set(second_evidence))
+    first_patients = patient_id_by_case(first_rows)
+    second_patients = patient_id_by_case(second_rows)
+    if any(
+        first_patients[case] != second_patients[case] for case in cases
+    ):
+        raise RuntimeError("models do not share the same patient clusters")
+    patient_clusters = [first_patients[case] for case in cases]
     styles = sorted(
         view for view in first_views if view.startswith("style_")
     )
@@ -219,6 +273,7 @@ def main() -> None:
         first_drift,
         second_drift,
         styles,
+        cluster_ids=patient_clusters,
         first_visual_scale=first_scale,
         second_visual_scale=second_scale,
         draws=args.bootstrap_draws,
@@ -236,6 +291,7 @@ def main() -> None:
             "sha256": sha256(args.second),
         },
         "n_paired_cases": len(cases),
+        "n_paired_patients": len(set(patient_clusters)),
         "styles": styles,
         "diseases": first_diseases,
         "view_category": args.view_category if selected is not None else None,
@@ -246,15 +302,18 @@ def main() -> None:
             "fractions indicate an architectural or transform-level effect."
         ),
         "decision": {
-            "medical_training_increases_style_fraction": bool(
+            "medical_checkpoint_has_larger_style_fraction": bool(
                 comparison["first_minus_second"]["style"][
-                    "paired_case_bootstrap_ci95"
+                    "paired_patient_cluster_bootstrap_ci95"
                 ][0]
                 > 0
             ),
-            "medical_training_reduces_normalized_style_susceptibility": bool(
+            (
+                "medical_checkpoint_has_lower_normalized_"
+                "style_susceptibility"
+            ): bool(
                 comparison["normalized_style_susceptibility"][
-                    "paired_case_bootstrap_ci95"
+                    "paired_patient_cluster_bootstrap_ci95"
                 ][1]
                 < 0
             ),
@@ -266,7 +325,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2))
 
-    labels = ["Patient", "Style", "Patient×style"]
+    labels = ["Image/study", "Style", "Image/study×style"]
     first_values = list(comparison["first_fraction"].values())
     second_values = list(comparison["second_fraction"].values())
     locations = np.arange(3)
@@ -331,7 +390,7 @@ def main() -> None:
         [0, 1], [args.first_name, args.second_name], rotation=8
     )
     axes[1].set_ylabel("Normalized style susceptibility $\\kappa$")
-    axes[1].set_title("Medical training contracts style sensitivity")
+    axes[1].set_title("Medical checkpoint is less style-sensitive")
     figure.savefig(args.figure, dpi=220)
     plt.close(figure)
     print(json.dumps(result, indent=2))

@@ -198,21 +198,22 @@ Not supported:
 
 ## Exact-architecture training-lineage control
 
-The exact base Qwen2.5-VL-7B model was run on the identical 40 frontal images,
-six styles, six concepts, complete-sentence prompts, and inference budget.
+The exact base Qwen2.5-VL-7B model was run on the identical 40 frontal images
+from 38 patients, six styles, six concepts, complete-sentence prompts, and
+inference budget.
 
 | Quantity | HuatuoGPT-Vision | Base Qwen2.5-VL |
 |---|---:|---:|
-| Patient variance | 73.43% | 79.86% |
+| Image/study variance | 73.43% | 79.86% |
 | Style variance | 3.28% | 2.06% |
-| Patient \(\times\) style | 23.29% | 18.09% |
+| Image/study \(\times\) style | 23.29% | 18.09% |
 | Certified split-half styles | 3 / 6 | 1 / 6 |
 | Median normalized style susceptibility | .229 | .329 |
 
 The medical-minus-base style-fraction difference is only \(+1.22\) percentage
-points, with paired patient-bootstrap 95% interval
-\([-0.98,+3.63]\) points. Medical training therefore does not pass the
-lineage criterion for creating a style-conditioned prior.
+points, with paired patient-cluster-bootstrap 95% interval
+\([-0.94,+3.66]\) points. This checkpoint pair therefore does not pass the
+lineage criterion for a stronger style-conditioned prior.
 
 Moreover, style 3 and style 5 induce similar directions in the two models
 (cross-model cosine .961 and .932). This favors an architectural or
@@ -234,18 +235,20 @@ e_\theta(T_sx)-e_\theta(x)
 \]
 
 Huatuo has median \(\kappa=.229\), compared with \(.329\) for the exact base
-model. The paired median difference is \(-.101\), with patient-bootstrap 95%
-interval \([-.145,-.027]\). Under the tested operator, the medical training
-lineage therefore **contracts** acquisition-style sensitivity relative to
-the available visual evidence; it does not create a stronger reusable
-style-prior switch.
+model. The paired median difference is \(-.101\), with
+patient-cluster-bootstrap 95% interval \([-.144,-.026]\). Under the tested
+operator, the medical checkpoint has lower normalized acquisition-style
+sensitivity than its exact base; it does not exhibit a stronger reusable
+style-prior switch. This paired observational control cannot isolate medical
+instruction tuning as the causal source of the contraction.
 
 ![Training-lineage comparison](../results_reference/visual_evidence_chord_lineage_v1/comparison_frontal.png)
 
-This result helps explain the earlier intervention failures. A strong medical
-VLM is already less style-sensitive than its base model, while the residual
-drift is primarily patient-conditional. Global source-center adaptation has
-both little remaining signal and the wrong factorization.
+This result helps explain the earlier intervention failures in this model
+pair. The medical checkpoint is less sensitive to the tested style operator,
+while the residual drift is primarily image-conditional. Global source-center
+adaptation therefore has both little reusable signal and the wrong
+factorization under this protocol.
 
 ## Relation to the July 2026 frontier
 
@@ -264,5 +267,8 @@ no” for the tested PubMedVision style operator.
 
 Evidence grade: **C-level mechanism diagnostic** under the unified evaluation
 contract. MIMIC images were exposed during method development, only one
-medical checkpoint was analyzed, and the primary quantity is a
-teacher-forced diagnostic rather than generated-answer accuracy.
+checkpoint per lineage was analyzed, the six Fourier styles are fixed rather
+than sampled from a deployment population, and the primary quantity is a
+teacher-forced diagnostic rather than generated-answer accuracy. The
+patient-cluster bootstrap accounts for the 40 images belonging to 38
+patients, but it does not provide style-population inference.

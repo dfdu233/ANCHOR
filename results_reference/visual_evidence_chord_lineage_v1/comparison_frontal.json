@@ -1,5 +1,5 @@
 {
-  "version": "visual-evidence-chord-lineage-comparison-v1",
+  "version": "visual-evidence-chord-lineage-comparison-v2",
   "first": {
     "name": "HuatuoGPT-Vision-7B",
     "path": "/root/autodl-tmp/ANCHOR/corrected_runs/visual_evidence_chord_probe_v1_n64/raw.jsonl",
@@ -11,6 +11,7 @@
     "sha256": "c756d37a5d152ee1bf9c50928ce3ddf39be34c5cf075e338bde62807a6fee8f3"
   },
   "n_paired_cases": 40,
+  "n_paired_patients": 38,
   "styles": [
     "style_0",
     "style_1",
@@ -30,35 +31,35 @@
   "view_category": "a frontal chest radiograph",
   "comparison": {
     "first_fraction": {
-      "patient": 0.7342951248105675,
+      "case": 0.7342951248105675,
       "style": 0.03277437958337293,
-      "patient_by_style": 0.2329304956060596
+      "case_by_style": 0.2329304956060596
     },
     "second_fraction": {
-      "patient": 0.7985855934085432,
+      "case": 0.7985855934085432,
       "style": 0.020560156138418145,
-      "patient_by_style": 0.18085425045303877
+      "case_by_style": 0.18085425045303877
     },
     "first_minus_second": {
-      "patient": {
+      "case": {
         "point": -0.06429046859797571,
-        "paired_case_bootstrap_ci95": [
-          -0.13500458246747932,
-          0.028355669891405606
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.13621578693718053,
+          0.027268299767937296
         ]
       },
       "style": {
         "point": 0.012214223444954788,
-        "paired_case_bootstrap_ci95": [
-          -0.009816573107891972,
-          0.036287800907962374
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.009373565757816008,
+          0.03656600837879914
         ]
       },
-      "patient_by_style": {
+      "case_by_style": {
         "point": 0.05207624515302084,
-        "paired_case_bootstrap_ci95": [
-          -0.023949191432762813,
-          0.10679117706641214
+        "paired_patient_cluster_bootstrap_ci95": [
+          -0.025589854593184445,
+          0.11032017412655194
         ]
       }
     },
@@ -95,13 +96,13 @@
       }
     },
     "normalized_style_susceptibility": {
-      "definition": "per-patient RMS style evidence drift divided by the real-null evidence norm",
+      "definition": "per-case RMS style evidence drift divided by the real-null evidence norm",
       "first_median": 0.228500967387103,
       "second_median": 0.32900215870301963,
       "first_minus_second": -0.10050119131591664,
-      "paired_case_bootstrap_ci95": [
-        -0.14541053581929766,
-        -0.026524159740596593
+      "paired_patient_cluster_bootstrap_ci95": [
+        -0.1441520626601799,
+        -0.02634476416746273
       ],
       "first_per_case": [
         0.13427393193828038,
@@ -188,13 +189,15 @@
         0.19988092186145578
       ]
     },
+    "bootstrap_unit": "patient_cluster",
+    "n_clusters": 38,
     "bootstrap_draws": 5000,
     "seed": 2027
   },
   "decision_rule": "A medical-training lineage effect requires a positive paired bootstrap lower bound for the style variance fraction; matching fractions indicate an architectural or transform-level effect.",
   "decision": {
-    "medical_training_increases_style_fraction": false,
-    "medical_training_reduces_normalized_style_susceptibility": true
+    "medical_checkpoint_has_larger_style_fraction": false,
+    "medical_checkpoint_has_lower_normalized_style_susceptibility": true
   },
   "claim_ceiling": "paired mechanism diagnostic on exposed MIMIC development images"
 }
