@@ -132,6 +132,23 @@ and the maximum removable fraction of drift energy is
 {\mathbb E_i\|\Delta_{i,s}\|^2}.
 \]
 
+**Proposition (global-correction ceiling).** For any square-integrable
+style-induced evidence drift \(\Delta_s\), no patient-independent additive
+correction removes more than a \(\rho_s\) fraction of its expected squared
+energy.
+
+**Proof.** Write \(m_s=\mathbb E[\Delta_s]\). For every constant vector \(b\),
+
+\[
+\mathbb E\|\Delta_s-b\|^2
+=\mathbb E\|\Delta_s-m_s\|^2+\|m_s-b\|^2,
+\]
+
+because the centered cross term has expectation zero. Hence \(b=m_s\) is the
+unique minimizer, and the removed energy is
+\(\mathbb E\|\Delta_s\|^2-\mathbb E\|\Delta_s-m_s\|^2=\|m_s\|^2\).
+Dividing by total drift energy yields \(\rho_s\). \(\square\)
+
 For the six source styles, \(\rho_s\) ranges only from 2.2% to 14.8%. This is
 an empirical upper bound for a shared additive style-offset under the measured
 evidence geometry. It explains why one global source center, NBP, and
@@ -179,11 +196,56 @@ Not supported:
 - a global source center can uniformly remove the shift;
 - teacher-forced evidence changes imply an accuracy improvement.
 
-The remaining decisive control is model lineage. The exact-size base
-Qwen2.5-VL-7B model must be run under the identical images, styles, prompts,
-and budget. A larger style main effect in Huatuo would implicate medical
-instruction training; matching decompositions would instead indicate an
-architectural or transformation-level response.
+## Exact-architecture training-lineage control
+
+The exact base Qwen2.5-VL-7B model was run on the identical 40 frontal images,
+six styles, six concepts, complete-sentence prompts, and inference budget.
+
+| Quantity | HuatuoGPT-Vision | Base Qwen2.5-VL |
+|---|---:|---:|
+| Patient variance | 73.43% | 79.86% |
+| Style variance | 3.28% | 2.06% |
+| Patient \(\times\) style | 23.29% | 18.09% |
+| Certified split-half styles | 3 / 6 | 1 / 6 |
+| Median normalized style susceptibility | .229 | .329 |
+
+The medical-minus-base style-fraction difference is only \(+1.22\) percentage
+points, with paired patient-bootstrap 95% interval
+\([-0.98,+3.63]\) points. Medical training therefore does not pass the
+lineage criterion for creating a style-conditioned prior.
+
+Moreover, style 3 and style 5 induce similar directions in the two models
+(cross-model cosine .961 and .932). This favors an architectural or
+transformation-level origin for those small shared offsets.
+
+### Medical style contraction
+
+Define the dimensionless patient susceptibility
+
+\[
+\kappa_\theta(x)=
+\frac{
+\sqrt{\mathbb E_s\|
+e_\theta(T_sx)-e_\theta(x)
+\|^2}
+}{
+\|e_\theta(x)-e_\theta(\varnothing)\|
+}.
+\]
+
+Huatuo has median \(\kappa=.229\), compared with \(.329\) for the exact base
+model. The paired median difference is \(-.101\), with patient-bootstrap 95%
+interval \([-.145,-.027]\). Under the tested operator, the medical training
+lineage therefore **contracts** acquisition-style sensitivity relative to
+the available visual evidence; it does not create a stronger reusable
+style-prior switch.
+
+![Training-lineage comparison](../results_reference/visual_evidence_chord_lineage_v1/comparison_frontal.png)
+
+This result helps explain the earlier intervention failures. A strong medical
+VLM is already less style-sensitive than its base model, while the residual
+drift is primarily patient-conditional. Global source-center adaptation has
+both little remaining signal and the wrong factorization.
 
 ## Relation to the July 2026 frontier
 

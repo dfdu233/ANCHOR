@@ -260,3 +260,14 @@ the frontal subset, while patient and patient-by-style terms explain 73.43%
 and 23.29%. This refutes a uniform style-prior switch for the tested source
 transform and supplies a quantitative ceiling for any global additive source
 correction.
+
+The exact-architecture Qwen2.5-VL-7B control closes the remaining training
+lineage ambiguity. Huatuo's style variance fraction is 3.28% versus 2.06% in
+base Qwen; the paired difference interval includes zero. In contrast,
+Huatuo's dimensionless style susceptibility is significantly lower
+(\(.229\) versus \(.329\), paired difference 95% CI
+\([-.145,-.027]\)). The combined evidence therefore rejects the frozen claim
+that PubMedVision medical training creates a stronger reusable
+style-conditioned clinical prior under this operator. It instead supports a
+new descriptive mechanism: medical training contracts style sensitivity,
+while the residual response remains patient-conditional.

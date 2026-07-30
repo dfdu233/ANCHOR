@@ -259,6 +259,7 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--radius", type=float, default=0.12)
     parser.add_argument("--strength", type=float, default=0.65)
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     cases = unique_cases(args.questions, args.image_manifest, args.limit)
@@ -270,16 +271,6 @@ def main() -> None:
     if len(prototypes) < 3:
         raise RuntimeError("style manifest must contain at least three clusters")
 
-    processor = AutoProcessor.from_pretrained(
-        args.model, local_files_only=True, use_fast=False
-    )
-    processor.tokenizer.padding_side = "left"
-    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-        args.model,
-        dtype=torch.bfloat16,
-        attn_implementation="flash_attention_2",
-        local_files_only=True,
-    ).to("cuda").eval()
     config_sha = sha256(args.model / "config.json")
     pending: list[dict] = []
     metadata: dict[tuple[str, str], dict] = {}
@@ -308,7 +299,67 @@ def main() -> None:
                         }
                     )
 
-    with args.output.open("w") as handle:
+    existing_keys: set[tuple[str, str, str, str]] = set()
+    if args.resume and args.output.exists():
+        existing = read_jsonl(args.output)
+        expected = {
+            "model_config_sha256": config_sha,
+            "questions_sha256": sha256(args.questions),
+            "image_manifest_sha256": sha256(args.image_manifest),
+            "style_manifest_sha256": sha256(args.style_manifest),
+            "radius": args.radius,
+            "strength": args.strength,
+        }
+        for record in existing:
+            for field, value in expected.items():
+                if record[field] != value:
+                    raise RuntimeError(
+                        f"resume fingerprint mismatch for {field}: "
+                        f"{record[field]!r} != {value!r}"
+                    )
+            existing_keys.add(
+                (
+                    record["case_id"],
+                    record["view"],
+                    record["disease"],
+                    record["polarity"],
+                )
+            )
+        pending = [
+            row
+            for row in pending
+            if (
+                row["case_id"],
+                row["view"],
+                row["disease"],
+                row["polarity"],
+            )
+            not in existing_keys
+        ]
+    if not pending:
+        print(
+            json.dumps(
+                {
+                    "completed": len(existing_keys),
+                    "remaining": 0,
+                    "output": str(args.output),
+                }
+            )
+        )
+        return
+
+    processor = AutoProcessor.from_pretrained(
+        args.model, local_files_only=True, use_fast=False
+    )
+    processor.tokenizer.padding_side = "left"
+    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+        args.model,
+        dtype=torch.bfloat16,
+        attn_implementation="flash_attention_2",
+        local_files_only=True,
+    ).to("cuda").eval()
+    mode = "a" if args.resume and existing_keys else "w"
+    with args.output.open(mode) as handle:
         for start in range(0, len(pending), args.batch_size):
             batch = pending[start : start + args.batch_size]
             scores = sequence_nll(model, processor, batch)
@@ -341,7 +392,8 @@ def main() -> None:
                 json.dumps(
                     {
                         "completed": min(start + len(batch), len(pending)),
-                        "total": len(pending),
+                        "remaining_total": len(pending),
+                        "previously_completed": len(existing_keys),
                     }
                 ),
                 flush=True,
