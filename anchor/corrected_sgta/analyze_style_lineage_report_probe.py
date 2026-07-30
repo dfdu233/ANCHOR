@@ -21,7 +21,12 @@ CONCEPTS = {
     "device": r"\b(?:catheter|tube|pacemaker|line|devices?)\b",
 }
 NEGATION = re.compile(
-    r"\b(?:no|without|absent|negative for|not|neither)\b",
+    r"\b(?:no|without|absent|absence|negative for|not|neither)\b",
+    re.IGNORECASE,
+)
+UNCERTAINTY = re.compile(
+    r"\b(?:could|may|might|possibly|possible|suggest|suspicious|"
+    r"cannot exclude|likely)\b",
     re.IGNORECASE,
 )
 
@@ -53,9 +58,23 @@ def positive_mention(text: str, pattern: str) -> int:
         ]
         sentence_end = min(endings) if endings else len(text)
         sentence = text[sentence_start + 1 : sentence_end]
-        if NEGATION.search(sentence) is None:
+        if (
+            NEGATION.search(sentence) is None
+            and UNCERTAINTY.search(sentence) is None
+        ):
             return 1
     return 0
+
+
+def holm_adjust(p_values: dict[str, float]) -> dict[str, float]:
+    ordered = sorted(p_values, key=p_values.get)
+    adjusted = {}
+    running = 0.0
+    total = len(ordered)
+    for rank, name in enumerate(ordered):
+        running = max(running, (total - rank) * p_values[name])
+        adjusted[name] = min(1.0, running)
+    return adjusted
 
 
 def cluster_effect(labels: np.ndarray, clusters: np.ndarray) -> float:
@@ -95,7 +114,6 @@ def main() -> None:
     rows = read_jsonl(args.input)
     clusters = np.asarray([int(row["cluster"]) for row in rows])
     concept_results = {}
-    supported = 0
     for concept, pattern in CONCEPTS.items():
         labels = np.asarray(
             [positive_mention(row["text"], pattern) for row in rows],
@@ -107,16 +125,27 @@ def main() -> None:
             for cluster in sorted(np.unique(clusters))
         ]
         rate_range = max(rates) - min(rates)
-        passes = bool(rate_range >= 2 / 3 and p_value < 0.05)
-        supported += int(passes)
         concept_results[concept] = {
             "positive_rate": float(labels.mean()),
             "cluster_positive_rates": rates,
             "cluster_eta_squared": effect,
             "permutation_p": p_value,
             "rate_range": rate_range,
-            "passes": passes,
         }
+    adjusted = holm_adjust(
+        {
+            concept: values["permutation_p"]
+            for concept, values in concept_results.items()
+        }
+    )
+    supported = 0
+    for concept, values in concept_results.items():
+        values["holm_adjusted_p"] = adjusted[concept]
+        values["passes"] = bool(
+            values["rate_range"] >= 2 / 3
+            and values["holm_adjusted_p"] < 0.05
+        )
+        supported += int(values["passes"])
     texts = [row["text"].strip() for row in rows]
     result = {
         "version": VERSION,
@@ -129,7 +158,7 @@ def main() -> None:
         "decision": {
             "criterion": (
                 "at least two clinical concepts have cluster mention-rate "
-                "range >=2/3 and cluster-label permutation p<.05"
+                "range >=2/3 and Holm-adjusted cluster permutation p<.05"
             ),
             "supported_concepts": supported,
             "gate_passed": bool(supported >= 2),

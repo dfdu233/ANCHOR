@@ -1,0 +1,72 @@
+{
+  "version": "mimic-question-frame-analysis-v1",
+  "input": "/root/autodl-tmp/ANCHOR/corrected_runs/mimic_question_frame_probe_v1/raw.jsonl",
+  "input_sha256": "36c4c37f7bd80b5c6870eec5b7fccc4bfd8465f42e6ecea2bd0269bd5f622f86",
+  "frames": {
+    "original": {
+      "n": 64,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.7222222222222222,
+      "parse_rate": 1.0,
+      "tp": 34,
+      "tn": 14,
+      "fp": 14,
+      "fn": 2,
+      "invalid": 0
+    },
+    "neutral": {
+      "n": 64,
+      "accuracy": 0.703125,
+      "balanced_accuracy": 0.7281746031746033,
+      "parse_rate": 1.0,
+      "tp": 19,
+      "tn": 26,
+      "fp": 2,
+      "fn": 17,
+      "invalid": 0
+    }
+  },
+  "evaluator": "blind semantic judge",
+  "judge": {
+    "path": "/root/autodl-tmp/ANCHOR/corrected_runs/mimic_question_frame_probe_v1/deepseek_judge.jsonl",
+    "sha256": "d576d17ccb0b9163fa04ce37db648c29976980f4d5b053c7c4c24129e34ae051",
+    "model": "deepseek-v4-flash"
+  },
+  "rule_parser_frames": {
+    "original": {
+      "n": 64,
+      "accuracy": 0.671875,
+      "balanced_accuracy": 0.6488095238095238,
+      "parse_rate": 1.0,
+      "tp": 30,
+      "tn": 13,
+      "fp": 15,
+      "fn": 6,
+      "invalid": 0
+    },
+    "neutral": {
+      "n": 64,
+      "accuracy": 0.609375,
+      "balanced_accuracy": 0.6448412698412699,
+      "parse_rate": 1.0,
+      "tp": 13,
+      "tn": 26,
+      "fp": 2,
+      "fn": 23,
+      "invalid": 0
+    }
+  },
+  "neutral_minus_original_accuracy": -0.046875,
+  "image_cluster_bootstrap_ci95": [
+    -0.171875,
+    0.10769230769230764
+  ],
+  "rescue": 15,
+  "harm": 18,
+  "text_change_rate": 0.953125,
+  "decision": {
+    "criterion": "neutral improves accuracy, rescue>harm, and parse rate does not decrease",
+    "gate_passed": false
+  },
+  "claim_ceiling": "question framing changes natural-image MIMIC decisions on an exposed development subset; not a confirmatory method result"
+}

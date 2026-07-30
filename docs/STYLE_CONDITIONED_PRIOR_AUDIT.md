@@ -120,10 +120,12 @@ failed before an unadapted Qwen control could affect the conclusion.
 The same prototypes were evaluated using an open radiology-report prompt to
 avoid binary-answer saturation. The model produced 14 unique reports from 18
 inputs (mean 68.8 words). Effusion and cardiomegaly were each positively
-asserted in 50.0% of reports. Opacity alone showed a cluster association
-(\(p=.034\)); the other five concepts did not, so the frozen requirement of
-two supported clinical concepts failed. Effusion and edema had permutation
-\(p=.927\) and \(p=.345\), respectively.
+asserted in 50.0% of reports. Opacity had a nominal cluster association
+(\(p=.024\)), but it did not survive Holm correction across the six concepts
+(\(p_{\mathrm{Holm}}=.145\)). No concept passed the corrected gate. This
+analysis uses sentence-local negation and excludes uncertain mentions such as
+“may represent” or “cannot exclude”; the earlier permissive parser
+overcounted these as positive findings.
 
 ![Training-lineage style probe](../results_reference/pubmed_style_lineage_probe_v1/style_lineage_probe.png)
 
@@ -162,11 +164,11 @@ asserted in the reference answer:
 
 | Concept | Cue in question | No cue | Difference |
 |---|---:|---:|---:|
-| Pneumothorax | .756 | .050 | +.706 |
-| Effusion | .790 | .101 | +.689 |
-| Opacity | .961 | .362 | +.599 |
-| Cardiomegaly | .911 | .057 | +.854 |
-| Device | .933 | .077 | +.856 |
+| Pneumothorax | .659 | .038 | +.621 |
+| Effusion | .629 | .078 | +.551 |
+| Opacity | .730 | .298 | +.432 |
+| Cardiomegaly | .711 | .046 | +.665 |
+| Device | .858 | .061 | +.797 |
 
 All five met the frozen PMC-group-bootstrap criterion (difference CI lower
 bound \(>.25\)). This is expected semantic alignment in a generated VQA
@@ -190,6 +192,39 @@ of that result in a generative VLM:
   assumes its distorted branch provides a meaningful visual counterfactual;
   this source-data audit alone cannot establish whether that assumption fails.
 
+### Natural-image question-frame control
+
+To test whether the prompt effect survives beyond synthetic prototypes, we
+evaluated the first 64 fixed RULE/MIMIC questions (13 unique images) using the
+same HuatuoGPT-Vision checkpoint. The original question and a neutral frame
+were paired on every image and both produced a complete sentence. A blinded
+DeepSeek-V4-Flash judge mapped sentence meaning to Yes/No without seeing the
+method, frame, or reference answer; the deterministic RULE parser is retained
+only as a secondary audit because explanatory sentences can contain both
+“yes” and “no”.
+
+| Frame | Accuracy | Balanced accuracy | TP | TN | FP | FN |
+|---|---:|---:|---:|---:|---:|---:|
+| Original | .750 | .722 | 34 | 14 | 14 | 2 |
+| Neutral | .703 | .728 | 19 | 26 | 2 | 17 |
+
+Neutral framing changed 95.3% of generated texts. It sharply reduced false
+positives, from 14 to 2, but increased false negatives from 2 to 17. The
+accuracy difference was \(-4.69\) percentage points (image-cluster bootstrap
+95% CI \([-.172,.108]\)); there were 15 rescues and 18 harms. The intervention
+therefore moved the sensitivity--specificity operating point without
+improving accuracy.
+
+![Natural MIMIC question-frame probe](../results_reference/mimic_question_frame_probe_v1/question_frame_mimic64.png)
+
+This result is a stronger competing-mechanism control, not a new method:
+question wording can switch a clinical response prior on natural images, but
+the switch does not supply additional visual evidence. The subset was already
+exposed during development, contains only 13 image clusters, and uses one
+model checkpoint and one semantic judge, so it cannot support a population
+claim about prompt dominance. It does show why prompt or threshold changes
+must not be mistaken for visual DG gains.
+
 ## Evidence Grade and Next Decision
 
 Evidence grade: **C-level mechanism clue** under the unified evaluation policy.
@@ -212,3 +247,11 @@ real-image experiment is the remaining decisive test. If content-preserving
 and content-removed style drifts do not align after controls, the
 style-conditioned prior-switching mechanism is falsified despite the marginal
 source-data association.
+
+The remaining decisive condition is consequently narrower. On fixed natural
+questions, a style-conditioned-prior claim requires the independent
+content/style \(2\times2\) experiment to show that (i) style-only,
+content-removed views induce a reproducible disease-direction drift and (ii)
+the same drift aligns with the content-preserving style view. If either link
+fails after controlling the original margin, the tested style-switch
+mechanism should be frozen as unsupported.

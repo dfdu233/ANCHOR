@@ -11,12 +11,12 @@
       "concept": "pneumothorax",
       "question_cue_n": 41,
       "question_no_cue_n": 5508,
-      "answer_positive_given_cue": 0.7560975609756098,
-      "answer_positive_without_cue": 0.05029048656499637,
-      "difference": 0.7058070744106134,
+      "answer_positive_given_cue": 0.6585365853658537,
+      "answer_positive_without_cue": 0.03776325344952796,
+      "difference": 0.6207733319163258,
       "group_bootstrap_ci95": [
-        0.5609871873828236,
-        0.8270000190717316
+        0.4650821998975168,
+        0.7562901768560915
       ],
       "passes": true
     },
@@ -24,12 +24,12 @@
       "concept": "effusion",
       "question_cue_n": 62,
       "question_no_cue_n": 5487,
-      "answer_positive_given_cue": 0.7903225806451613,
-      "answer_positive_without_cue": 0.10133041735010023,
-      "difference": 0.6889921632950611,
+      "answer_positive_given_cue": 0.6290322580645161,
+      "answer_positive_without_cue": 0.07763805358119191,
+      "difference": 0.5513942044833242,
       "group_bootstrap_ci95": [
-        0.5789094397347967,
-        0.7882893800734394
+        0.4245385572698784,
+        0.6831060352145297
       ],
       "passes": true
     },
@@ -37,12 +37,12 @@
       "concept": "opacity",
       "question_cue_n": 285,
       "question_no_cue_n": 5264,
-      "answer_positive_given_cue": 0.9614035087719298,
-      "answer_positive_without_cue": 0.3620820668693009,
-      "difference": 0.5993214419026289,
+      "answer_positive_given_cue": 0.7298245614035088,
+      "answer_positive_without_cue": 0.29806231003039513,
+      "difference": 0.4317622513731137,
       "group_bootstrap_ci95": [
-        0.571997932025135,
-        0.6241070974297274
+        0.37601465080633634,
+        0.48321571303619404
       ],
       "passes": true
     },
@@ -50,12 +50,12 @@
       "concept": "cardiomegaly",
       "question_cue_n": 45,
       "question_no_cue_n": 5504,
-      "answer_positive_given_cue": 0.9111111111111111,
-      "answer_positive_without_cue": 0.05723110465116279,
-      "difference": 0.8538800064599483,
+      "answer_positive_given_cue": 0.7111111111111111,
+      "answer_positive_without_cue": 0.04596656976744186,
+      "difference": 0.6651445413436693,
       "group_bootstrap_ci95": [
-        0.7677602371667828,
-        0.9238289454448921
+        0.5206089852050471,
+        0.7938023465059355
       ],
       "passes": true
     },
@@ -63,12 +63,12 @@
       "concept": "edema",
       "question_cue_n": 15,
       "question_no_cue_n": 5534,
-      "answer_positive_given_cue": 0.7333333333333333,
-      "answer_positive_without_cue": 0.09794000722804481,
-      "difference": 0.6353933261052884,
+      "answer_positive_given_cue": 0.5333333333333333,
+      "answer_positive_without_cue": 0.059089266353451395,
+      "difference": 0.4742440669798819,
       "group_bootstrap_ci95": [
-        0.39904231368285714,
-        0.8412344989330434
+        0.21535723345343563,
+        0.7419836591411281
       ],
       "passes": false
     },
@@ -76,12 +76,12 @@
       "concept": "fracture",
       "question_cue_n": 11,
       "question_no_cue_n": 5538,
-      "answer_positive_given_cue": 0.7272727272727273,
-      "answer_positive_without_cue": 0.010111953773925604,
-      "difference": 0.7171607734988017,
+      "answer_positive_given_cue": 0.5454545454545454,
+      "answer_positive_without_cue": 0.007403394727338389,
+      "difference": 0.538051150727207,
       "group_bootstrap_ci95": [
-        0.4351869211803672,
-        0.9901724860377872
+        0.24067200536045183,
+        0.848864234421443
       ],
       "passes": false
     },
@@ -89,12 +89,12 @@
       "concept": "device",
       "question_cue_n": 134,
       "question_no_cue_n": 5415,
-      "answer_positive_given_cue": 0.9328358208955224,
-      "answer_positive_without_cue": 0.07663896583564174,
-      "difference": 0.8561968550598806,
+      "answer_positive_given_cue": 0.8582089552238806,
+      "answer_positive_without_cue": 0.060941828254847646,
+      "difference": 0.797267126969033,
       "group_bootstrap_ci95": [
-        0.8078312212751949,
-        0.8958798809713846
+        0.7344477280080206,
+        0.8522704452940749
       ],
       "passes": true
     },
@@ -102,12 +102,12 @@
       "concept": "normal",
       "question_cue_n": 3,
       "question_no_cue_n": 5546,
-      "answer_positive_given_cue": 0.6666666666666666,
-      "answer_positive_without_cue": 0.020915975477821855,
-      "difference": 0.6457506911888448,
+      "answer_positive_given_cue": 0.3333333333333333,
+      "answer_positive_without_cue": 0.01857194374323837,
+      "difference": 0.3147613895900949,
       "group_bootstrap_ci95": [
-        -0.02266402118565039,
-        0.9815823056214198
+        -0.02125830300549014,
+        0.9823893917173957
       ],
       "passes": false
     }
