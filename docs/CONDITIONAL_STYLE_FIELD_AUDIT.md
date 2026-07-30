@@ -145,7 +145,8 @@ median clean-centroid projected energy changes from 18.97% at layer 0 to
 the corresponding image-token projection at every sampled layer and lineage.
 
 That normalized projection statistic is an alignment measure, not proof of
-distance contraction. The median across lineages of the mean log ratio
+distance contraction. The median across lineages of the mean log
+squared-distance ratio
 
 \[
 \log

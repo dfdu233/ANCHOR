@@ -35,7 +35,7 @@ distance before and after styling gives:
 
 | LLM layer | 0 | 7 | 14 | 21 | 27 |
 |---:|---:|---:|---:|---:|---:|
-| Median mean log distance ratio | +0.414 | +0.182 | +0.150 | -0.095 | -0.106 |
+| Median mean log squared-distance ratio | +0.414 | +0.182 | +0.150 | -0.095 | -0.106 |
 | Median fraction actually closer | 17.92% | 30.42% | 32.92% | 58.33% | 62.50% |
 
 Thus the style displacement points partly toward the centroid in every layer

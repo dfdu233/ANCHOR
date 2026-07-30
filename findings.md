@@ -293,7 +293,7 @@ Evidence:
   leave-one-patient clean centroid is 18.97%, 19.38%, 20.30%, 26.44%, and
   23.61% at LLM layers 0, 7, 14, 21, and 27.
 - **Direct distance correction:** positive projection is not sufficient for
-  contraction. Median mean log after/before centroid-distance ratios are
+  contraction. Median mean log after/before squared centroid-distance ratios are
   +0.414, +0.182, +0.150, -0.095, and -0.106. Every lineage moves farther at
   layers 0/7/14 and closer only at layers 21/27. Median cellwise contraction
   rates rise from 17.92% to 62.50%.

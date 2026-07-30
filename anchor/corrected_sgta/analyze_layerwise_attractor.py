@@ -37,7 +37,8 @@ def centroid_distance_controls(
 
     Positive projection onto the centroid direction is not sufficient for
     contraction: a large orthogonal displacement can still increase the total
-    distance.  The log distance ratio directly distinguishes those cases.
+    distance. The log squared-distance ratio directly distinguishes those
+    cases.
     """
     if features.ndim != 3 or features.shape[1] < 3:
         raise ValueError("features must have shape [case, real/null/style, dim]")
@@ -75,8 +76,12 @@ def centroid_distance_controls(
         absolute_projection_energy, dtype=np.float64
     )
     return {
-        "mean_log_centroid_distance_ratio": float(ratio_array.mean()),
-        "median_log_centroid_distance_ratio": float(np.median(ratio_array)),
+        "mean_log_squared_centroid_distance_ratio": float(
+            ratio_array.mean()
+        ),
+        "median_log_squared_centroid_distance_ratio": float(
+            np.median(ratio_array)
+        ),
         "fraction_closer_to_centroid": float((ratio_array < 0).mean()),
         "mean_centroid_projection_coefficient": float(
             coefficient_array.mean()
@@ -152,8 +157,8 @@ def analyze_files(
                     "fraction_toward_null",
                     "fraction_toward_clean_centroid",
                     "permuted_projection_median",
-                    "mean_log_centroid_distance_ratio",
-                    "median_log_centroid_distance_ratio",
+                    "mean_log_squared_centroid_distance_ratio",
+                    "median_log_squared_centroid_distance_ratio",
                     "fraction_closer_to_centroid",
                     "mean_centroid_projection_coefficient",
                     "mean_absolute_centroid_projection_energy",
@@ -219,7 +224,7 @@ def analyze_files(
             ),
             "prompt_distance_increases_layers_0_7_14_every_lineage": all(
                 lineage[str(index)]["prompt"][
-                    "mean_log_centroid_distance_ratio"
+                    "mean_log_squared_centroid_distance_ratio"
                 ]
                 > 0
                 for lineage in lineages.values()
@@ -227,7 +232,7 @@ def analyze_files(
             ),
             "prompt_distance_decreases_layers_21_27_every_lineage": all(
                 lineage[str(index)]["prompt"][
-                    "mean_log_centroid_distance_ratio"
+                    "mean_log_squared_centroid_distance_ratio"
                 ]
                 < 0
                 for lineage in lineages.values()
@@ -259,14 +264,14 @@ def plot_result(result: dict[str, Any], output: Path) -> None:
     for lineage in result["lineages"].values():
         values = [
             lineage[str(index)]["prompt"][
-                "mean_log_centroid_distance_ratio"
+                "mean_log_squared_centroid_distance_ratio"
             ]
             for index in LAYER_INDICES
         ]
         axes[0].plot(x, values, color="#2166AC", alpha=0.18, linewidth=0.9)
     distance_median = [
         result["layers"][str(index)]["prompt"][
-            "mean_log_centroid_distance_ratio"
+            "mean_log_squared_centroid_distance_ratio"
         ]["median"]
         for index in LAYER_INDICES
     ]
@@ -284,7 +289,7 @@ def plot_result(result: dict[str, Any], output: Path) -> None:
     )
     axes[0].set_title("True contraction starts only in late layers")
     axes[0].set_ylabel(
-        r"Mean log distance ratio to LOO centroid"
+        r"Mean log squared-distance ratio to LOO centroid"
     )
     axes[0].legend(frameon=False, fontsize=8)
 
