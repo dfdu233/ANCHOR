@@ -1,0 +1,2634 @@
+{
+  "version": "conditional-style-field-v1",
+  "sources": [
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.npz",
+      "features_sha256": "e7be14489e9f1d86549ec7b4c6748a451a923f5364891ac3b84f1561750a07ef",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.json",
+      "metadata_fingerprint": "45d318c29724fcb8fa1758843ecf4efdf29b841e5c683520194db794dade8dec"
+    },
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.npz",
+      "features_sha256": "d1e97a67de6202a4dac50b8ffdeef28adbef9cde573314136473dd7446b712af",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_v1.json",
+      "metadata_fingerprint": "78d6c5cca7b4148331b267116260eef6c56f6b83f2fd5ae7b2249994e4295d7a"
+    }
+  ],
+  "lineages": {
+    "base": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12090191402645623,
+          "case_energy_fraction": 0.6086330332570792,
+          "style_energy_fraction": 0.012461069613682898,
+          "interaction_energy_fraction": 0.2580039831027819,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6092338657595683,
+          "case_other_styles_r2_zero": 0.6105303240882907,
+          "patient_loo_style_r2_zero": 0.08874338841498053
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.10061943061558731,
+          "patient_cv_style_only_r2_zero": 0.07726508010418698,
+          "patient_cv_incremental_over_style_only": 0.025309923801341894,
+          "permuted_incremental_median": -0.047871752904354525,
+          "permuted_incremental_95pct": [
+            -0.08418128576672114,
+            -0.03045856541642105
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 1.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.03977499987902047,
+          "median_signed_cosine": 0.16697736009235173,
+          "fraction_toward_null": 0.9125,
+          "permuted_projection_median": 0.023647129680802646,
+          "permuted_projection_95pct": [
+            0.020911943506845908,
+            0.02699673389416646
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1459448901775727,
+          "null_projection_energy": 0.03977499987902047,
+          "null_unique_after_centroid_energy": 0.019850577415125945,
+          "centroid_unique_after_null_energy": 0.12602046771367814,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.18647159013410708
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.06182560791177454,
+          "case_energy_fraction": 0.6893818675458837,
+          "style_energy_fraction": 0.014448915835452807,
+          "interaction_energy_fraction": 0.2343436087068892,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6450525135458143,
+          "case_other_styles_r2_zero": 0.6417387646590276,
+          "patient_loo_style_r2_zero": 0.02879964388784173
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.01908193514036194,
+          "patient_cv_style_only_r2_zero": 0.007060428475068825,
+          "patient_cv_incremental_over_style_only": 0.012106987182342599,
+          "permuted_incremental_median": -0.017772677990061214,
+          "permuted_incremental_95pct": [
+            -0.04039450746510745,
+            0.004210979498375298
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.12720165463631616,
+          "median_signed_cosine": 0.2020015303995536,
+          "fraction_toward_null": 0.7375,
+          "permuted_projection_median": 0.06526067301089383,
+          "permuted_projection_95pct": [
+            0.053724019806409125,
+            0.07711944279196861
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.2354821503769061,
+          "null_projection_energy": 0.12720165463631616,
+          "null_unique_after_centroid_energy": 0.05026630541591283,
+          "centroid_unique_after_null_energy": 0.1585468011565027,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.3292687189990848
+        }
+      }
+    },
+    "matched": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12287289041717062,
+          "case_energy_fraction": 0.6003863244157206,
+          "style_energy_fraction": 0.011316251893919074,
+          "interaction_energy_fraction": 0.26542453327318993,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.5980898714688057,
+          "case_other_styles_r2_zero": 0.6014932693593633,
+          "patient_loo_style_r2_zero": 0.08978356557305145
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.08196091550201068,
+          "patient_cv_style_only_r2_zero": 0.07934549472762553,
+          "patient_cv_incremental_over_style_only": 0.002840827649685407,
+          "permuted_incremental_median": -0.028933442967618572,
+          "permuted_incremental_95pct": [
+            -0.05350583658672873,
+            -0.00695136530374923
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.039023380446494456,
+          "median_signed_cosine": 0.17006258461441773,
+          "fraction_toward_null": 0.9208333333333333,
+          "permuted_projection_median": 0.02407406869132743,
+          "permuted_projection_95pct": [
+            0.021402753232113374,
+            0.02701196369008763
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.14063896161568695,
+          "null_projection_energy": 0.039023380446494456,
+          "null_unique_after_centroid_energy": 0.02063374700164741,
+          "centroid_unique_after_null_energy": 0.12224932817083992,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.18081997151281712
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.0597021533670367,
+          "case_energy_fraction": 0.6863757565228793,
+          "style_energy_fraction": 0.01481772026887874,
+          "interaction_energy_fraction": 0.23910436984120534,
+          "sum": 1.0
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6378405467717024,
+          "case_other_styles_r2_zero": 0.6343521902414792,
+          "patient_loo_style_r2_zero": 0.026883021405474494
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.013477432159156422,
+          "patient_cv_style_only_r2_zero": 0.007869461167350211,
+          "patient_cv_incremental_over_style_only": 0.005652452749216441,
+          "permuted_incremental_median": -0.01713248084383978,
+          "permuted_incremental_95pct": [
+            -0.034736994685172586,
+            0.005465405780710296
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1298971687389317,
+          "median_signed_cosine": 0.18609219577263286,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.06639439380849552,
+          "permuted_projection_95pct": [
+            0.055456385045175104,
+            0.07723893348894355
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.2360863572461792,
+          "null_projection_energy": 0.1298971687389317,
+          "null_unique_after_centroid_energy": 0.05378999291596145,
+          "centroid_unique_after_null_energy": 0.15997918142320897,
+          "fraction_toward_clean_centroid": 0.9208333333333333,
+          "median_null_centroid_direction_cosine": 0.3175748591914107
+        }
+      }
+    },
+    "permuted": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12821053776579966,
+          "case_energy_fraction": 0.6009755003839498,
+          "style_energy_fraction": 0.011677315999654627,
+          "interaction_energy_fraction": 0.25913664585059587,
+          "sum": 0.9999999999999999
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.607561250480726,
+          "case_other_styles_r2_zero": 0.6100278949356395,
+          "patient_loo_style_r2_zero": 0.09564091052412327
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.09554795137117122,
+          "patient_cv_style_only_r2_zero": 0.08709730406959781,
+          "patient_cv_incremental_over_style_only": 0.009256898176821293,
+          "permuted_incremental_median": -0.005810535380631143,
+          "permuted_incremental_95pct": [
+            -0.017267375918697047,
+            -0.00016980531142019744
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.03989071944382931,
+          "median_signed_cosine": 0.1630723622579393,
+          "fraction_toward_null": 0.9125,
+          "permuted_projection_median": 0.02466144191695665,
+          "permuted_projection_95pct": [
+            0.02191159642072232,
+            0.027193910052867986
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1411716211111418,
+          "null_projection_energy": 0.03989071944382931,
+          "null_unique_after_centroid_energy": 0.02061921819080859,
+          "centroid_unique_after_null_energy": 0.12190011985812092,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1777504860584151
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.06283083694445644,
+          "case_energy_fraction": 0.6931375546901719,
+          "style_energy_fraction": 0.014362660619937413,
+          "interaction_energy_fraction": 0.2296689477454344,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6521357480627157,
+          "case_other_styles_r2_zero": 0.6485944839538647,
+          "patient_loo_style_r2_zero": 0.029781044385051247
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.016646291620717846,
+          "patient_cv_style_only_r2_zero": 0.010626973802458473,
+          "patient_cv_incremental_over_style_only": 0.006083972029633178,
+          "permuted_incremental_median": -0.019105693482624697,
+          "permuted_incremental_95pct": [
+            -0.0366252353651763,
+            0.0017206263151743778
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.12901793441826367,
+          "median_signed_cosine": 0.21445572124233425,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.0641522356625567,
+          "permuted_projection_95pct": [
+            0.0529898800925718,
+            0.07502993826481656
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23921478805696403,
+          "null_projection_energy": 0.12901793441826367,
+          "null_unique_after_centroid_energy": 0.05186389480572641,
+          "centroid_unique_after_null_energy": 0.1620607484444268,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3148477454028932
+        }
+      }
+    },
+    "matched7": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12113008968741024,
+          "case_energy_fraction": 0.6066531736396659,
+          "style_energy_fraction": 0.011529250272430368,
+          "interaction_energy_fraction": 0.2606874864004937,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6052168624462732,
+          "case_other_styles_r2_zero": 0.6080078991909895,
+          "patient_loo_style_r2_zero": 0.08805289410059824
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.08448734559653337,
+          "patient_cv_style_only_r2_zero": 0.0790764665048681,
+          "patient_cv_incremental_over_style_only": 0.005875492258439308,
+          "permuted_incremental_median": -0.025873838687111572,
+          "permuted_incremental_95pct": [
+            -0.055139165962457146,
+            -0.00808653933079164
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.03985957219498231,
+          "median_signed_cosine": 0.1659313819611461,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024483256367272374,
+          "permuted_projection_95pct": [
+            0.0218799079391445,
+            0.027358303683619987
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.14514595930211144,
+          "null_projection_energy": 0.03985957219498231,
+          "null_unique_after_centroid_energy": 0.020403877145677946,
+          "centroid_unique_after_null_energy": 0.12569026425280713,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.1790605099533101
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.061153384063785995,
+          "case_energy_fraction": 0.6867305059915189,
+          "style_energy_fraction": 0.014205202980869813,
+          "interaction_energy_fraction": 0.23791090696382533,
+          "sum": 1.0
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6396247634892498,
+          "case_other_styles_r2_zero": 0.6369528016796391,
+          "patient_loo_style_r2_zero": 0.027762047388030453
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.013879776848222947,
+          "patient_cv_style_only_r2_zero": 0.008839705877854875,
+          "patient_cv_incremental_over_style_only": 0.00508502106092934,
+          "permuted_incremental_median": -0.014276244822050588,
+          "permuted_incremental_95pct": [
+            -0.036206545905704504,
+            0.004121806064695491
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1306480008262408,
+          "median_signed_cosine": 0.19040766823876298,
+          "fraction_toward_null": 0.7416666666666667,
+          "permuted_projection_median": 0.06653834901476205,
+          "permuted_projection_95pct": [
+            0.05647334592218825,
+            0.07815686288644384
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.2368028518415596,
+          "null_projection_energy": 0.1306480008262408,
+          "null_unique_after_centroid_energy": 0.05300517736965025,
+          "centroid_unique_after_null_energy": 0.15916002838496898,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.31205909092005407
+        }
+      }
+    },
+    "permuted7": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12320279835903272,
+          "case_energy_fraction": 0.6064076088519351,
+          "style_energy_fraction": 0.011374530915867528,
+          "interaction_energy_fraction": 0.2590150618731647,
+          "sum": 1.0
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.607748567342285,
+          "case_other_styles_r2_zero": 0.6106389863837933,
+          "patient_loo_style_r2_zero": 0.09015449157739697
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.09081389062221978,
+          "patient_cv_style_only_r2_zero": 0.08049037433461703,
+          "patient_cv_incremental_over_style_only": 0.011227197627357577,
+          "permuted_incremental_median": -0.005968702586939156,
+          "permuted_incremental_95pct": [
+            -0.017906053733799953,
+            0.0009958436866471937
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.040573478978258706,
+          "median_signed_cosine": 0.1652604455926577,
+          "fraction_toward_null": 0.9,
+          "permuted_projection_median": 0.02475809445416461,
+          "permuted_projection_95pct": [
+            0.02193975253261745,
+            0.02765562119452846
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.14522581971388338,
+          "null_projection_energy": 0.040573478978258706,
+          "null_unique_after_centroid_energy": 0.020735775983994984,
+          "centroid_unique_after_null_energy": 0.1253881167196197,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.17788888351959853
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.06503555921737865,
+          "case_energy_fraction": 0.6875400609767117,
+          "style_energy_fraction": 0.014516474814328755,
+          "interaction_energy_fraction": 0.23290790499158118,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6471466769404972,
+          "case_other_styles_r2_zero": 0.6437088930794898,
+          "patient_loo_style_r2_zero": 0.03231150363972224
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.0160434143756637,
+          "patient_cv_style_only_r2_zero": 0.010565135085983668,
+          "patient_cv_incremental_over_style_only": 0.0055367760768729735,
+          "permuted_incremental_median": -0.019045849263083503,
+          "permuted_incremental_95pct": [
+            -0.036158593889791944,
+            0.0005035474916108836
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.13492303424534025,
+          "median_signed_cosine": 0.21747058871230868,
+          "fraction_toward_null": 0.7333333333333333,
+          "permuted_projection_median": 0.06793912833841387,
+          "permuted_projection_95pct": [
+            0.05723602199117305,
+            0.07966815472846372
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23178903546119015,
+          "null_projection_energy": 0.13492303424534025,
+          "null_unique_after_centroid_energy": 0.05702708250939573,
+          "centroid_unique_after_null_energy": 0.15389308372524568,
+          "fraction_toward_clean_centroid": 0.9208333333333333,
+          "median_null_centroid_direction_cosine": 0.32031590585783626
+        }
+      }
+    },
+    "matched19": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12945859929792228,
+          "case_energy_fraction": 0.5991225609753911,
+          "style_energy_fraction": 0.011399126987916853,
+          "interaction_energy_fraction": 0.2600197127387699,
+          "sum": 1.0
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6062505281468032,
+          "case_other_styles_r2_zero": 0.6091568707935713,
+          "patient_loo_style_r2_zero": 0.09671192257610672
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.09314056618498989,
+          "patient_cv_style_only_r2_zero": 0.08624478715354011,
+          "patient_cv_incremental_over_style_only": 0.0075466371458156045,
+          "permuted_incremental_median": -0.026817179705156402,
+          "permuted_incremental_95pct": [
+            -0.05268120374051648,
+            -0.007719829957932587
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.040795158890529745,
+          "median_signed_cosine": 0.16610007711510139,
+          "fraction_toward_null": 0.9166666666666666,
+          "permuted_projection_median": 0.024819896702558943,
+          "permuted_projection_95pct": [
+            0.022087150025134308,
+            0.02796470457863615
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.14428233202498744,
+          "null_projection_energy": 0.040795158890529745,
+          "null_unique_after_centroid_energy": 0.020811390316845226,
+          "centroid_unique_after_null_energy": 0.12429856345130283,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.1811504189683038
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.0690154139143441,
+          "case_energy_fraction": 0.6820202788413766,
+          "style_energy_fraction": 0.014465967842223405,
+          "interaction_energy_fraction": 0.23449833940205594,
+          "sum": 1.0
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6448380049731786,
+          "case_other_styles_r2_zero": 0.6414913975682377,
+          "patient_loo_style_r2_zero": 0.036327028153328
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.02751176783024034,
+          "patient_cv_style_only_r2_zero": 0.016895374590071954,
+          "patient_cv_incremental_over_style_only": 0.010798843750472353,
+          "permuted_incremental_median": -0.015915598300927702,
+          "permuted_incremental_95pct": [
+            -0.035611318340754525,
+            0.0022881389502139885
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1322700922914789,
+          "median_signed_cosine": 0.21418627039549748,
+          "fraction_toward_null": 0.75,
+          "permuted_projection_median": 0.06586245135083924,
+          "permuted_projection_95pct": [
+            0.05554300007469252,
+            0.07739448417142526
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23941140894678054,
+          "null_projection_energy": 0.1322700922914789,
+          "null_unique_after_centroid_energy": 0.05166147918190898,
+          "centroid_unique_after_null_energy": 0.15880279583721066,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3131452807941366
+        }
+      }
+    },
+    "permuted19": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12499467216985911,
+          "case_energy_fraction": 0.6014642029227327,
+          "style_energy_fraction": 0.01171743871417282,
+          "interaction_energy_fraction": 0.26182368619323554,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6034134350161562,
+          "case_other_styles_r2_zero": 0.606100780133332,
+          "patient_loo_style_r2_zero": 0.09235206048589806
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.091919173236514,
+          "patient_cv_style_only_r2_zero": 0.080986231131434,
+          "patient_cv_incremental_over_style_only": 0.011896385533526899,
+          "permuted_incremental_median": -0.005790848246189362,
+          "permuted_incremental_95pct": [
+            -0.018261169877721677,
+            0.00019939693280139246
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.040479251326354916,
+          "median_signed_cosine": 0.16252936516461788,
+          "fraction_toward_null": 0.9041666666666667,
+          "permuted_projection_median": 0.024900741742511237,
+          "permuted_projection_95pct": [
+            0.021916869891465175,
+            0.027619995841620802
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1432969062081006,
+          "null_projection_energy": 0.040479251326354916,
+          "null_unique_after_centroid_energy": 0.020678581288324234,
+          "centroid_unique_after_null_energy": 0.12349623617007009,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.17933661023321323
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.061312251025391354,
+          "case_energy_fraction": 0.6872793008078419,
+          "style_energy_fraction": 0.014460761704694073,
+          "interaction_energy_fraction": 0.23694768646207282,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6410717276917361,
+          "case_other_styles_r2_zero": 0.6379718346398559,
+          "patient_loo_style_r2_zero": 0.028299275985359307
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.014176555958084425,
+          "patient_cv_style_only_r2_zero": 0.009596371870939424,
+          "patient_cv_incremental_over_style_only": 0.004624563114532743,
+          "permuted_incremental_median": -0.0159346326696006,
+          "permuted_incremental_95pct": [
+            -0.03780336796803194,
+            0.003710825466457281
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.13002759814343565,
+          "median_signed_cosine": 0.20261613179914334,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.06358680569643851,
+          "permuted_projection_95pct": [
+            0.05276176204166371,
+            0.07589864756419583
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23835666601585825,
+          "null_projection_energy": 0.13002759814343565,
+          "null_unique_after_centroid_energy": 0.05208538439212101,
+          "centroid_unique_after_null_energy": 0.16041445226454387,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.3115087865279069
+        }
+      }
+    },
+    "matched123": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.1287777370478187,
+          "case_energy_fraction": 0.5944980672466927,
+          "style_energy_fraction": 0.01154820901406527,
+          "interaction_energy_fraction": 0.26517598669142345,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.5985879968234328,
+          "case_other_styles_r2_zero": 0.6015171581840963,
+          "patient_loo_style_r2_zero": 0.09626640329257352
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.09377197428423856,
+          "patient_cv_style_only_r2_zero": 0.08661932687432916,
+          "patient_cv_incremental_over_style_only": 0.007830959883826316,
+          "permuted_incremental_median": -0.006248567764879809,
+          "permuted_incremental_95pct": [
+            -0.019121134049710314,
+            0.0005661900370557551
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.04006170521017034,
+          "median_signed_cosine": 0.17066362938349403,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024930978008451406,
+          "permuted_projection_95pct": [
+            0.022067852139582844,
+            0.0276110768940094
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.13900117916112245,
+          "null_projection_energy": 0.04006170521017034,
+          "null_unique_after_centroid_energy": 0.020984386776849176,
+          "centroid_unique_after_null_energy": 0.1199238607278012,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1814592688510114
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.06391319392455744,
+          "case_energy_fraction": 0.6872478267844693,
+          "style_energy_fraction": 0.014499707884662214,
+          "interaction_energy_fraction": 0.23433927140631092,
+          "sum": 0.9999999999999999
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6450511906660699,
+          "case_other_styles_r2_zero": 0.6416718698209984,
+          "patient_loo_style_r2_zero": 0.03116658984587095
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.017386545100836925,
+          "patient_cv_style_only_r2_zero": 0.012883559947495127,
+          "patient_cv_incremental_over_style_only": 0.004561756820808505,
+          "permuted_incremental_median": -0.01909768773965581,
+          "permuted_incremental_95pct": [
+            -0.038151042220205114,
+            0.0012324519693713613
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1305124020962404,
+          "median_signed_cosine": 0.23055737170995555,
+          "fraction_toward_null": 0.7333333333333333,
+          "permuted_projection_median": 0.06915126346018677,
+          "permuted_projection_95pct": [
+            0.05769831319301935,
+            0.08006563319359311
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.22948052087708254,
+          "null_projection_energy": 0.1305124020962404,
+          "null_unique_after_centroid_energy": 0.055316528307843546,
+          "centroid_unique_after_null_energy": 0.15428464708868586,
+          "fraction_toward_clean_centroid": 0.9125,
+          "median_null_centroid_direction_cosine": 0.33526440769951565
+        }
+      }
+    },
+    "permuted123": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12158398664702033,
+          "case_energy_fraction": 0.6060360443694893,
+          "style_energy_fraction": 0.011418692412913758,
+          "interaction_energy_fraction": 0.26096127657057616,
+          "sum": 0.9999999999999996
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6048950356324435,
+          "case_other_styles_r2_zero": 0.6077728446637745,
+          "patient_loo_style_r2_zero": 0.08844790183581541
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.08729898773350864,
+          "patient_cv_style_only_r2_zero": 0.07856330621936991,
+          "patient_cv_incremental_over_style_only": 0.009480501018791054,
+          "permuted_incremental_median": -0.005623033451196857,
+          "permuted_incremental_95pct": [
+            -0.01810798258674993,
+            -3.168322978595048e-05
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.03960511946912917,
+          "median_signed_cosine": 0.167881941327365,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.02432049204621608,
+          "permuted_projection_95pct": [
+            0.02153316056965036,
+            0.02728137277881308
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1438775358412759,
+          "null_projection_energy": 0.03960511946912917,
+          "null_unique_after_centroid_energy": 0.020659750739218365,
+          "centroid_unique_after_null_energy": 0.12493216711136507,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1807970809806249
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.060142931678724844,
+          "case_energy_fraction": 0.6923776535691545,
+          "style_energy_fraction": 0.01468599440135315,
+          "interaction_energy_fraction": 0.2327934203507677,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6473751870962237,
+          "case_other_styles_r2_zero": 0.6436296427569457,
+          "patient_loo_style_r2_zero": 0.027116091087295624
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.007644393576297537,
+          "patient_cv_style_only_r2_zero": 0.003692488232360569,
+          "patient_cv_incremental_over_style_only": 0.003966551789743589,
+          "permuted_incremental_median": -0.018663750778707522,
+          "permuted_incremental_95pct": [
+            -0.03995159581253356,
+            0.0009829246001978923
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1303614453117865,
+          "median_signed_cosine": 0.21308035588734142,
+          "fraction_toward_null": 0.725,
+          "permuted_projection_median": 0.06859087128305524,
+          "permuted_projection_95pct": [
+            0.05771033025843694,
+            0.08054581889605525
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23811679230149396,
+          "null_projection_energy": 0.1303614453117865,
+          "null_unique_after_centroid_energy": 0.053417896572502364,
+          "centroid_unique_after_null_energy": 0.16117324356220986,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3075060319569568
+        }
+      }
+    },
+    "matched2027": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12389715709021182,
+          "case_energy_fraction": 0.6018896211507003,
+          "style_energy_fraction": 0.012151383717553583,
+          "interaction_energy_fraction": 0.2620618380415342,
+          "sum": 0.9999999999999999
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6031502915937106,
+          "case_other_styles_r2_zero": 0.6051329606669136,
+          "patient_loo_style_r2_zero": 0.09171856848215121
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.08746507175832674,
+          "patient_cv_style_only_r2_zero": 0.08261262795241364,
+          "patient_cv_incremental_over_style_only": 0.005289416394606117,
+          "permuted_incremental_median": -0.029454872639111174,
+          "permuted_incremental_95pct": [
+            -0.05369239847924347,
+            -0.0047444326445686864
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.03971541779899834,
+          "median_signed_cosine": 0.16750855949414084,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024387287491978694,
+          "permuted_projection_95pct": [
+            0.02161515808455911,
+            0.02738414215386201
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1415995597594579,
+          "null_projection_energy": 0.03971541779899834,
+          "null_unique_after_centroid_energy": 0.020451067337404892,
+          "centroid_unique_after_null_energy": 0.12233520929786439,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.17979913452990695
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.060239924439794076,
+          "case_energy_fraction": 0.6864669132748332,
+          "style_energy_fraction": 0.015276197625598929,
+          "interaction_energy_fraction": 0.2380169646597736,
+          "sum": 0.9999999999999998
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6394345760186253,
+          "case_other_styles_r2_zero": 0.6352578463090635,
+          "patient_loo_style_r2_zero": 0.028052798723797845
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.012489755045329787,
+          "patient_cv_style_only_r2_zero": 0.008676167312627325,
+          "patient_cv_incremental_over_style_only": 0.003846964641578632,
+          "permuted_incremental_median": -0.018764638391889465,
+          "permuted_incremental_95pct": [
+            -0.03811863927614451,
+            0.004272493903709568
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.13429217519332298,
+          "median_signed_cosine": 0.19586330397018656,
+          "fraction_toward_null": 0.75,
+          "permuted_projection_median": 0.07030334266097599,
+          "permuted_projection_95pct": [
+            0.059209492681769636,
+            0.082173557931187
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23208786347049248,
+          "null_projection_energy": 0.13429217519332298,
+          "null_unique_after_centroid_energy": 0.0561157365862925,
+          "centroid_unique_after_null_energy": 0.15391142486346215,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.3177815362785453
+        }
+      }
+    },
+    "permuted2027": {
+      "llm_27_image": {
+        "anova": {
+          "grand_energy_fraction": 0.12067513456173519,
+          "case_energy_fraction": 0.5995874995290118,
+          "style_energy_fraction": 0.011983959579617166,
+          "interaction_energy_fraction": 0.26775340632963596,
+          "sum": 1.0000000000000002
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.5945452243465787,
+          "case_other_styles_r2_zero": 0.5971781930906755,
+          "patient_loo_style_r2_zero": 0.0880225254428284
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.08363575394801592,
+          "patient_cv_style_only_r2_zero": 0.0772573443622796,
+          "patient_cv_incremental_over_style_only": 0.006912446874289158,
+          "permuted_incremental_median": -0.0061548986816551965,
+          "permuted_incremental_95pct": [
+            -0.018238020957660965,
+            0.0002201044018978976
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 100.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.038607554943078215,
+          "median_signed_cosine": 0.16343729709073546,
+          "fraction_toward_null": 0.9041666666666667,
+          "permuted_projection_median": 0.024121851360203547,
+          "permuted_projection_95pct": [
+            0.021248730358305563,
+            0.026466614074173
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.1408761162588025,
+          "null_projection_energy": 0.038607554943078215,
+          "null_unique_after_centroid_energy": 0.0202755224011037,
+          "centroid_unique_after_null_energy": 0.12254408371682793,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.18324909275996604
+        }
+      },
+      "llm_27_prompt": {
+        "anova": {
+          "grand_energy_fraction": 0.06336101430921556,
+          "case_energy_fraction": 0.6862414045515777,
+          "style_energy_fraction": 0.014558878382240714,
+          "interaction_energy_fraction": 0.2358387027569659,
+          "sum": 0.9999999999999999
+        },
+        "crossed_cell": {
+          "crossed_cell_r2_zero": 0.6427425010997374,
+          "case_other_styles_r2_zero": 0.6394274831595426,
+          "patient_loo_style_r2_zero": 0.030453910386986638
+        },
+        "clean_state_predictability": {
+          "patient_cv_conditional_r2_zero": 0.016708037410057996,
+          "patient_cv_style_only_r2_zero": 0.010138658621992258,
+          "patient_cv_incremental_over_style_only": 0.006636665675740283,
+          "permuted_incremental_median": -0.01718292289646406,
+          "permuted_incremental_95pct": [
+            -0.03261697183082579,
+            0.004627121339339355
+          ],
+          "folds": [
+            {
+              "fold": 0,
+              "test_patients": [
+                "p12952223",
+                "p15094735",
+                "p16043637",
+                "p16957952",
+                "p17340686",
+                "p18615099",
+                "p19182863",
+                "p19389547"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 1,
+              "test_patients": [
+                "p10886362",
+                "p12538508",
+                "p14353044",
+                "p16508811",
+                "p16672854",
+                "p16848073",
+                "p17189198",
+                "p18828251"
+              ],
+              "ridge_multiplier": 1.0
+            },
+            {
+              "fold": 2,
+              "test_patients": [
+                "p10402372",
+                "p10933609",
+                "p12736592",
+                "p13135946",
+                "p14312560",
+                "p17318449",
+                "p17962324",
+                "p18512911"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 3,
+              "test_patients": [
+                "p11052935",
+                "p11673948",
+                "p14295224",
+                "p17327592",
+                "p18079481",
+                "p18224196",
+                "p19404187"
+              ],
+              "ridge_multiplier": 10.0
+            },
+            {
+              "fold": 4,
+              "test_patients": [
+                "p12303667",
+                "p12530259",
+                "p13475033",
+                "p14387068",
+                "p14851532",
+                "p16553329",
+                "p18570152"
+              ],
+              "ridge_multiplier": 10.0
+            }
+          ]
+        },
+        "null_prior": {
+          "same_case_null_projection_energy": 0.1297956867835681,
+          "median_signed_cosine": 0.1976515766991268,
+          "fraction_toward_null": 0.7625,
+          "permuted_projection_median": 0.06562441644474974,
+          "permuted_projection_95pct": [
+            0.054871487362942,
+            0.07738726392065638
+          ],
+          "permutation_p_one_sided": 0.004975124378109453
+        },
+        "endpoint_controls": {
+          "clean_centroid_projection_energy": 0.23405791395687878,
+          "null_projection_energy": 0.1297956867835681,
+          "null_unique_after_centroid_energy": 0.0530324331196201,
+          "centroid_unique_after_null_energy": 0.15729466029293068,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.2908494799061708
+        }
+      }
+    }
+  },
+  "layers": {
+    "llm_27_image": {
+      "case_energy_fraction": {
+        "median": 0.6014642029227327,
+        "minimum": 0.5944980672466927,
+        "maximum": 0.6086330332570792
+      },
+      "interaction_energy_fraction": {
+        "median": 0.26096127657057616,
+        "minimum": 0.2580039831027819,
+        "maximum": 0.26775340632963596
+      },
+      "crossed_cell_r2_zero": {
+        "median": 0.6048950356324435,
+        "minimum": 0.5945452243465787,
+        "maximum": 0.6092338657595683
+      },
+      "patient_cv_incremental_over_style_only": {
+        "median": 0.007830959883826316,
+        "minimum": 0.002840827649685407,
+        "maximum": 0.025309923801341894
+      },
+      "same_case_null_projection_energy": {
+        "median": 0.03985957219498231,
+        "minimum": 0.038607554943078215,
+        "maximum": 0.040795158890529745
+      },
+      "fraction_toward_null": {
+        "median": 0.9083333333333333,
+        "minimum": 0.9,
+        "maximum": 0.9208333333333333
+      },
+      "clean_centroid_projection_energy": {
+        "median": 0.1432969062081006,
+        "minimum": 0.13900117916112245,
+        "maximum": 0.1459448901775727
+      },
+      "null_unique_after_centroid_energy": {
+        "median": 0.02063374700164741,
+        "minimum": 0.019850577415125945,
+        "maximum": 0.020984386776849176
+      },
+      "centroid_unique_after_null_energy": {
+        "median": 0.12349623617007009,
+        "minimum": 0.1199238607278012,
+        "maximum": 0.12602046771367814
+      }
+    },
+    "llm_27_prompt": {
+      "case_energy_fraction": {
+        "median": 0.6872478267844693,
+        "minimum": 0.6820202788413766,
+        "maximum": 0.6931375546901719
+      },
+      "interaction_energy_fraction": {
+        "median": 0.23449833940205594,
+        "minimum": 0.2296689477454344,
+        "maximum": 0.23910436984120534
+      },
+      "crossed_cell_r2_zero": {
+        "median": 0.6448380049731786,
+        "minimum": 0.6378405467717024,
+        "maximum": 0.6521357480627157
+      },
+      "patient_cv_incremental_over_style_only": {
+        "median": 0.0055367760768729735,
+        "minimum": 0.003846964641578632,
+        "maximum": 0.012106987182342599
+      },
+      "same_case_null_projection_energy": {
+        "median": 0.1303614453117865,
+        "minimum": 0.12720165463631616,
+        "maximum": 0.13492303424534025
+      },
+      "fraction_toward_null": {
+        "median": 0.7458333333333333,
+        "minimum": 0.725,
+        "maximum": 0.7625
+      },
+      "clean_centroid_projection_energy": {
+        "median": 0.2360863572461792,
+        "minimum": 0.22948052087708254,
+        "maximum": 0.23941140894678054
+      },
+      "null_unique_after_centroid_energy": {
+        "median": 0.0530324331196201,
+        "minimum": 0.05026630541591283,
+        "maximum": 0.05702708250939573
+      },
+      "centroid_unique_after_null_energy": {
+        "median": 0.15880279583721066,
+        "minimum": 0.15389308372524568,
+        "maximum": 0.1620607484444268
+      }
+    }
+  },
+  "decision": {
+    "case_conditioning_is_structurally_dominant": true,
+    "crossed_multiview_field_is_predictable": true,
+    "clean_single_view_predictor_is_positive_in_every_lineage": true,
+    "clean_single_view_predictor_remains_below_2pct_everywhere": true,
+    "same_case_null_component_exceeds_permuted_control_everywhere": true,
+    "clean_centroid_explains_more_than_null_everywhere": true,
+    "centroid_unique_component_exceeds_null_unique_everywhere": true
+  },
+  "interpretation": "The synthetic style field has a strong case-conditioned common mode. Its displacement aligns with the case-anchored null direction, but aligns more strongly with a leave-one-patient clean-state centroid; the current evidence therefore supports generic case-conditioned contraction, not a null-specific prior. A simple patient-held-out clean-state map explains little incremental energy.",
+  "claim_ceiling": "paired synthetic Fourier views on 40 exposed MIMIC development cases and correlated Qwen2.5-VL-7B lineages; no clinical-utility or natural-scanner claim"
+}

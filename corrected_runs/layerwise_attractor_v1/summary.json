@@ -1,0 +1,3232 @@
+{
+  "version": "layerwise-attractor-v1",
+  "sources": [
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.npz",
+      "features_sha256": "e7be14489e9f1d86549ec7b4c6748a451a923f5364891ac3b84f1561750a07ef",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_v1.json",
+      "metadata_fingerprint": "45d318c29724fcb8fa1758843ecf4efdf29b841e5c683520194db794dade8dec"
+    },
+    {
+      "features": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_full_v1.npz",
+      "features_sha256": "d8421c24c56cb96f2abfb738ffa798e7bda61c980826f886723f1d7486e48bb5",
+      "metadata": "/autodl-fs/data/data/dbw/anchor_alignment_contraction_v1/layerwise_style_orbit40_multiseed_full_v1.json",
+      "metadata_fingerprint": "039e34500b9c5811960027590b302a4d1f96631e3240c60996a23992467b4c05"
+    }
+  ],
+  "lineages": {
+    "base": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010414585030150705,
+          "median_signed_cosine": 0.09629601915973467,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007171129579015931,
+          "permuted_projection_95pct": [
+            0.006612552311862015,
+            0.007848069794423002
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1631579872015118,
+          "null_projection_energy": 0.010414585030150705,
+          "null_unique_after_centroid_energy": 0.0062439921526554094,
+          "centroid_unique_after_null_energy": 0.15898739432401632,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09630772229202242,
+          "mean_log_centroid_distance_ratio": 0.1810849905678249,
+          "median_log_centroid_distance_ratio": 0.19867145573559694,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24732017854324576,
+          "median_centroid_projection_coefficient": 0.21477081210239307,
+          "mean_absolute_centroid_projection_energy": 4.488263912418956
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07051290051699645,
+          "median_signed_cosine": 0.02371386069615373,
+          "fraction_toward_null": 0.5291666666666667,
+          "permuted_projection_median": 0.08283499122877917,
+          "permuted_projection_95pct": [
+            0.07172077366207832,
+            0.09584296186494179
+          ],
+          "permutation_p_one_sided": 0.9800995024875622,
+          "clean_centroid_projection_energy": 0.18932155218642638,
+          "null_projection_energy": 0.07051290051699645,
+          "null_unique_after_centroid_energy": 0.05746988757402388,
+          "centroid_unique_after_null_energy": 0.176278539243454,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.33439603091541725,
+          "mean_log_centroid_distance_ratio": 0.4125014835249315,
+          "median_log_centroid_distance_ratio": 0.4230610257438211,
+          "fraction_closer_to_centroid": 0.1875,
+          "mean_centroid_projection_coefficient": 0.43278740241571645,
+          "median_centroid_projection_coefficient": 0.4172211487851296,
+          "mean_absolute_centroid_projection_energy": 0.09446067686056159
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.0179378438738828,
+          "median_signed_cosine": 0.12621317995378536,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012682825417956286,
+          "permuted_projection_95pct": [
+            0.011840838854861998,
+            0.013773188370510649
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1385219421748038,
+          "null_projection_energy": 0.0179378438738828,
+          "null_unique_after_centroid_energy": 0.011311345901845148,
+          "centroid_unique_after_null_energy": 0.1318954442027661,
+          "fraction_toward_clean_centroid": 0.875,
+          "median_null_centroid_direction_cosine": 0.10253845337626034,
+          "mean_log_centroid_distance_ratio": 0.10696478821478372,
+          "median_log_centroid_distance_ratio": 0.11652201916603475,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21507754692254616,
+          "median_centroid_projection_coefficient": 0.1945298027912373,
+          "mean_absolute_centroid_projection_energy": 4.47360824479565
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07531421254819011,
+          "median_signed_cosine": 0.24424918896577683,
+          "fraction_toward_null": 0.9,
+          "permuted_projection_median": 0.0439500320623675,
+          "permuted_projection_95pct": [
+            0.04022040304120131,
+            0.04893559118956562
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19481900003632363,
+          "null_projection_energy": 0.07531421254819011,
+          "null_unique_after_centroid_energy": 0.03249473966017818,
+          "centroid_unique_after_null_energy": 0.1519995271483117,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.22834777001906054,
+          "mean_log_centroid_distance_ratio": 0.1818287477821374,
+          "median_log_centroid_distance_ratio": 0.15116327899173498,
+          "fraction_closer_to_centroid": 0.30833333333333335,
+          "mean_centroid_projection_coefficient": 0.4091090506866434,
+          "median_centroid_projection_coefficient": 0.4182027059733042,
+          "mean_absolute_centroid_projection_energy": 0.5712865888908991
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.01775913946925116,
+          "median_signed_cosine": 0.11530799331792335,
+          "fraction_toward_null": 0.925,
+          "permuted_projection_median": 0.012358956924925737,
+          "permuted_projection_95pct": [
+            0.011458412833604726,
+            0.013467214621135282
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11627532572165286,
+          "null_projection_energy": 0.01775913946925116,
+          "null_unique_after_centroid_energy": 0.010895477749466958,
+          "centroid_unique_after_null_energy": 0.10941166400186868,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11479016177500552,
+          "mean_log_centroid_distance_ratio": 0.05857506444846138,
+          "median_log_centroid_distance_ratio": 0.051132923911365306,
+          "fraction_closer_to_centroid": 0.42083333333333334,
+          "mean_centroid_projection_coefficient": 0.2036967222646184,
+          "median_centroid_projection_coefficient": 0.19605755109462603,
+          "mean_absolute_centroid_projection_energy": 6.171209306524831
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11055747295083793,
+          "median_signed_cosine": 0.28741228201708297,
+          "fraction_toward_null": 0.95,
+          "permuted_projection_median": 0.07594149530767327,
+          "permuted_projection_95pct": [
+            0.07060170705501013,
+            0.08182907716835215
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2042114595393802,
+          "null_projection_energy": 0.11055747295083793,
+          "null_unique_after_centroid_energy": 0.056415122531484896,
+          "centroid_unique_after_null_energy": 0.15006910912002727,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.17873122361363575,
+          "mean_log_centroid_distance_ratio": 0.1443752916367608,
+          "median_log_centroid_distance_ratio": 0.14623299277707286,
+          "fraction_closer_to_centroid": 0.35,
+          "mean_centroid_projection_coefficient": 0.380556076751767,
+          "median_centroid_projection_coefficient": 0.3564324720861517,
+          "mean_absolute_centroid_projection_energy": 1.4717400878885296
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016662924665452376,
+          "median_signed_cosine": 0.06788131650222759,
+          "fraction_toward_null": 0.7291666666666666,
+          "permuted_projection_median": 0.013454735742571163,
+          "permuted_projection_95pct": [
+            0.012607027339322884,
+            0.014355596043625985
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12868192143157073,
+          "null_projection_energy": 0.016662924665452376,
+          "null_unique_after_centroid_energy": 0.010711150582517205,
+          "centroid_unique_after_null_energy": 0.12273014734863553,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.10295566829860744,
+          "mean_log_centroid_distance_ratio": 0.007607380621214642,
+          "median_log_centroid_distance_ratio": 0.0028121530211351574,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.21984692633588582,
+          "median_centroid_projection_coefficient": 0.2130427268120182,
+          "mean_absolute_centroid_projection_energy": 14.819972576195774
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.08708570540645452,
+          "median_signed_cosine": 0.18962623524369293,
+          "fraction_toward_null": 0.7958333333333333,
+          "permuted_projection_median": 0.0443397489749202,
+          "permuted_projection_95pct": [
+            0.0364597799792117,
+            0.05482860448100124
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26295755856437597,
+          "null_projection_energy": 0.08708570540645452,
+          "null_unique_after_centroid_energy": 0.028425953229359695,
+          "centroid_unique_after_null_energy": 0.20429780638728118,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.3610131201516232,
+          "mean_log_centroid_distance_ratio": -0.09787600232619696,
+          "median_log_centroid_distance_ratio": -0.08031000125026856,
+          "fraction_closer_to_centroid": 0.5833333333333334,
+          "mean_centroid_projection_coefficient": 0.28814819219175275,
+          "median_centroid_projection_coefficient": 0.2845230147982257,
+          "mean_absolute_centroid_projection_energy": 16.799142852973766
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.03977499987902047,
+          "median_signed_cosine": 0.16697736009235173,
+          "fraction_toward_null": 0.9125,
+          "permuted_projection_median": 0.023730752255929955,
+          "permuted_projection_95pct": [
+            0.020923195990047924,
+            0.026654664092922133
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1459448901775727,
+          "null_projection_energy": 0.03977499987902047,
+          "null_unique_after_centroid_energy": 0.019850577415125945,
+          "centroid_unique_after_null_energy": 0.12602046771367814,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.18647159013410708,
+          "mean_log_centroid_distance_ratio": 0.018661327871357568,
+          "median_log_centroid_distance_ratio": 0.011947196513067892,
+          "fraction_closer_to_centroid": 0.4791666666666667,
+          "mean_centroid_projection_coefficient": 0.24991664823124818,
+          "median_centroid_projection_coefficient": 0.24950197896510934,
+          "mean_absolute_centroid_projection_energy": 294.3042042434715
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.12720165463631616,
+          "median_signed_cosine": 0.2020015303995536,
+          "fraction_toward_null": 0.7375,
+          "permuted_projection_median": 0.06409285917683058,
+          "permuted_projection_95pct": [
+            0.05341137830065278,
+            0.07769252580945758
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2354821503769061,
+          "null_projection_energy": 0.12720165463631616,
+          "null_unique_after_centroid_energy": 0.05026630541591283,
+          "centroid_unique_after_null_energy": 0.1585468011565027,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.3292687189990848,
+          "mean_log_centroid_distance_ratio": -0.11134542185429215,
+          "median_log_centroid_distance_ratio": -0.09980654883364469,
+          "fraction_closer_to_centroid": 0.625,
+          "mean_centroid_projection_coefficient": 0.22082656048246196,
+          "median_centroid_projection_coefficient": 0.21757651586109433,
+          "mean_absolute_centroid_projection_energy": 247.91894550425522
+        }
+      }
+    },
+    "matched": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010420997196632495,
+          "median_signed_cosine": 0.0960003135363039,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007192368473546673,
+          "permuted_projection_95pct": [
+            0.006625591461574128,
+            0.007841475268234428
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1631915753903759,
+          "null_projection_energy": 0.010420997196632495,
+          "null_unique_after_centroid_energy": 0.006237914700584691,
+          "centroid_unique_after_null_energy": 0.15900849289432797,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09592951047399936,
+          "mean_log_centroid_distance_ratio": 0.18106022411255018,
+          "median_log_centroid_distance_ratio": 0.19881447965517474,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24736058922526513,
+          "median_centroid_projection_coefficient": 0.2148378792915847,
+          "mean_absolute_centroid_projection_energy": 4.486390236742337
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07008164905524583,
+          "median_signed_cosine": 0.03977650678520976,
+          "fraction_toward_null": 0.5333333333333333,
+          "permuted_projection_median": 0.08147005787005429,
+          "permuted_projection_95pct": [
+            0.06820643171220112,
+            0.09315376934654118
+          ],
+          "permutation_p_one_sided": 0.9402985074626866,
+          "clean_centroid_projection_energy": 0.18857838164579446,
+          "null_projection_energy": 0.07008164905524583,
+          "null_unique_after_centroid_energy": 0.05670887669477351,
+          "centroid_unique_after_null_energy": 0.1752056092853221,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.32905953696439966,
+          "mean_log_centroid_distance_ratio": 0.4165864175342243,
+          "median_log_centroid_distance_ratio": 0.412854377959305,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.4316066319446103,
+          "median_centroid_projection_coefficient": 0.4108976774641793,
+          "mean_absolute_centroid_projection_energy": 0.09530046900311714
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018123393090918746,
+          "median_signed_cosine": 0.1270108111226738,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012896757167597264,
+          "permuted_projection_95pct": [
+            0.011857855233296329,
+            0.013965315497307989
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13789252486171147,
+          "null_projection_energy": 0.018123393090918746,
+          "null_unique_after_centroid_energy": 0.011422373439645415,
+          "centroid_unique_after_null_energy": 0.1311915052104382,
+          "fraction_toward_clean_centroid": 0.875,
+          "median_null_centroid_direction_cosine": 0.10174629619522879,
+          "mean_log_centroid_distance_ratio": 0.10734402875391241,
+          "median_log_centroid_distance_ratio": 0.11882933864083124,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.2146960514206211,
+          "median_centroid_projection_coefficient": 0.19593529791558384,
+          "mean_absolute_centroid_projection_energy": 4.459885275976327
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07648510262440376,
+          "median_signed_cosine": 0.23320382992324076,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.04512478262557969,
+          "permuted_projection_95pct": [
+            0.040883934288970386,
+            0.04980615014163923
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19602473148953034,
+          "null_projection_energy": 0.07648510262440376,
+          "null_unique_after_centroid_energy": 0.033340399417283825,
+          "centroid_unique_after_null_energy": 0.15288002828241043,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.2264039853286517,
+          "mean_log_centroid_distance_ratio": 0.17659117614043593,
+          "median_log_centroid_distance_ratio": 0.1486040702636136,
+          "fraction_closer_to_centroid": 0.30416666666666664,
+          "mean_centroid_projection_coefficient": 0.40743497089158043,
+          "median_centroid_projection_coefficient": 0.41220567272703185,
+          "mean_absolute_centroid_projection_energy": 0.5728221988486617
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.01779410042434482,
+          "median_signed_cosine": 0.11486954104386371,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012314492932275196,
+          "permuted_projection_95pct": [
+            0.01139930206847392,
+            0.013446752777087234
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11625447574107282,
+          "null_projection_energy": 0.01779410042434482,
+          "null_unique_after_centroid_energy": 0.01091217911381617,
+          "centroid_unique_after_null_energy": 0.10937255443054417,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11395455404226107,
+          "mean_log_centroid_distance_ratio": 0.05786211327063322,
+          "median_log_centroid_distance_ratio": 0.05193685201949307,
+          "fraction_closer_to_centroid": 0.4083333333333333,
+          "mean_centroid_projection_coefficient": 0.2036633108053642,
+          "median_centroid_projection_coefficient": 0.19344394235979612,
+          "mean_absolute_centroid_projection_energy": 6.181852662853817
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11755602615753347,
+          "median_signed_cosine": 0.3034811377842723,
+          "fraction_toward_null": 0.9625,
+          "permuted_projection_median": 0.08184820067720007,
+          "permuted_projection_95pct": [
+            0.07687451858794324,
+            0.08741780589807216
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19798582314969349,
+          "null_projection_energy": 0.11755602615753347,
+          "null_unique_after_centroid_energy": 0.06220924405452806,
+          "centroid_unique_after_null_energy": 0.14263904104668812,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.18920904031017124,
+          "mean_log_centroid_distance_ratio": 0.15486610869342737,
+          "median_log_centroid_distance_ratio": 0.13205468210305885,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.37045531228496936,
+          "median_centroid_projection_coefficient": 0.3563010621663313,
+          "mean_absolute_centroid_projection_energy": 1.4162580409669583
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.01628445510090959,
+          "median_signed_cosine": 0.07028259237926127,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.01324486376046435,
+          "permuted_projection_95pct": [
+            0.01240160874668164,
+            0.014136444204865518
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12792826361294515,
+          "null_projection_energy": 0.01628445510090959,
+          "null_unique_after_centroid_energy": 0.010553596676822692,
+          "centroid_unique_after_null_energy": 0.1221974051888582,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.10313933774446973,
+          "mean_log_centroid_distance_ratio": 0.008118916093447694,
+          "median_log_centroid_distance_ratio": 0.00012601226733184232,
+          "fraction_closer_to_centroid": 0.5,
+          "mean_centroid_projection_coefficient": 0.21909546445143752,
+          "median_centroid_projection_coefficient": 0.21253961953375006,
+          "mean_absolute_centroid_projection_energy": 14.749125722376656
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.089309426715001,
+          "median_signed_cosine": 0.1964352334874622,
+          "fraction_toward_null": 0.8,
+          "permuted_projection_median": 0.046046302491063056,
+          "permuted_projection_95pct": [
+            0.038152484105220714,
+            0.0543127000563134
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2643878652555166,
+          "null_projection_energy": 0.089309426715001,
+          "null_unique_after_centroid_energy": 0.030668712688818392,
+          "centroid_unique_after_null_energy": 0.20574715122933404,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.35765061648443,
+          "mean_log_centroid_distance_ratio": -0.09491988855486584,
+          "median_log_centroid_distance_ratio": -0.08172099581064046,
+          "fraction_closer_to_centroid": 0.5833333333333334,
+          "mean_centroid_projection_coefficient": 0.2901517865753867,
+          "median_centroid_projection_coefficient": 0.2833276998419402,
+          "mean_absolute_centroid_projection_energy": 16.94441686193455
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.039023380446494456,
+          "median_signed_cosine": 0.17006258461441773,
+          "fraction_toward_null": 0.9208333333333333,
+          "permuted_projection_median": 0.02406547624971889,
+          "permuted_projection_95pct": [
+            0.021378635145604563,
+            0.026840037375221067
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.14063896161568695,
+          "null_projection_energy": 0.039023380446494456,
+          "null_unique_after_centroid_energy": 0.02063374700164741,
+          "centroid_unique_after_null_energy": 0.12224932817083992,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.18081997151281712,
+          "mean_log_centroid_distance_ratio": 0.025957528928370627,
+          "median_log_centroid_distance_ratio": 0.018665477427056237,
+          "fraction_closer_to_centroid": 0.45416666666666666,
+          "mean_centroid_projection_coefficient": 0.24189101851869987,
+          "median_centroid_projection_coefficient": 0.22854896326639731,
+          "mean_absolute_centroid_projection_energy": 275.8844903106186
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1298971687389317,
+          "median_signed_cosine": 0.18609219577263286,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.06564745263856796,
+          "permuted_projection_95pct": [
+            0.054132227022001767,
+            0.07971461709112307
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2360863572461792,
+          "null_projection_energy": 0.1298971687389317,
+          "null_unique_after_centroid_energy": 0.05378999291596145,
+          "centroid_unique_after_null_energy": 0.15997918142320897,
+          "fraction_toward_clean_centroid": 0.9208333333333333,
+          "median_null_centroid_direction_cosine": 0.3175748591914107,
+          "mean_log_centroid_distance_ratio": -0.10478732175753912,
+          "median_log_centroid_distance_ratio": -0.09122659539416762,
+          "fraction_closer_to_centroid": 0.6125,
+          "mean_centroid_projection_coefficient": 0.21570939401348577,
+          "median_centroid_projection_coefficient": 0.22221055978697976,
+          "mean_absolute_centroid_projection_energy": 241.88778422597835
+        }
+      }
+    },
+    "permuted": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010425102074697377,
+          "median_signed_cosine": 0.09605028029722017,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007258621183794469,
+          "permuted_projection_95pct": [
+            0.006652655061058446,
+            0.007917928861965148
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16316116612344925,
+          "null_projection_energy": 0.010425102074697377,
+          "null_unique_after_centroid_energy": 0.00624244369500204,
+          "centroid_unique_after_null_energy": 0.15897850774375358,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.0959164427044414,
+          "mean_log_centroid_distance_ratio": 0.18109443888164892,
+          "median_log_centroid_distance_ratio": 0.19891093286546077,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24734302332603988,
+          "median_centroid_projection_coefficient": 0.2147979738134138,
+          "mean_absolute_centroid_projection_energy": 4.485356098318206
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07163794867225594,
+          "median_signed_cosine": 0.03866616948686635,
+          "fraction_toward_null": 0.5375,
+          "permuted_projection_median": 0.08363194140471047,
+          "permuted_projection_95pct": [
+            0.07128804611778956,
+            0.09584467177132146
+          ],
+          "permutation_p_one_sided": 0.9651741293532339,
+          "clean_centroid_projection_energy": 0.19005056880574367,
+          "null_projection_energy": 0.07163794867225594,
+          "null_unique_after_centroid_energy": 0.05711962504423167,
+          "centroid_unique_after_null_energy": 0.17553224517771968,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3273770065260351,
+          "mean_log_centroid_distance_ratio": 0.41411119805307545,
+          "median_log_centroid_distance_ratio": 0.416725663573925,
+          "fraction_closer_to_centroid": 0.18333333333333332,
+          "mean_centroid_projection_coefficient": 0.4337517536584978,
+          "median_centroid_projection_coefficient": 0.4121999341902439,
+          "mean_absolute_centroid_projection_energy": 0.09621259978748885
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018135362632318935,
+          "median_signed_cosine": 0.12657129434024506,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.0129592583523695,
+          "permuted_projection_95pct": [
+            0.011883688604457413,
+            0.014026659886753754
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13801006896140405,
+          "null_projection_energy": 0.018135362632318935,
+          "null_unique_after_centroid_energy": 0.011446010274054359,
+          "centroid_unique_after_null_energy": 0.13132071660313946,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10161080640136777,
+          "mean_log_centroid_distance_ratio": 0.10734776136489937,
+          "median_log_centroid_distance_ratio": 0.1176860081322241,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21478129310530172,
+          "median_centroid_projection_coefficient": 0.1955458721765117,
+          "mean_absolute_centroid_projection_energy": 4.461658697197866
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07566053000133621,
+          "median_signed_cosine": 0.2544028438650159,
+          "fraction_toward_null": 0.9,
+          "permuted_projection_median": 0.0444310217668296,
+          "permuted_projection_95pct": [
+            0.04058906283339651,
+            0.0498024241032618
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19376995719256382,
+          "null_projection_energy": 0.07566053000133621,
+          "null_unique_after_centroid_energy": 0.033241928592658745,
+          "centroid_unique_after_null_energy": 0.15135135578388637,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.21189607225137302,
+          "mean_log_centroid_distance_ratio": 0.1822655553155096,
+          "median_log_centroid_distance_ratio": 0.1454060016725617,
+          "fraction_closer_to_centroid": 0.29583333333333334,
+          "mean_centroid_projection_coefficient": 0.4053883767481723,
+          "median_centroid_projection_coefficient": 0.4161312126657687,
+          "mean_absolute_centroid_projection_energy": 0.5688049297801342
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017738743708609145,
+          "median_signed_cosine": 0.11616148629635892,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.01240897131020326,
+          "permuted_projection_95pct": [
+            0.011485096701626648,
+            0.013337603924996522
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11631173235170011,
+          "null_projection_energy": 0.017738743708609145,
+          "null_unique_after_centroid_energy": 0.0108774003561151,
+          "centroid_unique_after_null_energy": 0.10945038899920613,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.11465366881694,
+          "mean_log_centroid_distance_ratio": 0.05789950338023562,
+          "median_log_centroid_distance_ratio": 0.053249671214115224,
+          "fraction_closer_to_centroid": 0.4125,
+          "mean_centroid_projection_coefficient": 0.2036834339507447,
+          "median_centroid_projection_coefficient": 0.19408189884676752,
+          "mean_absolute_centroid_projection_energy": 6.1823904520060236
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11256734809052346,
+          "median_signed_cosine": 0.2939320219814675,
+          "fraction_toward_null": 0.9541666666666667,
+          "permuted_projection_median": 0.07658762855530182,
+          "permuted_projection_95pct": [
+            0.07200421834448245,
+            0.08250336425087715
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.20076197079439012,
+          "null_projection_energy": 0.11256734809052346,
+          "null_unique_after_centroid_energy": 0.05673374884800951,
+          "centroid_unique_after_null_energy": 0.14492837155187605,
+          "fraction_toward_clean_centroid": 0.9708333333333333,
+          "median_null_centroid_direction_cosine": 0.16391810848452676,
+          "mean_log_centroid_distance_ratio": 0.16713365353516577,
+          "median_log_centroid_distance_ratio": 0.18009193076807828,
+          "fraction_closer_to_centroid": 0.31666666666666665,
+          "mean_centroid_projection_coefficient": 0.36939404927709324,
+          "median_centroid_projection_coefficient": 0.3565658905059983,
+          "mean_absolute_centroid_projection_energy": 1.4608630589762952
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016552666819151348,
+          "median_signed_cosine": 0.06654778591420027,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.013360430467977087,
+          "permuted_projection_95pct": [
+            0.01258924643711878,
+            0.014435026931724623
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12827771385591707,
+          "null_projection_energy": 0.016552666819151348,
+          "null_unique_after_centroid_energy": 0.010682146675567874,
+          "centroid_unique_after_null_energy": 0.12240719371233348,
+          "fraction_toward_clean_centroid": 0.9708333333333333,
+          "median_null_centroid_direction_cosine": 0.1016379344236901,
+          "mean_log_centroid_distance_ratio": 0.007438798094151268,
+          "median_log_centroid_distance_ratio": -0.001457681220131618,
+          "fraction_closer_to_centroid": 0.5041666666666667,
+          "mean_centroid_projection_coefficient": 0.21936103852411187,
+          "median_centroid_projection_coefficient": 0.21169860852767602,
+          "mean_absolute_centroid_projection_energy": 14.771582324390408
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09174825814401125,
+          "median_signed_cosine": 0.20273251367746045,
+          "fraction_toward_null": 0.7958333333333333,
+          "permuted_projection_median": 0.04729312113445751,
+          "permuted_projection_95pct": [
+            0.037702690462709486,
+            0.058031771538533033
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26319704083309253,
+          "null_projection_energy": 0.09174825814401125,
+          "null_unique_after_centroid_energy": 0.030797741178868177,
+          "centroid_unique_after_null_energy": 0.20224652386794978,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.35754687511683425,
+          "mean_log_centroid_distance_ratio": -0.09218837836471065,
+          "median_log_centroid_distance_ratio": -0.06298224962279074,
+          "fraction_closer_to_centroid": 0.5833333333333334,
+          "mean_centroid_projection_coefficient": 0.29130259141042497,
+          "median_centroid_projection_coefficient": 0.2863350441853739,
+          "mean_absolute_centroid_projection_energy": 16.856133625621545
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.03989071944382931,
+          "median_signed_cosine": 0.1630723622579393,
+          "fraction_toward_null": 0.9125,
+          "permuted_projection_median": 0.024587594616684492,
+          "permuted_projection_95pct": [
+            0.02203442212597987,
+            0.02779127353664833
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1411716211111418,
+          "null_projection_energy": 0.03989071944382931,
+          "null_unique_after_centroid_energy": 0.02061921819080859,
+          "centroid_unique_after_null_energy": 0.12190011985812092,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1777504860584151,
+          "mean_log_centroid_distance_ratio": 0.023622725811515994,
+          "median_log_centroid_distance_ratio": 0.027000151048013562,
+          "fraction_closer_to_centroid": 0.45416666666666666,
+          "mean_centroid_projection_coefficient": 0.24376641612012065,
+          "median_centroid_projection_coefficient": 0.23413961472307698,
+          "mean_absolute_centroid_projection_energy": 277.3049043302673
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.12901793441826367,
+          "median_signed_cosine": 0.21445572124233425,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.06264165914406411,
+          "permuted_projection_95pct": [
+            0.052176150660929115,
+            0.07410579642389874
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23921478805696403,
+          "null_projection_energy": 0.12901793441826367,
+          "null_unique_after_centroid_energy": 0.05186389480572641,
+          "centroid_unique_after_null_energy": 0.1620607484444268,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3148477454028932,
+          "mean_log_centroid_distance_ratio": -0.10569408238638878,
+          "median_log_centroid_distance_ratio": -0.06928028924226273,
+          "fraction_closer_to_centroid": 0.6041666666666666,
+          "mean_centroid_projection_coefficient": 0.2235811920247287,
+          "median_centroid_projection_coefficient": 0.22715313653589034,
+          "mean_absolute_centroid_projection_energy": 254.84091197352424
+        }
+      }
+    },
+    "matched7": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010420971663968735,
+          "median_signed_cosine": 0.09588971408637945,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.0071980547022699164,
+          "permuted_projection_95pct": [
+            0.006591401012180802,
+            0.007949700309744925
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16319312539824068,
+          "null_projection_energy": 0.010420971663968735,
+          "null_unique_after_centroid_energy": 0.006239016719781969,
+          "centroid_unique_after_null_energy": 0.15901117045405408,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09582379707840785,
+          "mean_log_centroid_distance_ratio": 0.18107914792981397,
+          "median_log_centroid_distance_ratio": 0.1989490283606548,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24736302013485112,
+          "median_centroid_projection_coefficient": 0.21483662068199144,
+          "mean_absolute_centroid_projection_energy": 4.486220804835997
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.070230850098166,
+          "median_signed_cosine": 0.03338237710910059,
+          "fraction_toward_null": 0.5333333333333333,
+          "permuted_projection_median": 0.08200322292958503,
+          "permuted_projection_95pct": [
+            0.0714079499364916,
+            0.09461474935958876
+          ],
+          "permutation_p_one_sided": 0.9850746268656716,
+          "clean_centroid_projection_energy": 0.18915547856444692,
+          "null_projection_energy": 0.070230850098166,
+          "null_unique_after_centroid_energy": 0.056872957660552156,
+          "centroid_unique_after_null_energy": 0.1757975861268332,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3310719915948396,
+          "mean_log_centroid_distance_ratio": 0.41468376302276677,
+          "median_log_centroid_distance_ratio": 0.41902237724227714,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.4321899166918956,
+          "median_centroid_projection_coefficient": 0.4133079333300662,
+          "mean_absolute_centroid_projection_energy": 0.0955271825786383
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018105643735242097,
+          "median_signed_cosine": 0.1270393416860261,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012916058853213851,
+          "permuted_projection_95pct": [
+            0.011943377019411689,
+            0.013940635846020871
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13787588784806917,
+          "null_projection_energy": 0.018105643735242097,
+          "null_unique_after_centroid_energy": 0.011415352583008393,
+          "centroid_unique_after_null_energy": 0.1311855966958354,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10208419162067486,
+          "mean_log_centroid_distance_ratio": 0.10717061614533802,
+          "median_log_centroid_distance_ratio": 0.11751462480291233,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21473660977016948,
+          "median_centroid_projection_coefficient": 0.19597848422202763,
+          "mean_absolute_centroid_projection_energy": 4.456351370976043
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07664621495273091,
+          "median_signed_cosine": 0.24789988894273216,
+          "fraction_toward_null": 0.9208333333333333,
+          "permuted_projection_median": 0.044852871543070424,
+          "permuted_projection_95pct": [
+            0.0407099918053517,
+            0.04885765517912213
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19398217313769045,
+          "null_projection_energy": 0.07664621495273091,
+          "null_unique_after_centroid_energy": 0.033899943418801884,
+          "centroid_unique_after_null_energy": 0.1512359016037616,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.23451391915375003,
+          "mean_log_centroid_distance_ratio": 0.1728055456477475,
+          "median_log_centroid_distance_ratio": 0.13881667733808925,
+          "fraction_closer_to_centroid": 0.3125,
+          "mean_centroid_projection_coefficient": 0.40795844926042574,
+          "median_centroid_projection_coefficient": 0.4160577376611857,
+          "mean_absolute_centroid_projection_energy": 0.5666803296827252
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.01786356546343837,
+          "median_signed_cosine": 0.11621547265704042,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012346263278822416,
+          "permuted_projection_95pct": [
+            0.01145309476167606,
+            0.013218306248058257
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.116202824961017,
+          "null_projection_energy": 0.01786356546343837,
+          "null_unique_after_centroid_energy": 0.010959567424639358,
+          "centroid_unique_after_null_energy": 0.109298826922218,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.1138699262094715,
+          "mean_log_centroid_distance_ratio": 0.057500338556316005,
+          "median_log_centroid_distance_ratio": 0.05363392427007366,
+          "fraction_closer_to_centroid": 0.4125,
+          "mean_centroid_projection_coefficient": 0.20344694575160047,
+          "median_centroid_projection_coefficient": 0.19386617046105586,
+          "mean_absolute_centroid_projection_energy": 6.172344231625243
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11696429382853951,
+          "median_signed_cosine": 0.29999619756020235,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.08112108682607388,
+          "permuted_projection_95pct": [
+            0.07641245247205627,
+            0.08589755514359075
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.20056480148607284,
+          "null_projection_energy": 0.11696429382853951,
+          "null_unique_after_centroid_energy": 0.058898258888426314,
+          "centroid_unique_after_null_energy": 0.14249876654595958,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.17181584964850366,
+          "mean_log_centroid_distance_ratio": 0.1471384753717575,
+          "median_log_centroid_distance_ratio": 0.15672732605177525,
+          "fraction_closer_to_centroid": 0.32916666666666666,
+          "mean_centroid_projection_coefficient": 0.3707486816564128,
+          "median_centroid_projection_coefficient": 0.35350352075283986,
+          "mean_absolute_centroid_projection_energy": 1.4258966740671686
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016307755074375985,
+          "median_signed_cosine": 0.06751316487527517,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.013262987651966563,
+          "permuted_projection_95pct": [
+            0.012361001147500597,
+            0.014183033909814685
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12808841907374072,
+          "null_projection_energy": 0.016307755074375985,
+          "null_unique_after_centroid_energy": 0.010523962494679698,
+          "centroid_unique_after_null_energy": 0.12230462649404433,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.10486407548758006,
+          "mean_log_centroid_distance_ratio": 0.0071215342788682875,
+          "median_log_centroid_distance_ratio": -0.00014594000005404748,
+          "fraction_closer_to_centroid": 0.5,
+          "mean_centroid_projection_coefficient": 0.21906436421535272,
+          "median_centroid_projection_coefficient": 0.21124340133458736,
+          "mean_absolute_centroid_projection_energy": 14.744657760246524
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09257937372982955,
+          "median_signed_cosine": 0.19275741052711065,
+          "fraction_toward_null": 0.8,
+          "permuted_projection_median": 0.049280787934895334,
+          "permuted_projection_95pct": [
+            0.041297405935433754,
+            0.0579857349896611
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26530585600425205,
+          "null_projection_energy": 0.09257937372982955,
+          "null_unique_after_centroid_energy": 0.030550700283311815,
+          "centroid_unique_after_null_energy": 0.20327718255773422,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.3525118465087169,
+          "mean_log_centroid_distance_ratio": -0.09703570218771965,
+          "median_log_centroid_distance_ratio": -0.0677114263441107,
+          "fraction_closer_to_centroid": 0.5875,
+          "mean_centroid_projection_coefficient": 0.2890914686632898,
+          "median_centroid_projection_coefficient": 0.29093396201170807,
+          "mean_absolute_centroid_projection_energy": 16.933798455177232
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.03985957219498231,
+          "median_signed_cosine": 0.1659313819611461,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024424590596743352,
+          "permuted_projection_95pct": [
+            0.021534617615783493,
+            0.027133644203090373
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.14514595930211144,
+          "null_projection_energy": 0.03985957219498231,
+          "null_unique_after_centroid_energy": 0.020403877145677946,
+          "centroid_unique_after_null_energy": 0.12569026425280713,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.1790605099533101,
+          "mean_log_centroid_distance_ratio": 0.01567474812176304,
+          "median_log_centroid_distance_ratio": -0.008958972085171543,
+          "fraction_closer_to_centroid": 0.5083333333333333,
+          "mean_centroid_projection_coefficient": 0.24575977185389325,
+          "median_centroid_projection_coefficient": 0.2380859966076571,
+          "mean_absolute_centroid_projection_energy": 286.8050481606239
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1306480008262408,
+          "median_signed_cosine": 0.19040766823876298,
+          "fraction_toward_null": 0.7416666666666667,
+          "permuted_projection_median": 0.06524594980343246,
+          "permuted_projection_95pct": [
+            0.05563008316623522,
+            0.07634285350575745
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2368028518415596,
+          "null_projection_energy": 0.1306480008262408,
+          "null_unique_after_centroid_energy": 0.05300517736965025,
+          "centroid_unique_after_null_energy": 0.15916002838496898,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.31205909092005407,
+          "mean_log_centroid_distance_ratio": -0.10758840413403983,
+          "median_log_centroid_distance_ratio": -0.09056192559710763,
+          "fraction_closer_to_centroid": 0.6291666666666667,
+          "mean_centroid_projection_coefficient": 0.21837692973938602,
+          "median_centroid_projection_coefficient": 0.216474692028658,
+          "mean_absolute_centroid_projection_energy": 246.75132042585082
+        }
+      }
+    },
+    "permuted7": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010425738629703075,
+          "median_signed_cosine": 0.09606291426057445,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.00724003243901619,
+          "permuted_projection_95pct": [
+            0.006630938328511676,
+            0.007941435323610567
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16316807560647273,
+          "null_projection_energy": 0.010425738629703075,
+          "null_unique_after_centroid_energy": 0.0062416180773797545,
+          "centroid_unique_after_null_energy": 0.1589839550541492,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09575885158743304,
+          "mean_log_centroid_distance_ratio": 0.18110560464889552,
+          "median_log_centroid_distance_ratio": 0.1988472971170455,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24735516762725793,
+          "median_centroid_projection_coefficient": 0.2149176141281216,
+          "mean_absolute_centroid_projection_energy": 4.485883603755979
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07137352925442739,
+          "median_signed_cosine": 0.04286441780167333,
+          "fraction_toward_null": 0.5416666666666666,
+          "permuted_projection_median": 0.08321148530305203,
+          "permuted_projection_95pct": [
+            0.07303522890532306,
+            0.09693755799568102
+          ],
+          "permutation_p_one_sided": 0.9850746268656716,
+          "clean_centroid_projection_energy": 0.1900255616706329,
+          "null_projection_energy": 0.07137352925442739,
+          "null_unique_after_centroid_energy": 0.05723777521938283,
+          "centroid_unique_after_null_energy": 0.17588980763558829,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3283106946356471,
+          "mean_log_centroid_distance_ratio": 0.41203632450693795,
+          "median_log_centroid_distance_ratio": 0.4165300433301271,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.43447824456834017,
+          "median_centroid_projection_coefficient": 0.4129774168617359,
+          "mean_absolute_centroid_projection_energy": 0.09628450282630144
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.01804878301669536,
+          "median_signed_cosine": 0.12672111462720115,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012801225194419221,
+          "permuted_projection_95pct": [
+            0.011818238322229753,
+            0.013767410039881833
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13787347725925198,
+          "null_projection_energy": 0.01804878301669536,
+          "null_unique_after_centroid_energy": 0.01138239389279316,
+          "centroid_unique_after_null_energy": 0.13120708813534962,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.1017299528267859,
+          "mean_log_centroid_distance_ratio": 0.10737411053324988,
+          "median_log_centroid_distance_ratio": 0.11828643318697316,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21473381452831106,
+          "median_centroid_projection_coefficient": 0.1948903132636756,
+          "mean_absolute_centroid_projection_energy": 4.456077587062803
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07511574073982591,
+          "median_signed_cosine": 0.241910533096902,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.04423848147785696,
+          "permuted_projection_95pct": [
+            0.04022844138249263,
+            0.04854897939701295
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1925164402277399,
+          "null_projection_energy": 0.07511574073982591,
+          "null_unique_after_centroid_energy": 0.032611426170499815,
+          "centroid_unique_after_null_energy": 0.1500121256584136,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.21848333546477183,
+          "mean_log_centroid_distance_ratio": 0.18992856076992812,
+          "median_log_centroid_distance_ratio": 0.14902775920603845,
+          "fraction_closer_to_centroid": 0.30416666666666664,
+          "mean_centroid_projection_coefficient": 0.4013417527689357,
+          "median_centroid_projection_coefficient": 0.403349161108722,
+          "mean_absolute_centroid_projection_energy": 0.5609830662981846
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017786084871693784,
+          "median_signed_cosine": 0.11721068292122788,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.01238302933629879,
+          "permuted_projection_95pct": [
+            0.01152694196957127,
+            0.013331021944135714
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11613218247930276,
+          "null_projection_energy": 0.017786084871693784,
+          "null_unique_after_centroid_energy": 0.010907054589819602,
+          "centroid_unique_after_null_energy": 0.10925315219742857,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.11428663173180263,
+          "mean_log_centroid_distance_ratio": 0.05827706373192389,
+          "median_log_centroid_distance_ratio": 0.053461047927541167,
+          "fraction_closer_to_centroid": 0.4166666666666667,
+          "mean_centroid_projection_coefficient": 0.2035687177774455,
+          "median_centroid_projection_coefficient": 0.19390455705238738,
+          "mean_absolute_centroid_projection_energy": 6.177505923227296
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11272221927679806,
+          "median_signed_cosine": 0.2887751178373408,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.07771974563730735,
+          "permuted_projection_95pct": [
+            0.07341836556365557,
+            0.08264675444696862
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.203939723099392,
+          "null_projection_energy": 0.11272221927679806,
+          "null_unique_after_centroid_energy": 0.05672182596264516,
+          "centroid_unique_after_null_energy": 0.14793932978523922,
+          "fraction_toward_clean_centroid": 0.9708333333333333,
+          "median_null_centroid_direction_cosine": 0.20099114093987455,
+          "mean_log_centroid_distance_ratio": 0.15207384013414674,
+          "median_log_centroid_distance_ratio": 0.15281808460645452,
+          "fraction_closer_to_centroid": 0.325,
+          "mean_centroid_projection_coefficient": 0.37518897444905774,
+          "median_centroid_projection_coefficient": 0.3526483018044167,
+          "mean_absolute_centroid_projection_energy": 1.4686671279316106
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016698742408545006,
+          "median_signed_cosine": 0.0673939745191781,
+          "fraction_toward_null": 0.7291666666666666,
+          "permuted_projection_median": 0.013471646366491752,
+          "permuted_projection_95pct": [
+            0.012437490278893596,
+            0.014485570349905672
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12804625679774356,
+          "null_projection_energy": 0.016698742408545006,
+          "null_unique_after_centroid_energy": 0.010750198486806988,
+          "centroid_unique_after_null_energy": 0.12209771287600542,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.10273279311312372,
+          "mean_log_centroid_distance_ratio": 0.008138838281919088,
+          "median_log_centroid_distance_ratio": 0.001980669152300699,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.21926590277263222,
+          "median_centroid_projection_coefficient": 0.21218146141054883,
+          "mean_absolute_centroid_projection_energy": 14.755776987116308
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09289475208481007,
+          "median_signed_cosine": 0.17603632435958189,
+          "fraction_toward_null": 0.7875,
+          "permuted_projection_median": 0.04719573982392811,
+          "permuted_projection_95pct": [
+            0.04013913276515886,
+            0.05882552313738242
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26216681049393475,
+          "null_projection_energy": 0.09289475208481007,
+          "null_unique_after_centroid_energy": 0.032170044336353565,
+          "centroid_unique_after_null_energy": 0.20144210274547836,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.36552527462641593,
+          "mean_log_centroid_distance_ratio": -0.09302117623753187,
+          "median_log_centroid_distance_ratio": -0.06489614281280504,
+          "fraction_closer_to_centroid": 0.5916666666666667,
+          "mean_centroid_projection_coefficient": 0.289975274265127,
+          "median_centroid_projection_coefficient": 0.28410108629414754,
+          "mean_absolute_centroid_projection_energy": 16.70714657753479
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.040573478978258706,
+          "median_signed_cosine": 0.1652604455926577,
+          "fraction_toward_null": 0.9,
+          "permuted_projection_median": 0.02470048437074135,
+          "permuted_projection_95pct": [
+            0.021755152559087602,
+            0.027906948172158292
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.14522581971388338,
+          "null_projection_energy": 0.040573478978258706,
+          "null_unique_after_centroid_energy": 0.020735775983994984,
+          "centroid_unique_after_null_energy": 0.1253881167196197,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.17788888351959853,
+          "mean_log_centroid_distance_ratio": 0.015597206149027572,
+          "median_log_centroid_distance_ratio": 0.007074831002642035,
+          "fraction_closer_to_centroid": 0.49166666666666664,
+          "mean_centroid_projection_coefficient": 0.24606194556358438,
+          "median_centroid_projection_coefficient": 0.2375365150542963,
+          "mean_absolute_centroid_projection_energy": 286.80640736780816
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.13492303424534025,
+          "median_signed_cosine": 0.21747058871230868,
+          "fraction_toward_null": 0.7333333333333333,
+          "permuted_projection_median": 0.06748119572710742,
+          "permuted_projection_95pct": [
+            0.05536721301334476,
+            0.08235396774102766
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23178903546119015,
+          "null_projection_energy": 0.13492303424534025,
+          "null_unique_after_centroid_energy": 0.05702708250939573,
+          "centroid_unique_after_null_energy": 0.15389308372524568,
+          "fraction_toward_clean_centroid": 0.9208333333333333,
+          "median_null_centroid_direction_cosine": 0.32031590585783626,
+          "mean_log_centroid_distance_ratio": -0.095302600836962,
+          "median_log_centroid_distance_ratio": -0.10072157070136686,
+          "fraction_closer_to_centroid": 0.625,
+          "mean_centroid_projection_coefficient": 0.21529935754775137,
+          "median_centroid_projection_coefficient": 0.22612694697190866,
+          "mean_absolute_centroid_projection_energy": 238.800472507008
+        }
+      }
+    },
+    "matched19": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010419010737201546,
+          "median_signed_cosine": 0.09618658980629707,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.00726776866294253,
+          "permuted_projection_95pct": [
+            0.006644051467628677,
+            0.007809468273850703
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16317378387072773,
+          "null_projection_energy": 0.010419010737201546,
+          "null_unique_after_centroid_energy": 0.006240721246925112,
+          "centroid_unique_after_null_energy": 0.1589954943804512,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09599419618336008,
+          "mean_log_centroid_distance_ratio": 0.1811478724732247,
+          "median_log_centroid_distance_ratio": 0.19891695653468894,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.2473209014176673,
+          "median_centroid_projection_coefficient": 0.21470047987851104,
+          "mean_absolute_centroid_projection_energy": 4.4861254831669095
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07121206906064784,
+          "median_signed_cosine": 0.03737404820843812,
+          "fraction_toward_null": 0.5333333333333333,
+          "permuted_projection_median": 0.0822385069463055,
+          "permuted_projection_95pct": [
+            0.07042737895558261,
+            0.09555275875789235
+          ],
+          "permutation_p_one_sided": 0.9601990049751243,
+          "clean_centroid_projection_energy": 0.1897104923875049,
+          "null_projection_energy": 0.07121206906064784,
+          "null_unique_after_centroid_energy": 0.057049069787368234,
+          "centroid_unique_after_null_energy": 0.17554749311422527,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3327819656878702,
+          "mean_log_centroid_distance_ratio": 0.4144405596435791,
+          "median_log_centroid_distance_ratio": 0.4199220525822728,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.4332484037224566,
+          "median_centroid_projection_coefficient": 0.41169111093499444,
+          "mean_absolute_centroid_projection_energy": 0.09581966549790794
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018072708291769417,
+          "median_signed_cosine": 0.12724978053941657,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012811102703162394,
+          "permuted_projection_95pct": [
+            0.011757293099053354,
+            0.013794889845052782
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1379898415034717,
+          "null_projection_energy": 0.018072708291769417,
+          "null_unique_after_centroid_energy": 0.011392966249921074,
+          "centroid_unique_after_null_energy": 0.13131009946162311,
+          "fraction_toward_clean_centroid": 0.875,
+          "median_null_centroid_direction_cosine": 0.10120634390908075,
+          "mean_log_centroid_distance_ratio": 0.10720683016986617,
+          "median_log_centroid_distance_ratio": 0.11718992802009534,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21473178467092366,
+          "median_centroid_projection_coefficient": 0.19544606762507255,
+          "mean_absolute_centroid_projection_energy": 4.462167178321168
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07605366259218638,
+          "median_signed_cosine": 0.23779887958193607,
+          "fraction_toward_null": 0.9208333333333333,
+          "permuted_projection_median": 0.044873644338075114,
+          "permuted_projection_95pct": [
+            0.039823789364283206,
+            0.04904029341408562
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19496676326547047,
+          "null_projection_energy": 0.07605366259218638,
+          "null_unique_after_centroid_energy": 0.03264354889960197,
+          "centroid_unique_after_null_energy": 0.15155664957288625,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.22326485274989635,
+          "mean_log_centroid_distance_ratio": 0.17874359082477034,
+          "median_log_centroid_distance_ratio": 0.12157973583036197,
+          "fraction_closer_to_centroid": 0.3,
+          "mean_centroid_projection_coefficient": 0.40460328272365353,
+          "median_centroid_projection_coefficient": 0.40932026802141525,
+          "mean_absolute_centroid_projection_energy": 0.5715391387509868
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017831873139258034,
+          "median_signed_cosine": 0.11454087638744435,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012445275285223975,
+          "permuted_projection_95pct": [
+            0.01152501224604841,
+            0.013446577182849992
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11605887962961527,
+          "null_projection_energy": 0.017831873139258034,
+          "null_unique_after_centroid_energy": 0.010922866292530361,
+          "centroid_unique_after_null_energy": 0.10914987278288772,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11470264293563243,
+          "mean_log_centroid_distance_ratio": 0.058159075114537634,
+          "median_log_centroid_distance_ratio": 0.053105662098514826,
+          "fraction_closer_to_centroid": 0.4083333333333333,
+          "mean_centroid_projection_coefficient": 0.20327821511907737,
+          "median_centroid_projection_coefficient": 0.19367107878289438,
+          "mean_absolute_centroid_projection_energy": 6.164094756773471
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11129316182145987,
+          "median_signed_cosine": 0.28998964934838556,
+          "fraction_toward_null": 0.9541666666666667,
+          "permuted_projection_median": 0.0764113114825764,
+          "permuted_projection_95pct": [
+            0.07136742509988428,
+            0.08152601997297211
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1979930289122526,
+          "null_projection_energy": 0.11129316182145987,
+          "null_unique_after_centroid_energy": 0.057484795967784295,
+          "centroid_unique_after_null_energy": 0.1441846630585769,
+          "fraction_toward_clean_centroid": 0.9916666666666667,
+          "median_null_centroid_direction_cosine": 0.15407431163203483,
+          "mean_log_centroid_distance_ratio": 0.14727614530044802,
+          "median_log_centroid_distance_ratio": 0.12512827480438526,
+          "fraction_closer_to_centroid": 0.3541666666666667,
+          "mean_centroid_projection_coefficient": 0.36640968217208225,
+          "median_centroid_projection_coefficient": 0.35288596867619487,
+          "mean_absolute_centroid_projection_energy": 1.4007061830607683
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016384974737483366,
+          "median_signed_cosine": 0.06724423058842109,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.013201801458933238,
+          "permuted_projection_95pct": [
+            0.012383953583816273,
+            0.013954793961127886
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12770546498399385,
+          "null_projection_energy": 0.016384974737483366,
+          "null_unique_after_centroid_energy": 0.01058801464971701,
+          "centroid_unique_after_null_energy": 0.12190850489622741,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.10190169332509394,
+          "mean_log_centroid_distance_ratio": 0.00821526031338574,
+          "median_log_centroid_distance_ratio": 0.001432371326920607,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.2189220888247367,
+          "median_centroid_projection_coefficient": 0.21176345968051502,
+          "mean_absolute_centroid_projection_energy": 14.699159240348283
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09279616295099428,
+          "median_signed_cosine": 0.18533741781298846,
+          "fraction_toward_null": 0.7875,
+          "permuted_projection_median": 0.04825136190742161,
+          "permuted_projection_95pct": [
+            0.03920181466557367,
+            0.05799778056396965
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26818115313957436,
+          "null_projection_energy": 0.09279616295099428,
+          "null_unique_after_centroid_energy": 0.030811850306028832,
+          "centroid_unique_after_null_energy": 0.2061968404946091,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.35958517224411407,
+          "mean_log_centroid_distance_ratio": -0.10171238133219163,
+          "median_log_centroid_distance_ratio": -0.06154606204935886,
+          "fraction_closer_to_centroid": 0.6,
+          "mean_centroid_projection_coefficient": 0.2924864643012679,
+          "median_centroid_projection_coefficient": 0.2907686829032662,
+          "mean_absolute_centroid_projection_energy": 17.232229799682173
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.040795158890529745,
+          "median_signed_cosine": 0.16610007711510139,
+          "fraction_toward_null": 0.9166666666666666,
+          "permuted_projection_median": 0.02483138870167547,
+          "permuted_projection_95pct": [
+            0.022047283340836322,
+            0.027967233540515377
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.14428233202498744,
+          "null_projection_energy": 0.040795158890529745,
+          "null_unique_after_centroid_energy": 0.020811390316845226,
+          "centroid_unique_after_null_energy": 0.12429856345130283,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.1811504189683038,
+          "mean_log_centroid_distance_ratio": 0.022185110866153764,
+          "median_log_centroid_distance_ratio": 0.009223167972698672,
+          "fraction_closer_to_centroid": 0.4708333333333333,
+          "mean_centroid_projection_coefficient": 0.24362693855432968,
+          "median_centroid_projection_coefficient": 0.23782458814271012,
+          "mean_absolute_centroid_projection_energy": 285.6492487447869
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1322700922914789,
+          "median_signed_cosine": 0.21418627039549748,
+          "fraction_toward_null": 0.75,
+          "permuted_projection_median": 0.06467310709319118,
+          "permuted_projection_95pct": [
+            0.054245124458636926,
+            0.07862157490737226
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23941140894678054,
+          "null_projection_energy": 0.1322700922914789,
+          "null_unique_after_centroid_energy": 0.05166147918190898,
+          "centroid_unique_after_null_energy": 0.15880279583721066,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3131452807941366,
+          "mean_log_centroid_distance_ratio": -0.10746577121468122,
+          "median_log_centroid_distance_ratio": -0.08238095167040627,
+          "fraction_closer_to_centroid": 0.625,
+          "mean_centroid_projection_coefficient": 0.21744150086299835,
+          "median_centroid_projection_coefficient": 0.21427900551522622,
+          "mean_absolute_centroid_projection_energy": 249.59044046761198
+        }
+      }
+    },
+    "permuted19": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.01042753433175822,
+          "median_signed_cosine": 0.09591673146947197,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007225101198958219,
+          "permuted_projection_95pct": [
+            0.006651465291865917,
+            0.007754461547028928
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16321541173422344,
+          "null_projection_energy": 0.01042753433175822,
+          "null_unique_after_centroid_energy": 0.006243041654633406,
+          "centroid_unique_after_null_energy": 0.15903091905709862,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09578835140535114,
+          "mean_log_centroid_distance_ratio": 0.1810865542842515,
+          "median_log_centroid_distance_ratio": 0.19886896116282426,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24732931826361929,
+          "median_centroid_projection_coefficient": 0.21488434142519164,
+          "mean_absolute_centroid_projection_energy": 4.4872319053478975
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07123656406968899,
+          "median_signed_cosine": 0.03716988317509009,
+          "fraction_toward_null": 0.5375,
+          "permuted_projection_median": 0.0826790840394199,
+          "permuted_projection_95pct": [
+            0.07145769799438098,
+            0.09586607332657263
+          ],
+          "permutation_p_one_sided": 0.9751243781094527,
+          "clean_centroid_projection_energy": 0.18971095482304992,
+          "null_projection_energy": 0.07123656406968899,
+          "null_unique_after_centroid_energy": 0.05711028883509528,
+          "centroid_unique_after_null_energy": 0.17558467958845617,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.33613090629040066,
+          "mean_log_centroid_distance_ratio": 0.4154231093975096,
+          "median_log_centroid_distance_ratio": 0.42008593472474665,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.43318241621381326,
+          "median_centroid_projection_coefficient": 0.41422721237095783,
+          "mean_absolute_centroid_projection_energy": 0.09574448999153673
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.01804928794838289,
+          "median_signed_cosine": 0.1267926962787893,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012800287313963587,
+          "permuted_projection_95pct": [
+            0.011828772941057174,
+            0.013775752043823473
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13809653564050364,
+          "null_projection_energy": 0.01804928794838289,
+          "null_unique_after_centroid_energy": 0.011376121862706015,
+          "centroid_unique_after_null_energy": 0.13142336955482678,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10124145833467642,
+          "mean_log_centroid_distance_ratio": 0.10719466803921031,
+          "median_log_centroid_distance_ratio": 0.11719654263281663,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21479293037272296,
+          "median_centroid_projection_coefficient": 0.19520920908674816,
+          "mean_absolute_centroid_projection_energy": 4.46248845007232
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07585010659702326,
+          "median_signed_cosine": 0.23313756732105123,
+          "fraction_toward_null": 0.9041666666666667,
+          "permuted_projection_median": 0.045372144438762016,
+          "permuted_projection_95pct": [
+            0.041130985135379654,
+            0.04970013513515145
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19501123612815577,
+          "null_projection_energy": 0.07585010659702326,
+          "null_unique_after_centroid_energy": 0.0330558834021014,
+          "centroid_unique_after_null_energy": 0.15221701293323367,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.23865906323327993,
+          "mean_log_centroid_distance_ratio": 0.17932196759046531,
+          "median_log_centroid_distance_ratio": 0.13185962771341647,
+          "fraction_closer_to_centroid": 0.3,
+          "mean_centroid_projection_coefficient": 0.4053617334444765,
+          "median_centroid_projection_coefficient": 0.42322210462890675,
+          "mean_absolute_centroid_projection_energy": 0.5710861830490612
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017729574833178476,
+          "median_signed_cosine": 0.11474378389376354,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012327139291283547,
+          "permuted_projection_95pct": [
+            0.011454797380898753,
+            0.013395544380062714
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11612957379143059,
+          "null_projection_energy": 0.017729574833178476,
+          "null_unique_after_centroid_energy": 0.010872543544955059,
+          "centroid_unique_after_null_energy": 0.10927254250320723,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11512135992883607,
+          "mean_log_centroid_distance_ratio": 0.058546398692296095,
+          "median_log_centroid_distance_ratio": 0.055174102095329774,
+          "fraction_closer_to_centroid": 0.4166666666666667,
+          "mean_centroid_projection_coefficient": 0.2035856282574001,
+          "median_centroid_projection_coefficient": 0.19422501808246895,
+          "mean_absolute_centroid_projection_energy": 6.167240912796763
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1137950055309206,
+          "median_signed_cosine": 0.297512854316667,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.07797554906146312,
+          "permuted_projection_95pct": [
+            0.07316976102778017,
+            0.08238466536111969
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2041369164252146,
+          "null_projection_energy": 0.1137950055309206,
+          "null_unique_after_centroid_energy": 0.05684099820428384,
+          "centroid_unique_after_null_energy": 0.14718290909857779,
+          "fraction_toward_clean_centroid": 0.9708333333333333,
+          "median_null_centroid_direction_cosine": 0.16648937502113076,
+          "mean_log_centroid_distance_ratio": 0.15574110896778104,
+          "median_log_centroid_distance_ratio": 0.14978653763243416,
+          "fraction_closer_to_centroid": 0.32916666666666666,
+          "mean_centroid_projection_coefficient": 0.3744101727616546,
+          "median_centroid_projection_coefficient": 0.36021988319144416,
+          "mean_absolute_centroid_projection_energy": 1.4896662530860192
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016479156149051082,
+          "median_signed_cosine": 0.06870619736695449,
+          "fraction_toward_null": 0.725,
+          "permuted_projection_median": 0.013386089523814324,
+          "permuted_projection_95pct": [
+            0.012475826299112779,
+            0.014121548804379467
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.127961743628277,
+          "null_projection_energy": 0.016479156149051082,
+          "null_unique_after_centroid_energy": 0.010614785033257683,
+          "centroid_unique_after_null_energy": 0.1220973725124835,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.10176451135522965,
+          "mean_log_centroid_distance_ratio": 0.00846281709306124,
+          "median_log_centroid_distance_ratio": 0.00022008961790786,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.219016893740654,
+          "median_centroid_projection_coefficient": 0.21196246984350484,
+          "mean_absolute_centroid_projection_energy": 14.718814719382546
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09024727833064668,
+          "median_signed_cosine": 0.18555146588571197,
+          "fraction_toward_null": 0.8083333333333333,
+          "permuted_projection_median": 0.04505425363885769,
+          "permuted_projection_95pct": [
+            0.03783249231629138,
+            0.05523642937866348
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2660076416602917,
+          "null_projection_energy": 0.09024727833064668,
+          "null_unique_after_centroid_energy": 0.03004881375897541,
+          "centroid_unique_after_null_energy": 0.20580917708862043,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.3542747046279676,
+          "mean_log_centroid_distance_ratio": -0.09634083854935076,
+          "median_log_centroid_distance_ratio": -0.05325991533185831,
+          "fraction_closer_to_centroid": 0.5666666666666667,
+          "mean_centroid_projection_coefficient": 0.29117682512021276,
+          "median_centroid_projection_coefficient": 0.29194092377213904,
+          "mean_absolute_centroid_projection_energy": 17.036368511733972
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.040479251326354916,
+          "median_signed_cosine": 0.16252936516461788,
+          "fraction_toward_null": 0.9041666666666667,
+          "permuted_projection_median": 0.024982002205172743,
+          "permuted_projection_95pct": [
+            0.022045280551551978,
+            0.027479092536184996
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1432969062081006,
+          "null_projection_energy": 0.040479251326354916,
+          "null_unique_after_centroid_energy": 0.020678581288324234,
+          "centroid_unique_after_null_energy": 0.12349623617007009,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.17933661023321323,
+          "mean_log_centroid_distance_ratio": 0.01949461336064053,
+          "median_log_centroid_distance_ratio": 0.006438605863032153,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.244229658113952,
+          "median_centroid_projection_coefficient": 0.2365631580850052,
+          "mean_absolute_centroid_projection_energy": 282.8474137757785
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.13002759814343565,
+          "median_signed_cosine": 0.20261613179914334,
+          "fraction_toward_null": 0.7458333333333333,
+          "permuted_projection_median": 0.061939876859074226,
+          "permuted_projection_95pct": [
+            0.05161397432159681,
+            0.07508365201534052
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23835666601585825,
+          "null_projection_energy": 0.13002759814343565,
+          "null_unique_after_centroid_energy": 0.05208538439212101,
+          "centroid_unique_after_null_energy": 0.16041445226454387,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.3115087865279069,
+          "mean_log_centroid_distance_ratio": -0.10589122629810545,
+          "median_log_centroid_distance_ratio": -0.08885936941846156,
+          "fraction_closer_to_centroid": 0.6208333333333333,
+          "mean_centroid_projection_coefficient": 0.21466590755759113,
+          "median_centroid_projection_coefficient": 0.2299468107493446,
+          "mean_absolute_centroid_projection_energy": 243.4355906661802
+        }
+      }
+    },
+    "matched123": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.0104178676780999,
+          "median_signed_cosine": 0.09617476649287728,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007213710204532018,
+          "permuted_projection_95pct": [
+            0.006707426863595119,
+            0.007808904167884439
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1631699646052765,
+          "null_projection_energy": 0.0104178676780999,
+          "null_unique_after_centroid_energy": 0.006238457818208732,
+          "centroid_unique_after_null_energy": 0.1589905547453852,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.0958872196697982,
+          "mean_log_centroid_distance_ratio": 0.18108880152948165,
+          "median_log_centroid_distance_ratio": 0.1989405422060737,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24734147790955793,
+          "median_centroid_projection_coefficient": 0.21480212323787512,
+          "mean_absolute_centroid_projection_energy": 4.48549388882391
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07160124731017742,
+          "median_signed_cosine": 0.0489088994270015,
+          "fraction_toward_null": 0.5375,
+          "permuted_projection_median": 0.08249366073893785,
+          "permuted_projection_95pct": [
+            0.07124420626831367,
+            0.09646745165046434
+          ],
+          "permutation_p_one_sided": 0.9701492537313433,
+          "clean_centroid_projection_energy": 0.1909445631134079,
+          "null_projection_energy": 0.07160124731017742,
+          "null_unique_after_centroid_energy": 0.056854738454358164,
+          "centroid_unique_after_null_energy": 0.1761980542575887,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3287655720820092,
+          "mean_log_centroid_distance_ratio": 0.4111608610094958,
+          "median_log_centroid_distance_ratio": 0.4143785402001682,
+          "fraction_closer_to_centroid": 0.18333333333333332,
+          "mean_centroid_projection_coefficient": 0.4341273755077214,
+          "median_centroid_projection_coefficient": 0.417285934872867,
+          "mean_absolute_centroid_projection_energy": 0.09653470384564908
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.01806485186417389,
+          "median_signed_cosine": 0.12694427653050905,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012870664460574485,
+          "permuted_projection_95pct": [
+            0.011819938512545364,
+            0.013947498465445634
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13778127633523607,
+          "null_projection_energy": 0.01806485186417389,
+          "null_unique_after_centroid_energy": 0.011379716148475069,
+          "centroid_unique_after_null_energy": 0.13109614061953706,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10193299091839592,
+          "mean_log_centroid_distance_ratio": 0.10713956569514775,
+          "median_log_centroid_distance_ratio": 0.11795416308306031,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21463183382437662,
+          "median_centroid_projection_coefficient": 0.19477321680565637,
+          "mean_absolute_centroid_projection_energy": 4.45488830664755
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07734170748007117,
+          "median_signed_cosine": 0.24154067335393453,
+          "fraction_toward_null": 0.9166666666666666,
+          "permuted_projection_median": 0.045779822615871504,
+          "permuted_projection_95pct": [
+            0.04163180654558208,
+            0.050018201764067745
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19139362981318245,
+          "null_projection_energy": 0.07734170748007117,
+          "null_unique_after_centroid_energy": 0.034396887408317374,
+          "centroid_unique_after_null_energy": 0.14844880974142846,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.22642822301871093,
+          "mean_log_centroid_distance_ratio": 0.18514227361994948,
+          "median_log_centroid_distance_ratio": 0.14907813562986272,
+          "fraction_closer_to_centroid": 0.2875,
+          "mean_centroid_projection_coefficient": 0.40364607161981475,
+          "median_centroid_projection_coefficient": 0.4116942460572024,
+          "mean_absolute_centroid_projection_energy": 0.5558965187872137
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.01780558981656246,
+          "median_signed_cosine": 0.11624158194696588,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012351274755031501,
+          "permuted_projection_95pct": [
+            0.011477967289041477,
+            0.013267657892389588
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11591496202553497,
+          "null_projection_energy": 0.01780558981656246,
+          "null_unique_after_centroid_energy": 0.010934714534364428,
+          "centroid_unique_after_null_energy": 0.10904408674333702,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11497475124532011,
+          "mean_log_centroid_distance_ratio": 0.057980677629423875,
+          "median_log_centroid_distance_ratio": 0.053712434986942,
+          "fraction_closer_to_centroid": 0.4125,
+          "mean_centroid_projection_coefficient": 0.2032327186204027,
+          "median_centroid_projection_coefficient": 0.194133864150567,
+          "mean_absolute_centroid_projection_energy": 6.156475496778311
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11493328524034702,
+          "median_signed_cosine": 0.2961591941507694,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.07876407516712156,
+          "permuted_projection_95pct": [
+            0.07445874869777311,
+            0.08389687287418235
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2039008805198554,
+          "null_projection_energy": 0.11493328524034702,
+          "null_unique_after_centroid_energy": 0.05892666955945429,
+          "centroid_unique_after_null_energy": 0.1478942648389627,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.20010622231143207,
+          "mean_log_centroid_distance_ratio": 0.14805514947243345,
+          "median_log_centroid_distance_ratio": 0.17287093409780824,
+          "fraction_closer_to_centroid": 0.3541666666666667,
+          "mean_centroid_projection_coefficient": 0.3768747890178231,
+          "median_centroid_projection_coefficient": 0.3738153569254799,
+          "mean_absolute_centroid_projection_energy": 1.474344660324791
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016371099840713943,
+          "median_signed_cosine": 0.06618514206037596,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.01323871971685015,
+          "permuted_projection_95pct": [
+            0.01244108385591048,
+            0.014067232269192964
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1277972896781081,
+          "null_projection_energy": 0.016371099840713943,
+          "null_unique_after_centroid_energy": 0.010567210322598249,
+          "centroid_unique_after_null_energy": 0.1219934001599923,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.10242562398609692,
+          "mean_log_centroid_distance_ratio": 0.008047015311044082,
+          "median_log_centroid_distance_ratio": 0.000658327104948605,
+          "fraction_closer_to_centroid": 0.5,
+          "mean_centroid_projection_coefficient": 0.2188876428888797,
+          "median_centroid_projection_coefficient": 0.21227709428711758,
+          "mean_absolute_centroid_projection_energy": 14.715031252263248
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09295759229025316,
+          "median_signed_cosine": 0.19207364556574064,
+          "fraction_toward_null": 0.7875,
+          "permuted_projection_median": 0.0500022263463506,
+          "permuted_projection_95pct": [
+            0.04206042884256565,
+            0.06017322135098524
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2623921698871767,
+          "null_projection_energy": 0.09295759229025316,
+          "null_unique_after_centroid_energy": 0.032623019389019826,
+          "centroid_unique_after_null_energy": 0.2020575969859431,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.37588752421205607,
+          "mean_log_centroid_distance_ratio": -0.09506476365809842,
+          "median_log_centroid_distance_ratio": -0.069626611812333,
+          "fraction_closer_to_centroid": 0.5958333333333333,
+          "mean_centroid_projection_coefficient": 0.291540766615525,
+          "median_centroid_projection_coefficient": 0.2861388041706633,
+          "mean_absolute_centroid_projection_energy": 16.80192561443674
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.04006170521017034,
+          "median_signed_cosine": 0.17066362938349403,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.025082090299785725,
+          "permuted_projection_95pct": [
+            0.022334598381754923,
+            0.027537071057869063
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13900117916112245,
+          "null_projection_energy": 0.04006170521017034,
+          "null_unique_after_centroid_energy": 0.020984386776849176,
+          "centroid_unique_after_null_energy": 0.1199238607278012,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1814592688510114,
+          "mean_log_centroid_distance_ratio": 0.029465962923770395,
+          "median_log_centroid_distance_ratio": 0.01771215168931211,
+          "fraction_closer_to_centroid": 0.475,
+          "mean_centroid_projection_coefficient": 0.24045074886338072,
+          "median_centroid_projection_coefficient": 0.2355511712838581,
+          "mean_absolute_centroid_projection_energy": 273.84979597446585
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1305124020962404,
+          "median_signed_cosine": 0.23055737170995555,
+          "fraction_toward_null": 0.7333333333333333,
+          "permuted_projection_median": 0.0674671535337,
+          "permuted_projection_95pct": [
+            0.056188708621929324,
+            0.080854882741491
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.22948052087708254,
+          "null_projection_energy": 0.1305124020962404,
+          "null_unique_after_centroid_energy": 0.055316528307843546,
+          "centroid_unique_after_null_energy": 0.15428464708868586,
+          "fraction_toward_clean_centroid": 0.9125,
+          "median_null_centroid_direction_cosine": 0.33526440769951565,
+          "mean_log_centroid_distance_ratio": -0.09831116409187395,
+          "median_log_centroid_distance_ratio": -0.09071488336038264,
+          "fraction_closer_to_centroid": 0.6291666666666667,
+          "mean_centroid_projection_coefficient": 0.2181172928040394,
+          "median_centroid_projection_coefficient": 0.22277761329972362,
+          "mean_absolute_centroid_projection_energy": 239.9721842089165
+        }
+      }
+    },
+    "permuted123": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010432032888136503,
+          "median_signed_cosine": 0.09610391510771221,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.0072432036863530995,
+          "permuted_projection_95pct": [
+            0.006524238801851983,
+            0.007877945303568522
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1631939975202919,
+          "null_projection_energy": 0.010432032888136503,
+          "null_unique_after_centroid_energy": 0.006247227465961683,
+          "centroid_unique_after_null_energy": 0.1590091920981171,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09576775909965124,
+          "mean_log_centroid_distance_ratio": 0.18105342400149319,
+          "median_log_centroid_distance_ratio": 0.1989634640511409,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24736002509416158,
+          "median_centroid_projection_coefficient": 0.2147178391549096,
+          "mean_absolute_centroid_projection_energy": 4.486139758128299
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07119412217729704,
+          "median_signed_cosine": 0.04706443796589646,
+          "fraction_toward_null": 0.5333333333333333,
+          "permuted_projection_median": 0.08223984866936733,
+          "permuted_projection_95pct": [
+            0.07135673849917527,
+            0.09619790199070744
+          ],
+          "permutation_p_one_sided": 0.9800995024875622,
+          "clean_centroid_projection_energy": 0.18954685731671933,
+          "null_projection_energy": 0.07119412217729704,
+          "null_unique_after_centroid_energy": 0.05690733364473865,
+          "centroid_unique_after_null_energy": 0.17526006878416084,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3250653836027564,
+          "mean_log_centroid_distance_ratio": 0.41452591791732196,
+          "median_log_centroid_distance_ratio": 0.41957178892413527,
+          "fraction_closer_to_centroid": 0.17916666666666667,
+          "mean_centroid_projection_coefficient": 0.43318285609287366,
+          "median_centroid_projection_coefficient": 0.4140248365903059,
+          "mean_absolute_centroid_projection_energy": 0.09587280951628942
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018083503332549527,
+          "median_signed_cosine": 0.12635438156277426,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012745349116225532,
+          "permuted_projection_95pct": [
+            0.011860177125988745,
+            0.013751447575342787
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1379683929096511,
+          "null_projection_energy": 0.018083503332549527,
+          "null_unique_after_centroid_energy": 0.011406257706841677,
+          "centroid_unique_after_null_energy": 0.131291147283943,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10184741226359668,
+          "mean_log_centroid_distance_ratio": 0.10727223625497971,
+          "median_log_centroid_distance_ratio": 0.11816661484474068,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21476275033232006,
+          "median_centroid_projection_coefficient": 0.19516802677298073,
+          "mean_absolute_centroid_projection_energy": 4.459659115927085
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07407161722223117,
+          "median_signed_cosine": 0.24662073785833422,
+          "fraction_toward_null": 0.8958333333333334,
+          "permuted_projection_median": 0.0434726305507218,
+          "permuted_projection_95pct": [
+            0.03903186437930831,
+            0.04860764841126266
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.18996792405012605,
+          "null_projection_energy": 0.07407161722223117,
+          "null_unique_after_centroid_energy": 0.03208962963511461,
+          "centroid_unique_after_null_energy": 0.14798593646300937,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.21928775157407848,
+          "mean_log_centroid_distance_ratio": 0.18732668808865463,
+          "median_log_centroid_distance_ratio": 0.16217589272787472,
+          "fraction_closer_to_centroid": 0.30833333333333335,
+          "mean_centroid_projection_coefficient": 0.39986452062469197,
+          "median_centroid_projection_coefficient": 0.41810355580190567,
+          "mean_absolute_centroid_projection_energy": 0.5493217643026808
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017712835671628763,
+          "median_signed_cosine": 0.11704065017489403,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.01237496746029751,
+          "permuted_projection_95pct": [
+            0.01152204689922988,
+            0.013285989844424702
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11615889277683837,
+          "null_projection_energy": 0.017712835671628763,
+          "null_unique_after_centroid_energy": 0.010877485275686858,
+          "centroid_unique_after_null_energy": 0.10932354238089648,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.1142812387623246,
+          "mean_log_centroid_distance_ratio": 0.05865881656682352,
+          "median_log_centroid_distance_ratio": 0.053558691907176326,
+          "fraction_closer_to_centroid": 0.4166666666666667,
+          "mean_centroid_projection_coefficient": 0.2036109573483214,
+          "median_centroid_projection_coefficient": 0.19411970600596218,
+          "mean_absolute_centroid_projection_energy": 6.174319525788671
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11124515204447935,
+          "median_signed_cosine": 0.29006085183285857,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.07598959979841224,
+          "permuted_projection_95pct": [
+            0.07144422654699774,
+            0.08201045649794969
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2030048330964854,
+          "null_projection_energy": 0.11124515204447935,
+          "null_unique_after_centroid_energy": 0.056224130693020076,
+          "centroid_unique_after_null_energy": 0.14798381174502595,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.1735693628925261,
+          "mean_log_centroid_distance_ratio": 0.14976055458038295,
+          "median_log_centroid_distance_ratio": 0.17307102883637027,
+          "fraction_closer_to_centroid": 0.32916666666666666,
+          "mean_centroid_projection_coefficient": 0.38070554248697414,
+          "median_centroid_projection_coefficient": 0.36830830426122474,
+          "mean_absolute_centroid_projection_energy": 1.4695090712673504
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.01636751532210673,
+          "median_signed_cosine": 0.06667413789701027,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.013211441780697717,
+          "permuted_projection_95pct": [
+            0.012347502281285179,
+            0.013975644378708445
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12792033317204213,
+          "null_projection_energy": 0.01636751532210673,
+          "null_unique_after_centroid_energy": 0.0106119333179901,
+          "centroid_unique_after_null_energy": 0.12216475116792559,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.10247181446909621,
+          "mean_log_centroid_distance_ratio": 0.008920254655176325,
+          "median_log_centroid_distance_ratio": 0.0020618398667186506,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.21914739654013454,
+          "median_centroid_projection_coefficient": 0.21301257141662366,
+          "mean_absolute_centroid_projection_energy": 14.73728101359552
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09340288158692592,
+          "median_signed_cosine": 0.17619671201902193,
+          "fraction_toward_null": 0.7791666666666667,
+          "permuted_projection_median": 0.05002839886699442,
+          "permuted_projection_95pct": [
+            0.040791979957700744,
+            0.060801769148579474
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26709234791598296,
+          "null_projection_energy": 0.09340288158692592,
+          "null_unique_after_centroid_energy": 0.03150563615584813,
+          "centroid_unique_after_null_energy": 0.2051951024849054,
+          "fraction_toward_clean_centroid": 0.9416666666666667,
+          "median_null_centroid_direction_cosine": 0.359073766648333,
+          "mean_log_centroid_distance_ratio": -0.09940916630100223,
+          "median_log_centroid_distance_ratio": -0.06803491390467911,
+          "fraction_closer_to_centroid": 0.575,
+          "mean_centroid_projection_coefficient": 0.29192915737933106,
+          "median_centroid_projection_coefficient": 0.2921501544975266,
+          "mean_absolute_centroid_projection_energy": 17.056406988191334
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.03960511946912917,
+          "median_signed_cosine": 0.167881941327365,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024425528965843893,
+          "permuted_projection_95pct": [
+            0.021023794647058915,
+            0.02772299787794598
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1438775358412759,
+          "null_projection_energy": 0.03960511946912917,
+          "null_unique_after_centroid_energy": 0.020659750739218365,
+          "centroid_unique_after_null_energy": 0.12493216711136507,
+          "fraction_toward_clean_centroid": 0.9458333333333333,
+          "median_null_centroid_direction_cosine": 0.1807970809806249,
+          "mean_log_centroid_distance_ratio": 0.015787404528376656,
+          "median_log_centroid_distance_ratio": 0.0018010304813845899,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.24434792584611081,
+          "median_centroid_projection_coefficient": 0.2383017445780128,
+          "mean_absolute_centroid_projection_energy": 281.79855833381384
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1303614453117865,
+          "median_signed_cosine": 0.21308035588734142,
+          "fraction_toward_null": 0.725,
+          "permuted_projection_median": 0.06753286816374746,
+          "permuted_projection_95pct": [
+            0.05576055122169605,
+            0.08216458404467189
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23811679230149396,
+          "null_projection_energy": 0.1303614453117865,
+          "null_unique_after_centroid_energy": 0.053417896572502364,
+          "centroid_unique_after_null_energy": 0.16117324356220986,
+          "fraction_toward_clean_centroid": 0.9166666666666666,
+          "median_null_centroid_direction_cosine": 0.3075060319569568,
+          "mean_log_centroid_distance_ratio": -0.11217773026598375,
+          "median_log_centroid_distance_ratio": -0.0904469712627968,
+          "fraction_closer_to_centroid": 0.625,
+          "mean_centroid_projection_coefficient": 0.22149277742842433,
+          "median_centroid_projection_coefficient": 0.23625643278639558,
+          "mean_absolute_centroid_projection_energy": 247.60682941224616
+        }
+      }
+    },
+    "matched2027": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010436391712911303,
+          "median_signed_cosine": 0.09599134285577363,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007165087386614557,
+          "permuted_projection_95pct": [
+            0.006608123013539138,
+            0.007764053920460295
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1632125383225641,
+          "null_projection_energy": 0.010436391712911303,
+          "null_unique_after_centroid_energy": 0.006250537634170924,
+          "centroid_unique_after_null_energy": 0.15902668424382363,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09591754051060417,
+          "mean_log_centroid_distance_ratio": 0.181117853269925,
+          "median_log_centroid_distance_ratio": 0.19880266800259505,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.2473362805272164,
+          "median_centroid_projection_coefficient": 0.21472381145901198,
+          "mean_absolute_centroid_projection_energy": 4.486527350482263
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07150724838351852,
+          "median_signed_cosine": 0.04080782869787512,
+          "fraction_toward_null": 0.5333333333333333,
+          "permuted_projection_median": 0.08422142215303158,
+          "permuted_projection_95pct": [
+            0.07000075813741967,
+            0.09519185323013195
+          ],
+          "permutation_p_one_sided": 0.9701492537313433,
+          "clean_centroid_projection_energy": 0.19072993583869963,
+          "null_projection_energy": 0.07150724838351852,
+          "null_unique_after_centroid_energy": 0.05683497407713453,
+          "centroid_unique_after_null_energy": 0.17605766153231575,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.33319194632649807,
+          "mean_log_centroid_distance_ratio": 0.41312462025470686,
+          "median_log_centroid_distance_ratio": 0.4207245274714704,
+          "fraction_closer_to_centroid": 0.18333333333333332,
+          "mean_centroid_projection_coefficient": 0.4334280781536261,
+          "median_centroid_projection_coefficient": 0.40977592837471977,
+          "mean_absolute_centroid_projection_energy": 0.09641456406256164
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.01816506443734867,
+          "median_signed_cosine": 0.1281075737636656,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.012943770548291919,
+          "permuted_projection_95pct": [
+            0.012094112605848762,
+            0.01383613150397998
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.13793215456920468,
+          "null_projection_energy": 0.01816506443734867,
+          "null_unique_after_centroid_energy": 0.011444888086943175,
+          "centroid_unique_after_null_energy": 0.13121197821879907,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10173317002983409,
+          "mean_log_centroid_distance_ratio": 0.1071837596492732,
+          "median_log_centroid_distance_ratio": 0.11821178561815028,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21474967551220583,
+          "median_centroid_projection_coefficient": 0.19540354492011586,
+          "mean_absolute_centroid_projection_energy": 4.462845467466929
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07723504203539291,
+          "median_signed_cosine": 0.25323387772519784,
+          "fraction_toward_null": 0.9125,
+          "permuted_projection_median": 0.0461329598981709,
+          "permuted_projection_95pct": [
+            0.04245760540848885,
+            0.050910785923562
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19306307665798955,
+          "null_projection_energy": 0.07723504203539291,
+          "null_unique_after_centroid_energy": 0.035578667676166145,
+          "centroid_unique_after_null_energy": 0.15140670229876288,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.21856351024907344,
+          "mean_log_centroid_distance_ratio": 0.18026137670784192,
+          "median_log_centroid_distance_ratio": 0.14864307593462292,
+          "fraction_closer_to_centroid": 0.30833333333333335,
+          "mean_centroid_projection_coefficient": 0.4069227293367602,
+          "median_centroid_projection_coefficient": 0.42062697227050794,
+          "mean_absolute_centroid_projection_energy": 0.5634343442986348
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.01780391879991908,
+          "median_signed_cosine": 0.11593174255386016,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.01241207111311279,
+          "permuted_projection_95pct": [
+            0.011513899969063154,
+            0.013441653780394344
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11627949097573617,
+          "null_projection_energy": 0.01780391879991908,
+          "null_unique_after_centroid_energy": 0.01093493298923462,
+          "centroid_unique_after_null_energy": 0.1094105051650518,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.11519892697275813,
+          "mean_log_centroid_distance_ratio": 0.05801495717762818,
+          "median_log_centroid_distance_ratio": 0.053335278698238106,
+          "fraction_closer_to_centroid": 0.42083333333333334,
+          "mean_centroid_projection_coefficient": 0.20369551022585433,
+          "median_centroid_projection_coefficient": 0.19439702018122812,
+          "mean_absolute_centroid_projection_energy": 6.183438604100019
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11362634643173342,
+          "median_signed_cosine": 0.29925955037336804,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.07698302948621044,
+          "permuted_projection_95pct": [
+            0.07209970042581237,
+            0.08389403388851496
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2072019188385328,
+          "null_projection_energy": 0.11362634643173342,
+          "null_unique_after_centroid_energy": 0.056843220817270654,
+          "centroid_unique_after_null_energy": 0.15041879322407029,
+          "fraction_toward_clean_centroid": 0.9833333333333333,
+          "median_null_centroid_direction_cosine": 0.17483419850969986,
+          "mean_log_centroid_distance_ratio": 0.14695830579060407,
+          "median_log_centroid_distance_ratio": 0.14899408397066716,
+          "fraction_closer_to_centroid": 0.3541666666666667,
+          "mean_centroid_projection_coefficient": 0.37682771344694604,
+          "median_centroid_projection_coefficient": 0.357798791555061,
+          "mean_absolute_centroid_projection_energy": 1.5042936648538359
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016482132494694445,
+          "median_signed_cosine": 0.06809002101574065,
+          "fraction_toward_null": 0.725,
+          "permuted_projection_median": 0.013299732950788056,
+          "permuted_projection_95pct": [
+            0.012371872652360198,
+            0.014321609255263712
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.12811607076615641,
+          "null_projection_energy": 0.016482132494694445,
+          "null_unique_after_centroid_energy": 0.010634263371949898,
+          "centroid_unique_after_null_energy": 0.1222682016434118,
+          "fraction_toward_clean_centroid": 0.975,
+          "median_null_centroid_direction_cosine": 0.1020022866477262,
+          "mean_log_centroid_distance_ratio": 0.007742268472721396,
+          "median_log_centroid_distance_ratio": -0.0006196972457097373,
+          "fraction_closer_to_centroid": 0.5041666666666667,
+          "mean_centroid_projection_coefficient": 0.21928033765031643,
+          "median_centroid_projection_coefficient": 0.21236606079111048,
+          "mean_absolute_centroid_projection_energy": 14.762974950420432
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.0934796881953534,
+          "median_signed_cosine": 0.18233851097012604,
+          "fraction_toward_null": 0.7833333333333333,
+          "permuted_projection_median": 0.04980628941932953,
+          "permuted_projection_95pct": [
+            0.04217001406668783,
+            0.05947756792534379
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.26440605931264105,
+          "null_projection_energy": 0.0934796881953534,
+          "null_unique_after_centroid_energy": 0.032570516287201874,
+          "centroid_unique_after_null_energy": 0.2034968874044895,
+          "fraction_toward_clean_centroid": 0.9333333333333333,
+          "median_null_centroid_direction_cosine": 0.36312608978282057,
+          "mean_log_centroid_distance_ratio": -0.09497106469102122,
+          "median_log_centroid_distance_ratio": -0.06205305287642361,
+          "fraction_closer_to_centroid": 0.5791666666666667,
+          "mean_centroid_projection_coefficient": 0.2910643498422446,
+          "median_centroid_projection_coefficient": 0.29145756670286704,
+          "mean_absolute_centroid_projection_energy": 16.864047996300105
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.03971541779899834,
+          "median_signed_cosine": 0.16750855949414084,
+          "fraction_toward_null": 0.9083333333333333,
+          "permuted_projection_median": 0.024128647595845744,
+          "permuted_projection_95pct": [
+            0.02108472409262602,
+            0.027394481188252336
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1415995597594579,
+          "null_projection_energy": 0.03971541779899834,
+          "null_unique_after_centroid_energy": 0.020451067337404892,
+          "centroid_unique_after_null_energy": 0.12233520929786439,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.17979913452990695,
+          "mean_log_centroid_distance_ratio": 0.02338550964816961,
+          "median_log_centroid_distance_ratio": 0.017376956364960172,
+          "fraction_closer_to_centroid": 0.4708333333333333,
+          "mean_centroid_projection_coefficient": 0.24196969218928038,
+          "median_centroid_projection_coefficient": 0.22826613432207438,
+          "mean_absolute_centroid_projection_energy": 279.65390639598075
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.13429217519332298,
+          "median_signed_cosine": 0.19586330397018656,
+          "fraction_toward_null": 0.75,
+          "permuted_projection_median": 0.06916060935586882,
+          "permuted_projection_95pct": [
+            0.058273276936415,
+            0.08188007800430157
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23208786347049248,
+          "null_projection_energy": 0.13429217519332298,
+          "null_unique_after_centroid_energy": 0.0561157365862925,
+          "centroid_unique_after_null_energy": 0.15391142486346215,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.3177815362785453,
+          "mean_log_centroid_distance_ratio": -0.10343685331336576,
+          "median_log_centroid_distance_ratio": -0.08534549129152316,
+          "fraction_closer_to_centroid": 0.6208333333333333,
+          "mean_centroid_projection_coefficient": 0.21808817503487418,
+          "median_centroid_projection_coefficient": 0.2254431388354487,
+          "mean_absolute_centroid_projection_energy": 238.8700749031236
+        }
+      }
+    },
+    "permuted2027": {
+      "0": {
+        "image": {
+          "same_case_null_projection_energy": 0.010430094165187824,
+          "median_signed_cosine": 0.0962031949100616,
+          "fraction_toward_null": 0.9583333333333334,
+          "permuted_projection_median": 0.007242750664378249,
+          "permuted_projection_95pct": [
+            0.006708928359400348,
+            0.007806492268669454
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.16318670708008667,
+          "null_projection_energy": 0.010430094165187824,
+          "null_unique_after_centroid_energy": 0.006240612860778977,
+          "centroid_unique_after_null_energy": 0.15899722577567776,
+          "fraction_toward_clean_centroid": 0.8875,
+          "median_null_centroid_direction_cosine": 0.09571353909682598,
+          "mean_log_centroid_distance_ratio": 0.18102984544822304,
+          "median_log_centroid_distance_ratio": 0.1987581289641302,
+          "fraction_closer_to_centroid": 0.25833333333333336,
+          "mean_centroid_projection_coefficient": 0.24735838096901855,
+          "median_centroid_projection_coefficient": 0.2149326227830748,
+          "mean_absolute_centroid_projection_energy": 4.486780829743448
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07125469668015065,
+          "median_signed_cosine": 0.04379272975159809,
+          "fraction_toward_null": 0.5375,
+          "permuted_projection_median": 0.0820138354627428,
+          "permuted_projection_95pct": [
+            0.07092594334145957,
+            0.09456588511205594
+          ],
+          "permutation_p_one_sided": 0.9651741293532339,
+          "clean_centroid_projection_energy": 0.19003656373556496,
+          "null_projection_energy": 0.07125469668015065,
+          "null_unique_after_centroid_energy": 0.05705540022894153,
+          "centroid_unique_after_null_energy": 0.17583726728435578,
+          "fraction_toward_clean_centroid": 0.9583333333333334,
+          "median_null_centroid_direction_cosine": 0.3277865193710935,
+          "mean_log_centroid_distance_ratio": 0.4129625679448889,
+          "median_log_centroid_distance_ratio": 0.4201355948787028,
+          "fraction_closer_to_centroid": 0.18333333333333332,
+          "mean_centroid_projection_coefficient": 0.43305261446258153,
+          "median_centroid_projection_coefficient": 0.41170399575809263,
+          "mean_absolute_centroid_projection_energy": 0.09619920562780412
+        }
+      },
+      "7": {
+        "image": {
+          "same_case_null_projection_energy": 0.018046850100110038,
+          "median_signed_cosine": 0.1265670639001278,
+          "fraction_toward_null": 0.9666666666666667,
+          "permuted_projection_median": 0.01274407510606761,
+          "permuted_projection_95pct": [
+            0.011748866351444657,
+            0.013737696495946727
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1380107855522133,
+          "null_projection_energy": 0.018046850100110038,
+          "null_unique_after_centroid_energy": 0.011363639289357467,
+          "centroid_unique_after_null_energy": 0.13132757474146067,
+          "fraction_toward_clean_centroid": 0.8791666666666667,
+          "median_null_centroid_direction_cosine": 0.10192983707900981,
+          "mean_log_centroid_distance_ratio": 0.10727220762040045,
+          "median_log_centroid_distance_ratio": 0.11902120757604252,
+          "fraction_closer_to_centroid": 0.32083333333333336,
+          "mean_centroid_projection_coefficient": 0.21478061882818136,
+          "median_centroid_projection_coefficient": 0.19510498448181174,
+          "mean_absolute_centroid_projection_energy": 4.461371694819291
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.07717820000677054,
+          "median_signed_cosine": 0.24676467864666202,
+          "fraction_toward_null": 0.9208333333333333,
+          "permuted_projection_median": 0.045906184678129416,
+          "permuted_projection_95pct": [
+            0.0413749916254595,
+            0.05079446347093325
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.19104251237897693,
+          "null_projection_energy": 0.07717820000677054,
+          "null_unique_after_centroid_energy": 0.033977791465063675,
+          "centroid_unique_after_null_energy": 0.14784210383727003,
+          "fraction_toward_clean_centroid": 0.9875,
+          "median_null_centroid_direction_cosine": 0.22219654062951422,
+          "mean_log_centroid_distance_ratio": 0.18224111771797416,
+          "median_log_centroid_distance_ratio": 0.16376384205793443,
+          "fraction_closer_to_centroid": 0.30833333333333335,
+          "mean_centroid_projection_coefficient": 0.405166265371437,
+          "median_centroid_projection_coefficient": 0.41054778773372713,
+          "mean_absolute_centroid_projection_energy": 0.5600401178760409
+        }
+      },
+      "14": {
+        "image": {
+          "same_case_null_projection_energy": 0.017840547866402854,
+          "median_signed_cosine": 0.11687444929356926,
+          "fraction_toward_null": 0.9291666666666667,
+          "permuted_projection_median": 0.012447698090867928,
+          "permuted_projection_95pct": [
+            0.01152995390723715,
+            0.013563094634725603
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.11612458678313003,
+          "null_projection_energy": 0.017840547866402854,
+          "null_unique_after_centroid_energy": 0.010966070471255848,
+          "centroid_unique_after_null_energy": 0.10925010938798307,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.11339494938958553,
+          "mean_log_centroid_distance_ratio": 0.0583755905312758,
+          "median_log_centroid_distance_ratio": 0.054512632462054685,
+          "fraction_closer_to_centroid": 0.4125,
+          "mean_centroid_projection_coefficient": 0.20349251541627877,
+          "median_centroid_projection_coefficient": 0.19512014597314614,
+          "mean_absolute_centroid_projection_energy": 6.1705574092552276
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.11173437020453941,
+          "median_signed_cosine": 0.2939714520005875,
+          "fraction_toward_null": 0.9541666666666667,
+          "permuted_projection_median": 0.07707197659010427,
+          "permuted_projection_95pct": [
+            0.07190550290685914,
+            0.0821787015012546
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.20008553507050966,
+          "null_projection_energy": 0.11173437020453941,
+          "null_unique_after_centroid_energy": 0.05648011106577178,
+          "centroid_unique_after_null_energy": 0.1448312759317422,
+          "fraction_toward_clean_centroid": 0.9875,
+          "median_null_centroid_direction_cosine": 0.17453966064934884,
+          "mean_log_centroid_distance_ratio": 0.15350050542841656,
+          "median_log_centroid_distance_ratio": 0.1539389239519114,
+          "fraction_closer_to_centroid": 0.32916666666666666,
+          "mean_centroid_projection_coefficient": 0.3773630855839973,
+          "median_centroid_projection_coefficient": 0.3700865742127522,
+          "mean_absolute_centroid_projection_energy": 1.4320732060125583
+        }
+      },
+      "21": {
+        "image": {
+          "same_case_null_projection_energy": 0.016706423641688582,
+          "median_signed_cosine": 0.06901760214298172,
+          "fraction_toward_null": 0.7208333333333333,
+          "permuted_projection_median": 0.013508106634156806,
+          "permuted_projection_95pct": [
+            0.012687403014766252,
+            0.014318829156781369
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1282566375248865,
+          "null_projection_energy": 0.016706423641688582,
+          "null_unique_after_centroid_energy": 0.010757448845602405,
+          "centroid_unique_after_null_energy": 0.12230766272880027,
+          "fraction_toward_clean_centroid": 0.9791666666666666,
+          "median_null_centroid_direction_cosine": 0.10208547572772497,
+          "mean_log_centroid_distance_ratio": 0.0077987386727877825,
+          "median_log_centroid_distance_ratio": 0.0021508495139198154,
+          "fraction_closer_to_centroid": 0.49583333333333335,
+          "mean_centroid_projection_coefficient": 0.21911881837626204,
+          "median_centroid_projection_coefficient": 0.2127004928184111,
+          "mean_absolute_centroid_projection_energy": 14.763162584393966
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.09272338953576248,
+          "median_signed_cosine": 0.18381066023208703,
+          "fraction_toward_null": 0.8,
+          "permuted_projection_median": 0.0472426880763055,
+          "permuted_projection_95pct": [
+            0.039510695673054486,
+            0.05650853847325364
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.2636769315888218,
+          "null_projection_energy": 0.09272338953576248,
+          "null_unique_after_centroid_energy": 0.031644072236616735,
+          "centroid_unique_after_null_energy": 0.2025976142896761,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.3535384192638773,
+          "mean_log_centroid_distance_ratio": -0.09131525413787403,
+          "median_log_centroid_distance_ratio": -0.06458258777582616,
+          "fraction_closer_to_centroid": 0.5583333333333333,
+          "mean_centroid_projection_coefficient": 0.28893982422327175,
+          "median_centroid_projection_coefficient": 0.2899097187265216,
+          "mean_absolute_centroid_projection_energy": 16.800678543337842
+        }
+      },
+      "27": {
+        "image": {
+          "same_case_null_projection_energy": 0.038607554943078215,
+          "median_signed_cosine": 0.16343729709073546,
+          "fraction_toward_null": 0.9041666666666667,
+          "permuted_projection_median": 0.024023177785386658,
+          "permuted_projection_95pct": [
+            0.021590198192349485,
+            0.026323093698439305
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.1408761162588025,
+          "null_projection_energy": 0.038607554943078215,
+          "null_unique_after_centroid_energy": 0.0202755224011037,
+          "centroid_unique_after_null_energy": 0.12254408371682793,
+          "fraction_toward_clean_centroid": 0.9375,
+          "median_null_centroid_direction_cosine": 0.18324909275996604,
+          "mean_log_centroid_distance_ratio": 0.023755302201981788,
+          "median_log_centroid_distance_ratio": 0.021653771192390092,
+          "fraction_closer_to_centroid": 0.4708333333333333,
+          "mean_centroid_projection_coefficient": 0.23982337132422712,
+          "median_centroid_projection_coefficient": 0.22778920441582334,
+          "mean_absolute_centroid_projection_energy": 273.9861305944872
+        },
+        "prompt": {
+          "same_case_null_projection_energy": 0.1297956867835681,
+          "median_signed_cosine": 0.1976515766991268,
+          "fraction_toward_null": 0.7625,
+          "permuted_projection_median": 0.064543220425307,
+          "permuted_projection_95pct": [
+            0.05407058674486183,
+            0.07736179663107262
+          ],
+          "permutation_p_one_sided": 0.004975124378109453,
+          "clean_centroid_projection_energy": 0.23405791395687878,
+          "null_projection_energy": 0.1297956867835681,
+          "null_unique_after_centroid_energy": 0.0530324331196201,
+          "centroid_unique_after_null_energy": 0.15729466029293068,
+          "fraction_toward_clean_centroid": 0.9291666666666667,
+          "median_null_centroid_direction_cosine": 0.2908494799061708,
+          "mean_log_centroid_distance_ratio": -0.10411049459453699,
+          "median_log_centroid_distance_ratio": -0.09458473145122638,
+          "fraction_closer_to_centroid": 0.6416666666666667,
+          "mean_centroid_projection_coefficient": 0.21836391779472128,
+          "median_centroid_projection_coefficient": 0.21996967657810293,
+          "mean_absolute_centroid_projection_energy": 243.1214582232008
+        }
+      }
+    }
+  },
+  "layers": {
+    "0": {
+      "image": {
+        "same_case_null_projection_energy": {
+          "median": 0.010425102074697377,
+          "minimum": 0.010414585030150705,
+          "maximum": 0.010436391712911303
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.16318670708008667,
+          "minimum": 0.1631579872015118,
+          "maximum": 0.16321541173422344
+        },
+        "fraction_toward_null": {
+          "median": 0.9583333333333334,
+          "minimum": 0.9583333333333334,
+          "maximum": 0.9583333333333334
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.8875,
+          "minimum": 0.8875,
+          "maximum": 0.8875
+        },
+        "permuted_projection_median": {
+          "median": 0.007225101198958219,
+          "minimum": 0.007165087386614557,
+          "maximum": 0.00726776866294253
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.1810865542842515,
+          "minimum": 0.18102984544822304,
+          "maximum": 0.1811478724732247
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.19886896116282426,
+          "minimum": 0.19867145573559694,
+          "maximum": 0.1989634640511409
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.25833333333333336,
+          "minimum": 0.25833333333333336,
+          "maximum": 0.25833333333333336
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.24734302332603988,
+          "minimum": 0.24732017854324576,
+          "maximum": 0.24736302013485112
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 4.486220804835997,
+          "minimum": 4.485356098318206,
+          "maximum": 4.488263912418956
+        }
+      },
+      "prompt": {
+        "same_case_null_projection_energy": {
+          "median": 0.07123656406968899,
+          "minimum": 0.07008164905524583,
+          "maximum": 0.07163794867225594
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.18971095482304992,
+          "minimum": 0.18857838164579446,
+          "maximum": 0.1909445631134079
+        },
+        "fraction_toward_null": {
+          "median": 0.5333333333333333,
+          "minimum": 0.5291666666666667,
+          "maximum": 0.5416666666666666
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9583333333333334,
+          "minimum": 0.9583333333333334,
+          "maximum": 0.9583333333333334
+        },
+        "permuted_projection_median": {
+          "median": 0.08249366073893785,
+          "minimum": 0.08147005787005429,
+          "maximum": 0.08422142215303158
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.41411119805307545,
+          "minimum": 0.4111608610094958,
+          "maximum": 0.4165864175342243
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.41957178892413527,
+          "minimum": 0.412854377959305,
+          "maximum": 0.4230610257438211
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.17916666666666667,
+          "minimum": 0.17916666666666667,
+          "maximum": 0.1875
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.43318285609287366,
+          "minimum": 0.4316066319446103,
+          "maximum": 0.43447824456834017
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 0.09587280951628942,
+          "minimum": 0.09446067686056159,
+          "maximum": 0.09653470384564908
+        }
+      }
+    },
+    "7": {
+      "image": {
+        "same_case_null_projection_energy": {
+          "median": 0.018072708291769417,
+          "minimum": 0.0179378438738828,
+          "maximum": 0.01816506443734867
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.1379683929096511,
+          "minimum": 0.13778127633523607,
+          "maximum": 0.1385219421748038
+        },
+        "fraction_toward_null": {
+          "median": 0.9666666666666667,
+          "minimum": 0.9666666666666667,
+          "maximum": 0.9666666666666667
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.8791666666666667,
+          "minimum": 0.875,
+          "maximum": 0.8791666666666667
+        },
+        "permuted_projection_median": {
+          "median": 0.012811102703162394,
+          "minimum": 0.012682825417956286,
+          "maximum": 0.0129592583523695
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.10720683016986617,
+          "minimum": 0.10696478821478372,
+          "maximum": 0.10737411053324988
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.11795416308306031,
+          "minimum": 0.11652201916603475,
+          "maximum": 0.11902120757604252
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.32083333333333336,
+          "minimum": 0.32083333333333336,
+          "maximum": 0.32083333333333336
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.21474967551220583,
+          "minimum": 0.21463183382437662,
+          "maximum": 0.21507754692254616
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 4.461371694819291,
+          "minimum": 4.45488830664755,
+          "maximum": 4.47360824479565
+        }
+      },
+      "prompt": {
+        "same_case_null_projection_energy": {
+          "median": 0.07605366259218638,
+          "minimum": 0.07407161722223117,
+          "maximum": 0.07734170748007117
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.19376995719256382,
+          "minimum": 0.18996792405012605,
+          "maximum": 0.19602473148953034
+        },
+        "fraction_toward_null": {
+          "median": 0.9083333333333333,
+          "minimum": 0.8958333333333334,
+          "maximum": 0.9208333333333333
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.975,
+          "minimum": 0.975,
+          "maximum": 0.9875
+        },
+        "permuted_projection_median": {
+          "median": 0.044873644338075114,
+          "minimum": 0.0434726305507218,
+          "maximum": 0.0461329598981709
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.1818287477821374,
+          "minimum": 0.1728055456477475,
+          "maximum": 0.18992856076992812
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.14864307593462292,
+          "minimum": 0.12157973583036197,
+          "maximum": 0.16376384205793443
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.30416666666666664,
+          "minimum": 0.2875,
+          "maximum": 0.3125
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.4053617334444765,
+          "minimum": 0.39986452062469197,
+          "maximum": 0.4091090506866434
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 0.5666803296827252,
+          "minimum": 0.5493217643026808,
+          "maximum": 0.5728221988486617
+        }
+      }
+    },
+    "14": {
+      "image": {
+        "same_case_null_projection_energy": {
+          "median": 0.01779410042434482,
+          "minimum": 0.017712835671628763,
+          "maximum": 0.01786356546343837
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.11615889277683837,
+          "minimum": 0.11591496202553497,
+          "maximum": 0.11631173235170011
+        },
+        "fraction_toward_null": {
+          "median": 0.9291666666666667,
+          "minimum": 0.925,
+          "maximum": 0.9291666666666667
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9333333333333333,
+          "minimum": 0.9333333333333333,
+          "maximum": 0.9375
+        },
+        "permuted_projection_median": {
+          "median": 0.01237496746029751,
+          "minimum": 0.012314492932275196,
+          "maximum": 0.012447698090867928
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.058159075114537634,
+          "minimum": 0.057500338556316005,
+          "maximum": 0.05865881656682352
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.053461047927541167,
+          "minimum": 0.051132923911365306,
+          "maximum": 0.055174102095329774
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.4125,
+          "minimum": 0.4083333333333333,
+          "maximum": 0.42083333333333334
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.2035856282574001,
+          "minimum": 0.2032327186204027,
+          "maximum": 0.2036967222646184
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 6.172344231625243,
+          "minimum": 6.156475496778311,
+          "maximum": 6.183438604100019
+        }
+      },
+      "prompt": {
+        "same_case_null_projection_energy": {
+          "median": 0.11272221927679806,
+          "minimum": 0.11055747295083793,
+          "maximum": 0.11755602615753347
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.2030048330964854,
+          "minimum": 0.19798582314969349,
+          "maximum": 0.2072019188385328
+        },
+        "fraction_toward_null": {
+          "median": 0.9583333333333334,
+          "minimum": 0.95,
+          "maximum": 0.9666666666666667
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9833333333333333,
+          "minimum": 0.9708333333333333,
+          "maximum": 0.9916666666666667
+        },
+        "permuted_projection_median": {
+          "median": 0.07707197659010427,
+          "minimum": 0.07594149530767327,
+          "maximum": 0.08184820067720007
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.14976055458038295,
+          "minimum": 0.1443752916367608,
+          "maximum": 0.16713365353516577
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.15281808460645452,
+          "minimum": 0.12512827480438526,
+          "maximum": 0.18009193076807828
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.32916666666666666,
+          "minimum": 0.31666666666666665,
+          "maximum": 0.3541666666666667
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.37518897444905774,
+          "minimum": 0.36640968217208225,
+          "maximum": 0.38070554248697414
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 1.4686671279316106,
+          "minimum": 1.4007061830607683,
+          "maximum": 1.5042936648538359
+        }
+      }
+    },
+    "21": {
+      "image": {
+        "same_case_null_projection_energy": {
+          "median": 0.016479156149051082,
+          "minimum": 0.01628445510090959,
+          "maximum": 0.016706423641688582
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.12804625679774356,
+          "minimum": 0.12770546498399385,
+          "maximum": 0.12868192143157073
+        },
+        "fraction_toward_null": {
+          "median": 0.7208333333333333,
+          "minimum": 0.7208333333333333,
+          "maximum": 0.7291666666666666
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9791666666666666,
+          "minimum": 0.9708333333333333,
+          "maximum": 0.9833333333333333
+        },
+        "permuted_projection_median": {
+          "median": 0.013299732950788056,
+          "minimum": 0.013201801458933238,
+          "maximum": 0.013508106634156806
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.008047015311044082,
+          "minimum": 0.0071215342788682875,
+          "maximum": 0.008920254655176325
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.000658327104948605,
+          "minimum": -0.001457681220131618,
+          "maximum": 0.0028121530211351574
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.49583333333333335,
+          "minimum": 0.49583333333333335,
+          "maximum": 0.5041666666666667
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.21911881837626204,
+          "minimum": 0.2188876428888797,
+          "maximum": 0.21984692633588582
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 14.749125722376656,
+          "minimum": 14.699159240348283,
+          "maximum": 14.819972576195774
+        }
+      },
+      "prompt": {
+        "same_case_null_projection_energy": {
+          "median": 0.09272338953576248,
+          "minimum": 0.08708570540645452,
+          "maximum": 0.0934796881953534
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.2643878652555166,
+          "minimum": 0.26216681049393475,
+          "maximum": 0.26818115313957436
+        },
+        "fraction_toward_null": {
+          "median": 0.7958333333333333,
+          "minimum": 0.7791666666666667,
+          "maximum": 0.8083333333333333
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9375,
+          "minimum": 0.9291666666666667,
+          "maximum": 0.9458333333333333
+        },
+        "permuted_projection_median": {
+          "median": 0.04729312113445751,
+          "minimum": 0.0443397489749202,
+          "maximum": 0.05002839886699442
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": -0.09506476365809842,
+          "minimum": -0.10171238133219163,
+          "maximum": -0.09131525413787403
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": -0.06489614281280504,
+          "minimum": -0.08172099581064046,
+          "maximum": -0.05325991533185831
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.5833333333333334,
+          "minimum": 0.5583333333333333,
+          "maximum": 0.6
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.2910643498422446,
+          "minimum": 0.28814819219175275,
+          "maximum": 0.2924864643012679
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 16.864047996300105,
+          "minimum": 16.70714657753479,
+          "maximum": 17.232229799682173
+        }
+      }
+    },
+    "27": {
+      "image": {
+        "same_case_null_projection_energy": {
+          "median": 0.03985957219498231,
+          "minimum": 0.038607554943078215,
+          "maximum": 0.040795158890529745
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.1432969062081006,
+          "minimum": 0.13900117916112245,
+          "maximum": 0.1459448901775727
+        },
+        "fraction_toward_null": {
+          "median": 0.9083333333333333,
+          "minimum": 0.9,
+          "maximum": 0.9208333333333333
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9416666666666667,
+          "minimum": 0.9333333333333333,
+          "maximum": 0.9458333333333333
+        },
+        "permuted_projection_median": {
+          "median": 0.024425528965843893,
+          "minimum": 0.023730752255929955,
+          "maximum": 0.025082090299785725
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": 0.022185110866153764,
+          "minimum": 0.015597206149027572,
+          "maximum": 0.029465962923770395
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": 0.011947196513067892,
+          "minimum": -0.008958972085171543,
+          "maximum": 0.027000151048013562
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.475,
+          "minimum": 0.45416666666666666,
+          "maximum": 0.5083333333333333
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.24376641612012065,
+          "minimum": 0.23982337132422712,
+          "maximum": 0.24991664823124818
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 281.79855833381384,
+          "minimum": 273.84979597446585,
+          "maximum": 294.3042042434715
+        }
+      },
+      "prompt": {
+        "same_case_null_projection_energy": {
+          "median": 0.1303614453117865,
+          "minimum": 0.12720165463631616,
+          "maximum": 0.13492303424534025
+        },
+        "clean_centroid_projection_energy": {
+          "median": 0.2360863572461792,
+          "minimum": 0.22948052087708254,
+          "maximum": 0.23941140894678054
+        },
+        "fraction_toward_null": {
+          "median": 0.7458333333333333,
+          "minimum": 0.725,
+          "maximum": 0.7625
+        },
+        "fraction_toward_clean_centroid": {
+          "median": 0.9208333333333333,
+          "minimum": 0.9125,
+          "maximum": 0.9375
+        },
+        "permuted_projection_median": {
+          "median": 0.06524594980343246,
+          "minimum": 0.061939876859074226,
+          "maximum": 0.06916060935586882
+        },
+        "mean_log_centroid_distance_ratio": {
+          "median": -0.10569408238638878,
+          "minimum": -0.11217773026598375,
+          "maximum": -0.095302600836962
+        },
+        "median_log_centroid_distance_ratio": {
+          "median": -0.09056192559710763,
+          "minimum": -0.10072157070136686,
+          "maximum": -0.06928028924226273
+        },
+        "fraction_closer_to_centroid": {
+          "median": 0.625,
+          "minimum": 0.6041666666666666,
+          "maximum": 0.6416666666666667
+        },
+        "mean_centroid_projection_coefficient": {
+          "median": 0.2181172928040394,
+          "minimum": 0.21466590755759113,
+          "maximum": 0.2235811920247287
+        },
+        "mean_absolute_centroid_projection_energy": {
+          "median": 243.4355906661802,
+          "minimum": 238.800472507008,
+          "maximum": 254.84091197352424
+        }
+      }
+    }
+  },
+  "decision": {
+    "prompt_alignment_exceeds_permuted_control_by_layer": {
+      "0": false,
+      "7": true,
+      "14": true,
+      "21": true,
+      "27": true
+    },
+    "not_identifiable_at_layer_0": true,
+    "identifiable_from_layer_7_onward": true,
+    "final_prompt_exceeds_initial_prompt_every_lineage": true,
+    "prompt_exceeds_image_at_every_sampled_layer_and_lineage": true,
+    "clean_centroid_exceeds_null_at_every_layer_and_lineage": true,
+    "normalized_prompt_centroid_alignment_exceeds_image_tokens": true,
+    "prompt_distance_increases_layers_0_7_14_every_lineage": true,
+    "prompt_distance_decreases_layers_21_27_every_lineage": true
+  },
+  "interpretation": "On the fixed synthetic probe, style displacement contains a consistent component aligned toward a patient-LOO clean-state centroid, stronger than null-state alignment. Positive alignment does not imply contraction: prompt states move farther from the centroid at layers 0, 7, and 14, and become closer only at layers 21 and 27 in every lineage. The nonmonotonic late-layer onset supports a descriptive contraction dynamic, not a null-specific clinical prior or a causal language-fusion claim.",
+  "claim_ceiling": "layerwise pooled-state diagnostic on 40 exposed MIMIC development images, six fixed Fourier views, and correlated Qwen2.5-VL-7B lineages; not a causal or output-utility claim"
+}

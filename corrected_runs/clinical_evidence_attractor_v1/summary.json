@@ -1,0 +1,171 @@
+{
+  "version": "clinical-evidence-attractor-v1",
+  "diseases": [
+    "cardiomegaly",
+    "device",
+    "edema",
+    "effusion",
+    "opacity",
+    "pneumothorax"
+  ],
+  "paired_probe_fingerprint": "838d536f4cf9c6a5af888ac08c6b5727830165b61b5a489c393513bca1fc83c4",
+  "models": {
+    "huatuo": {
+      "model": "/autodl-fs/data/data/dbw/models/HuatuoGPT-Vision-7B-Qwen2.5VL-fast",
+      "raw": "/root/autodl-tmp/ANCHOR/corrected_runs/visual_evidence_chord_probe_v1_n64/raw.jsonl",
+      "raw_sha256": "463e51311480bbe3bc82b2743acc0b960dd6d53eec91403d3fa67ad91f1bb1b9",
+      "cases": 64,
+      "patients": 58,
+      "styles": 6,
+      "mean_log_squared_centroid_distance_ratio": -0.16123587424076677,
+      "patient_cluster_bootstrap_95pct": [
+        -0.3155129597933795,
+        -0.021951737620239147
+      ],
+      "patient_balanced_sensitivity": {
+        "mean_log_squared_centroid_distance_ratio": -0.18006663932071174,
+        "patient_cluster_bootstrap_95pct": [
+          -0.3219410431439873,
+          -0.04539209616261014
+        ]
+      },
+      "per_style": {
+        "style_0": {
+          "mean_log_squared_centroid_distance_ratio": -0.2057295829447463,
+          "patient_cluster_bootstrap_95pct": [
+            -0.3811227834101377,
+            -0.044468576606863625
+          ]
+        },
+        "style_1": {
+          "mean_log_squared_centroid_distance_ratio": -0.12696128488716957,
+          "patient_cluster_bootstrap_95pct": [
+            -0.2616831466655115,
+            0.012636708196293017
+          ]
+        },
+        "style_2": {
+          "mean_log_squared_centroid_distance_ratio": -0.20101194247467355,
+          "patient_cluster_bootstrap_95pct": [
+            -0.3669579935853149,
+            -0.034608894628730055
+          ]
+        },
+        "style_3": {
+          "mean_log_squared_centroid_distance_ratio": -0.07435577430872448,
+          "patient_cluster_bootstrap_95pct": [
+            -0.24315266651756887,
+            0.10005650497644294
+          ]
+        },
+        "style_4": {
+          "mean_log_squared_centroid_distance_ratio": -0.16689446254183302,
+          "patient_cluster_bootstrap_95pct": [
+            -0.3096419574242632,
+            -0.023583103740462085
+          ]
+        },
+        "style_5": {
+          "mean_log_squared_centroid_distance_ratio": -0.1924621982874538,
+          "patient_cluster_bootstrap_95pct": [
+            -0.35505983998830143,
+            -0.033078952666910105
+          ]
+        }
+      },
+      "styles_ci_below_zero": 4,
+      "median_log_squared_centroid_distance_ratio": -0.18393392909513784,
+      "fraction_closer_to_centroid": 0.6588541666666666,
+      "clean_centroid_projection_energy": 0.43227809782496096,
+      "fraction_toward_clean_centroid": 0.8177083333333334,
+      "null_projection_energy": 0.25851415123385085,
+      "fraction_toward_null": 0.6276041666666666
+    },
+    "qwen_base": {
+      "model": "/autodl-fs/data/data/dbw/models/Qwen2.5-VL-7B-Instruct-fast",
+      "raw": "/autodl-fs/data/data/dbw/anchor_runs/visual_evidence_chord_probe_v1_base_n64/raw.jsonl",
+      "raw_sha256": "c756d37a5d152ee1bf9c50928ce3ddf39be34c5cf075e338bde62807a6fee8f3",
+      "cases": 64,
+      "patients": 58,
+      "styles": 6,
+      "mean_log_squared_centroid_distance_ratio": -0.11319883799257431,
+      "patient_cluster_bootstrap_95pct": [
+        -0.25549505239931847,
+        0.04183762692834433
+      ],
+      "patient_balanced_sensitivity": {
+        "mean_log_squared_centroid_distance_ratio": -0.09480013389538074,
+        "patient_cluster_bootstrap_95pct": [
+          -0.24077310199700552,
+          0.05000828555153988
+        ]
+      },
+      "per_style": {
+        "style_0": {
+          "mean_log_squared_centroid_distance_ratio": -0.09990802731413481,
+          "patient_cluster_bootstrap_95pct": [
+            -0.24654549843730178,
+            0.05522685670087433
+          ]
+        },
+        "style_1": {
+          "mean_log_squared_centroid_distance_ratio": -0.12731926215983308,
+          "patient_cluster_bootstrap_95pct": [
+            -0.2778882472501564,
+            0.017699650546563743
+          ]
+        },
+        "style_2": {
+          "mean_log_squared_centroid_distance_ratio": -0.16653315186115086,
+          "patient_cluster_bootstrap_95pct": [
+            -0.3342550411948467,
+            0.0029386131728791638
+          ]
+        },
+        "style_3": {
+          "mean_log_squared_centroid_distance_ratio": -0.03726133447525792,
+          "patient_cluster_bootstrap_95pct": [
+            -0.18419674175548612,
+            0.10764455537256798
+          ]
+        },
+        "style_4": {
+          "mean_log_squared_centroid_distance_ratio": -0.14689420285855642,
+          "patient_cluster_bootstrap_95pct": [
+            -0.29053164957384686,
+            0.0019334862179887693
+          ]
+        },
+        "style_5": {
+          "mean_log_squared_centroid_distance_ratio": -0.10127704928651281,
+          "patient_cluster_bootstrap_95pct": [
+            -0.25058951468683316,
+            0.06304573921348737
+          ]
+        }
+      },
+      "styles_ci_below_zero": 0,
+      "median_log_squared_centroid_distance_ratio": -0.09458897632547905,
+      "fraction_closer_to_centroid": 0.6067708333333334,
+      "clean_centroid_projection_energy": 0.3975515762373509,
+      "fraction_toward_clean_centroid": 0.7526041666666666,
+      "null_projection_energy": 0.304257126880018,
+      "fraction_toward_null": 0.5989583333333334
+    }
+  },
+  "paired_huatuo_minus_base": {
+    "mean_log_distance_ratio_difference": -0.04803703624819247,
+    "patient_cluster_bootstrap_95pct": [
+      -0.240739363207936,
+      0.1469048489291645
+    ]
+  },
+  "decision": {
+    "huatuo_centroid_contraction_ci_below_zero": true,
+    "base_centroid_contraction_ci_below_zero": false,
+    "medical_checkpoint_more_contracting_than_base": false,
+    "centroid_projection_exceeds_null_both_models": true
+  },
+  "interpretation": "Complete-sentence six-disease evidence vectors contract toward a patient-LOO clean centroid for Huatuo on this synthetic probe. The exact Qwen base shows the same point-estimate direction but its interval includes zero. Their paired difference is uncertain, so no medical-tuning amplification claim is supported.",
+  "claim_ceiling": "teacher-forced, unstandardized six-disease evidence geometry on 64 exposed MIMIC development images and six fixed Fourier styles; not generated accuracy, factuality, natural-scanner robustness, or a causal effect of medical tuning"
+}

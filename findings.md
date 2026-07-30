@@ -244,3 +244,97 @@ Evidence:
   development images, one prompt/model family, Euclidean squared
   displacement, correlated checkpoints, and no downstream utility claim.
 - **Evidence:** `corrected_runs/style_field_factorization_v1/`.
+
+## 2026-07-31: Conditional style-field and null-prior audit
+
+- **Question:** after rejecting a reusable global style offset, does the
+  residual field have a low-complexity image-conditioned structure that could
+  support a single-view correction?
+- **Exact result:** at the final prompt token, centered case effects explain
+  68.20%--69.31% of displacement energy across all 11 lineages, centered style
+  effects only 1.42%--1.53%, and interaction 22.97%--23.91%.
+- **Transductive structure:** a crossed held-cell predictor using the same
+  case's other five style views explains 63.78%--65.21%. It shares the clean
+  origin of the held cell and is not a deployable estimate or formal ceiling.
+- **Single-view test:** patient-grouped nested linear-kernel ridge prediction
+  from the clean state reduces error over patient-LOO style means by only
+  0.38%--1.21%. This is little incremental prediction by the tested metric;
+  no general actionability claim is supported.
+- **Null-alignment observation:** the same-case direction from the real state to its
+  null-image state captures 12.72%--13.49% of final-prompt displacement;
+  72.5%--76.25% of cells point toward null. Every lineage exceeds its
+  case-permuted 95% control (finite permutation \(p=1/201\)).
+- **Decisive endpoint control:** a leave-one-patient clean-centroid direction
+  explains 22.95%--23.94%, more than null in every lineage, and
+  91.25%--93.75% of cells point toward it. Centroid-unique energy is
+  15.39%--16.21%, versus 5.03%--5.70% null-unique.
+- **Interpretation:** synthetic acquisition style induces a predominantly
+  case-conditioned contraction field. The null direction is associated but is
+  not specific enough to identify a clinical prior. The final counterfactual
+  experiment must residualize generic centroid contraction before claiming
+  style-specific prior switching.
+- **Decision:** do not launch a single-view conditional operator from this
+  branch. Hand the null-prior direction result to the independent \(2\times2\)
+  content/style experiment.
+- **Limits:** 40 exposed MIMIC development images, six synthetic Fourier
+  styles, one prompt, stored float16 states, correlated checkpoints, and no
+  output-utility or natural-scanner claim.
+- **Evidence:** `corrected_runs/conditional_style_field_v1/` and
+  `docs/CONDITIONAL_STYLE_FIELD_AUDIT.md`. Same-family result-to-claim review:
+  `partial`, high confidence, trace
+  `.aris/traces/result-to-claim/2026-07-31_run05/`.
+
+## 2026-07-31: Layerwise centroid-contraction onset
+
+- **Design:** the full five-layer activation probe was extended from the three
+  exploratory lineages to all 11 lineages using the same 40 images, six
+  styles, prompt, and float16 capture protocol.
+- **Centroid alignment:** median normalized prompt-state energy projected toward a
+  leave-one-patient clean centroid is 18.97%, 19.38%, 20.30%, 26.44%, and
+  23.61% at LLM layers 0, 7, 14, 21, and 27.
+- **Direct distance correction:** positive projection is not sufficient for
+  contraction. Median mean log after/before centroid-distance ratios are
+  +0.414, +0.182, +0.150, -0.095, and -0.106. Every lineage moves farther at
+  layers 0/7/14 and closer only at layers 21/27. Median cellwise contraction
+  rates rise from 17.92% to 62.50%.
+- **Normalized token comparison:** centroid projection at the prompt token exceeds pooled
+  image-token projection at every sampled layer in every lineage. Depending
+  on layer, 92.08%--98.33% of prompt case-style cells point toward the clean
+  centroid. Different summaries and denominators prevent an absolute
+  prompt-versus-image amplification claim.
+- **Null control:** null-endpoint alignment is weaker than centroid alignment
+  at every layer and lineage. It is below the case-permuted control at layer 0
+  but exceeds it from layer 7 onward.
+- **Conclusion:** the stable representation property is a nonmonotonic,
+  late-layer onset of generic case-anchored contraction, not a demonstrated
+  clinical-prior switch or causal language-fusion amplification. Output-level
+  prior-switching tests must residualize this contraction.
+- **Evidence:** `corrected_runs/layerwise_attractor_v1/`.
+
+## 2026-07-31: Complete-sentence clinical-evidence contraction
+
+- **Design:** six complete positive/negative disease sentences define a
+  teacher-forced clinical evidence vector. The exact Huatuo and Qwen base
+  models were compared on the same 64 exposed MIMIC development images (58
+  patients) and six fixed Fourier styles.
+- **Direct distance:** Huatuo's mean log after/before squared distance to a
+  patient-LOO clean evidence centroid is -0.161, patient-cluster 95% CI
+  [-0.316, -0.022], and 65.89% of cells become closer. Qwen base has a
+  same-direction point estimate of -0.113, CI [-0.255, +0.042], and 60.68%
+  closer.
+- **Endpoint control:** clean-centroid directions explain 43.23% (Huatuo) and
+  39.76% (base) of style displacement, exceeding null directions at 25.85%
+  and 30.43%.
+- **Lineage comparison:** paired Huatuo-minus-base difference -0.048, 95% CI
+  [-0.241, +0.147]; medical-tuning amplification is unsupported.
+- **Scale and heterogeneity:** \(\exp(-0.161/2)=0.923\), about 7.7% geometric
+  Euclidean-distance contraction. The patient-balanced sensitivity remains
+  below zero, but two of six Huatuo style-specific intervals cross zero.
+- **Conclusion:** synthetic style induces generic contraction even in a
+  clinically interpretable complete-sentence evidence coordinate. A
+  style-conditioned prior-switching mechanism must explain residual
+  style-specific disease drift beyond this nuisance effect.
+- **Limits:** teacher forcing, six findings, synthetic styles, exposed
+  development data, a target-transductive patient-LOO centroid, no generated
+  accuracy/factuality, source-only inference, or natural-scanner claim.
+- **Evidence:** `corrected_runs/clinical_evidence_attractor_v1/`.
