@@ -132,12 +132,9 @@ overcounted these as positive findings.
 This is a useful negative distinction: the controlled images expose a strong
 question-conditioned affirmative prior and unstable report hallucinations,
 but not a stable **style-conditioned** clinical prior. The exact-size base
-Qwen download was consequently stopped because the medical-model prerequisite
-had already failed: subtracting any nonnegative base dispersion cannot turn
-zero medical dispersion into the preregistered positive lineage effect.
-These synthetic prototypes are diagnostic rather than natural target images,
-so the independent content/style \(2\times2\) experiment remains the decisive
-test on real images.
+Qwen comparison is now being used as an orthogonal lineage control on natural
+MIMIC images rather than as an attempt to rescue this failed synthetic gate.
+These synthetic prototypes are diagnostic rather than natural target images.
 
 ### Competing mechanism: question-conditioned prior
 
@@ -255,3 +252,11 @@ content-removed views induce a reproducible disease-direction drift and (ii)
 the same drift aligns with the content-preserving style view. If either link
 fails after controlling the original margin, the tested style-switch
 mechanism should be frozen as unsupported.
+
+The subsequent [Visual Evidence Chord Audit](VISUAL_EVIDENCE_CHORD_AUDIT.md)
+tests a stricter vector-valued prediction on 64 natural MIMIC images. It finds
+that source style identity explains only 3.28% of evidence-drift variance on
+the frontal subset, while patient and patient-by-style terms explain 73.43%
+and 23.29%. This refutes a uniform style-prior switch for the tested source
+transform and supplies a quantitative ceiling for any global additive source
+correction.
