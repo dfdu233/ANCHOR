@@ -268,3 +268,60 @@ without generated utility still does not justify a mitigation method.
 
 Evidence and exported vectors:
 `corrected_runs/residual_style_signature_v1/`.
+
+## Disease-specificity of the residual signature
+
+A remaining alternative is that each style simply raises or lowers all six
+disease scores together. Let
+
+\[
+u=6^{-1/2}(1,\ldots,1),\qquad
+\rho^\parallel=\langle\rho,u\rangle u,\qquad
+\rho^\perp=\rho-\rho^\parallel.
+\]
+
+Here \(\rho^\parallel\) is a literal uniform affirmation/negation axis and
+\(\rho^\perp\) contains relative disease-evidence changes. The uniform axis
+accounts for 24.64% of the Qwen-base style-signature energy and 20.81% of the
+Huatuo energy. Patient-cluster 95% intervals are [10.14%, 44.73%] and [5.82%,
+41.09%], respectively; more than 99% of resamples remain below one half.
+Because the contrast subspace has five dimensions while the uniform space has
+one, this is not per-dimension dominance: uniform energy is 1.63 times the
+average contrast-coordinate energy in base and 1.31 times in Huatuo. The test
+only rejects a purely equal-coordinate explanation.
+
+Removing the uniform axis does not eliminate cross-patient detection.
+Contrast-only held-patient style identification is 25.78% in base and 22.14%
+in Huatuo (chance 16.67%; patient-blocked permutation \(p=.001\) and
+\(p=.017\)). Contrast-only prototype \(R^2_0\) is 3.32% and 1.30%, with
+\(p=.001\) in both models.
+
+The exact paired checkpoints have contrast-only matched-style cosine 0.727,
+with patient-cluster 95% interval [0.350, 0.792]. Identity is uniquely maximal
+among all \(6!\) style assignments and all \(6!\) disease-coordinate
+assignments in the fixed cohort, but this ranking does not survive patient
+resampling: the style-identity and disease-identity margins have intervals
+[-0.231, 0.095] and [-0.189, 0.076]. Thus the supported population-level
+statement is positive aggregate contrast alignment, not a unique
+style-to-disease mapping.
+
+The observed contrast spectrum has entropy effective rank 2.43--2.58, but
+patient-blocked style permutations do not establish unusually low rank. The
+result therefore rules out a *purely* uniform answer-bias explanation for this
+cohort without proving a low-rank clinical prior. Shared architecture,
+teacher-forced sentence templates, fixed synthetic transforms, and
+target-derived preprocessing remain alternative explanations.
+
+The sequential radial-then-uniform projections do not commute and reintroduce
+a radial component. A primary joint projection onto
+\(\operatorname{span}\{r_i,\mathbf1\}^{\perp}\) preserves the finding:
+held-patient style identification is 28.13% in base and 24.74% in Huatuo
+(\(p=.001\) each), with \(R^2_0=5.04\%\) and 1.32%. Matched-style cosine is
+0.699, patient-cluster 95% CI [0.293, 0.790]. A separately column-normalized
+disease-profile cosine is 0.717. Their fixed-cohort assignment ranks are
+strong, but patient-bootstrap identity margins still cross zero. Joint
+nuisance removal therefore supports positive aggregate nonuniform structure,
+not a population-unique style-to-disease map.
+
+Evidence:
+`corrected_runs/style_prior_specificity_v1/`.

@@ -375,3 +375,41 @@ Evidence:
   generated-accuracy result. Huatuo style-ID \(p=.034\) is nominal and does
   not survive a two-endpoint Bonferroni correction.
 - **Evidence:** `corrected_runs/residual_style_signature_v1/`.
+
+## 2026-07-31: Disease-specificity of the residual style signature
+
+- **Question:** is the residual signature only a uniform tendency to raise or
+  lower all six disease scores?
+- **Orthogonal split:** the literal all-ones disease axis accounts for 24.64%
+  of base and 20.81% of Huatuo style-signature energy. Patient-cluster 95%
+  intervals are [10.14%, 44.73%] and [5.82%, 41.09%], with more than 99% of
+  resamples below one half.
+- **Dimensionality caution:** the contrast space has five dimensions. Uniform
+  energy per dimension is 1.63x/1.31x the average contrast-coordinate energy,
+  so the result rejects a pure uniform shift but does not show per-dimension
+  contrast dominance.
+- **Contrast-only signal:** after removing that axis, held-patient six-way
+  style identification is 25.78% for base and 22.14% for Huatuo (chance
+  16.67%; blocked-permutation \(p=.001/.017\)). Prototype \(R^2_0\) is
+  3.32%/1.30% (\(p=.001\) both).
+- **Paired-checkpoint alignment:** contrast-only matched-style cosine is
+  0.727, patient-cluster 95% CI [0.350, 0.792].
+- **Important downgrade:** identity is uniquely best among all \(6!\) style
+  and disease assignments only in the fixed cohort. Patient-bootstrap
+  identity-margin intervals are [-0.231, 0.095] and [-0.189, 0.076], so a
+  population-unique style-to-disease mapping is unsupported.
+- **Rank:** observed entropy effective rank is 2.43--2.58, but it is not
+  unusually low under patient-blocked style permutation.
+- **Joint nuisance correction:** radial and uniform projections do not
+  commute. Directly projecting onto
+  \(\operatorname{span}\{r_i,\mathbf1\}^{\perp}\) retains style ID
+  28.13%/24.74% and \(R^2_0=5.04\%/1.32\% (base/Huatuo; all permutation
+  \(p=.001\)). Matched-style cosine is 0.699, patient-cluster CI
+  [0.293, 0.790]; matched disease-profile cosine is 0.717. Identity margins
+  remain unstable under patient resampling.
+- **Conclusion:** the cohort signal is not reducible to a purely uniform
+  answer bias and has positive aggregate disease-contrast alignment across
+  paired checkpoints. This still does not identify a low-rank clinical prior,
+  causal medical-tuning effect, natural acquisition mechanism, or useful
+  decoder.
+- **Evidence:** `corrected_runs/style_prior_specificity_v1/`.
