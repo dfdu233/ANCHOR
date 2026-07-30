@@ -1,0 +1,255 @@
+{
+  "version": "pubmed-style-prior-audit-v1",
+  "status": "source_only_diagnostic",
+  "claim_ceiling": "training distribution contains an out-of-article association between presentation-style proxies and selected answer concepts; this does not establish that the VLM uses the association",
+  "manifest": "/autodl-fs/data/data/dbw/anchor_center_native_v1/prepared_pubmed_full_cxr/instruction_train.jsonl",
+  "manifest_sha256": "c0a3238052ef6a34779f37d3339b67f985bcd23955e97c23e84b92c647e4a095",
+  "n": 2048,
+  "train_n": 1317,
+  "test_n": 731,
+  "unique_groups": 1847,
+  "split": "70/30 GroupShuffleSplit by PMC group_id",
+  "features": "phase-free radial log-power, intensity/gradient/border quantiles, aspect ratio and saturation statistics",
+  "question_control": "word/bi-gram TF-IDF logistic regression",
+  "labels": [
+    {
+      "label": "pneumothorax",
+      "train_positive": 99,
+      "test_positive": 53,
+      "question_auc": 0.6758223409584238,
+      "style_only_auc": 0.5923637780375133,
+      "style_only_auc_ci95": [
+        0.5056672640498475,
+        0.6671418626444903
+      ],
+      "combined_auc": 0.6755997105805087,
+      "combined_minus_question_auc": -0.00022263037791503404,
+      "delta_auc_ci95": [
+        -0.05238374891919765,
+        0.05506782106782105
+      ]
+    },
+    {
+      "label": "effusion",
+      "train_positive": 173,
+      "test_positive": 85,
+      "question_auc": 0.6480877800036424,
+      "style_only_auc": 0.5985248588599527,
+      "style_only_auc_ci95": [
+        0.5395318624009868,
+        0.6607100430301879
+      ],
+      "combined_auc": 0.6689856128209797,
+      "combined_minus_question_auc": 0.02089783281733726,
+      "delta_auc_ci95": [
+        -0.03485902215595463,
+        0.07037517034226065
+      ]
+    },
+    {
+      "label": "opacity",
+      "train_positive": 610,
+      "test_positive": 308,
+      "question_auc": 0.7385787970894355,
+      "style_only_auc": 0.5797411808050106,
+      "style_only_auc_ci95": [
+        0.5427205221323752,
+        0.6198438374404016
+      ],
+      "combined_auc": 0.7437521107733873,
+      "combined_minus_question_auc": 0.005173313683951797,
+      "delta_auc_ci95": [
+        -0.012885250289840399,
+        0.024274615094745884
+      ]
+    },
+    {
+      "label": "cardiomegaly",
+      "train_positive": 89,
+      "test_positive": 69,
+      "question_auc": 0.7686085205131572,
+      "style_only_auc": 0.5925390778930777,
+      "style_only_auc_ci95": [
+        0.5275367050307822,
+        0.6495879784662403
+      ],
+      "combined_auc": 0.747471430447918,
+      "combined_minus_question_auc": -0.021137090065239228,
+      "delta_auc_ci95": [
+        -0.06599522935419813,
+        0.018312630278945866
+      ]
+    },
+    {
+      "label": "edema",
+      "train_positive": 157,
+      "test_positive": 70,
+      "question_auc": 0.7314566673870758,
+      "style_only_auc": 0.5783661119515885,
+      "style_only_auc_ci95": [
+        0.5089453953180948,
+        0.6385622058683006
+      ],
+      "combined_auc": 0.6844607737194728,
+      "combined_minus_question_auc": -0.04699589366760304,
+      "delta_auc_ci95": [
+        -0.0981286099151065,
+        -0.0038369299612052354
+      ]
+    },
+    {
+      "label": "fracture",
+      "train_positive": 27,
+      "test_positive": 18,
+      "question_auc": 0.8162303256973663,
+      "style_only_auc": 0.5989558983948885,
+      "style_only_auc_ci95": [
+        0.46978043515200196,
+        0.7254722023991782
+      ],
+      "combined_auc": 0.7407667134174848,
+      "combined_minus_question_auc": -0.07546361227988152,
+      "delta_auc_ci95": [
+        -0.18870946531578411,
+        0.026218699888984936
+      ]
+    },
+    {
+      "label": "device",
+      "train_positive": 134,
+      "test_positive": 62,
+      "question_auc": 0.850800424321327,
+      "style_only_auc": 0.572809682241188,
+      "style_only_auc_ci95": [
+        0.5064716830076486,
+        0.6425334811312755
+      ],
+      "combined_auc": 0.8202661651960075,
+      "combined_minus_question_auc": -0.030534259125319485,
+      "delta_auc_ci95": [
+        -0.08417099420745838,
+        0.010220794511304561
+      ]
+    },
+    {
+      "label": "normal",
+      "train_positive": 42,
+      "test_positive": 29,
+      "question_auc": 0.8522448177620592,
+      "style_only_auc": 0.47367128401611164,
+      "style_only_auc_ci95": [
+        0.36967778670493706,
+        0.576192979229258
+      ],
+      "combined_auc": 0.7552313586796345,
+      "combined_minus_question_auc": -0.09701345908242465,
+      "delta_auc_ci95": [
+        -0.19867713553769917,
+        -0.02067024956669681
+      ]
+    }
+  ],
+  "style_clusters": {
+    "test_sizes": [
+      136,
+      237,
+      82,
+      108,
+      109,
+      59
+    ],
+    "prevalence_minus_global": [
+      [
+        0.008378933183848858,
+        -0.020690834149718285,
+        0.012482900172472,
+        -0.028214775025844574,
+        0.014534884132444859,
+        0.012140902690589428,
+        -0.03334473446011543,
+        -0.010259917937219143
+      ],
+      [
+        -0.0007734621758572757,
+        -0.006574428640305996,
+        -0.0036191102117300034,
+        -0.010003059171140194,
+        0.001287179533392191,
+        -0.011965574696660042,
+        0.008011682890355587,
+        0.002522410126402974
+      ],
+      [
+        0.025057556107640266,
+        0.01786727085709572,
+        0.017683761194348335,
+        0.015364852733910084,
+        -0.02258850261569023,
+        -0.01242868136614561,
+        0.024940775707364082,
+        0.00910880509763956
+      ],
+      [
+        0.0015706541016697884,
+        0.013350559398531914,
+        0.05088159441947937,
+        0.03523838520050049,
+        -0.012425900436937809,
+        0.02167249284684658,
+        -0.0014819881180301309,
+        -0.0026346456725150347
+      ],
+      [
+        -0.026631860062479973,
+        0.03050992079079151,
+        -0.017670905217528343,
+        -0.002648125635460019,
+        0.02350682020187378,
+        0.0028991326689720154,
+        0.03445073217153549,
+        0.024548500776290894
+      ],
+      [
+        -0.004706809762865305,
+        -0.03153330832719803,
+        -0.09930673241615295,
+        0.024252822622656822,
+        -0.02796262316405773,
+        -0.00767465028911829,
+        -0.050917018204927444,
+        -0.03967168182134628
+      ]
+    ],
+    "label_order": [
+      "pneumothorax",
+      "effusion",
+      "opacity",
+      "cardiomegaly",
+      "edema",
+      "fracture",
+      "device",
+      "normal"
+    ]
+  },
+  "decision": {
+    "criterion": "at least three concepts have AUROC gain >=0.03 with grouped-bootstrap CI lower bound >0",
+    "supported_concepts": [],
+    "gate_passed": false,
+    "unconditional_style_signal": [
+      "pneumothorax",
+      "effusion",
+      "opacity",
+      "cardiomegaly",
+      "edema",
+      "device"
+    ]
+  },
+  "limitations": [
+    "answer concepts are regex-derived rather than radiologist labels",
+    "Fourier/presentation features can retain some coarse clinical content",
+    "PubMed figures do not expose hospital or scanner identity",
+    "association in training data is necessary but not sufficient evidence of model shortcut use"
+  ],
+  "target_data_accessed": false,
+  "seed": 2027
+}
