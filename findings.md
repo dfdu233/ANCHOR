@@ -177,3 +177,24 @@ Evidence:
 - `results_reference/visual_evidence_chord_lineage_v1/`
 - `docs/VISUAL_EVIDENCE_CHORD_AUDIT.md`
 - `.aris/traces/result-to-claim/2026-07-31_run03/`
+## 2026-07-31: Layerwise style-orbit audit
+
+- **Verdict:** partial support, high-confidence same-family review; provisional.
+- **Test:** one seed-42 matched-versus-group-deranged visual-merger training
+  comparison on Qwen2.5-VL-7B, followed by a completely paired layerwise probe
+  over 40 frontal exposed MIMIC development images and six fixed source styles.
+- **Supported observation:** the matched lineage has a lower final prompt-state
+  synthetic-style/real-null displacement ratio than the fixed deranged
+  lineage. The paired relative effect is -5.48%, 95% patient-cluster CI
+  [-7.43%, -4.00%], accompanied by smaller style drift and greater real-null
+  distance.
+- **Not supported:** generated clinical-evidence improvement, hallucination
+  mitigation, natural acquisition robustness, general DG, or training-seed
+  stability. The earlier complete-sentence evidence effect remains null.
+- **Constraint:** do not call this an alignment-induced output improvement.
+  Treat it as a coordinate-specific, single-seed late-fusion mechanism
+  diagnostic until replicated across seeds/derangements and an untouched
+  multi-site cohort.
+- **Next decisive experiment:** prespecify layer-27 prompt \(\kappa\), replicate
+  matched versus multiple eligible derangements across at least five training
+  seeds, and add generated clinical factuality as a key secondary endpoint.
