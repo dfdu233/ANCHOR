@@ -88,6 +88,12 @@ Evidence grade: **C-level mechanism clue** under the unified evaluation policy.
 It is a source-distribution audit, not a model-performance result and must not
 enter the main benchmark table.
 
+A fresh same-family result-to-claim review returned
+`claim_supported = no` with high confidence
+(`acceptance_status = provisional`). The reviewer agreed that the experiment
+supports weak marginal confounding, but not clinical-prior information beyond
+the question, causal prior switching, or VLM shortcut use.
+
 The next decisive evidence must come from the frozen \(2\times2\)
 content/style experiment. If content-preserving and content-removed style
 drifts do not align after controls, the prior-switching mechanism is falsified
