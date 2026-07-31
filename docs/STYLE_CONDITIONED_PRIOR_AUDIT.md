@@ -271,3 +271,26 @@ that PubMedVision medical training creates a stronger reusable
 style-conditioned clinical prior under this operator. It instead supports a
 new descriptive mechanism: medical training contracts style sensitivity,
 while the residual response remains patient-conditional.
+
+### Full 5,549-image replication
+
+The additive and bilinear source-distribution audits were repeated without
+changing their protocol on all 5,549 unique strict-CXR images (4,894 PMC
+groups). In the additive audit, no concept passed the frozen conditional
+increment gate. The largest positive point estimate was effusion at
+`+0.016` AUROC with 95% CI `[-0.011,+0.042]`; the remaining estimates were
+between `-0.025` and `0.000`. Style-only AUROC remained weakly above chance
+for several concepts (`0.536`--`0.649`), confirming marginal confounding but
+not conditional clinical-prior information.
+
+The full five-fold bilinear audit again supported zero concepts.
+Question-style interaction reduced AUROC relative to the additive model for
+all eight outcomes (`-0.040` to `-0.085`; fracture `-0.060`, CI upper bound
+`+0.001`). Effusion's real interaction exceeded its shuffled control by
+`+0.034` (`[+0.005,+0.061]`) but still underperformed the additive model by
+`0.040`, so it is not useful conditional information. Increasing source
+sample size therefore strengthens rather than reverses the original negative
+gate.
+
+Evidence:
+`corrected_runs/pubmed_style_prior_full_replication_v1/`.

@@ -25,6 +25,24 @@ Evidence:
 - `docs/STYLE_CONDITIONED_PRIOR_AUDIT.md`
 - `.aris/traces/result-to-claim/2026-07-30_run02/`
 
+### Full-source replication
+
+The frozen audit was repeated on all 5,549 unique strict-CXR images
+(4,894 PMC groups). No concept passed the additive conditional-style gate:
+the largest positive increment over the complete-question model was effusion
+at `+0.016` AUROC (CI `[-0.011,+0.042]`), while all other increments were
+`0.000` or negative. A five-fold bilinear \(q\otimes s\) replication also
+passed zero concepts; interaction reduced AUROC by `0.040`--`0.085` versus
+the additive model for all eight outcomes. The expanded sample therefore
+confirms weak marginal style--concept coupling but no stable style information
+beyond the question under these pre-registered estimators.
+
+Evidence:
+
+- `corrected_runs/pubmed_style_prior_full_replication_v1/`
+- `corrected_runs/pubmed_style_prior_audit_full_v1/summary.json`
+- `corrected_runs/pubmed_style_question_interaction_full_v1/summary.json`
+
 ## Training-Native Spectral Support Projection
 
 Status: stopped at the frozen MIMIC development gate.
