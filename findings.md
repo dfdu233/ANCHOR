@@ -413,3 +413,22 @@ Evidence:
   causal medical-tuning effect, natural acquisition mechanism, or useful
   decoder.
 - **Evidence:** `corrected_runs/style_prior_specificity_v1/`.
+
+## 2026-07-31: Equivalent-language style-prior gate
+
+- **Question:** does the joint-nuisance residual survive semantically
+  equivalent question and complete-answer wording?
+- **Design:** 16 paired HuatuoGPT-Vision development patients, six diseases,
+  and six fixed styles. The `evidence present/absent` frame equalizes
+  positive/negative answer token counts.
+- **Direction:** original-to-`demonstrates` matched style cosine is 0.570
+  (patient-bootstrap 95% CI [0.014, 0.746]); original-to-`evidence` is 0.456
+  ([0.051, 0.619]). The residual is therefore not wholly explained by the
+  original negation length.
+- **Identification failure:** held-patient cross-template style
+  identification is 17.7% and 21.9%, against 16.7% chance
+  (`p=.379/.058`). Both identity-versus-best-mismatch margins are negative.
+- **Decision:** the frozen gate failed, so the base checkpoint was not run.
+  The evidence supports weak template-robust susceptibility, not a stable
+  style-indexed clinical-prior switch or a mitigation method.
+- **Evidence:** `corrected_runs/style_prior_template_probe_v1/`.

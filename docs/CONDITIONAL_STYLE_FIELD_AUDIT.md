@@ -325,3 +325,25 @@ not a population-unique style-to-disease map.
 
 Evidence:
 `corrected_runs/style_prior_specificity_v1/`.
+
+## Equivalent-language falsification
+
+The next audit held patients, images, six styles, six diseases, and
+teacher-forcing budget fixed while replacing both the question and the
+complete positive/negative answer frames. On 16 HuatuoGPT-Vision development
+patients, the original style signature retained positive mean alignment with
+the `demonstrates` frame (cosine `0.570`, patient-bootstrap 95% CI
+`[0.014, 0.746]`) and with the equal-length `evidence present/absent` frame
+(`0.456`, `[0.051, 0.619]`). Thus the residual is not entirely explained by
+the original two-token negation-length difference.
+
+The stronger identification test failed. Cross-template held-patient style
+identification was `17.7%` and `21.9%` against `16.7%` chance
+(`p=0.379/0.058`), and both identity-versus-best-mismatch margins were
+negative. The pre-registered template-invariance gate therefore failed and
+the unmodified Qwen checkpoint was not run. This narrows the result to a weak
+template-robust susceptibility direction, not a uniquely indexed
+style-conditioned clinical prior.
+
+Evidence:
+`corrected_runs/style_prior_template_probe_v1/`.
