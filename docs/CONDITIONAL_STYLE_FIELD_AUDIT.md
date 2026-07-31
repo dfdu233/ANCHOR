@@ -345,5 +345,14 @@ the unmodified Qwen checkpoint was not run. This narrows the result to a weak
 template-robust susceptibility direction, not a uniquely indexed
 style-conditioned clinical prior.
 
+A post-hoc frozen-reference sensitivity used all 64 old original-template
+cases to form patient-LOO style directions. The matched-minus-mismatched
+cosine margin was `0.142` on the paired original subset (95% CI
+`[0.045,0.242]`, permutation `p=.022`), `0.161` for `demonstrates`
+(`[0.025,0.292]`, `p=.003`), and `0.098` for equal-length `evidence`
+(`[-0.006,0.195]`, `p=.054`). Both paired 50%-retention intervals cross zero.
+This requested sensitivity strengthens the evidence for one paraphrase but
+does not rescue template invariance.
+
 Evidence:
 `corrected_runs/style_prior_template_probe_v1/`.

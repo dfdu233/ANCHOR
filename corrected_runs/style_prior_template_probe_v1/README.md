@@ -40,6 +40,24 @@ indexed style-to-clinical-prior map. The result supports, at most, a weak
 template-robust susceptibility direction. It does not establish prior
 switching and does not justify a decoder.
 
+### Frozen-reference sensitivity
+
+After the gate failed, an external audit requested a stricter post-hoc
+sensitivity statistic. Style directions were frozen from all 64 old
+`original`-template cases and evaluated as the patient-balanced matched-style
+cosine minus the mean mismatched-style cosine:
+
+| Target interface | frozen-reference margin | patient-bootstrap 95% CI | blocked-permutation p |
+|---|---:|---:|---:|
+| original (paired 16) | 0.142 | [0.045, 0.242] | 0.022 |
+| demonstrates | 0.161 | [0.025, 0.292] | 0.003 |
+| evidence (equal length) | 0.098 | [-0.006, 0.195] | 0.054 |
+
+The original effect reproduces, and `demonstrates` transfers, but the
+equal-length frame remains borderline. Paired non-inferiority intervals for
+retaining 50% of the original margin cross zero for both alternatives. This
+post-hoc analysis cannot reverse the failed pre-registered gate.
+
 ## Reproduction
 
 ```bash

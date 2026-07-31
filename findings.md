@@ -431,4 +431,10 @@ Evidence:
 - **Decision:** the frozen gate failed, so the base checkpoint was not run.
   The evidence supports weak template-robust susceptibility, not a stable
   style-indexed clinical-prior switch or a mitigation method.
+- **Post-hoc frozen-direction sensitivity:** matched-minus-mismatched margins
+  using the old 64-case reference are `0.142` for original
+  (CI `[0.045,0.242]`, `p=.022`), `0.161` for `demonstrates`
+  (`[0.025,0.292]`, `p=.003`), and `0.098` for equal-length `evidence`
+  (`[-0.006,0.195]`, `p=.054`). Both paired 50%-retention intervals include
+  zero, so this requested sensitivity cannot reverse the gate.
 - **Evidence:** `corrected_runs/style_prior_template_probe_v1/`.

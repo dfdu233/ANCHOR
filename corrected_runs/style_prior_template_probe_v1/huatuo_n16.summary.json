@@ -94,6 +94,37 @@
             "negative": 14.0
           }
         }
+      },
+      "frozen_full_reference_direction_sensitivity": {
+        "patient_balanced_matched_minus_mismatched_cosine": 0.141995778698612,
+        "patient_cluster_bootstrap_95pct": [
+          0.045059223157108946,
+          0.2419360719334791
+        ],
+        "patient_blocked_null_mean": 0.002387685325022672,
+        "patient_blocked_null_95pct": [
+          -0.12342932469154576,
+          0.13487009864166266
+        ],
+        "one_sided_permutation_p": 0.02197802197802198,
+        "case_margins": [
+          0.09370559778439749,
+          0.5430025765554721,
+          -0.03246593969651647,
+          0.28747051070627466,
+          -0.11614289191608813,
+          0.04499464964854924,
+          0.21473970785981877,
+          0.2788781056257962,
+          0.428674547277988,
+          0.2575669033852087,
+          0.17879037913239348,
+          -0.01634130959024115,
+          -0.08393957165587798,
+          -0.11663194685857467,
+          -0.10654558891677468,
+          0.4161767298359661
+        ]
       }
     },
     "demonstrates": {
@@ -482,6 +513,46 @@
           0.234375
         ],
         "one_sided_p": 0.3786213786213786
+      },
+      "posthoc_frozen_reference_sensitivity": {
+        "patient_balanced_matched_minus_mismatched_cosine": 0.16138459377628514,
+        "patient_cluster_bootstrap_95pct": [
+          0.025407674392464302,
+          0.2923920716352476
+        ],
+        "patient_blocked_null_mean": 0.0001654309598151289,
+        "patient_blocked_null_95pct": [
+          -0.1126409478949812,
+          0.11437934739215325
+        ],
+        "one_sided_permutation_p": 0.002997002997002997,
+        "case_margins": [
+          -0.10020559942949571,
+          0.6438174515019258,
+          -0.5339181295065147,
+          -0.06905283041856096,
+          0.08740355647277043,
+          0.12935130099972664,
+          0.3091922674799589,
+          0.08269803522514824,
+          0.3351905285461788,
+          0.4702003118261158,
+          0.2598995760518771,
+          0.008092991133958569,
+          0.1454464323595744,
+          0.04377813111105087,
+          0.39109910497659717,
+          0.3791603720902505
+        ],
+        "half_reference_retention": {
+          "alternative_minus_half_reference": 0.09038670442697914,
+          "patient_cluster_bootstrap_95pct": [
+            -0.03455238380788399,
+            0.19263857692615644
+          ],
+          "bootstrap_positive_fraction": 0.931
+        },
+        "status": "posthoc sensitivity requested after the pre-registered gate failed; cannot reverse the gate decision"
       }
     },
     "original_vs_evidence": {
@@ -752,6 +823,46 @@
           0.22916666666666669
         ],
         "one_sided_p": 0.057942057942057944
+      },
+      "posthoc_frozen_reference_sensitivity": {
+        "patient_balanced_matched_minus_mismatched_cosine": 0.0977764550009627,
+        "patient_cluster_bootstrap_95pct": [
+          -0.005721760488017062,
+          0.194532885552321
+        ],
+        "patient_blocked_null_mean": -0.0029944395543616167,
+        "patient_blocked_null_95pct": [
+          -0.11798644335815064,
+          0.12150116645786516
+        ],
+        "one_sided_permutation_p": 0.053946053946053944,
+        "case_margins": [
+          0.05585570717849342,
+          0.4292510726707026,
+          -0.040813678998345516,
+          -0.11171186929916964,
+          0.34847235618469247,
+          0.2528242326441072,
+          0.4054129998412294,
+          0.10142419333672022,
+          0.12365156636151445,
+          0.09055699513355472,
+          0.03960424746090703,
+          0.15896417314206887,
+          -0.22620326378412003,
+          0.17987004293153933,
+          -0.3004727333776674,
+          0.05773723858917589
+        ],
+        "half_reference_retention": {
+          "alternative_minus_half_reference": 0.026778565651656705,
+          "patient_cluster_bootstrap_95pct": [
+            -0.06058440329216017,
+            0.11860689184091808
+          ],
+          "bootstrap_positive_fraction": 0.699
+        },
+        "status": "posthoc sensitivity requested after the pre-registered gate failed; cannot reverse the gate decision"
       }
     }
   },

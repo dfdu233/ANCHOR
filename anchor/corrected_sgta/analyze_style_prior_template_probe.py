@@ -194,6 +194,144 @@ def held_patient_template_style_identification(
     }
 
 
+def frozen_reference_style_margin(
+    reference: np.ndarray,
+    reference_patients: list[str],
+    target: np.ndarray,
+    target_patients: list[str],
+    repeats: int,
+    seed: int,
+    eps: float = 1e-12,
+) -> dict[str, Any]:
+    """Score target cells against patient-LOO directions frozen in reference."""
+    if reference.shape[1:] != target.shape[1:]:
+        raise ValueError("reference and target style/disease axes do not align")
+    if reference.shape[0] != len(reference_patients):
+        raise ValueError("reference patients do not align")
+    if target.shape[0] != len(target_patients):
+        raise ValueError("target patients do not align")
+    reference_patient_array = np.asarray(reference_patients)
+
+    def margins(field: np.ndarray) -> np.ndarray:
+        values = []
+        for case_index, patient in enumerate(target_patients):
+            eligible = reference_patient_array != patient
+            if not eligible.any():
+                raise ValueError("no patient-disjoint reference prototype")
+            prototypes = reference[eligible].mean(axis=0)
+            prototype_unit = prototypes / (
+                np.linalg.norm(prototypes, axis=1, keepdims=True) + eps
+            )
+            target_unit = field[case_index] / (
+                np.linalg.norm(field[case_index], axis=1, keepdims=True) + eps
+            )
+            cosine = target_unit @ prototype_unit.T
+            matched = float(np.trace(cosine) / cosine.shape[0])
+            mismatched = float(
+                (cosine.sum() - np.trace(cosine))
+                / (cosine.size - cosine.shape[0])
+            )
+            values.append(matched - mismatched)
+        return np.asarray(values, dtype=np.float64)
+
+    case_margins = margins(target)
+    patient_array = np.asarray(target_patients)
+    groups = sorted(set(target_patients))
+    group_rows = {
+        group: np.flatnonzero(patient_array == group) for group in groups
+    }
+    patient_margins = np.asarray(
+        [case_margins[group_rows[group]].mean() for group in groups],
+        dtype=np.float64,
+    )
+    observed = float(patient_margins.mean())
+    rng = np.random.default_rng(seed)
+    bootstrap = [
+        float(
+            rng.choice(
+                patient_margins, size=len(patient_margins), replace=True
+            ).mean()
+        )
+        for _ in range(repeats)
+    ]
+    null = []
+    for _ in range(repeats):
+        permuted = target.copy()
+        for group in groups:
+            permutation = rng.permutation(target.shape[1])
+            permuted[group_rows[group]] = permuted[group_rows[group]][
+                :, permutation
+            ]
+        permuted_margins = margins(permuted)
+        null.append(
+            float(
+                np.mean(
+                    [
+                        permuted_margins[group_rows[group]].mean()
+                        for group in groups
+                    ]
+                )
+            )
+        )
+    null_array = np.asarray(null, dtype=np.float64)
+    return {
+        "patient_balanced_matched_minus_mismatched_cosine": observed,
+        "patient_cluster_bootstrap_95pct": [
+            float(value) for value in np.quantile(bootstrap, [0.025, 0.975])
+        ],
+        "patient_blocked_null_mean": float(null_array.mean()),
+        "patient_blocked_null_95pct": [
+            float(value) for value in np.quantile(null_array, [0.025, 0.975])
+        ],
+        "one_sided_permutation_p": float(
+            (1 + np.sum(null_array >= observed)) / (repeats + 1)
+        ),
+        "case_margins": case_margins.tolist(),
+    }
+
+
+def paired_half_retention(
+    reference_case_margins: list[float],
+    alternative_case_margins: list[float],
+    patients: list[str],
+    repeats: int,
+    seed: int,
+) -> dict[str, Any]:
+    """Test whether an alternative retains half the paired reference margin."""
+    reference = np.asarray(reference_case_margins, dtype=np.float64)
+    alternative = np.asarray(alternative_case_margins, dtype=np.float64)
+    if reference.shape != alternative.shape or len(reference) != len(patients):
+        raise ValueError("paired margin rows do not align")
+    difference = alternative - 0.5 * reference
+    patient_array = np.asarray(patients)
+    groups = sorted(set(patients))
+    patient_values = np.asarray(
+        [
+            difference[patient_array == group].mean()
+            for group in groups
+        ]
+    )
+    observed = float(patient_values.mean())
+    rng = np.random.default_rng(seed)
+    bootstrap = [
+        float(
+            rng.choice(
+                patient_values, size=len(patient_values), replace=True
+            ).mean()
+        )
+        for _ in range(repeats)
+    ]
+    return {
+        "alternative_minus_half_reference": observed,
+        "patient_cluster_bootstrap_95pct": [
+            float(value) for value in np.quantile(bootstrap, [0.025, 0.975])
+        ],
+        "bootstrap_positive_fraction": float(
+            np.mean(np.asarray(bootstrap) > 0)
+        ),
+    }
+
+
 def pair_metrics(
     reference: np.ndarray,
     alternative: np.ndarray,
@@ -257,7 +395,18 @@ def analyze(
     reference_field, reference_removed = joint_nuisance_residual(
         reference, patients
     )
+    full_reference_field, _ = joint_nuisance_residual(
+        reference_evidence, reference_patients
+    )
     fields = {REFERENCE_TEMPLATE: reference_field}
+    frozen_reference = frozen_reference_style_margin(
+        full_reference_field,
+        reference_patients,
+        reference_field,
+        patients,
+        repeats,
+        seed + 2003,
+    )
     within = {
         REFERENCE_TEMPLATE: {
             "joint_nuisance_removed_energy": reference_removed,
@@ -265,6 +414,7 @@ def analyze(
                 reference_field, patients, repeats, seed
             ),
             "metadata": reference_meta,
+            "frozen_full_reference_direction_sensitivity": frozen_reference,
         }
     }
     pairs = {}
@@ -304,6 +454,30 @@ def analyze(
             repeats,
             seed + 101 + offset,
         )
+        frozen_alternative = frozen_reference_style_margin(
+            full_reference_field,
+            reference_patients,
+            field,
+            patients,
+            repeats,
+            seed + 3001 + offset,
+        )
+        pairs[f"{REFERENCE_TEMPLATE}_vs_{template_id}"][
+            "posthoc_frozen_reference_sensitivity"
+        ] = {
+            **frozen_alternative,
+            "half_reference_retention": paired_half_retention(
+                frozen_reference["case_margins"],
+                frozen_alternative["case_margins"],
+                patients,
+                repeats,
+                seed + 4001 + offset,
+            ),
+            "status": (
+                "posthoc sensitivity requested after the pre-registered "
+                "gate failed; cannot reverse the gate decision"
+            ),
+        }
     if len(models) != 1:
         raise ValueError(f"reference and probe models differ: {sorted(models)}")
 
