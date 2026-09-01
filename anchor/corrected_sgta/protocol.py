@@ -11,7 +11,17 @@ from typing import Any, Iterable, Sequence
 
 
 PROTOCOL_VERSION = "medheval-sgta-v5.0"
-IMAGE_ROOT = Path("/root/autodl-tmp/MedHEval/images")
+
+
+def _first_existing(*values: str) -> Path:
+    candidates = [Path(value) for value in values]
+    return next((path for path in candidates if path.exists()), candidates[0])
+
+
+IMAGE_ROOT = _first_existing(
+    "/home/dbw/ANCHOR/data/medheval/images",
+    "/root/autodl-tmp/MedHEval/images",
+)
 IMAGE_SUBDIRS = ("IU-Xray", "Slake", "VQA-RAD")
 
 # A marker is accepted at the beginning or after an option separator.  This
@@ -180,7 +190,9 @@ def build_prompt(sample: dict[str, Any]) -> str:
 
 def resolve_image(name: str, image_root: Path = IMAGE_ROOT) -> Path | None:
     value = str(name or "")
+    direct = Path(value)
     candidates = [
+        direct,
         image_root / value,
         *(image_root / sub / value for sub in IMAGE_SUBDIRS),
     ]

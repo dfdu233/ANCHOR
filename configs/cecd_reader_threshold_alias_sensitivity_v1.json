@@ -1,0 +1,110 @@
+{
+  "schema_version": "cecd-reader-threshold-alias-sensitivity-v1",
+  "frozen_before_formal_ce_outcomes": true,
+  "formal_ce_outcomes_consumed": false,
+  "scientific_role": "post_primary_go_alternative_explanation_control",
+  "primary_ce_gate_modified": false,
+  "execution_policy": {
+    "metadata_and_schema_audit": "before_formal_ce",
+    "score_dependent_analysis": "only_after_locked_primary_cecd_go",
+    "gpu_required": false,
+    "paper_or_mechanism_claim_before_control": false
+  },
+  "closure": {
+    "models": ["huatuo", "hulu"],
+    "findings": [
+      "aortic_enlargement",
+      "cardiomegaly",
+      "pleural_effusion",
+      "pulmonary_fibrosis"
+    ],
+    "reader_panel": ["R8", "R9", "R10"],
+    "stages": ["dev_fit", "confirmation_locked"],
+    "dev_per_finding_vote_bin": 20,
+    "confirmation_per_finding_vote_bin": 60,
+    "confirmation_refit": false,
+    "join_key": ["image_id", "finding"],
+    "reader_identity_source": "named_reader_votes_from_hash_bound_manifest_only",
+    "positional_reader_vote_lists_allowed": false
+  },
+  "estimands": {
+    "threshold_free_product_existence": {
+      "quantity": "raw_fp32_interaction_rms_and_identity_normalized_interaction_rms",
+      "reader_labels_used": false,
+      "purpose": "separate existence of a product interaction from its clinical orientation"
+    },
+    "continuous_panel_support": {
+      "target": "q=(R8+R9+R10)/3",
+      "calibrators": [
+        "dev_only_fractional_logistic_by_model_finding",
+        "dev_only_isotonic_by_model_finding"
+      ],
+      "confirmation_quantity": "mean[proper_loss(q,g(m_actual))-proper_loss(q,g(m_additive))]",
+      "proper_losses": ["bernoulli_cross_entropy_with_fractional_target", "brier"],
+      "m_additive": "m_actual-two_way_centered_interaction",
+      "positive_direction": "product_interaction_increases_reader_support_loss"
+    },
+    "leave_one_reader_out": {
+      "targets": ["q_without_R8", "q_without_R9", "q_without_R10"],
+      "target_values": [0.0, 0.5, 1.0],
+      "fit": "each calibrator fit on dev without the omitted reader and applied once to confirmation",
+      "inference_scope": "fixed_panel_sensitivity_not_reader_population_inference"
+    },
+    "cumulative_threshold_sweep": {
+      "targets": ["1[votes>=1]", "1[votes>=2]", "1[votes>=3]"],
+      "fit": "three dev_only calibrators_applied_once_to_confirmation",
+      "purpose": "test whether clinical orientation exists only under unanimity or majority discretization"
+    },
+    "exact_reader_pattern_absorption": {
+      "baseline": "clean_score+both_marginals+generic_stability+behavioral_synergy+vote_count+named_reader_pattern_by_model_finding",
+      "increment": "harmful_and_absolute_product_interaction",
+      "purpose": "test CECD increment after the strongest available fixed-panel identity control",
+      "reuse": "reader_threshold_aliasing_control_v1_design_only"
+    }
+  },
+  "inference": {
+    "primary_cluster_unit": "whole_image_id",
+    "models_resampled_synchronously": true,
+    "findings_within_image_kept_together": true,
+    "confirmation_bootstrap_draws": 5000,
+    "confirmation_bootstrap": "paired_whole_image_with_frozen_dev_fit",
+    "dev_fit_uncertainty_audit_draws": 1000,
+    "dev_fit_uncertainty_audit": "nested_dev_image_refit_plus_paired_confirmation_image_resample",
+    "reader_bootstrap": false,
+    "reader_bootstrap_reason": "three fixed readers do not identify a reader-population sampling distribution",
+    "patient_cluster_available": false,
+    "claim_scope_when_patient_mapping_absent": "radiograph_level_not_patient_level"
+  },
+  "falsification": {
+    "alias_robust_clinical_product_claim_requires": [
+      "continuous_panel_support_product_loss_increase_ci_low_above_zero_for_both_models_under_both_calibrators",
+      "leave_one_reader_out_pooled_ci_low_above_zero_and_same_positive_point_direction_for_all_six_model_by_omitted_reader_cells",
+      "cumulative_threshold_point_direction_positive_for_all_thresholds_and_models_with_at_least_two_of_three_ci_lows_above_zero_per_model",
+      "exact_reader_pattern_adjusted_product_increment_ci_low_above_zero_for_both_models"
+    ],
+    "failure_action": "retain_raw_product_instability_if_present_but_terminate_reader_grounded_product_specific_mechanism_claim",
+    "thresholds_may_change_primary_ce_gate": false,
+    "post_hoc_variant_selection_allowed": false
+  },
+  "bindings": {
+    "reader_manifest": {
+      "path": "/home/dbw/datasets/physionet/vindr-cxr/1.0.0/manifests_v2/reader_vote_manifest_v2.jsonl",
+      "sha256": "23dec244bf231fe767bb88babbce2451caec4b2b0f1fb92a4c503e8d4c5254fa"
+    },
+    "cecd_runner_source": {
+      "path": "anchor/corrected_sgta/run_cecd_factorial_v1.py",
+      "sha256": "b4b935443814e9ad05af349181d6e99100d3dc46871f90d99b40b4bfe1a40dec"
+    },
+    "cecd_analyzer_source": {
+      "path": "anchor/corrected_sgta/analyze_clinical_equivalence_composition_defect_v1.py",
+      "sha256": "f516b2cce9ab386174ac4ea66ee7e005b51fefa0c816f10de5672f78690db11c"
+    },
+    "reader_alias_design_source": {
+      "path": "anchor/corrected_sgta/analyze_reader_threshold_aliasing_v1.py",
+      "sha256": "840e42f5fc7fa9d9ff8b98de1f08aec25e9c16e41118ee443bfbc3c75abb64d7"
+    },
+    "dev_factorial_rows": null,
+    "confirmation_factorial_rows": null
+  },
+  "current_status": "outcome_blind_contract_frozen_waiting_primary_ce_inputs"
+}

@@ -1,0 +1,15 @@
+name: mmedrag_mimic_report
+kind: report_generation
+dataset_path: /home/dbw/ANCHOR/data/mmedrag/test/report/mimic_test.json
+image_root: /home/dbw/ANCHOR/data/medheval/images
+evaluator: report_claims
+prompt_template: >-
+  You are a professional radiologist. Generate a concise findings and impression
+  report for the image. State uncertainty when the image is insufficient; do not
+  invent history, comparison, laboratory, or treatment information.
+sample_id_field: id
+image_field: image_path
+question_field: question
+reference_field: report
+cluster_field: subject_id
+version: "common-v1"

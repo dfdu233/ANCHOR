@@ -1,0 +1,18 @@
+{
+  "schema_version": "cecd-system-pih-native-eager-canary-disposition-v1",
+  "job": "cecd-system-pih-native-eager-canaries-v2-binding-checked",
+  "frozen_handoff_sha256": "0acb586caaed02c67bf2c590ac3c7512bb66c0cb726feb24b44e15d55c41a6d2",
+  "pre_lock_bindings_verified": true,
+  "post_lock_bindings_verified": true,
+  "huatuo_artifact": {
+    "path": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/huatuo_native_eager_canary_v2_query_chunked.json",
+    "sha256": "ae2d100b2837cf51ede1e4e4533b94de4a050310b13840138d73a0d2dae1b2a2",
+    "bytes": 2421,
+    "argmax_equal": true,
+    "max_absolute_error": 0.125,
+    "tolerance_passed": false
+  },
+  "hulu_executed": false,
+  "scientific_authority": false,
+  "disposition": "failed_huatuo_query_chunk_rounding; superseded_by_v3"
+}

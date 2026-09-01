@@ -16,9 +16,15 @@ from llava.mm_utils import tokenizer_image_token, get_model_name_from_path, Keyw
 
 from llava.model.moe_llava import LoRA_MOE_FFN, LoRA_MOE_QK, LoRA_MOE_QK_old
 
-from PIL import Image
+from PIL import Image, ImageFile, UnidentifiedImageError
+
+# Shared MedHEval input contract: tolerate JPEGs missing terminal bytes while
+# still failing on empty or unidentifiable files.
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 import math
 from transformers import set_seed, logging
+from corrected_sgta.visual_token_ranges import expanded_visual_range
+from corrected_sgta.generation_trace import classify_generated_tokens
 
 logging.set_verbosity_error()
 
@@ -38,6 +44,52 @@ def generation_budget(args, official_default):
     return official_default if args.max_new_tokens is None else args.max_new_tokens
 
 
+def deterministic_process_images(images, image_processor, model_cfg):
+    """Match the canonical adapter without upstream random one-pixel padding."""
+
+    processed = []
+    pad = getattr(model_cfg, "image_aspect_ratio", None) == "pad"
+    mean = tuple(int(value * 255) for value in image_processor.image_mean)
+    for source in images:
+        image = source.convert("RGB")
+        if pad and image.width != image.height:
+            side = max(image.size)
+            canvas = Image.new("RGB", (side, side), mean)
+            canvas.paste(
+                image,
+                ((side - image.width) // 2, (side - image.height) // 2),
+            )
+            image = canvas
+        processed.append(
+            image_processor.preprocess(image, return_tensors="pt")["pixel_values"][0]
+        )
+    if all(item.shape == processed[0].shape for item in processed):
+        return torch.stack(processed, dim=0)
+    return processed
+
+
+def generated_suffix_ids(sequences, tokenizer):
+    """Remove generation-only boundary specials from a decoded suffix."""
+
+    return classify_generated_tokens(
+        sequences[0].tolist(),
+        bos_token_id=tokenizer.bos_token_id,
+        eos_token_id=tokenizer.eos_token_id,
+        pad_token_id=tokenizer.pad_token_id,
+        max_new_tokens=None,
+    )["generated_token_ids"]
+
+
+def image_key_position(input_ids, model):
+    vision_tower = model.get_vision_tower()
+    num_image_tokens = int(getattr(vision_tower, "num_patches", 0))
+    return expanded_visual_range(
+        input_ids,
+        image_token_index=IMAGE_TOKEN_INDEX,
+        num_image_tokens=num_image_tokens,
+    )
+
+
 def eval_model(args):
     set_seed(args.seed)
     # Model
@@ -54,7 +106,10 @@ def eval_model(args):
     elif args.baseline == "avisc" or args.baseline == "m3id" or args.baseline == "damro":
         print(f"use and set {args.baseline} sampling")
         from avisc_utils.vcd_add_noise import add_diffusion_noise
-        from avisc_utils.avisc_sample import evolve_avisc_sampling
+        if args.baseline == "avisc":
+            from corrected_sgta.avisc_sample_dynamic import evolve_avisc_sampling
+        else:
+            from avisc_utils.avisc_sample import evolve_avisc_sampling
         evolve_avisc_sampling()
     
 
@@ -153,8 +208,9 @@ def eval_model(args):
             alpha=0.2,
             use_attn=True,
             use_cfg=True,
-            img_start_idx=34,
-            img_end_idx=34+576
+            # The true range is installed per sample after tokenization.
+            img_start_idx=0,
+            img_end_idx=0
         )
 
     # questions = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
@@ -172,12 +228,16 @@ def eval_model(args):
             qs = question['value']
         else:
             question = line['question']
-            gt_ans = line['answer']
+            # Formal generation manifests are label-redacted.  References are
+            # joined only by the downstream evaluator and must not be required
+            # or copied into raw generation artifacts.
+            gt_ans = line.get('answer')
             qs = question
-            if 'choices' in line and len(line['choices']) > 10:
-                qs += " Please choose from the following options: " + line['choices']
-            if 'question_type' in line and line['question_type'] == 'binary':
-                qs += " Please answer Yes or No."
+            if line.get("prompt_contract") != "anchor-ce-v1":
+                if 'choices' in line and len(line['choices']) > 10:
+                    qs += " Please choose from the following options: " + line['choices']
+                if 'question_type' in line and line['question_type'] == 'binary':
+                    qs += " Please answer Yes or No."
 
         if "qid" in line:
             idx = line["qid"]
@@ -206,26 +266,49 @@ def eval_model(args):
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
         input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda()
+        attention_mask = torch.ones_like(input_ids, dtype=torch.long)
+        visual_range = image_key_position(input_ids, model)
 
-        image = Image.open(os.path.join(args.image_folder, image_file))
-        image_tensor = process_images([image], image_processor, model.config)[0]
+        try:
+            image = Image.open(os.path.join(args.image_folder, image_file)).convert("RGB")
+        except (UnidentifiedImageError, OSError) as exc:
+            answer_record = {
+                "question_id": idx,
+                "prompt": cur_prompt,
+                "text": "",
+                "model_id": model_name,
+                "metadata": {
+                    "generated_token_ids": [],
+                    "raw_generated_token_ids": [],
+                    "raw_generated_token_count": 0,
+                    "decoded_sequence_token_count": 0,
+                    "stop_reason": "input_unavailable",
+                    "input_error": f"{type(exc).__name__}: {exc}",
+                    "keyword_stopping_enabled": not args.disable_keyword_stopping,
+                },
+            }
+            if gt_ans is not None:
+                answer_record["gt_ans"] = gt_ans
+            ans_file.write(json.dumps(answer_record) + "\n")
+            ans_file.flush()
+            continue
+        image_tensor = deterministic_process_images([image], image_processor, model.config)[0]
 
         stop_str = conv.sep if conv.sep_style != SeparatorStyle.TWO else conv.sep2
         keywords = [stop_str]
         stopping_criteria = KeywordsStoppingCriteria(keywords, tokenizer, input_ids)
+        stopping_criteria_arg = [] if args.disable_keyword_stopping else [stopping_criteria]
 
 
         if args.baseline == "opera":
-            key_position = {
-                "image_start": 34, 
-                "image_end": 34+576,
-                "response_start": input_ids.shape[1] + 576
-            }
+            key_position = image_key_position(input_ids, model)
             # print("use opera")
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     num_beams=5,
                     do_sample=False,
                     max_new_tokens=generation_budget(args, 128),
@@ -236,15 +319,21 @@ def eval_model(args):
                     threshold=25,
                     num_attn_candidates=5,
                     penalty_weights=1,
-                    stopping_criteria=[stopping_criteria])
+                    stopping_criteria=stopping_criteria_arg)
         elif args.baseline == "PAI":
+            for layer_index in range(2, 32):
+                attention = model.model.layers[layer_index].self_attn
+                attention.img_start_idx = visual_range["image_start"]
+                attention.img_end_idx = visual_range["image_end"] + 1
             logits_processor = (
                     init_cfg_processor(tokenizer=tokenizer, llm_model=model, questions=[cur_prompt], gamma=1.1, beam=1, start_layer=2, end_layer=32)
                 )
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     use_cache=True,
                     do_sample=False,
                     num_beams=1,
@@ -252,7 +341,7 @@ def eval_model(args):
                     output_attentions=False,
                     output_hidden_states=False,
                     logits_processor=LogitsProcessorList([logits_processor]),
-                    stopping_criteria=[stopping_criteria])     
+                    stopping_criteria=stopping_criteria_arg)
         
         elif args.baseline == "VCD":
             # print("use VCD")
@@ -262,7 +351,9 @@ def eval_model(args):
             with torch.inference_mode():
                 output_ids = model.generate(
                         input_ids,
+                        attention_mask=attention_mask,
                         images=image_tensor.unsqueeze(0).half().cuda(),
+                        image_sizes=[image.size],
                         images_cd=(image_tensor_cd.unsqueeze(0).half().cuda() if image_tensor_cd is not None else None),
                         cd_alpha = 1, #args.cd_alpha,
                         cd_beta = 0.1, #args.cd_beta,
@@ -271,7 +362,7 @@ def eval_model(args):
                         temperature=1,
                         output_attentions=False,
                         output_hidden_states=False,
-                        stopping_criteria=[stopping_criteria]
+                        stopping_criteria=stopping_criteria_arg
                         )
         elif args.baseline == "avisc":
             use_cd = False
@@ -282,7 +373,9 @@ def eval_model(args):
             with torch.inference_mode():
                 output_ids = model.generate(
                         input_ids,
+                        attention_mask=attention_mask,
                         images=image_tensor.unsqueeze(0).half().cuda(),
+                        image_sizes=[image.size],
                         images_cd=(image_tensor_cd.half().cuda() if image_tensor_cd is not None else None),
                         cd_alpha=1.0,
                         cd_beta=0.1,
@@ -296,13 +389,18 @@ def eval_model(args):
                         masking_scheme="zeros",
                         lamb=1.0,
                         temp=1.0,
-                        stopping_criteria=[stopping_criteria]
+                        model_name="llava",
+                        avisc_image_start=image_key_position(input_ids, model)["image_start"],
+                        avisc_num_image_tokens=image_key_position(input_ids, model)["num_image_tokens"],
+                        stopping_criteria=stopping_criteria_arg
                     )    
         elif args.baseline == "m3id":
             with torch.inference_mode():
                 output_ids = model.generate(
                         input_ids,
+                        attention_mask=attention_mask,
                         images=image_tensor.unsqueeze(0).half().cuda(),
+                        image_sizes=[image.size],
                         images_cd=None,
                         cd_alpha=1.0,
                         cd_beta=0.1,
@@ -315,7 +413,9 @@ def eval_model(args):
                         use_m3id=True,
                         layer_gamma=0.5,
                         lamb=1.0,
-                        stopping_criteria=[stopping_criteria]
+                        avisc_image_start=visual_range["image_start"],
+                        avisc_num_image_tokens=visual_range["num_image_tokens"],
+                        stopping_criteria=stopping_criteria_arg
                     )    
         elif args.baseline == "DoLa":
             with torch.no_grad():
@@ -323,19 +423,23 @@ def eval_model(args):
                 mature_layer = early_exit_layers[-1]
                 premature_layer = None
                 candidate_premature_layers = early_exit_layers[:-1]
-                output_ids = model.generate(input_ids, 
+                output_ids = model.generate(input_ids,
+                                            attention_mask=attention_mask,
                                             images=image_tensor.unsqueeze(0).half().cuda(),
+                                            image_sizes=[image.size],
                                             max_new_tokens=generation_budget(args, 1024),
                                             dola_decoding=True,
                                             top_p=0.95, top_k=0, temperature=0.9, 
-                                            stopping_criteria=[stopping_criteria], relative_top=0.1, 
+                                            stopping_criteria=stopping_criteria_arg, relative_top=0.1,
                                             mature_layer=mature_layer, premature_layer=None, candidate_premature_layers=candidate_premature_layers,
                                             )
         elif args.baseline == "damro":
             with torch.inference_mode():
                 output_ids = model.generate(
                         input_ids,
+                        attention_mask=attention_mask,
                         images=image_tensor.unsqueeze(0).half().cuda(),
+                        image_sizes=[image.size],
                         images_cd=None,
                         cd_alpha=0.5,
                         cd_beta=0.1,
@@ -350,42 +454,97 @@ def eval_model(args):
                         masking_scheme="zeros",
                         lamb=1.0,
                         temp=1.0,
-                        stopping_criteria=[stopping_criteria]
+                        avisc_image_start=visual_range["image_start"],
+                        avisc_num_image_tokens=visual_range["num_image_tokens"],
+                        stopping_criteria=stopping_criteria_arg
                     )    
+        elif args.baseline in {
+            "VISTA", "VISTA_off", "VISTA_VSV", "VISTA_SLA"
+        }:
+            from corrected_sgta.vista_adapter import VistaRuntimeAdapter
+
+            vista_enabled = args.baseline != "VISTA_off"
+            vista_vsv_enabled = args.baseline in {"VISTA", "VISTA_VSV"}
+            vista_sla_enabled = args.baseline in {"VISTA", "VISTA_SLA"}
+            negative_input_ids = input_ids[
+                input_ids.ne(IMAGE_TOKEN_INDEX)
+            ].reshape(input_ids.shape[0], -1)
+            negative_kwargs = {
+                "input_ids": negative_input_ids,
+                "attention_mask": torch.ones_like(negative_input_ids),
+                "images": None,
+            }
+            positive_kwargs = {
+                "input_ids": input_ids,
+                "attention_mask": attention_mask,
+                "images": image_tensor.unsqueeze(0).half().cuda(),
+                "image_sizes": [image.size],
+            }
+            with VistaRuntimeAdapter(
+                model=model,
+                enabled=vista_enabled,
+                enable_vsv=vista_vsv_enabled,
+                enable_sla=vista_sla_enabled,
+                negative_kwargs=negative_kwargs,
+                positive_kwargs=positive_kwargs,
+                vsv_lambda=args.vista_vsv_lambda,
+                vsv_layers=args.vista_vsv_layers,
+                logits_layers=args.vista_logits_layers,
+                logits_alpha=args.vista_logits_alpha,
+            ):
+                with torch.inference_mode():
+                    output_ids = model.generate(
+                        input_ids,
+                        attention_mask=attention_mask,
+                        images=image_tensor.unsqueeze(0).half().cuda(),
+                        image_sizes=[image.size],
+                        do_sample=False,
+                        num_beams=1,
+                        max_new_tokens=generation_budget(args, 1024),
+                        stopping_criteria=stopping_criteria_arg,
+                    )
         elif args.baseline == "beam":
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     do_sample=False,
                     num_beams=5,
                     max_new_tokens=generation_budget(args, 1024),
-                    stopping_criteria=[stopping_criteria])
+                    stopping_criteria=stopping_criteria_arg)
         elif args.baseline == "greedy":
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     do_sample=False,
                     num_beams=1,
                     max_new_tokens=generation_budget(args, 1024),
-                    stopping_criteria=[stopping_criteria])
+                    stopping_criteria=stopping_criteria_arg)
         elif args.baseline == "nucleus":
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     do_sample=True,
                     top_p=0.9,                 # Cumulative probability threshold
                     top_k=0,                   # Optional; setting to 0 disables top-k filtering
                     max_new_tokens=generation_budget(args, 1024),
-                    stopping_criteria=[stopping_criteria])
+                    stopping_criteria=stopping_criteria_arg)
         else:
 
             with torch.inference_mode():
                 output_ids = model.generate(
                     input_ids,
+                    attention_mask=attention_mask,
                     images=image_tensor.unsqueeze(0).half().cuda(),
+                    image_sizes=[image.size],
                     do_sample=True if args.temperature > 0 else False,
                     temperature=args.temperature,
                     # do_sample=False,
@@ -397,16 +556,47 @@ def eval_model(args):
                     # stopping_criteria=stopping_criteria,
                     use_cache=True)
 
-        outputs = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
+        sequences = output_ids.sequences if hasattr(output_ids, "sequences") else output_ids
+        raw_sequence_length = int(sequences.shape[1])
+        prompt_prefix_in_sequence = False
+        if (
+            sequences.ndim == 2
+            and sequences.shape[1] > input_ids.shape[1]
+            and torch.equal(sequences[:, : input_ids.shape[1]], input_ids)
+        ):
+            prompt_prefix_in_sequence = True
+            sequences = sequences[:, input_ids.shape[1] :]
+        generation_trace = classify_generated_tokens(
+            sequences[0].tolist(),
+            bos_token_id=tokenizer.bos_token_id,
+            eos_token_id=tokenizer.eos_token_id,
+            pad_token_id=tokenizer.pad_token_id,
+            max_new_tokens=args.max_new_tokens,
+        )
+        generated_ids = generation_trace["generated_token_ids"]
+        outputs = tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
 
         # ans_id = shortuuid.uuid()
-        ans_file.write(json.dumps({"question_id": idx,
-                                   "prompt": cur_prompt,
-                                   "text": outputs,
-                                   "gt_ans": gt_ans,
-                                #    "answer_id": ans_id,
-                                   "model_id": model_name,
-                                   "metadata": {}}) + "\n")
+        answer_record = {"question_id": idx,
+                         "prompt": cur_prompt,
+                         "text": outputs,
+                         # "answer_id": ans_id,
+                         "model_id": model_name,
+                         "metadata": {
+                             "input_token_count": int(input_ids.shape[1]),
+                             "raw_sequence_token_count": raw_sequence_length,
+                             "decoded_sequence_token_count": len(generated_ids),
+                             "generated_token_ids": generated_ids,
+                             "raw_generated_token_ids": generation_trace["raw_generated_token_ids"],
+                             "raw_generated_token_count": generation_trace["raw_generated_token_count"],
+                             "terminal_token_ids": generation_trace["terminal_token_ids"],
+                             "stop_reason": generation_trace["stop_reason"],
+                             "prompt_prefix_in_sequence": prompt_prefix_in_sequence,
+                             "keyword_stopping_enabled": not args.disable_keyword_stopping,
+                         }}
+        if gt_ans is not None:
+            answer_record["gt_ans"] = gt_ans
+        ans_file.write(json.dumps(answer_record) + "\n")
         ans_file.flush()
     ans_file.close()
 
@@ -433,6 +623,11 @@ if __name__ == "__main__":
     parser.add_argument("--baseline", type=str, default=None)
     parser.add_argument("--top_moe_num", type=int, default=1)
     parser.add_argument("--max-new-tokens", type=int, default=None)
+    parser.add_argument("--disable-keyword-stopping", action="store_true")
+    parser.add_argument("--vista-vsv-lambda", type=float, default=0.01)
+    parser.add_argument("--vista-vsv-layers", type=str, default=None)
+    parser.add_argument("--vista-logits-layers", type=str, default="25,30")
+    parser.add_argument("--vista-logits-alpha", type=float, default=0.3)
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()
 

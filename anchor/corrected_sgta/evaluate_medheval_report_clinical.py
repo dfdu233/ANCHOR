@@ -92,7 +92,10 @@ def load_pairs(path: Path, maximum: int = 0) -> list[dict[str, str]]:
         identifier = str(
             raw.get("item_id", raw.get("qid", raw.get("question_id", index)))
         ).strip()
-        if not identifier or not reference or not hypothesis:
+        patient_id = str(raw.get("patient_id") or raw.get("subject_id") or raw.get("study_id") or identifier).strip()
+        # Empty hypotheses are valid model failures and must remain in the
+        # denominator.  Only the identifier and frozen reference are required.
+        if not identifier or not reference:
             raise ValueError(f"invalid report pair at JSONL line {index + 1}")
         if identifier in seen:
             raise ValueError(f"duplicate report identifier: {identifier}")
@@ -100,11 +103,13 @@ def load_pairs(path: Path, maximum: int = 0) -> list[dict[str, str]]:
         rows.append(
             {
                 "item_id": identifier,
+                "patient_id": patient_id,
                 "ground_truth": reference,
                 "model_answer": hypothesis,
                 "pair_sha256": stable_json_sha256(
                     {
                         "item_id": identifier,
+                        "patient_id": patient_id,
                         "ground_truth": reference,
                         "model_answer": hypothesis,
                     }
@@ -195,6 +200,46 @@ def summarize_records(records: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         ):
             raise ValueError(f"non-finite/out-of-range aggregate metric: {name}")
     return output
+
+
+def bootstrap_records(
+    records: Sequence[Mapping[str, Any]], replicates: int, seed: int
+) -> dict[str, Any]:
+    """Patient-cluster bootstrap over already computed per-report metrics."""
+    clusters: dict[str, list[int]] = {}
+    for index, row in enumerate(records):
+        clusters.setdefault(str(row["patient_id"]), []).append(index)
+    keys = sorted(clusters)
+    rng = np.random.default_rng(seed)
+    names = (
+        "radgraph_simple",
+        "radgraph_partial",
+        "radgraph_complete",
+        "ratescore",
+        "chexbert_example_f1_14",
+        "chexbert_exact_match_5",
+        "chexbert_macro_f1_14",
+        "chexbert_micro_f1_14",
+    )
+    draws = {name: np.empty(replicates, dtype=np.float64) for name in names}
+    point = summarize_records(records)
+    for replicate in range(replicates):
+        selected = rng.integers(0, len(keys), size=len(keys))
+        indices = [index for cluster_index in selected for index in clusters[keys[int(cluster_index)]]]
+        summary = summarize_records([records[index] for index in indices])
+        for name in names:
+            draws[name][replicate] = float(summary[name])
+    return {
+        name: {
+            "estimate": float(point[name]),
+            "ci95_lower": float(np.quantile(draws[name], 0.025)),
+            "ci95_upper": float(np.quantile(draws[name], 0.975)),
+            "clusters": len(keys),
+            "replicates": replicates,
+            "seed": seed,
+        }
+        for name in names
+    }
 
 
 def summarize_directions(
@@ -451,12 +496,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--validate-directions", action="store_true")
     parser.add_argument("--min-direction-pairs", type=int, default=100)
+    parser.add_argument("--bootstrap-replicates", type=int, default=5000)
+    parser.add_argument("--bootstrap-seed", type=int, default=42)
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    if args.batch_size <= 0 or args.max_pairs < 0:
+    if args.batch_size <= 0 or args.max_pairs < 0 or args.bootstrap_replicates <= 0:
         raise ValueError("batch-size must be positive and max-pairs nonnegative")
     if not args.input.is_file() or not args.metric_manifest.is_file():
         raise FileNotFoundError("input or metric manifest is missing")
@@ -481,6 +528,8 @@ def main() -> None:
         "max_pairs": args.max_pairs,
         "validate_directions": args.validate_directions,
         "min_direction_pairs": args.min_direction_pairs,
+        "bootstrap_replicates": args.bootstrap_replicates,
+        "bootstrap_seed": args.bootstrap_seed,
         "code_sha256": file_sha256(Path(__file__)),
         "preprocessing": "strip_only; no section removal, truncation, or lowercasing",
         "device": "cpu",
@@ -597,6 +646,7 @@ def main() -> None:
         "metric_manifest_sha256": config["metric_manifest_sha256"],
         "checkpoint_sha256": checkpoints["sha256"],
         "metrics": summarize_records(ordered),
+        "bootstrap_ci95": bootstrap_records(ordered, args.bootstrap_replicates, args.bootstrap_seed),
         "direction_validation": direction_summary,
         "all_scores_finite": True,
     }

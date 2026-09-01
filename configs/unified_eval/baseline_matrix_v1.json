@@ -1,0 +1,53 @@
+{
+  "protocol": "medical-vlm-baseline-matrix-v1",
+  "frozen_at": "2026-08-08",
+  "seed": 42,
+  "chunk_size": 64,
+  "generation": {
+    "ce_max_new_tokens": 128,
+    "oe_max_new_tokens": 256,
+    "report_max_new_tokens": 256,
+    "stop": "native_eos_only",
+    "beam_num_beams": 4
+  },
+  "prompt_contract": {
+    "binary_ce": "source question followed by: Answer with exactly one of: Yes, No, Uncertain.",
+    "multiple_choice_ce": "source question, source choices, then: Answer with the option only.",
+    "short_answer_ce": "source question followed by: Answer with a concise answer; scored by normalized exact match.",
+    "oe_and_report": "exact frozen source prompt"
+  },
+  "models": [
+    {"id": "huatuo", "checkpoint": "/home/dbw/models/HuatuoGPT-Vision-7B", "track": "main"},
+    {"id": "hulu", "checkpoint": "/home/dbw/models/Hulu-Med-4B", "track": "main"},
+    {"id": "llava", "checkpoint": "/home/dbw/models/LLaVA-Med-v1.5-mistral-7b", "track": "main"},
+    {"id": "qwen", "checkpoint": "/home/dbw/models/Qwen2.5-VL-7B-Instruct", "track": "main_control"},
+    {"id": "llava15", "checkpoint": "/home/dbw/models/llava-v1.5-7b", "track": "trained_only"}
+  ],
+  "datasets": [
+    {"id": "cxr_vishal", "rows": 5587, "task": "mixed_ce"},
+    {"id": "knowledge_mimic_ce", "rows": 2000, "task": "mixed_ce"},
+    {"id": "slake_fine_grained", "rows": 1536, "task": "mixed_ce"},
+    {"id": "vqa_rad_official_oe", "rows": 200, "task": "open_vqa"},
+    {"id": "visual_mimic_oe", "rows": 490, "task": "open_vqa"},
+    {"id": "iu_xray_report", "rows": 590, "task": "report_generation"},
+    {"id": "mimic_cxr_report", "rows": 694, "task": "report_generation"}
+  ],
+  "common_methods": ["greedy", "beam", "VCD", "DoLa", "OPERA", "PAI", "AvisC", "VISTA", "SECOND", "shared_medical_rag"],
+  "trained_methods": ["base", "HA-DPO", "OPA-DPO", "DA-DPO", "SENTINEL", "Less-is-More", "FactMM-generator", "VHR"],
+  "diagnostic_na": {
+    "M3ID": "no verifiable official method implementation",
+    "DAMRO": "no verifiable official method implementation",
+    "AGLA": "official method repository has no usable method-code license",
+    "ClearSight": "official method repository has no usable method-code license",
+    "RULE": "released inference preference checkpoint is unavailable",
+    "MMed-RAG": "complete released retrieval checkpoint/inference path is unavailable",
+    "FactMM-RAG": "official retriever checkpoint and complete native corpus are unavailable"
+  },
+  "qualification": {
+    "T0": "official formula/source/default/license/checkpoint/task audit",
+    "T1": "method-off equals native greedy for all 32 generated token sequences",
+    "T2": "official supported path equals official entry for all 32 sequences; faithful ports activate and change at least 1 of 32",
+    "quality": {"nonempty_rate_min": 0.95, "parse_rate_min": 0.95, "function_fragment_rate_max": 0.01, "cap_hit_rate_max": 0.05},
+    "failure_policy": "fail closed as N/A; never relax method semantics or thresholds"
+  }
+}

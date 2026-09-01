@@ -1,0 +1,96 @@
+{
+  "schema_version": "cecd-system-pih-native-eager-canary-handoff-v1",
+  "status": "superseded_after_huatuo_pass_hulu_full_attention_oom",
+  "authorization": {
+    "auto_launch": false,
+    "gpu_touched_during_handoff": false,
+    "model_loaded_during_handoff": false,
+    "canary_run_during_handoff": false,
+    "explicit_launch_environment": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v1"
+  },
+  "scheduling": {
+    "shared_gpu_lock": "/home/dbw/ANCHOR/corrected_runs/detached_jobs/locks/gpu0-vindr-v2.lock",
+    "lock_mode": "blocking_exclusive_fd8",
+    "wait_condition": "current unified evaluation releases the shared GPU-0 lock",
+    "execution_order": [
+      "huatuo",
+      "hulu"
+    ],
+    "parallel_model_loading": false,
+    "fail_closed_on_existing_write_once_output": true
+  },
+  "runtime_environments": {
+    "huatuo": {
+      "interpreter": "/opt/miniconda3/envs/huatuo/bin/python",
+      "sys_prefix": "/opt/miniconda3/envs/huatuo",
+      "pythonpath": "/home/dbw/ANCHOR:/home/dbw/HuatuoGPT-Vision",
+      "torch_version": "2.0.1+cu117",
+      "transformers_version": "4.37.2",
+      "import_preflight": "passed_without_adapter_instantiation"
+    },
+    "hulu": {
+      "interpreter": "/home/dbw/.venvs/hulumed/bin/python",
+      "sys_prefix": "/home/dbw/.venvs/hulumed",
+      "pythonpath": "/home/dbw/ANCHOR",
+      "torch_version": "2.4.0+cu118",
+      "transformers_version": "4.51.2",
+      "huatuo_source_root_visible": false,
+      "import_preflight": "passed_without_adapter_instantiation"
+    }
+  },
+  "frozen_input": {
+    "record_key": "vindr_train_canary_d925309691e7929d",
+    "finding": "aortic_enlargement",
+    "image_path": "/workspace/vinbigdata/train/d925309691e7929d905eaa42f081833f.dicom",
+    "image_sha256": "2893814198d6126656311fe55c08515a86eeb1917535ba273e11d5429a18bec5",
+    "image_bytes": 15606266,
+    "prompt": "Does this chest X-ray show aortic enlargement? Answer with exactly one word: Yes, No, or Maybe.",
+    "prompt_sha256": "70bf1620f6c79ccd2c007f56b4d47cc4f4c68baa993054e59e0381edf8c7db20"
+  },
+  "factories": {
+    "huatuo": {
+      "model_factory": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_model_factory",
+      "input_factory": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/huatuo_native_eager_canary_v1.json"
+    },
+    "hulu": {
+      "model_factory": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_model_factory",
+      "input_factory": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/hulu_native_eager_canary_v1.json"
+    }
+  },
+  "source_bindings": {
+    "factory_source": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_canary_factories_v1.py",
+      "sha256": "5bba729d18740878395cb63e00eebd5fc282deefd4fbe5696c7a23a46de55772",
+      "bytes": 13095
+    },
+    "runtime_integration": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "8c32e51e702d2cce9cc9b3830827961a99e74fa799ec158462e560b0c9bed79f",
+      "bytes": 40046
+    },
+    "fake_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_canary_factories_v1.py",
+      "sha256": "2b23f6a61d37a89794dc3af7e5f3c5c24db152ec9e89687923be9648a1c1a9f1",
+      "bytes": 9110
+    },
+    "dash_m_regression_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "5a05ca36841af2b46f2948dcdea267073a9575a8fd37c0a237c59e147af01c79",
+      "bytes": 23328
+    },
+    "serial_launcher": {
+      "path": "/home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v1.sh",
+      "sha256": "bc0ff360d41ffd36700a089c78edf1aad16b9d71ab1e79848c24b2393aa0e33e",
+      "bytes": 2247
+    }
+  },
+  "explicit_command": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v1 bash /home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v1.sh",
+  "postconditions": {
+    "preflight_must_remain_false_before_canary_audit": true,
+    "canary_artifacts_are_write_once": true,
+    "selected_heads_consumed": false,
+    "no_system_or_pih_intervention_in_canary": true
+  }
+}

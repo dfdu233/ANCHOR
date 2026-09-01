@@ -1,0 +1,139 @@
+{
+  "schema_version": "pubmedvision-source-atomic-ontology-v3",
+  "status": "prefrozen_broad_candidate_ontology",
+  "source_protocol": "docs/PROVENANCE_PRIOR_IMPRINTING_PROTOCOL_V3.md",
+  "alias_semantics": "case-insensitive literal clinical phrases with alphanumeric boundaries",
+  "expected_claim_count": 25,
+  "excluded_non_atomic_labels": [
+    "other_lesion",
+    "other_diseases",
+    "no_finding"
+  ],
+  "claims": [
+    {
+      "claim_id": "aortic_enlargement",
+      "display_name": "aortic enlargement",
+      "aliases": ["aortic enlargement", "aortic dilatation", "aortic dilation", "aortic ectasia", "enlarged aorta", "dilated aorta", "ectatic aorta", "enlarged thoracic aorta", "dilated thoracic aorta", "ectatic thoracic aorta"]
+    },
+    {
+      "claim_id": "atelectasis",
+      "display_name": "atelectasis",
+      "aliases": ["atelectasis", "atelectatic opacity", "atelectatic opacities", "atelectatic change", "atelectatic changes"]
+    },
+    {
+      "claim_id": "calcification",
+      "display_name": "calcification",
+      "aliases": ["pulmonary calcification", "pulmonary calcifications", "lung calcification", "lung calcifications", "calcified pulmonary nodule", "calcified pulmonary nodules"]
+    },
+    {
+      "claim_id": "cardiomegaly",
+      "display_name": "cardiomegaly",
+      "aliases": ["cardiomegaly", "cardiac enlargement", "enlarged heart", "enlarged cardiac silhouette"]
+    },
+    {
+      "claim_id": "clavicle_fracture",
+      "display_name": "clavicle fracture",
+      "aliases": ["clavicle fracture", "clavicle fractures", "clavicular fracture", "clavicular fractures", "fractured clavicle", "fractured clavicles"]
+    },
+    {
+      "claim_id": "consolidation",
+      "display_name": "consolidation",
+      "aliases": ["consolidation", "consolidations", "airspace consolidation", "airspace consolidations", "pulmonary consolidation", "pulmonary consolidations"]
+    },
+    {
+      "claim_id": "pulmonary_edema",
+      "display_name": "pulmonary edema",
+      "aliases": ["pulmonary edema", "pulmonary oedema", "interstitial edema", "interstitial oedema", "alveolar edema", "alveolar oedema"]
+    },
+    {
+      "claim_id": "emphysema",
+      "display_name": "emphysema",
+      "aliases": ["emphysema", "pulmonary emphysema", "emphysematous lung", "emphysematous lungs", "emphysematous change", "emphysematous changes"]
+    },
+    {
+      "claim_id": "enlarged_pa",
+      "display_name": "enlarged pulmonary artery",
+      "aliases": ["enlarged pulmonary artery", "enlarged pulmonary arteries", "pulmonary artery enlargement", "pulmonary arterial enlargement", "dilated pulmonary artery", "dilated pulmonary arteries"]
+    },
+    {
+      "claim_id": "ild",
+      "display_name": "interstitial lung disease",
+      "aliases": ["interstitial lung disease", "interstitial lung diseases", "interstitial pulmonary disease", "interstitial pulmonary diseases", "ild"]
+    },
+    {
+      "claim_id": "infiltration",
+      "display_name": "pulmonary infiltration",
+      "aliases": ["pulmonary infiltration", "pulmonary infiltrations", "pulmonary infiltrate", "pulmonary infiltrates", "lung infiltration", "lung infiltrations", "lung infiltrate", "lung infiltrates", "bilateral infiltrate", "bilateral infiltrates"]
+    },
+    {
+      "claim_id": "lung_opacity",
+      "display_name": "lung opacity",
+      "aliases": ["lung opacity", "lung opacities", "pulmonary opacity", "pulmonary opacities", "airspace opacity", "airspace opacities"]
+    },
+    {
+      "claim_id": "lung_cavity",
+      "display_name": "lung cavity",
+      "aliases": ["lung cavity", "lung cavities", "pulmonary cavity", "pulmonary cavities", "cavitary lung lesion", "cavitary lung lesions", "cavitary pulmonary lesion", "cavitary pulmonary lesions"]
+    },
+    {
+      "claim_id": "lung_cyst",
+      "display_name": "lung cyst",
+      "aliases": ["lung cyst", "lung cysts", "pulmonary cyst", "pulmonary cysts", "cystic lung lesion", "cystic lung lesions", "cystic pulmonary lesion", "cystic pulmonary lesions"]
+    },
+    {
+      "claim_id": "mediastinal_shift",
+      "display_name": "mediastinal shift",
+      "aliases": ["mediastinal shift", "shift of the mediastinum", "mediastinal displacement", "displacement of the mediastinum"]
+    },
+    {
+      "claim_id": "nodule_mass",
+      "display_name": "lung nodule or mass",
+      "aliases": ["lung nodule", "lung nodules", "pulmonary nodule", "pulmonary nodules", "lung mass", "lung masses", "pulmonary mass", "pulmonary masses", "pulmonary nodular opacity", "pulmonary nodular opacities"]
+    },
+    {
+      "claim_id": "pleural_effusion",
+      "display_name": "pleural effusion",
+      "aliases": ["pleural effusion", "pleural effusions", "pleural fluid", "pleural fluid collection", "pleural fluid collections", "fluid in the pleural space", "fluid in the pleural cavity"]
+    },
+    {
+      "claim_id": "pleural_thickening",
+      "display_name": "pleural thickening",
+      "aliases": ["pleural thickening", "pleural thickenings", "thickened pleura"]
+    },
+    {
+      "claim_id": "pneumothorax",
+      "display_name": "pneumothorax",
+      "aliases": ["pneumothorax", "pneumothoraces"]
+    },
+    {
+      "claim_id": "pulmonary_fibrosis",
+      "display_name": "pulmonary fibrosis",
+      "aliases": ["pulmonary fibrosis", "lung fibrosis", "interstitial fibrosis", "pulmonary fibrotic change", "pulmonary fibrotic changes", "fibrosing interstitial lung disease"]
+    },
+    {
+      "claim_id": "rib_fracture",
+      "display_name": "rib fracture",
+      "aliases": ["rib fracture", "rib fractures", "fractured rib", "fractured ribs"]
+    },
+    {
+      "claim_id": "copd",
+      "display_name": "chronic obstructive pulmonary disease",
+      "aliases": ["chronic obstructive pulmonary disease", "chronic obstructive lung disease", "copd"]
+    },
+    {
+      "claim_id": "lung_tumor",
+      "display_name": "lung tumor",
+      "aliases": ["lung tumor", "lung tumors", "lung tumour", "lung tumours", "pulmonary tumor", "pulmonary tumors", "pulmonary tumour", "pulmonary tumours"]
+    },
+    {
+      "claim_id": "pneumonia",
+      "display_name": "pneumonia",
+      "aliases": ["pneumonia", "pneumonic consolidation", "pneumonic consolidations"]
+    },
+    {
+      "claim_id": "tuberculosis",
+      "display_name": "pulmonary tuberculosis",
+      "aliases": ["pulmonary tuberculosis", "tuberculosis of the lung", "tuberculosis of the lungs", "tuberculous pneumonia"]
+    }
+  ]
+}

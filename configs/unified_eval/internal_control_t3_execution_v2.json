@@ -1,0 +1,78 @@
+{
+  "protocol_version": "internal-control-t3-execution-v2",
+  "status": "frozen before T3-v2 generation or any physician scoring",
+  "dataset": "VQA-RAD official test OE; identical outcome-blind one-question-per-image substrate as v1",
+  "models": ["huatuo", "hulu"],
+  "supersedes_for_clinical_efficacy": "internal-control-t3-execution-v1",
+  "v1_disposition": "identity_and_length_stress_only",
+  "repair_trigger": {
+    "type": "outcome-independent_generation_qualification_failure",
+    "artifact": "corrected_runs/unified_eval/provenance/internal_controls_t3_v1_huatuo_cap_failure_prereg_v1.json",
+    "artifact_sha256": "a33dd58dcd3ff26251bc841834c1a90532c061c068391f48d8a73dc5ec1d2344",
+    "reference_answers_used": false,
+    "clinical_labels_used": false,
+    "observed_failure": "three of four completed Huatuo clinical arms exceeded the frozen 5% cap-hit ceiling",
+    "repair_rule": "increase the common native generation ceiling once from 256 to 512 for every model and clinical arm"
+  },
+  "generation": {
+    "max_new_tokens": 512,
+    "stop": "model EOS or native template separator only",
+    "posthoc_truncation": false,
+    "base_seed": 42,
+    "qid_seed": "first 31 bits of SHA-256(base_seed + ':' + qid)",
+    "sampling_seed_ledger": [42, 1042, 2042, 3042, 4042]
+  },
+  "temperature_length_controls": {
+    "arms": [
+      {"id": "greedy512", "decode_mode": "greedy", "max_new_tokens": 512},
+      {"id": "sample_t02_p09", "decode_mode": "sample", "temperature": 0.2, "top_p": 0.9, "max_new_tokens": 512, "seed": 42},
+      {"id": "sample_t07_p09", "decode_mode": "sample", "temperature": 0.7, "top_p": 0.9, "max_new_tokens": 512, "seed": 42},
+      {"id": "sample_t10_p09", "decode_mode": "sample", "temperature": 1.0, "top_p": 0.9, "max_new_tokens": 512, "seed": 42}
+    ],
+    "selection": "single outcome-independent repair; no held-out answer, automatic judge, or physician label selects an arm",
+    "legacy_length_controls": "v1 greedy128/greedy256 remain diagnostic and cannot enter the v2 clinical efficacy comparison"
+  },
+  "self_consistency": {
+    "k": 5,
+    "sampling": {"temperature": 0.7, "top_p": 0.9, "max_new_tokens": 512},
+    "rule_id": "radgraph-structured-claim-frequency-v1",
+    "claim_key": ["finding", "anatomy", "attributes"],
+    "state_fields": ["polarity", "uncertainty", "provenance"],
+    "inclusion": "a structured claim key must occur in at least 3 of 5 independently seeded samples",
+    "state_resolution": "a state requires at least 3 of 5 votes; otherwise retain the claim as uncertain conflict",
+    "unknown_handling": "unparsed spans remain in the trace and cannot be credited as corrected or silently dropped",
+    "exact_text_majority_vote": false
+  },
+  "oe_qualification": {
+    "clinical_raw_arms": [
+      "greedy512",
+      "sample_t02_p09_seed42",
+      "sample_t07_p09_seed42",
+      "sample_t10_p09_seed42",
+      "sample_t07_p09_seed1042",
+      "sample_t07_p09_seed2042",
+      "sample_t07_p09_seed3042",
+      "sample_t07_p09_seed4042",
+      "replay_t07_p09_seed42"
+    ],
+    "max_cap_rate": 0.05,
+    "min_nonempty_rate": 0.95,
+    "max_function_only_rate": 0.01,
+    "failure_policy": "no physician efficacy pack; preserve as identity/termination evidence and stop this method branch"
+  },
+  "clinical_analysis": {
+    "baseline": "greedy512",
+    "candidates": [
+      "sample_t02_p09_seed42",
+      "sample_t07_p09_seed42",
+      "sample_t10_p09_seed42",
+      "structured_self_consistency"
+    ],
+    "unit": "image cluster",
+    "automatic_metrics_define_truth": false,
+    "omissions_counted": true,
+    "abstentions_counted_as_corrections": false,
+    "length_claim_count_and_refusal_reported": true,
+    "promotion": "physician claim error improves with no omission, length, coverage, or refusal exchange"
+  }
+}

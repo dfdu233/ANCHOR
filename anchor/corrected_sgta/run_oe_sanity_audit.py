@@ -8,7 +8,7 @@ on the image, or is it collapsing to a short normal-template prior?
 Two modes are supported:
 
 * ``--analyze-existing RAW``: CPU-only audit of an existing JSONL/JSON output.
-* ``--run-generation``: small GPU audit over real/null/shuffled images across
+* ``--run-generation``: small GPU audit over real/null/mismatched images across
   LLaVA-Med conversation modes and prompt templates.
 
 The script writes a raw JSONL plus a compact summary with enough evidence to
@@ -34,7 +34,7 @@ from PIL import Image
 from corrected_sgta.oe_metrics import rouge_l, token_f1
 
 
-VERSION = "oe-sanity-audit-v1"
+VERSION = "oe-sanity-audit-v4"
 DEFAULT_OUTPUT = Path("corrected_runs/oe_sanity_audit_v1")
 DEFAULT_MANIFESTS = (
     Path("corrected_runs/final_anchor_riemann_gate_v1/manifests/mimic_report_oe.json"),
@@ -138,7 +138,21 @@ def iter_existing_predictions(payload: Any) -> list[dict[str, Any]]:
         )
         item_id = str(record.get("id", record.get("qid", index)))
         candidates = record.get("candidates")
-        if isinstance(candidates, list):
+        if isinstance(record.get("greedy"), dict):
+            generation = record["greedy"]
+            rows.append(
+                {
+                    "id": item_id,
+                    "condition": "existing",
+                    "conv_mode": record.get("llava_conv_mode", "unknown"),
+                    "prompt_mode": record.get("report_prompt_mode", "unknown"),
+                    "view": "real",
+                    "method": "greedy",
+                    "text": str(generation.get("text", "")),
+                    "reference": str(reference),
+                }
+            )
+        elif isinstance(candidates, list):
             for candidate in candidates:
                 method = candidate.get("acquisition") or candidate.get("candidate_id") or "candidate"
                 if method == "greedy" or candidate.get("candidate_id") == "candidate-0":
@@ -192,7 +206,7 @@ def load_manifest(path: Path) -> list[dict[str, Any]]:
     records = payload.get("records", payload) if isinstance(payload, dict) else payload
     output: list[dict[str, Any]] = []
     for index, row in enumerate(records):
-        image = row.get("image")
+        image = row.get("image") or row.get("img_name")
         if image is None and row.get("image_path"):
             image_path = row["image_path"]
             image = image_path[0] if isinstance(image_path, list) else image_path
@@ -200,10 +214,17 @@ def load_manifest(path: Path) -> list[dict[str, Any]]:
         if not image or not reference:
             continue
         dataset = row.get("dataset") or row.get("domain") or "mimic"
+        explicit_patient = row.get("patient_id") or row.get("subject_id")
+        mimic_patient = re.search(r"(?:^|/)(p\d{8})(?:/|$)", str(image))
+        patient_id = (
+            str(explicit_patient)
+            if explicit_patient not in {None, ""}
+            else (mimic_patient.group(1) if mimic_patient else str(row.get("id", index)))
+        )
         output.append(
             {
                 "id": str(row.get("id", row.get("source_id", index))),
-                "patient_id": str(row.get("patient_id", row.get("subject_id", row.get("id", index)))),
+                "patient_id": patient_id,
                 "dataset": str(dataset),
                 "image": str(image),
                 "reference": str(reference),
@@ -262,7 +283,7 @@ def make_null_image(image: Image.Image) -> Image.Image:
     return Image.new("RGB", rgb.size, mean)
 
 
-def make_shuffled_image(image: Image.Image, seed: int) -> Image.Image:
+def make_pixel_shuffled_image(image: Image.Image, seed: int) -> Image.Image:
     rgb = image.convert("RGB")
     arr = np.asarray(rgb, dtype=np.uint8).copy()
     flat = arr.reshape(-1, arr.shape[-1])
@@ -270,6 +291,54 @@ def make_shuffled_image(image: Image.Image, seed: int) -> Image.Image:
     order = rng.permutation(flat.shape[0])
     shuffled = flat[order].reshape(arr.shape)
     return Image.fromarray(shuffled, mode="RGB")
+
+
+def pil_sha256(image: Image.Image) -> str:
+    rgb = image.convert("RGB")
+    header = f"RGB:{rgb.size[0]}x{rgb.size[1]}:".encode()
+    return hashlib.sha256(header + rgb.tobytes()).hexdigest()
+
+
+def mismatched_donor_indices(records: list[dict[str, Any]], paths: list[Path]) -> list[int]:
+    if len(records) != len(paths) or len(records) < 2:
+        raise ValueError("mismatched-image controls require at least two aligned samples")
+    hashes = [file_sha256(path) for path in paths]
+    count = len(records)
+    donors = [-1] * count
+    donor_owner: dict[int, int] = {}
+
+    def admissible(source: int, candidate: int) -> bool:
+        return bool(
+            candidate != source
+            and hashes[candidate] != hashes[source]
+            and records[candidate].get("patient_id")
+            != records[source].get("patient_id")
+        )
+
+    def assign(source: int, visited: set[int]) -> bool:
+        # Cyclic preference is deterministic and avoids dependence on Python's
+        # hash order. Reassignment finds a perfect matching when one exists.
+        for offset in range(1, count):
+            candidate = (source + offset) % count
+            if candidate in visited or not admissible(source, candidate):
+                continue
+            visited.add(candidate)
+            prior_source = donor_owner.get(candidate)
+            if prior_source is None or assign(prior_source, visited):
+                donor_owner[candidate] = source
+                donors[source] = candidate
+                return True
+        return False
+
+    for source in range(count):
+        if not assign(source, set()):
+            raise ValueError(
+                "no one-to-one different-patient, different-image donor "
+                f"derangement for sample {source}"
+            )
+    if len(set(donors)) != count or any(donor < 0 for donor in donors):
+        raise AssertionError("donor matching did not produce a permutation")
+    return donors
 
 
 def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -321,6 +390,7 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         }
     # Pairwise real-vs-null/shuffled differences for generated audit rows.
     pairwise: dict[str, Any] = {}
+    pairwise_by_condition: dict[str, Any] = {}
     by_signature: dict[tuple[str, str, str, str], dict[str, str]] = defaultdict(dict)
     for row in rows:
         sig = (
@@ -338,6 +408,25 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 "exact_same_rate": float(np.mean([v["real"] == v[view] for v in comparable])),
                 "mean_token_f1_between_outputs": float(
                     np.mean([token_f1(v["real"], v[view]) for v in comparable])
+                ),
+            }
+        grouped_comparable: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+        for signature, views in by_signature.items():
+            if "real" in views and view in views:
+                _, method, conv_mode, prompt_mode = signature
+                grouped_comparable[(method, conv_mode, prompt_mode)].append(views)
+        for condition, values in sorted(grouped_comparable.items()):
+            method, conv_mode, prompt_mode = condition
+            condition_key = "|".join((method, conv_mode, prompt_mode, f"real_vs_{view}"))
+            pairwise_by_condition[condition_key] = {
+                "method": method,
+                "conv_mode": conv_mode,
+                "prompt_mode": prompt_mode,
+                "comparison": f"real_vs_{view}",
+                "n": len(values),
+                "exact_same_rate": float(np.mean([value["real"] == value[view] for value in values])),
+                "mean_token_f1_between_outputs": float(
+                    np.mean([token_f1(value["real"], value[view]) for value in values])
                 ),
             }
     reference_stats = {
@@ -358,27 +447,59 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         if any(row.get("reference") for row in rows)
         else 0.0,
     }
-    invalid_reasons = []
+    output_quality_invalid_reasons = []
     for item in summaries.values():
         if item["view"] == "real" and item["normal_template_rate"] > 0.90:
-            invalid_reasons.append(
+            output_quality_invalid_reasons.append(
                 f"{item['method']}:{item['conv_mode']}:{item['prompt_mode']} has normal_template_rate={item['normal_template_rate']:.3f}"
             )
         if item["view"] == "real" and item["unique_output_rate"] < 0.25 and item["n"] >= 8:
-            invalid_reasons.append(
+            output_quality_invalid_reasons.append(
                 f"{item['method']}:{item['conv_mode']}:{item['prompt_mode']} has low unique_output_rate={item['unique_output_rate']:.3f}"
             )
-    if pairwise:
-        for name, item in pairwise.items():
-            if item["exact_same_rate"] > 0.75:
-                invalid_reasons.append(f"{name} exact_same_rate={item['exact_same_rate']:.3f}")
+
+    # The full qualification run uses the official zero-shot wording, which is
+    # exactly the ``mmedrag`` prompt in prompt_for().  Other prompts are
+    # robustness diagnostics and cannot rescue a failed official prompt.
+    primary_conditions = [
+        item for item in pairwise_by_condition.values()
+        if item["prompt_mode"] == "mmedrag"
+    ]
+    primary_comparisons = {item["comparison"] for item in primary_conditions}
+    image_dependency_tested = {"real_vs_null", "real_vs_shuffled"}.issubset(primary_comparisons)
+    image_dependency_invalid_reasons = []
+    if not image_dependency_tested:
+        image_dependency_invalid_reasons.append(
+            "official mmedrag prompt lacks both real_vs_null and real_vs_shuffled controls"
+        )
+    for item in primary_conditions:
+        label = f"{item['method']}:{item['conv_mode']}:{item['prompt_mode']}:{item['comparison']}"
+        if item["exact_same_rate"] > 0.75:
+            image_dependency_invalid_reasons.append(
+                f"{label} exact_same_rate={item['exact_same_rate']:.3f}"
+            )
+        if item["mean_token_f1_between_outputs"] >= 0.90:
+            image_dependency_invalid_reasons.append(
+                f"{label} output_token_f1={item['mean_token_f1_between_outputs']:.3f}"
+            )
+    output_noncollapse_pass = not output_quality_invalid_reasons
+    image_dependency_pass = image_dependency_tested and not image_dependency_invalid_reasons
+    invalid_reasons = output_quality_invalid_reasons + image_dependency_invalid_reasons
     return {
         "version": VERSION,
         "n_rows": len(rows),
         "reference_stats": reference_stats,
         "summaries": summaries,
         "pairwise_image_dependency": pairwise,
-        "admissible_for_report_generation_claim": not invalid_reasons,
+        "pairwise_image_dependency_by_condition": pairwise_by_condition,
+        "output_noncollapse_pass": output_noncollapse_pass,
+        "image_dependency_tested": image_dependency_tested,
+        "image_dependency_pass": image_dependency_pass,
+        "admissible_for_report_generation_claim": (
+            output_noncollapse_pass and image_dependency_pass
+        ),
+        "output_quality_invalid_reasons": output_quality_invalid_reasons,
+        "image_dependency_invalid_reasons": image_dependency_invalid_reasons,
         "invalid_reasons": invalid_reasons,
         "notes": [
             "RadGraph/RaTEScore/CheXbert are not computed here; export generated real-view pairs and run evaluate_medheval_report_clinical.py for clinical metrics.",
@@ -405,46 +526,71 @@ def select_samples(records: list[dict[str, Any]], count: int, seed: int) -> list
 
 
 def run_generation(args: argparse.Namespace, output_dir: Path) -> list[dict[str, Any]]:
-    from corrected_sgta.models_oe import LlavaMedOEAdapter
+    from corrected_sgta.models_oe import HuluOEAdapter, LlavaMedOEAdapter
 
     manifest_path = next((path for path in args.manifest if path.exists()), None)
     if manifest_path is None:
         raise FileNotFoundError(f"none of the manifest paths exists: {args.manifest}")
     records = select_samples(load_manifest(manifest_path), args.max_samples, args.seed)
     roots = [Path(item) for item in args.image_root]
+    image_paths = [resolve_image(sample["image"], roots) for sample in records]
+    donor_indices = mismatched_donor_indices(records, image_paths)
     raw_path = output_dir / "generation.raw.jsonl"
     rows: list[dict[str, Any]] = []
     config = {
         "version": VERSION,
         "mode": "generation",
+        "model": args.model,
         "manifest": str(manifest_path),
         "manifest_sha256": file_sha256(manifest_path),
         "max_samples": args.max_samples,
         "conv_modes": args.conv_mode,
         "prompt_modes": args.prompt_mode,
         "views": args.view,
+        "view_semantics": {
+            "real": "target image",
+            "null": "target-size mean-RGB image",
+            "shuffled": "different-patient real image assigned by deterministic derangement",
+            "pixel_shuffled": "target image with deterministically permuted pixels",
+        },
         "max_new_tokens": args.max_new_tokens,
         "seed": args.seed,
     }
     fingerprint = stable_sha256(config)
     with raw_path.open("w") as handle:
         for conv_mode in args.conv_mode:
-            adapter = LlavaMedOEAdapter(conv_mode=conv_mode)
+            if args.model == "hulu":
+                adapter = HuluOEAdapter()
+                model_name = "hulu-med-4b"
+            else:
+                adapter = LlavaMedOEAdapter(conv_mode=conv_mode)
+                model_name = "llava-med-v1.5-mistral-7b"
             try:
                 for sample_index, sample in enumerate(records):
-                    image_path = resolve_image(sample["image"], roots)
+                    image_path = image_paths[sample_index]
                     with Image.open(image_path) as image_handle:
                         image = image_handle.convert("RGB")
+                    donor_index = donor_indices[sample_index]
+                    donor_sample = records[donor_index]
+                    donor_path = image_paths[donor_index]
+                    with Image.open(donor_path) as donor_handle:
+                        donor_image = donor_handle.convert("RGB")
                     views = {
-                        "real": image,
-                        "null": make_null_image(image),
-                        "shuffled": make_shuffled_image(image, args.seed + sample_index),
+                        "real": (image, sample, image_path),
+                        "null": (make_null_image(image), sample, image_path),
+                        "shuffled": (donor_image, donor_sample, donor_path),
+                        "pixel_shuffled": (
+                            make_pixel_shuffled_image(image, args.seed + sample_index),
+                            sample,
+                            image_path,
+                        ),
                     }
                     for prompt_mode in args.prompt_mode:
                         prompt = prompt_for(sample, prompt_mode)
                         for view_name in args.view:
+                            view_image, view_source, view_source_path = views[view_name]
                             generation = adapter._generate_once(
-                                views[view_name],
+                                view_image,
                                 prompt,
                                 1,
                                 False,
@@ -461,10 +607,14 @@ def run_generation(args: argparse.Namespace, output_dir: Path) -> list[dict[str,
                                 "dataset": sample["dataset"],
                                 "image": str(image_path),
                                 "image_sha256": file_sha256(image_path),
+                                "view_image_sha256": pil_sha256(view_image),
+                                "view_image_source": str(view_source_path),
+                                "view_image_source_id": view_source["id"],
+                                "view_image_source_patient_id": view_source["patient_id"],
                                 "reference": sample["reference"],
                                 "reference_abnormal": sample["reference_abnormal"],
                                 "method": "greedy",
-                                "model": "llava-med-v1.5-mistral-7b",
+                                "model": model_name,
                                 "conv_mode": conv_mode,
                                 "prompt_mode": prompt_mode,
                                 "prompt": prompt,
@@ -515,6 +665,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--analyze-existing", type=Path, action="append", default=[])
     parser.add_argument("--run-generation", action="store_true")
+    parser.add_argument("--model", choices=("llava", "hulu"), default="llava")
     parser.add_argument("--manifest", type=Path, nargs="*", default=list(DEFAULT_MANIFESTS))
     parser.add_argument("--image-root", type=Path, nargs="*", default=list(DEFAULT_IMAGE_ROOTS))
     parser.add_argument("--max-samples", type=int, default=16)

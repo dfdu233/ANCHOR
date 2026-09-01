@@ -31,4 +31,21 @@ PYTHONPATH=anchor python -m corrected_sgta.evaluate_oe_reports \
 
 Before a report baseline is admissible, run real/null/shuffled image sanity checks. A >90% normal-template rate, near-constant output, or negligible real-vs-null difference invalidates the report-generation claim even if ROUGE increases.
 
+Formal claim-level evaluation also freezes two reference-side axes before
+method comparison: visual observability and communication relevance. A claim
+can be visually supported yet optional in a narrative report. Such a
+non-emission is not counted as an omission. In contrast, an abnormality-listing
+task may mark every in-scope positive finding as required. Automatic labelers
+may propose claim structure but may not assign either formal truth or
+reporting obligation without physician/structured-reference provenance.
+
+Claim atomization must preserve logical scope. In particular, a differential
+such as `opacity may reflect atelectasis or aspiration` may yield two entity
+nodes for matching, but it is one alternative set, not two independent
+definite-positive assertions. Conjunction, disjunction, causal/suggestive
+edges, and negation scope must remain in the audit representation. If an
+automatic extractor cannot recover that scope, the affected claims are marked
+scope-ambiguous and excluded from any conclusion about commitment reduction;
+they may not be silently flattened into independent ground truth.
+
 The pinned clinical packages passed the registered 100-pair matched-vs-contradiction direction test in `corrected_runs/oe_protocol_fix_v2/metric_direction100/aggregate.json`.

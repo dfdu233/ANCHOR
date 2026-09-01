@@ -35,3 +35,36 @@ datasets:
     task: vqa_and_report
     source: RULE
     data_root: data/rule
+
+  omnimedvqa:
+    task: multi_choice
+    source: OmniMedVQA
+    data_root: data/omnimedvqa
+    manifest: data/omnimedvqa/eight_modality_full_v1.json
+    smoke_manifest: data/omnimedvqa/eight_modality_smoke64_v1.json
+    modalities: [MRI, Ultrasound, OCT, Dermoscopy, CT, X-Ray, Microscopy, Fundus]
+
+  pmcvqa:
+    task: multi_choice
+    source: PMC-VQA-v2
+    data_root: data/pmcvqa
+    manifest: data/pmcvqa/official_v2_test_v1.json
+    smoke_manifest: data/pmcvqa/smoke64_v1.json
+    image_root: /home/dbw/datasets/public/PMC-VQA/test_images
+
+  pathvqa:
+    task: mixed
+    source: PathVQA
+    data_root: data/pathvqa
+    manifest: data/pathvqa/official_test_v1.json
+    smoke_manifest: data/pathvqa/smoke64_v1.json
+    image_root: /home/dbw/datasets/public/path-vqa/test_images
+
+  mmmu_medical:
+    task: mixed
+    source: MMMU
+    data_root: data/mmmu
+    manifest: data/mmmu/medical_validation_v1.json
+    smoke_manifest: data/mmmu/smoke37_v1.json
+    image_root: /home/dbw/datasets/public/MMMU/medical_images
+    subjects: [Basic_Medical_Science, Clinical_Medicine, Diagnostics_and_Laboratory_Medicine, Pharmacy, Public_Health]

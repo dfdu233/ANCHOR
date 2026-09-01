@@ -12,6 +12,7 @@ dependencies:
   - numpy
   - pandas
   - pillow
+  - pydicom
   - pyyaml
   - tqdm
   - scikit-learn
@@ -23,7 +24,7 @@ dependencies:
       - accelerate
       - sentencepiece
       - protobuf
-      - rouge
+      - rouge-score
       - nltk
       - huggingface_hub
       - openai

@@ -1,0 +1,84 @@
+{
+  "schema_version": "cecd-system-pih-native-eager-canary-handoff-v2-query-chunked",
+  "status": "source_ready_explicit_serial_launch_pending",
+  "supersedes": {
+    "job": "cecd-system-pih-native-eager-canaries-v1",
+    "disposition": "huatuo_passed_under_old_source_hulu_failed_oom_non_authorizing",
+    "failure": "hulu_clean_room_eager_materialized_full_q_by_k_attention_and_requested_15.78_GiB"
+  },
+  "authorization": {
+    "auto_launch": false,
+    "explicit_launch_environment": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v2-query-chunked",
+    "canary_only": true,
+    "selected_heads_consumed": false,
+    "system_or_pih_intervention_enabled": false
+  },
+  "scheduling": {
+    "shared_gpu_lock": "/home/dbw/ANCHOR/corrected_runs/detached_jobs/locks/gpu0-vindr-v2.lock",
+    "lock_mode": "blocking_exclusive_fd8",
+    "execution_order": ["huatuo", "hulu"],
+    "parallel_model_loading": false,
+    "write_once_outputs": true
+  },
+  "memory_correction": {
+    "query_chunk_size": 256,
+    "changed_reduction_axis": false,
+    "score_matmul_dtype": "native_model_dtype",
+    "softmax_dtype": "float32",
+    "patch_boundary": "after_chunk_row_softmax_before_value_matmul",
+    "full_logits_retained_across_passes": false,
+    "scientific_tolerance_unchanged": true
+  },
+  "frozen_input": {
+    "record_key": "vindr_train_canary_d925309691e7929d",
+    "finding": "aortic_enlargement",
+    "image_path": "/workspace/vinbigdata/train/d925309691e7929d905eaa42f081833f.dicom",
+    "image_sha256": "2893814198d6126656311fe55c08515a86eeb1917535ba273e11d5429a18bec5",
+    "prompt_sha256": "70bf1620f6c79ccd2c007f56b4d47cc4f4c68baa993054e59e0381edf8c7db20"
+  },
+  "factories": {
+    "huatuo": {
+      "model": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_model_factory",
+      "input": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/huatuo_native_eager_canary_v2_query_chunked.json"
+    },
+    "hulu": {
+      "model": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_model_factory",
+      "input": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/hulu_native_eager_canary_v2_query_chunked.json"
+    }
+  },
+  "source_bindings": {
+    "runtime": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "8c32e51e702d2cce9cc9b3830827961a99e74fa799ec158462e560b0c9bed79f",
+      "bytes": 40046
+    },
+    "factories": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_canary_factories_v1.py",
+      "sha256": "5bba729d18740878395cb63e00eebd5fc282deefd4fbe5696c7a23a46de55772",
+      "bytes": 13095
+    },
+    "runtime_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "5a05ca36841af2b46f2948dcdea267073a9575a8fd37c0a237c59e147af01c79",
+      "bytes": 23328
+    },
+    "factory_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_canary_factories_v1.py",
+      "sha256": "f82f6dced2c77a0a7e40827f3d49bff709ad8fa996cd2f3a83b34f55bef77e9b",
+      "bytes": 10516
+    },
+    "binding_verifier": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/verify_frozen_handoff_bindings_v1.py",
+      "sha256": "51b284e716f29d626f13df1351c38361837c1040115879455f5464fc779f6df9",
+      "bytes": 3862
+    },
+    "launcher": {
+      "path": "/home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v2.sh",
+      "sha256": "6f820c2c600d84198566d863466d9499e35d0b1aa059736473f40c064fe64d1e",
+      "bytes": 2403
+    }
+  },
+  "explicit_command": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v2-query-chunked bash /home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v2.sh"
+}

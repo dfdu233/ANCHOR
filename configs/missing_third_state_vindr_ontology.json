@@ -1,0 +1,27 @@
+{
+  "schema_version": "missing-third-state-vindr-ontology-v1",
+  "findings": {
+    "aortic_enlargement": ["aortic enlargement", "enlarged aorta"],
+    "atelectasis": ["atelectasis", "atelectatic opacity"],
+    "calcification": ["calcification", "calcifications"],
+    "cardiomegaly": ["cardiomegaly", "enlarged cardiac silhouette", "enlarged heart"],
+    "clavicle_fracture": ["clavicle fracture", "clavicular fracture"],
+    "consolidation": ["consolidation", "airspace consolidation"],
+    "edema": ["edema", "pulmonary edema", "interstitial edema"],
+    "emphysema": ["emphysema", "emphysematous change", "emphysematous changes"],
+    "enlarged_pa": ["enlarged pulmonary artery", "enlarged pulmonary arteries", "pulmonary artery enlargement"],
+    "ild": ["interstitial lung disease", "ild"],
+    "infiltration": ["infiltration", "infiltrate", "infiltrates"],
+    "lung_cavity": ["lung cavity", "pulmonary cavity", "cavitary lesion"],
+    "lung_cyst": ["lung cyst", "pulmonary cyst"],
+    "lung_opacity": ["lung opacity", "pulmonary opacity", "airspace opacity", "airspace opacities"],
+    "mediastinal_shift": ["mediastinal shift", "shift of the mediastinum"],
+    "nodule_mass": ["nodule", "nodules", "mass", "masses", "nodule mass"],
+    "other_lesion": ["other lesion"],
+    "pleural_effusion": ["pleural effusion", "pleural effusions", "effusion", "effusions"],
+    "pleural_thickening": ["pleural thickening", "pleural thickenings"],
+    "pneumothorax": ["pneumothorax", "pneumothoraces"],
+    "pulmonary_fibrosis": ["pulmonary fibrosis", "lung fibrosis"],
+    "rib_fracture": ["rib fracture", "rib fractures"]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "cecd-v4-promotion-phase1-contract-v1",
+  "scientific_status": "outcome_blind_non_authorizing_phase1_only",
+  "authorized": false,
+  "frozen_before_outputs": true,
+  "dataset_identity": "vindr-cxr-1.0.0-fixed-three-reader-panel",
+  "models": [
+    "huatuo:HuatuoGPT-Vision-7B",
+    "hulu:Hulu-Med-4B"
+  ],
+  "findings": [
+    "aortic_enlargement",
+    "cardiomegaly",
+    "pleural_effusion",
+    "pulmonary_fibrosis"
+  ],
+  "reader_vote_bins": [0, 1, 2, 3],
+  "science_grid": {
+    "renders": [
+      "baseline_percentile",
+      "native_linear",
+      "center_minus_0p05w",
+      "center_plus_0p05w",
+      "width_x1p25"
+    ],
+    "prompts": [
+      "existential",
+      "radiograph_subject",
+      "visibility"
+    ],
+    "baseline_render": "baseline_percentile",
+    "baseline_prompt": "existential",
+    "identity_render": "identity_lossless_duplicate",
+    "duplicate_prompt": "existential_exact_duplicate"
+  },
+  "stage_contract": {
+    "dev_fit": {
+      "source_manifest_split": "dev",
+      "exact_orbits_per_model_finding_vote": 20
+    },
+    "confirmation_locked": {
+      "source_manifest_split": "confirmation",
+      "exact_orbits_per_model_finding_vote": 60
+    }
+  },
+  "pairing": {
+    "key": ["image_id", "finding", "reader_votes"],
+    "model_orbit_sets_must_match_exactly": true,
+    "same_image_may_not_cross_stage": true,
+    "same_patient_may_not_cross_stage_when_declared": true
+  },
+  "cluster_contract": {
+    "mode": "patient_only_if_mapping_globally_complete_and_consistent_else_image",
+    "conflicting_nonempty_patient_ids_for_one_image": "fail",
+    "partial_but_nonconflicting_patient_mapping": "global_image_fallback",
+    "mixed_per_orbit_fallback": false,
+    "verifiable_patient_provenance_required_for_patient_inference": true,
+    "unverifiable_patient_provenance_status": "diagnostic_image_cluster_only_non_authorizing",
+    "minimum_unique_patient_clusters_per_model_finding_vote": {
+      "dev_fit": 20,
+      "confirmation_locked": 60
+    },
+    "patient_provenance_anchor": {
+      "policy": "stage_manifest_content_sha256_must_be_frozen_in_config_before_outputs",
+      "stage_manifest_sha256": {
+        "dev_fit": null,
+        "confirmation_locked": null
+      },
+      "null_anchor_policy": "patient_mode_forbidden_use_image_cluster_diagnostic_only"
+    }
+  },
+  "bootstrap": {
+    "family": "keyed_exponential_strictly_positive_multiplier",
+    "master_seed": 42017,
+    "draws": 5000,
+    "normalization": "per_draw_mean_one",
+    "conditional_rejection_allowed": false,
+    "minimum_ess_fraction": 0.25,
+    "maximum_single_cluster_weight_fraction": 0.1,
+    "maximum_single_cluster_orbit_contribution": 0.15
+  }
+}

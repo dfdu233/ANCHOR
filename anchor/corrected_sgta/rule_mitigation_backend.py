@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""RULE-protocol mitigation inference using the patched LLaVA-Med backend.
+"""Common CE-G mitigation inference using the patched LLaVA-Med backend.
 
 This module intentionally supports only methods whose LLaVA-Med generation
 hooks are locally available and activation-auditable.  Prompt
-construction follows RULE's three dataset-specific inference scripts exactly.
+construction retains RULE's dataset-specific evidence wording and adds one
+uniform leading-decision contract required by the corrected evaluator.
 Every run emits a method-activation sidecar; callers must reject missing or
 inconsistent counters rather than silently accepting ordinary decoding.
 """
@@ -11,12 +12,13 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import inspect
 import json
 import os
 from pathlib import Path
 from typing import Any
 
-PROTOCOL_VERSION = "rule-vqa-mitigation-backend-v6"
+PROTOCOL_VERSION = "rule-vqa-mitigation-backend-v8-leading-native-eos"
 SUPPORTED_METHODS = (
     "AVISC",
     "DoLa",
@@ -33,6 +35,9 @@ RULE_VICUNA_SYSTEM = (
     "questions."
 )
 RULE_VICUNA_STOP = "</s>"
+LEADING_DECISION_SUFFIX = (
+    " Begin your answer with exactly Yes or No, then give at most one concise sentence."
+)
 
 
 class RuleMitigationBackendError(RuntimeError):
@@ -50,7 +55,7 @@ def sha256_text(value: str) -> str:
 
 
 def render_rule_prompt(dataset: str, row: dict[str, Any]) -> str:
-    """Reproduce RULE's dataset-specific ``cur_prompt`` exactly."""
+    """Retain RULE evidence wording under a uniform CE-G answer contract."""
     if dataset not in {"iuxray", "mimic", "harvard"}:
         raise RuleMitigationBackendError(f"unsupported RULE dataset: {dataset}")
     question = str(row["question"]).replace("<image>", "").strip()
@@ -65,7 +70,7 @@ def render_rule_prompt(dataset: str, row: dict[str, Any]) -> str:
                 "Please answer the question based on the image and report and "
                 "choose from the following two options: [yes, no]."
             )
-        return question + " " + suffix
+        return question + " " + suffix + LEADING_DECISION_SUFFIX
 
     reports = row["reference_report"]
     if not isinstance(reports, list):
@@ -91,7 +96,10 @@ def render_rule_prompt(dataset: str, row: dict[str, Any]) -> str:
             "basis for diagnosis, but should only be used for reference. "
             "\nReference reports:"
         )
-        return appendix_1 + question + "\n" + appendix_2 + "\n" + formatted
+        return (
+            appendix_1 + question + "\n" + appendix_2 + "\n" + formatted
+            + LEADING_DECISION_SUFFIX
+        )
 
     if topk == 1:
         formatted = str(reports[0])
@@ -123,7 +131,7 @@ def render_rule_prompt(dataset: str, row: dict[str, Any]) -> str:
             "summaries cannot be directly used as the basis for diagnosis, but "
             "should only be used for reference and comparison. Question: "
         )
-    return appendix_1 + formatted + "\n" + appendix_2 + question
+    return appendix_1 + formatted + "\n" + appendix_2 + question + LEADING_DECISION_SUFFIX
 
 
 def render_rule_model_prompt(
@@ -525,11 +533,7 @@ def _generate(args: argparse.Namespace) -> None:
         DEFAULT_IM_START_TOKEN,
         IMAGE_TOKEN_INDEX,
     )
-    from llava.mm_utils import (
-        KeywordsStoppingCriteria,
-        process_images,
-        tokenizer_image_token,
-    )
+    from llava.mm_utils import process_images, tokenizer_image_token
     from llava.model.builder import load_pretrained_model
     from llava.utils import disable_torch_init
 
@@ -672,6 +676,7 @@ def _generate(args: argparse.Namespace) -> None:
                 counts["masked_token_count"] = masked_token_count
             return original_model_forward(*call_args, **call_kwargs)
 
+        dynamic_mask_forward.__signature__ = inspect.signature(original_model_forward)
         model.sample = types.MethodType(counted_avisc_sample, model)
         model.prepare_inputs_for_generation_method = types.MethodType(
             counted_method_prepare, model
@@ -701,10 +706,6 @@ def _generate(args: argparse.Namespace) -> None:
             attention_mask = torch.ones_like(input_ids)
             image = Image.open(args.image_folder / str(row["image"]))
             image_tensor = process_images([image], image_processor, model.config)[0]
-            stopping = KeywordsStoppingCriteria(
-                [RULE_VICUNA_STOP], tokenizer, input_ids
-            )
-
             if args.method == "VCD":
                 distorted = add_diffusion_noise(image_tensor, 500)
                 counters["distorted_views_created"] += 1
@@ -720,7 +721,6 @@ def _generate(args: argparse.Namespace) -> None:
                         do_sample=True,
                         temperature=1,
                         max_new_tokens=args.max_new_tokens,
-                        stopping_criteria=[stopping],
                     )
                 counters["contrastive_generate_calls"] += 1
             elif args.method == "DoLa":
@@ -736,7 +736,6 @@ def _generate(args: argparse.Namespace) -> None:
                         top_p=0.95,
                         top_k=0,
                         temperature=0.9,
-                        stopping_criteria=[stopping],
                         relative_top=0.1,
                         mature_layer=early_exit_layers[-1],
                         premature_layer=None,
@@ -776,7 +775,6 @@ def _generate(args: argparse.Namespace) -> None:
                         threshold=15,
                         num_attn_candidates=5,
                         penalty_weights=1.0,
-                        stopping_criteria=[stopping],
                     )
                 counters["opera_generate_calls"] += 1
             elif args.method == "PAI":
@@ -862,7 +860,6 @@ def _generate(args: argparse.Namespace) -> None:
                         logits_processor=LogitsProcessorList(
                             [CountingCFGProcessor()]
                         ),
-                        stopping_criteria=[stopping],
                     )
                 counters["pai_generate_calls"] += 1
                 pai_audits.append(
@@ -917,7 +914,6 @@ def _generate(args: argparse.Namespace) -> None:
                         max_new_tokens=args.max_new_tokens,
                         output_attentions=False,
                         output_hidden_states=False,
-                        stopping_criteria=[stopping],
                     )
                 counters["identity_generate_calls"] += 1
 
@@ -1015,7 +1011,6 @@ def _generate(args: argparse.Namespace) -> None:
                         use_m3id=True,
                         layer_gamma=0.5,
                         lamb=1.0,
-                        stopping_criteria=[stopping],
                     )
                 counters["m3id_sample_entries"] += sample_counts["sample_entries"]
                 counters["m3id_generate_calls"] += 1
@@ -1078,7 +1073,6 @@ def _generate(args: argparse.Namespace) -> None:
                         model_name="llava",
                         avisc_image_start=image_start,
                         avisc_num_image_tokens=num_image_tokens,
-                        stopping_criteria=[stopping],
                     )
                 counters["avisc_sample_entries"] += sample_counts["sample_entries"]
                 counters["avisc_generate_calls"] += 1

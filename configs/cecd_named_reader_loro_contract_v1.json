@@ -1,0 +1,35 @@
+{
+  "schema_version": "cecd-named-reader-loro-contract-v1",
+  "scientific_status": "outcome_blind_design_non_authorizing_named_reader_sensitivity",
+  "authorized": false,
+  "frozen_before_real_outputs": true,
+  "models": [
+    "huatuo:HuatuoGPT-Vision-7B",
+    "hulu:Hulu-Med-4B"
+  ],
+  "findings": [
+    "aortic_enlargement",
+    "cardiomegaly",
+    "pleural_effusion",
+    "pulmonary_fibrosis"
+  ],
+  "named_readers": [
+    "R8",
+    "R9",
+    "R10"
+  ],
+  "panel_policy": "exact_same_three_named_rad_IDs_for_every_image",
+  "patient_identity_policy": "required_complete_and_cross_split_disjoint",
+  "dev_target": "mean_binary_vote_of_two_nonheldout_named_readers",
+  "confirmation_target": "binary_vote_of_named_heldout_reader",
+  "primary_statistic": "actual_minus_additive_brier_equal_reader_macro",
+  "sample_selection_conditioning": "aggregate_reader_vote_balanced_upstream; not_a_population_prevalence_estimand",
+  "minimum_dev_orbits_per_model_finding": 20,
+  "minimum_confirmation_orbits_per_model_finding": 60,
+  "bootstrap": {
+    "unit": "patient",
+    "family": "shared_positive_exponential_multiplier",
+    "seed": 20260803,
+    "draws": 2000
+  }
+}

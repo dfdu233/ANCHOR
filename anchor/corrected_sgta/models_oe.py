@@ -1,4 +1,4 @@
-"""Open-ended generation adapters for local Hulu-Med and LLaVA-Med.
+"""Open-ended generation adapters for local Huatuo, Hulu-Med and LLaVA-Med.
 
 The sampled sequence used by ConfGen contains only identically configured
 temperature samples.  Greedy decoding is generated and reported separately.
@@ -7,7 +7,9 @@ temperature samples.  Greedy decoding is generated and reported separately.
 from __future__ import annotations
 
 import gc
+import sys
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 import numpy as np
@@ -22,6 +24,7 @@ class Generation:
     text: str
     uncertainty: float
     token_count: int
+    token_ids: tuple[int, ...] = ()
 
 
 def geometric_log_pool(log_probabilities: torch.Tensor, beta: float) -> torch.Tensor:
@@ -39,34 +42,85 @@ def geometric_log_pool(log_probabilities: torch.Tensor, beta: float) -> torch.Te
     return pooled - torch.logsumexp(pooled, dim=-1)
 
 
-def _decode_generations(tokenizer: Any, output: Any) -> list[Generation]:
+def _decode_generations(
+    tokenizer: Any,
+    output: Any,
+    model: Any | None = None,
+    input_length: int | None = None,
+) -> list[Generation]:
     """Decode generation suffixes and processed-distribution mean NLL."""
 
     steps = len(output.scores)
     sequences = output.sequences
     if steps == 0:
         return [Generation("", float("inf"), 0) for _ in range(sequences.shape[0])]
-    suffix = sequences[:, -steps:]
-    eos = tokenizer.eos_token_id
+    # Beam search may continue exploring after the ultimately selected beam has
+    # emitted EOS. In that case ``len(output.scores)`` is longer than the
+    # selected suffix, so taking the final ``steps`` tokens can start inside the
+    # prompt or at padding. The prompt boundary is the only stable boundary.
+    suffix = (
+        sequences[:, input_length:]
+        if input_length is not None and sequences.shape[1] > input_length
+        else sequences[:, -steps:]
+    )
+    transition_scores = None
+    beam_indices = getattr(output, "beam_indices", None)
+    if beam_indices is not None and model is not None:
+        # Beam-search score tensors are indexed by live beams, not returned
+        # sequences.  Hugging Face's helper follows beam ancestry and prevents
+        # silently assigning another beam's likelihood to the selected text.
+        transition_scores = model.compute_transition_scores(
+            sequences,
+            output.scores,
+            beam_indices,
+            normalize_logits=True,
+        )
+    eos_values = {tokenizer.eos_token_id} if tokenizer.eos_token_id is not None else set()
+    if model is not None:
+        model_eos = getattr(getattr(model, "generation_config", None), "eos_token_id", None)
+        if isinstance(model_eos, int):
+            eos_values.add(model_eos)
+        elif model_eos is not None:
+            eos_values.update(int(value) for value in model_eos)
     pad = tokenizer.pad_token_id
     generations: list[Generation] = []
     for row in range(suffix.shape[0]):
         ids: list[int] = []
         nll: list[float] = []
-        for step, token_tensor in enumerate(suffix[row]):
+        # Some inputs-embeds beam implementations (Huatuo/Qwen2) prepend a
+        # dummy pad/eos ID before the first generated token.  It is a sequence
+        # initializer, not an empty answer; retain later EOS as the real stop.
+        start = 0
+        special = set(eos_values)
+        if pad is not None:
+            special.add(pad)
+        while start < suffix.shape[1] and int(suffix[row, start]) in special:
+            if not any(int(token) not in special for token in suffix[row, start + 1 :]):
+                break
+            start += 1
+        for position in range(start, suffix.shape[1]):
+            score_index = position if start == 0 else position - start
+            token_tensor = suffix[row, position]
+            if score_index >= steps or (
+                transition_scores is not None and score_index >= transition_scores.shape[1]
+            ):
+                break
             token_id = int(token_tensor)
             if pad is not None and token_id == pad:
                 break
-            if eos is not None and token_id == eos:
+            if token_id in eos_values:
                 break
-            token_log_probs = torch.log_softmax(
-                output.scores[step][row].float(), dim=-1
-            )
             ids.append(token_id)
-            nll.append(float(-token_log_probs[token_id].item()))
+            if transition_scores is not None:
+                nll.append(float(-transition_scores[row, score_index].item()))
+            else:
+                token_log_probs = torch.log_softmax(
+                    output.scores[score_index][row].float(), dim=-1
+                )
+                nll.append(float(-token_log_probs[token_id].item()))
         text = tokenizer.decode(ids, skip_special_tokens=True).strip()
         uncertainty = float(np.mean(nll)) if nll else float("inf")
-        generations.append(Generation(text, uncertainty, len(ids)))
+        generations.append(Generation(text, uncertainty, len(ids), tuple(ids)))
     return generations
 
 
@@ -87,8 +141,40 @@ class OEAdapterMixin:
         top_p: float,
         max_new_tokens: int,
         seed: int,
+        num_beams: int = 1,
     ) -> list[Generation]:
         raise NotImplementedError
+
+    def generate_control(
+        self,
+        image: Image.Image,
+        prompt: str,
+        *,
+        do_sample: bool,
+        temperature: float,
+        top_p: float,
+        num_beams: int,
+        max_new_tokens: int,
+        seed: int,
+    ) -> Generation:
+        """Generate one canonical greedy, beam, or sampling control."""
+
+        if num_beams < 1:
+            raise ValueError("num_beams must be positive")
+        if do_sample and temperature <= 0:
+            raise ValueError("sampling requires positive temperature")
+        self._seed(seed)
+        return self._generate_once(
+            image,
+            prompt,
+            1,
+            do_sample,
+            temperature,
+            top_p,
+            max_new_tokens,
+            seed,
+            num_beams=num_beams,
+        )[0]
 
     def generate_oe(
         self,
@@ -149,6 +235,78 @@ class OEAdapterMixin:
         return greedy, sampled
 
 
+class HuatuoOEAdapter(OEAdapterMixin):
+    """Huatuo's native serialization with auditable generated-token scores."""
+
+    name = "huatuogpt-vision-7b"
+
+    def __init__(
+        self,
+        model_path: Path = Path("/home/dbw/models/HuatuoGPT-Vision-7B"),
+        huatuo_root: Path = Path("/home/dbw/HuatuoGPT-Vision"),
+    ):
+        sys.path.insert(0, str(huatuo_root.resolve()))
+        from cli import HuatuoChatbot  # type: ignore
+
+        self.bot = HuatuoChatbot(str(model_path), device="cuda:0")
+        self.bot.debug = False
+        self.model = self.bot.model
+        self.tokenizer = self.bot.tokenizer
+
+    def _inputs(self, image: Image.Image, prompt: str) -> tuple[torch.Tensor, torch.Tensor]:
+        text = self.bot.input_moderation(prompt)
+        text = self.bot.insert_image_placeholder(text, 1)
+        conversation = self.bot.get_conv_without_history(text)
+        input_ids = self.bot.preprocess(conversation, return_tensors="pt")
+        input_ids = input_ids.unsqueeze(0).to(self.bot.device)
+        image_tensors = torch.stack(self.bot.get_image_tensors([image]))
+        image_tensors = image_tensors.to(dtype=torch.bfloat16, device=self.bot.device)
+        return input_ids, image_tensors
+
+    @torch.inference_mode()
+    def _generate_once(
+        self,
+        image: Image.Image,
+        prompt: str,
+        count: int,
+        do_sample: bool,
+        temperature: float,
+        top_p: float,
+        max_new_tokens: int,
+        seed: int,
+        num_beams: int = 1,
+    ) -> list[Generation]:
+        input_ids, image_tensors = self._inputs(image, prompt)
+        kwargs: dict[str, Any] = {
+            "images": image_tensors,
+            "use_cache": True,
+            "max_new_tokens": max_new_tokens,
+            "min_new_tokens": 1,
+            "repetition_penalty": 1.2,
+            "do_sample": do_sample,
+            "num_return_sequences": count,
+            "num_beams": num_beams,
+            "return_dict_in_generate": True,
+            "output_scores": True,
+            "eos_token_id": self.tokenizer.eos_token_id,
+            "pad_token_id": self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
+        }
+        if do_sample:
+            kwargs.update(temperature=temperature, top_p=top_p)
+        output = self.model.generate(input_ids, **kwargs)
+        # Huatuo's multimodal ``generate`` rebuilds the prompt as embeddings
+        # and returns generated IDs only (unlike plain HF causal generation).
+        result = _decode_generations(self.tokenizer, output, self.model)
+        del output, input_ids, image_tensors
+        return result
+
+    def close(self) -> None:
+        del self.bot
+        del self.model
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+
 class HuluOEAdapter(OEAdapterMixin, HuluAdapter):
     @torch.inference_mode()
     def _generate_once(
@@ -161,12 +319,14 @@ class HuluOEAdapter(OEAdapterMixin, HuluAdapter):
         top_p: float,
         max_new_tokens: int,
         seed: int,
+        num_beams: int = 1,
     ) -> list[Generation]:
         inputs = self._inputs(image, prompt)
         kwargs = {
             "max_new_tokens": max_new_tokens,
             "do_sample": do_sample,
             "num_return_sequences": count,
+            "num_beams": num_beams,
             "use_cache": True,
             "return_dict_in_generate": True,
             "output_scores": True,
@@ -175,7 +335,8 @@ class HuluOEAdapter(OEAdapterMixin, HuluAdapter):
         if do_sample:
             kwargs.update(temperature=temperature, top_p=top_p)
         output = self.model.generate(**inputs, **kwargs)
-        result = _decode_generations(self.tokenizer, output)
+        # Hulu's remote multimodal generation also returns generated IDs only.
+        result = _decode_generations(self.tokenizer, output, self.model)
         del output, inputs
         return result
 
@@ -442,12 +603,14 @@ class LlavaMedOEAdapter(OEAdapterMixin, LlavaMedAdapter):
         top_p: float,
         max_new_tokens: int,
         seed: int,
+        num_beams: int = 1,
     ) -> list[Generation]:
-        from llava.mm_utils import process_images
-
         input_ids = self._prompt_ids(prompt).to(self.model.device)
         attention_mask = torch.ones_like(input_ids, dtype=torch.long)
-        image_tensor = process_images([image], self.image_processor, self.model.config)
+        # Use the adapter's deterministic center padding.  The upstream helper
+        # randomly chooses between two one-pixel offsets for odd dimensions,
+        # which makes method-off identity depend on process RNG history.
+        image_tensor = self._process_images([image])
         if isinstance(image_tensor, list):
             image_tensor = [
                 item.to(self.model.device, dtype=self.model.dtype)
@@ -461,6 +624,7 @@ class LlavaMedOEAdapter(OEAdapterMixin, LlavaMedAdapter):
             "max_new_tokens": max_new_tokens,
             "do_sample": do_sample,
             "num_return_sequences": count,
+            "num_beams": num_beams,
             "use_cache": True,
             "return_dict_in_generate": True,
             "output_scores": True,
@@ -469,15 +633,150 @@ class LlavaMedOEAdapter(OEAdapterMixin, LlavaMedAdapter):
         if do_sample:
             kwargs.update(temperature=temperature, top_p=top_p)
         output = self.model.generate(input_ids, attention_mask=attention_mask, **kwargs)
-        result = _decode_generations(self.tokenizer, output)
+        # LLaVA prepares multimodal prompt embeddings inside its generate
+        # override and returns generated IDs only.
+        result = _decode_generations(self.tokenizer, output, self.model)
         del output, input_ids, attention_mask, image_tensor
         return result
 
 
+class LlavaNextOEAdapter(LlavaMedOEAdapter):
+    """Official LLaVA-NeXT/LLaVA-1.6 Vicuna-7B any-resolution path."""
+
+    name = "llava-v1.6-vicuna-7b"
+
+    def __init__(
+        self,
+        model_path: Path = Path("/home/dbw/models/llava-v1.6-vicuna-7b"),
+        llava_root: Path = Path("/home/dbw/SECOND/lmms-eval-vicuna/LLaVA-NeXT"),
+        conv_mode: str = "vicuna_v1",
+    ):
+        sys.path.insert(0, str(llava_root.resolve()))
+        from llava.mm_utils import get_model_name_from_path
+        from llava.model.builder import load_pretrained_model
+
+        self.tokenizer, self.model, self.image_processor, self.context_len = (
+            load_pretrained_model(
+                str(model_path),
+                None,
+                get_model_name_from_path(str(model_path)),
+                device_map="auto",
+                load_8bit=False,
+                load_4bit=False,
+            )
+        )
+        self.model.eval()
+        self.conv_mode = conv_mode
+
+    def _process_images(self, images: list[Image.Image]):
+        from llava.mm_utils import process_images
+
+        return process_images(images, self.image_processor, self.model.config)
+
+
+class Qwen25VLOEAdapter(OEAdapterMixin):
+    """Qwen2.5-VL's official processor/chat-template generation path."""
+
+    name = "qwen2.5-vl-7b-instruct"
+
+    def __init__(
+        self,
+        model_path: Path = Path("/home/dbw/models/Qwen2.5-VL-7B-Instruct"),
+        max_pixels: int = 512 * 28 * 28,
+    ):
+        from qwen_vl_utils import process_vision_info
+        from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
+
+        self.process_vision_info = process_vision_info
+        self.processor = AutoProcessor.from_pretrained(
+            str(model_path),
+            local_files_only=True,
+            use_fast=False,
+            min_pixels=256 * 28 * 28,
+            max_pixels=max_pixels,
+        )
+        self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+            str(model_path),
+            local_files_only=True,
+            dtype=torch.bfloat16,
+            device_map="cuda:0",
+            attn_implementation="sdpa",
+        ).eval()
+        self.tokenizer = self.processor.tokenizer
+
+    def _inputs(self, image: Image.Image, prompt: str):
+        messages = [{
+            "role": "user",
+            "content": [
+                {"type": "image", "image": image},
+                {"type": "text", "text": prompt},
+            ],
+        }]
+        chat_text = self.processor.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        image_inputs, video_inputs = self.process_vision_info(messages)
+        return self.processor(
+            text=[chat_text],
+            images=image_inputs,
+            videos=video_inputs,
+            padding=True,
+            return_tensors="pt",
+        ).to("cuda")
+
+    @torch.inference_mode()
+    def _generate_once(
+        self,
+        image: Image.Image,
+        prompt: str,
+        count: int,
+        do_sample: bool,
+        temperature: float,
+        top_p: float,
+        max_new_tokens: int,
+        seed: int,
+        num_beams: int = 1,
+    ) -> list[Generation]:
+        inputs = self._inputs(image, prompt)
+        kwargs: dict[str, Any] = {
+            "do_sample": do_sample,
+            "num_beams": num_beams,
+            "num_return_sequences": count,
+            "max_new_tokens": max_new_tokens,
+            "use_cache": True,
+            "return_dict_in_generate": True,
+            "output_scores": True,
+            "pad_token_id": self.tokenizer.pad_token_id,
+            "eos_token_id": self.model.generation_config.eos_token_id,
+        }
+        if do_sample:
+            kwargs.update(temperature=temperature, top_p=top_p)
+        output = self.model.generate(**inputs, **kwargs)
+        result = _decode_generations(
+            self.tokenizer,
+            output,
+            self.model,
+            input_length=inputs["input_ids"].shape[1],
+        )
+        del output, inputs
+        return result
+
+    def close(self) -> None:
+        del self.model
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+
 def load_oe_adapter(name: str, llava_conv_mode: str = "mistral_instruct"):
     normalized = name.lower().replace("_", "-")
+    if normalized in {"huatuo", "huatuogpt", "huatuogpt-vision-7b"}:
+        return HuatuoOEAdapter()
     if normalized in {"hulu", "hulu-med", "hulu-med-14b"}:
         return HuluOEAdapter()
     if normalized in {"llava", "llava-med", "llava-med-v1.5"}:
         return LlavaMedOEAdapter(conv_mode=llava_conv_mode)
+    if normalized in {"llava16", "llava-1.6", "llava-v1.6", "llava-next"}:
+        return LlavaNextOEAdapter()
+    if normalized in {"qwen", "qwen2.5-vl", "qwen2.5-vl-7b-instruct"}:
+        return Qwen25VLOEAdapter()
     raise ValueError(f"unknown model adapter: {name}")

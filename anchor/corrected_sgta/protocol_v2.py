@@ -110,13 +110,22 @@ def parse_choices(raw: Any) -> ChoiceSet:
         labels: list[str] = []
         texts: list[str] = []
         for i, item in enumerate(raw):
+            expected_label = chr(ord("A") + i)
             value = str(item).strip()
-            match = re.match(r"^\s*([A-Fa-f])\s*[\.\)\]:,]\s*(.+?)\s*$", value)
+            # List order is authoritative.  A choice's clinical/scientific
+            # text may itself begin with e.g. ``C. difficile``; interpreting
+            # arbitrary leading A-F punctuation as a label corrupts such
+            # benchmark rows.  Strip only the prefix matching this position.
+            match = re.match(
+                rf"^\s*({expected_label})\s*[\.\)\]:,]\s*(.+?)\s*$",
+                value,
+                re.I,
+            )
             if match:
-                labels.append(match.group(1).upper())
+                labels.append(expected_label)
                 texts.append(match.group(2).rstrip(" ,;"))
             else:
-                labels.append(chr(ord("A") + i))
+                labels.append(expected_label)
                 texts.append(value)
         return _validated(labels, texts, raw)
     if not isinstance(raw, str):
@@ -147,8 +156,8 @@ def task_kind(sample: dict[str, Any]) -> str:
         if isinstance(choices, str) and choices.strip():
             return "multichoice"
         return "binary"
-    if (isinstance(choices, str) and choices.strip()) or isinstance(
-        choices, (list, tuple)
+    if (isinstance(choices, str) and choices.strip()) or (
+        isinstance(choices, (list, tuple)) and len(choices) > 0
     ):
         return "multichoice"
     return "open"

@@ -20,26 +20,35 @@ from typing import Any
 
 from PIL import Image
 
-ROOT = Path("/root/autodl-tmp/Hulu-Med/MedUniEval")
-MED = Path("/root/autodl-tmp/MedHEval")
+REPO_ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("ANCHOR_LEGACY_ROOT", REPO_ROOT))
+MED = Path(os.environ.get("ANCHOR_MEDHEVAL_ROOT", REPO_ROOT / "data/medheval"))
 IMAGE_ROOT = MED / "images"
 RUNNER = MED / "code/baselines/Mitigation/llava-med-1.5/llava/eval/model_vqa.py"
 WORKDIR = MED / "code/baselines/Mitigation/llava-med-1.5"
-MODEL_PATH = Path("/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b")
-PYTHON = Path("/root/autodl-tmp/envs/medheval-mitigation/bin/python")
-EVALUATOR = ROOT / "corrected_sgta/evaluate_medheval_answers.py"
+MODEL_PATH = Path(
+    os.environ.get(
+        "ANCHOR_MODEL_PATH", REPO_ROOT / "hf_cache/llava-med-v1.5-mistral-7b"
+    )
+)
+PYTHON = Path(os.environ.get("ANCHOR_PYTHON", REPO_ROOT / ".venv-full/bin/python"))
+EVALUATOR = ROOT / "anchor/corrected_sgta/evaluate_medheval_answers.py"
 PYTHONPATH_VALUE = (
-    f"{WORKDIR}:{MED}/code/baselines/Med-LVLMs/llava-med-1.5/"
-    f"transformers-4.37.2/src:{ROOT}"
+    f"{WORKDIR}:{WORKDIR / 'llava/eval'}:{MED}/code/baselines/Med-LVLMs/"
+    f"llava-med-1.5/transformers-4.37.2/src:{ROOT}"
 )
 
-PROTOCOL_VERSION = "corrected-sgta-official-mitigation-v2"
+PROTOCOL_VERSION = "corrected-sgta-official-mitigation-v3"
 METHODS = ("greedy", "DoLa", "PAI", "opera", "avisc", "m3id", "VCD", "damro")
 DATASETS = {
     "context": MED / "benchmark_data/Context_Misalignment_Hallucination/MIMIC-CXR_pairs.json",
     "knowledge_ce": MED / "benchmark_data/Knowledge_Deficiency_Hallucination/close-ended/MIMIC-CXR_sampled.json",
     "cxr_vishal": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/CXR-VisHal.json",
     "mm_vishal": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/MM-VisHal.json",
+    "mimic_fine_grained_ce": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/fine-grained/mimic_cxr_closed_pairs.json",
+    "iuxray_fine_grained_ce": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/fine-grained/xray_closed_pairs.json",
+    "slake_ce": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/fine-grained/slake_qa_pairs.json",
+    "vqa_rad_ce": MED / "benchmark_data/Visual_Misinterpretation_Hallucination/close-ended/fine-grained/rad_vqa_pairs.json",
 }
 
 
@@ -63,7 +72,7 @@ def fingerprint(config: dict[str, Any]) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, default=ROOT / "corrected_runs/aaai_medheval_mitigation_full_v1")
-    parser.add_argument("--datasets", nargs="*", default=["knowledge_ce", "cxr_vishal", "mm_vishal"])
+    parser.add_argument("--datasets", nargs="*", choices=sorted(DATASETS), default=["knowledge_ce", "cxr_vishal", "mm_vishal"])
     parser.add_argument("--methods", nargs="*", default=list(METHODS))
     parser.add_argument(
         "--sources",
@@ -72,6 +81,28 @@ def parse_args() -> argparse.Namespace:
         help="Optional image-source filter used only for efficient resumable scheduling.",
     )
     parser.add_argument("--max-samples-per-source", type=int, help="Optional smoke-test cap applied before chunking.")
+    parser.add_argument(
+        "--sampling-policy",
+        choices=("first", "balanced_binary_image", "claim_universe_images"),
+        default="first",
+        help=(
+            "Sampling before chunking. balanced_binary_image keeps exact Yes/No "
+            "labels, balances them, and uses at most one question per image; "
+            "claim_universe_images keeps every exact Yes/No claim for a sampled "
+            "set of images."
+        ),
+    )
+    parser.add_argument(
+        "--max-images-per-source",
+        type=int,
+        help="Image cap required by claim_universe_images.",
+    )
+    parser.add_argument(
+        "--exclude-images-from",
+        nargs="*",
+        type=Path,
+        help="Question JSON files whose image names must be excluded before sampling.",
+    )
     parser.add_argument(
         "--question-types",
         nargs="*",
@@ -124,9 +155,104 @@ def load_rows(path: Path) -> list[dict[str, Any]]:
     return json.loads(path.read_text())
 
 
+def _stable_rank(row: dict[str, Any], seed: int) -> str:
+    identity = str(row.get("qid", row.get("question_id", row.get("img_name", ""))))
+    return hashlib.sha256(f"{seed}|{identity}".encode()).hexdigest()
+
+
+def balanced_binary_image_sample(
+    rows: list[dict[str, Any]], cap: int, seed: int
+) -> list[dict[str, Any]]:
+    """Select balanced exact Yes/No rows with one independently sampled image each."""
+    if cap <= 0 or cap % 2:
+        raise ValueError("balanced_binary_image requires a positive even sample cap")
+    groups: dict[str, dict[tuple[str, str], list[dict[str, Any]]]] = {
+        "yes": {}, "no": {},
+    }
+    for row in rows:
+        truth = str(row.get("answer", "")).strip().lower()
+        if truth not in groups:
+            continue
+        stratum = (
+            str(row.get("modality") or "unknown"),
+            str(row.get("hallucination_type") or "unknown"),
+        )
+        groups[truth].setdefault(stratum, []).append(row)
+    for truth_groups in groups.values():
+        for bucket in truth_groups.values():
+            bucket.sort(key=lambda row: _stable_rank(row, seed))
+    selected: list[dict[str, Any]] = []
+    used_images: set[str] = set()
+    quotas = {"yes": cap // 2, "no": cap // 2}
+    positions = {truth: 0 for truth in groups}
+    strata = {truth: sorted(group) for truth, group in groups.items()}
+    while any(quotas.values()):
+        progressed = False
+        for truth in ("yes", "no"):
+            if quotas[truth] == 0:
+                continue
+            keys = strata[truth]
+            if not keys:
+                continue
+            for offset in range(len(keys)):
+                stratum_index = (positions[truth] + offset) % len(keys)
+                bucket = groups[truth][keys[stratum_index]]
+                while bucket and image_name(bucket[0]) in used_images:
+                    bucket.pop(0)
+                if bucket:
+                    row = bucket.pop(0)
+                    selected.append(row)
+                    used_images.add(image_name(row))
+                    quotas[truth] -= 1
+                    positions[truth] = (stratum_index + 1) % len(keys)
+                    progressed = True
+                    break
+        if not progressed:
+            break
+    if any(quotas.values()):
+        raise ValueError(
+            f"insufficient image-disjoint exact Yes/No rows for cap={cap}; "
+            f"unfilled quotas={quotas}"
+        )
+    return selected
+
+
+def claim_universe_image_sample(
+    rows: list[dict[str, Any]], image_cap: int, seed: int
+) -> list[dict[str, Any]]:
+    """Keep all exact Yes/No claims for a deterministic image-disjoint sample."""
+    if image_cap <= 0:
+        raise ValueError("claim_universe_images requires a positive image cap")
+    eligible = [
+        row for row in rows
+        if str(row.get("answer", "")).strip().lower() in {"yes", "no"}
+    ]
+    by_image: dict[str, list[dict[str, Any]]] = {}
+    for row in eligible:
+        by_image.setdefault(image_name(row), []).append(row)
+    ranked_images = sorted(
+        by_image,
+        key=lambda name: hashlib.sha256(f"{seed}|{name}".encode()).hexdigest(),
+    )
+    if len(ranked_images) < image_cap:
+        raise ValueError(
+            f"requested {image_cap} images but only {len(ranked_images)} are eligible"
+        )
+    selected = []
+    for name in ranked_images[:image_cap]:
+        selected.extend(sorted(by_image[name], key=lambda row: _stable_rank(row, seed)))
+    return selected
+
+
 def write_inputs(args: argparse.Namespace) -> dict[str, dict[str, Any]]:
     input_root = args.out / "_inputs"
     input_root.mkdir(parents=True, exist_ok=True)
+    excluded_images: set[str] = set()
+    exclusion_inputs = []
+    for path in args.exclude_images_from or []:
+        exclusion_rows = load_rows(path)
+        excluded_images.update(image_name(row) for row in exclusion_rows)
+        exclusion_inputs.append({"path": str(path.resolve()), "sha256": sha256_file(path)})
     manifest = {
         "protocol_version": PROTOCOL_VERSION,
         "runner": str(RUNNER),
@@ -137,6 +263,10 @@ def write_inputs(args: argparse.Namespace) -> dict[str, dict[str, Any]]:
         "methods": list(args.methods),
         "sources": args.sources,
         "max_samples_per_source": args.max_samples_per_source,
+        "sampling_policy": args.sampling_policy,
+        "max_images_per_source": args.max_images_per_source,
+        "exclusion_inputs": exclusion_inputs,
+        "n_excluded_image_names": len(excluded_images),
         "question_types": list(args.question_types),
         "chunk_size": args.chunk_size,
         "max_new_tokens": args.max_new_tokens,
@@ -154,6 +284,8 @@ def write_inputs(args: argparse.Namespace) -> dict[str, dict[str, Any]]:
             if row_type not in args.question_types:
                 continue
             resolved = source_for_image(image_name(row))
+            if image_name(row) in excluded_images:
+                continue
             if resolved is None:
                 missing += 1
                 continue
@@ -167,7 +299,19 @@ def write_inputs(args: argparse.Namespace) -> dict[str, dict[str, Any]]:
         for source, bucket in buckets.items():
             if args.sources is not None and source not in args.sources:
                 continue
-            if args.max_samples_per_source is not None:
+            if args.sampling_policy == "balanced_binary_image":
+                if args.max_samples_per_source is None:
+                    raise ValueError("balanced_binary_image requires --max-samples-per-source")
+                bucket = balanced_binary_image_sample(
+                    bucket, args.max_samples_per_source, args.seed
+                )
+            elif args.sampling_policy == "claim_universe_images":
+                if args.max_images_per_source is None:
+                    raise ValueError("claim_universe_images requires --max-images-per-source")
+                bucket = claim_universe_image_sample(
+                    bucket, args.max_images_per_source, args.seed
+                )
+            elif args.max_samples_per_source is not None:
                 bucket = bucket[: args.max_samples_per_source]
             key = f"{dataset}.{source}"
             path = input_root / f"{key}.json"
@@ -247,7 +391,10 @@ def main() -> int:
     args = parse_args()
     args.out = args.out.resolve()
     if not RUNNER.exists() or not PYTHON.exists() or not MODEL_PATH.exists():
-        raise SystemExit("required official runner, Python env, or model path is missing")
+        raise SystemExit(
+            "required official runner, Python env, or model path is missing: "
+            f"runner={RUNNER} python={PYTHON} model={MODEL_PATH}"
+        )
     prepared = write_inputs(args)
     env = os.environ.copy()
     env.update({"CUDA_VISIBLE_DEVICES": args.gpu, "PYTHONPATH": PYTHONPATH_VALUE})

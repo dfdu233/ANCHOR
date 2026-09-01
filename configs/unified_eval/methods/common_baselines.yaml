@@ -1,0 +1,75 @@
+protocol: anchor-eval-contract-v1
+qualification_authority: configs/unified_eval/method_ladder_v1.json
+# Runtime implementations only. Paper admissibility and promotion gates live
+# exclusively in qualification_authority.
+methods:
+  - name: greedy
+    qualification_key: greedy
+    implementation: native_greedy
+    backend: canonical_llava_med_mistral
+    parameters: {num_beams: 1}
+  - name: beam
+    qualification_key: beam
+    implementation: native_beam
+    backend: canonical_llava_med_mistral
+    parameters: {num_beams: 5}
+  - name: dola
+    qualification_key: DoLa
+    implementation: medheval_dola_port
+    source_provenance: official_algorithm_adapted_to_medical_mistral
+    parameters: {}
+  - name: vcd
+    qualification_key: VCD
+    implementation: medheval_vcd_port
+    source_provenance: official_algorithm_adapted_to_medical_mistral
+    parameters: {}
+  - name: m3id
+    qualification_key: M3ID
+    implementation: medheval_unofficial_m3id_reimplementation
+    source_provenance: no_official_code_released
+    parameters: {}
+  - name: opera
+    qualification_key: OPERA
+    implementation: medheval_opera_port
+    source_provenance: official_algorithm_adapted_to_medical_mistral
+    parameters: {}
+  - name: pai
+    qualification_key: PAI
+    implementation: medheval_pai_port
+    source_provenance: official_algorithm_adapted_to_medical_mistral
+    parameters: {}
+  - name: avisc
+    qualification_key: AvisC
+    implementation: anchor/corrected_sgta/cross_model_avisc.py
+    source_provenance: clean_room_algorithm_adapted_all_native_backbones_image_proxy
+    parameters: {}
+  - name: damro
+    qualification_key: DAMRO
+    implementation: medheval_unofficial_damro_reimplementation
+    source_provenance: no_official_code_released
+    parameters: {}
+  - name: vista
+    qualification_key: VISTA
+    implementation: official_vista_port_pending
+    source_provenance: official_head_core_vendored_byte_exact
+    parameters: {}
+  - name: vhr
+    qualification_key: VHR
+    implementation: official_vhr_port_pending
+    source_provenance: official_head_audited_not_yet_vendored
+    parameters: {}
+  - name: agla
+    qualification_key: AGLA
+    implementation: anchor/corrected_sgta/cross_model_agla.py
+    source_provenance: clean_room_paper_formula_with_bsd_lavis_blip_itm_precompute_all_native_backbones
+    parameters: {}
+  - name: clearsight
+    qualification_key: ClearSight
+    implementation: anchor/corrected_sgta/cross_model_clearsight.py
+    source_provenance: clean_room_vaf_formula_image_proxy_all_native_backbones
+    parameters: {}
+  - name: clearsight
+    qualification_key: ClearSight
+    implementation: unavailable_without_method_code_license
+    source_provenance: official_head_t0_audited
+    parameters: {}

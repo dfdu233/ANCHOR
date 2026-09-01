@@ -1,0 +1,25 @@
+{
+  "schema_version": "cecd-system-pih-native-eager-canary-disposition-v1",
+  "job": "cecd-system-pih-native-eager-canaries-v3-family-specific-query-shape",
+  "frozen_handoff_sha256": "4133b4bd6c4bc29a4ce0c237af39d6dd08303f7a5d557ce3829f77c6f20fb453",
+  "pre_lock_bindings_verified": true,
+  "post_lock_bindings_verified": true,
+  "huatuo_artifact": {
+    "path": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/huatuo_native_eager_canary_v3_full_query.json",
+    "sha256": "b6ebd93c5f560811158796c8dbd469bd85c67586846dc0aee42df057ea4e1064",
+    "bytes": 2425,
+    "argmax_equal": true,
+    "max_absolute_error": 0.0,
+    "tolerance_passed": true
+  },
+  "hulu_artifact": {
+    "path": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/hulu_native_eager_canary_v3_query_chunked.json",
+    "sha256": "cf297372aad787ff2af38a03e450473a6b61966ba601559624ead3b92f5670f3",
+    "bytes": 2409,
+    "argmax_equal": true,
+    "max_absolute_error": 3.0,
+    "tolerance_passed": false
+  },
+  "scientific_authority": false,
+  "disposition": "full_attention_backend_replacement_failed_for_hulu; do_not_relax_frozen_tolerance"
+}

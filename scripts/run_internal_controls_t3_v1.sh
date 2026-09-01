@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd /home/dbw/ANCHOR
+export CUDA_VISIBLE_DEVICES=0
+export HF_HOME=/home/dbw/.cache/huggingface
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+
+manifest=corrected_runs/unified_eval/inputs/vqa_rad_internal_control_t3_n120_v1.json
+images=/home/dbw/datasets/public/vqa_rad_hf/test_images
+root=corrected_runs/unified_eval/full/internal_controls_t3_v1
+contract=configs/unified_eval/internal_control_t3_execution_v1.json
+provenance=corrected_runs/unified_eval/inputs/vqa_rad_internal_control_t3_n120_v1.provenance.json
+mkdir -p "$root" corrected_runs/detached_jobs/locks
+
+exec 8>corrected_runs/detached_jobs/locks/gpu0-vindr-v2.lock
+flock 8
+
+run_model() {
+  local model=$1 python=$2
+  PYTHONPATH=. "$python" -m anchor.medeval.run_native_oe_control_matrix_v1 \
+    --model "$model" \
+    --manifest "$manifest" \
+    --image-root "$images" \
+    --output-root "$root/$model" \
+    --execution-contract "$contract" \
+    --limit 120
+}
+
+run_model huatuo /opt/miniconda3/envs/huatuo/bin/python
+run_model hulu /home/dbw/.venvs/hulumed/bin/python
+flock -u 8
+
+PYTHONPATH=. .venv-full/bin/python -m anchor.medeval.audit_internal_control_generation_t2_v1 \
+  --run-root "$root" \
+  --pilot-manifest "$manifest" \
+  --freeze-provenance "$provenance" \
+  --execution-contract "$contract" \
+  --limit 120 \
+  --stage T3 \
+  --output "$root/generation_audit.json"

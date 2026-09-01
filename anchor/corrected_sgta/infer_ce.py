@@ -46,7 +46,7 @@ from corrected_sgta.protocol_v2 import (
 
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "max_split_size_mb:128")
 CENTER_ROOT = Path("/root/autodl-tmp/multimodal_center_report/centers")
 CENTER_FILES = {
     "overall": "pubmedvision_overall.npy",

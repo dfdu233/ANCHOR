@@ -1,0 +1,39 @@
+{
+  "schema_version": "cecd-v4-haar-reference-phase2-contract-v1",
+  "scientific_status": "outcome_blind_non_authorizing_phase2_reference_only",
+  "authorized": false,
+  "frozen_before_outputs": true,
+  "phase1_version": "cecd-v4-promotion-phase1-structural-v1",
+  "reference_family": "centered_subspace_spectral_haar_antithetic_stress_reference",
+  "inference_boundary": "stress_reference_not_randomization_test",
+  "shared_orbit_key": [
+    "image_id",
+    "finding"
+  ],
+  "same_haar_factors_for_paired_models": true,
+  "initial_independent_draws": 2048,
+  "antithetic_references_per_draw": 2,
+  "initial_reference_count": 4096,
+  "maximum_independent_draws": 4096,
+  "maximum_reference_count": 8192,
+  "doubling": {
+    "allowed_once": true,
+    "decision_uses_only_initial_4096": true,
+    "trigger_metric": "antithetic_pair_mean_mcse_divided_by_B0",
+    "trigger_if_strictly_greater_than": 0.005,
+    "early_stopping_allowed": false,
+    "further_doubling_allowed": false
+  },
+  "b0_stability": {
+    "absolute_floor": 0.0001,
+    "bootstrap_lower_quantile": 0.01,
+    "minimum_lower_quantile_over_point": 0.1,
+    "minimum_bootstrap_denominators": 100
+  },
+  "numerics": {
+    "dtype": "float64",
+    "center_basis": "fixed_helmert_v1",
+    "centered_sum_absolute_tolerance": 1e-09,
+    "ispectral_relative_tolerance": 1e-09
+  }
+}

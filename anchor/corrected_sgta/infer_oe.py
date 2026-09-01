@@ -32,6 +32,7 @@ from corrected_sgta.report_protocol import (
 )
 from corrected_sgta.protocol_v2 import (
     CACHE_SCHEMA_VERSION,
+    IMAGE_ROOT,
     PROTOCOL_VERSION,
     file_sha256,
     protocol_fingerprint,
@@ -40,7 +41,10 @@ from corrected_sgta.protocol_v2 import (
 
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+# ``expandable_segments`` is unavailable in the pinned PyTorch used by the
+# local LLaVA-Med environment.  Keep an allocator hint that works across both
+# old and current runtimes; it is operational metadata, not a method setting.
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "max_split_size_mb:128")
 
 
 def parse_args() -> argparse.Namespace:
@@ -292,6 +296,7 @@ def main() -> None:
     config = {
         "model": args.model,
         "dataset_sha256": file_sha256(args.dataset),
+        "image_root": str(IMAGE_ROOT.resolve()),
         "max_image_side": args.max_image_side,
         "candidates": args.candidates,
         "candidate_batch": args.candidate_batch,

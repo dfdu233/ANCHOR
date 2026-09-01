@@ -40,13 +40,15 @@ ce_methods:
 
 mitigation:
   vcd:
-    tasks: [vqa_binary, report_generation, open_vqa]
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
+  icd:
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
   dola:
     tasks: [vqa_binary, report_generation, open_vqa]
   opera:
     tasks: [vqa_binary, report_generation, open_vqa]
   avisc:
-    tasks: [vqa_binary, report_generation, open_vqa]
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
   m3id:
     tasks: [vqa_binary, report_generation, open_vqa]
   damro:
@@ -56,9 +58,11 @@ mitigation:
   vista:
     tasks: [vqa_binary, report_generation, open_vqa]
   agla:
-    tasks: [vqa_binary, open_vqa]
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
   clearsight:
-    tasks: [vqa_binary, open_vqa]
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
+  cve:
+    tasks: [vqa_binary, multi_choice, report_generation, open_vqa]
   vhr:
     tasks: [vqa_binary, open_vqa]
 

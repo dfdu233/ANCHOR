@@ -1,0 +1,88 @@
+{
+  "schema_version": "cecd-system-pih-native-eager-canary-handoff-v3-family-specific-query-shape",
+  "status": "source_ready_explicit_serial_launch_pending",
+  "supersedes": {
+    "job": "cecd-system-pih-native-eager-canaries-v2-binding-checked",
+    "disposition": "huatuo_argmax_equal_but_tolerance_failed_hulu_not_executed_non_authorizing",
+    "failure": "query-row chunking changed Huatuo BF16 GEMM rounding; max absolute first-token logit error 0.125"
+  },
+  "authorization": {
+    "auto_launch": false,
+    "explicit_launch_environment": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v3-family-specific-query-shape",
+    "canary_only": true,
+    "selected_heads_consumed": false,
+    "system_or_pih_intervention_enabled": false
+  },
+  "scheduling": {
+    "shared_gpu_lock": "/home/dbw/ANCHOR/corrected_runs/detached_jobs/locks/gpu0-vindr-v2.lock",
+    "lock_mode": "blocking_exclusive_fd8",
+    "binding_verification": ["pre_lock", "post_lock"],
+    "execution_order": ["huatuo", "hulu"],
+    "parallel_model_loading": false,
+    "write_once_outputs": true
+  },
+  "memory_correction": {
+    "huatuo_native_backend": "eager",
+    "huatuo_query_shape": "full_query",
+    "hulu_native_backend": "sdpa",
+    "hulu_query_chunk_size": 256,
+    "changed_reduction_axis": false,
+    "score_matmul_dtype": "native_model_dtype",
+    "softmax_dtype": "float32",
+    "patch_boundary": "after_row_softmax_before_value_matmul",
+    "full_logits_retained_across_passes": false,
+    "scientific_tolerance_unchanged": true
+  },
+  "frozen_input": {
+    "record_key": "vindr_train_canary_d925309691e7929d",
+    "finding": "aortic_enlargement",
+    "image_path": "/workspace/vinbigdata/train/d925309691e7929d905eaa42f081833f.dicom",
+    "image_sha256": "2893814198d6126656311fe55c08515a86eeb1917535ba273e11d5429a18bec5",
+    "prompt_sha256": "70bf1620f6c79ccd2c007f56b4d47cc4f4c68baa993054e59e0381edf8c7db20"
+  },
+  "factories": {
+    "huatuo": {
+      "model": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_model_factory",
+      "input": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:huatuo_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/huatuo_native_eager_canary_v3_full_query.json"
+    },
+    "hulu": {
+      "model": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_model_factory",
+      "input": "anchor.corrected_sgta.cecd_system_pih_canary_factories_v1:hulu_input_factory",
+      "output": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_control_preflight_v1/canaries/hulu_native_eager_canary_v3_query_chunked.json"
+    }
+  },
+  "source_bindings": {
+    "runtime": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "54d28b88d903e1c58602d3e33e76f7a4ee051dc9614a647d1770e8f609acee9d",
+      "bytes": 40482
+    },
+    "factories": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_canary_factories_v1.py",
+      "sha256": "5bba729d18740878395cb63e00eebd5fc282deefd4fbe5696c7a23a46de55772",
+      "bytes": 13095
+    },
+    "runtime_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_runtime_integration_v1.py",
+      "sha256": "5a05ca36841af2b46f2948dcdea267073a9575a8fd37c0a237c59e147af01c79",
+      "bytes": 23328
+    },
+    "factory_tests": {
+      "path": "/home/dbw/ANCHOR/tests/test_cecd_system_pih_canary_factories_v1.py",
+      "sha256": "2d485004497b529e81eb51ce50883f5ae767c0801a3432071530debd7534861c",
+      "bytes": 12249
+    },
+    "binding_verifier": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/verify_frozen_handoff_bindings_v1.py",
+      "sha256": "51b284e716f29d626f13df1351c38361837c1040115879455f5464fc779f6df9",
+      "bytes": 3862
+    },
+    "launcher": {
+      "path": "/home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v3.sh",
+      "sha256": "2798132c340898b1d6264c16d9402bb12c1b54ff5ec9e9529e5ca07e4eeeb140",
+      "bytes": 2278
+    }
+  },
+  "explicit_command": "CECD_EXPLICIT_CANARY_LAUNCH=run-native-eager-canaries-v3-family-specific-query-shape bash /home/dbw/ANCHOR/scripts/run_cecd_system_pih_native_eager_canaries_v3.sh"
+}

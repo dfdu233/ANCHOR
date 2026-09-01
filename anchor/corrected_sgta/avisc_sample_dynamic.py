@@ -338,7 +338,7 @@ def sample(
                 outputs_cd, model_kwargs_cd, is_encoder_decoder=self.config.is_encoder_decoder
             )
         if use_m3id:
-            model_kwargs_cd = self._update_model_kwargs_for_generation(
+            model_kwargs_m3id = self._update_model_kwargs_for_generation(
                 outputs_m3id, model_kwargs_m3id, is_encoder_decoder=self.config.is_encoder_decoder
             )
 
@@ -385,4 +385,3 @@ def sample(
 
 def evolve_avisc_sampling():
     transformers.generation.utils.GenerationMixin.sample = sample
-

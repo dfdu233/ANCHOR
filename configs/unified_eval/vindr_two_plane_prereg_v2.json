@@ -1,0 +1,97 @@
+{
+  "protocol_version": "vindr-reader-grounded-two-plane-v2",
+  "frozen_before_v2_model_results": true,
+  "primary_construct": "fixed-panel reader-grounded decisional clarity",
+  "visual_clarity_claim_requires": [
+    "reader-adjusted sensitivity",
+    "fixed-panel replication",
+    "positive-finding bbox convergent validity"
+  ],
+  "models_primary": ["huatuo", "hulu"],
+  "findings": [
+    "aortic_enlargement",
+    "cardiomegaly",
+    "lung_opacity",
+    "nodule_mass",
+    "other_lesion",
+    "pleural_effusion",
+    "pleural_thickening",
+    "pulmonary_fibrosis"
+  ],
+  "reader_panel": ["R8", "R9", "R10"],
+  "split": {
+    "unit": "image_id",
+    "seed": 42,
+    "assignment": "global_sha256_20_20_60_before_sampling",
+    "per_finding_vote_bin": {"pilot": 20, "dev": 20, "confirmation": 60},
+    "uses": {"pilot": "kill_probe", "dev": "layer_and_probe_selection", "confirmation": "locked_primary_inference"}
+  },
+  "directions": {"negative": ["0/3", "1/3"], "positive": ["3/3", "2/3"]},
+  "first_kill_probe": {
+    "model": "huatuo",
+    "split": "pilot",
+    "direction": "positive",
+    "findings": ["pleural_effusion", "nodule_mass"],
+    "plain_logit_lens_role": "diagnostic_only"
+  },
+  "required_readouts": [
+    "complexity_matched_whitened_raw_hidden_linear_probe",
+    "dev_trained_tuned_or_calibrated_lens",
+    "online_mdl",
+    "plain_logit_lens_diagnostic"
+  ],
+  "controls": [
+    "polarity_only",
+    "same_support_image_swap",
+    "temperature_scaling",
+    "random_direction",
+    "norm_matched_background_tokens",
+    "rogue_dimension_removal",
+    "effective_rank_and_spectrum"
+  ],
+  "causal_test": {
+    "intervention": "same_finding_same_polarity_fixed_panel_natural_clear_ambiguous_activation_interchange",
+    "requirements": [
+      "bidirectional_necessity_and_sufficiency",
+      "roi_stronger_than_area_and_norm_matched_background",
+      "small_dose_response",
+      "knn_or_mahalanobis_on_manifold_audit",
+      "adjacent_layer_2x2_interaction_audit",
+      "claim_identity_polarity_coverage_and_length_locked"
+    ]
+  },
+  "primary_cells": [
+    "huatuo_negative",
+    "huatuo_positive",
+    "hulu_negative",
+    "hulu_positive"
+  ],
+  "statistics": {
+    "pooling": "equal_weight_macro_across_eight_findings",
+    "bootstrap_unit": "image_id",
+    "confidence": 0.95,
+    "draws": 5000,
+    "layer_selection": "at_most_one_early_layer_per_model_direction_on_dev",
+    "clarity_increment": "I_l=AUC(two_plane_l)-AUC(dev_selected_strongest_control_l)",
+    "erasure_effect": "E=I_early-I_final",
+    "erasure_point_margin_auroc": 0.05,
+    "paired_cluster_permutation_alpha": 0.05,
+    "finding_direction_requirement": "at_least_6_of_8_same_direction_no_corrected_strong_reverse",
+    "multiple_testing": {"finding_level": "Holm", "layer_trajectory": "image_cluster_max_T", "four_primary_cells": "intersection_union"},
+    "power": "dev_only_simulation_at_E_0.10_at_least_80_percent_else_indeterminate"
+  },
+  "method_trigger": "all four primary cells and natural causal test pass",
+  "safety_bounds_one_sided_95_ci_upper_pp": {
+    "clear_accuracy_harm": 1.0,
+    "omission_increase": 1.0,
+    "polarity_flip": 1.0
+  },
+  "forbidden_as_proof": [
+    "plain_logit_lens_alone",
+    "analytic_commitment_gradient_patch",
+    "raw_reader_vote_as_pure_visual_clarity",
+    "test_selected_layer",
+    "shorter_output_or_rejection_as_mitigation"
+  ],
+  "failure_policy": "fail_closed_to_indeterminate_or_named_boundary; do_not_authorize_RCCP"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "anchor-required-research-jobs-v1",
+  "reason": "The reader-residual confirmation remains stopped. These bounded jobs are independently authorized evaluation/admission prerequisites and must survive shell loss; scientific failures are never retried.",
+  "required_jobs": [
+    "native-oe-controls-t2-v1",
+    "native-oe-greedy256-full-v1",
+    "native-oe-full-acceptance-v1",
+    "vqa-rad-oe-baselines-t2-v10",
+    "cecd-human-admission-pack-v2"
+  ]
+}

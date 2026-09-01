@@ -1,0 +1,183 @@
+{
+  "schema_version": "cecd-adversarial-method-preflight-v1",
+  "frozen_before_method_outputs": true,
+  "method_outputs_consumed": false,
+  "collision_sources": {
+    "hallucxr_length_omission": "arxiv:2605.20469",
+    "system_mediated_yes_bias": "acl:2026.findings-acl.1940",
+    "prompt_induced_heads": "acl:2026.acl-long.1941",
+    "halp_architecture_specific_probe": "acl:2026.eacl-long.287",
+    "cebc_evidence_bounded_editing": "acl:2026.acl-long.2142",
+    "hallutrace_source_targeted_decoding": "acl:2026.alvr-main.29",
+    "vli_instance_specific_steering": "acl:2026.acl-long.1784",
+    "conrad_proper_score_confidence": "arxiv:2603.29492"
+  },
+  "claim_boundaries": {
+    "prompt_robustness_novelty_claimed": false,
+    "generic_yes_bias_mitigation_novelty_claimed": false,
+    "pre_generation_hallucination_detection_novelty_claimed": false,
+    "minimal_evidence_bounded_editing_novelty_claimed": false,
+    "generic_source_decomposition_novelty_claimed": false,
+    "generic_adaptive_steering_novelty_claimed": false,
+    "confidence_calibration_novelty_claimed": false,
+    "universal_early_visual_late_language_layer_claimed": false
+  },
+  "evaluation_contract": {
+    "tasks": [
+      "ce",
+      "vindr_fixed_ontology_listing"
+    ],
+    "truth": "independent_reader_votes_plus_admitted_atomic_claims",
+    "automatic_judge_defines_truth": false,
+    "positive_claim_count": "fixed_K_per_record_for_cecd_and_coverage_matched_controls",
+    "cecd_claim_exchange": "one_for_one_only_no_deletion",
+    "candidate_ontology": "frozen_14_finding_vindr_ontology",
+    "recordwise_claim_identity_audit": true,
+    "matched_claim_coverage_absolute_tolerance": 0.01,
+    "matched_mean_length_relative_tolerance": 0.05,
+    "length_stratified_analysis": true,
+    "length_only_risk_baseline": true,
+    "omission_point_increase_max": 0.0,
+    "omission_one_sided_ci_upper_max": 0.01,
+    "refusal_point_increase_max": 0.0,
+    "negative_rate_reported": true,
+    "hedge_rate_reported": true,
+    "deleted_and_inserted_claims_reported": true,
+    "reader_distribution_metrics": [
+      "brier",
+      "nll"
+    ],
+    "bootstrap": {
+      "replicates": 10000,
+      "unit": "patient_or_whole_image_cluster",
+      "paired": true
+    }
+  },
+  "analysis_controls": {
+    "behavioral_incremental_ladder": "clean_score+entropy+length+marginals+full_grid_stability+behavioral_PID+system_attention+prompt_copy_head_score+HALP_risk_then_CECD",
+    "halp_layer_selection": "dev_only_per_model_no_cross_architecture_layer_assumption",
+    "prompt_head_selection": "dev_only_per_model_locked_test_never_scanned",
+    "system_attention_test": "causal_redistribution_plus_no_image_and_balanced_yes_rate",
+    "source_attribution_test": "vision_encoder_projector_decoder_component_ablation",
+    "cebc_comparison": "paper_native_Pareto_plus_fixed_K_common_protocol",
+    "adaptive_steering_comparison": "instance_specific_conflict_conditioned_control",
+    "confidence_control": "proper_log_score_confidence_only_no_content_edit",
+    "primary_contrasts": [
+      "cecd_vs_unmitigated",
+      "cecd_vs_full_orbit",
+      "cecd_vs_stronger_treble_variant",
+      "cecd_vs_system_attention_redistribution",
+      "cecd_vs_prompt_copy_head_ablation",
+      "cecd_vs_cebc_fixed_K",
+      "cecd_vs_hallutrace_HAD",
+      "cecd_vs_VLI"
+    ]
+  },
+  "controls": {
+    "hallucxr_length_omission": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "Aggregate mean controls exist, but recordwise fixed-K, insertion/deletion, length-stratified and omission non-inferiority analysis are not one executable evaluator yet."
+    },
+    "system_mediated_yes_bias": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "No hash-bound causal system-attention redistribution control exists for both models."
+    },
+    "prompt_induced_heads": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "No per-model dev-selected prompt-copy head ablation control exists."
+    },
+    "halp_architecture_specific_probe": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "No model-specific dev-only visual/query/layer probe has been frozen as an incremental control."
+    },
+    "cebc_evidence_bounded_editing": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "Neither a paper-native Pareto arm nor a fixed-K common-protocol CEBC arm is available."
+    },
+    "hallutrace_source_targeted_decoding": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "No component-ablation attribution plus source-targeted HAD control is frozen."
+    },
+    "vli_instance_specific_steering": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "No instance-specific conflict-conditioned adaptive steering baseline is frozen."
+    },
+    "conrad_proper_score_confidence": {
+      "status": "not_implemented",
+      "implementation_fidelity": "not_available",
+      "models": {
+        "huatuo": "not_implemented",
+        "hulu": "not_implemented"
+      },
+      "dev_only_selection": true,
+      "locked_test_untouched": true,
+      "source_files": [],
+      "notes": "Reader Brier exists, but a proper-log-score confidence-only control and report-scope ConRad boundary are not executable."
+    }
+  },
+  "bindings": {
+    "three_stage_input_gate": null,
+    "locked_confirmation_analysis": null,
+    "dual_semantics_preflight": null,
+    "oe_manifest": null,
+    "claim_contract": null,
+    "evaluator_source": null
+  },
+  "method_output_root": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/cecd_full_method_v1"
+}

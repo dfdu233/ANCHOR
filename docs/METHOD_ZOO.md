@@ -2,7 +2,15 @@
 
 This document summarizes methods that are valuable enough to preserve for the next server/data migration. It separates publishable candidates, baselines, diagnostics, and stopped directions. Do not treat this file as a result-to-claim approval; it is a migration map.
 
-## Current Main Candidate: Layer Evidence Transport (LET)
+> **Status correction (2026-08-02).** This file preserves historical methods
+> and numbers only. Current execution/evidence status is defined by
+> `corrected_runs/unified_eval/provenance/method_evidence_ladder_v5.json`, and
+> current paper scope by `docs/PAPER_SCOPE_GATE_20260802.md`. In particular,
+> LET is no longer the main paper candidate and its old RULE-normalized numbers
+> are not reusable clinical-hallucination evidence without versioned CE-G
+> rescoring from raw answers.
+
+## Historical Candidate: Layer Evidence Transport (LET; demoted)
 
 **Idea.** During normal autoregressive generation, mix final-layer logits with an intermediate decoder-layer evidence distribution:
 
@@ -24,6 +32,12 @@ The method is training-free, one-pass, and works on complete generated sentences
 - Same run increases recall strongly but lowers specificity, so report sensitivity/specificity and balanced accuracy.
 - A native-generation variant reported 80.12% -> 82.54% (+2.42pp), but protocol differs from official mitigation baselines.
 - Do not claim LET is novel without citing and comparing VISTA Self-Logits Augmentation; current novelty is a medical-domain specialization/mechanism, not the logit-mixing operator alone.
+- These values predate the unified CE-D/CE-G evaluator and method-evidence
+  ladder. They are provenance, not a current efficacy table. LET's
+  intermediate-layer mixing is not reader-calibrated, its operator collides
+  with VISTA, and the formal VinDr reader-residual gate does not support an
+  early-evidence-erasure mechanism. It therefore cannot serve as the unified
+  OE/report mitigation requested by the current project.
 
 ## Closest Comparator: VISTA / Self-Logits Augmentation
 
@@ -90,7 +104,9 @@ Current report pilot for LET: `corrected_runs/final_anchor_let_report_v1_pilot32
 
 ## Migration Priorities
 
-1. Preserve the exact LET full-run artifacts and all fingerprints.
+1. Preserve the exact LET full-run artifacts and all fingerprints as historical
+   provenance; do not schedule a reproduction unless raw-answer CE-G rescoring
+   first establishes a task-specific comparison worth retaining.
 2. Preserve official baseline/mitigation outputs and parser code.
 3. Preserve source-bank/source-view builders for DG motivation and future experiments.
 4. Preserve OE/report protocol code and metric direction checks.
@@ -99,7 +115,11 @@ Current report pilot for LET: `corrected_runs/final_anchor_let_report_v1_pilot32
 
 ## Claim Discipline
 
-- LET can currently be described as the strongest empirically supported direction in this workspace, but with specificity tradeoff.
+- LET is a historical task-specific CE result with a specificity tradeoff, not
+  the current paper direction or a general medical-VLM hallucination method.
 - VISTA must be treated as a close prior/comparator, not a failed strawman.
 - DG/source-center methods currently support motivation and diagnostics more strongly than final accuracy claims.
-- Any AAAI claim needs a locked common sample set, paired statistics, and an independent result-to-claim audit.
+- Any paper claim needs the versioned unified evaluator, a locked common sample
+  set, paired statistics, and an independent result-to-claim audit. Current
+  candidate work is conditional on the CECD and Specificity Ratchet human
+  construct-validity gates.

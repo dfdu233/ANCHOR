@@ -1,0 +1,5 @@
+{
+  "model_dir": "/home/dbw/models/HuatuoGPT-Vision-7B",
+  "huatuo_root": "/home/dbw/HuatuoGPT-Vision",
+  "device": "cuda:0"
+}

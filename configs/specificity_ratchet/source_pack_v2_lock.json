@@ -1,0 +1,14 @@
+{
+  "files": {
+    "README.md": "c569566b0d482c1c214e148619b893051490d0df7f25472861bfe44aa5eccb4d",
+    "adjudication.csv": "eb6e20359a4b2b0058f174729f6f2f553c9765289483bfa0280d93d16d23c370",
+    "annotation_schema.json": "86bac330e3940fead5468aec670720174a445e64987383e2129857c1e56f4b55",
+    "annotations.reviewer_1.csv": "da94ec43922cde9699193138c14d90635eda6959df7496d127f3b54ccab73bf0",
+    "annotations.reviewer_2.csv": "da94ec43922cde9699193138c14d90635eda6959df7496d127f3b54ccab73bf0",
+    "candidates.blinded.jsonl": "87ce8db47dca8c632a13a98dfa5830be85f90cfbce164013ddc334323ea8f5b9",
+    "provenance.private.jsonl": "4f38e43262a3ce870c1bd1bd41d1717d5011f4756442cf0b093f93bdd8cd7c7f",
+    "summary.json": "8e6ed8c0f97c0d2145abbc50b3d8f2e4401b7860ac59705d2f5b02ea512705f4"
+  },
+  "protocol_id": "specificity-ratchet-physician-pack-v2",
+  "version": "specificity-ratchet-source-pack-lock-v1"
+}

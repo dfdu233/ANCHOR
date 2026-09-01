@@ -1,0 +1,147 @@
+{
+  "schema_version": "cecd-system-pih-control-preflight-v1",
+  "frozen_before_control_outputs": true,
+  "control_outputs_consumed": false,
+  "gpu_used": false,
+  "contract_fingerprints": {
+    "architectures": "e66390af1a93bebba543695b16e612666c219f3acd6a3085a9ba612e3d4ba058",
+    "fidelity": "d1c613e065233ccb42b1c06be21ffdf12199c95cd46c9f3392f56080263ed06d",
+    "papers": "d411b4e7936f8a5c5767366468143fda5ffc3b663d7fa57747da33752438905c",
+    "pih_control": "3791f4ef04608e77041d2c624be8ab005fb31d1e5a6cafd559569fb165df0a7c",
+    "span_contract": "c93b9110ff80b991f2d9e25e7ff2e6db5f798bd5183ea9f02887ada912cbe547",
+    "system_control": "c6e7770282770382d995007f4207fa088d3997122419fd8daf8c7d49040ba8a8",
+    "runtime_integration": "d4db963f5608fff8bcf9bb4b9f3dd2ec5baeb7e88578350b5e3e5d732b2f31ea"
+  },
+  "architecture_source_files": {
+    "huatuo": [
+      {
+        "path": "/home/dbw/HuatuoGPT-Vision/cli.py",
+        "sha256": "b1e431af96d0285cc375ef1cd41baa0445246e30b6badca00411d7343129fa79",
+        "bytes": 14712
+      },
+      {
+        "path": "/home/dbw/HuatuoGPT-Vision/llava/model/language_model/llava_qwen2.py",
+        "sha256": "bf914e1e13ccad1bd027e93e74cab74e6171450e035eeced911de0c29f0a122a",
+        "bytes": 5882
+      },
+      {
+        "path": "/home/dbw/HuatuoGPT-Vision/llava/model/llava_arch.py",
+        "sha256": "ebceb615fba90cefb69f5b38c3ead2149f0aea3f1677da95c139d320a8b7f576",
+        "bytes": 27477
+      },
+      {
+        "path": "/home/dbw/models/HuatuoGPT-Vision-7B/config.json",
+        "sha256": "3d96adabfe401f3f533f98c66478324c01159370e55c58bfdea1191a642f9fb9",
+        "bytes": 1075
+      },
+      {
+        "path": "/opt/miniconda3/envs/huatuo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py",
+        "sha256": "1a6fab248bdd2dc99898a2baaa8ea9880068d8d229a4f50a90ae4429ccd5ab08",
+        "bytes": 63931
+      }
+    ],
+    "hulu": [
+      {
+        "path": "/home/dbw/models/Hulu-Med-4B/config.json",
+        "sha256": "c47ca64782aa2f0d805671353114ee1018070c09c278fae89609cc855b792c89",
+        "bytes": 3140
+      },
+      {
+        "path": "/home/dbw/models/Hulu-Med-4B/modeling_hulumed_qwen3.py",
+        "sha256": "3760f285c38e1121099ea7a355bacfd239fcca6163f6b2f35f5595c935db7618",
+        "bytes": 19674
+      },
+      {
+        "path": "/home/dbw/models/Hulu-Med-4B/processing_hulumed.py",
+        "sha256": "dcc9ff436193203fed727b522be097ffade14d063f724592f5aa589a71456b11",
+        "bytes": 36409
+      },
+      {
+        "path": "/home/dbw/models/Hulu-Med-4B/tokenizer_config.json",
+        "sha256": "fe3bd9c86f7e4d8d844cf76e644f148a9f23037666415b1823588f5fca345ad5",
+        "bytes": 7663
+      },
+      {
+        "path": "/home/dbw/.venvs/hulumed/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py",
+        "sha256": "704c914530530a1acb0b443add1f520404e3ac2c28c0ab7e16f80f86cfe8ccb2",
+        "bytes": 51968
+      }
+    ]
+  },
+  "implementation_bindings": {
+    "dynamic_span_builder": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_dynamic_span_builder_v1.py",
+      "sha256": "5d02d02772cec637bd8cf12ac143130fc0f8dd20010e5fa926aa166f4b90a28d",
+      "bytes": 4762
+    },
+    "system_attention_source_patch": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_positional_prefix_attention_v1.py",
+      "sha256": "28d75350fabd277dcf7a94655b317433c0a196d02a799fdf9b2108b495750665",
+      "bytes": 11918
+    },
+    "system_numerical_canary": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_numerical_canary_v1.py",
+      "sha256": "677abf292206bdb2d1b958e2366fe3e57fa692af137846f0c231c18727bfb358",
+      "bytes": 2976
+    },
+    "pih_mean_ablation_hook": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_pih_mean_ablation_v1.py",
+      "sha256": "01fd391a92297447954d838bf1664f7fd7611f60f554ee36cded48e9c0e4c345",
+      "bytes": 4460
+    },
+    "pih_selection_runner": {
+      "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_pih_dev_selection_schema_v1.py",
+      "sha256": "da7491b4961667d16c3d82c9b9be6ecc50913ed29cbad3c205261ab6f0cb5a92",
+      "bytes": 3761
+    }
+  },
+  "runtime_integrations": {
+    "huatuo": {
+      "status": "source_integration_ready_canary_pending",
+      "system_attention_runtime_patch": {
+        "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+        "sha256": "54d28b88d903e1c58602d3e33e76f7a4ee051dc9614a647d1770e8f609acee9d",
+        "bytes": 40482
+      },
+      "native_eager_canary_artifact": null,
+      "pih_o_proj_runtime_integration": {
+        "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+        "sha256": "54d28b88d903e1c58602d3e33e76f7a4ee051dc9614a647d1770e8f609acee9d",
+        "bytes": 40482
+      }
+    },
+    "hulu": {
+      "status": "source_integration_ready_canary_pending",
+      "system_attention_runtime_patch": {
+        "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+        "sha256": "54d28b88d903e1c58602d3e33e76f7a4ee051dc9614a647d1770e8f609acee9d",
+        "bytes": 40482
+      },
+      "native_eager_canary_artifact": null,
+      "pih_o_proj_runtime_integration": {
+        "path": "/home/dbw/ANCHOR/anchor/corrected_sgta/cecd_system_pih_runtime_integration_v1.py",
+        "sha256": "54d28b88d903e1c58602d3e33e76f7a4ee051dc9614a647d1770e8f609acee9d",
+        "bytes": 40482
+      }
+    }
+  },
+  "pih_selection": {
+    "huatuo": {
+      "status": "not_implemented",
+      "selection_split": "patient_or_image_disjoint_dev_only",
+      "locked_test_scanned": false,
+      "head_width": 128,
+      "selected_heads_artifact": null,
+      "random_heads_artifact": null
+    },
+    "hulu": {
+      "status": "not_implemented",
+      "selection_split": "patient_or_image_disjoint_dev_only",
+      "locked_test_scanned": false,
+      "head_width": 128,
+      "selected_heads_artifact": null,
+      "random_heads_artifact": null
+    }
+  },
+  "control_output_root": "/home/dbw/ANCHOR/corrected_runs/vindr_v2/system_pih_controls_v1"
+}

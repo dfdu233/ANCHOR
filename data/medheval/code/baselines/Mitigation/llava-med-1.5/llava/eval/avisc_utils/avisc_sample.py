@@ -153,7 +153,15 @@ def sample(
                 attention = outputs.attentions             
                 
                 if model_name.lower() == "llava":
-                    img_idx = list(range(34, 34+576))
+                    image_start = model_kwargs.get("avisc_image_start")
+                    num_image_tokens = model_kwargs.get("avisc_num_image_tokens")
+                    if (
+                        not isinstance(image_start, int)
+                        or not isinstance(num_image_tokens, int)
+                        or num_image_tokens <= 0
+                    ):
+                        raise ValueError("AVISC requires a valid dynamic image-token range")
+                    img_idx = list(range(image_start, image_start + num_image_tokens))
 
                 elif model_name.lower() == "blip":
                     img_idx = list(range(32))
@@ -379,7 +387,7 @@ def sample(
                 outputs_cd, model_kwargs_cd, is_encoder_decoder=self.config.is_encoder_decoder
             )
         if use_m3id:
-            model_kwargs_cd = self._update_model_kwargs_for_generation(
+            model_kwargs_m3id = self._update_model_kwargs_for_generation(
                 outputs_m3id, model_kwargs_m3id, is_encoder_decoder=self.config.is_encoder_decoder
             )
 

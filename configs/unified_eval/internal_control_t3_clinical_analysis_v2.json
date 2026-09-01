@@ -1,0 +1,53 @@
+{
+  "protocol_version": "internal-control-t3-clinical-analysis-v2",
+  "status": "frozen before T3-v2 generation or any physician label",
+  "models_reported_separately": ["huatuo", "hulu"],
+  "baseline": "greedy512",
+  "candidate_arms": ["sample_t02_p09_seed42", "sample_t07_p09_seed42", "sample_t10_p09_seed42", "structured_self_consistency"],
+  "repair_basis": {
+    "execution_contract": "configs/unified_eval/internal_control_t3_execution_v2.json",
+    "execution_contract_sha256": "afd0c5600371ab71da934f164abc3cc37cb48219ac2f764b30f4c8250e7bc0cb",
+    "selection_signal": "outcome-independent termination qualification only",
+    "v1_physician_labels_inspected": false,
+    "v2_outputs_inspected": false
+  },
+  "review_selection": {
+    "groups_per_model": 32,
+    "selection_seed": 20260803,
+    "image_disjoint": true,
+    "exact_answer_deduplication": true,
+    "model_and_arm_identity_blinded": true
+  },
+  "primary_endpoint": "paired change in any physician-adjudicated visual claim error per image versus greedy512; lower is better",
+  "secondary_endpoints": ["fabricated claim", "false negation", "location error", "attribute error", "inappropriate certainty", "omitted required claim", "direct answer correctness", "clinical harm"],
+  "no_exchange_gates": {
+    "omissions_counted": true,
+    "matched_evaluated_visual_claim_count": true,
+    "mean_word_count_at_least_fraction_of_greedy": 0.9,
+    "mean_evaluated_claim_count_at_least_fraction_of_greedy": 0.9,
+    "required_recall_delta_lower_ci": -0.05,
+    "direct_correctness_delta_lower_ci": -0.05,
+    "harm_delta_upper_ci": 0.05,
+    "refusal_delta_upper_ci": 0.01
+  },
+  "statistics": {
+    "cluster_unit": "image",
+    "bootstrap_iterations": 10000,
+    "bootstrap_seed": 20260803,
+    "confidence_interval": 0.95,
+    "multiplicity": "Holm within model across four candidate arms"
+  },
+  "machine_gate_spec": {
+    "primary_ci_high_below": 0.0,
+    "holm_adjusted_one_sided_p_below": 0.05,
+    "matched_coverage_minimum_groups": 12,
+    "matched_coverage_ci_high_below": 0.0,
+    "required_recall_delta_ci_low_at_least": -0.05,
+    "direct_correctness_delta_ci_low_at_least": -0.05,
+    "harm_delta_ci_high_at_most": 0.05,
+    "refusal_delta_ci_high_at_most": 0.01,
+    "length_ratio_at_least": 0.9,
+    "evaluated_visual_claim_ratio_at_least": 0.9
+  },
+  "promotion": "all clinical and no-exchange gates must pass; automatic metrics never define truth"
+}

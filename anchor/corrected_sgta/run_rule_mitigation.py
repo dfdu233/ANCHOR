@@ -38,33 +38,47 @@ from corrected_sgta.rule_mitigation_backend import (
     validate_activation_report,
 )
 
-ROOT = Path("/root/autodl-tmp/Hulu-Med/MedUniEval")
-RULE_ROOT = Path("/root/autodl-tmp/RULE")
+REPO_ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("ANCHOR_LEGACY_ROOT", REPO_ROOT))
+RULE_ROOT = Path(os.environ.get("ANCHOR_RULE_ROOT", REPO_ROOT / "third_party/RULE"))
+RULE_DATA_ROOT = Path(os.environ.get("ANCHOR_RULE_DATA_ROOT", REPO_ROOT / "data/rule"))
+MEDHEVAL_ROOT = Path(os.environ.get("ANCHOR_MEDHEVAL_ROOT", REPO_ROOT / "data/medheval"))
 MODEL_PATH = Path(
-    "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b"
+    os.environ.get(
+        "ANCHOR_MODEL_PATH",
+        "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b",
+    )
 )
-PYTHON = Path("/root/autodl-tmp/envs/medheval-mitigation/bin/python")
-MEDALIGN_ROOT = ROOT / "external_baselines/MedAlign"
+PYTHON = Path(
+    os.environ.get("ANCHOR_PYTHON", "/root/autodl-tmp/envs/medheval-mitigation/bin/python")
+)
+MEDALIGN_ROOT = REPO_ROOT / "third_party/baselines/MedAlign"
 MEDALIGN_BACKEND = MEDALIGN_ROOT / "llava-med-1.5/llava/eval/model_vqa.py"
 MEDALIGN_COMMIT = "fbefd179018a495407caa89ecbe64eb575da7663"
 MITIGATION_ROOT = Path(
-    "/root/autodl-tmp/MedHEval/code/baselines/Mitigation/llava-med-1.5"
+    os.environ.get(
+        "ANCHOR_MITIGATION_ROOT",
+        MEDHEVAL_ROOT / "code/baselines/Mitigation/llava-med-1.5",
+    )
 )
 MITIGATION_EVAL_ROOT = MITIGATION_ROOT / "llava/eval"
 MITIGATION_TRANSFORMERS = Path(
-    "/root/autodl-tmp/MedHEval/code/baselines/Med-LVLMs/"
-    "llava-med-1.5/transformers-4.37.2/src"
+    os.environ.get(
+        "ANCHOR_MITIGATION_TRANSFORMERS",
+        MEDHEVAL_ROOT
+        / "code/baselines/Med-LVLMs/llava-med-1.5/transformers-4.37.2/src",
+    )
 )
 MITIGATION_BACKEND = ROOT / "corrected_sgta/rule_mitigation_backend.py"
 MITIGATION_GENERATION_UTILS = (
     MITIGATION_TRANSFORMERS / "transformers/generation/utils.py"
 )
-OPERA_ROOT = ROOT / "external_baselines/OPERA"
+OPERA_ROOT = REPO_ROOT / "third_party/baselines/OPERA"
 OPERA_COMMIT = "e1bb7632508bdfaa5cdaf5b69b64419688107da8"
 OPERA_GENERATION_UTILS = (
     OPERA_ROOT / "transformers-4.29.2/src/transformers/generation/utils.py"
 )
-PAI_ROOT = ROOT / "external_baselines/PAI"
+PAI_ROOT = REPO_ROOT / "third_party/baselines/PAI"
 PAI_COMMIT = "9bbd8bd57a0b0923f996197e4bd3e02cc10b8d58"
 PAI_PORT_FILES = {
     name: MITIGATION_EVAL_ROOT / "PAI_files" / name
@@ -81,11 +95,17 @@ M3ID_PORT_FILES = {
     ),
     "readme.md": MITIGATION_ROOT / "readme.md",
 }
-AVISC_ROOT = ROOT / "external_baselines/AvisC"
+AVISC_ROOT = REPO_ROOT / "third_party/baselines/AvisC"
 AVISC_COMMIT = "772eba499dcbda0eaaf844fda2fdf5057dcd0175"
 AVISC_OFFICIAL_SAMPLE = AVISC_ROOT / "avisc_utils/avisc_sample.py"
 AVISC_DYNAMIC_SAMPLE = ROOT / "corrected_sgta/avisc_sample_dynamic.py"
-PROTOCOL_VERSION = "rule-vqa-mitigation-runner-v6"
+PROTOCOL_VERSION = "rule-vqa-mitigation-runner-v8-leading-native-eos"
+
+
+def mitigation_max_new_tokens(method: str) -> int:
+    # MedHEval's OPERA VQA branch uses a 128-token budget; other mitigation
+    # branches keep the local 1024-token yes/no budget used in prior runs.
+    return 128 if method == "OPERA" else 1024
 
 
 class RuleRunnerError(RuntimeError):
@@ -113,18 +133,21 @@ class MethodSpec:
 
 DATASETS = {
     "iuxray": DatasetSpec(
-        annotation=str(RULE_ROOT / "data/test/iuxray_test.jsonl"),
-        image_root="/root/autodl-tmp/MedHEval/images/IU-Xray",
+        annotation=str(RULE_DATA_ROOT / "test/iuxray_test.jsonl"),
+        image_root=str(MEDHEVAL_ROOT / "images/IU-Xray"),
         entrypoint=str(RULE_ROOT / "llava/eval/model_vqa_iuxray.py"),
     ),
     "harvard": DatasetSpec(
-        annotation=str(RULE_ROOT / "data/test/harvard_test.jsonl"),
-        image_root="/root/autodl-tmp/source_data/FairVLMed/extracted/Test",
+        annotation=str(RULE_DATA_ROOT / "test/harvard_test.jsonl"),
+        image_root=os.environ.get(
+            "ANCHOR_HARVARD_IMAGE_ROOT",
+            "/root/autodl-tmp/source_data/FairVLMed/extracted/Test",
+        ),
         entrypoint=str(RULE_ROOT / "llava/eval/model_vqa_harvard.py"),
     ),
     "mimic": DatasetSpec(
-        annotation=str(RULE_ROOT / "data/test/mimic_test.jsonl"),
-        image_root="/root/autodl-tmp/MedHEval/images",
+        annotation=str(RULE_DATA_ROOT / "test/mimic_test.jsonl"),
+        image_root=str(MEDHEVAL_ROOT / "images"),
         entrypoint=str(RULE_ROOT / "llava/eval/model_vqa_mimic.py"),
     ),
 }
@@ -315,11 +338,23 @@ def git_identity(path: Path) -> dict[str, Any]:
 
     head = run("rev-parse", "HEAD")
     status = run("status", "--porcelain", "--untracked-files=no")
-    if head.returncode or status.returncode:
-        raise RuleRunnerError(f"cannot resolve git identity for {path}")
-    if status.stdout.strip():
-        raise RuleRunnerError(f"tracked files are dirty in required source repo: {path}")
-    return {"path": str(path), "commit": head.stdout.strip(), "tracked_clean": True}
+    if not head.returncode and not status.returncode:
+        if status.stdout.strip():
+            raise RuleRunnerError(
+                f"tracked files are dirty in required source repo: {path}"
+            )
+        return {"path": str(path), "commit": head.stdout.strip(), "tracked_clean": True}
+    if not path.is_dir():
+        raise RuleRunnerError(f"required source directory is missing: {path}")
+    tree_sha, files = sha256_tree(path)
+    return {
+        "path": str(path),
+        "commit": None,
+        "tracked_clean": None,
+        "vendored_tree_sha256": tree_sha,
+        "vendored_file_count": len(files),
+        "identity_note": "source directory is vendored without .git metadata",
+    }
 
 
 def image_identity(rows: Iterable[dict[str, Any]], image_root: Path) -> dict[str, Any]:
@@ -404,7 +439,7 @@ def build_command(
             "--conv-mode",
             CONV_MODE,
             "--max-new-tokens",
-            "1024",
+            str(mitigation_max_new_tokens(method)),
             "--seed",
             "0",
         ]
@@ -452,13 +487,16 @@ def completed_job_valid(
     paths: dict[str, Path],
     expected_qids: list[str],
 ) -> bool:
-    if meta.get("fingerprint") != expected_fingerprint:
-        raise RuleRunnerError("existing job fingerprint differs; refusing reuse")
     if meta.get("status") != "complete":
         return False
+    if meta.get("fingerprint") != expected_fingerprint:
+        raise RuleRunnerError("existing job fingerprint differs; refusing reuse")
     current = artifact_hashes(paths)
     if current != meta.get("artifacts"):
-        raise RuleRunnerError("completed artifact hashes differ; refusing reuse")
+        raise RuleRunnerError(
+            "completed artifact hashes differ; refusing reuse "
+            f"current={current} meta={meta.get('artifacts')}"
+        )
     answer_qids = [str(row["question_id"]) for row in load_jsonl(paths["answers"])]
     record_qids = [str(row["question_id"]) for row in load_jsonl(paths["records"])]
     if answer_qids != expected_qids or record_qids != expected_qids:
@@ -597,48 +635,36 @@ def main() -> int:
     rule_git = git_identity(RULE_ROOT)
     model_sha, model_files = sha256_tree(args.model_path)
     native_runtime = runtime_identity(args.python)
-    mitigation_pythonpath = os.pathsep.join(
-        (
-            str(MITIGATION_EVAL_ROOT),
-            str(MITIGATION_ROOT),
-            str(MITIGATION_TRANSFORMERS),
-            str(ROOT),
+    mitigation_methods = [
+        method
+        for method in args.methods
+        if METHODS[method].backend == "rule_protocol_medheval_port"
+    ]
+    mitigation_runtime = None
+    mitigation_backend_audit = None
+    if mitigation_methods:
+        mitigation_pythonpath = os.pathsep.join(
+            (
+                str(MITIGATION_EVAL_ROOT),
+                str(MITIGATION_ROOT),
+                str(MITIGATION_TRANSFORMERS),
+                str(ROOT),
+            )
         )
-    )
-    mitigation_runtime = runtime_identity(
-        args.python, pythonpath=mitigation_pythonpath
-    )
-    if "OPERA" in args.methods and not mitigation_runtime.get("opera_available"):
-        raise RuleRunnerError("mitigation runtime does not expose OPERA decoding")
-    if (
-        {"PAI", "PAIControl"} & set(args.methods)
-    ) and not mitigation_runtime.get("pai_available"):
-        raise RuleRunnerError("mitigation runtime does not expose PAI modules")
-    if "M3ID" in args.methods and not mitigation_runtime.get("m3id_available"):
-        raise RuleRunnerError("mitigation runtime does not expose M3ID modules")
-    if "AVISC" in args.methods and not mitigation_runtime.get("avisc_available"):
-        raise RuleRunnerError("mitigation runtime does not expose AVISC modules")
-    runner_sha = sha256_file(Path(__file__))
-    evaluator_path = Path(sys.modules[evaluate_rule_rows.__module__].__file__)
-    evaluator_sha = sha256_file(evaluator_path)
-    manifest: dict[str, Any] = {
-        "protocol_version": PROTOCOL_VERSION,
-        "scope": "RULE binary VQA only; not report generation",
-        "paper_exact_reproduction": False,
-        "rule_source": rule_git,
-        "model": {
-            "path": str(args.model_path.resolve()),
-            "tree_sha256": model_sha,
-            "files": model_files,
-        },
-        "python": str(args.python.resolve()),
-        "runtime_versions": {
-            "rule_native": native_runtime,
-            "mitigation_port": mitigation_runtime,
-        },
-        "runner_sha256": runner_sha,
-        "evaluator_sha256": evaluator_sha,
-        "mitigation_backend_audit": {
+        mitigation_runtime = runtime_identity(
+            args.python, pythonpath=mitigation_pythonpath
+        )
+        if "OPERA" in args.methods and not mitigation_runtime.get("opera_available"):
+            raise RuleRunnerError("mitigation runtime does not expose OPERA decoding")
+        if (
+            {"PAI", "PAIControl"} & set(args.methods)
+        ) and not mitigation_runtime.get("pai_available"):
+            raise RuleRunnerError("mitigation runtime does not expose PAI modules")
+        if "M3ID" in args.methods and not mitigation_runtime.get("m3id_available"):
+            raise RuleRunnerError("mitigation runtime does not expose M3ID modules")
+        if "AVISC" in args.methods and not mitigation_runtime.get("avisc_available"):
+            raise RuleRunnerError("mitigation runtime does not expose AVISC modules")
+        mitigation_backend_audit = {
             "generation_utils": str(MITIGATION_GENERATION_UTILS),
             "generation_utils_sha256": sha256_file(MITIGATION_GENERATION_UTILS),
             "opera_source": {
@@ -685,7 +711,28 @@ def main() -> int:
                 ),
                 "license": "MIT",
             },
+        }
+    runner_sha = sha256_file(Path(__file__))
+    evaluator_path = Path(sys.modules[evaluate_rule_rows.__module__].__file__)
+    evaluator_sha = sha256_file(evaluator_path)
+    manifest: dict[str, Any] = {
+        "protocol_version": PROTOCOL_VERSION,
+        "scope": "RULE binary VQA only; not report generation",
+        "paper_exact_reproduction": False,
+        "rule_source": rule_git,
+        "model": {
+            "path": str(args.model_path.resolve()),
+            "tree_sha256": model_sha,
+            "files": model_files,
         },
+        "python": str(args.python.resolve()),
+        "runtime_versions": {
+            "rule_native": native_runtime,
+            "mitigation_port": mitigation_runtime,
+        },
+        "runner_sha256": runner_sha,
+        "evaluator_sha256": evaluator_sha,
+        "mitigation_backend_audit": mitigation_backend_audit,
         "reserved_backend_audit": {
             "medalign_path": str(MEDALIGN_ROOT),
             "medalign_commit": MEDALIGN_COMMIT,
@@ -767,7 +814,7 @@ def main() -> int:
                     "decoding": {
                         "conv_mode": CONV_MODE,
                         **(
-                            generation_config(method, 1024)
+                            generation_config(method, mitigation_max_new_tokens(method))
                             if method_spec.backend
                             == "rule_protocol_medheval_port"
                             else {
@@ -976,10 +1023,10 @@ def main() -> int:
                             activation_report,
                             method=method,
                             expected_samples=len(chunk),
-                            expected_prompt_sha256=payload[
+                            expected_prompt_sha256=running_meta["payload"][
                                 "ordered_prompt_sha256"
                             ],
-                            expected_max_new_tokens=1024,
+                            expected_max_new_tokens=mitigation_max_new_tokens(method),
                         )
                     report, normalized = evaluate_rule_rows(chunk, answer_rows)
                 except (

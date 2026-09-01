@@ -1,0 +1,27 @@
+{
+  "protocol_version": "vindr-reader-layer-boundary-v1",
+  "reference": "official VinDr-CXR train reader votes; three independent rad_ID labels",
+  "models_primary": ["huatuo", "hulu"],
+  "model_conditional": "llava only after 128/128 token-exact common-protocol identity",
+  "directions": {
+    "negative": ["0/3", "1/3"],
+    "positive": ["3/3", "2/3"]
+  },
+  "split": {"unit":"image_id", "selection":"dev_only", "evaluation":"locked_test"},
+  "minimum_test_per_vote_bin": 10,
+  "power_rule": {"maximum_increment_auroc_ci_width": 0.10, "rationale":"resolve the preregistered 0.05 boundary with a two-sided 95% interval no wider than 0.10"},
+  "effect_margin_auroc": 0.05,
+  "equivalence_margin_auroc": 0.05,
+  "bootstrap": {"unit":"image_id", "confidence":0.95, "draws":5000},
+  "probe_contract": "same capacity, regularization and optimization for every layer; layer selected on dev only",
+  "controls": ["polarity", "final_confidence", "entropy", "temperature_scaling", "image_null", "norm_matched_null", "random_features"],
+  "states": {
+    "early_erasure": "early-final AUROC >= 0.05, CI_low > 0, and bidirectional same-polarity activation patch passes",
+    "late_emergence": "final-early AUROC >= 0.05 and CI_low > 0",
+    "layer_stable": "the complete early-final 95% CI lies within [-0.05, 0.05]",
+    "not_decodable": "powered test, all preregistered controls present, and neither early nor final exceeds the dev-selected strongest control (both increment CI_high <= 0)",
+    "indeterminate": "none of the preregistered positive, equivalence, or powered-null criteria pass"
+  },
+  "method_trigger": "only early_erasure in both directions for a strict majority of qualified findings on both primary models",
+  "forbidden": ["CBD", "tau-minus-absolute-polarity", "test-selected-layer", "proxy-as-formal-reference"]
+}

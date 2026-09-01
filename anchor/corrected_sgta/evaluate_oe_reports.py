@@ -26,8 +26,8 @@ from corrected_sgta.report_protocol import (
     is_normal_template,
 )
 
-VERSION = "anchor-oe-evaluator-v2"
-PINNED_NLTK_DATA = Path("/root/autodl-tmp/nltk_data")
+VERSION = "anchor-oe-evaluator-v3-paper-metrics"
+PINNED_NLTK_DATA = Path("/home/dbw/nltk_data")
 if PINNED_NLTK_DATA.is_dir() and str(PINNED_NLTK_DATA) not in nltk.data.path:
     nltk.data.path.insert(0, str(PINNED_NLTK_DATA))
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -97,8 +97,8 @@ def normalize_rows(inputs: Iterable[Path], prediction_field: str, real_view_only
             if not reference:
                 raise ValueError(f"{path}:{index + 1} has no reference")
             prediction = _prediction_from(row, prediction_field)
-            if not prediction:
-                raise ValueError(f"{path}:{index + 1} has an empty prediction")
+            # Empty outputs are model failures, not missing rows.  Keep them in
+            # every lexical and clinical denominator.
             item_id = str(row.get("item_id") or row.get("id") or row.get("qid") or row.get("question_id") or index)
             method = str(row.get("method") or row.get("selected_method") or "greedy")
             protocol_parts = [str(row.get(key, "")).strip() for key in ("conv_mode", "prompt_mode")]
@@ -129,7 +129,9 @@ def normalize_rows(inputs: Iterable[Path], prediction_field: str, real_view_only
     return output
 
 
-def safe_sentence_bleu(hyp_tokens: list[str], ref_tokens: list[str]) -> float:
+def safe_sentence_bleu(
+    hyp_tokens: list[str], ref_tokens: list[str], order: int = 4
+) -> float:
     """Return sentence BLEU with a Python-3.12-safe fallback.
 
     Some older NLTK releases call ``Fraction(..., _normalize=False)``, which
@@ -141,7 +143,13 @@ def safe_sentence_bleu(hyp_tokens: list[str], ref_tokens: list[str]) -> float:
         return 0.0
     try:
         smooth = SmoothingFunction().method4
-        return float(sentence_bleu([ref_tokens], hyp_tokens, smoothing_function=smooth))
+        weights = tuple([1.0 / order] * order + [0.0] * (4 - order))
+        return float(
+            sentence_bleu(
+                [ref_tokens], hyp_tokens, weights=weights,
+                smoothing_function=smooth,
+            )
+        )
     except TypeError:
         if hyp_tokens == ref_tokens:
             return 1.0
@@ -150,10 +158,52 @@ def safe_sentence_bleu(hyp_tokens: list[str], ref_tokens: list[str]) -> float:
 
 def score_text_pair(hypothesis: str, reference: str) -> dict[str, float]:
     hyp_tokens, ref_tokens = word_tokens(hypothesis), word_tokens(reference)
-    bleu = safe_sentence_bleu(hyp_tokens, ref_tokens)
     meteor = meteor_score([ref_tokens], hyp_tokens) if hyp_tokens and ref_tokens else 0.0
-    rouge_l = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True).score(reference, hypothesis)["rougeL"].fmeasure
-    return {"bleu": float(bleu), "rouge_l": float(rouge_l), "meteor": float(meteor), "token_f1": float(token_f1(hypothesis, reference))}
+    rouge = rouge_scorer.RougeScorer(
+        ["rouge1", "rouge2", "rougeL"], use_stemmer=True
+    ).score(reference, hypothesis)
+    result = {
+        f"bleu_{order}": safe_sentence_bleu(hyp_tokens, ref_tokens, order)
+        for order in range(1, 5)
+    }
+    for public, internal in (("rouge_1", "rouge1"), ("rouge_2", "rouge2"), ("rouge_l", "rougeL")):
+        value = rouge[internal]
+        result[f"{public}_precision"] = float(value.precision)
+        result[f"{public}_recall"] = float(value.recall)
+        result[f"{public}_f1"] = float(value.fmeasure)
+    # Backward-compatible aliases remain bound to BLEU-4 and ROUGE-L F1.
+    result.update(
+        bleu=result["bleu_4"],
+        rouge_l=result["rouge_l_f1"],
+        meteor=float(meteor),
+        token_f1=float(token_f1(hypothesis, reference)),
+    )
+    return result
+
+
+def cluster_bootstrap_means(group: list[dict[str, Any]], names: tuple[str, ...], replicates: int = 5000, seed: int = 42) -> dict[str, Any]:
+    clusters: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in group:
+        clusters[str(row["patient_id"])].append(row)
+    keys = sorted(clusters)
+    rng = np.random.default_rng(seed)
+    draws = {name: np.empty(replicates, dtype=np.float64) for name in names}
+    for replicate in range(replicates):
+        selected = rng.integers(0, len(keys), size=len(keys))
+        sample = [row for index in selected for row in clusters[keys[int(index)]]]
+        for name in names:
+            draws[name][replicate] = np.mean([row["text_metrics"][name] for row in sample])
+    return {
+        name: {
+            "estimate": float(np.mean([row["text_metrics"][name] for row in group])),
+            "ci95_lower": float(np.quantile(draws[name], 0.025)),
+            "ci95_upper": float(np.quantile(draws[name], 0.975)),
+            "clusters": len(keys),
+            "replicates": replicates,
+            "seed": seed,
+        }
+        for name in names
+    }
 
 
 def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -166,10 +216,18 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
                        "abnormal_finding": has_unnegated_abnormal_finding(row["model_answer"])})
 
     def aggregate(group: list[dict[str, Any]]) -> dict[str, Any]:
+        metric_names = (
+            "bleu_1", "bleu_2", "bleu_3", "bleu_4",
+            "rouge_1_precision", "rouge_1_recall", "rouge_1_f1",
+            "rouge_2_precision", "rouge_2_recall", "rouge_2_f1",
+            "rouge_l_precision", "rouge_l_recall", "rouge_l_f1",
+            "meteor", "token_f1",
+        )
         return {
             "n": len(group),
             "n_patients_or_studies": len({row["patient_id"] for row in group}),
-            **{name: float(np.mean([row["text_metrics"][name] for row in group])) for name in ("bleu", "rouge_l", "meteor", "token_f1")},
+            **{name: float(np.mean([row["text_metrics"][name] for row in group])) for name in metric_names},
+            "bootstrap_ci95": cluster_bootstrap_means(group, metric_names),
             "mean_prediction_words": float(np.mean([row["prediction_words"] for row in group])),
             "mean_reference_words": float(np.mean([row["reference_words"] for row in group])),
             "unique_output_rate": len({row["model_answer"] for row in group}) / len(group),
@@ -207,7 +265,7 @@ def _slug(value: str) -> str:
     return "".join(character if character.isalnum() else "_" for character in value).strip("_")
 
 
-def run_clinical(records: list[dict[str, Any]], output_dir: Path, python: Path, manifest: Path, validate_directions: bool) -> dict[str, Any]:
+def run_clinical(records: list[dict[str, Any]], output_dir: Path, python: Path, manifest: Path, cache: Path, validate_directions: bool) -> dict[str, Any]:
     eligible = [row for row in records if row["task"] == "report_generation" and row["clinical_metric_family"] == "chest_radiograph"]
     groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in eligible:
@@ -217,9 +275,14 @@ def run_clinical(records: list[dict[str, Any]], output_dir: Path, python: Path, 
         slug = _slug(f"{dataset}-{method}")
         pair_path = output_dir / "clinical_pairs" / f"{slug}.jsonl"
         pair_path.parent.mkdir(parents=True, exist_ok=True)
-        pair_path.write_text("".join(json.dumps({"item_id": row["item_id"], "ground_truth": row["ground_truth"], "model_answer": row["model_answer"]}, ensure_ascii=False) + "\n" for row in rows))
+        pair_path.write_text("".join(json.dumps({"item_id": row["item_id"], "patient_id": row["patient_id"], "ground_truth": row["ground_truth"], "model_answer": row["model_answer"]}, ensure_ascii=False) + "\n" for row in rows))
         target = output_dir / "clinical_metrics" / slug
-        command = [str(python), "-m", "corrected_sgta.evaluate_medheval_report_clinical", "--input", str(pair_path), "--output-dir", str(target), "--metric-manifest", str(manifest), "--batch-size", "8"]
+        # The clinical runner owns the resume contract: it compares its full
+        # fingerprint (input, checkpoints, configuration and code) before
+        # reusing any records.  Always request that safe path so a process
+        # interruption after ``run_manifest.json`` does not deadlock every
+        # later scoring-monitor pass.
+        command = [str(python), "-m", "corrected_sgta.evaluate_medheval_report_clinical", "--input", str(pair_path), "--output-dir", str(target), "--metric-manifest", str(manifest), "--cache", str(cache), "--batch-size", "8", "--resume"]
         if validate_directions and len(rows) >= 100:
             command.extend(["--validate-directions", "--min-direction-pairs", "100"])
         environment = dict(os.environ)
@@ -239,6 +302,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--clinical", choices=("auto", "off", "required"), default="auto")
     parser.add_argument("--clinical-python", type=Path, default=DEFAULT_CLINICAL_PYTHON)
     parser.add_argument("--metric-manifest", type=Path)
+    parser.add_argument("--clinical-cache", type=Path, default=Path("/home/dbw/model_cache/report_metrics"))
     parser.add_argument("--validate-directions", action="store_true")
     return parser.parse_args()
 
@@ -251,6 +315,7 @@ def main() -> None:
               "inputs": [{"path": str(path.resolve()), "sha256": file_sha256(path)} for path in args.input],
               "prediction_field": args.prediction_field, "real_view_only": not args.include_counterfactual_views,
               "clinical": args.clinical, "validate_directions": args.validate_directions,
+              "clinical_cache": str(args.clinical_cache.resolve()),
               "code_sha256": file_sha256(Path(__file__))}
     clinical, clinical_error = None, None
     if args.clinical != "off":
@@ -258,7 +323,7 @@ def main() -> None:
             manifest = resolve_manifest(args.metric_manifest)
             if not args.clinical_python.is_file():
                 raise FileNotFoundError(args.clinical_python)
-            clinical = run_clinical(summary["records"], args.output_dir, args.clinical_python, manifest, args.validate_directions)
+            clinical = run_clinical(summary["records"], args.output_dir, args.clinical_python, manifest, args.clinical_cache, args.validate_directions)
         except Exception as error:
             if args.clinical == "required":
                 raise
@@ -270,7 +335,7 @@ def main() -> None:
               "text_metrics": {key: value for key, value in summary.items() if key != "records"},
               "clinical_metrics": clinical, "clinical_error": clinical_error,
               "paper_policy": {"primary_for_chest_reports": ["radgraph", "ratescore", "chexbert"],
-                               "secondary_comparability": ["bleu", "rouge_l", "meteor"],
+                               "secondary_comparability": ["bleu_1", "bleu_2", "bleu_3", "bleu_4", "rouge_1", "rouge_2", "rouge_l", "meteor"],
                                "ophthalmology_or_pathology": "report separately; chest-radiograph clinical metrics are invalid"}}
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "normalized_records.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in summary["records"]))

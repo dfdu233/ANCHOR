@@ -1,0 +1,75 @@
+{
+  "protocol_version": "internal-control-t2-execution-v1",
+  "status": "frozen_before_held_out_test_generation",
+  "dataset": "VQA-RAD",
+  "development": {
+    "source": "official train after exclusion of every official-test image SHA-256",
+    "pilot_size": 32,
+    "pilot_selection": "one question per image; choose within-image and image order by SHA-256 of the fixed selection seed and identifiers",
+    "selection_seed": "vqa-rad-internal-controls-t2-v1",
+    "test_questions_or_answers_used": false
+  },
+  "models": [
+    "huatuo",
+    "hulu"
+  ],
+  "generation": {
+    "max_new_tokens": 256,
+    "stop": "model EOS or native template separator only",
+    "posthoc_truncation": false,
+    "base_seed": 42,
+    "qid_seed": "first 31 bits of SHA-256(base_seed + ':' + qid)",
+    "sampling_seed_ledger": [
+      42,
+      1042,
+      2042,
+      3042,
+      4042
+    ]
+  },
+  "temperature_length_controls": {
+    "arms": [
+      {"id": "greedy128", "decode_mode": "greedy", "max_new_tokens": 128},
+      {"id": "greedy256", "decode_mode": "greedy", "max_new_tokens": 256},
+      {"id": "sample_t02_p09", "decode_mode": "sample", "temperature": 0.2, "top_p": 0.9, "max_new_tokens": 256, "seed": 42},
+      {"id": "sample_t07_p09", "decode_mode": "sample", "temperature": 0.7, "top_p": 0.9, "max_new_tokens": 256, "seed": 42},
+      {"id": "sample_t10_p09", "decode_mode": "sample", "temperature": 1.0, "top_p": 0.9, "max_new_tokens": 256, "seed": 42}
+    ],
+    "selection": "development-only; no held-out test answer or judge may select an arm",
+    "length_comparison": "native generation at each budget; never truncate a longer answer"
+  },
+  "self_consistency": {
+    "k": 5,
+    "sampling": {"temperature": 0.7, "top_p": 0.9, "max_new_tokens": 256},
+    "rule_id": "radgraph-structured-claim-frequency-v1",
+    "extraction": "frozen RadGraph observation graph plus frozen ontology aliases",
+    "claim_key": ["finding", "anatomy", "attributes"],
+    "state_fields": ["polarity", "uncertainty", "provenance"],
+    "inclusion": "a structured claim key must occur in at least 3 of 5 independently seeded samples",
+    "state_resolution": "a state requires at least 3 of 5 votes; otherwise retain the claim as uncertain conflict",
+    "unknown_handling": "unparsed spans are retained in the trace and cannot be credited as corrected or silently dropped",
+    "exact_text_majority_vote": false,
+    "selection": "development-only; the held-out judge cannot change extraction, matching, K, or threshold"
+  },
+  "calibrated_abstention": {
+    "calibrator_id": "sequence-nll-isotonic-claim-selective-v1",
+    "confidence_statistic": "negative mean processed token NLL, recorded from actual generated token IDs",
+    "fit_source": "image-disjoint development references only",
+    "minimum_development_coverage": 0.8,
+    "selection": "minimum estimated claim risk subject to development coverage >= 0.8; deterministic higher-coverage tie break",
+    "application": "claim-selective uncertainty marking; no whole-answer erasure while any claim remains",
+    "accounting": "abstained claims are not correct; required abstained claims count as omissions",
+    "test_labels_used": false
+  },
+  "cutoffs": {
+    "t2_required": [
+      "exact qid and K-sample coverage",
+      "complete seed and generated-token trace",
+      "deterministic replay",
+      "non-degenerate sample diversity",
+      "zero development/test image overlap"
+    ],
+    "t3_trigger": "T2 changes at least one structured decision and passes all provenance gates",
+    "full_trigger": "T3 claim-level improvement without omission, length, coverage, or abstention exchange"
+  }
+}

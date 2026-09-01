@@ -1,0 +1,446 @@
+{
+  "by_finding": {
+    "aortic_enlargement": {
+      "median_area_fraction": 0.017767708333333337,
+      "median_aspect_log_abs": 0.16348574426011783,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.0,
+      "median_fragmentation": 0.0,
+      "median_largest_fraction": 0.017767708333333337,
+      "median_local_abs_contrast": 0.2601035902538335,
+      "median_local_texture_ratio": 0.7326552540835233,
+      "median_radial_position": 0.34975833137442375,
+      "median_reader_centroid_dispersion": 0.008572763873799098,
+      "median_reader_mask_iou": 0.7074719318621758,
+      "n": 19
+    },
+    "cardiomegaly": {
+      "median_area_fraction": 0.06067399185708731,
+      "median_aspect_log_abs": 1.0285857821922333,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.0,
+      "median_fragmentation": 0.0,
+      "median_largest_fraction": 0.06067399185708731,
+      "median_local_abs_contrast": 0.23918281659720217,
+      "median_local_texture_ratio": 0.6749752683385711,
+      "median_radial_position": 0.28805118644798466,
+      "median_reader_centroid_dispersion": 0.010964256994168963,
+      "median_reader_mask_iou": 0.714077731425626,
+      "n": 19
+    },
+    "lung_opacity": {
+      "median_area_fraction": 0.036378062227335924,
+      "median_aspect_log_abs": 0.35939283126905347,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.0,
+      "median_fragmentation": 0.0,
+      "median_largest_fraction": 0.036378062227335924,
+      "median_local_abs_contrast": 0.20774329392305466,
+      "median_local_texture_ratio": 0.7873035372443469,
+      "median_radial_position": 0.5229243780442577,
+      "median_reader_centroid_dispersion": 0.025035233568830206,
+      "median_reader_mask_iou": 0.4538110138829725,
+      "n": 19
+    },
+    "nodule_mass": {
+      "median_area_fraction": 0.002348134825692508,
+      "median_aspect_log_abs": 0.15808957695977374,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.0,
+      "median_fragmentation": 0.0,
+      "median_largest_fraction": 0.002348134825692508,
+      "median_local_abs_contrast": 0.1157142433027225,
+      "median_local_texture_ratio": 0.8704001786966776,
+      "median_radial_position": 0.4921747415798907,
+      "median_reader_centroid_dispersion": 0.0021449593759990233,
+      "median_reader_mask_iou": 0.8095238095238094,
+      "n": 19
+    },
+    "pleural_effusion": {
+      "median_area_fraction": 0.04347948615933642,
+      "median_aspect_log_abs": 0.41135658231430705,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.0,
+      "median_fragmentation": 0.0,
+      "median_largest_fraction": 0.04347948615933642,
+      "median_local_abs_contrast": 0.22688128645107938,
+      "median_local_texture_ratio": 0.7528965569913026,
+      "median_radial_position": 0.6203026930540946,
+      "median_reader_centroid_dispersion": 0.023445374855935706,
+      "median_reader_mask_iou": 0.619399448652895,
+      "n": 19
+    },
+    "pleural_thickening": {
+      "median_area_fraction": 0.0063420558209304825,
+      "median_aspect_log_abs": 0.7884008327634833,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.3333333333333333,
+      "median_fragmentation": 0.09635226880441872,
+      "median_largest_fraction": 0.005452083333333333,
+      "median_local_abs_contrast": 0.11963847573623841,
+      "median_local_texture_ratio": 0.8339694867152644,
+      "median_radial_position": 0.7725697742401813,
+      "median_reader_centroid_dispersion": 0.041019338702660946,
+      "median_reader_mask_iou": 0.4708994708994709,
+      "n": 19
+    },
+    "pulmonary_fibrosis": {
+      "median_area_fraction": 0.027610178346987122,
+      "median_aspect_log_abs": 0.38618144001901866,
+      "median_bilateral_balance": 0.0,
+      "median_box_count": 1.3333333333333333,
+      "median_fragmentation": 0.11729223017426611,
+      "median_largest_fraction": 0.026709247498075444,
+      "median_local_abs_contrast": 0.18005938419294945,
+      "median_local_texture_ratio": 0.7651038158508464,
+      "median_radial_position": 0.5751851712388446,
+      "median_reader_centroid_dispersion": 0.030366254617004537,
+      "median_reader_mask_iou": 0.5137649286445786,
+      "n": 19
+    }
+  },
+  "cohort": {
+    "bbox_joined_images": 133,
+    "expected_clear_positive_images": 133,
+    "findings": {
+      "aortic_enlargement": 19,
+      "cardiomegaly": 19,
+      "lung_opacity": 19,
+      "nodule_mass": 19,
+      "pleural_effusion": 19,
+      "pleural_thickening": 19,
+      "pulmonary_fibrosis": 19
+    },
+    "missing": []
+  },
+  "feature_summary": {
+    "area_fraction": {
+      "median": 0.023018689875581973,
+      "n": 133,
+      "p10": 0.0023549714489683794,
+      "p90": 0.07524886525799912
+    },
+    "aspect_log_abs": {
+      "median": 0.37271444087217437,
+      "n": 133,
+      "p10": 0.10867878181218865,
+      "p90": 1.0599562756452767
+    },
+    "bilateral_balance": {
+      "median": 0.0,
+      "n": 133,
+      "p10": 0.0,
+      "p90": 0.3263918244133893
+    },
+    "box_count": {
+      "median": 1.0,
+      "n": 133,
+      "p10": 1.0,
+      "p90": 1.6666666666666667
+    },
+    "fragmentation": {
+      "median": 0.0,
+      "n": 133,
+      "p10": 0.0,
+      "p90": 0.22855680363332015
+    },
+    "largest_fraction": {
+      "median": 0.020294620641698447,
+      "n": 133,
+      "p10": 0.0023549714489683794,
+      "p90": 0.07220371520567809
+    },
+    "local_abs_contrast": {
+      "median": 0.19963825544636069,
+      "n": 133,
+      "p10": 0.059466410237798105,
+      "p90": 0.38822516252113926
+    },
+    "local_texture_ratio": {
+      "median": 0.7462892647120483,
+      "n": 133,
+      "p10": 0.5502427951811434,
+      "p90": 0.9377169468269797
+    },
+    "radial_position": {
+      "median": 0.5212000522830692,
+      "n": 133,
+      "p10": 0.27295435433925397,
+      "p90": 0.7810354323942503
+    },
+    "reader_centroid_dispersion": {
+      "median": 0.014341737034664787,
+      "n": 133,
+      "p10": 0.003052296822273106,
+      "p90": 0.09994452328623678
+    },
+    "reader_mask_iou": {
+      "median": 0.6272408963585434,
+      "n": 133,
+      "p10": 0.24793950412222648,
+      "p90": 0.8191320744456209
+    }
+  },
+  "model_associations": {
+    "huatuo": {
+      "associations_with_margin": {
+        "area_fraction": {
+          "ci95": [
+            0.14431854946315362,
+            0.4635002591213712
+          ],
+          "rho": 0.31604010025062657
+        },
+        "aspect_log_abs": {
+          "ci95": [
+            -0.15285772065102615,
+            0.18373040147953054
+          ],
+          "rho": 0.019548872180451128
+        },
+        "bilateral_balance": {
+          "ci95": [
+            -0.07040601715001614,
+            0.25860017192027657
+          ],
+          "rho": 0.09957669932818916
+        },
+        "box_count": {
+          "ci95": [
+            -0.09872111442288269,
+            0.25430436848706084
+          ],
+          "rho": 0.0989157938307152
+        },
+        "fragmentation": {
+          "ci95": [
+            -0.11907254324646051,
+            0.24161029777700213
+          ],
+          "rho": 0.08213304334911709
+        },
+        "largest_fraction": {
+          "ci95": [
+            0.1617527377618467,
+            0.46701577634336394
+          ],
+          "rho": 0.3288220551378446
+        },
+        "local_abs_contrast": {
+          "ci95": [
+            -0.0809439740119849,
+            0.2656475068920412
+          ],
+          "rho": 0.09824561403508772
+        },
+        "local_texture_ratio": {
+          "ci95": [
+            -0.1554684159951959,
+            0.17800016053626122
+          ],
+          "rho": 0.010776942355889723
+        },
+        "radial_position": {
+          "ci95": [
+            -0.3838203309040163,
+            -0.06305729024433192
+          ],
+          "rho": -0.237593984962406
+        },
+        "reader_centroid_dispersion": {
+          "ci95": [
+            -0.08102043077917341,
+            0.24412205183563424
+          ],
+          "rho": 0.08796992481203009
+        },
+        "reader_mask_iou": {
+          "ci95": [
+            -0.2017185217974324,
+            0.11210535817742656
+          ],
+          "rho": -0.05037593984962405
+        }
+      },
+      "false_negative_n": 37,
+      "false_negative_rate": 0.2781954887218045,
+      "fn_vs_tp_medians": {
+        "area_fraction": {
+          "fn": 0.007505400251830839,
+          "tp": 0.0336816104841821
+        },
+        "aspect_log_abs": {
+          "fn": 0.33768218910220466,
+          "tp": 0.382340908547426
+        },
+        "bilateral_balance": {
+          "fn": 0.0,
+          "tp": 0.0
+        },
+        "box_count": {
+          "fn": 1.0,
+          "tp": 1.0
+        },
+        "fragmentation": {
+          "fn": 0.0,
+          "tp": 0.0
+        },
+        "largest_fraction": {
+          "fn": 0.005452083333333333,
+          "tp": 0.03326548207209877
+        },
+        "local_abs_contrast": {
+          "fn": 0.12817693431349456,
+          "tp": 0.21517282123269138
+        },
+        "local_texture_ratio": {
+          "fn": 0.821126565081765,
+          "tp": 0.7136036515414232
+        },
+        "radial_position": {
+          "fn": 0.6469729141608044,
+          "tp": 0.474582930810302
+        },
+        "reader_centroid_dispersion": {
+          "fn": 0.010964256994168963,
+          "tp": 0.015276553356415307
+        },
+        "reader_mask_iou": {
+          "fn": 0.6093899825546539,
+          "tp": 0.6624678063846414
+        }
+      },
+      "n": 133
+    },
+    "hulu": {
+      "associations_with_margin": {
+        "area_fraction": {
+          "ci95": [
+            0.20701736912307894,
+            0.5402220815348128
+          ],
+          "rho": 0.3927318295739348
+        },
+        "aspect_log_abs": {
+          "ci95": [
+            -0.1901146761541009,
+            0.17019509199579463
+          ],
+          "rho": -0.010776942355889723
+        },
+        "bilateral_balance": {
+          "ci95": [
+            -0.19389008450604872,
+            0.14617800698396297
+          ],
+          "rho": -0.026726763504085753
+        },
+        "box_count": {
+          "ci95": [
+            -0.1661927802395866,
+            0.1822298226233713
+          ],
+          "rho": 0.021102521970517357
+        },
+        "fragmentation": {
+          "ci95": [
+            -0.19648212555786426,
+            0.15841128479349142
+          ],
+          "rho": -0.008607354089648793
+        },
+        "largest_fraction": {
+          "ci95": [
+            0.2161201705556927,
+            0.5429846381048193
+          ],
+          "rho": 0.4025062656641603
+        },
+        "local_abs_contrast": {
+          "ci95": [
+            0.03846628143061552,
+            0.3574491508449158
+          ],
+          "rho": 0.20902255639097744
+        },
+        "local_texture_ratio": {
+          "ci95": [
+            -0.15656318667622732,
+            0.172495422903108
+          ],
+          "rho": 0.011528822055137845
+        },
+        "radial_position": {
+          "ci95": [
+            -0.3640825296693888,
+            -0.005386268230101504
+          ],
+          "rho": -0.1932330827067669
+        },
+        "reader_centroid_dispersion": {
+          "ci95": [
+            0.03788485569118827,
+            0.38226629879649177
+          ],
+          "rho": 0.22656641604010022
+        },
+        "reader_mask_iou": {
+          "ci95": [
+            -0.3734597479123644,
+            -0.056590130613569045
+          ],
+          "rho": -0.2283208020050125
+        }
+      },
+      "false_negative_n": 51,
+      "false_negative_rate": 0.38345864661654133,
+      "fn_vs_tp_medians": {
+        "area_fraction": {
+          "fn": 0.007328538933899177,
+          "tp": 0.0336816104841821
+        },
+        "aspect_log_abs": {
+          "fn": 0.3865076491126571,
+          "tp": 0.354663717431396
+        },
+        "bilateral_balance": {
+          "fn": 0.0,
+          "tp": 0.0
+        },
+        "box_count": {
+          "fn": 1.0,
+          "tp": 1.0
+        },
+        "fragmentation": {
+          "fn": 0.0,
+          "tp": 0.0
+        },
+        "largest_fraction": {
+          "fn": 0.00600226288420327,
+          "tp": 0.03326548207209877
+        },
+        "local_abs_contrast": {
+          "fn": 0.14544995145422107,
+          "tp": 0.23223184733866323
+        },
+        "local_texture_ratio": {
+          "fn": 0.7763627591378145,
+          "tp": 0.7068736753404714
+        },
+        "radial_position": {
+          "fn": 0.6099920445373413,
+          "tp": 0.468032559752353
+        },
+        "reader_centroid_dispersion": {
+          "fn": 0.014237723869758601,
+          "tp": 0.01449945750042219
+        },
+        "reader_mask_iou": {
+          "fn": 0.6060606060606061,
+          "tp": 0.6710555429091789
+        }
+      },
+      "n": 133
+    }
+  }
+}

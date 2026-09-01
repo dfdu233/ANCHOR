@@ -1,0 +1,67 @@
+{
+  "schema_version": "cecd-v4-calibration-admission-contract-v1",
+  "scientific_status": "outcome_blind_non_authorizing_substrate_only",
+  "authorized": false,
+  "frozen_before_confirmation_outputs": true,
+  "reader_evidence": {
+    "source": "aggregate_vote_count_only",
+    "vote_bins": [0, 1, 2, 3],
+    "reader_count": 3,
+    "named_reader_loro_computed": false,
+    "aggregate_vote_may_substitute_for_named_reader_loro": false
+  },
+  "directional_admission": {
+    "location_statistic": "arithmetic_mean_of_raw_canonical_score",
+    "minimum_per_vote_bin": 20,
+    "require_strict_raw_bin_order": true,
+    "minimum_raw_adjacent_contrast": 0.0,
+    "minimum_spearman_rank_correlation": 0.0,
+    "minimum_bootstrap_lower_ordinal_slope": 0.0,
+    "minimum_valid_bootstrap_fraction": 0.95,
+    "bootstrap_draws": 2000,
+    "bootstrap_confidence": 0.95,
+    "bootstrap_seed": 73129,
+    "same_support_swap": {
+      "pairing": "sha256_ordered_disjoint_pairs_within_model_finding_vote_bin",
+      "absolute_drift_quantile": 0.9,
+      "maximum_drift_quantile_over_full_support_span": 1.0,
+      "minimum_full_support_span_minus_drift_quantile": 0.0
+    }
+  },
+  "calibration": {
+    "family": "isotonic_piecewise_linear_no_extrapolation",
+    "fit_split": "dev",
+    "apply_split": "confirmation",
+    "folds": 4,
+    "fold_assignment": "sha256_whole_cluster_modulo_k",
+    "tie_handling": "sklearn_isotonic_secondary_method_average",
+    "probability_floor_for_nll_only": 1e-7,
+    "required_confirmation_score_families": [
+      "actual",
+      "additive",
+      "render_axis",
+      "prompt_axis"
+    ],
+    "support_overlap": {
+      "maximum_outside_fraction": 0.0,
+      "maximum_normalized_tail_distance": 0.0,
+      "minimum_in_support_count_per_model_finding_family": 1,
+      "clipping_permitted": false,
+      "extrapolation_permitted": false
+    }
+  },
+  "denominator_regularity": {
+    "estimand": "ratio_of_model_specific_16_stratum_macro_means",
+    "minimum_macro_b0": 0.0001,
+    "minimum_stratum_b0": 0.000001,
+    "minimum_bootstrap_b0_quantile": 0.00005,
+    "bootstrap_guard_quantile": 0.01,
+    "maximum_bootstrap_coefficient_of_variation": 0.5,
+    "maximum_near_zero_draw_fraction": 0.0,
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 91373,
+    "multiplier": "shared_strictly_positive_keyed_exponential"
+  },
+  "numeric_epsilon": 1e-12,
+  "promotion_effect": "none; this artifact cannot authorize v4 or replace named-reader LORO"
+}

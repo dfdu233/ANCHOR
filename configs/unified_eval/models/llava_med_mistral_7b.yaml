@@ -1,0 +1,7 @@
+name: llava_med_mistral_7b
+checkpoint: /home/dbw/models/LLaVA-Med-v1.5-mistral-7b
+adapter: llava_med_15
+conversation_template: mistral_instruct
+revision: local
+checkpoint_declared_dtype: bfloat16
+inference_dtype: float16

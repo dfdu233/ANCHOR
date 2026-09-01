@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Strict, auditable evaluation of RULE VQA generations.
 
-RULE does not publish the evaluator used for its paper tables. We therefore
-use a punctuation-normalized reconstruction of its first-sentence negative-word
-convention for the primary local metric. The repository's POPE-compatible
-reconstruction and a stricter semantic parser are retained as diagnostics.
+The common CE-G primary metric requires a leading explicit Yes/No decision.
+RULE/POPE negative-word conventions and semantic fallbacks remain diagnostics
+for paper-native reproduction and historical discrepancy analysis only.
 """
 from __future__ import annotations
 
@@ -20,7 +19,7 @@ from corrected_sgta.evaluate_medheval_answers import (
     rule_pope_prediction,
 )
 
-PROTOCOL_VERSION = "rule-vqa-normalized-generated-sentence-v3"
+PROTOCOL_VERSION = "rule-vqa-leading-ceg-v6"
 
 
 class RuleEvaluationError(ValueError):
@@ -118,10 +117,16 @@ def evaluate_rule_rows(
     ambiguous_gt_count = 0
     strict_correct = 0
     strict_parseable = 0
+    leading_correct = 0
+    leading_parseable = 0
+    decision_first_correct = 0
+    decision_first_parseable = 0
     pope_confusion: Counter[str] = Counter()
     normalized_confusion: Counter[str] = Counter()
     explicit_gt_confusion: Counter[str] = Counter()
     strict_confusion: Counter[str] = Counter()
+    leading_confusion: Counter[str] = Counter()
+    decision_first_confusion: Counter[str] = Counter()
     parse_status: Counter[str] = Counter()
     records: list[dict[str, Any]] = []
     for question, answer in zip(question_rows, answer_rows):
@@ -131,8 +136,15 @@ def evaluate_rule_rows(
         gt_pope = rule_pope_prediction(raw_gt)
         pred_pope = rule_pope_prediction(raw_text)
         pred_normalized = rule_normalized_prediction(raw_text)
+        pred_leading, pred_leading_status = parse_rule_ground_truth(raw_text)
         strict = parse_answer(raw_text, answer_type="binary")
         strict_label = strict.labels[0] if strict.labels else None
+        decision_first_label = (
+            pred_leading if pred_leading is not None else strict_label
+        )
+        decision_first_source = (
+            "leading_explicit" if pred_leading is not None else "strict_fallback"
+        )
 
         pope_is_correct = pred_pope == gt_pope
         pope_correct += int(pope_is_correct)
@@ -140,6 +152,7 @@ def evaluate_rule_rows(
 
         explicit_is_correct = None
         strict_is_correct = None
+        decision_first_is_correct = None
         if gt_explicit is None:
             ambiguous_gt_count += 1
         else:
@@ -153,11 +166,30 @@ def evaluate_rule_rows(
             normalized_correct += int(normalized_is_correct)
             strict_correct += int(strict_is_correct)
             strict_parseable += int(strict_label is not None)
+            leading_is_correct = (
+                pred_leading is not None and pred_leading == gt_explicit
+            )
+            leading_correct += int(leading_is_correct)
+            leading_parseable += int(pred_leading is not None)
+            decision_first_is_correct = (
+                decision_first_label is not None
+                and decision_first_label == gt_explicit
+            )
+            decision_first_correct += int(decision_first_is_correct)
+            decision_first_parseable += int(decision_first_label is not None)
             parse_status[strict.status] += 1
             explicit_gt_confusion[f"{gt_explicit}->{pred_pope}"] += 1
             normalized_confusion[f"{gt_explicit}->{pred_normalized}"] += 1
             strict_value = strict_label if strict_label is not None else "invalid"
             strict_confusion[f"{gt_explicit}->{strict_value}"] += 1
+            leading_value = pred_leading if pred_leading is not None else "invalid"
+            leading_confusion[f"{gt_explicit}->{leading_value}"] += 1
+            decision_value = (
+                decision_first_label
+                if decision_first_label is not None
+                else "invalid"
+            )
+            decision_first_confusion[f"{gt_explicit}->{decision_value}"] += 1
 
         records.append(
             {
@@ -171,6 +203,11 @@ def evaluate_rule_rows(
                 "raw_text": raw_text,
                 "pope_prediction": pred_pope,
                 "rule_normalized_prediction": pred_normalized,
+                "leading_explicit_prediction": pred_leading,
+                "leading_explicit_status": pred_leading_status,
+                "decision_first_prediction": decision_first_label,
+                "decision_first_source": decision_first_source,
+                "decision_first_correct": decision_first_is_correct,
                 "rule_normalized_correct": (
                     None
                     if gt_explicit is None
@@ -187,7 +224,7 @@ def evaluate_rule_rows(
     n = len(records)
     metrics = {
         "protocol_version": PROTOCOL_VERSION,
-        "primary_metric": "rule_normalized.accuracy",
+        "primary_metric": "leading_explicit.accuracy_invalid_as_error",
         "n": n,
         "qid_order_exact": True,
         "rule_normalized": {
@@ -202,8 +239,9 @@ def evaluate_rule_rows(
                 "RULE first-sentence no/not convention with punctuation "
                 "normalization"
             ),
+            "diagnostic_only": True,
             "note": (
-                "Primary generated-sentence metric. It preserves RULE's "
+                "Historical generated-sentence diagnostic. It preserves RULE's "
                 "first-sentence negative-word semantics but prevents brackets "
                 "or punctuation from changing the predicted label."
             ),
@@ -254,6 +292,49 @@ def evaluate_rule_rows(
                 "Prediction parser diagnostic restricted to explicit ground "
                 "truth rows. Empty, ambiguous, unfinished, and unparseable "
                 "predictions are errors."
+            ),
+        },
+        "leading_explicit": {
+            "ground_truth_n": explicit_gt_count,
+            "ambiguous_ground_truth_excluded": ambiguous_gt_count,
+            "correct": leading_correct,
+            "parseable": leading_parseable,
+            "parse_rate": _safe_div(leading_parseable, explicit_gt_count),
+            "accuracy_invalid_as_error": _safe_div(
+                leading_correct, explicit_gt_count
+            ),
+            "accuracy_parseable_only": _safe_div(
+                leading_correct, leading_parseable
+            ),
+            "confusion": dict(sorted(leading_confusion.items())),
+            "prediction_parser": "explicit leading yes/no token",
+            "note": (
+                "Common-protocol CE-G primary metric. Invalid outputs are "
+                "errors, and later negations never override the leading answer."
+            ),
+        },
+        "decision_first": {
+            "ground_truth_n": explicit_gt_count,
+            "ambiguous_ground_truth_excluded": ambiguous_gt_count,
+            "correct": decision_first_correct,
+            "parseable": decision_first_parseable,
+            "parse_rate": _safe_div(
+                decision_first_parseable, explicit_gt_count
+            ),
+            "accuracy_invalid_as_error": _safe_div(
+                decision_first_correct, explicit_gt_count
+            ),
+            "accuracy_parseable_only": _safe_div(
+                decision_first_correct, decision_first_parseable
+            ),
+            "confusion": dict(sorted(decision_first_confusion.items())),
+            "prediction_parser": (
+                "explicit leading yes/no token, otherwise strict semantic parser"
+            ),
+            "note": (
+                "Preferred Huatuo full-sentence metric. A leading decision has "
+                "priority over negations in explanatory clauses; naturally "
+                "phrased answers without a leading token use the strict parser."
             ),
         },
     }

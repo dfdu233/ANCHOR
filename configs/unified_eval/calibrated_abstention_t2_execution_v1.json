@@ -1,0 +1,35 @@
+{
+  "protocol_version": "calibrated-abstention-t2-execution-v1",
+  "status": "frozen_before_n32-output-inspection-and-held-out-test-generation",
+  "development_split": {
+    "source": "frozen 32-row image-independent VQA-RAD internal-control pilot",
+    "calibration": "first 16 rows in frozen pilot order",
+    "internal_validation": "last 16 rows in frozen pilot order",
+    "image_overlap": 0,
+    "test_labels_used": false
+  },
+  "confidence": {
+    "statistic": "negative mean processed token NLL from actual greedy256 generated tokens",
+    "direction": "lower NLL is more confident",
+    "calibrator": "deterministic pool-adjacent-violators isotonic regression per model"
+  },
+  "development_proxy": {
+    "target": "VQA-normalized token F1 >= 0.5 against development reference",
+    "role": "functional threshold fitting only; never clinical hallucination truth or paper efficacy",
+    "minimum_calibration_coverage": 0.8,
+    "threshold_selection": "minimum empirical error among NLL cutoffs meeting coverage; higher coverage then lower cutoff tie break"
+  },
+  "claim_action": {
+    "accepted": "retain prediction-side structured claim state",
+    "abstained": "set uncertainty=uncertain on each extracted image-grounded claim; do not delete the claim or whole answer",
+    "unparsed_answer": "retain answer unchanged and mark action not_applicable",
+    "abstention_counted_as_correct": false,
+    "required_abstained_claim_counted_as_omission": true
+  },
+  "t2_gate": {
+    "internal_validation_coverage": "strictly between 0 and 1",
+    "at_least_one_extracted_claim": true,
+    "at_least_one_claim_marked_uncertain": true,
+    "deterministic_replay": "threshold and actions byte-identical"
+  }
+}

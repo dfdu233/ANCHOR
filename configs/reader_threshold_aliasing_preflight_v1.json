@@ -1,0 +1,77 @@
+{
+  "schema_version": "reader-threshold-aliasing-preflight-v1",
+  "frozen_before_reader_alias_outcomes": true,
+  "reader_alias_outcomes_consumed": false,
+  "scientific_role": "alternative_explanation_control_not_mainline",
+  "reader_panel": ["R8", "R9", "R10"],
+  "findings": [
+    "aortic_enlargement",
+    "cardiomegaly",
+    "lung_opacity",
+    "nodule_mass",
+    "other_lesion",
+    "pleural_effusion",
+    "pleural_thickening",
+    "pulmonary_fibrosis"
+  ],
+  "models": ["huatuo", "hulu"],
+  "task": "atomic_ce_clean_condition_only",
+  "stages": {
+    "fit": "dev_fit_group_crossfit_then_full_dev_serialization",
+    "confirmation": "confirmation_locked_apply_once_no_refit_no_tuning"
+  },
+  "endpoint_contract": {
+    "allowed": ["positive_commitment", "clinical_error"],
+    "one_endpoint_per_frozen_run": true,
+    "binary_target": true,
+    "clean_margin_is_predictor_not_truth": true
+  },
+  "model_contract": {
+    "baseline": "vote_count+saturated_model_by_finding_intercepts+clean_z_by_model_by_finding_slopes",
+    "increment": "frozen_baseline_logit_plus_exact_R8_R9_R10_pattern_residual_by_model_by_finding",
+    "regularization_C": 1.0,
+    "hyperparameter_tuning": false,
+    "finding_specific_clean_sensitivity_control": true,
+    "baseline_coefficients_frozen_during_pattern_fit": true
+  },
+  "statistics": {
+    "primary_delta_auroc_min": 0.05,
+    "relative_nll_improvement_min": 0.05,
+    "both_cluster_bootstrap_ci_low_above_zero": true,
+    "bootstrap_unit": "whole_image_id",
+    "bootstrap_draws": 5000,
+    "group_crossfit_folds": 5,
+    "ordering": "same_dev_reader_order_in_at_least_6_of_8_findings_for_each_model",
+    "both_models_required": true,
+    "clear_case_identity_increment_defined": false,
+    "clear_case_reason": "exact_reader_identity_has_no_variation_on_000_or_111"
+  },
+  "claim_boundaries": {
+    "can_modify_cecd_primary_gate": false,
+    "causal_mechanism_claimed": false,
+    "mitigation_authorized": false,
+    "paper_claim_authorized": false,
+    "disagreement_only_if_clear_case_fails": true,
+    "listing_transfer_required_before_reopen": true,
+    "future_clear_case_reopen_requires_separate_preregistration": true
+  },
+  "bindings": {
+    "candidate_b_protocol": {
+      "path": "docs/POST_CEBC_MECHANISM_PIVOT_SEARCH_20260803.md",
+      "sha256": "e2a97aaa9e69ec0edb8d5307d0a11f7d712185a9ecad55a92d580f353bd9dc12",
+      "bytes": 16274
+    },
+    "analyzer_source": {
+      "path": "anchor/corrected_sgta/analyze_reader_threshold_aliasing_v1.py",
+      "sha256": "840e42f5fc7fa9d9ff8b98de1f08aec25e9c16e41118ee443bfbc3c75abb64d7",
+      "bytes": 36017
+    },
+    "dev_fit_input": null,
+    "confirmation_locked_input": null,
+    "listing_matched_count_length_input": null
+  },
+  "output_roots": {
+    "dev_fit": "corrected_runs/vindr_v2/reader_threshold_aliasing_v1/dev_fit",
+    "confirmation": "corrected_runs/vindr_v2/reader_threshold_aliasing_v1/confirmation_locked"
+  }
+}

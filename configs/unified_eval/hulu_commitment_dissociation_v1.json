@@ -1,0 +1,25 @@
+{
+  "protocol": "surface-content-commitment-dissociation-v1",
+  "primary_control": "shuffled",
+  "secondary_controls": ["null", "pixel_shuffled"],
+  "uncertainty_patterns": [
+    "\\bmay\\b",
+    "\\bmight\\b",
+    "\\bcould\\b",
+    "\\bpossible(?:ly)?\\b",
+    "\\bprobable(?:ly)?\\b",
+    "\\blikely\\b",
+    "cannot exclude",
+    "can't exclude",
+    "\\bsuggest(?:s|ed|ive)?\\b",
+    "\\bquestion(?:able)?\\b",
+    "\\bindeterminate\\b",
+    "\\buncertain\\b"
+  ],
+  "minimum_complete_primary_pairs": 40,
+  "minimum_mean_content_change": 0.30,
+  "maximum_mean_commitment_shift": 0.10,
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260801,
+  "interpretation": "Exploratory surface-form lead only; no clinical grounding or reader-disagreement claim."
+}

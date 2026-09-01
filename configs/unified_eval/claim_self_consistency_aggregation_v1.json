@@ -1,0 +1,42 @@
+{
+  "protocol_version": "claim-self-consistency-aggregation-v1",
+  "status": "frozen_before_n32_output_inspection_and_before_held-out-test generation",
+  "extractor": {
+    "model_type": "modern-radgraph-xl",
+    "representation": "RadGraph observation roots without reference-derived ontology mapping",
+    "finding": "normalized root observation tokens",
+    "attributes": "normalized incoming observation modifiers",
+    "anatomy": "normalized located_at anatomy component",
+    "state": ["polarity", "uncertainty", "provenance"],
+    "truth_role": "prediction-side structure only; never reference truth"
+  },
+  "aggregation": {
+    "k": 5,
+    "seeds": [42, 1042, 2042, 3042, 4042],
+    "claim_key": ["finding", "anatomy", "attributes"],
+    "claim_inclusion_min_samples": 3,
+    "state_inclusion_min_samples": 3,
+    "state_conflict": "retain included claim with uncertainty=uncertain; polarity is deterministic plurality with absent-before-present tie break",
+    "unparsed_spans": "retained in audit and never credited as corrected",
+    "exact_text_majority_vote": false
+  },
+  "answer_selection": {
+    "policy": "select one native sample maximizing structured-claim F1 to the aggregate claim set",
+    "tie_breaks": ["higher exact state agreement", "lower mean processed token NLL", "lower frozen seed"],
+    "no_structured_claims": "retain seed-42 sample unchanged and mark not_applicable",
+    "synthesis": false,
+    "posthoc_truncation": false
+  },
+  "admission": {
+    "development_only": true,
+    "test_labels_used": false,
+    "t2_requires": [
+      "all five samples per qid",
+      "non-degenerate sample diversity",
+      "complete extraction trace",
+      "at least one applicable qid",
+      "at least one structured decision changed"
+    ],
+    "clinical_efficacy": "not established by T2; physician/claim reference required at T3"
+  }
+}

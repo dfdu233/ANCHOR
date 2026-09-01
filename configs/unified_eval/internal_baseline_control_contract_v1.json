@@ -1,0 +1,148 @@
+{
+  "protocol_version": "internal-baseline-control-contract-v1",
+  "status_as_of": "2026-08-03",
+  "evidence_scope_template": "internal control qualification; {method}; {stage}",
+  "controls": [
+    {
+      "name": "temperature_length_controls",
+      "t2": {
+        "artifact_protocol": "temperature-length-control-t2-v1",
+        "required_values": {
+          "design.development_grid_frozen_before_test": true,
+          "design.test_labels_used_for_tuning": false,
+          "generation.generated_token_ids_recorded": true,
+          "generation.seed_ledger_complete": true,
+          "generation.sampling_activation_non_degenerate": true,
+          "generation.exact_qid_coverage": true,
+          "generation.stop_and_cap_provenance_complete": true,
+          "generation.posthoc_truncation_used": false,
+          "analysis.matched_length_plan_frozen": true
+        },
+        "required_nonempty": [
+          "provenance.dev_manifest_sha256",
+          "provenance.test_manifest_sha256",
+          "design.temperature_top_p_grid"
+        ],
+        "required_distinct": [
+          ["provenance.dev_manifest_sha256", "provenance.test_manifest_sha256"]
+        ],
+        "blockers_without_artifact": [
+          "development sampling grid is not frozen",
+          "matched-length analysis is not registered"
+        ]
+      },
+      "t3": {
+        "artifact_protocol": "temperature-length-control-t3-v1",
+        "required_values": {
+          "clinical.claim_scoring_complete": true,
+          "clinical.claim_coverage_matched": true,
+          "clinical.answer_budget_matched": true,
+          "clinical.omissions_counted": true,
+          "clinical.abstentions_counted_as_corrections": false
+        },
+        "required_nonempty": ["clinical.bootstrap_cluster_unit"],
+        "full_required_values": {
+          "efficacy.primary_improvement_passed": true,
+          "efficacy.omission_increased": false,
+          "efficacy.length_or_coverage_exchange": false
+        }
+      }
+    },
+    {
+      "name": "self_consistency",
+      "t2": {
+        "artifact_protocol": "claim-self-consistency-t2-v1",
+        "required_values": {
+          "design.frozen_before_test": true,
+          "design.test_labels_used_for_selection": false,
+          "sampling.all_k_samples_complete": true,
+          "sampling.seed_ledger_complete": true,
+          "sampling.deterministic_replay_passed": true,
+          "sampling.non_degenerate_diversity": true,
+          "aggregation.atomic_claim_normalization": true,
+          "aggregation.preserves_polarity_anatomy_attributes_uncertainty": true,
+          "aggregation.exact_text_majority_vote_used": false,
+          "aggregation.trace_hash_recorded": true
+        },
+        "required_nonempty": [
+          "provenance.dev_manifest_sha256",
+          "provenance.test_manifest_sha256",
+          "aggregation.rule_id"
+        ],
+        "required_positive": ["sampling.k"],
+        "required_distinct": [
+          ["provenance.dev_manifest_sha256", "provenance.test_manifest_sha256"]
+        ],
+        "blockers_without_artifact": [
+          "claim-level aggregation rule is not frozen",
+          "disjoint development substrate and K-sample seed ledger are absent"
+        ]
+      },
+      "t3": {
+        "artifact_protocol": "claim-self-consistency-t3-v1",
+        "required_values": {
+          "clinical.claim_scoring_complete": true,
+          "clinical.claim_coverage_matched": true,
+          "clinical.answer_budget_matched": true,
+          "clinical.omissions_counted": true,
+          "clinical.test_judge_used_for_selection": false
+        },
+        "required_nonempty": ["clinical.bootstrap_cluster_unit"],
+        "full_required_values": {
+          "efficacy.primary_improvement_passed": true,
+          "efficacy.omission_increased": false,
+          "efficacy.length_or_coverage_exchange": false
+        }
+      }
+    },
+    {
+      "name": "calibrated_abstention",
+      "t2": {
+        "artifact_protocol": "calibrated-abstention-t2-v1",
+        "required_values": {
+          "calibration.fitted_on_disjoint_development": true,
+          "calibration.test_labels_used": false,
+          "calibration.threshold_locked_before_test": true,
+          "calibration.deterministic_replay_passed": true,
+          "accounting.claim_selective_oe": true,
+          "accounting.whole_answer_erasure_without_zero_claims": false,
+          "accounting.abstentions_counted_as_corrections": false,
+          "accounting.omitted_claims_counted_as_omissions": true
+        },
+        "required_nonempty": [
+          "provenance.dev_manifest_sha256",
+          "provenance.test_manifest_sha256",
+          "calibration.confidence_statistic",
+          "calibration.calibrator_id",
+          "calibration.threshold_artifact_sha256"
+        ],
+        "required_distinct": [
+          ["provenance.dev_manifest_sha256", "provenance.test_manifest_sha256"]
+        ],
+        "required_ranges": {
+          "test.coverage_fraction": [0.0, 1.0, false, false]
+        },
+        "blockers_without_artifact": [
+          "disjoint development calibration substrate is absent",
+          "locked threshold and non-degenerate test coverage are absent"
+        ]
+      },
+      "t3": {
+        "artifact_protocol": "calibrated-abstention-t3-v1",
+        "required_values": {
+          "clinical.claim_scoring_complete": true,
+          "clinical.risk_coverage_curve_complete": true,
+          "clinical.matched_coverage_comparison": true,
+          "clinical.abstentions_counted_as_corrections": false,
+          "clinical.omitted_claims_counted_as_omissions": true
+        },
+        "required_nonempty": ["clinical.bootstrap_cluster_unit"],
+        "full_required_values": {
+          "efficacy.primary_improvement_passed": true,
+          "efficacy.omission_increased": false,
+          "efficacy.unmatched_coverage_claim_used": false
+        }
+      }
+    }
+  ]
+}

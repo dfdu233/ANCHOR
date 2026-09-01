@@ -12,13 +12,30 @@ import torch
 from PIL import Image
 
 
-HULU_PATH = Path(
+def _first_existing(*candidates: str) -> Path:
+    """Resolve migrated model assets without silently accepting a missing path."""
+
+    paths = [Path(value) for value in candidates]
+    for path in paths:
+        if path.exists():
+            return path
+    return paths[0]
+
+
+HULU_PATH = _first_existing(
+    "/home/dbw/models/Hulu-Med-4B",
     "/root/autodl-tmp/Hulu-Med/MedUniEval/datas/hub/"
     "models--ZJU-AI4H--Hulu-Med-14B/snapshots/"
-    "b30d9161b8c23a79e20e1eca3891f63697531904"
+    "b30d9161b8c23a79e20e1eca3891f63697531904",
 )
-LLAVA_PATH = Path("/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b")
-LLAVA_REPO = Path("/root/autodl-tmp/LLaVA-Med")
+LLAVA_PATH = _first_existing(
+    "/home/dbw/models/LLaVA-Med-v1.5-mistral-7b",
+    "/root/autodl-tmp/LLaVA-Med/microsoft/llava-med-v1.5-mistral-7b",
+)
+LLAVA_REPO = _first_existing(
+    "/home/dbw/ANCHOR/data/medheval/code/baselines/Med-LVLMs/llava-med-1.5",
+    "/root/autodl-tmp/LLaVA-Med",
+)
 LLAVA_IMAGE_PREPROCESS_VERSION = "deterministic-center-pad-v1"
 
 
@@ -77,7 +94,11 @@ class HuluAdapter(BaseAdapter):
         self.model = AutoModelForCausalLM.from_pretrained(
             str(model_path),
             trust_remote_code=True,
-            dtype=torch.bfloat16,
+            # Hulu's pinned transformers 4.51 remote-code path forwards the
+            # newer ``dtype`` kwarg into GenerationConfig, where a torch.dtype
+            # is not JSON serializable.  The checkpoint's proven probe loader
+            # uses the compatible legacy spelling.
+            torch_dtype=torch.bfloat16,
             device_map="auto",
             attn_implementation="sdpa",
             local_files_only=True,

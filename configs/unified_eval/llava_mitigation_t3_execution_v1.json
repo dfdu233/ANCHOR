@@ -1,0 +1,100 @@
+{
+  "protocol_version": "llava-mitigation-t3-execution-v1",
+  "status": "frozen before generation and before any reference or physician scoring",
+  "model": "LLaVA-Med-v1.5-Mistral-7B",
+  "dataset": "VQA-RAD official test OE; one question per independent image",
+  "stage": "T3 generation substrate pending blinded clinical claim evaluation",
+  "methods": [
+    "greedy",
+    "beam",
+    "VCD",
+    "opera",
+    "PAI",
+    "avisc",
+    "VISTA_off",
+    "VISTA_VSV",
+    "VISTA_SLA",
+    "VISTA"
+  ],
+  "reference_method": "greedy",
+  "method_off_identity_pair": ["greedy", "VISTA_off"],
+  "generation": {
+    "max_new_tokens": 512,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "keyword_stopping_enabled": false,
+    "limit": 120,
+    "chunk_size": 120
+  },
+  "operational_gates": {
+    "exact_qid_rate": 1.0,
+    "generated_token_trace_rate": 1.0,
+    "method_off_token_exact_rate": 1.0,
+    "minimum_nonempty_rate": 0.95,
+    "maximum_function_word_only_rate": 0.01,
+    "maximum_cap_hit_rate": 0.05,
+    "minimum_explicit_sentence_terminal_rate": 0.95
+  },
+  "source_bindings": {
+    "manifest": {
+      "path": "corrected_runs/unified_eval/inputs/vqa_rad_mitigation_t3_n120_v1.redacted.json",
+      "sha256": "681f67a6dcbf49ed898920279208dd59297b0edeb5c11e2948df5a1691ce0a56"
+    },
+    "manifest_provenance": {
+      "path": "corrected_runs/unified_eval/inputs/vqa_rad_mitigation_t3_n120_v1.redacted.provenance.json",
+      "sha256": "6be600af43c166eb8dc14eeab6c6123983f3b05d5ae1108181cec18124e26852"
+    },
+    "matrix_runner": {
+      "path": "anchor/corrected_sgta/run_llava_med_generation_matrix.py",
+      "sha256": "9a49482c6fc0cec0b45ed3ac091f8555ccf36ae70d447032e64be0a395a38349"
+    },
+    "generation_port": {
+      "path": "data/medheval/code/baselines/Mitigation/llava-med-1.5/llava/eval/model_vqa.py",
+      "sha256": "1b188df92a2f995108e120bd83596a610dc2592c88d503dd1bf73e200b2a5248"
+    },
+    "generation_trace": {
+      "path": "anchor/corrected_sgta/generation_trace.py",
+      "sha256": "3b934fba2bc6c17d9d96cd716b5b88e322006a77103bf89780f00bfdc42e74d6"
+    },
+    "mistral_generation_backend": {
+      "path": "data/medheval/code/baselines/Mitigation/llava-med-1.5/llava/model/language_model/llava_mistral.py",
+      "sha256": "b77bd206d2126e91c8dee6e07dcf557fee7e6a30128a3f4da0b7e8c6ffb684fe"
+    },
+    "avisc_runtime_adapter": {
+      "path": "anchor/corrected_sgta/avisc_sample_dynamic.py",
+      "sha256": "1464b085009199c9a523df2158bcca858134fbe8548f33e009a15bf41e11cbde"
+    },
+    "avisc_legacy_hook": {
+      "path": "data/medheval/code/baselines/Mitigation/llava-med-1.5/llava/eval/avisc_utils/avisc_sample.py",
+      "sha256": "cad2039fa20152576fde30798906ece08aff890193621962864f954fb835840e"
+    },
+    "vista_adapter": {
+      "path": "anchor/corrected_sgta/vista_adapter.py",
+      "sha256": "43a66323afa0d10dfede29c2d0f195c0dfbe2d1147f58d742aef9f9b0767d905"
+    },
+    "vista_official_steering": {
+      "path": "third_party/baselines/VISTA/steering_vector.py",
+      "sha256": "b118dc1f569b0cfa41b295bb93b6e0e19dc792dc4d01b33e3e00c3433102c473"
+    },
+    "vista_official_layers": {
+      "path": "third_party/baselines/VISTA/llm_layers.py",
+      "sha256": "c554af3e71f939159ab45c79f2155e33d3f9072ecee524a663eb78849fdf00f2"
+    },
+    "vista_official_utils": {
+      "path": "third_party/baselines/VISTA/myutils.py",
+      "sha256": "2ed7914987b62d5d0b1cdf6f132f33ec97b932adada83ed216a33005f693eeb4"
+    },
+    "model_config": {
+      "path": "/home/dbw/models/LLaVA-Med-v1.5-mistral-7b/config.json",
+      "sha256": "f6ae889c5488ef86895e78f641339062962dd6b434666019fa119ab09d2bd8b3"
+    }
+  },
+  "label_firewall": {
+    "reference_fields_present_in_generation_manifest": false,
+    "reference_join_authorized_during_generation": false,
+    "clinical_labels_authorized_during_operational_qualification": false,
+    "physician_pack_trigger": "all operational gates pass"
+  },
+  "claim_boundary": "Generation and activation do not establish clinical mitigation. T3 clinical promotion requires blinded claim fidelity at matched length, claim count, coverage, omission, refusal and hedging."
+}
