@@ -1,0 +1,1961 @@
+[
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/mmmu/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "edd57dacf775d11c2746c315e264e679cd540b463fc2d2492f69494fa5b5a50f",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "cbf749e618a5e53e3297c509ecb83da4076655cd9a01e345ff956b4a9b7775b7",
+    "score": 0.16253015873015864,
+    "n": 10500,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/mmmu/icd/evaluation_mixed_vqa_table_v3_diagnostic.json",
+    "artifact_sha256": "edd57dacf775d11c2746c315e264e679cd540b463fc2d2492f69494fa5b5a50f",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "cbf749e618a5e53e3297c509ecb83da4076655cd9a01e345ff956b4a9b7775b7",
+    "score": 0.16253015873015864,
+    "n": 10500,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/pathvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "64561d8010f7ac6f6356e7c373d6adfa6acaf75f77dde85ae3d2f02bf2954bee",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "f342a2c27ac777ee166d9d0f355cab766fa2495a05ba019490da29fcf7de1c40",
+    "score": 0.3162414391939583,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/pathvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "bb8bb498ff5a52c8c7dbbaef649ecbe1b786a1a8047620742cdfe73e441ddc47",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "6f18e976b79c16a8f6c7e83ccd7f41bf641f35e596b95f2db751e46834273caf",
+    "score": 0.314561433689427,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/pmcvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "95fd036ffa2d9fd9827cfd9b124ae04b6259e9cf27116b6387f8cc485c71303d",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "1dae16497c25bdaca016ab1f44628c9244fb40caa63345297f94000901d0ab59",
+    "score": 0.09452587496260843,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/pmcvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "de58818d07da5bb3d01ff6eac79903d4387e03a79efe026f669e0f6bb115f2b2",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "6db517ec02c59d6bd996d50f848672519b855c24b5ef8e1e615e1850f345352f",
+    "score": 0.05695483099012863,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/slake/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "de35044618610fecd929d23bb7f8a8b57b7f066c2194839f2e4f631fb8574d93",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "c65d36462f8c4586a984f2f47d6fd2d4dc8f4083f68e438a48db408046f55ed5",
+    "score": 0.3425154981387073,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/slake/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "078d1d26cfe9b7486e0eb942b7671b8b0dfa5e696039921eaacc266ec3c0ccc0",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "d49589cbc622ea416d3cd8dab81e8a40262e43ce08a06742e6737ca93494e537",
+    "score": 0.32365931452607655,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/vqa_rad/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "5e5f0a1d110aab570ea7a5f295a3e56628d725a97da3966e46a98b1d9d2e655f",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "7bc9842c298c4ca281f563643e356ef80a5059ec4af96adf518f533a3b28aedf",
+    "score": 0.48251336616081636,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/full_matrix_v1/cross_model_complete_v2_analysis_allowed/llava/vqa_rad/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "eef29e002bd8ffda239b073321cef998ffb07b4bef2d393116522d02b08d23d4",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "88f52e27b8e432e9a8eae71e174e5288522316ef7b174062ed1a408d0982d88d",
+    "score": 0.4693646154289171,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/mimic_cxr/greedy/evaluation_report_three_metrics.json",
+    "artifact_sha256": "6ce388d0ddad17bb9a16916d5aee49860859241dd02e9fe7df74109103db55e0",
+    "scorer_version": null,
+    "answer_sha256": "0783199a256bef0fbbff4b9ea9abee3b8230f864c94beb8a45033b3dfcdabe75",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "0783199a256bef0fbbff4b9ea9abee3b8230f864c94beb8a45033b3dfcdabe75",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.019447712071648783,
+          "ci95_lower": 0.019024834412277935,
+          "ci95_upper": 0.019889023936550326,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13762183094013544,
+          "ci95_lower": 0.13628977487467522,
+          "ci95_upper": 0.13915019715703206,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.16736883963835344,
+          "ci95_lower": 0.16465258383029796,
+          "ci95_upper": 0.1706624337070866,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/omnimedvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "c7533ea0e1217319d1413e2346c9e83899c04154e089fc5b35a8bce62844fd05",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "aa342661aaa1228567592f19a60cb86b0c0c996a0f7e1782b4c10081091568ce",
+    "score": 0.7457834709815158,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/omnimedvqa/greedy/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "55352d639b2ab70c96d4dad46896ea7c94cf931d6c212f2c5f7d5d11077afc60",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "aa342661aaa1228567592f19a60cb86b0c0c996a0f7e1782b4c10081091568ce",
+    "score": 0.7457834709815158,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/omnimedvqa/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "55352d639b2ab70c96d4dad46896ea7c94cf931d6c212f2c5f7d5d11077afc60",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "aa342661aaa1228567592f19a60cb86b0c0c996a0f7e1782b4c10081091568ce",
+    "score": 0.7457834709815158,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/avisc/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "274c4a4c06909cb6bbe23e3d6b6a0bcbbbe8b6d2d96db9d709f0ca9373a5ede6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "41f6c76a0aa97eca1a7cb4eed4fcd4fdb9bce33b914de3bd89b654be12ed190c",
+    "score": 0.34484645529144237,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/avisc/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "59b480a2ed7a14b4b38454a78664d40be01aadc1362d20e59d8aa0cb45761cce",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "41f6c76a0aa97eca1a7cb4eed4fcd4fdb9bce33b914de3bd89b654be12ed190c",
+    "score": 0.34484645529144237,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/avisc/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "59b480a2ed7a14b4b38454a78664d40be01aadc1362d20e59d8aa0cb45761cce",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "41f6c76a0aa97eca1a7cb4eed4fcd4fdb9bce33b914de3bd89b654be12ed190c",
+    "score": 0.34484645529144237,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/dola/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "14cd39e3dcbedefca9d0cd4c8f7c314aff4a8a585484aef649558a9657a3b396",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "9b399fc877ce23b821b1b1604d834a395fe9cc679c76ed5f5f2d9ddb75a6c281",
+    "score": 0.2935092816658258,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/dola/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "179b6b22282fa5018d1ac62f315b50babb44f36ed71267eafcff58ed3983ec60",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "9b399fc877ce23b821b1b1604d834a395fe9cc679c76ed5f5f2d9ddb75a6c281",
+    "score": 0.2935092816658258,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/dola/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "179b6b22282fa5018d1ac62f315b50babb44f36ed71267eafcff58ed3983ec60",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "9b399fc877ce23b821b1b1604d834a395fe9cc679c76ed5f5f2d9ddb75a6c281",
+    "score": 0.2935092816658258,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0c45b575580a6fccf0f3b396d346ca3962d5819efef7ddd08f34d78c0b3e6c43",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0efab48afd391dfd469d7b4e51b033ce3af4826cc9571efaa86984b7f65092bc",
+    "score": 0.3865673400727572,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/greedy/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "3bd7aa0f7f2c8bfeb3d0417eb3f6ef01a2db4da48c5b0d249f3c7f60c221d83e",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0efab48afd391dfd469d7b4e51b033ce3af4826cc9571efaa86984b7f65092bc",
+    "score": 0.3865673400727572,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "3bd7aa0f7f2c8bfeb3d0417eb3f6ef01a2db4da48c5b0d249f3c7f60c221d83e",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0efab48afd391dfd469d7b4e51b033ce3af4826cc9571efaa86984b7f65092bc",
+    "score": 0.3865673400727572,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/medrag/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "e3bf1da615da857aaa7855aac542d2786c5847e983a5878480c40f8bce568f8c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7a2e70c78acc0e5ba5de3d0c47dafc8bef6b1f1643ee2f3fd2f539f387dd4453",
+    "score": 0.39654436284670463,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/medrag/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "be796369d323b8b60e8792c30815f83a77d1f9fef8284516e026c4aa55509c82",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7a2e70c78acc0e5ba5de3d0c47dafc8bef6b1f1643ee2f3fd2f539f387dd4453",
+    "score": 0.39654436284670463,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/medrag/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "be796369d323b8b60e8792c30815f83a77d1f9fef8284516e026c4aa55509c82",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7a2e70c78acc0e5ba5de3d0c47dafc8bef6b1f1643ee2f3fd2f539f387dd4453",
+    "score": 0.39654436284670463,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/pai/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "f1c1049b940f58b5f37e121fa195e58353043442263baad20dcaaff40a4cdd70",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "d9b9032a7b843a23e055932949096e9ac586f1c110c838ec2261985c606c568e",
+    "score": 0.37232295112037395,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/pai/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "fe68a961f1043946916591a836ce113fe7ca0c39db9389e9b57892284eacc974",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "d9b9032a7b843a23e055932949096e9ac586f1c110c838ec2261985c606c568e",
+    "score": 0.37232295112037395,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pathvqa/pai/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "fe68a961f1043946916591a836ce113fe7ca0c39db9389e9b57892284eacc974",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "d9b9032a7b843a23e055932949096e9ac586f1c110c838ec2261985c606c568e",
+    "score": 0.37232295112037395,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/pmcvqa/avisc/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "6d5e95f8285ca1386f7160afb085f92f4083a620d71b4897cac66cb13139d4fc",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "68d4087043a0ef14891f98a512f02e7dc675ef43967ef30ece3044d6cd26e121",
+    "score": 0.4483099012862698,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/avisc/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "439c5a223bd45974cb85897a395ec40dbad6a2b9557fcce9c374cb85c537f763",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7dc41fc92c572e14fae9dfb0f9de6dafe92bcab92f49b8c3bbb7f628fde6758e",
+    "score": 0.4997830475266006,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/avisc/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "519f552a126be6b0706f47595926963de7560a23b2de098f3471d81075f874e3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7dc41fc92c572e14fae9dfb0f9de6dafe92bcab92f49b8c3bbb7f628fde6758e",
+    "score": 0.4997830475266006,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/avisc/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "519f552a126be6b0706f47595926963de7560a23b2de098f3471d81075f874e3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7dc41fc92c572e14fae9dfb0f9de6dafe92bcab92f49b8c3bbb7f628fde6758e",
+    "score": 0.4997830475266006,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/dola/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "e41bc7a779d8f2f1819fe6e0c31e680136c0ecb3629ef240b66b7a09b3299453",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "1889906c7bc6b4b7a7621210eb3bc55c64b1b02f6426c3642210370400f2244b",
+    "score": 0.48476985645681936,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/dola/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "69d8705ec7447bd5d1e2d12c300e9904505e79f654712b9393ec95809136b83d",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "1889906c7bc6b4b7a7621210eb3bc55c64b1b02f6426c3642210370400f2244b",
+    "score": 0.48476985645681936,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/dola/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "69d8705ec7447bd5d1e2d12c300e9904505e79f654712b9393ec95809136b83d",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "1889906c7bc6b4b7a7621210eb3bc55c64b1b02f6426c3642210370400f2244b",
+    "score": 0.48476985645681936,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "2d90639cc5f1d5ebb729d0a6e57841197f423602b41c611464546a19b410ebaa",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "647e5f7788ee88cff98642e951611d5df9b3b7d44e09e6858a7dba62bfcf56b4",
+    "score": 0.5469166988936202,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/greedy/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "71f3fe2119bc42e7ea532b1b27d249b42ad03db124208c9c197915860c5c2fde",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "647e5f7788ee88cff98642e951611d5df9b3b7d44e09e6858a7dba62bfcf56b4",
+    "score": 0.5469166988936202,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "71f3fe2119bc42e7ea532b1b27d249b42ad03db124208c9c197915860c5c2fde",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "647e5f7788ee88cff98642e951611d5df9b3b7d44e09e6858a7dba62bfcf56b4",
+    "score": 0.5469166988936202,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/medrag/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "596198ae8e1e5f330163bdf4f846a652f767e774db20ac10b2911625581a4c2a",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "c0f61b53cefabd93dc11c47eca693f8c6fd7e5d3fed76d8cd7bdc46794b4dea6",
+    "score": 0.4988078981589858,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/medrag/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "5ff067888431598f26611b4f68731cc24f63065a53377295c746e1840672a79b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "c0f61b53cefabd93dc11c47eca693f8c6fd7e5d3fed76d8cd7bdc46794b4dea6",
+    "score": 0.4988078981589858,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/medrag/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "5ff067888431598f26611b4f68731cc24f63065a53377295c746e1840672a79b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "c0f61b53cefabd93dc11c47eca693f8c6fd7e5d3fed76d8cd7bdc46794b4dea6",
+    "score": 0.4988078981589858,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/pai/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0b678580bcb0c89a0fbd79fb4a7d07091b2c4ff2beb2ae9e45af8061b5d3233a",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7fb6f5846d165eff38aed1075a2295bce513570441224ada384e456715d7d1d0",
+    "score": 0.5273368889126642,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/pai/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "6d73764d8ffa35c329945502f4ed8323f68011e3117d5cfec5c346ac6f41dfcf",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7fb6f5846d165eff38aed1075a2295bce513570441224ada384e456715d7d1d0",
+    "score": 0.5273368889126642,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/slake/pai/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "6d73764d8ffa35c329945502f4ed8323f68011e3117d5cfec5c346ac6f41dfcf",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7fb6f5846d165eff38aed1075a2295bce513570441224ada384e456715d7d1d0",
+    "score": 0.5273368889126642,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/avisc/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "09bdf47993e2c57a14d311d0daa526cd521aef7a32f113aa36e511efc48ab3ea",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "81f8bcb8406abcf6151b44798ea5acb91ccfa15c15f4d4fd9602115beaccb88a",
+    "score": 0.5762701452280167,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/avisc/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "ad45ffe7db3d4e75dae9a17c3675dd53c81fe05e06a0b3fb89c69edfd3363099",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "81f8bcb8406abcf6151b44798ea5acb91ccfa15c15f4d4fd9602115beaccb88a",
+    "score": 0.5762701452280167,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/avisc/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "ad45ffe7db3d4e75dae9a17c3675dd53c81fe05e06a0b3fb89c69edfd3363099",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "81f8bcb8406abcf6151b44798ea5acb91ccfa15c15f4d4fd9602115beaccb88a",
+    "score": 0.5762701452280167,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/dola/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "9ef7e6feeeabc0c80f2ae3c5d75c8c388bde5b39920b876457960fdc3bef306b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "3b94c256efad5ecb61081a90a5ee1b154e586756ae53a3ce509340fd3652cc14",
+    "score": 0.49229586008965176,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/dola/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "370d990d59653ae6d871044f86efd0cbfbd9416cbb140eacb65d977b311b0934",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "3b94c256efad5ecb61081a90a5ee1b154e586756ae53a3ce509340fd3652cc14",
+    "score": 0.49229586008965176,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/dola/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "370d990d59653ae6d871044f86efd0cbfbd9416cbb140eacb65d977b311b0934",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "3b94c256efad5ecb61081a90a5ee1b154e586756ae53a3ce509340fd3652cc14",
+    "score": 0.49229586008965176,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "d8ffb0ca322671dff94acb199f4886b3703334383dd8cbfdbcc103da3ae95ab3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "b41d77d325990742fa35596fec3c8506c08fc62ac10dcde473a527c366987c1b",
+    "score": 0.6281934805770725,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/greedy/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "62c009370dea461b4a71586da0d60082d34ee2a16b3c833d907a58e3afe3f3aa",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "b41d77d325990742fa35596fec3c8506c08fc62ac10dcde473a527c366987c1b",
+    "score": 0.6281934805770725,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "62c009370dea461b4a71586da0d60082d34ee2a16b3c833d907a58e3afe3f3aa",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "b41d77d325990742fa35596fec3c8506c08fc62ac10dcde473a527c366987c1b",
+    "score": 0.6281934805770725,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/medrag/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "4b5ee3996b7ecf5128975868118d4788441a504dc2539506036f7fd2d3c7ca0d",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "240ab2b88b6f8bf3106632f7c08b06f4475a0075518e3926da473face89491d4",
+    "score": 0.4888187385415768,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/pai/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "539f3567c2e82ce2b479f19e5d786c88e52356f97c746a06b256f07ee7271b51",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "8d1efe26e3325de89e16ce5da39d78b5addf240e714d2cd65094907ae8b72b34",
+    "score": 0.6040391242165079,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/pai/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "2c3060414e4f933a65c1feeb82020157e60ead521b25080ff47bb96c32443d27",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "8d1efe26e3325de89e16ce5da39d78b5addf240e714d2cd65094907ae8b72b34",
+    "score": 0.6040391242165079,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/pai/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "2c3060414e4f933a65c1feeb82020157e60ead521b25080ff47bb96c32443d27",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "8d1efe26e3325de89e16ce5da39d78b5addf240e714d2cd65094907ae8b72b34",
+    "score": 0.6040391242165079,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/full/vqa_rad/vista/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "ef4736ee2a151195ef1bbed451b7adb039c3592c2ce13111d3a562f5c5e8eb72",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0f8d2dc5982c9f10a5e6915576c6872f6c592a05924f886e1d4aec8bb92b6f7f",
+    "score": 0.5783547383879977,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/omnimedvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "9449d50590d5f08fd8cbd8e7795138b08ea26e032391197c234a4d439fdfbbce",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "5cd6288823cea7da2e41f0a0564633fbf45a44dc7c6961b56bb15c0cea9dc182",
+    "score": 0.7022754087308276,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/agla/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "cd15c0c80a8ac6ba91b3fd563f06e0e14c138971693e8b1b8d059cdb899841a4",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "80c6e56b8684f23c06892fcdd45e971444416575b780a4ab18b80411832bb6e7",
+    "score": 0.36083725771005803,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/agla/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "310d91315620aab094f70bdb779d5da3a6d5191134e655eb3069960a75e19a0c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "80c6e56b8684f23c06892fcdd45e971444416575b780a4ab18b80411832bb6e7",
+    "score": 0.36083725771005803,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/agla/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "310d91315620aab094f70bdb779d5da3a6d5191134e655eb3069960a75e19a0c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "80c6e56b8684f23c06892fcdd45e971444416575b780a4ab18b80411832bb6e7",
+    "score": 0.36083725771005803,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "e85e91df6478f88fa88191572d1895b3989ffe9f626dd90d546aea49b48524e5",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "915a5d2276b7a5529017f6e80a0f0f6074979efa18bf1cf553402e10b5d139aa",
+    "score": 0.31860048673501984,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/icd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "6064835feac8498ba051fc5d0e21b5b046f8214b1230a3873344ad9157a0e5b6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "915a5d2276b7a5529017f6e80a0f0f6074979efa18bf1cf553402e10b5d139aa",
+    "score": 0.31860048673501984,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "6064835feac8498ba051fc5d0e21b5b046f8214b1230a3873344ad9157a0e5b6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "915a5d2276b7a5529017f6e80a0f0f6074979efa18bf1cf553402e10b5d139aa",
+    "score": 0.31860048673501984,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/vcd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "9cad7b696286eeebba75ffdd03f87a618ef96642bfc443cf0a93dc752264f57a",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0824288e757847a0870e1cb07d89f6b99e834e11b5ea7a68922c3aff7915020c",
+    "score": 0.33578571357830017,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/vcd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "c11e10983b0ff802469b7db90a3c6e6642e9ae4feffecebebfeda71b6275bc80",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0824288e757847a0870e1cb07d89f6b99e834e11b5ea7a68922c3aff7915020c",
+    "score": 0.33578571357830017,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pathvqa/vcd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "c11e10983b0ff802469b7db90a3c6e6642e9ae4feffecebebfeda71b6275bc80",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0824288e757847a0870e1cb07d89f6b99e834e11b5ea7a68922c3aff7915020c",
+    "score": 0.33578571357830017,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pmcvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "bf3d5d492dd2c3caa609a1d866c9586966bd2db567718de88debfa6b41287b94",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "5e9bfa17d3f6f08378cdec524aba5b660e5bf83823ac7219b34fcce44a4576d8",
+    "score": 0.42336224947651807,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/pmcvqa/vcd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "f1a549df9f6771707582cc2206a0ccf8f9b6025bd43e27cde69357e58eba4d24",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "466eeecaa06ac1cd875df135e8994f6fb5a180929023d413d7eb21f15ba7c3b1",
+    "score": 0.43724199820520493,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/agla/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "2ac5e9ce6855cfd763afb79d472b22713580a33f4572be6c5580307eb519afcc",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a034878c5a98d0eae3f56bcc86124709b5efb24b399476cf10dd1dcb973a0600",
+    "score": 0.5442493851768798,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/agla/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "8650df9802f2c5efde6e36e5b48d28cc94f6f888a04ec08af10441a0cbba87d4",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a034878c5a98d0eae3f56bcc86124709b5efb24b399476cf10dd1dcb973a0600",
+    "score": 0.5442493851768798,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/agla/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "8650df9802f2c5efde6e36e5b48d28cc94f6f888a04ec08af10441a0cbba87d4",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a034878c5a98d0eae3f56bcc86124709b5efb24b399476cf10dd1dcb973a0600",
+    "score": 0.5442493851768798,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "fcc5f4e4c1776409ad301545838b499092cc8ea3afbfb90b1b11020bd50ab9b0",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "6cf91f547305144e2f399c990b6082900c7e2fac02f26f4238c5bff60dc82326",
+    "score": 0.5151524566888345,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/icd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "a77974f6ac7bdd8e9a18c5aab192443483849afe67475a599d39adf8e56da7ac",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "6cf91f547305144e2f399c990b6082900c7e2fac02f26f4238c5bff60dc82326",
+    "score": 0.5151524566888345,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "a77974f6ac7bdd8e9a18c5aab192443483849afe67475a599d39adf8e56da7ac",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "6cf91f547305144e2f399c990b6082900c7e2fac02f26f4238c5bff60dc82326",
+    "score": 0.5151524566888345,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/vcd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "313366cd489a67d6cdd059992e9b115475203a4002fa427b2a9bd791582540bd",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ce20d858fabb6cbbc5a8191893e70a996d7e2780af579ec9a27fbe64597d7ad8",
+    "score": 0.5282846484385048,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/vcd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "a84fec5677dd2b512a1ba5466527c03295c493a3c1ddc8050e2b7cef847f4397",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ce20d858fabb6cbbc5a8191893e70a996d7e2780af579ec9a27fbe64597d7ad8",
+    "score": 0.5282846484385048,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/slake/vcd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "a84fec5677dd2b512a1ba5466527c03295c493a3c1ddc8050e2b7cef847f4397",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ce20d858fabb6cbbc5a8191893e70a996d7e2780af579ec9a27fbe64597d7ad8",
+    "score": 0.5282846484385048,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/agla/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "ffa74a57bd60411151a7aeed44d8479262d59ddff0655013bdedeee8752e9208",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f32289988247fa57f50f2f86f22656fb94615eea59787b10231509ee3aa0c133",
+    "score": 0.5800940190629771,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/agla/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "53f8442cc046827433328629d57542e18f0f537ee626c8a7dd8a4e9450a2479c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f32289988247fa57f50f2f86f22656fb94615eea59787b10231509ee3aa0c133",
+    "score": 0.5800940190629771,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/agla/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "53f8442cc046827433328629d57542e18f0f537ee626c8a7dd8a4e9450a2479c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f32289988247fa57f50f2f86f22656fb94615eea59787b10231509ee3aa0c133",
+    "score": 0.5800940190629771,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "90f6bf0d9e88459782a8dd64d0ddcae03532be6a26e3e1b7be26dd6984aafe62",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ca7a3133cc510ec4bec40c4ef864ed70b54e07623d0f64402784ef973e4e9f39",
+    "score": 0.5236849809466217,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/icd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "22ed1a965255c6989120d2a0148b442a296cea115ac105617a14cf32c52bf1b1",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ca7a3133cc510ec4bec40c4ef864ed70b54e07623d0f64402784ef973e4e9f39",
+    "score": 0.5236849809466217,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "22ed1a965255c6989120d2a0148b442a296cea115ac105617a14cf32c52bf1b1",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ca7a3133cc510ec4bec40c4ef864ed70b54e07623d0f64402784ef973e4e9f39",
+    "score": 0.5236849809466217,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/vcd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "5e44450627448cfad1b7f3c2ee5e5f0b1a5aa5c2bcf83d9544782eb4e49e66a6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f6c6b7bb1be9a92b3822908ab106d096acd987213357e042d8114ce7472c660f",
+    "score": 0.5582932588475825,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/vcd/evaluation_mixed_vqa_table_v12_review.json",
+    "artifact_sha256": "f6e47ca1ca73a619fd2f3933ecc916805333edc5e7503526663b4d6cd52f99cf",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f6c6b7bb1be9a92b3822908ab106d096acd987213357e042d8114ce7472c660f",
+    "score": 0.5582932588475825,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_final_v1/native_v2/vqa_rad/vcd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "f6e47ca1ca73a619fd2f3933ecc916805333edc5e7503526663b4d6cd52f99cf",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f6c6b7bb1be9a92b3822908ab106d096acd987213357e042d8114ce7472c660f",
+    "score": 0.5582932588475825,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mimic_cxr/greedy/evaluation_report_three_metrics.json",
+    "artifact_sha256": "8e9d399d4f996515b55921635686d1e10856e17c2ade70625a53935d5e8d3107",
+    "scorer_version": null,
+    "answer_sha256": "39128629e267c023985d03df001d7361c6aba3ab029accad6fa11271a47c5f57",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "39128629e267c023985d03df001d7361c6aba3ab029accad6fa11271a47c5f57",
+      "evaluator_source": "/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.01928670557011481,
+          "ci95_lower": 0.01887410420607597,
+          "ci95_upper": 0.01969874813731003,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.1372430975367468,
+          "ci95_lower": 0.1358275774521878,
+          "ci95_upper": 0.13868627200974273,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.16766812816591875,
+          "ci95_lower": 0.1645200635625112,
+          "ci95_upper": 0.17102542432334353,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "3009216f256d3b6c37ab5c947f6a839aa9f6aa64f6f5ef19cf1f9915eeacbde1",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "112c4a1ee9a0032e64b552f2f910e77688210c08d82298336d827e8765498b77",
+    "score": 0.32704761904761903,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "3009216f256d3b6c37ab5c947f6a839aa9f6aa64f6f5ef19cf1f9915eeacbde1",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "112c4a1ee9a0032e64b552f2f910e77688210c08d82298336d827e8765498b77",
+    "score": 0.32704761904761903,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/medrag/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "086a4049016b235f1abb8fdbd0e1db72d489db0f43b50bf972d6099de06bbbb6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ae000ed161d4ad2c0d79b8daec741c7c7edbccd4545d9f69b42f276336a5c0b7",
+    "score": 0.2914285714285714,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/medrag/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "086a4049016b235f1abb8fdbd0e1db72d489db0f43b50bf972d6099de06bbbb6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "ae000ed161d4ad2c0d79b8daec741c7c7edbccd4545d9f69b42f276336a5c0b7",
+    "score": 0.2914285714285714,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/pai/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "4b3025e0a4ca2ff61a5077f714191ea6e983e7108be9851d88e5ab6fc66085e7",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "cf3b488648b98ca3c2a77f5ad88e82ba664253efd7d51e011238eb1417784f6c",
+    "score": 0.3056190476190476,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/full/mmmu/pai/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "4b3025e0a4ca2ff61a5077f714191ea6e983e7108be9851d88e5ab6fc66085e7",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "cf3b488648b98ca3c2a77f5ad88e82ba664253efd7d51e011238eb1417784f6c",
+    "score": 0.3056190476190476,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/vista_queue_20260918/full/mimic_cxr/vista/evaluation_report_three_metrics.json",
+    "artifact_sha256": "1c0d1291b0ac03e3c0136211441bd8476a4344bf0f05cff6a127e98211745fe7",
+    "scorer_version": null,
+    "answer_sha256": "f146b1cb8dd4940f17e04dd9615ff350f30b28533d19b6947bbb3f45904aa67d",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "f146b1cb8dd4940f17e04dd9615ff350f30b28533d19b6947bbb3f45904aa67d",
+      "evaluator_source": "/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.01675570375272438,
+          "ci95_lower": 0.01640399833514828,
+          "ci95_upper": 0.017130703266922218,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.12515594360458754,
+          "ci95_lower": 0.12400116604009467,
+          "ci95_upper": 0.1264551235633581,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.17200928850643826,
+          "ci95_lower": 0.1693793806203439,
+          "ci95_upper": 0.17516283150159248,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/huatuo_host_v1/vista_queue_20260918/full/slake/vista/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0683b731a14bf26a41f6f6656db6d141378a65691cd0d9e7a11e12dbf54fd6ba",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "7031206dd36849e2d4ae24b82cfb9caa75446f0fe28bb0bcf83a8cca60341ef6",
+    "score": 0.5436892275073519,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/mmmu/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "bec8a8f69e263e85ee8d17e894c201728806c6241a2ab0d26b650b71c9a0642b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "fdddb40fb0282eae0b2c73c4ba59b04cb9e8c946e348a6840a9105e5bfa28541",
+    "score": 0.20885714285714285,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pathvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0a7774b481ae3439b23bb359283ea088c7e504549686ad022f43d9d232356d82",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "2464036e67c67496b46f861ea9ffdc1c50dafcc3e2803887b3afc3d4b19f495f",
+    "score": 0.31666300172297734,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pathvqa/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "0a7774b481ae3439b23bb359283ea088c7e504549686ad022f43d9d232356d82",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "2464036e67c67496b46f861ea9ffdc1c50dafcc3e2803887b3afc3d4b19f495f",
+    "score": 0.31666300172297734,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pathvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "e4b7df0368dc48207e98fc8b70a344ece1124d04b772dd431a9ecc07a5bdeb78",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "35b5fe5d080f73f985749c0b5bc8f25e58121fb4bc2806597f199743e40c034c",
+    "score": 0.3150428434535556,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pathvqa/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "e4b7df0368dc48207e98fc8b70a344ece1124d04b772dd431a9ecc07a5bdeb78",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "35b5fe5d080f73f985749c0b5bc8f25e58121fb4bc2806597f199743e40c034c",
+    "score": 0.3150428434535556,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pmcvqa/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "8ad52019aada37f55dcf04e7207313503302f3bc1a71a624484d61dcce4204b5",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "1ce543768b61512a415a6126e7018ddec8b367f5481c18965e2554150f4717f0",
+    "score": 0.13634460065809154,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pmcvqa/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "ca5725aa85ccbb75db90395232e0aef453beeff293accec0ebda16d4b7f8d559",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "07c3fe536b0abd50f1ab1a7539ec6fc9bd16bf9dd50bf260449bc920ffc0b6c1",
+    "score": 0.11675142087944959,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/pmcvqa/icd/recovery_full_merge_v1/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "ca5725aa85ccbb75db90395232e0aef453beeff293accec0ebda16d4b7f8d559",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "07c3fe536b0abd50f1ab1a7539ec6fc9bd16bf9dd50bf260449bc920ffc0b6c1",
+    "score": 0.11675142087944959,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/slake/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "5261c4a2162932f30c1ca87c4328066dc1413631edd5e0b88a78926135a1abdb",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "11c7b8a29637321b2783881a817aa1ff4108a54d6e5fad4e7dc62aeb9854d8a0",
+    "score": 0.3468134924080482,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/slake/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "5261c4a2162932f30c1ca87c4328066dc1413631edd5e0b88a78926135a1abdb",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "11c7b8a29637321b2783881a817aa1ff4108a54d6e5fad4e7dc62aeb9854d8a0",
+    "score": 0.3468134924080482,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/slake/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "bcf26c73cb1d67c2dfb272a04b12beefbf110920349b8922a275e564906f4467",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "b0c9aa56283400b873e751122ef93edb87229ffcab263b47e610aa11670cb8c5",
+    "score": 0.33297163544298203,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/slake/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "bcf26c73cb1d67c2dfb272a04b12beefbf110920349b8922a275e564906f4467",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "b0c9aa56283400b873e751122ef93edb87229ffcab263b47e610aa11670cb8c5",
+    "score": 0.33297163544298203,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/vqa_rad/greedy/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "c1c5afcf1f4027bbb97ebf66a33a21e3339b70be47553ddf01f0eec2a6916b25",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a64393f313cb91d3a65e951dd50d12e8414d006ea3a6235de77476117c9209e1",
+    "score": 0.48473066106103807,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/vqa_rad/greedy/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "c1c5afcf1f4027bbb97ebf66a33a21e3339b70be47553ddf01f0eec2a6916b25",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a64393f313cb91d3a65e951dd50d12e8414d006ea3a6235de77476117c9209e1",
+    "score": 0.48473066106103807,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/vqa_rad/icd/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "cf793100ffe1efc32c18e665b3c46f9cb628e5a1b2176ff7fa5f1189c76a39b9",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f0ce375670ca76e9c9d2db111ce458415257d253b49e6f1ccd60818676d50281",
+    "score": 0.4715819103291388,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/cross_common_protocol_v1/vqa_rad/icd/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "cf793100ffe1efc32c18e665b3c46f9cb628e5a1b2176ff7fa5f1189c76a39b9",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "f0ce375670ca76e9c9d2db111ce458415257d253b49e6f1ccd60818676d50281",
+    "score": 0.4715819103291388,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/mimic_cxr_full_v1/ICD/evaluation_report_three_metrics.json",
+    "artifact_sha256": "1d2056dcc4a56aaa76107fe185ce692f91c4dbb32b1721ea4d51a1fd47501247",
+    "scorer_version": null,
+    "answer_sha256": "4e748c6eef842d4c76106342010662fc66f914218822bac21cbee8dc7721778b",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "4e748c6eef842d4c76106342010662fc66f914218822bac21cbee8dc7721778b",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.011943008305534701,
+          "ci95_lower": 0.011547203212819506,
+          "ci95_upper": 0.01229986829649401,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13159602096682113,
+          "ci95_lower": 0.129893575306971,
+          "ci95_upper": 0.1333762230972948,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.10652794881476145,
+          "ci95_lower": 0.10482263449590189,
+          "ci95_upper": 0.10841635232994677,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/mimic_cxr_full_v1/VCD/evaluation_report_three_metrics.json",
+    "artifact_sha256": "bc13e6360e902ac22bce78d32b449828f881278018b7a25a76aa1a2dcb44fddf",
+    "scorer_version": null,
+    "answer_sha256": "c29e6153e88970c7030493bd4b5ad29f352992618b32a307f8dc1fe530d42302",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "c29e6153e88970c7030493bd4b5ad29f352992618b32a307f8dc1fe530d42302",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.010536079062330346,
+          "ci95_lower": 0.010231639692790707,
+          "ci95_upper": 0.010811196127337658,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.1260033687650302,
+          "ci95_lower": 0.12461192845039774,
+          "ci95_upper": 0.12734209563822196,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.09777779044341732,
+          "ci95_lower": 0.09653089017030674,
+          "ci95_upper": 0.09910622511893015,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/mimic_cxr_full_v1/avisc/evaluation_report_three_metrics.json",
+    "artifact_sha256": "db67809de40535bb3beebd1e0adb0d54972032018a17ae3daa57762440ccec2f",
+    "scorer_version": null,
+    "answer_sha256": "d062b7fa55cc8ec191c8b49ce083a045a5c04367f2f85df8898662954cac884c",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "d062b7fa55cc8ec191c8b49ce083a045a5c04367f2f85df8898662954cac884c",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.014207570658126901,
+          "ci95_lower": 0.014027060062686449,
+          "ci95_upper": 0.014409129130232068,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13107337995774293,
+          "ci95_lower": 0.1299805474223227,
+          "ci95_upper": 0.13231063633712573,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.13328367469338737,
+          "ci95_lower": 0.1320478443036921,
+          "ci95_upper": 0.13466568920560212,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/mimic_cxr_full_v1/opera/evaluation_report_three_metrics.json",
+    "artifact_sha256": "7abc7875de97ac1c23d566785f0f0f7f48e2c5c9f6666a43d59f31f57462eec7",
+    "scorer_version": null,
+    "answer_sha256": "9a4c127503cb5f24dac252394211db61ed6213a4331dccbbeb73bf5fdf9b98d3",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "8d9b6b5f3c28d5e2fcb5bb2d5814222354454c53a8918e37190743c5a518e514",
+      "answers_sha256": "9a4c127503cb5f24dac252394211db61ed6213a4331dccbbeb73bf5fdf9b98d3",
+      "evaluator_source": "/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 5159,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.014049978113411216,
+          "ci95_lower": 0.01375951140187714,
+          "ci95_upper": 0.01438484841973965,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13789722923355766,
+          "ci95_lower": 0.13645869875627317,
+          "ci95_upper": 0.1394839523706245,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.1304526162628472,
+          "ci95_lower": 0.12838246026454803,
+          "ci95_upper": 0.1328505566998014,
+          "clusters": 293,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 293
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/omnimedvqa_extension_v1/greedy_full/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "93cdecc1b372d01e058a8915c0147432ae966bcb8aaefba228dec06012372aa5",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "5a6974082d5a3e720743877ca4abf84370ea987c3f5741c3a37621a9ceedaca1",
+    "score": 0.28540929265689086,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/omnimedvqa_extension_v1/medrag_full/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "fd163a1163542d66f069289d2556618fa7ef42cffd1380d1ddb03e6a6df284c5",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "e4ccf9f967d119520ee0ab753c3a903b61bb62790e5030c5d258c6c35d81f6bc",
+    "score": 0.23277712231024214,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/omnimedvqa_extension_v1/pai_native_eos_audit/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "512b4e9df7e5b69771def6ed8c3a2e551c0538f2238ad51480b923246c7822b9",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "038ac647e79bba770270a5b82ecc318b86a36bb8b90f2e2f5810d5c6b428e4e1",
+    "score": 0.28262261924827237,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/omnimedvqa_extension_v1/vcd_full_review_v13/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "94c9f7d150fd2e745c6ff9fdb5c36fe72f5c15fa7c88c80cbbff8ad8909c5b77",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "279337baff686c0d901797c13413578447164a11fcb6e01a9fc3388dd3cba81b",
+    "score": 0.25757626832968145,
+    "n": 88995,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/PAI/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "41ac2d798e73845b45687a0a4e9664c09f08958a5361ab846516581b18db7c40",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "4b352a308f657effc457e61010e1a210090b2ff8ec125c35d33b81e80b148c98",
+    "score": 0.1306311696081364,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/VCD/mimic_cxr_partial/evaluation_report_three_metrics.json",
+    "artifact_sha256": "8dda6c473c0f56f7893b299bfd44dadb410d0a3f3afaef65ad6235cd83ab0462",
+    "scorer_version": null,
+    "answer_sha256": "198115a2dff59cca9b7470c9355b0aefb8ed79dab22364d1e22fdcc4604ada19",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "3fd88d340585775d792703f774608e07b47cf1323eb4ee0450cf2e5285cc1237",
+      "answers_sha256": "198115a2dff59cca9b7470c9355b0aefb8ed79dab22364d1e22fdcc4604ada19",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 694,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.010221771281997385,
+          "ci95_lower": 0.00956788968388892,
+          "ci95_upper": 0.010912425667933894,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.12467854755086394,
+          "ci95_lower": 0.12174045765044926,
+          "ci95_upper": 0.12745913074646817,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.09521454613313862,
+          "ci95_lower": 0.09181030021119532,
+          "ci95_upper": 0.09924356289997084,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 694
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/VCD/mmmu/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "527380dc0048ad4ba17653c023c22df84bb41a6351e7b6bb9b49d4ff17391096",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "140bab4dbbf5ca057116054b4aa26a55050f655c9f4c15f056e589ec0624209c",
+    "score": 0.17723809523809525,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/VCD/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "dc15dbd21512f64ab73d804e3868311d9fa92f11650ef6b7fe019c000630f3a6",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "6bc0adb773bbce247b4fed32b942250a015f68b965b80610023a6c53ef0d6749",
+    "score": 0.11752916542028119,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/VISTA/mimic_cxr_remaining/evaluation_report_three_metrics.json",
+    "artifact_sha256": "1c0fffc4ded755b63ad1f1e7329598022938297fce33ac77b8ead99b88ece8b7",
+    "scorer_version": null,
+    "answer_sha256": "6644376dcd7d5c23aaef361f4651f00ffdaed0ef90bf857ad7ef2473e45d33bd",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "f2aca0af10be72045e7d7c89bf76bfcba5d1bb3b564447ff9ca5fb2c598a2e9e",
+      "answers_sha256": "6644376dcd7d5c23aaef361f4651f00ffdaed0ef90bf857ad7ef2473e45d33bd",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 4465,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.010074499085282719,
+          "ci95_lower": 0.009573005592549538,
+          "ci95_upper": 0.010562503831157002,
+          "clusters": 291,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13366679907995524,
+          "ci95_lower": 0.13130978742574884,
+          "ci95_upper": 0.13588874389212538,
+          "clusters": 291,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.09687836792177233,
+          "ci95_lower": 0.09402092536310191,
+          "ci95_upper": 0.0997141887248299,
+          "clusters": 291,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 291
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/avisc/mimic_cxr_partial/evaluation_report_three_metrics.json",
+    "artifact_sha256": "bfae578ba69031409f2b7833d45f07f1ec53ad358ef6dc6c0cf7db1735c2647e",
+    "scorer_version": null,
+    "answer_sha256": "3971b58e9d47a073bb63b80ce4935a0270e23878d66b2cb5cc17dc570b0360b9",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "3fd88d340585775d792703f774608e07b47cf1323eb4ee0450cf2e5285cc1237",
+      "answers_sha256": "3971b58e9d47a073bb63b80ce4935a0270e23878d66b2cb5cc17dc570b0360b9",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 694,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.01479146269852137,
+          "ci95_lower": 0.014207444798769843,
+          "ci95_upper": 0.015394879305366666,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.13093277007220813,
+          "ci95_lower": 0.12857412567277623,
+          "ci95_upper": 0.13300660076247367,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.1325523218570855,
+          "ci95_lower": 0.12972535727119372,
+          "ci95_upper": 0.13530435537048222,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 694
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/avisc/mmmu/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "5e04d444b65506aaf9a4e5f74d9b8037c1b5e9da8f1045d8feff228384202e0e",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "8e960539763baceab56dd6eb6de7442aea28cca9b05bc1698194c94cd3df9e8f",
+    "score": 0.17533333333333334,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/avisc/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "13ab23e88a9567a316908a33df23d5576bb8a0e632e18080be5c07eb34bbd22c",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a73f280c670e9acd699c24c395800f589b4db4333f016f8e8067d2c5e0d5e12e",
+    "score": 0.09928208196230931,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/mimic_cxr_partial/evaluation_report_three_metrics.json",
+    "artifact_sha256": "439a8acf3f46c4138f7b5e00d412863806690e72b1b65e02611ec05a3b8355ed",
+    "scorer_version": null,
+    "answer_sha256": "353a89acc86ee72e7e9a926d72e955c81bd9f68b53f0ff4535ad326b2706976d",
+    "score": null,
+    "n": null,
+    "metric": null,
+    "report_summary": {
+      "protocol": "medical-report-three-metrics-v2-source-audited",
+      "manifest_sha256": "3fd88d340585775d792703f774608e07b47cf1323eb4ee0450cf2e5285cc1237",
+      "answers_sha256": "353a89acc86ee72e7e9a926d72e955c81bd9f68b53f0ff4535ad326b2706976d",
+      "evaluator_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/evaluate_report_generation_final.py",
+      "evaluator_source_sha256": "81ac9955d2a38fab364ecdf4221f27127ec50d776be2ef825a59bdba88b9f1fb",
+      "metric_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/corrected_sgta/evaluate_oe_reports.py",
+      "metric_backend_source_sha256": "ce2917642ef24068bc364dd8cdae22076cf56ded7a70f2b65fc9e0d1f04b65e5",
+      "bootstrap_backend_source": "/root/autodl-tmp/home/dbw/ANCHOR/anchor/medeval/stats.py",
+      "bootstrap_backend_source_sha256": "b7c81e9e1609744812ab47de72bb787483a793cf9471bbc083276ce162847586",
+      "n": 694,
+      "metric_definitions": {
+        "bleu_4": "mean sentence BLEU-4, uniform 1/4 n-gram weights, NLTK smoothing method4",
+        "rouge_l_f1": "mean word-level ROUGE-L F1 with stemming (rouge-score)",
+        "meteor": "mean NLTK METEOR on word tokens",
+        "aggregation": "sample mean; 95% CI uses patient/study-cluster bootstrap"
+      },
+      "primary_metrics": {
+        "bleu_4": {
+          "estimate": 0.01410761049462572,
+          "ci95_lower": 0.013561704208460725,
+          "ci95_upper": 0.014681566449679582,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 42
+        },
+        "rouge_l_f1": {
+          "estimate": 0.1379861060413272,
+          "ci95_lower": 0.13562176875238163,
+          "ci95_upper": 0.14025614458683158,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 43
+        },
+        "meteor": {
+          "estimate": 0.12726369299562262,
+          "ci95_lower": 0.12345269971141568,
+          "ci95_upper": 0.13084006177907273,
+          "clusters": 694,
+          "replicates": 500,
+          "seed": 44
+        }
+      },
+      "diagnostics": {
+        "empty_count": 0,
+        "patient_or_study_clusters": 694
+      }
+    }
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/pathvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "aed2243665fb7854790830abdb1432e99490490bcd4c6697dd59318316caea27",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "66c7b22c76297129a0bc6f7ae30c562218e5433a1805c7d9c34b6e65f47b1500",
+    "score": 0.3314387769594409,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/pathvqa/evaluation_mixed_vqa_table_v13_review.json",
+    "artifact_sha256": "18b885a24a253434164ded5520add3fbb3de6ef7ecb119218b4d9b757f97c9ef",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "66c7b22c76297129a0bc6f7ae30c562218e5433a1805c7d9c34b6e65f47b1500",
+    "score": 0.3314387769594409,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/slake/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "4adb9f276219959cd3c2f03bbbbbd9ac69a526bc0892c65911773888d98c31d3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0b714446678a74a567659cf9273f62e08fee925730af224b6161d3e433fdccc2",
+    "score": 0.35955154629939734,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/slake/evaluation_mixed_vqa_table_20260919_review.json",
+    "artifact_sha256": "c4711889fd7b8f972027f83d3e3a9d2f726b9605b33bc02f6fe6295df7d0599a",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "0b714446678a74a567659cf9273f62e08fee925730af224b6161d3e433fdccc2",
+    "score": 0.35955154629939734,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/vqa_rad/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "45e44e53f9b6b9c428a22420c0578f0280638bcab64878bf0ffa38b2b5569a85",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "47786ce2975418b13dff7d25281d68b5fa2b31fbabb5d8836509750e4a10b83a",
+    "score": 0.4867581420796499,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_final_v1/results_common_protocol_v1/opera/vqa_rad/evaluation_mixed_vqa_table_20260919_review.json",
+    "artifact_sha256": "bacdeac4c33b71e4cba3e365edff72a81c8870a1a93499078a3c0b8dff8ca32f",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "47786ce2975418b13dff7d25281d68b5fa2b31fbabb5d8836509750e4a10b83a",
+    "score": 0.4867581420796499,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_full_v1/results/DoLa/vqa_rad/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "a11b1025c287a49a48dc772558160323babaccbcd7e39ace7d08f2aa75f1e534",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "ec557a65736cec34ed9862bfa2f4bffc957c6f6ef2db6c1805ea7f559cd82119",
+    "score": 0.4654905884950232,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_full_v1/results/VCD/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "ae4438f9cccc22a080099aad35505222b53abffe7464964491b42d8b2ce5d8a3",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "8d87aa9592e0012bc92c90277a8caf1392b8cc382e76b626db4527741ab2c9a5",
+    "score": 0.1121148668860305,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_full_v1/results/VCD/vqa_rad/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "c9717f3810423eba4b49086b456260cddbe9285e4682cd1b8a1abf5b2c6fa105",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "caced26bca16f83cefb6d5dc49395e2349121e57b27f6f136f125341915bb186",
+    "score": 0.42452846488323204,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/llava_med_full_v1/results/avisc/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0dba4f04cff4a185b9c50e69304a7c2bc6432eaa7075a8cbcd012ced9659a637",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "b3c9243fdabb36419aef9a48a191b349f2e00da37cdb96eff4e113f907f7e5eb",
+    "score": 0.11355070296141191,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results/pathvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "56a090e54444a18d7ffb001e5fe17e1ec8c108c0ea0dab44f050bb4e8e58a423",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "2d35b5997e72e710f10dd34fa01fa801f4ec1b05d0b39e5ec318c07b45c76495",
+    "score": 0.31030197497172723,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "acb3109fd1c05f859d670e6b10fcddcd133c06a4d5f7824fc2a127284ca0e33e",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "8e77b14fed4d75f1bedef0c5e140399f2ae6af59889566ca97a90841137492f8",
+    "score": 0.13793000299132516,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results/slake/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "8df581799d31465ba574cb8b1042aab251c5dc7b4e73b3049c11952a333b0e60",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "be6052c120debdd4a5a9cbdbb69b7e776167df17ce11bd896c78ae51cdc865d3",
+    "score": 0.27022391674970475,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results/vqa_rad/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "75d07d12d7b8d956212a728c9467b439fbcaf45523ea454e8abea7e8ab3c7dee",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "ed2fb60e4db65f05534714eedca0ea2925339c726ee8dbd27825628171aadfb2",
+    "score": 0.39481071404574725,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results_common_protocol_final_v1/pathvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "28b4fa4ed3a599d94de520b945edb2edadeb39f1bfa3a4225cab5890c9acbdb3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "e048160593d4ce18886c6f5675a667e4c674c89ac9cbc53f7930f9ead86db82d",
+    "score": 0.31176525497654445,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results_common_protocol_final_v1/pmcvqa/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "9978b6f0834f7f2af5995d45214511a1642cc6034234184338ff5729e736d9f3",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "378afd3e41e1381f5854527f121759a21329091de8319ae4634d688043cf5c06",
+    "score": 0.13386180077774454,
+    "n": 33430,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/medrag_medcpt_textbooks_v1/results_common_protocol_final_v1/slake/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "10ef924628363d1ba413f86fd1de102282d4d3838b7ed11d8f6354e0bdeb483b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "a19929bd592aac74aac6cbb5543d8d039f214c91e98ecc0dc3456a8343998932",
+    "score": 0.27186279840291305,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_common_protocol_v1/pathvqa_scored/compact_all/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "8c7a39d14aeec5959ebe307464833d0d78f57f6c163f3df54d0751844267592f",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "61db46d88cdf3fa6a3b09121818696557af29ad5883dbf1d19cd5b5b04575680",
+    "score": 0.27489939232556104,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_common_protocol_v1/pathvqa_scored/compact_rows/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "9c8a06e58249dd3759196ffa7fc3cac13414fd2b2b82715e6c9c9bba56ed7e51",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "429b50563f199239e44394ddfafb7b502044cb22b12607e07d329dbc08d9fb9e",
+    "score": 0.2819198975834571,
+    "n": 6719,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_verified_packets_v1/historical/slake/compact_all/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "a1b6efa6b9549a5f2f37c39ebab5210a305dd9a45fe5ea987ec8d0be82170f78",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "65e7d1305dbe40701c49dabbb48b06bb62740a94731825cc989f0f46042e94b9",
+    "score": 0.3958981788136515,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_verified_packets_v1/historical/slake/compact_rows/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "7eb2fd38be077cfdb3c5283cc8bd345baffae9003a7faa5ab84cf9a55d50aa9e",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "8e40a658bf816d4f29f216eaa5fa42ba880bc26ba83af437ea485a11537ff94c",
+    "score": 0.39485624080896287,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_verified_packets_v1/historical/vqa_rad/compact_all/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "f0aad6745dca87de8bc167ad565279dfc74bf1fba75e02b39bfcd71bc7d12020",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "9c9dc33b5251832c0c52b64618543af3828b37f4a0d3a907615895b88d2c160b",
+    "score": 0.5395664756529501,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/merit_verified_packets_v1/historical/vqa_rad/compact_rows/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "912be4b50ee36d30b1a85d28afb83124bb046aa68d543888ecc1c297485a3c29",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "5c4a621d65ebf3e75bd19f86fbc9d0165dbd94e0f2b3731e01d40531005c13d2",
+    "score": 0.5395664756529501,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/mmedpo_official_v1/common_protocol/slake/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "c2abbff37658bb064613a6935d2d7abf35b1dbaba878c1be037d7c3a6f77766d",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "9cf2af64f988383dd5c0cd24fcb75c695b0c96d6b3139a28cc4353ca5ecc17c8",
+    "score": 0.46535420034703695,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "ANCHOR/corrected_runs/paper_baselines_v1/mmedpo_official_v1/common_protocol/vqa_rad/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "2cf3a3b0c78ba2ae6a45c0c3446d44bc62219f1821bdc7061ed80c7e343535ce",
+    "scorer_version": "mixed-medical-vqa-table-v2-source-typed-primary",
+    "answer_sha256": "b4562945cdfbe7d91e57e44be7e066db298ddc879a7a65480ca17a4e578eac71",
+    "score": 0.49906388880889996,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "merit-feddg-expert-coverage/runs/huatuo-merit-full-v1/slake/official_review/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "874ca56cd81dd64b530298ceb62ebdbc57b6a20301efeacfc107696bcb2c2b5d",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "34cd3aba596321f6211c652cd966328ef534ddf38a1892bc6c37a48ad1738b1b",
+    "score": 0.5447607125685795,
+    "n": 2094,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "merit-feddg-expert-coverage/runs/huatuo-merit-full-v1/vqa_rad/official_review/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "0b26cfa9f5740fcb266ac83f972271167910111b9001afeae501a3d8e494be2b",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "3240e9b6c4574d75dba369fe60fb54f549f564fca2eea1a60af41c40f7a9c759",
+    "score": 0.5715581535980649,
+    "n": 451,
+    "metric": "sample_weighted_ce_accuracy_oe_answer_token_recall"
+  },
+  {
+    "artifact": "merit-feddg-expert-coverage/runs/mmmu-native-expanded-v2/official_review/evaluation_mixed_vqa_table.json",
+    "artifact_sha256": "e09326ce816ba050772df77d5cd9e611563a8de6efe96e94c4054e2dab0bf5ab",
+    "scorer_version": "mixed-medical-vqa-table-v4-source-typed-mmmu-official-primary",
+    "answer_sha256": "6e2599b8658c75639f5604a8c98dc8e6a0a67ad37ee9e277b1a6ce05ccf2e974",
+    "score": 0.2042857142857143,
+    "n": 10500,
+    "metric": "mmmu_official_mixed_accuracy_unparseable_as_error"
+  }
+]
