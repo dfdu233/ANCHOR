@@ -1,5 +1,7 @@
 # Scored artifact inventory — 2026-09-19
 
+新增复核见 [VERIFIED_ADDENDUM_ZH.md](VERIFIED_ADDENDUM_ZH.md)：PMC解析修复与Huatuo MERIT PathVQA全量、独立补跑结果。下方历史快照未覆盖。
+
 This is a local scored-artifact snapshot, not a certified final leaderboard. Historical scorer versions and partial evaluations are deliberately retained as separate rows; never average or merge them. A file being present does not prove generation quality, complete test coverage, protocol equivalence, or correspondence to the latest live cloud output. CVE and Chiron are excluded. Raw predictions, images, model weights and credentials are not included. Hashes and metric names are in `scored_artifacts.json`.
 
 VQA values below are original score ×100. Report scores remain in the JSON with explicit definitions. SLAKE/VQA-RAD mixed scores combine closed accuracy and open answer-token recall; MMMU official accuracy is a different metric.
